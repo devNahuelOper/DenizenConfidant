@@ -1,5 +1,5 @@
 {
-  "name": "DenizenConfidant",
+  "name": "denizen_confidant",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.10.2",
