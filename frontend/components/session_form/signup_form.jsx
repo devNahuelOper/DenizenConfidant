@@ -1,6 +1,7 @@
 import React from 'react';
 
-class SessionForm extends React.Component {
+
+class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,22 +39,21 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-
-          <br/>
-      
+      <div className="signup-form-container">
+        <h1>Your account</h1>
+        <form onSubmit={this.handleSubmit} className="signup-form-box">
+          <br />
           {this.renderErrors()}
-          <div className="login-form"> 
-            <br/>
+          <div className="signup-form">
+            <br />
             <label>Username
-              <input 
+              <input
                 type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
-                className="login-input"/>
+                className="login-input" />
             </label>
-            <br/>
+            <br />
             <label>Password:
               <input type="password"
                 value={this.state.password}
@@ -61,13 +61,13 @@ class SessionForm extends React.Component {
                 className="login-input"
               />
             </label>
-            <br/>
-            {/* <label>First Name
+            <br />
+            <label>First Name
               <input
                 type="text"
                 value={this.state.firstName}
                 onChange={this.update('firstName')}
-                className="login-input" />
+                className="signup-input" />
             </label>
             <br/>
             <label>Last Name
@@ -75,9 +75,26 @@ class SessionForm extends React.Component {
                 type="text"
                 value={this.state.lastName}
                 onChange={this.update('lastName')}
-                className="login-input" />
-            </label> */}
-            <br/>
+                className="signup-input" />
+            </label>
+            <label>Default region/
+            <select id="default-region" name="countries" defaultValue="Select a country">
+                <option value="Select a country" disabled>Select a country:</option>
+                <option value="argentina">Argentina</option>
+                <option value="australia">Australia</option>
+                <option value="brazil">Brazil</option>
+                <option value="canada">Canada</option>
+                <option value="france">France</option>
+                <option value="germany">Germany</option>
+                <option value="italy">Italy</option>
+                <option value="netherlands">Netherlands</option>
+                <option value="spain">Spain</option>
+                <option value="uk">UK</option>
+                <option value="usa">USA</option>
+                <option value="vatican city">Vatican City</option>
+              </select>
+            </label>
+            <br />
             <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
         </form>
@@ -86,4 +103,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default SignupForm;
