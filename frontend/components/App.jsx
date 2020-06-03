@@ -17,7 +17,6 @@ const App = () => (
     <div className="denizen-confidant">
       <h1>Denizen C👽nfidant</h1>
     </div>
-    {/* <a href="/"><img src="https://djmag.com/sites/default/files/article/image/Nottingham%20pics11.jpg" className="nav-logo" /></a> */}
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
   </div>

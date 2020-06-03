@@ -57,3 +57,34 @@ body {
 /* .denizen-confidant::first-letter {
   rotate: 20%;
 } */
+
+.welcome {
+  display: flex;
+  justify-content: horizontal;
+}
+
+.welcome-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 53px;
+  padding-top: 9px;
+  font-size: 15px;
+  color: #7e7e7e;
+}
+
+.logout-button {
+  position: absolute;
+  left: 150px;
+  top: 23px;
+  width: 60px;
+  background-color: #ffc107;
+  border-radius: 3px; 
+  padding-left: 3px;
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+}
+
+.welcome-name {
+  position: relative;
+  list-style: none;
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+}
