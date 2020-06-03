@@ -1,0 +1,59 @@
+body {
+  /* background-color: rgb(174, 190, 30); */
+  background-color: #4d4c4c; 
+  // background-image: url(./images/rave2.png);
+}
+
+.login-signup-container {
+  background-color: rgb(46, 46, 46);
+  height: 56px;
+  border-bottom: 0.1px groove rgb(46, 46, 46);
+}
+
+.login-signup {
+  display: flex;
+  float: left;
+  position: relative;
+  color: rgb(236, 234, 234);
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #454545;
+  margin: 0px 70px 0px 0px;
+  padding: 20px 55px 0px 8px; 
+  padding-left: 53px;
+  height: 36px;
+  font-size: 14px;
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+}
+
+.login-signup:hover {
+  background-color: black;
+  color: #FFA200;
+}
+
+.denizen-confidant {
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  // font-family: Arial black;
+  background-color: rgb(174, 190, 30);
+  color: #333333;
+  letter-spacing: -2px;
+  font-weight: 800;
+  font-size: 24px;
+  text-align: left;
+  /* text-shadow: 1px 1px; */
+}
+
+#login-icon {
+  position: absolute;
+  right: 20px;
+  bottom: 16px;
+  cursor: pointer;
+}
+
+.splash-bg {
+  height: 500px;
+}
+
+/* .denizen-confidant::first-letter {
+  rotate: 20%;
+} */
