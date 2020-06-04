@@ -7,6 +7,24 @@
   height: 286px;
 }
 
+#links {
+  display: none;
+}
+
+@media only screen and (min-width: 700px) {
+  #links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 600px;
+    position: relative;
+  }
+  
+  #links li a{
+    padding: 2px 2px 2px 2px;
+  }
+}
+
 #nav-container h1 {
   font-size: 64px;
   // margin: 0 auto;
@@ -17,10 +35,6 @@
   margin-left: 173px;
   padding-bottom: 6px;
 }
-
-// #navbar {
-//   margin-bottom: 82px;
-// }
 
 #subnav {
     border-top: 1px solid rgba(97, 71, 71, 0.4);
@@ -33,6 +47,10 @@
 #subnav li {
   float: left;
   border-left: 1px solid rgba(97, 71, 71, 0.4);
+}
+
+#subnav li:hover {
+  background-color: white;
 }
 
 #subnav li:last-child {
@@ -58,25 +76,6 @@
 //   margin-left: 5px;
 // }
 
-
-#links {
-  display: none;
-}
-
-@media only screen and (min-width: 700px) {
-  #links {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding-left: 600px;
-    position: relative;
-  }
-  
-  #links li a{
-    padding: 2px 2px 2px 2px;
-  }
-}
-
 .login-form-container {
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
   position: relative;
@@ -85,24 +84,32 @@
 
 .login-form {
   position: absolute;
-  left: 53px;
+  top: 7px;
+  left: 175px;
   display: flex;
   flex-direction: column;
   color: white;
+  // width: 240px;
 }
 
 .login-input {
+  box-sizing: border-box;
+  padding-left: 7px;
   color: black;
   height: 30px;
-  width: 200px;
+  width: 240px;
 }
 
 .login-button {
   color: black;
   background-color: #ffa200;
   height: 40px;
-  width: 200px;
+  width: 240px;
   text-align: center;
-  font-size: 18px;
+  font-size: 22px;
 }
+
+
+
+// Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 

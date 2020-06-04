@@ -11,7 +11,7 @@ const App = () => (
   <div>
     
       <GreetingContainer />    
-    {/* <img src="/assets/rave.jpg"/> */}
+    {/* <img src="/assets/turntable.png"/> */}
 
     {/* <img src="https://xceed.me/blog/wp-content/uploads/2016/10/14543965_10154139803424022_2218609089243012624_o-1024x683.jpg" className="splash-bg" /> */}
 

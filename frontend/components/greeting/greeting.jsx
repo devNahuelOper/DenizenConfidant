@@ -7,13 +7,15 @@ const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="user">
       <ul className="login-signup">
+        
         <li> 
           <Link to="/login">Login</Link>
           &nbsp;/&nbsp;
           <Link to="/signup">Register</Link>
         </li>
-        <li id="login-icon">💿</li>   
+        <li id="login-icon"></li>   
       </ul>
+      <img src="/assets/turntable.png" />
     </nav>
   );
   const personalGreeting = () => (
