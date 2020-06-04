@@ -13,9 +13,10 @@ const Greeting = ({ currentUser, logout }) => {
           &nbsp;/&nbsp;
           <Link to="/signup">Register</Link>
         </li>
-        <li id="login-icon"></li>   
+        {/* <li id="login-icon"></li>    */}
       </ul>
-      <img src="/assets/turntable.png" />
+      {/* <img src="/assets/turntable.png" /> */}
+      <img src="/assets/dj3.png" />
     </nav>
   );
   const personalGreeting = () => (

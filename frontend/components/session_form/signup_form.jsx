@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -39,65 +39,157 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container">
-        <h1>Your account</h1>
-        <form onSubmit={this.handleSubmit} className="signup-form-box">
-          <br />
+      <div>
+
+        <div id="nav-container">
+          <nav id="navbar">
+            <ul id="links">
+              <li>DJs</li>
+              <li>Events</li>
+              <li>Music</li>
+              <li>Search</li>
+            </ul>
+          </nav>
+
+          <h1>Your account</h1>
+
+          <section id="subnav">
+            <ul>
+              <li><Link to="/login">Login</Link></li>
+              <li><Link to="/signup">Register</Link></li>
+              <li><Link to="/">Take me back home</Link></li>
+            </ul>
+          </section>
+
+        </div>
+    <div className="signup-form-container">
+
           {this.renderErrors()}
-          <div className="signup-form">
-            <br />
-            <label>Username
-              <input
+  <form onSubmit={this.handleSubmit} >
+
+    <ul className="signup-form">
+       <li>  
+          <div>Username/
+            <br/>
+            <input
                 type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
-                className="login-input" />
-            </label>
-            <br />
-            <label>Password:
+                className="signup-input" />
+          </div> 
+         
+              <br />
+
+          <div>Password/
+            <br/>
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="login-input"
+                className="signup-input"
               />
-            </label>
-            <br />
-            <label>First Name
-              <input
-                type="text"
-                value={this.state.firstName}
-                onChange={this.update('firstName')}
-                className="signup-input" />
-            </label>
-            <br/>
-            <label>Last Name
-              <input
-                type="text"
-                value={this.state.lastName}
-                onChange={this.update('lastName')}
-                className="signup-input" />
-            </label>
-            <label>Default region/
-            <select id="default-region" name="countries" defaultValue="Select a country">
-                <option value="Select a country" disabled>Select a country:</option>
-                <option value="argentina">Argentina</option>
-                <option value="australia">Australia</option>
-                <option value="brazil">Brazil</option>
-                <option value="canada">Canada</option>
-                <option value="france">France</option>
-                <option value="germany">Germany</option>
-                <option value="italy">Italy</option>
-                <option value="netherlands">Netherlands</option>
-                <option value="spain">Spain</option>
-                <option value="uk">UK</option>
-                <option value="usa">USA</option>
-                <option value="vatican city">Vatican City</option>
-              </select>
-            </label>
-            <br />
-            <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
-        </form>
+        </li> 
+              <span id="no-space">No spaces, 18 char max.</span>
+              
+
+            <li>
+              <div>Email address/
+                <br/>
+                <input
+                    type="text"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    className="email-input" />
+              </div>
+
+                <br />
+
+              <div>Confirm email/
+                <br/>
+                <input type="text"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    className="email-input"
+                  />
+              </div>
+              </li>
+
+           
+
+          <li>
+            <div>First Name/
+              <br/>  
+              <input
+                  type="text"
+                  value={this.state.firstName}
+                  onChange={this.update('firstName')}
+                  className="signup-input" />
+            </div>
+        
+              <br/>
+            <div>Surname/
+              <br/>
+              <input
+                  type="text"
+                  value={this.state.lastName}
+                  onChange={this.update('lastName')}
+                  className="signup-input" />
+            </div>
+          </li>
+        
+          <li>Default region/</li>
+            <li><select id="default-region" name="countries" defaultValue="Select a country">
+                  <option value="Select a country" disabled>Select a country:</option>
+                  <option value="argentina">Argentina</option>
+                  <option value="australia">Australia</option>
+                  <option value="brazil">Brazil</option>
+                  <option value="canada">Canada</option>
+                  <option value="france">France</option>
+                  <option value="germany">Germany</option>
+                  <option value="italy">Italy</option>
+                  <option value="netherlands">Netherlands</option>
+                  <option value="spain">Spain</option>
+                  <option value="uk">UK</option>
+                  <option value="usa">USA</option>
+                  <option value="vatican city">Vatican City</option>
+                </select></li>
+              <br/>
+
+              <li>
+                <div>Preferred language/
+                  <br/>
+                  <select id="preferred-language" defaultValue="English">
+                    <option value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="French">French</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="German">German</option>
+                    <option value="Dutch">Dutch</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Chinese">Chinese(Mandarin)</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Dothraki">Dothraki</option>
+                  </select>
+                </div>
+              </li>
+
+              <li>
+                <div id="gender">Gender/
+                <br/>
+                  <input type="radio" value="Male"/>Male
+                  <br/>
+                  <input type="radio" value="Female"/>Female
+                  <br/>
+                  <input type="radio" value="Other"/>Other
+                </div>
+              </li>
+
+              <li><input className="signup-button" type="submit" value='Submit' /></li>
+            </ul>
+          </form>
+
+        </div>
       </div>
     )
   }
