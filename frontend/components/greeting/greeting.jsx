@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
-    <nav className="login-signup">
-      
-       
-      <Link to="/login">Login</Link>
-      &nbsp;/&nbsp;
-      <Link to="/signup">Register</Link>
-      
-        <p id="login-icon">💿</p>
-      
+    <nav className="user">
+      <ul className="login-signup">
+        <li> 
+          <Link to="/login">Login</Link>
+          &nbsp;/&nbsp;
+          <Link to="/signup">Register</Link>
+        </li>
+        <li id="login-icon">💿</li>   
+      </ul>
     </nav>
   );
   const personalGreeting = () => (
@@ -26,7 +26,8 @@ const Greeting = ({ currentUser, logout }) => {
     </div>
   );
 
-  return currentUser ? personalGreeting() : sessionLinks();
+  return currentUser ? personalGreeting() : sessionLinks()
+   
 };
 
 

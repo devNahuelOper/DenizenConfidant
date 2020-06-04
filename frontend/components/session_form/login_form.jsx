@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -38,34 +38,61 @@ class LoginForm extends React.Component {
   render() {
     
     return (
-      <div className="login-form-container">
-        <h1>Your account</h1>
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+      <div>
+
+          <div id="nav-container">
+            <nav id="navbar">
+                <ul id="links">
+                  <li>DJs</li>
+                  <li>Events</li>
+                  <li>Music</li>
+                  <li>Search</li>
+                </ul>
+            </nav>
+  
+           <h1>Your account</h1>
+
+            <section id="subnav">
+              <ul>
+                <li><Link to="/login">Login</Link></li>
+                <li><Link to="/signup">Register</Link></li>
+                <li><Link to="/">Take me back home</Link></li>
+              </ul>
+            </section>
+
+          </div>
+
+          <form onSubmit={this.handleSubmit} className="login-form-container">
+
           <br/>
+          
           {this.renderErrors()}
+
           <div className="login-form"> 
             <br/>
-            <label>Username/
-              <input 
-                type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"/>
-            </label>
+            <ul>
+              <li>Username/</li>
+              <li><input 
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  className="login-input"/></li>
             <br/>
-            <label>Password/
-              <input type="password"
+              <li>Password/</li>
+            <li><input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
-              />
-            </label>
+              /></li>
+             
             <br/>
-           
-            <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+
+            <li><input className="login-button" type="submit" value={this.props.formType} /></li>
+            </ul>
           </div>
-        </form>
+
+         </form>
+
       </div>
     )
   }

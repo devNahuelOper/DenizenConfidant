@@ -1,0 +1,108 @@
+
+#nav-container {
+  position: relative;
+  display: block;
+  background-color: #ffa200;
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  height: 286px;
+}
+
+#nav-container h1 {
+  font-size: 64px;
+  // margin: 0 auto;
+  letter-spacing: -2px;
+  font-weight: 500;
+  // border-bottom: 1px solid #4d4c4c52;
+  margin-top: 148px;
+  margin-left: 173px;
+  padding-bottom: 6px;
+}
+
+// #navbar {
+//   margin-bottom: 82px;
+// }
+
+#subnav {
+    border-top: 1px solid rgba(97, 71, 71, 0.4);
+}
+
+#subnav ul {
+  margin-left: 174px;
+}
+
+#subnav li {
+  float: left;
+  border-left: 1px solid rgba(97, 71, 71, 0.4);
+}
+
+#subnav li:last-child {
+  border-right: 1px solid rgba(97, 71, 71, 0.4);
+}
+
+#subnav a {
+  display: block;
+  color: black;
+  padding: 10px 14px;
+  line-height: 19px
+}
+
+// #subnav-toggle {
+//   width: 500px;
+//   margin-top: 10px;
+//   margin-left: 53px;
+//   height: 40px;
+//   font-size: 16px;
+// }
+
+// select option {
+//   margin-left: 5px;
+// }
+
+
+#links {
+  display: none;
+}
+
+@media only screen and (min-width: 700px) {
+  #links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 600px;
+    position: relative;
+  }
+  
+  #links li a{
+    padding: 2px 2px 2px 2px;
+  }
+}
+
+.login-form-container {
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  position: relative;
+  // background-color:  #404040;
+}
+
+.login-form {
+  position: absolute;
+  left: 53px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.login-input {
+  color: black;
+  height: 30px;
+  width: 200px;
+}
+
+.login-button {
+  color: black;
+  background-color: #ffa200;
+  height: 40px;
+  width: 200px;
+  text-align: center;
+  font-size: 18px;
+}
+

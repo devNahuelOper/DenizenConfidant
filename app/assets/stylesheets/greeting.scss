@@ -1,30 +1,42 @@
 body {
   /* background-color: rgb(174, 190, 30); */
-  background-color: #4d4c4c; 
+  background-color:  #404040; 
   // background-image: url(./images/rave2.png);
 }
 
-.login-signup-container {
-  background-color: rgb(46, 46, 46);
-  height: 56px;
-  border-bottom: 0.1px groove rgb(46, 46, 46);
+.user {
+  position: relative;
+  background-color: #2e2e2e;
+  border-top: 1px solid #454545;
+  height: 45px;
+  font-size: 16px;
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+}
+
+// .user>ul:first-child {
+//   margin: 0 auto;
+//   position: relative;
+// }
+
+.user>ul:first-child>li {
+  height: 45px;
+  line-height: 2.8em;
+  cursor: pointer;
 }
 
 .login-signup {
-  display: flex;
+  color: white;
   float: left;
   position: relative;
-  color: rgb(236, 234, 234);
   border-left: 1px solid;
   border-right: 1px solid;
+  padding-left: 20px;
+  padding-right: 53px;
   border-color: #454545;
-  margin: 0px 70px 0px 0px;
-  padding: 20px 55px 0px 8px; 
-  padding-left: 53px;
-  height: 36px;
-  font-size: 14px;
-  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  margin-left: 170px;
+  // line-height: 2.8em;
 }
+
 
 .login-signup:hover {
   background-color: black;
@@ -32,36 +44,35 @@ body {
 }
 
 .denizen-confidant {
+  position: relative;
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
   // font-family: Arial black;
-  background-color: rgb(174, 190, 30);
+  background-color: #b3be1b;
   color: #333333;
   letter-spacing: -2px;
   font-weight: 800;
   font-size: 24px;
   text-align: left;
+  height: 70px;
   /* text-shadow: 1px 1px; */
 }
 
 #login-icon {
   position: absolute;
-  right: 20px;
-  bottom: 16px;
+  right: 13px;
+  bottom: 0px;
   cursor: pointer;
 }
 
 .splash-bg {
-  height: 500px;
+  position: relative;
+  height: 350px;
 }
 
 /* .denizen-confidant::first-letter {
   rotate: 20%;
 } */
 
-.welcome {
-  display: flex;
-  justify-content: horizontal;
-}
 
 .welcome-group {
   display: flex;
@@ -75,8 +86,9 @@ body {
 .logout-button {
   position: absolute;
   left: 150px;
-  top: 23px;
-  width: 60px;
+  top: 11px;
+  width: 46px;
+  font-size: 12px;
   background-color: #ffc107;
   border-radius: 3px; 
   padding-left: 3px;
@@ -87,4 +99,9 @@ body {
   position: relative;
   list-style: none;
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  font-size: 12px;
+}
+
+.welcome-name:last-child {
+  color: white;
 }

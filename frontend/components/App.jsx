@@ -9,17 +9,18 @@ import { AuthRoute } from '../util/route_util';
 
 const App = () => (
   <div>
-    <header className="login-signup-container">
-      <GreetingContainer /> 
-    </header>
-    <img src="https://xceed.me/blog/wp-content/uploads/2016/10/14543965_10154139803424022_2218609089243012624_o-1024x683.jpg" className="splash-bg" />
+    
+      <GreetingContainer />    
+    {/* <img src="/assets/rave.jpg"/> */}
 
-    <div className="denizen-confidant">
+    {/* <img src="https://xceed.me/blog/wp-content/uploads/2016/10/14543965_10154139803424022_2218609089243012624_o-1024x683.jpg" className="splash-bg" /> */}
+
+    {/* <div className="denizen-confidant">
       <h1>Denizen C👽nfidant</h1>
-    </div>
+    </div> */}
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
   </div>
-);
+); 
 
 export default App;
