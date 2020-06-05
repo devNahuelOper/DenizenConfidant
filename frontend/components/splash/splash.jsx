@@ -6,7 +6,7 @@ class SplashPage extends React.Component {
     return (
      <div>
        <div className="splash-header-container">
-        <img src="/assets/berlin-rave.png" id="berlin-rave"/>
+        <img src={window.berlinUrl} id="berlin-rave"/>
        </div>
        <div className="splash-content-container">
           <nav className="main-banner">
