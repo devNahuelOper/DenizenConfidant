@@ -1,0 +1,45 @@
+.splash-header-container {
+  position: relative;
+}
+
+#berlin-rave {
+  width: 100%;
+  height: 575px;
+}
+
+.splash-content-container {
+  position: relative;
+}
+
+.main-banner {
+  position: absolute;
+  top: -4px;
+  width: 100%;
+  background-color: #b3be1b;
+  color: white;
+  // font-weight: 800;
+  
+  // text-align: left;
+  height: 70px;
+}
+
+.main-banner h1 {
+  position: absolute;
+  left: 174px;
+  top: 15px;
+  font-size: 36px;
+  letter-spacing: -1px;
+}
+
+.main-banner h1:hover {
+  opacity: 80%;
+  color: #ff0;
+  color: #2e2e2e;
+  background-image: url("/assets/ravve.png");
+  cursor: url("/assets/vinyl-record2.png"), auto;
+  background-size: 15%;
+  // background-position: center;
+  background-repeat: no-repeat;
+  background-position-x: -3.9px;
+  background-position-y: 10px;
+} 

@@ -16,7 +16,7 @@ const Greeting = ({ currentUser, logout }) => {
         {/* <li id="login-icon"></li>    */}
       </ul>
       {/* <img src="/assets/turntable.png" /> */}
-      <img src="/assets/dj3.png" />
+      <img src="/assets/dj3.png" id="dj-icon"/>
     </nav>
   );
   const personalGreeting = () => (

@@ -43,19 +43,6 @@ body {
   color: #FFA200;
 }
 
-.denizen-confidant {
-  position: relative;
-  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
-  // font-family: Arial black;
-  background-color: #b3be1b;
-  color: #333333;
-  letter-spacing: -2px;
-  font-weight: 800;
-  font-size: 24px;
-  text-align: left;
-  height: 70px;
-  /* text-shadow: 1px 1px; */
-}
 
 #login-icon {
   position: absolute;
@@ -64,7 +51,7 @@ body {
   cursor: pointer;
 }
 
-img {
+#dj-icon {
   position: absolute;
   background-color: white;
   border-radius: 3px;
