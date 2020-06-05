@@ -16,16 +16,18 @@ const Greeting = ({ currentUser, logout }) => {
         {/* <li id="login-icon"></li>    */}
       </ul>
       {/* <img src="/assets/turntable.png" /> */}
-      <img src="/assets/dj3.png" id="dj-icon"/>
+      {/* <img src="/assets/dj3.png" id="dj-icon"/> */}
     </nav>
   );
   const personalGreeting = () => (
-    <div>
+    <div className="user">
       <ul className="welcome-group">
         <li className="welcome-name">Welcome</li>
         <li className="welcome-name">{currentUser.username}</li>
       </ul>
+      <img src="/assets/dj3.png" id="dj-icon" />
       <button className="logout-button" onClick={logout}>Log Out</button>
+
     </div>
   );
 

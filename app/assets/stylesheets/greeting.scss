@@ -19,52 +19,57 @@ body {
 // }
 
 .user>ul:first-child>li {
-  height: 45px;
-  line-height: 2.8em;
+  // height: 45px;
+  // line-height: 2.8em;
   cursor: pointer;
 }
 
 .login-signup {
   color: white;
   float: left;
-  position: relative;
+  position: absolute;
+  top: 3px;
+  height: 100%;
   border-left: 1px solid;
   border-right: 1px solid;
   padding-left: 20px;
   padding-right: 53px;
+  padding-top: 11px;
   border-color: #454545;
   margin-left: 170px;
-  // line-height: 2.8em;
+  background-image: url('/assets/arrow copy.png');
+  background-repeat: no-repeat;
+  background-position-x: 157px;
+  background-position-y: 14px;
+  background-size: 12px;
 }
-
+  
 
 .login-signup:hover {
   background-color: black;
-  color: #FFA200;
-}
-
-
-#login-icon {
-  position: absolute;
-  right: 13px;
-  bottom: 0px;
+  color: white;
   cursor: pointer;
+  // color: #FFA200;
 }
+
+
+// #login-icon {
+//   position: absolute;
+//   right: 13px;
+//   bottom: 0px;
+//   cursor: pointer;
+// }
 
 #dj-icon {
   position: absolute;
-  background-color: white;
-  border-radius: 3px;
-  left: 321px;
-  top: 9px;
-  width: 1.8%;
-  height: auto;
+  top: 6px;
+  left: 14px;
 }
 
-.splash-bg {
-  position: relative;
-  height: 350px;
-}
+// .splash-bg {
+//   position: relative;
+//   height: 350px;
+// }
 
 /* .denizen-confidant::first-letter {
   rotate: 20%;
@@ -72,10 +77,9 @@ body {
 
 
 .welcome-group {
-  display: flex;
-  flex-direction: column;
-  padding-left: 53px;
-  padding-top: 9px;
+  position: absolute;
+  top: 4px;
+  left: 59px;
   font-size: 15px;
   color: #7e7e7e;
 }
@@ -83,7 +87,7 @@ body {
 .logout-button {
   position: absolute;
   left: 150px;
-  top: 11px;
+  top: 15px;
   width: 46px;
   font-size: 12px;
   background-color: #ffc107;
