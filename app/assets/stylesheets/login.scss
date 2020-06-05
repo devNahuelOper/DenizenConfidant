@@ -10,33 +10,54 @@
 #links {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
   align-items: flex-end;
-  margin-left: 429px;
-  padding-top: 25px;
+  margin-left: 488px;
+  padding-top: 22px;
 }
 
 #links li {
+  width: 141px;
   border-bottom: 2px solid;
-  padding-right: 96px;
+  // padding-right: 96px;
+  box-sizing: content-box;
+  padding-left: 8px;
+  padding-bottom: 2px;
+  margin-right: 8px;
+  cursor: pointer;
 }
 
 #links li:first-child {
   border-color: #b4bd00;
 }
 
-#links li:last-child {
-  border-color: white;
+#links li:first-child:hover {
+  background-color: #b4bd00;
 }
 
 #links li:nth-of-type(2) {
   border-color: #6b96c2;
 }
 
+#links li:nth-of-type(2):hover {
+  background-color: #6b96c2;
+}
+
 #links li:nth-of-type(3) {
   border-color: #ff0;
 }
 
+#links li:nth-of-type(3):hover {
+  background-color: #ff0;
+}
+
+#links li:last-child {
+  border-color: white;
+}
+
+#links li:last-child:hover {
+  background-color: white;
+}
 // #links li {
 //     padding-top: 8px;
 // }
@@ -94,6 +115,8 @@
 #subnav li:last-child {
   border-right: 1px solid rgba(97, 71, 71, 0.4);
 }
+
+
 
 #subnav a {
   display: block;
@@ -168,7 +191,7 @@
 }
 
 .signup-button {
-  width: 300px;
+  width: 312px;
 }
 
 .signup-form {
@@ -207,7 +230,7 @@
   box-sizing: content-box;
   padding-left: 10px;
   font-size: 36px;
-  height: 53px;
+  height: 57px;
   border: 1px solid black;
   background-color: #ffa200;
   -webkit-appearance: none;
@@ -223,8 +246,13 @@
   background-size: 13px;
 }
 
-#default-region * {
+select * {
   background-color: #ffa200;
+}
+
+#default-region-msg {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #preferred-language {
@@ -244,6 +272,31 @@
   background-image: url("/assets/arrow copy.png");
   // background-repeat: no-repeat;
   // background-position-y: center;
+}
+
+#default-region option {
+  box-sizing: content-box;
+  padding-left: 10px;
+  font-size: 36px;
+  height: 57px;
+  border: 1px solid black;
+  background-color: #ffa200;
+}
+
+#gender {
+  margin-bottom: 16px;
+}
+
+#gender input {
+  margin-right: 4px;
+}
+
+#newsletter {
+  margin-bottom: 24px;
+}
+
+#check-box {
+  margin-right: 3px;
 }
 
 // Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>

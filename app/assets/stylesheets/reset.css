@@ -31,7 +31,7 @@ input[type="password"],
 input[type="email"],
 input[type="text"],
 input[type="submit"],
-textarea,
+textarea, select, option,
 button {
   /*
   Get rid of native styling. Read more here:
@@ -45,3 +45,4 @@ button,
 input[type="submit"] {
   cursor: pointer;
 }
+

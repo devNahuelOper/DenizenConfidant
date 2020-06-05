@@ -153,7 +153,8 @@ class SignupForm extends React.Component {
                   <option value="usa">USA</option>
                   <option value="vatican city">Vatican City</option>
                 </select></li>
-              <br/>
+
+              <span id="default-region-msg">This selection is your default for viewing events, clubs and other local content.</span>
 
               <li>
                 <div>Preferred language/
@@ -182,6 +183,19 @@ class SignupForm extends React.Component {
                   <input type="radio" value="Female"/>Female
                   <br/>
                   <input type="radio" value="Other"/>Other
+                </div>
+              </li>
+
+              <li>
+                <div id="newsletter">DC Newsletter/
+                <br/>
+                  <span>
+                    <input id="check-box" type="checkbox"/>
+                    Subscribe to the weekly DC Newsletter and communications about our services, products and events.
+                    <br/>
+                    By checking this box, you aknowledge that you are checking a box.
+                  </span>
+
                 </div>
               </li>
 
