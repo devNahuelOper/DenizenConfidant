@@ -1,20 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import Dropdown from './dropdown';
+import Dropdown from './dropdown';
 
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="user">
-      <ul className="login-signup">
-        {/* <Dropdown /> */}
+      <Dropdown />
+      {/* <ul className="login-signup">
+       
         <li> 
           <Link to="/login">Login</Link>
           &nbsp;/&nbsp;
           <Link to="/signup">Register</Link>
         </li>
-        {/* <li id="login-icon"></li>    */}
-      </ul>
+        
+      </ul> */}
       {/* <img src="/assets/turntable.png" /> */}
       {/* <img src="/assets/dj3.png" id="dj-icon"/> */}
     </nav>
