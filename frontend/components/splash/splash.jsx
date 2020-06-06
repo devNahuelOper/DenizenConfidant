@@ -23,3 +23,5 @@ export default SplashPage;
 {/* <nav className="denizen-confidant">
         <h1>Denizen C👽nfidant</h1>
     </nav> */}
+
+

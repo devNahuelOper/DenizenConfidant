@@ -43,6 +43,7 @@ class LoginForm extends React.Component {
           <div id="nav-container">
             <nav id="navbar">
                 <ul id="links">
+                
                   <li>DJs</li>
                   <li>Events</li>
                   <li>Music</li>

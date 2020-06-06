@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+// import Dropdown from './dropdown';
 
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="user">
       <ul className="login-signup">
-        
+        {/* <Dropdown /> */}
         <li> 
           <Link to="/login">Login</Link>
           &nbsp;/&nbsp;
@@ -19,6 +19,8 @@ const Greeting = ({ currentUser, logout }) => {
       {/* <img src="/assets/dj3.png" id="dj-icon"/> */}
     </nav>
   );
+
+
   const personalGreeting = () => (
     <div className="user">
       <ul className="welcome-group">
@@ -37,3 +39,33 @@ const Greeting = ({ currentUser, logout }) => {
 
 
 export default Greeting;
+
+
+// import React from "react";
+
+// class Dropdown extends React.Component {
+//   constructor(props) {
+//     this.state = {
+//       drop: false
+//     }
+//     this.clicker.bind(this)
+//   }
+
+//   clicker(e) {
+//     this.setState(drop, true)
+//   }
+
+//   leave(e) {
+//     this.setState(drop, false)
+//   }
+
+
+
+//   render() {
+//     <button onFocus={this.clicker} onBlur={this.leave}>
+//       <ul className={this.state ? reveal : hide}>
+//         <li>...
+//             </ul>
+//         </button> 
+//     }
+// }

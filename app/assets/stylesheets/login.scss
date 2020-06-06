@@ -5,7 +5,15 @@
   background-color: #ffa200;
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
   height: 286px;
+  background-image: image_url("logo.png");
+  background-repeat: no-repeat;
+  background-size: 80px;
+  background-position-x: 168px;
 }
+
+// #logo {
+//   font-family: 'Audiowide', cursive;
+// }
 
 #links {
   display: flex;
