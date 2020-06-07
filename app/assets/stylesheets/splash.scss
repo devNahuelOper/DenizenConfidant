@@ -1,5 +1,29 @@
 .splash-header-container {
   position: relative;
+  background-image: image_url("berlin-rave.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 575px;
+  width: 100%
+  // background-repeat: no-repeat;
+  // background-size: 100px;
+  // background-position-x: 168px;
+}
+
+#logo {
+  position: absolute;
+  left: 160px;
+  top: 9px;
+  height: 90px;
+  width: 90px;
+}
+
+#splash-navbar {
+  background-image: image_url("logo.png");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position-x: 168px;
 }
 
 #berlin-rave {
@@ -10,9 +34,14 @@
 
 .splash-content-container {
   position: relative;
+  // background-image: image_url("logo.png");
 }
 
 .main-banner {
+  // background-image: image_url("logo.png");
+  // background-repeat: no-repeat;
+  // background-size: 100px;
+  // background-position-x: 168px;
   position: absolute;
   top: -4px;
   width: 100%;
@@ -26,11 +55,13 @@
   left: 174px;
   top: 15px;
   font-size: 36px;
+  // font-weight: bold;
   letter-spacing: -1px;
 }
 
 .main-banner h1:hover {
   opacity: 80%;
+  // font-weight: bold;
   color: #ff0;
   color: #2e2e2e;
   background-image: image_url("ravve.png");
@@ -40,4 +71,10 @@
   background-repeat: no-repeat;
   background-position-x: -3.9px;
   background-position-y: 10px;
+
+    
 } 
+
+// .main-banner h1:first-letter {
+//    font-weight: normal;
+// }

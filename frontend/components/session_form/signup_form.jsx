@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import RegionDropdown from './region_dropdown';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -7,8 +8,9 @@ class SignupForm extends React.Component {
     this.state = {
       username: '',
       password: '',
-      firstName: '',
-      lastName: ''
+      first_name: '',
+      last_name: '',
+      default_region: 'Select a country:'
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -136,11 +138,13 @@ class SignupForm extends React.Component {
                   className="signup-input" />
             </div>
           </li>
+
+              <li><RegionDropdown onChange={this.update('default_region')} /></li>
         
           <li>Default region/</li>
             <li><select id="default-region" name="countries" defaultValue="Select a country">
                   <option value="Select a country" disabled>Select a country:</option>
-                  <option value="argentina">Argentina</option>
+                <option value="argentina">Argentina</option>
                   <option value="australia">Australia</option>
                   <option value="brazil">Brazil</option>
                   <option value="canada">Canada</option>
@@ -202,7 +206,6 @@ class SignupForm extends React.Component {
               <li><input className="signup-button" type="submit" value='Submit' /></li>
             </ul>
           </form>
-
         </div>
       </div>
     )

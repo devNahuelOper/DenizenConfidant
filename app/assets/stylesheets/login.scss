@@ -141,9 +141,6 @@
 //   font-size: 16px;
 // }
 
-// select option {
-//   margin-left: 5px;
-// }
 
 .login-form-container {
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
@@ -252,6 +249,63 @@
   width: 312px;
   background-position-x: 295px;
   background-size: 13px;
+}
+
+.region-dropdown {
+  position: relative;
+  box-sizing: content-box;
+  padding-left: 10px;
+  font-size: 36px;
+  height: 57px;
+  width: 312px;
+  border: 1px solid black;
+  background-color: #ffa200;
+  color: black;
+  -webkit-appearance: none;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-image: image_url("arrow.png");
+  background-position-x: 295px;
+  background-size: 13px;
+}
+
+.region-reveal {
+  position: absolute;
+  display: block;
+  left: 0px;
+  top: 57px;
+  height: inherit;
+  width: inherit;
+}
+
+.region-reveal li:hover {
+  background-color: black;
+  color: white;
+}
+
+.region-reveal li {
+  box-sizing: border-box;
+  padding-left: 10px;
+  font-size: 18px;
+  border-bottom: none;
+  padding-top: 4px;
+  height: 30px;
+  width: 315px;
+  border-top: 1px solid black;
+  background-color: #ffa200;
+}
+
+.region-reveal li:first-child {
+  background-color: white;
+}
+
+.region-reveal li:first-child:hover {
+  background-color: black;
+  color: white;
+}
+
+.region-hide {
+  display: none;
 }
 
 select * {

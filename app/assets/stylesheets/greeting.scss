@@ -97,49 +97,61 @@ body {
 //   cursor: pointer;
 // }
 
-#dj-icon {
-  position: absolute;
-  top: 6px;
-  left: 14px;
-}
-
-// .splash-bg {
-//   position: relative;
-//   height: 350px;
-// }
-
-/* .denizen-confidant::first-letter {
-  rotate: 20%;
-} */
-
 
 .welcome-group {
+  display: flex;
   position: absolute;
-  top: 4px;
-  left: 59px;
-  font-size: 15px;
+  box-sizing: content-box;
+  padding-top: 6px;
+  padding-right: 70px;
+  margin-left: 3px;
+  // top: 6px;
+  left: 208px;
+  font-size: 16px;
   color: #7e7e7e;
+  border-right: 1px solid #404040;
+  height: 100%;
 }
 
-.logout-button {
-  position: absolute;
-  left: 150px;
-  top: 15px;
-  width: 46px;
-  font-size: 12px;
-  background-color: #ffc107;
-  border-radius: 3px; 
-  padding-left: 3px;
-  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+.welcome-group:hover {
+  background-color: black;
 }
+
 
 .welcome-name {
   position: relative;
+  line-height: 2em;
   list-style: none;
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
-  font-size: 12px;
+  font-size: 16px;
+}
+
+.welcome-name:first-child {
+  padding-left: 7px;
 }
 
 .welcome-name:last-child {
   color: white;
+  padding-left: 4px;
+}
+
+#dj-icon {
+  position: absolute;
+  left: 165px;
+  background-color: #404040;
+  padding: 10px 11px 11px 10px;
+}
+
+
+.logout-button {
+  position: absolute;
+  left: 385px;
+  top: 15px;
+  width: 46px;
+  font-size: 12px;
+  background-color: #ffc107;
+  color: #404040;
+  border-radius: 3px; 
+  padding-left: 3px;
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
 }

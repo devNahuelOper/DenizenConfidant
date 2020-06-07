@@ -6,7 +6,12 @@ class SplashPage extends React.Component {
     return (
      <div>
        <div className="splash-header-container">
-        <img src={window.berlinUrl} id="berlin-rave"/>
+         
+         {/* <nav id="splash-navbar">
+            <img src="assets/logo.png" id="logo"/>
+         </nav> */}
+          <img src="assets/logo.png" id="logo" />
+        {/* <img src={window.berlinUrl} id="berlin-rave"/> */}
        </div>
        <div className="splash-content-container">
           <nav className="main-banner">
@@ -20,8 +25,6 @@ class SplashPage extends React.Component {
 
 export default SplashPage;
 
-{/* <nav className="denizen-confidant">
-        <h1>Denizen C👽nfidant</h1>
-    </nav> */}
+
 
 

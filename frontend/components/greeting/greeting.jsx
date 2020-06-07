@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Dropdown from './dropdown';
-
+// import WelcomeDropdown from './welcome_dropdown';
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
@@ -24,6 +24,7 @@ const Greeting = ({ currentUser, logout }) => {
 
   const personalGreeting = () => (
     <div className="user">
+      {/* <WelcomeDropdown /> */}
       <ul className="welcome-group">
         <li className="welcome-name">Welcome</li>
         <li className="welcome-name">{currentUser.username}</li>
