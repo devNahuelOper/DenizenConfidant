@@ -2,21 +2,24 @@
   position: relative;
   background-image: image_url("berlin-rave.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 1565px;
   background-position: center;
+  background-position-x: 1px;
   height: 575px;
-  width: 100%
-  // background-repeat: no-repeat;
-  // background-size: 100px;
-  // background-position-x: 168px;
+  width: 100%;
 }
 
 #logo {
   position: absolute;
   left: 160px;
-  top: 9px;
-  height: 90px;
-  width: 90px;
+  top: -3px;
+  height: 100px;
+  width: 100px;
+  filter: drop-shadow(7px -2px 7px #2e2e2e);
+}
+
+#logo:hover {
+  filter: invert(1) drop-shadow(-14px 5px 5px white);
 }
 
 #splash-navbar {
@@ -52,7 +55,7 @@
 
 .main-banner h1 {
   position: absolute;
-  left: 174px;
+  left: 160px;
   top: 15px;
   font-size: 36px;
   // font-weight: bold;
@@ -71,10 +74,10 @@
   background-repeat: no-repeat;
   background-position-x: -3.9px;
   background-position-y: 10px;
-
-    
+  filter: drop-shadow(2px 4px 6px black);  
 } 
 
-// .main-banner h1:first-letter {
-//    font-weight: normal;
-// }
+.main-banner h1:first-letter:hover {
+   font-weight: bold;
+   font-size: 50px;
+}

@@ -137,9 +137,14 @@ body {
 
 #dj-icon {
   position: absolute;
-  left: 165px;
-  background-color: #404040;
-  padding: 10px 11px 11px 10px;
+  left: 163px;
+  background-color: #c1c1c1;
+  padding: 10px 11px 11px 12px;
+  filter: invert(6);
+}
+
+#dj-icon:hover {
+  filter: contrast(1.5);
 }
 
 
