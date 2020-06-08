@@ -391,17 +391,18 @@
   box-sizing: content-box;
   padding-left: 17px;
   width: 70px;
-  background-position-x: 60px;
+  background-position-x: 68px;;
 }
 .month-dropdown, .year-dropdown {
   width: 106px;
-  background-position-x: 100px;
+  background-position-x: 108px;
   box-sizing: content-box;
   padding-left: 22px;
 }
 
 .year-dropdown {
-  width: 100px;
+  width: 112px;
+  background-position-x: 114px;
 }
 
 .day-dropdown:hover, .month-dropdown:hover, .year-dropdown:hover {
