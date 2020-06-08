@@ -10,7 +10,8 @@ class SplashPage extends React.Component {
          {/* <nav id="splash-navbar">
             <img src="assets/logo.png" id="logo"/>
          </nav> */}
-          <img src="assets/logo-white.png" id="logo" />
+          {/* <img src="assets/logo-white.png" id="logo" /> */}
+          <img src={window.logoUrl} id="logo"/>
         {/* <img src={window.berlinUrl} id="berlin-rave"/> */}
        </div>
        <div className="splash-content-container">

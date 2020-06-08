@@ -30,7 +30,7 @@ class RegionDropdown extends React.Component {
       <div>Default region/
         <br/>
         <button onClick={() => {this.setState({ drop: !this.state.drop }) }} onBlur={this.leave} className="region-dropdown">
-          {this.props.defaultRegion || 'Select a country:'}  
+          {this.props.region || 'Select a country:'}  
          <ul className={this.state.drop ? "region-reveal" : "region-hide"}>
             <li>Select a country:</li>
             {countries.map(country => ( 
@@ -53,15 +53,3 @@ class RegionDropdown extends React.Component {
 
 export default RegionDropdown;
 
-// onFocus = { this.clicker } onBlur = { this.leave }
-{/* <li onClick={this.props.setDefaultRegion()}>Argentina</li>
-<li onClick={this.props.setDefaultRegion()}>Brazil</li>
-<li onClick={this.props.setDefaultRegion()}>Canada</li>
-<li onClick={this.props.setDefaultRegion()}>France</li>
-<li onClick={this.props.setDefaultRegion()}>Germany</li>
-<li onClick={this.props.setDefaultRegion()}>Italy</li>
-<li onClick={this.props.setDefaultRegion()}>Netherlands</li>
-<li onClick={this.props.setDefaultRegion()}>Spain</li>
-<li onClick={this.props.setDefaultRegion()}>United Kingdom</li>
-<li onClick={this.props.setDefaultRegion()}>United States</li>
-<li onClick={this.props.setDefaultRegion()}>Vatican City</li> */}

@@ -10,9 +10,10 @@ class SignupForm extends React.Component {
     this.state = {
       username: '',
       password: '',
-      firstName: '',
-      lastName: '',
-      defaultRegion: null,
+      fname: '',
+      lname: '',
+      email: '',
+      region: null,
       language: null,
       birthday: {
         day: 1,
@@ -34,7 +35,6 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // debugger
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
@@ -111,8 +111,8 @@ class SignupForm extends React.Component {
                 <br/>
                 <input
                     type="text"
-                    value={this.state.username}
-                    onChange={this.update('username')}
+                    value={this.state.email}
+                    onChange={this.update('email')}
                     className="email-input" />
               </div>
 
@@ -121,8 +121,8 @@ class SignupForm extends React.Component {
               <div>Confirm email/
                 <br/>
                 <input type="text"
-                    value={this.state.username}
-                    onChange={this.update('username')}
+                    value={this.state.email}
+                    onChange={this.update('email')}
                     className="email-input"
                   />
               </div>
@@ -135,8 +135,8 @@ class SignupForm extends React.Component {
               <br/>  
               <input
                   type="text"
-                  value={this.state.firstName}
-                  onChange={this.update('firstName')}
+                  value={this.state.fname}
+                  onChange={this.update('fname')}
                   className="signup-input" />
             </div>
         
@@ -145,15 +145,15 @@ class SignupForm extends React.Component {
               <br/>
               <input
                   type="text"
-                  value={this.state.lastName}
-                  onChange={this.update('lastName')}
+                  value={this.state.lname}
+                  onChange={this.update('lname')}
                   className="signup-input" />
             </div>
           </li>
 
               <li><RegionDropdown 
-                    defaultRegion={this.state.defaultRegion}
-                    onChange={(region) => this.setState({defaultRegion: region})}/>
+                    region={this.state.region}
+                    onChange={(region) => this.setState({region: region})}/>
               </li>
         
           {/* <li>Default region/</li>
