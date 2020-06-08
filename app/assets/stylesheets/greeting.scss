@@ -27,8 +27,9 @@ body {
 
 .login-signup {
   color: white;
-  float: left;
+  // float: left;
   position: absolute;
+  left: -5px;
   // top: 3px;
   // top: -1px;
   height: 100%;
@@ -160,3 +161,4 @@ body {
   padding-left: 3px;
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
 }
+
