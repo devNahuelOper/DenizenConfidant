@@ -335,27 +335,6 @@
   background-size: 13px;
 }
 
-.month-dropdown, .year-dropdown {
-  width: 110px;
-  background-position-x: 100px;
-}
-
-.day-dropdown {
-  width: 70px;
-  background-position-x: 60px;
-}
-
-
-.day-dropdown:hover, .month-dropdown:hover, .year-dropdown:hover {
-  background-color: black;
-  color: white;
-}
-
-.day-dropdown li:hover, .month-dropdown li:hover, .year-dropdown li:hover {
-  background-color: black;
-  color: white;
-}
-
 .language-reveal, .day-reveal, .month-reveal, .year-reveal {
   position: absolute;
   display: block;
@@ -375,10 +354,6 @@
   width: 154px;
   border-top: 1px solid black;
   background-color: #ffa200;
-}
-
-.day-reveal li, .month-reveal li, .year-reveal li {
-  width: 70%;
 }
 
 .language-reveal li:first-child {
@@ -412,6 +387,36 @@
   background-image: image_url("arrowhite.png");
 }
 
+.day-dropdown {
+  box-sizing: content-box;
+  padding-left: 17px;
+  width: 70px;
+  background-position-x: 60px;
+}
+.month-dropdown, .year-dropdown {
+  width: 106px;
+  background-position-x: 100px;
+  box-sizing: content-box;
+  padding-left: 22px;
+}
+
+.year-dropdown {
+  width: 100px;
+}
+
+.day-dropdown:hover, .month-dropdown:hover, .year-dropdown:hover {
+  background-color: black;
+  color: white;
+}
+
+.day-dropdown li:hover, .month-dropdown li:hover, .year-dropdown li:hover {
+  background-color: black;
+  color: white;
+}
+
+.day-reveal li, .month-reveal li, .year-reveal li {
+  width: 70%;
+}
 
 
 #gender {
@@ -430,5 +435,20 @@
   margin-right: 3px;
 }
 
+.demo-login {
+  position: absolute;
+  right: 131px;
+  top: 352px;
+  height: 154px;
+  width: 312px;
+  color: #fff;
+  background-color: #404040;
+}
+
+#demo-notice {
+  position: absolute;
+  top: 17px;
+  left: 7px;
+}
 // Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 

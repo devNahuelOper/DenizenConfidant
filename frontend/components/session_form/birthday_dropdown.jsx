@@ -4,28 +4,28 @@ class BirthdayDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      default_region: 'Select a country:',
-      drop: false
+      day: false,
+      month: false,
+      year: false
     }
-    this.clicker = this.clicker.bind(this);
-    this.leave = this.leave.bind(this);
+    // this.clicker = this.clicker.bind(this);
+    // this.leave = this.leave.bind(this);
   }
 
-  clicker(e) {
-    e.preventDefault();
-    this.setState({ "drop": true });
+  leave(field) {
+    return e => {
+      this.setState({
+        [field]: false
+      })
+    }
+    // e.stopPropagation();
+    // this.setState({ "drop": true });
   }
 
-  leave(e) {
-    e.preventDefault();
-    this.setState({ "drop": false });
-  }
-
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
+  // leave(e) {
+  //   e.stopPropagation();
+  //   this.setState({ "drop": false });
+  // }
 
 
   render() {
@@ -36,15 +36,15 @@ class BirthdayDropdown extends React.Component {
     return (
       <div>Birthday/
         <br />
-        <button onClick={() => { this.setState({ drop: !this.state.drop }) }} onBlur={this.leave} className="day-dropdown">
-          {this.props.birthday || '1'}
-          <ul className={this.state.drop ? "day-reveal" : "day-hide"}>
+        <button onClick={() => { this.setState({ day: !this.state.day }) }} onBlur={this.leave('day')} className="day-dropdown">
+          {this.props.birthday.day}
+          <ul className={this.state.day ? "day-reveal" : "day-hide"}>
             {/* <li>Select a country:</li> */}
             {days.map(day => (
               <li key={day}
                 onClick={() => {
 
-                  this.props.onChange(day);
+                  this.props.handleChange('day', day);
                 }}
               >
                 {day}
@@ -53,15 +53,15 @@ class BirthdayDropdown extends React.Component {
 
           </ul>
         </button>
-        <button onClick={() => { this.setState({ drop: !this.state.drop }) }} onBlur={this.leave} className="month-dropdown">
-          {this.props.birthday || 'Jan'}
-          <ul className={this.state.drop ? "month-reveal" : "month-hide"}>
+        <button onClick={() => { this.setState({ month: !this.state.month }) }} onBlur={this.leave('month')} className="month-dropdown">
+          {this.props.birthday.month}
+          <ul className={this.state.month ? "month-reveal" : "month-hide"}>
             {/* <li>Select a country:</li> */}
             {months.map(month => (
               <li key={month}
                 onClick={() => {
 
-                  this.props.onChange(month);
+                  this.props.handleChange('month', month);
                 }}
               >
                 {month}
@@ -70,15 +70,15 @@ class BirthdayDropdown extends React.Component {
 
           </ul>
         </button>
-        <button onClick={() => { this.setState({ drop: !this.state.drop }) }} onBlur={this.leave} className="year-dropdown">
-          {this.props.birthday || '----'}
-          <ul className={this.state.drop ? "year-reveal" : "year-hide"}>
+        <button onClick={() => { this.setState({ year: !this.state.year }) }} onBlur={this.leave('year')} className="year-dropdown">
+          {this.props.birthday.year}
+          <ul className={this.state.year ? "year-reveal" : "year-hide"}>
             {/* <li>Select a country:</li> */}
             {years.map(year => (
               <li key={year}
                 onClick={() => {
 
-                  this.props.onChange(year);
+                  this.props.handleChange('year', year);
                 }}
               >
                 {year}

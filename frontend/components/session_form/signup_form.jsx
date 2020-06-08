@@ -10,23 +10,31 @@ class SignupForm extends React.Component {
     this.state = {
       username: '',
       password: '',
-      first_name: '',
-      last_name: '',
+      firstName: '',
+      lastName: '',
       defaultRegion: null,
       language: null,
-      birthday: null
+      birthday: {
+        day: 1,
+        month: 'Jan',
+        year: '----'
+      }
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
-    return e => this.setState({
+    return e => {
+      e.preventDefault();
+      this.setState({
       [field]: e.currentTarget.value
-    });
+    });}
+
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    // debugger
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
@@ -71,7 +79,7 @@ class SignupForm extends React.Component {
     <div className="signup-form-container">
 
           {this.renderErrors()}
-  <form onSubmit={this.handleSubmit} >
+  <form>
 
     <ul className="signup-form">
        <li>  
@@ -174,7 +182,12 @@ class SignupForm extends React.Component {
 
          <div><BirthdayDropdown 
                   birthday={this.state.birthday}
-                  onChange={(birthday) => this.setState({ birthday: birthday })} /></div>
+                  handleChange={(field, input) => {
+                    const newBirthday = this.state.birthday;
+                    newBirthday[field] = input;
+                    this.setState({birthday: newBirthday});
+                  }
+                  } /></div>
               </li>
 
               {/* <li>
@@ -219,10 +232,16 @@ class SignupForm extends React.Component {
 
                 </div>
               </li>
-                <li><button className="signup-button">Submit</button></li>
+                <li><button onClick={this.handleSubmit} className="signup-button">Submit</button></li>
               {/* <li><input className="signup-button" type="submit" value='Submit' /></li> */}
             </ul>
           </form>
+
+          <div className="demo-login">
+             <span id="demo-notice">See a demo login of a Denizen Confidant user by clicking below.</span>
+             
+          </div>
+
         </div>
       </div>
     )

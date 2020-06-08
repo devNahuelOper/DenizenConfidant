@@ -5,7 +5,6 @@ class LanguageDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      default_region: 'Select a country:',
       drop: false
     }
     this.clicker = this.clicker.bind(this);
@@ -13,12 +12,12 @@ class LanguageDropdown extends React.Component {
   }
 
   clicker(e) {
-    e.preventDefault();
+    e.stopPropagation();
     this.setState({ "drop": true });
   }
 
   leave(e) {
-    e.preventDefault();
+    e.stopPropagation();
     this.setState({ "drop": false });
   }
 

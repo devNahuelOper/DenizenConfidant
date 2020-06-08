@@ -6,7 +6,6 @@ class RegionDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      default_region : 'Select a country:',
       drop: false
     }
     this.clicker = this.clicker.bind(this);
@@ -14,19 +13,13 @@ class RegionDropdown extends React.Component {
   }
 
   clicker(e) {
-    e.preventDefault();
+    e.stopPropagation();
     this.setState({ "drop": true });
   }
 
   leave(e) {
-    e.preventDefault();
+    e.stopPropagation();
     this.setState({ "drop": false });
-  }
-
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
   }
 
 
@@ -36,7 +29,7 @@ class RegionDropdown extends React.Component {
     return (
       <div>Default region/
         <br/>
-        <button onClick={() => { this.setState({ drop: !this.state.drop }) }} onBlur={this.leave} className="region-dropdown">
+        <button onClick={() => {this.setState({ drop: !this.state.drop }) }} onBlur={this.leave} className="region-dropdown">
           {this.props.defaultRegion || 'Select a country:'}  
          <ul className={this.state.drop ? "region-reveal" : "region-hide"}>
             <li>Select a country:</li>
