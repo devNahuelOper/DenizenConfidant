@@ -279,7 +279,7 @@
   z-index: 2;
 }
 
-.region-reveal li:hover {
+.region-reveal li:hover, .day-reveal li:hover, .month-reveal li:hover, .year-reveal li:hover {
   background-color: black;
   color: white;
 }
@@ -317,7 +317,7 @@
   margin-bottom: 10px;
 }
 
-#preferred-language {
+#preferred-language, .day-dropdown, .month-dropdown, .year-dropdown {
   position: relative;
   box-sizing: content-box;
   padding-left: 10px;
@@ -335,7 +335,28 @@
   background-size: 13px;
 }
 
-.language-reveal {
+.month-dropdown, .year-dropdown {
+  width: 110px;
+  background-position-x: 100px;
+}
+
+.day-dropdown {
+  width: 70px;
+  background-position-x: 60px;
+}
+
+
+.day-dropdown:hover, .month-dropdown:hover, .year-dropdown:hover {
+  background-color: black;
+  color: white;
+}
+
+.day-dropdown li:hover, .month-dropdown li:hover, .year-dropdown li:hover {
+  background-color: black;
+  color: white;
+}
+
+.language-reveal, .day-reveal, .month-reveal, .year-reveal {
   position: absolute;
   display: block;
   left: 0px;
@@ -344,7 +365,7 @@
   width: inherit;
 }
 
-.language-reveal li {
+.language-reveal li, .day-reveal li, .month-reveal li, .year-reveal li {
   box-sizing: border-box;
   padding-left: 10px;
   font-size: 18px;
@@ -356,10 +377,20 @@
   background-color: #ffa200;
 }
 
+.day-reveal li, .month-reveal li, .year-reveal li {
+  width: 70%;
+}
+
 .language-reveal li:first-child {
   line-height: 18px;
   color: black;
   background-color: white;
+}
+
+.language-reveal:hover, .region-reveal:hover, .day-reveal:hover, .month-reveal:hover, .year-reveal:hover {
+  height: 0px;
+  background-color: inherit;
+  color: black;
 }
 
 .language-reveal li:hover {
@@ -367,7 +398,7 @@
   color: white;
 }
 
-.language-hide {
+.language-hide, .day-hide, .month-hide, .year-hide {
   display: none;
 }
 
@@ -377,11 +408,11 @@
   cursor: pointer;
 }
 
-.region-dropdown:hover, #preferred-language:hover {
+.region-dropdown:hover, #preferred-language:hover, .day-dropdown:hover, .month-dropdown:hover, .year-dropdown:hover {
   background-image: image_url("arrowhite.png");
-  // background-repeat: no-repeat;
-  // background-position-y: center;
 }
+
+
 
 #gender {
   margin-bottom: 16px;

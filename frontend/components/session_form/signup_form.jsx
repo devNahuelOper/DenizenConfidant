@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import RegionDropdown from './region_dropdown';
 import LanguageDropdown from './language_dropdown';
+import BirthdayDropdown from './birthday_dropdown';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class SignupForm extends React.Component {
       first_name: '',
       last_name: '',
       defaultRegion: null,
-      language: null
+      language: null,
+      birthday: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -165,9 +167,14 @@ class SignupForm extends React.Component {
 
               <span id="default-region-msg">This selection is your default for viewing events, clubs and other local content.</span>
 
-              <li><LanguageDropdown 
-                    language={this.state.language}
-                    onChange={(language) => this.setState({language: language})}/>
+              <li>
+          <div><LanguageDropdown 
+                  language={this.state.language}
+                  onChange={(language) => this.setState({ language: language })} /></div>
+
+         <div><BirthdayDropdown 
+                  birthday={this.state.birthday}
+                  onChange={(birthday) => this.setState({ birthday: birthday })} /></div>
               </li>
 
               {/* <li>
