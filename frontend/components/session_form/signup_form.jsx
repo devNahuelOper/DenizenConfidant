@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import RegionDropdown from './region_dropdown';
+import LanguageDropdown from './language_dropdown';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -10,7 +11,8 @@ class SignupForm extends React.Component {
       password: '',
       first_name: '',
       last_name: '',
-      defaultRegion: null
+      defaultRegion: null,
+      language: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -163,7 +165,12 @@ class SignupForm extends React.Component {
 
               <span id="default-region-msg">This selection is your default for viewing events, clubs and other local content.</span>
 
-              <li>
+              <li><LanguageDropdown 
+                    language={this.state.language}
+                    onChange={(language) => this.setState({language: language})}/>
+              </li>
+
+              {/* <li>
                 <div>Preferred language/
                   <br/>
                   <select id="preferred-language" defaultValue="English">
@@ -180,7 +187,7 @@ class SignupForm extends React.Component {
                     <option value="Dothraki">Dothraki</option>
                   </select>
                 </div>
-              </li>
+              </li> */}
 
               <li>
                 <div id="gender">Gender/

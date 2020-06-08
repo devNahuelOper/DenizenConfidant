@@ -276,6 +276,7 @@
   top: 57px;
   height: inherit;
   width: inherit;
+  z-index: 2;
 }
 
 .region-reveal li:hover {
@@ -293,9 +294,12 @@
   width: 315px;
   border-top: 1px solid black;
   background-color: #ffa200;
+  // z-index: 2;
 }
 
 .region-reveal li:first-child {
+  line-height: 18px;
+  color: black;
   background-color: white;
 }
 
@@ -308,41 +312,75 @@
   display: none;
 }
 
-select * {
-  background-color: #ffa200;
-}
-
 #default-region-msg {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 #preferred-language {
-  width: 154px;
-  margin-bottom: 10px;
-  background-position-x: 144px;
+  position: relative;
+  box-sizing: content-box;
+  padding-left: 10px;
+  font-size: 36px;
+  height: 57px;
+  width: 210px;
+  border: 1px solid black;
+  background-color: #ffa200;
+  color: black;
+  -webkit-appearance: none;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-image: image_url("arrow.png");
+  background-position-x: 198px;
   background-size: 13px;
 }
 
-#default-region:hover, #preferred-language:hover, .login-button:hover, .signup-button:hover {
+.language-reveal {
+  position: absolute;
+  display: block;
+  left: 0px;
+  top: 57px;
+  height: inherit;
+  width: inherit;
+}
+
+.language-reveal li {
+  box-sizing: border-box;
+  padding-left: 10px;
+  font-size: 18px;
+  border-bottom: none;
+  padding-top: 4px;
+  height: 30px;
+  width: 154px;
+  border-top: 1px solid black;
+  background-color: #ffa200;
+}
+
+.language-reveal li:first-child {
+  line-height: 18px;
+  color: black;
+  background-color: white;
+}
+
+.language-reveal li:hover {
+  background-color: black;
+  color: white;
+}
+
+.language-hide {
+  display: none;
+}
+
+.region-dropdown:hover, #preferred-language:hover, .login-button:hover, .signup-button:hover {
   background-color: black;
   color: white;
   cursor: pointer;
 }
 
-#default-region:hover, #preferred-language:hover {
+.region-dropdown:hover, #preferred-language:hover {
   background-image: image_url("arrowhite.png");
   // background-repeat: no-repeat;
   // background-position-y: center;
-}
-
-#default-region option {
-  box-sizing: content-box;
-  padding-left: 10px;
-  font-size: 36px;
-  height: 57px;
-  border: 1px solid black;
-  background-color: #ffa200;
 }
 
 #gender {

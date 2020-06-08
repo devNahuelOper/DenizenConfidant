@@ -29,9 +29,6 @@ class RegionDropdown extends React.Component {
     });
   }
 
-  // setDefaultRegion() {
-
-  // }
 
   render() {
     const countries = ['Argentina', 'Brazil', 'Canada', 'China', 'France', 'Germany',
