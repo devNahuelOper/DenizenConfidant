@@ -29,25 +29,31 @@ class RegionDropdown extends React.Component {
     });
   }
 
+  // setDefaultRegion() {
+
+  // }
+
   render() {
+    const countries = ['Argentina', 'Brazil', 'Canada', 'China', 'France', 'Germany',
+    'Italy', 'Japan', 'Netherlands', 'North Korea', 'Spain', 'United Kingdom', 'United States'];
     return (
       <div>Default region/
         <br/>
-        <button onChange={this.update('default_region')} onFocus={this.clicker} onBlur={this.leave} className="region-dropdown">
-          Select a country:
+        <button onClick={() => { this.setState({ drop: !this.state.drop }) }} onBlur={this.leave} className="region-dropdown">
+          {this.props.defaultRegion || 'Select a country:'}  
          <ul className={this.state.drop ? "region-reveal" : "region-hide"}>
             <li>Select a country:</li>
-            <li>Argentina</li>
-            <li>Brazil</li>
-            <li>Canada</li>
-            <li>France</li>
-            <li>Germany</li>
-            <li>Italy</li>
-            <li>Netherlands</li>
-            <li>Spain</li>
-            <li>United Kingdom</li>
-            <li>United States</li>
-            <li>Vatican City</li>
+            {countries.map(country => ( 
+              <li key={country} 
+                  onClick={() => {
+                 
+                  this.props.onChange(country);
+                }}
+                >
+                {country}
+              </li>
+            ))}
+            
           </ul>
         </button>
       </div>
@@ -56,3 +62,16 @@ class RegionDropdown extends React.Component {
 }
 
 export default RegionDropdown;
+
+// onFocus = { this.clicker } onBlur = { this.leave }
+{/* <li onClick={this.props.setDefaultRegion()}>Argentina</li>
+<li onClick={this.props.setDefaultRegion()}>Brazil</li>
+<li onClick={this.props.setDefaultRegion()}>Canada</li>
+<li onClick={this.props.setDefaultRegion()}>France</li>
+<li onClick={this.props.setDefaultRegion()}>Germany</li>
+<li onClick={this.props.setDefaultRegion()}>Italy</li>
+<li onClick={this.props.setDefaultRegion()}>Netherlands</li>
+<li onClick={this.props.setDefaultRegion()}>Spain</li>
+<li onClick={this.props.setDefaultRegion()}>United Kingdom</li>
+<li onClick={this.props.setDefaultRegion()}>United States</li>
+<li onClick={this.props.setDefaultRegion()}>Vatican City</li> */}

@@ -10,7 +10,7 @@ class SignupForm extends React.Component {
       password: '',
       first_name: '',
       last_name: '',
-      default_region: 'Select a country:'
+      defaultRegion: null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -139,10 +139,13 @@ class SignupForm extends React.Component {
             </div>
           </li>
 
-              <li><RegionDropdown onChange={this.update('default_region')} /></li>
+              <li><RegionDropdown 
+                    defaultRegion={this.state.defaultRegion}
+                    onChange={(region) => this.setState({defaultRegion: region})}/>
+              </li>
         
-          <li>Default region/</li>
-            <li><select id="default-region" name="countries" defaultValue="Select a country">
+          {/* <li>Default region/</li>
+            <li><select onChange={this.update('default_region')} value={this.state.default_region} id="default-region" name="countries" defaultValue="Select a country">
                   <option value="Select a country" disabled>Select a country:</option>
                 <option value="argentina">Argentina</option>
                   <option value="australia">Australia</option>
@@ -156,7 +159,7 @@ class SignupForm extends React.Component {
                   <option value="uk">UK</option>
                   <option value="usa">USA</option>
                   <option value="vatican city">Vatican City</option>
-                </select></li>
+                </select></li> */}
 
               <span id="default-region-msg">This selection is your default for viewing events, clubs and other local content.</span>
 
@@ -202,8 +205,8 @@ class SignupForm extends React.Component {
 
                 </div>
               </li>
-
-              <li><input className="signup-button" type="submit" value='Submit' /></li>
+                <li><button className="signup-button">Submit</button></li>
+              {/* <li><input className="signup-button" type="submit" value='Submit' /></li> */}
             </ul>
           </form>
         </div>
