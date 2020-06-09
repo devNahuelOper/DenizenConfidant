@@ -29,7 +29,8 @@ const Greeting = ({ currentUser, logout }) => {
         <li className="welcome-name">Welcome</li>
         <li className="welcome-name">{currentUser.username}</li>
       </ul>
-      <img src="/assets/dj3.png" id="dj-icon" />
+      {/* <img src="/assets/dj3.png" id="dj-icon" /> */}
+      <img src={window.djUrl} id="dj-icon"/>
       <button className="logout-button" onClick={logout}>Log Out</button>
 
     </div>
