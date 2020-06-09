@@ -37,6 +37,9 @@
 
 .splash-content-container {
   position: relative;
+  background-color: #595959;
+  border-bottom: 1px #7a7a7a solid;
+  height: 500px;
   // background-image: image_url("logo.png");
 }
 
@@ -115,3 +118,14 @@
     }
 } 
 
+#splash-caption {
+  position: absolute;
+  bottom: 40px;
+  left: 159px;
+  color: white;
+  font-size: 55px;
+
+    :last-child {
+      opacity: 70%;
+    }
+}

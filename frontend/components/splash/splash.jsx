@@ -30,19 +30,16 @@ class SplashPage extends React.Component {
     return (
      <div>
        <div className="splash-header-container">
-         
-         {/* <nav id="splash-navbar">
-            <img src="assets/logo.png" id="logo"/>
-         </nav> */}
-         
-          {/* <img src="assets/logo-white.png" id="logo" /> */}
           <img src={window.logoUrl} id="logo"/>
-        {/* <img src={window.berlinUrl} id="berlin-rave"/> */}
+          <section id="splash-caption">
+            <h1>Club Greyscale</h1>
+            <h1>Rumpin' thumpin' in... <br/> the Warehouse District</h1>
+          </section>
        </div>
        <div className="splash-content-container">
           <nav className="main-banner">
             <h1 className="denizen-confidant">Denizen Confidant</h1>
-            {/* <SplashCalendar /> */}
+        
             <ul className="days">
               <li className="day">{yesterdayMinus.toDateString().split(' ')[0]}
                 <h1>{yesterdayMinus.getDate()}</h1>
