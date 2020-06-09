@@ -53,7 +53,7 @@
   height: 70px;
 }
 
-.main-banner h1 {
+.denizen-confidant {
   position: absolute;
   left: 160px;
   top: 15px;
@@ -62,7 +62,7 @@
   letter-spacing: -1px;
 }
 
-.main-banner h1:hover {
+.denizen-confidant:hover {
   opacity: 80%;
   // font-weight: bold;
   color: #ff0;
@@ -81,3 +81,37 @@
    font-weight: bold;
    font-size: 50px;
 }
+
+.days {
+  display: flex;
+  position: absolute;
+  right: 155px;
+  border-right: 1px solid white;
+
+    .day {
+      line-height: 31px;
+      font-size: 12px;
+      box-sizing: border-box;
+      padding-left: 11px;
+      border-left: 1px solid white;
+      width: 80px;
+      height: 70px;
+    }
+
+    :nth-of-type(3) {
+      background-color: white;
+      color: black;
+    }
+
+    h1 {
+      font-size: 36px;
+      padding-left: 19px;
+      line-height: 13px;
+    }
+
+    :hover {
+      background-color: black;
+      color: white;
+    }
+} 
+
