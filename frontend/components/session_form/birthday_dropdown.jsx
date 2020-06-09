@@ -34,7 +34,7 @@ class BirthdayDropdown extends React.Component {
     'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].reverse();
     const years = Array.from(Array(2020).keys()).slice(1910).reverse();
     return (
-      <div>Birthday/
+      <div>Birthday /
         <br />
         <button onClick={() => { this.setState({ day: !this.state.day }) }} onBlur={this.leave('day')} className="day-dropdown">
           {this.props.birthday.day}

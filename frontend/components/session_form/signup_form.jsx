@@ -19,9 +19,16 @@ class SignupForm extends React.Component {
         day: 1,
         month: 'Jan',
         year: '----'
-      }
+      },
+      gender: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.checker = this.checker.bind(this);
+  }
+
+  checker(e) {
+    e.stopPropagation();
+    this.setState({ gender: e.target.value });
   }
 
   update(field) {
@@ -83,7 +90,7 @@ class SignupForm extends React.Component {
 
     <ul className="signup-form">
        <li>  
-          <div>Username/
+          <div>Username /
             <br/>
             <input
                 type="text"
@@ -94,7 +101,7 @@ class SignupForm extends React.Component {
          
               <br />
 
-          <div>Password/
+          <div>Password /
             <br/>
               <input type="password"
                 value={this.state.password}
@@ -107,7 +114,7 @@ class SignupForm extends React.Component {
               
 
             <li>
-              <div>Email address/
+              <div>Email address /
                 <br/>
                 <input
                     type="text"
@@ -118,7 +125,7 @@ class SignupForm extends React.Component {
 
                 <br />
 
-              <div>Confirm email/
+              <div>Confirm email /
                 <br/>
                 <input type="text"
                     value={this.state.email}
@@ -131,7 +138,7 @@ class SignupForm extends React.Component {
            
 
           <li>
-            <div>First Name/
+            <div>First Name /
               <br/>  
               <input
                   type="text"
@@ -141,7 +148,7 @@ class SignupForm extends React.Component {
             </div>
         
               <br/>
-            <div>Surname/
+            <div>Surname /
               <br/>
               <input
                   type="text"
@@ -210,22 +217,22 @@ class SignupForm extends React.Component {
               </li> */}
 
               <li>
-                <div id="gender">Gender/
+                <div id="gender">Gender /
                 <br/>
-                  <input type="radio" value="Male"/>Male
+                  <input type="radio" id="Male" value={"Male"} checked={this.state.gender === "Male"} onChange={this.checker}/>Male
                   <br/>
-                  <input type="radio" value="Female"/>Female
+                  <input type="radio" id="Female" value={"Female"} checked={this.state.gender === "Female"} onChange={this.checker}/>Female
                   <br/>
-                  <input type="radio" value="Other"/>Other
+                  <input type="radio" id="Other" value={"Other"} checked={this.state.gender === "Other"} onChange={this.checker}/>Other
                 </div>
               </li>
 
               <li>
-                <div id="newsletter">DC Newsletter/
+                <div id="newsletter">DC Newsletter /
                 <br/>
                   <span>
                     <input id="check-box" type="checkbox"/>
-                    Subscribe to the weekly DC Newsletter and communications about our services, products and events.
+                    Subscribe to the weekly DC Newsletter which doesn't exist, and is only here to fill space for styling.
                     <br/>
                     By checking this box, you aknowledge that you are checking a box.
                   </span>

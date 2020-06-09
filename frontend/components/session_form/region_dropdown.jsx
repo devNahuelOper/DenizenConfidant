@@ -27,7 +27,7 @@ class RegionDropdown extends React.Component {
     const countries = ['Argentina', 'Brazil', 'Canada', 'China', 'France', 'Germany',
     'Italy', 'Japan', 'Netherlands', 'North Korea', 'Spain', 'United Kingdom', 'United States'];
     return (
-      <div>Default region/
+      <div>Default region /
         <br/>
         <button onClick={() => {this.setState({ drop: !this.state.drop }) }} onBlur={this.leave} className="region-dropdown">
           {this.props.region || 'Select a country:'}  

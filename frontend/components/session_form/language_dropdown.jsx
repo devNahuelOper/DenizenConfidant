@@ -27,7 +27,7 @@ class LanguageDropdown extends React.Component {
     'French', 'German', 'Italian', 'Portuguese', 'Russian', 'Dutch', 'Dothraki'];
   
     return (
-      <div>Preferred language/
+      <div>Preferred language /
         <br />
         <button onClick={() => { this.setState({ drop: !this.state.drop }) }} onBlur={this.leave} id="preferred-language">
           {this.props.language || 'English'}
