@@ -227,6 +227,12 @@
   color: #9c9c9c;
 }
 
+.signup-form input {
+  color: black;
+  box-sizing: border-box;
+  padding-left: 5px;
+}
+
 #no-space {
   margin-bottom: 10px;
 }
@@ -449,7 +455,30 @@
 #demo-notice {
   position: absolute;
   top: 17px;
-  left: 7px;
+  left: 10px;
 }
+
+#demo-button {
+  height: 46px;
+  width: 294px;
+  background-color: #3b5998;
+  position: absolute;
+  top: 65px;
+  left: 9px;
+  font-size: 26px;
+  color: white;
+  box-sizing: border-box;
+  padding-left: 66px;
+  background-image: image_url("ravve.png");
+  background-size: 38px;
+  background-repeat: no-repeat;
+  background-position-x: 188px;
+  background-position-y: 3px;
+}
+
+#demo-button:hover {
+  background-color: black;
+}
+
 // Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 

@@ -239,7 +239,7 @@ class SignupForm extends React.Component {
 
           <div className="demo-login">
              <span id="demo-notice">See a demo login of a Denizen Confidant user by clicking below.</span>
-             
+             <button id="demo-button" onClick={this.props.demoUser}>Login with </button>
           </div>
 
         </div>
