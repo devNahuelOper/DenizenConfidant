@@ -349,8 +349,15 @@
   display: block;
   left: 0px;
   top: 57px;
-  height: inherit;
+  z-index: 1000;
+  // height: inherit;
   width: inherit;
+}
+
+.year-reveal {
+  max-height:200px;
+  // overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .language-reveal li, .day-reveal li, .month-reveal li, .year-reveal li {
@@ -371,16 +378,16 @@
   background-color: white;
 }
 
-.language-reveal:hover, .region-reveal:hover, .day-reveal:hover, .month-reveal:hover, .year-reveal:hover {
+.language-reveal:hover, .region-reveal:hover, .day-reveal:hover, .month-reveal:hover {
   height: 0px;
   background-color: inherit;
   color: black;
 }
 
-.language-reveal li:hover {
-  background-color: black;
-  color: white;
-}
+// .language-reveal li:hover {
+//   background-color: black;
+//   color: white;
+// }
 
 .language-hide, .day-hide, .month-hide, .year-hide {
   display: none;
@@ -394,6 +401,15 @@
 
 .region-dropdown:hover, #preferred-language:hover, .day-dropdown:hover, .month-dropdown:hover, .year-dropdown:hover {
   background-image: image_url("arrowhite.png");
+    li {
+      color: black;
+      background-color: #ffa200;
+    }
+}
+
+.region-dropdown li:hover, #preferred-language li:hover {
+  background-color: black;
+  color: white;
 }
 
 .day-dropdown {
@@ -417,6 +433,11 @@
 .day-dropdown:hover, .month-dropdown:hover, .year-dropdown:hover {
   background-color: black;
   color: white;
+
+    li {
+      color: black;
+      background-color: #ffa200;
+    }
 }
 
 .day-dropdown li:hover, .month-dropdown li:hover, .year-dropdown li:hover {
