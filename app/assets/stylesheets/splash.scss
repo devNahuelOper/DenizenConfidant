@@ -1,6 +1,6 @@
 .splash-header-container {
   position: relative;
-  background-image: image_url("berlin-rave.png");
+  background-image: image_url("red-rave.png");
   background-repeat: no-repeat;
   background-size: 1565px;
   background-position: center;
@@ -265,7 +265,10 @@ h3 {
 }
 
 .react-slideshow-container .nav:first-of-type {
-  margin-right: -200px;
+  position: absolute !important;
+  opacity: 30% !important;
+  left: 121px !important;
+  margin-right: -30px;
   border-right: none;
   border-top: none;
 }
@@ -277,7 +280,8 @@ h3 {
 }
 
 .react-slideshow-container .nav:last-of-type {
-  margin-left: -200px;
+  margin-left: -147px !important;
+  opacity: 30% !important;
 }
 
 .react-slideshow-container .nav:last-of-type span {
@@ -313,3 +317,4 @@ h3 {
   opacity: 100% !important;
   background: white !important;
 }
+
