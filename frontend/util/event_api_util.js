@@ -34,3 +34,4 @@ export const deleteEvent = id => (
     url: `api/events/${id}`
   })
 );
+

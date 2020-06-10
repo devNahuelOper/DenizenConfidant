@@ -5,6 +5,9 @@ import EventIndexItem from './event_index_item';
 
 
 class EventIndex extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   componentDidMount() {
     this.props.fetchEvents();
@@ -15,12 +18,12 @@ class EventIndex extends React.Component {
 
     return (
       <div>
-        <ul>
+        <ul className="eventlist">
           {events.map(event => 
           <EventIndexItem key={event.id} event={event}/>
             )}
         </ul>
-        <Link></Link>
+        <Link to='/events'>Submit event</Link>
       </div>
     )
   }

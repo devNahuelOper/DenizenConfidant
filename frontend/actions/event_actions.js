@@ -16,10 +16,11 @@ export const receiveEvent = event => ({
 
 export const removeEvent = id => ({
   type: REMOVE_EVENT,
+  id
 });
 
-export const fetchEvents = () => dispatch => (
-  EventApiUtil.fetchEvents()
+export const fetchEvents = events => dispatch => (
+  EventApiUtil.fetchEvents(events)
     .then(events => dispatch(receiveEvents(events)))
 );
 
@@ -40,5 +41,5 @@ export const updateEvent = event => dispatch => (
 
 export const deleteEvent = id => dispatch => (
   EventApiUtil.deleteEvent(id)
-    .then(() => dispatch(removeEvent()))
+    .then(() => dispatch(removeEvent(id)))
 );

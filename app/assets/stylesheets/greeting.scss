@@ -29,14 +29,14 @@ body {
   color: white;
   // float: left;
   position: absolute;
-  left: -5px;
+  left: -5.8px;
   // top: 3px;
   // top: -1px;
   height: 100%;
   border-left: 1px solid;
   border-right: 1px solid;
   padding-left: 20px;
-  padding-right: 53px;
+  padding-right: 54px;
   // padding-top: 11px;
   border-color: #454545;
   margin-left: 170px;
@@ -45,8 +45,8 @@ body {
   background-repeat: no-repeat;
   background-position-x: 157px;
   // background-position-y: 14px;
-  background-position-y: 17px;
-  background-size: 12px;
+  background-position-y: 19px;
+  background-size: 10px;
 }
 
 .reveal {
@@ -68,11 +68,12 @@ body {
   padding-top: 12px;
   border: 1px solid #454545;
   height: 50%;
-   
+  width: 100%;
 }
 
 .log-link {
   width: 100%;
+  padding-right: 133px;
 }
 
 .reveal li:hover {
@@ -197,9 +198,9 @@ body {
 
 
       img {
-        height: 40px;
-        width: 40px;
-        margin-right: 9px;
+        height: 30px;
+        width: 30px;
+        // margin-right: 9px;
         filter: invert(1);
       }
     }

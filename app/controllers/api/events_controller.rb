@@ -4,39 +4,39 @@ class Api::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      render :json "api/events"
+      render json: "api/events"
     else
-      render :json @event.errors.full_messages
+      render json: @event.errors.full_messages
     end
   end
 
   def index
     @events = Event.all
-    render :json "api/events"
+    render json: "api/events"
   end
 
   def show
     @event = Event.find(params[:id])
-    render :json "api/events/:id"
+    render json: "api/events/:id"
   end
 
   def edit
     @event = Event.find(params[:id])
-    render :json "api/events/:id"
+    render json: "api/events/:id"
   end
 
   def update
     @event = Event.find(params[:id])
     if !@event.update(event_params)
-      render :json @event.errors.full_messages
+      render json: @event.errors.full_messages
     end
-      render :json "api/events/:id"
+      render json: "api/events/:id"
   end
 
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    render :json "api/events/:id"
+    render json: "api/events/:id"
   end
 
   private

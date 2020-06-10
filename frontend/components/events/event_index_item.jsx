@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const EventIndexItem = ({ event, deleteEvent}) => (
-  <li>
+  <li className="eventlist-item">
     <Link to={`/events/${event.id}`}>{event.name}</Link>
       <span>{event.venue} - {event.location}</span>
       <span>{event.headliners}</span>
