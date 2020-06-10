@@ -21,9 +21,10 @@ class ImageCarousel extends React.Component {
       window.raveNiteUrl,
       window.transmissionUrl,
       window.tbilisiRaveUrl,
-      // window.berlinUrl,
+      window.etherealUrl,
       window.berghainUrl,
-      window.edcUrl
+      // window.berlinUrl,
+      // window.edcUrl
       // 'assets/berlin-rave.png',
       // 'assets/rave.jpg',
       // 'assets/rave2.png'
@@ -91,9 +92,14 @@ class ImageCarousel extends React.Component {
           <div className="each-fade">
             <div className="image-container">
               <img src={fadeImages[4]} />
-              <h2>😍🤩🥳</h2>
+              {/* <h2>😍🤩🥳</h2> */}
             </div>
             <h2></h2>
+          </div>
+          <div className="each-fade">
+            <div className="image-container">
+              <img src={fadeImages[5]} />
+            </div>
           </div>
         </Fade>
       </div>
