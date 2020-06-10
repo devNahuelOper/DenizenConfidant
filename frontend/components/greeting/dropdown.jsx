@@ -25,7 +25,7 @@ class Dropdown extends React.Component {
      <div>
        <button onFocus={this.clicker} onBlur={this.leave} className="login-signup">Login / Register
          <ul className={this.state.drop ? "reveal" : "hide"}>
-            <li><Link to="/login">Login</Link></li>
+            <li><Link className="log-link" to="/login">Login</Link></li>
             <li><Link to="/signup">Register</Link></li>
          </ul>
        </button> 

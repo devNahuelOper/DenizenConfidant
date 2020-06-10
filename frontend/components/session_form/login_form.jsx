@@ -55,7 +55,7 @@ class LoginForm extends React.Component {
 
             <section id="subnav">
               <ul>
-                <li><Link to="/login">Login</Link></li>
+                <li className="form"><Link to="/login">Login</Link></li>
                 <li><Link to="/signup">Register</Link></li>
                 <li><Link to="/">Take me back home</Link></li>
               </ul>

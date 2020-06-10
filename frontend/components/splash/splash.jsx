@@ -1,4 +1,5 @@
 import React from 'react';
+import ImageCarousel from './image_carousel';
 // import SplashCalendar from './splash_calendar';
 
 class SplashPage extends React.Component {
@@ -31,10 +32,11 @@ class SplashPage extends React.Component {
      <div>
        <div className="splash-header-container">
           <img src={window.logoUrl} id="logo"/>
-          <section id="splash-caption">
+          <ImageCarousel /> 
+          {/* <section id="splash-caption">
             <h1>Club Greyscale</h1>
             <h1>Rumpin' thumpin' in... <br/> the Warehouse District</h1>
-          </section>
+          </section> */}
        </div>
        <div className="splash-content-container">
           <nav className="main-banner">
@@ -57,7 +59,8 @@ class SplashPage extends React.Component {
                 <h1>{tomorrowPlus.getDate()}</h1>
               </li>
             </ul>
-          </nav> 
+          </nav>
+          {/* <ImageCarousel />  */}
        </div>
      </div>
     )
