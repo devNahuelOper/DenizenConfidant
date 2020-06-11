@@ -68,7 +68,18 @@ class SplashPage extends React.Component {
               </li>
             </ul>
           </nav>
-          {/* <ImageCarousel />  */}
+
+          <section className="content">
+            <h2>Murmurs</h2>
+            <ul className="articles">
+              <li>
+                <a href="https://www.society19.com/uk/heres-what-its-like-to-go-to-an-underground-rave/">
+                  <h1>Here's what it's like... <br/> to 
+                  go to an underground rave.</h1>
+                <img src={window.undergroundUrl} id="underground"/></a>
+              </li>
+            </ul>
+          </section>
        </div>
      </div>
     )
