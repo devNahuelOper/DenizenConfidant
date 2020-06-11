@@ -341,25 +341,46 @@ h3 {
   // background-image: image_url("logo.png");
 
   .content {
-    position: absolute;
+    position: relative;
     top: 87px;
     left: 163px;
     color: #b4bd00;
 
     h2 {
+      position: absolute;
       color: white;
       border-bottom: 2px solid #b4bd00;
-      width: 888px;
+      width: 894px;
       line-height: 27px;
     }
 
-    .articles {
+    h3 {
       position: absolute;
+        right: 329px;
+      top: -13px;
+      background-color: #b4bd00;
+      width: 140px;
+    }
+
+    .articles {
+      position: relative;
       top: 50px;
+      left: -300px;
 
       img {
-        height: 250px;
-        width: 400px;
+        height: 230px;
+        width: 342px;
+      }
+
+      #underground {
+        position: absolute;
+        left: 300px;
+      }
+
+      #accessories {
+        position: absolute;
+        right: 186px;
+        top: 174px;
       }
 
       li {
@@ -368,22 +389,45 @@ h3 {
 
       
         h1 {
-          font-size: 28px;
-          padding-left: 15px;
+          font-size: 30px;
+          line-height: 1em;
           height: 64px;
           margin-left: 20px;
+
+          :last-of-type {
+              position: absolute;
+              left: -34px;
+          }
         }
       }
+
+      
 
       a {
         display: flex;
         flex-direction: row-reverse;
+        margin-right: 113px;
         :hover {
           background-color: #b4bd00;
           color: #2a2a2a;
         }
       }
     }
+  }
+
+  #acc-capt {
+    position: absolute;
+    left: 281px;
+    top: 335px; 
+    background-image: image_url("pacifier.png");
+    background-repeat: no-repeat;
+    background-position-x: 300px;
+    background-position-y: 34px;
+  }
+
+  #und-capt {
+    position: relative;
+    right: 58px;
   }
 }
 
