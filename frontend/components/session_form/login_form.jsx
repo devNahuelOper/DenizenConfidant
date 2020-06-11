@@ -42,10 +42,10 @@ class LoginForm extends React.Component {
         
           <div id="nav-container">
             <nav id="navbar">
+              
                 <ul id="links">
-                
                   <li>DJs</li>
-                  <li>Events</li>
+              <li><Link to="/events">Events</Link></li>
                   <li>Music</li>
                   <li>Search</li>
                 </ul>
@@ -69,20 +69,23 @@ class LoginForm extends React.Component {
 
             <br/>
             <ul>
-              <li>Username or email/</li>
+              <li>Username or email /</li>
               <li><input 
                   type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
                   className="login-input"/></li>
-            <br/>
-              <li>Password/</li>
+            {/* <br/> */}
+              <li>Password /</li>
             <li><input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
               /></li>
-            <br/>   
+            {/* <br/>    */}
+            <li><input id="check-box" type="checkbox"/>'member?
+              <img src={window.memberUrl} id="member"/>
+            </li>
             <li><input className="login-button" type="submit" value={this.props.formType} /></li>
             </ul>
          </form>

@@ -16,13 +16,22 @@
 //   font-family: 'Audiowide', cursive;
 // }
 
+// #links {
+//   display: flex;
+//   flex-direction: row;
+//   // justify-content: space-evenly;
+//   align-items: flex-end;
+//   margin-left: 488px;
+//   padding-top: 22px;
+// }
+
 #links {
+  position: absolute;
+  top: 24px;
+  left: 490px;
+  z-index: 1000;
   display: flex;
   flex-direction: row;
-  // justify-content: space-evenly;
-  align-items: flex-end;
-  margin-left: 488px;
-  padding-top: 22px;
 }
 
 #links li {
@@ -87,11 +96,12 @@
 
 #nav-container h1 {
   position: absolute;
-  top: 168px;
+  top: 167px;
+  left: 164px;
   font-size: 64px;
   letter-spacing: -2px;
   font-weight: 500;
-  margin-left: 173px;
+  // margin-left: 173px;
   padding-bottom: 6px;
 }
 
@@ -108,7 +118,7 @@
   // border-top: 1px solid rgba(97, 71, 71, 0.4);
 
 #subnav ul {
-  margin-left: 174px;
+  margin-left: 164px;
 }
 
 #subnav li {
@@ -123,6 +133,7 @@
 
 #subnav li:last-child {
   border-right: 1px solid rgba(97, 71, 71, 0.4);
+  padding-right: 5px;
 }
 
 
@@ -146,7 +157,7 @@
 .login-form-container {
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
   position: relative;
-  height: 500px;
+  height: 353px;
   border-bottom: 1px #585858 solid;
   // background-color:  #404040;
 }
@@ -160,20 +171,27 @@
 
 .login-form {
   position: absolute;
-  top: 7px;
-  left: 175px;
+  top: 6px;
+  left: 164px;
   display: flex;
   flex-direction: column;
   color: white;
   // width: 240px;
+  #check-box {
+    margin-right: 4px;
+    margin-bottom: 12px;
+  }
 }
 
 .login-input {
   box-sizing: border-box;
-  padding-left: 7px;
+  padding-left: 5px;
+  margin-bottom: 9px;
+  margin-top: 1px;
   color: black;
-  height: 30px;
+  height: 28px;
   width: 240px;
+  border-radius: 1px;
 }
 
 .signup-input {
@@ -195,7 +213,7 @@
   height: 40px;
   width: 240px;
   text-align: center;
-  font-size: 22px;
+  font-size: 24px;
 }
 
 .signup-button {
@@ -506,6 +524,15 @@
 
 .form {
   background-color: white;
+  border: 0px 1px 0px 1px solid black;
+}
+
+#member {
+  position: absolute;
+  left: 91px;
+  bottom: 48px;
+  height: 20px;
+  width: 20px;
 }
 
 // Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>

@@ -66,7 +66,7 @@ class SignupForm extends React.Component {
           <nav id="navbar">
             <ul id="links">
               <li>DJs</li>
-              <li>Events</li>
+              <li><Link to="/events">Events</Link></li>
               <li>Music</li>
               <li>Search</li>
             </ul>

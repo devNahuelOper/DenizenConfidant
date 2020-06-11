@@ -3,7 +3,7 @@ import EventShow from './event_show';
 import { fetchEvent } from '../../actions/event_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  event: state.events[ownProps.match.params.event.id]
+  event: state.events[ownProps.match.params.id]
 });
 
 const mapDispatchToProps = dispatch => ({

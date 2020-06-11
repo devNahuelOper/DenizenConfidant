@@ -1,0 +1,87 @@
+
+.events-index {
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  font-size: 16px;
+  background-color: #fff;
+
+
+  .events-nav-container {
+    color: white;
+    position: relative;
+    background-color: #6b96c2;
+    width: 1280px;
+    height: 215px;
+
+    #logo {
+      filter: none;
+      :hover {
+        filter: none;
+      }
+    }
+
+    #links {
+      color: white;
+      :hover {
+       color: #2e2e2e;
+      }
+      li:nth-of-type(2) {
+        color: #2e2e2e;
+        background-color: #fff;
+      }
+    }
+
+    h1 {
+      letter-spacing: -2px;
+      line-height: 1em;
+      padding-top: 141px;
+      font-size: 64px;
+      margin: 0 auto;
+      width: 952px;
+      font-weight: normal;
+      display: block;
+    } 
+  }
+
+  #events-subnav {
+    height: 40px;
+    width: 1280px;
+    background-color: #6b96c2;
+    border-top: 1px solid rgba(255,255,255,.4);
+    position: relative;
+    color: white;
+
+    ul {
+      width: 952px;
+      margin: 0 auto;
+    }
+
+    li {
+      float: left;
+      border-left: 1px solid rgba(255,255,255,.4);
+    }
+
+    li:last-child {
+      border-right: 1px solid rgba(255,255,255,.4);
+    }
+    
+    //  .on a {
+    //   color: #000 !important;
+    //   // background-color: #fff;
+    //   background-color: #000;
+    //   }
+
+    a {
+      display: block;
+      color: #fff;
+      padding: 10px 14px;
+      line-height: 19px;
+      
+    }
+
+    .form {
+      color: black;
+      background-color:  #fff;
+    }
+  }
+
+}

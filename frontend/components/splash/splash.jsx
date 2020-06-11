@@ -1,6 +1,7 @@
 import React from 'react';
 import ImageCarousel from './image_carousel';
 // import SplashCalendar from './splash_calendar';
+import { Link } from 'react-router-dom';
 
 class SplashPage extends React.Component {
   constructor(props) {
@@ -32,6 +33,13 @@ class SplashPage extends React.Component {
      <div>
        <div className="splash-header-container">
           <img src={window.logoUrl} id="logo"/>
+          <ul id="links">
+            <li>DJs</li>
+            <li><Link to="/events">Events</Link></li>
+            <li>Music</li>
+            <li>Search</li>
+          </ul>
+          
           <ImageCarousel /> 
           {/* <section id="splash-caption">
             <h1>Club Greyscale</h1>

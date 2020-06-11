@@ -24,13 +24,15 @@ const Greeting = ({ currentUser, logout }) => {
 
   const personalGreeting = () => (
     <div className="user">
-      {/* <WelcomeDropdown /> */}
+     
       <ul className="welcome-group">
         <li className="welcome-name">Welcome</li>
         <li className="welcome-name">{currentUser.username}</li>
+        {/* <WelcomeDropdown /> */}
       </ul>
       {/* <img src="/assets/dj3.png" id="dj-icon" /> */}
       <img src={window.djUrl} id="dj-icon"/>
+      {/* <WelcomeDropdown onClick={logout}/> */}
       <button className="logout-button" onClick={logout}>Log Out</button>
 
     </div>
