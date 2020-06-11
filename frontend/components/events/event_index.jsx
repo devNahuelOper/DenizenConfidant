@@ -37,13 +37,14 @@ class EventIndex extends React.Component {
             <li><Link to='/events/:id'>Submit an event</Link></li>
             </ul>
           </section>
+          <div className="top-events">
+            <h1 id="content-title">Top Events Worldwide</h1>
         <ul className="eventlist">
           {events.map(event => 
           <EventIndexItem key={event.id} event={event}/>
             )}
         </ul>
-      {/* </div> */}
-        
+          </div>
       </div>
     )
   }

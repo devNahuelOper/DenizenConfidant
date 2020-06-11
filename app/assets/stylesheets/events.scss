@@ -84,4 +84,51 @@
     }
   }
 
+  .top-events {
+    position: relative;
+    // left: 164px;
+    padding: 20px 0;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+
+    #content-title {
+      position: relative;
+      left: 164px;
+      font-size: 24px;
+      width: 75%;
+      padding-bottom: 2px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid  #6b96c2;
+    }
+
+    .eventlist {
+      position: relative;
+      left: 164px;
+      white-space: nowrap;
+      
+      .event {
+        white-space: normal;
+        max-width: 1057px;
+        font-size: 14px;
+        #event-name {
+          text-decoration: underline;
+          font-size: 18px;
+        }
+        #event-date {
+
+        }
+        #venue {
+
+        }
+        #headliners {
+
+        }
+        #description {
+          font-size: 12px;
+        }
+      }
+    }
+
+  }
+
 }
