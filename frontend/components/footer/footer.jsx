@@ -24,6 +24,10 @@ class Footer extends React.Component {
             </a>
           </li>
         </ul>
+        <div>
+          DC: Denizen Confidant is a clone of
+          <a href="https://www.residentadvisor.net/"> RA: Resident Advisor</a>
+        </div>
       </div>
     )
   }

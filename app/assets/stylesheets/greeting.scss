@@ -225,4 +225,15 @@ body {
     #git-logo {
      border-radius: 17px;
     }
+
+    div {
+      position: absolute;
+      bottom: 157px;
+      left: 64px;
+
+      a {
+        color: #ffa200;
+        padding-left: 2px;
+      }
+    }
 }
