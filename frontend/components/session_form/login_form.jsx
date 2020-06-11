@@ -7,7 +7,8 @@ class LoginForm extends React.Component {
     this.state = {
       username: '',
       password: ''
-    };
+    }
+    this.localErrors = {}
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -25,10 +26,10 @@ class LoginForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="errors">
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
+          <li key={`error-${i}`} className="error">
+           <p>{error}</p>
           </li>
         ))}
       </ul>
@@ -74,7 +75,9 @@ class LoginForm extends React.Component {
                   type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
-                  className="login-input"/></li>
+                  className="login-input"/>
+                
+                </li>
             {/* <br/> */}
               <li>Password /</li>
             <li><input type="password"
@@ -82,6 +85,7 @@ class LoginForm extends React.Component {
                 onChange={this.update('password')}
                 className="login-input"
               /></li>
+              <p className="inlineError">{this.localErrors.username}</p>
             {/* <br/>    */}
             <li><input id="check-box" type="checkbox"/>'member?
               <img src={window.memberUrl} id="member"/>

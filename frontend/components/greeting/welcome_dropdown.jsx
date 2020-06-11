@@ -21,15 +21,14 @@
 //   }
 
 //   render() {
-//     // const { currentUser, logout } = this.props;
+//     const { currentUser, logout } = this.props;
 //     return (
 //       <div>
 //         <button onFocus={this.clicker} onBlur={this.leave} className="login-signup">Welcome
 //          <ul className={this.state.drop ? "reveal" : "hide"}>
-//             <li onClick={logout}>Log out</li>
-//             <li><Link to="/login" onClick={logout}>Log Out</Link></li>
-//             {/* <li><a onClick={logout}>Log Out</a></li> */}
-//             {/* <button onClick={logout}>Log Out</button> */}
+//             {/* <li onClick={logout}>Log out</li> */}
+//             {/* <li><Link to="/login" onClick={logout}>Log Out</Link></li> */}
+//             <li><a role="button" onClick={logout}>Log out</a></li>
 //           </ul>
 //         </button>
       

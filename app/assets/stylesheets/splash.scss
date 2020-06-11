@@ -189,7 +189,8 @@ h3 {
  
 .each-fade {
   //  width: 1420px;
-  height: 571px;
+  height: 575px;
+  // height: 100%;
   display: flex;
 
   .image-container {
@@ -199,7 +200,7 @@ h3 {
     top: -119px;
 
     img {
-      width: 100%;
+      width: 105%;
     }
   }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Dropdown from './dropdown';
-// import WelcomeDropdown from './welcome_dropdown';
+import WelcomeDropdown from './welcome_dropdown';
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
@@ -33,7 +33,10 @@ const Greeting = ({ currentUser, logout }) => {
       {/* <img src="/assets/dj3.png" id="dj-icon" /> */}
       <img src={window.djUrl} id="dj-icon"/>
       {/* <WelcomeDropdown onClick={logout}/> */}
-      <button className="logout-button" onClick={logout}>Log Out</button>
+      {/* <WelcomeDropdown />  */}
+      <button className="logout-button" onClick={logout}>
+        <img src={window.logoutUrl}/>
+      </button>
 
     </div>
   );
