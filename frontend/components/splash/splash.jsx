@@ -117,6 +117,66 @@ class SplashPage extends React.Component {
               <h1>Beats</h1>
               <h2>more beats</h2>
             </div>
+            <div className="beatwrap">
+              <ul className="beatlist">
+                <li className="song">
+                  <article>
+                    <img src={window.gesaffelsteinUrl} id="gesaffelstein"/>
+                    <a href="">
+                      Gesaffelstein - Depravity
+                    </a>
+
+                  </article>
+                </li>
+
+                <li className="song">
+                  <article>
+                    <img src={window.deadmau5Url} id="deadmau5"/>
+                    <a href="">
+                      Deadmau5 - Stereo Fidelity
+                    </a>
+                  </article>
+                </li>
+
+                <li className="song">
+                  <article>
+                    <img src={window.noisufUrl} id="noisuf"/>
+                    <a href="">
+                      Noisuf X - Count to Seven
+                    </a>
+                  </article>
+                </li>
+
+                <li className="song">
+                  <article>
+                    <img src={window.nomanaUrl} id="nomana"/>
+                    <a href="">
+                      No Mana - VVVR
+                    </a>
+
+                  </article>
+                </li>
+
+                <li className="song">
+                  <article>
+                    <img src={window.kayzoUrl} id="kayzo"/>
+                    <a href="">
+                      Kayzo - The Fire
+                    </a>
+
+                  </article>
+                </li>
+                <li className="song">
+                  <article>
+                    <img src={window.prydzUrl} id="prydz" />
+                    <a href="">
+                      Eric Prydz - The Matrix
+                    </a>
+
+                  </article>
+                </li>
+              </ul>
+            </div>
           </section>
        </div>
      </div>
