@@ -2,6 +2,8 @@ import React from 'react';
 import ImageCarousel from './image_carousel';
 // import SplashCalendar from './splash_calendar';
 import { Link } from 'react-router-dom';
+// import Sound from 'react-sound';
+// import SoundComponent from './sound';
 
 class SplashPage extends React.Component {
   constructor(props) {
@@ -31,6 +33,7 @@ class SplashPage extends React.Component {
     let today = this.state.date.getDate();
     return (
      <div>
+       
        <div className="splash-header-container">
           <img src={window.logoUrl} id="logo"/>
           <ul id="links">
@@ -103,15 +106,19 @@ class SplashPage extends React.Component {
                       <div id="main-image">
                         <img src={window.raveAccUrl} id="accessories"/>
                       </div>
+                      </a>
                       <div id="caption2">
+                          <a href="https://www.jonesaroundtheworld.com/festival-accessories-gear-must-haves/">
                           <h1 id="acc-capt">Top 44 festival accessories</h1>
+                          </a>
                       </div>
-                    </a>
+                    
                   </article>
                 </div>
               </li>
             </ul>
           </section>
+     
           <section className="beats">
             <div className="beats-banner">
               <h1>Beats</h1>
@@ -122,7 +129,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.gesaffelsteinUrl} id="gesaffelstein"/>
-                    <a href="">
+                    <a href="https://www.youtube.com/watch?v=3boEAV4uUUU">
                       Gesaffelstein - Depravity
                     </a>
 
@@ -132,7 +139,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.deadmau5Url} id="deadmau5"/>
-                    <a href="">
+                    <a href="https://www.youtube.com/watch?v=jVM_CjZLdOc">
                       Deadmau5 - Stereo Fidelity
                     </a>
                   </article>
@@ -141,7 +148,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.noisufUrl} id="noisuf"/>
-                    <a href="">
+                    <a href="https://www.youtube.com/watch?v=lmxH1L7uubQ">
                       Noisuf X - Count to Seven
                     </a>
                   </article>
@@ -150,7 +157,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.nomanaUrl} id="nomana"/>
-                    <a href="">
+                    <a href="https://www.youtube.com/watch?v=WtGUGnVE5uU">
                       No Mana - VVVR
                     </a>
 
@@ -160,7 +167,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.kayzoUrl} id="kayzo"/>
-                    <a href="">
+                    <a href="https://www.youtube.com/watch?v=-M8xBwVpET8">
                       Kayzo - The Fire
                     </a>
 
@@ -169,7 +176,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.prydzUrl} id="prydz" />
-                    <a href="">
+                    <a href="https://www.youtube.com/watch?v=jMro9nsr1OI">
                       Eric Prydz - The Matrix
                     </a>
 

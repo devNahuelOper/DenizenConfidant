@@ -5,6 +5,7 @@ import WelcomeDropdown from './welcome_dropdown';
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
+    
     <nav className="user">
       <Dropdown />
       {/* <ul className="login-signup">

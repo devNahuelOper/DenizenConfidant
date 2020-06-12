@@ -77,10 +77,10 @@ class ImageCarousel extends React.Component {
           <div className="each-fade">
             <div className="image-container">
               <img src={fadeImages[2]} />
-              {/* <section id="splash-caption">
-                <h1>Club Greyscale</h1>
-                <h1>Rumpin' thumpin' in... <br /> the Warehouse District</h1>
-              </section> */}
+              <section id="neon-caption">
+                <h1>3 days in the Neon Jungle</h1>
+                {/* <h1>Rumpin' thumpin' in... <br /> the Warehouse District</h1> */}
+              </section>
             </div>
             <h2></h2>
           </div>
@@ -99,6 +99,10 @@ class ImageCarousel extends React.Component {
           <div className="each-fade">
             <div className="image-container">
               <img src={fadeImages[5]} />
+              <section id="splash-caption">
+                <h1>Think you're getting in to Berghain?</h1>
+                <h1>Think again.</h1>
+              </section>
             </div>
           </div>
         </Fade>
