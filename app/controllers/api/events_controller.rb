@@ -17,7 +17,8 @@ class Api::EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    render json: "api/events/:id"
+    render :show
+    # render json: "api/events/:id"
   end
 
   def edit

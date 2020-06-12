@@ -5,12 +5,12 @@ class EventShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+
     }
   }
 
   componentDidMount() {
-    this.props.fetchEvent(this.props.match.params.id);
+    this.props.fetchEvent(this.props.match.params.event.id);
   }
 
   render() {
@@ -27,7 +27,8 @@ class EventShow extends React.Component {
         <ul>
           <li>
             <section className="eventshow-subheader">
-              {event.date} {event.venue}
+              <h3>{event.date}</h3> 
+              <h3>{event.venue}</h3>
             </section>
           </li>
           <li className="eventshow-details">

@@ -70,21 +70,53 @@ class SplashPage extends React.Component {
           </nav>
 
           <section className="content">
-            <h2>Pulse</h2>
-            <h3 id="space">.</h3>
+            <div className="news-banner">
+              <h1>Pulse</h1>
+              <h2>more pulse</h2>
+            </div>
+            {/* <h3 id="space">.</h3> */}
+
             <ul className="articles">
               <li>
+                <div className="main-article">
+                <article>
+                  
                 <a href="https://www.society19.com/uk/heres-what-its-like-to-go-to-an-underground-rave/">
-                  <h1 id="und-capt">Here's what it's like... <br/> to 
-                  go to an underground rave.</h1>
-                <img src={window.undergroundUrl} id="underground"/></a>
+                  <div>
+                    <div id="main-image">
+                      <img src={window.undergroundUrl} id="underground"/>
+                    </div>
+                    <div id="caption">
+                        <h1 id="und-capt">Here's what it's like to go to an underground rave...</h1>
+                        {/* <h6>Our man Peemo shares his experience</h6> */}
+                    </div>
+                  </div>
+                </a>
+                </article>
+                </div>
               </li>
+
               <li>
-                <a href="https://www.jonesaroundtheworld.com/festival-accessories-gear-must-haves/">
-                <img src={window.raveAccUrl} id="accessories"/>
-                <h1 id="acc-capt">Top 44 festival accessories, <br/> gear and must-haves</h1></a>
+                <div className="main-article">
+                  <article>
+                    <a href="https://www.jonesaroundtheworld.com/festival-accessories-gear-must-haves/">
+                      <div id="main-image">
+                        <img src={window.raveAccUrl} id="accessories"/>
+                      </div>
+                      <div id="caption2">
+                          <h1 id="acc-capt">Top 44 festival accessories</h1>
+                      </div>
+                    </a>
+                  </article>
+                </div>
               </li>
             </ul>
+          </section>
+          <section className="beats">
+            <div className="beats-banner">
+              <h1>Beats</h1>
+              <h2>more beats</h2>
+            </div>
           </section>
        </div>
      </div>
