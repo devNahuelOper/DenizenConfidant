@@ -7,13 +7,13 @@ class Footer extends React.Component {
       <div className="footer">
         <ul className="footer-links">
           <li>
-            <a href="https://github.com/devNahuelOper/DenizenConfidant-.git">
+            <a href="https://github.com/devNahuelOper/DenizenConfidant-.git" target="_blank">
               <img src={window.gitUrl} id="git-logo"/>
             </a>
           </li>
           <br/>
           <li>
-            <a href="https://www.linkedin.com/in/nahuel-gorosito-a2a41524/">
+            <a href="https://www.linkedin.com/in/nahuel-gorosito-a2a41524/" target="_blank">
               <img src={window.linkUrl} id="link-logo"/>
             </a>
           </li>
@@ -26,7 +26,7 @@ class Footer extends React.Component {
         </ul>
         <div>
           DC: Denizen Confidant is a clone of
-          <a href="https://www.residentadvisor.net/"> RA: Resident Advisor</a>
+          <a href="https://www.residentadvisor.net/" target="_blank"> RA: Resident Advisor</a>
         </div>
       </div>
     )

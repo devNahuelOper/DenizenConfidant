@@ -103,7 +103,7 @@ class SplashPage extends React.Component {
                 <div className="main-article">
                 <article>
                   
-                <a href="https://www.society19.com/uk/heres-what-its-like-to-go-to-an-underground-rave/">
+                    <a href="https://www.society19.com/uk/heres-what-its-like-to-go-to-an-underground-rave/" target="_blank">
                   <div>
                     <div id="main-image">
                       <img src={window.undergroundUrl} id="underground"/>
@@ -121,13 +121,13 @@ class SplashPage extends React.Component {
               <li>
                 <div className="main-article">
                   <article>
-                    <a href="https://www.jonesaroundtheworld.com/festival-accessories-gear-must-haves/">
+                    <a href="https://www.jonesaroundtheworld.com/festival-accessories-gear-must-haves/" target="_blank">
                       <div id="main-image">
                         <img src={window.raveAccUrl} id="accessories"/>
                       </div>
                       </a>
                       <div id="caption2">
-                          <a href="https://www.jonesaroundtheworld.com/festival-accessories-gear-must-haves/">
+                      <a href="https://www.jonesaroundtheworld.com/festival-accessories-gear-must-haves/" target="_blank">
                           <h1 id="acc-capt">Top 44 festival accessories</h1>
                           </a>
                       </div>
@@ -148,7 +148,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.gesaffelsteinUrl} id="gesaffelstein"/>
-                    <a href="https://www.youtube.com/watch?v=3boEAV4uUUU">
+                    <a href="https://www.youtube.com/watch?v=3boEAV4uUUU" target="_blank">
                       Gesaffelstein - Depravity
                     </a>
 
@@ -158,7 +158,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.deadmau5Url} id="deadmau5"/>
-                    <a href="https://www.youtube.com/watch?v=jVM_CjZLdOc">
+                    <a href="https://www.youtube.com/watch?v=jVM_CjZLdOc" target="_blank">
                       Deadmau5 - Stereo Fidelity
                     </a>
                   </article>
@@ -167,7 +167,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.noisufUrl} id="noisuf"/>
-                    <a href="https://www.youtube.com/watch?v=lmxH1L7uubQ">
+                    <a href="https://www.youtube.com/watch?v=lmxH1L7uubQ" target="_blank">
                       Noisuf X - Count to Seven
                     </a>
                   </article>
@@ -176,7 +176,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.nomanaUrl} id="nomana"/>
-                    <a href="https://www.youtube.com/watch?v=WtGUGnVE5uU">
+                    <a href="https://www.youtube.com/watch?v=WtGUGnVE5uU" target="_blank">
                       No Mana - VVVR
                     </a>
 
@@ -186,7 +186,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.kayzoUrl} id="kayzo"/>
-                    <a href="https://www.youtube.com/watch?v=-M8xBwVpET8">
+                    <a href="https://www.youtube.com/watch?v=-M8xBwVpET8" target="_blank">
                       Kayzo - The Fire
                     </a>
 
@@ -195,7 +195,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.prydzUrl} id="prydz" />
-                    <a href="https://www.youtube.com/watch?v=jMro9nsr1OI">
+                    <a href="https://www.youtube.com/watch?v=jMro9nsr1OI" target="_blank">
                       Eric Prydz - The Matrix
                     </a>
 

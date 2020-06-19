@@ -10,7 +10,9 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render "api/users/show"
     else
-      render json: ["That username and password combination is incorrect. Please try another."], status: 401
+      render json: ["That username and password combination is incorrect. 
+        Remember, passwords are case sensitive."], status: 401
+      # render json: ["That username and password combination is incorrect. Please try another."], status: 401
     end
   end
 

@@ -12,6 +12,10 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // componentWillUnmount() {
+  //   this.props.clearErrors();
+  // }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -35,6 +39,7 @@ class LoginForm extends React.Component {
       </ul>
     );
   }
+  
 
   render() {
     
@@ -65,7 +70,7 @@ class LoginForm extends React.Component {
           </div>
         <div className="login-form-container">
 
-          {this.renderErrors()}
+          {/* {this.renderErrors()} */}
           <form onSubmit={this.handleSubmit} className="login-form">
 
             <br/>
@@ -76,8 +81,11 @@ class LoginForm extends React.Component {
                   value={this.state.username}
                   onChange={this.update('username')}
                   className="login-input"/>
-                
+                 
+                  {/* {this.state.session.errors[0]} */}
+                {/* <p className="reg-error">{errors['username']}</p> */}
                 </li>
+             
             {/* <br/> */}
               <li>Password /</li>
             <li><input type="password"
@@ -85,7 +93,10 @@ class LoginForm extends React.Component {
                 onChange={this.update('password')}
                 className="login-input"
               /></li>
-              <p className="inlineError">{this.localErrors.username}</p>
+              <div className="error-container">
+              <p className="errors">{this.props.errors[0]}</p>
+              </div>
+              {/* <p className="inlineError">{this.localErrors.username}</p> */}
             {/* <br/>    */}
             <li><input id="check-box" type="checkbox"/>'member?
               <img src={window.memberUrl} id="member"/>
