@@ -8,8 +8,7 @@ class BirthdayDropdown extends React.Component {
       month: false,
       year: false
     }
-    // this.clicker = this.clicker.bind(this);
-    // this.leave = this.leave.bind(this);
+
   }
 
   leave(field) {
@@ -18,14 +17,8 @@ class BirthdayDropdown extends React.Component {
         [field]: false
       })
     }
-    // e.stopPropagation();
-    // this.setState({ "drop": true });
+ 
   }
-
-  // leave(e) {
-  //   e.stopPropagation();
-  //   this.setState({ "drop": false });
-  // }
 
 
   render() {

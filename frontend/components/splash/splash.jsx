@@ -1,9 +1,12 @@
 import React from 'react';
 import ImageCarousel from './image_carousel';
-// import SplashCalendar from './splash_calendar';
 import { Link } from 'react-router-dom';
 // import Sound from 'react-sound';
 // import SoundComponent from './sound';
+// import UIfx from 'uifx';
+// import beepMp3 from './my-sounds/beep.mp3'
+
+// const beep = new UIfx(beepMp3)
 
 class SplashPage extends React.Component {
   constructor(props) {
@@ -13,9 +16,22 @@ class SplashPage extends React.Component {
     }
   }
 
+  // play() {
+  //   let audio = new Audio('x-beats-hck-demo.mp3');
+  //   audio.play();
+  // }
+  
+
 
 
   render() {
+    // let audio = new Audio('x-beats-hck-demo.mp3');
+    // const play = () => (
+    //   let audio = new Audio();
+    // audio.play();
+    // )
+   
+      
     let yesterday = new Date(this.state.date);
     yesterday.setDate(yesterday.getDate() - 1);
 
@@ -35,7 +51,10 @@ class SplashPage extends React.Component {
      <div>
        
        <div className="splash-header-container">
-          <img src={window.logoUrl} id="logo"/>
+          {/* <button onClick={() => sound.play()}> */}
+        {/* <button onClick={() => audio.play}></button> */}
+          <img src={window.logoUrl} id="logo" />
+          {/* </button> */}
           <ul id="links">
             <li>DJs</li>
             <li><Link to="/events">Events</Link></li>
