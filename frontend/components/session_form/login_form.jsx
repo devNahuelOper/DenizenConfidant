@@ -56,7 +56,6 @@ class LoginForm extends React.Component {
     };
     return (
       <div>
-        
           <div id="nav-container">
             <nav id="navbar">
               
