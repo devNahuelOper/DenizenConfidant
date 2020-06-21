@@ -25,7 +25,7 @@ class RegionDropdown extends React.Component {
 
   render() {
     const countries = ['Argentina', 'Brazil', 'Canada', 'China', 'France', 'Germany',
-    'Italy', 'Japan', 'Netherlands', 'North Korea', 'Spain', 'United Kingdom', 'United States'];
+    'Italy', 'Japan', 'Netherlands', 'Spain', 'United Kingdom', 'United States'];
     return (
       <div>Default region /
         <br/>

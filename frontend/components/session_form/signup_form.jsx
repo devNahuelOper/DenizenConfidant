@@ -13,6 +13,7 @@ class SignupForm extends React.Component {
       fname: '',
       lname: '',
       email: '',
+      email_confirmation: '',
       region: null,
       language: null,
       birthday: {
@@ -63,9 +64,14 @@ class SignupForm extends React.Component {
   }
 
   render() {
+    const { errors } = this.props;
+    const errorStyle = {
+      outline: '2px solid #e10',
+      border: '1px solid rgb(46, 46, 46)'
+    };
     return (
       <div>
-
+       
         <div id="nav-container">
           <nav id="navbar">
             <ul id="links">
@@ -89,7 +95,7 @@ class SignupForm extends React.Component {
         </div>
     <div className="signup-form-container">
 
-          {this.renderErrors()}
+          {/* {this.renderErrors()} */}
   <form>
 
     <ul className="signup-form">
@@ -97,21 +103,25 @@ class SignupForm extends React.Component {
           <div>Username /
             <br/>
             <input
+                style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)'}}
                 type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="signup-input" />
+                <p className="errors">{this.props.errors[0]}</p>
           </div> 
-         
               <br />
 
           <div>Password /
             <br/>
-              <input type="password"
+              <input
+                style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
+                type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="signup-input"
               />
+                <p className="errors">{this.props.errors[1]}</p>
           </div>
         </li> 
               <span id="no-space">No spaces, 18 char max.</span>
@@ -121,21 +131,25 @@ class SignupForm extends React.Component {
               <div>Email address /
                 <br/>
                 <input
+                    style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }}
                     type="text"
                     value={this.state.email}
                     onChange={this.update('email')}
                     className="email-input" />
+                  <p className="errors">{this.props.errors[4]}</p>
               </div>
 
                 <br />
 
               <div>Confirm email /
                 <br/>
-                <input type="text"
-                    value={this.state.email}
-                    onChange={this.update('email')}
-                    className="email-input"
-                  />
+                <input
+                    style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
+                    type="text"
+                    value={this.state.email_confirmation}
+                    onChange={this.update('email_confirmation')}
+                    className="email-input"/>
+                  <p className="errors">{this.props.errors[5]}</p>
               </div>
               </li>
 
@@ -145,20 +159,23 @@ class SignupForm extends React.Component {
             <div>First Name /
               <br/>  
               <input
+                    style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }}
                   type="text"
                   value={this.state.fname}
                   onChange={this.update('fname')}
                   className="signup-input" />
+                <p className="errors">{this.props.errors[2]}</p>
             </div>
-        
               <br/>
             <div>Surname /
               <br/>
               <input
+                    style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }}
                   type="text"
                   value={this.state.lname}
                   onChange={this.update('lname')}
                   className="signup-input" />
+                <p className="errors">{this.props.errors[3]}</p>
             </div>
           </li>
 
@@ -167,22 +184,6 @@ class SignupForm extends React.Component {
                     onChange={(region) => this.setState({region: region})}/>
               </li>
         
-          {/* <li>Default region/</li>
-            <li><select onChange={this.update('default_region')} value={this.state.default_region} id="default-region" name="countries" defaultValue="Select a country">
-                  <option value="Select a country" disabled>Select a country:</option>
-                <option value="argentina">Argentina</option>
-                  <option value="australia">Australia</option>
-                  <option value="brazil">Brazil</option>
-                  <option value="canada">Canada</option>
-                  <option value="france">France</option>
-                  <option value="germany">Germany</option>
-                  <option value="italy">Italy</option>
-                  <option value="netherlands">Netherlands</option>
-                  <option value="spain">Spain</option>
-                  <option value="uk">UK</option>
-                  <option value="usa">USA</option>
-                  <option value="vatican city">Vatican City</option>
-                </select></li> */}
 
               <span id="default-region-msg">This selection is your default for viewing events, clubs and other local content.</span>
 
@@ -201,33 +202,16 @@ class SignupForm extends React.Component {
                   } /></div>
               </li>
 
-              {/* <li>
-                <div>Preferred language/
-                  <br/>
-                  <select id="preferred-language" defaultValue="English">
-                    <option value="English">English</option>
-                    <option value="Spanish">Spanish</option>
-                    <option value="French">French</option>
-                    <option value="Italian">Italian</option>
-                    <option value="Portuguese">Portuguese</option>
-                    <option value="German">German</option>
-                    <option value="Dutch">Dutch</option>
-                    <option value="Russian">Russian</option>
-                    <option value="Chinese">Chinese(Mandarin)</option>
-                    <option value="Japanese">Japanese</option>
-                    <option value="Dothraki">Dothraki</option>
-                  </select>
-                </div>
-              </li> */}
-
+            
+                <p className="errors">{this.props.errors[6]}</p>
               <li>
                 <div id="gender">Gender /
                 <br/>
-                  <input type="radio" id="Male" value={"Male"} checked={this.state.gender === "Male"} onChange={this.checker}/>Male
+                  <input style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} type="radio" id="Male" value={"Male"} checked={this.state.gender === "Male"} onChange={this.checker}/>Male
                   <br/>
-                  <input type="radio" id="Female" value={"Female"} checked={this.state.gender === "Female"} onChange={this.checker}/>Female
+                  <input style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} type="radio" id="Female" value={"Female"} checked={this.state.gender === "Female"} onChange={this.checker}/>Female
                   <br/>
-                  <input type="radio" id="Other" value={"Other"} checked={this.state.gender === "Other"} onChange={this.checker}/>Other
+                  <input style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} type="radio" id="Other" value={"Other"} checked={this.state.gender === "Other"} onChange={this.checker}/>Other
                 </div>
               </li>
 

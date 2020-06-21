@@ -49,7 +49,11 @@ class LoginForm extends React.Component {
   
 
   render() {
-    
+    const { errors } = this.props;
+    const errorStyle = {
+      outline: '2px solid #e10',
+      border: '1px solid rgb(46, 46, 46)'
+    };
     return (
       <div>
         
@@ -83,7 +87,9 @@ class LoginForm extends React.Component {
             <br/>
             <ul>
               <li>Username or email /</li>
-              <li><input 
+              <li>
+                <input
+                  style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
                   type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
@@ -95,7 +101,10 @@ class LoginForm extends React.Component {
              
             {/* <br/> */}
               <li>Password /</li>
-            <li><input type="password"
+            <li>
+              <input
+                style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
+                type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
