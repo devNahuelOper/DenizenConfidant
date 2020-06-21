@@ -1,0 +1,134 @@
+
+.events-index {
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  font-size: 16px;
+  background-color: #fff;
+
+
+  .events-nav-container {
+    color: white;
+    position: relative;
+    background-color: #6b96c2;
+    width: 1280px;
+    height: 215px;
+
+    #logo {
+      filter: none;
+      :hover {
+        filter: none;
+      }
+    }
+
+    #links {
+      color: white;
+      :hover {
+       color: #2e2e2e;
+      }
+      li:nth-of-type(2) {
+        color: #2e2e2e;
+        background-color: #fff;
+      }
+    }
+
+    h1 {
+      letter-spacing: -2px;
+      line-height: 1em;
+      padding-top: 141px;
+      font-size: 64px;
+      margin: 0 auto;
+      width: 952px;
+      font-weight: normal;
+      display: block;
+    } 
+  }
+
+  #events-subnav {
+    height: 40px;
+    width: 1280px;
+    background-color: #6b96c2;
+    border-top: 1px solid rgba(255,255,255,.4);
+    position: relative;
+    color: white;
+
+    ul {
+      width: 952px;
+      margin: 0 auto;
+    }
+
+    li {
+      float: left;
+      border-left: 1px solid rgba(255,255,255,.4);
+    }
+
+    li:last-child {
+      border-right: 1px solid rgba(255,255,255,.4);
+    }
+    
+    //  .on a {
+    //   color: #000 !important;
+    //   // background-color: #fff;
+    //   background-color: #000;
+    //   }
+
+    a {
+      display: block;
+      color: #fff;
+      padding: 10px 14px;
+      line-height: 19px;
+      
+    }
+
+    .form {
+      color: black;
+      background-color:  #fff;
+    }
+  }
+
+  .top-events {
+    position: relative;
+    // left: 164px;
+    padding: 20px 0;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+
+    #content-title {
+      position: relative;
+      left: 164px;
+      font-size: 24px;
+      width: 75%;
+      padding-bottom: 2px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid  #6b96c2;
+    }
+
+    .eventlist {
+      position: relative;
+      left: 164px;
+      white-space: nowrap;
+      
+      .event {
+        white-space: normal;
+        max-width: 1057px;
+        font-size: 14px;
+        #event-name {
+          text-decoration: underline;
+          font-size: 18px;
+        }
+        #event-date {
+
+        }
+        #venue {
+
+        }
+        #headliners {
+
+        }
+        #description {
+          font-size: 12px;
+        }
+      }
+    }
+
+  }
+
+}

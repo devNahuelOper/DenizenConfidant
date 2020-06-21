@@ -1,0 +1,554 @@
+
+#nav-container {
+  position: relative;
+  display: block;
+  background-color: #ffa200;
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  height: 286px;
+  background-image: image_url("logo.png");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position-x: 159px;
+  background-position-y: -2px;
+}
+
+// #logo {
+//   font-family: 'Audiowide', cursive;
+// }
+
+// #links {
+//   display: flex;
+//   flex-direction: row;
+//   // justify-content: space-evenly;
+//   align-items: flex-end;
+//   margin-left: 488px;
+//   padding-top: 22px;
+// }
+
+#links {
+  position: absolute;
+  top: 24px;
+  left: 490px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+}
+
+#links li {
+  width: 141px;
+  border-bottom: 2px solid;
+  // padding-right: 96px;
+  box-sizing: content-box;
+  padding-left: 8px;
+  padding-bottom: 2px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+#links li:first-child {
+  border-color: #b4bd00;
+}
+
+#links li:first-child:hover {
+  background-color: #b4bd00;
+}
+
+#links li:nth-of-type(2) {
+  border-color: #6b96c2;
+}
+
+#links li:nth-of-type(2):hover {
+  background-color: #6b96c2;
+}
+
+#links li:nth-of-type(3) {
+  border-color: #ff0;
+}
+
+#links li:nth-of-type(3):hover {
+  background-color: #ff0;
+}
+
+#links li:last-child {
+  border-color: white;
+}
+
+#links li:last-child:hover {
+  background-color: white;
+}
+// #links li {
+//     padding-top: 8px;
+// }
+
+// @media only screen and (min-width: 700px) {
+//   #links {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-evenly;
+//     padding-left: 600px;
+//     position: relative;
+//   }
+  
+//   #links li a{
+//     padding: 2px 2px 2px 2px;
+//   }
+// }
+
+#nav-container h1 {
+  position: absolute;
+  top: 167px;
+  left: 164px;
+  font-size: 64px;
+  letter-spacing: -2px;
+  font-weight: 500;
+  // margin-left: 173px;
+  padding-bottom: 6px;
+}
+
+
+
+#subnav {
+  border-top: 1px solid rgba(97, 71, 71, 0.4);
+  position: absolute;
+  width: 100%;
+  top: 246px;
+}
+
+ 
+  // border-top: 1px solid rgba(97, 71, 71, 0.4);
+
+#subnav ul {
+  margin-left: 164px;
+}
+
+#subnav li {
+  float: left;
+  border-left: 1px solid rgba(97, 71, 71, 0.4);
+}
+
+#subnav li:hover {
+  color: white;
+  background-color: white;
+}
+
+#subnav li:last-child {
+  border-right: 1px solid rgba(97, 71, 71, 0.4);
+  padding-right: 5px;
+}
+
+
+
+#subnav a {
+  display: block;
+  color: black;
+  padding: 10px 14px;
+  line-height: 19px
+}
+
+// #subnav-toggle {
+//   width: 500px;
+//   margin-top: 10px;
+//   margin-left: 53px;
+//   height: 40px;
+//   font-size: 16px;
+// }
+
+
+.login-form-container {
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  position: relative;
+  height: 353px;
+  border-bottom: 1px #585858 solid;
+  // background-color:  #404040;
+}
+
+.signup-form-container {
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  height: 1000px;
+  padding-top: 10px;
+  background-color: #2e2e2e;
+}
+
+.login-form {
+  position: absolute;
+  top: 6px;
+  left: 164px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  // width: 240px;
+  #check-box {
+    margin-right: 4px;
+    margin-bottom: 12px;
+  }
+}
+
+.login-input {
+  box-sizing: border-box;
+  padding-left: 5px;
+  margin-bottom: 9px;
+  margin-top: 1px;
+  color: black;
+  height: 28px;
+  width: 240px;
+  border-radius: 1px;
+}
+
+.signup-input {
+  height: 30px;
+  width: 141px;
+  box-sizing: content-box;
+  padding-left: 10px;
+}
+
+.email-input {
+  height: 30px;
+  width: 312px;
+}
+
+
+.login-button, .signup-button {
+  color: black;
+  background-color: #ffa200;
+  height: 40px;
+  width: 240px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.signup-button {
+  width: 312px;
+}
+
+.signup-form {
+  display: flex;
+  flex-flow: column;
+  margin-left: 174px;
+  margin-top: 20px;
+  color: white;
+  // background-color: #2e2e2e;
+}
+
+.signup-form li {
+  display: flex;
+  flex-direction: row;
+}
+
+.signup-form li:first-child {
+  margin-bottom: -5px;
+}
+
+.signup-form li div {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.signup-form span {
+  font-size: 12px;
+  color: #9c9c9c;
+}
+
+.signup-form input {
+  color: black;
+  box-sizing: border-box;
+  padding-left: 5px;
+}
+
+#no-space {
+  margin-bottom: 10px;
+}
+
+#default-region, #preferred-language {
+  box-sizing: content-box;
+  padding-left: 10px;
+  font-size: 36px;
+  height: 57px;
+  border: 1px solid black;
+  background-color: #ffa200;
+  -webkit-appearance: none;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  
+  background-image: image_url("arrow.png");
+}
+
+#default-region {
+  width: 312px;
+  background-position-x: 295px;
+  background-size: 13px;
+}
+
+.region-dropdown {
+  position: relative;
+  box-sizing: content-box;
+  padding-left: 10px;
+  font-size: 36px;
+  height: 57px;
+  width: 312px;
+  border: 1px solid black;
+  background-color: #ffa200;
+  color: black;
+  -webkit-appearance: none;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-image: image_url("arrow.png");
+  background-position-x: 295px;
+  background-size: 13px;
+}
+
+.region-reveal {
+  position: absolute;
+  display: block;
+  left: 0px;
+  top: 57px;
+  height: inherit;
+  width: inherit;
+  z-index: 2;
+}
+
+.region-reveal li:hover, .day-reveal li:hover, .month-reveal li:hover, .year-reveal li:hover {
+  background-color: black;
+  color: white;
+}
+
+.region-reveal li {
+  box-sizing: border-box;
+  padding-left: 10px;
+  font-size: 18px;
+  border-bottom: none;
+  padding-top: 4px;
+  height: 30px;
+  width: 315px;
+  border-top: 1px solid black;
+  background-color: #ffa200;
+  // z-index: 2;
+}
+
+.region-reveal li:first-child {
+  line-height: 18px;
+  color: black;
+  background-color: white;
+}
+
+.region-reveal li:first-child:hover {
+  background-color: black;
+  color: white;
+}
+
+.region-hide {
+  display: none;
+}
+
+#default-region-msg {
+  // margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#preferred-language, .day-dropdown, .month-dropdown, .year-dropdown {
+  position: relative;
+  box-sizing: content-box;
+  padding-left: 10px;
+  font-size: 36px;
+  height: 57px;
+  width: 210px;
+  border: 1px solid black;
+  background-color: #ffa200;
+  color: black;
+  -webkit-appearance: none;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-image: image_url("arrow.png");
+  background-position-x: 198px;
+  background-size: 13px;
+}
+
+.language-reveal, .day-reveal, .month-reveal, .year-reveal {
+  position: absolute;
+  display: block;
+  left: 0px;
+  top: 57px;
+  z-index: 1000;
+  // height: inherit;
+  width: inherit;
+}
+
+.year-reveal {
+  max-height:200px;
+  // overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.language-reveal li, .day-reveal li, .month-reveal li, .year-reveal li {
+  box-sizing: border-box;
+  padding-left: 10px;
+  font-size: 18px;
+  border-bottom: none;
+  padding-top: 4px;
+  height: 30px;
+  width: 154px;
+  border-top: 1px solid black;
+  background-color: #ffa200;
+}
+
+.language-reveal li:first-child {
+  line-height: 18px;
+  color: black;
+  background-color: white;
+}
+
+.language-reveal:hover, .region-reveal:hover, .day-reveal:hover, .month-reveal:hover {
+  height: 0px;
+  background-color: inherit;
+  color: black;
+}
+
+// .language-reveal li:hover {
+//   background-color: black;
+//   color: white;
+// }
+
+.language-hide, .day-hide, .month-hide, .year-hide {
+  display: none;
+}
+
+.region-dropdown:hover, #preferred-language:hover, .login-button:hover, .signup-button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.region-dropdown:hover, #preferred-language:hover, .day-dropdown:hover, .month-dropdown:hover, .year-dropdown:hover {
+  background-image: image_url("arrowhite.png");
+    li {
+      color: black;
+      background-color: #ffa200;
+    }
+}
+
+.region-dropdown li:hover, #preferred-language li:hover {
+  background-color: black;
+  color: white;
+}
+
+.day-dropdown {
+  box-sizing: content-box;
+  padding-left: 17px;
+  width: 70px;
+  background-position-x: 68px;;
+}
+.month-dropdown, .year-dropdown {
+  width: 106px;
+  background-position-x: 108px;
+  box-sizing: content-box;
+  padding-left: 22px;
+}
+
+.year-dropdown {
+  width: 112px;
+  background-position-x: 114px;
+}
+
+.day-dropdown:hover, .month-dropdown:hover, .year-dropdown:hover {
+  background-color: black;
+  color: white;
+
+    li {
+      color: black;
+      background-color: #ffa200;
+    }
+}
+
+.day-dropdown li:hover, .month-dropdown li:hover, .year-dropdown li:hover {
+  background-color: black;
+  color: white;
+}
+
+.day-reveal li, .month-reveal li, .year-reveal li {
+  width: 70%;
+}
+
+
+#gender {
+  margin-bottom: 16px;
+}
+
+#gender input {
+  margin-right: 4px;
+}
+
+#newsletter {
+  margin-bottom: 24px;
+}
+
+#check-box {
+  margin-right: 3px;
+}
+
+.demo-login {
+  position: absolute;
+  right: 131px;
+  top: 352px;
+  height: 154px;
+  width: 312px;
+  color: #fff;
+  background-color: #404040;
+}
+
+#demo-notice {
+  position: absolute;
+  top: 17px;
+  left: 10px;
+}
+
+#demo-button {
+  height: 46px;
+  width: 294px;
+  background-color: #3b5998;
+  position: absolute;
+  top: 65px;
+  left: 9px;
+  font-size: 26px;
+  color: white;
+  box-sizing: border-box;
+  padding-left: 66px;
+  background-image: image_url("ravve.png");
+  background-size: 38px;
+  background-repeat: no-repeat;
+  background-position-x: 188px;
+  background-position-y: 3px;
+}
+
+#demo-button:hover {
+  background-color: black;
+}
+
+.form {
+  background-color: white;
+  border: 0px 1px 0px 1px solid black;
+}
+
+#member {
+  position: absolute;
+  left: 91px;
+  bottom: 48px;
+  height: 17px;
+  width: 17px;
+}
+
+.error-container {
+  width: 50%;
+}
+
+.errors {
+  // position: absolute;
+  // top: 232px;
+  // left: 165px;
+  // display: block;
+  white-space: nowrap !important;
+  color: #e10;
+  font-weight: bold;
+  // line-height: 20px;
+}
+
+// Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+

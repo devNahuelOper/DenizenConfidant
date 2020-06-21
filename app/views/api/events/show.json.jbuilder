@@ -1,0 +1,1 @@
+json.partial! '/api/events/id', event: @event
