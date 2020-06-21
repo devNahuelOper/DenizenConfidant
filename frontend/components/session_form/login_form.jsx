@@ -8,8 +8,13 @@ class LoginForm extends React.Component {
       username: '',
       password: ''
     }
-    this.localErrors = {}
+  
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.receiveErrors([]);
   }
 
   // componentWillUnmount() {
@@ -17,13 +22,15 @@ class LoginForm extends React.Component {
   // }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    return e => {
+      this.props.clearErrors(); 
+      this.setState({ [field]: e.currentTarget.value })
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.clearErrors();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }

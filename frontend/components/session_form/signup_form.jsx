@@ -26,6 +26,10 @@ class SignupForm extends React.Component {
     this.checker = this.checker.bind(this);
   }
 
+  componentDidMount() {
+    this.props.receiveErrors([]);
+  }
+
   checker(e) {
     e.stopPropagation();
     this.setState({ gender: e.target.value });
