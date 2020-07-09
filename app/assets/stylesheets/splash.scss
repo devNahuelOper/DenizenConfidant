@@ -560,17 +560,21 @@ h3 {
     }
 // }
       .beats {
+         display: flex;
+         align-items: center;
+         flex-direction: column;
          color: #b4bd00;
          position: relative;
          top: 65px;
-         padding: 25px 150px;
+        //  padding: 25px 150px;
          margin: 0 auto;
-         width: 960px;
+         width: 100%;
          border-top: 1px solid #676767;
         .beats-banner {
-          padding-right: -4px;
-          color: #fff;
-          font-size: 16px;
+            width: 956px;
+            padding-top: 18px;
+            color: #fff;
+            font-size: 16px;
           h1 {
             border-bottom-color: #b4bd00;
             border-bottom-style: solid;
@@ -598,8 +602,8 @@ h3 {
       .beatwrap {
         overflow: hidden;
         white-space: nowrap;
-        padding-right: 8px;
         padding-top: 32px;
+        width: 956px;
          .beatlist {
            padding: 0;
            margin: 0;
@@ -612,13 +616,10 @@ h3 {
               display: inline-block;
               white-space: normal;
               vertical-align: top;
-              padding-right: 8px;
+              padding-right: 9px;
                 a {
                   color: #b4bd00;
-                  // >img {
-                  //   height: 100px;
-                  //   background-color: white;
-                  // }
+                
                 }
                 img {
                   vertical-align: middle;
