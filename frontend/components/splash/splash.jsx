@@ -1,12 +1,7 @@
 import React from 'react';
 import ImageCarousel from './image_carousel';
 import { Link } from 'react-router-dom';
-// import Sound from 'react-sound';
-// import SoundComponent from './sound';
-// import UIfx from 'uifx';
-// import beepMp3 from './my-sounds/beep.mp3'
 
-// const beep = new UIfx(beepMp3)
 
 class SplashPage extends React.Component {
   constructor(props) {
@@ -25,13 +20,7 @@ class SplashPage extends React.Component {
 
 
   render() {
-    // let audio = new Audio('x-beats-hck-demo.mp3');
-    // const play = () => (
-    //   let audio = new Audio();
-    // audio.play();
-    // )
-   
-      
+
     let yesterday = new Date(this.state.date);
     yesterday.setDate(yesterday.getDate() - 1);
 
@@ -96,7 +85,7 @@ class SplashPage extends React.Component {
               <h1>Pulse</h1>
               <h2>more pulse</h2>
             </div>
-            {/* <h3 id="space">.</h3> */}
+           
 
             <ul className="articles">
               <li>
@@ -110,7 +99,7 @@ class SplashPage extends React.Component {
                     </div>
                     <div id="caption">
                         <h1 id="und-capt">Here's what it's like to go to an underground rave...</h1>
-                        {/* <h6>Our man Peemo shares his experience</h6> */}
+                        
                     </div>
                   </div>
                 </a>
@@ -151,7 +140,8 @@ class SplashPage extends React.Component {
                     <a href="https://www.youtube.com/watch?v=3boEAV4uUUU" target="_blank">
                       Gesaffelstein - Depravity
                     </a>
-
+                      {/* <audio id="depravity" src="depravity.mp3" controls></audio> */}
+                      
                   </article>
                 </li>
 

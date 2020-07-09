@@ -25,14 +25,14 @@ class BirthdayDropdown extends React.Component {
     const days = Array.from(Array(32).keys()).slice(1).reverse();
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May',
     'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].reverse();
-    const years = Array.from(Array(2020).keys()).slice(1910).reverse();
+    const years = Array.from(Array(2021).keys()).slice(1910).reverse();
     return (
       <div>Birthday /
         <br />
         <button onClick={() => { this.setState({ day: !this.state.day }) }} onBlur={this.leave('day')} className="day-dropdown">
           {this.props.birthday.day}
           <ul className={this.state.day ? "day-reveal" : "day-hide"}>
-            {/* <li>Select a country:</li> */}
+           
             {days.map(day => (
               <li key={day}
                 onClick={() => {
@@ -49,7 +49,7 @@ class BirthdayDropdown extends React.Component {
         <button onClick={() => { this.setState({ month: !this.state.month }) }} onBlur={this.leave('month')} className="month-dropdown">
           {this.props.birthday.month}
           <ul className={this.state.month ? "month-reveal" : "month-hide"}>
-            {/* <li>Select a country:</li> */}
+           
             {months.map(month => (
               <li key={month}
                 onClick={() => {
@@ -66,7 +66,7 @@ class BirthdayDropdown extends React.Component {
         <button onClick={() => { this.setState({ year: !this.state.year }) }} onBlur={this.leave('year')} className="year-dropdown">
           {this.props.birthday.year}
           <ul className={this.state.year ? "year-reveal" : "year-hide"}>
-            {/* <li>Select a country:</li> */}
+          
             {years.map(year => (
               <li key={year}
                 onClick={() => {
