@@ -82,6 +82,7 @@ class SignupForm extends React.Component {
        
         <div id="nav-container">
           <nav id="navbar">
+            <img src={window.logoUrl} id="logo" />
             <ul id="links">
               <li>DJs</li>
               <li><Link to="/events">Events</Link></li>
