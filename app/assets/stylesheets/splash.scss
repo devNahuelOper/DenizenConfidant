@@ -57,6 +57,8 @@
 // }
 
 .main-banner {
+  display: flex;
+  justify-content: center;
   position: relative;
   top: -4px;
   width: 100%;
@@ -79,13 +81,16 @@
 //   }
 }
 
+.banner-hold {
+  display: flex;
+  justify-content: space-between;
+  width: 960px;
+}
+
 .denizen-confidant {
-  position: relative;
   float: left;
   margin: 14px 14px 0 0;
   text-align: center;
-  left: 160px;
-  /* top: 15px; */
   font-size: 36px;
   letter-spacing: -1px;
 }
@@ -112,8 +117,7 @@
 
 .days {
   display: flex;
-  position: absolute;
-  right: 165px;
+  float: right;
   border-right: 1px solid white;
 
     .day {
@@ -455,12 +459,12 @@ h3 {
    .content {
       color: #b4bd00;
       position: relative;
-      padding: 20px 0;
+      padding: 8px 0;
       margin: 0 auto;
-      width: 952px;
+      width: 956px;
 
       .news-banner {
-        padding-right: 8px;
+        width: 958px;
         padding-bottom: 28px;
         color: #fff;
         font-size: 16px;
@@ -559,9 +563,9 @@ h3 {
          color: #b4bd00;
          position: relative;
          top: 65px;
-         padding: 25px 170px;
+         padding: 25px 150px;
          margin: 0 auto;
-         width: 952px;
+         width: 960px;
          border-top: 1px solid #676767;
         .beats-banner {
           padding-right: -4px;

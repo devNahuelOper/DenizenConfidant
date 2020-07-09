@@ -59,6 +59,7 @@ class SplashPage extends React.Component {
        </div>
        <div className="splash-content-container">
           <nav className="main-banner">
+            <div className="banner-hold">
             <h1 className="denizen-confidant">Denizen Confidant</h1>
         
             <ul className="days">
@@ -78,6 +79,7 @@ class SplashPage extends React.Component {
                 <h1>{tomorrowPlus.getDate()}</h1>
               </li>
             </ul>
+            </div>
           </nav>
 
           <section className="content">
