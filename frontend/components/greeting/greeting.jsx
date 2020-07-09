@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Dropdown from './dropdown';
 import WelcomeDropdown from './welcome_dropdown';
@@ -22,6 +22,7 @@ const Greeting = ({ currentUser, logout }) => {
     </nav>
   );
 
+  const [isShown, setIsShown] = useState(false);
 
   const personalGreeting = () => (
     <div className="user">
@@ -35,10 +36,16 @@ const Greeting = ({ currentUser, logout }) => {
       <img src={window.djUrl} id="dj-icon"/>
       {/* <WelcomeDropdown onClick={logout}/> */}
       {/* <WelcomeDropdown />  */}
-      <button className="logout-button" onClick={logout}>
+      <button className="logout-button" onClick={logout} onMouseEnter={() => setIsShown(true)}
+        onMouseLeave={() => setIsShown(false)}>
         <img src={window.logoutUrl}/>
-      </button>
-
+     
+      {isShown && (
+        <div id="alert">
+          Logout
+        </div>
+      )}
+ </button>
     </div>
   );
 

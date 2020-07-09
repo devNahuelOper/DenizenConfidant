@@ -40,7 +40,7 @@ body {
 .user>ul:first-child>li {
   // height: 45px;
   // line-height: 2.8em;
-  cursor: pointer;
+  cursor: default;
 }
 
 .login-signup {
@@ -139,9 +139,9 @@ body {
   height: 100%;
 }
 
-.welcome-group:hover {
-  background-color: black;
-}
+// .welcome-group:hover {
+//   background-color: black;
+// }
 
 
 .welcome-name {
@@ -176,25 +176,42 @@ body {
 
 .logout-button {
   position: absolute;
-  left: 378px;
-  top: 11px;
-  width: 25px;
+  left: 390px;
+  top: 13px;
+  width: 19px;
   background-color: whitesmoke;
-  height: 19px;
+  height: 18px;
   font-size: 12px;
   color: #404040;
-  // border-radius: 9px;
-//  :hover {
-//       background-color: #ffa200;
-//       // height: 17px;
-//     }
+  border-radius: 50%;
+
   img {
-    height: 25px;
+    height: 20px;
+    width: 21px;
     position: absolute;
-    top: -3px;
+    top: -1px;
+    right: -1px;
     filter: contrast(0.5);
    
   }
+}
+
+
+.logout-button:hover {
+  border: 1px solid #000000;
+  background-color: white;
+  transform: scale(1.2);
+  filter: invert(1);
+}
+
+#alert {
+  position: relative;
+  top: 14px;
+  left: -1px;
+  color: #7e7e7e;
+  font-size: 7px;
+  // font-style: oblique;
+  text-decoration: fade-in($color: #000000, $amount: 1);
 }
 
 .footer {

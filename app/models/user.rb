@@ -23,10 +23,10 @@ class User < ApplicationRecord
   validates :username, presence: { message: " field is required."}
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
-  validates :fname, :lname, presence: { message: " field is required."}
-  validates :email, presence: { message: " field is required."}, confirmation: true
-  validates :email_confirmation, presence: { message: " field is required."}
-  validates :gender, presence: { message: " field is required."}
+  # validates :fname, :lname, presence: { message: " field is required."}
+  # validates :email, presence: { message: " field is required."}, confirmation: true
+  # validates :email_confirmation, presence: { message: " field is required."}
+  # validates :gender, presence: { message: " field is required."}
 
 
   after_initialize :ensure_session_token
