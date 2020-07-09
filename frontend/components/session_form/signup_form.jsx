@@ -25,6 +25,7 @@ class SignupForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.checker = this.checker.bind(this);
+    this.emailError = "Enter a valid email address or profile url."
   }
 
   componentDidMount() {
@@ -36,13 +37,20 @@ class SignupForm extends React.Component {
     this.setState({ gender: e.target.value });
   }
 
+  // update(field) {
+  //   return e => {
+  //     e.preventDefault();
+  //     this.setState({
+  //     [field]: e.currentTarget.value
+  //   });}
+
+  // }
+
   update(field) {
     return e => {
-      e.preventDefault();
-      this.setState({
-      [field]: e.currentTarget.value
-    });}
-
+      this.props.clearErrors();
+      this.setState({ [field]: e.currentTarget.value })
+    }
   }
 
   handleSubmit(e) {
@@ -74,6 +82,7 @@ class SignupForm extends React.Component {
        
         <div id="nav-container">
           <nav id="navbar">
+            <img src={window.logoUrl} id="logo" />
             <ul id="links">
               <li>DJs</li>
               <li><Link to="/events">Events</Link></li>
@@ -108,7 +117,7 @@ class SignupForm extends React.Component {
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="signup-input" />
-                <p className="errors">{this.props.errors[0]}</p>
+                <p className="errors">{this.props.errors['0']}</p>
           </div> 
               <br />
 
