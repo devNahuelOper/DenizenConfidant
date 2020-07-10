@@ -371,13 +371,11 @@
   left: 0px;
   top: 57px;
   z-index: 1000;
-  // height: inherit;
   width: inherit;
 }
 
 .year-reveal, .day-reveal {
   max-height: 180px;
-  // overflow-x: hidden;
   overflow-y: scroll;
 }
 
@@ -399,16 +397,6 @@
   background-color: white;
 }
 
-// .language-reveal:hover, .region-reveal:hover, .month-reveal:hover {
-//   height: 0px;
-//   background-color: inherit;
-//   color: black;
-// }
-
-// .language-reveal li:hover {
-//   background-color: black;
-//   color: white;
-// }
 
 .language-hide, .day-hide, .month-hide, .year-hide {
   display: none;

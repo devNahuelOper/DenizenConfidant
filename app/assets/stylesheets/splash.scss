@@ -618,7 +618,15 @@ h3 {
               vertical-align: top;
               padding-right: 9px;
                 a {
+                  white-space: nowrap;
                   color: #b4bd00;
+                  background-color: #000008;
+                  border: 1px groove;
+                  padding: 1px 3px 2px 2px;
+                  small {
+                    font-size: 5px;
+                    font-weight: bold;
+                  }
                 
                 }
                 img {
@@ -627,7 +635,36 @@ h3 {
                   height: 100px;
                   margin-bottom: 6px;
                 }
+                audio {
+                  height: 18px;
+                  width: 99%;
+                  position: relative;
+                  box-shadow: 0px 0px 0px 5px #f1f3f4 inset;
+                  border: 1px groove;
+                }
+                // #depravity {
+                //   left: 0px;
+                //   width: 88%;
+                // }
+                // #speed, #cseven {
+                //   width: 98%;
+                // }
             }
+             .song:first-of-type a {
+               padding-right: 18px;
+             }
+             .song:nth-of-type(3) a {
+                  padding-right: 11px;
+             }
+             .song:nth-of-type(4) a {
+               padding-right: 33px;
+             } 
+            .song:nth-of-type(5) a {
+               padding-right: 60px;
+            }
+            .song:nth-of-type(6) a {
+               padding-right: 27px;
+            }  
          }
       }
 
