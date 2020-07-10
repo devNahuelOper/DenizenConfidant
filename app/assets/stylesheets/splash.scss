@@ -699,6 +699,54 @@ h3 {
         }
       }
 
+      .content {
+        .news-banner, .articles {
+          margin: 0 auto;
+          width: 675px;
+        }
+        .articles {
+          .main-article {
+            #caption, #caption2 {
+              #und-capt {
+                font-size: 30px;
+              }
+              #acc-capt {
+                font-size: 29px;
+              }
+            }
+          }
+        }
+       
+      }
+
+      .beats {
+        .beats-banner {
+          margin: 0 auto;
+          width: 675px;
+        }
+        .beatwrap {
+          width: 675px;
+          .song {
+            width: 129px;
+            a {
+              font-size: 10px;
+              small {
+                font-weight: normal;
+              }
+            }
+          }
+          .song:nth-of-type(2) a {
+            padding-right: 0;
+          }
+          .song:nth-of-type(3) a {
+            padding-right: 11px;
+          }
+          .song:nth-of-type(4) a {
+            padding-right: 28px;
+          }
+        }
+      }
+      
 
       }
 
