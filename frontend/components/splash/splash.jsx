@@ -142,7 +142,7 @@ class SplashPage extends React.Component {
                     <a href="https://www.youtube.com/watch?v=3boEAV4uUUU" target="_blank">
                       Gesaffelstein - Depravity
                     </a>
-                      {/* <audio id="depravity" src="depravity.mp3" controls></audio> */}
+                    {/* <audio id="depravity" src="http://localhost:3000/assets/depravity.mp3" controls></audio> */}
                       
                   </article>
                 </li>

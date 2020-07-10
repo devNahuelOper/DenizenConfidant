@@ -375,8 +375,8 @@
   width: inherit;
 }
 
-.year-reveal {
-  max-height: 200px;
+.year-reveal, .day-reveal {
+  max-height: 180px;
   // overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -399,11 +399,11 @@
   background-color: white;
 }
 
-.language-reveal:hover, .region-reveal:hover, .day-reveal:hover, .month-reveal:hover {
-  height: 0px;
-  background-color: inherit;
-  color: black;
-}
+// .language-reveal:hover, .region-reveal:hover, .month-reveal:hover {
+//   height: 0px;
+//   background-color: inherit;
+//   color: black;
+// }
 
 // .language-reveal li:hover {
 //   background-color: black;
