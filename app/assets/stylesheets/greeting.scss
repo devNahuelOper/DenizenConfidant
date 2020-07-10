@@ -215,38 +215,34 @@ body {
 }
 
 .footer {
-  position: relative;
+  display: flex;
+  align-items: flex-end;
   width: 100%;
   height: 575px;
   color: #fff;
   background-color: #2e2e2e;
 
-  .footer-links {
-  position: absolute;
-  bottom: 7%;
-  left: 170px;
-  display: flex;
+.foothold {
+  width: 864px;
   height: 154px;
-  width: 74%;
-  justify-content: flex-end;
+  display: flex;
+  justify-content: space-between;
   border-top: 0.1px solid #585858;
+  margin: 0 auto;
+}
 
-
+  .footer-links {
+    display: flex;
     li {
       margin-top: 15px;
       margin-right: 11px;
-
     }
-    
     li:last-child {
         margin-top: 4px;
     }
-
-
       img {
         height: 30px;
         width: 30px;
-        // margin-right: 9px;
         filter: invert(1);
       }
     }
@@ -262,11 +258,8 @@ body {
      border-radius: 17px;
     }
 
-    div {
-      position: absolute;
-      bottom: 157px;
-      left: 179px;
-
+    #footer-msg {
+      margin-top: 15px;
       a {
         color: #ffa200;
         padding-left: 2px;
