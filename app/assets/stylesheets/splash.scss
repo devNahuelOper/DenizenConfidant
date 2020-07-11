@@ -153,10 +153,6 @@
   left: 159px;
   color: white;
   font-size: 35px;
-
-    :last-child {
-      opacity: 70%;
-    }
 }
 
 #neon-caption {
@@ -304,7 +300,7 @@ h3 {
 .react-slideshow-container .nav:first-of-type {
   position: absolute !important;
   opacity: 30% !important;
-  left: 121px !important;
+  left: 160px !important;
   margin-right: -30px;
   border-right: none;
   border-top: none;
@@ -317,7 +313,7 @@ h3 {
 }
 
 .react-slideshow-container .nav:last-of-type {
-  margin-left: -147px !important;
+  margin-left: -195px !important;
   opacity: 30% !important;
 }
 

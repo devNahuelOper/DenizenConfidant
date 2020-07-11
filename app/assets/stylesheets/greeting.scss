@@ -1,7 +1,7 @@
 body {
   /* background-color: rgb(174, 190, 30); */
   background-color:  #404040; 
-  // background-image: url(./images/rave2.png);
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
 }
 
 .user {
@@ -11,7 +11,6 @@ body {
   border-top: 1px solid #454545;
   height: 45px;
   font-size: 16px;
-  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
 }
 
 // @media only screen and (max-width: 979px) {
@@ -36,12 +35,6 @@ body {
 //   margin: 0 auto;
 //   position: relative;
 // }
-
-.user>ul:first-child>li {
-  // height: 45px;
-  // line-height: 2.8em;
-  cursor: default;
-}
 
 .login-signup {
   color: white;
@@ -127,11 +120,9 @@ body {
 .welcome-group {
   display: flex;
   position: absolute;
-  box-sizing: content-box;
+  box-sizing: border-box;
   padding-top: 6px;
-  padding-right: 59px;
   margin-left: 3px;
-  // top: 6px;
   left: 208px;
   font-size: 16px;
   color: #7e7e7e;
@@ -139,24 +130,18 @@ body {
   height: 100%;
 }
 
-// .welcome-group:hover {
-//   background-color: black;
-// }
-
-
 .welcome-name {
   position: relative;
   line-height: 2em;
   list-style: none;
-  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
   font-size: 16px;
 }
 
-.welcome-name:first-child {
+.welcome-name:first-of-type {
   padding-left: 7px;
 }
 
-.welcome-name:last-child {
+.welcome-name:last-of-type {
   color: white;
   padding-left: 4px;
 }
@@ -175,9 +160,10 @@ body {
 
 
 .logout-button {
-  position: absolute;
-  left: 390px;
-  top: 13px;
+   position: relative;
+  left: 15px;
+  top: 7px;
+  margin-right: 30px;
   width: 19px;
   background-color: whitesmoke;
   height: 18px;
@@ -192,7 +178,6 @@ body {
     top: -1px;
     right: -1px;
     filter: contrast(0.5);
-   
   }
 }
 
@@ -206,11 +191,10 @@ body {
 
 #alert {
   position: relative;
-  top: 14px;
-  left: -1px;
+  top: 15px;
+  left: -3px;
   color: #7e7e7e;
   font-size: 7px;
-  // font-style: oblique;
   text-decoration: fade-in($color: #000000, $amount: 1);
 }
 

@@ -31,21 +31,21 @@ const Greeting = ({ currentUser, logout }) => {
         <li className="welcome-name">Welcome</li>
         <li className="welcome-name">{currentUser.username}</li>
         {/* <WelcomeDropdown /> */}
+        <button className="logout-button" onClick={logout} onMouseEnter={() => setIsShown(true)}
+          onMouseLeave={() => setIsShown(false)}>
+          <img src={window.logoutUrl} />
+          {isShown && (
+            <div id="alert">
+              Logout
+            </div>
+          )}
+        </button>
       </ul>
       {/* <img src="/assets/dj3.png" id="dj-icon" /> */}
       <img src={window.djUrl} id="dj-icon"/>
       {/* <WelcomeDropdown onClick={logout}/> */}
       {/* <WelcomeDropdown />  */}
-      <button className="logout-button" onClick={logout} onMouseEnter={() => setIsShown(true)}
-        onMouseLeave={() => setIsShown(false)}>
-        <img src={window.logoutUrl}/>
      
-      {isShown && (
-        <div id="alert">
-          Logout
-        </div>
-      )}
- </button>
     </div>
   );
 
