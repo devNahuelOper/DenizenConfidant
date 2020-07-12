@@ -160,21 +160,8 @@
 }
 
 #splash-caption {
-    bottom: 103px;
+    bottom: 30px;
 }
-
-// .image-slider {
-//   position: absolute;
-//   top: 70px;
-//   display: block;
-//   margin: 0px;
-//   padding: 0px;
-//   border: 0px;
-//   overflow: hidden;
-//   width: 896px;
-//   height: 503px;
-//   background: rgb(0, 0, 0);
-// }
 
 .react-slideshow-fade-wrapper {
   width: 100%;
@@ -183,7 +170,8 @@
 
 .slide-container {
   width: 100%;
-  margin: auto; }
+  margin: auto; 
+}
  
 h3 {
   text-align: center; }
@@ -211,11 +199,11 @@ h3 {
   .image-container {
     width: 100%;
     overflow: hidden;
-    position: absolute;
-    top: -119px;
 
     img {
-      width: 105%;
+      width: 100%;
+      position: relative;
+      bottom: 20px;
     }
   }
 
@@ -227,7 +215,7 @@ h3 {
 
 @media only screen and  (max-width: 1200px) {
   .each-fade img {
-      min-width: 140%;
+      min-width: 100%;
   }
 }
  
@@ -360,96 +348,6 @@ h3 {
   height: 1000px;
   // height: 1000px;
   // background-image: image_url("logo.png");
-
-  // .content {
-  //   position: relative;
-  //   top: 87px;
-  //   left: 163px;
-  //   color: #b4bd00;
-
-  //   h2 {
-  //     position: absolute;
-  //     color: white;
-  //     border-bottom: 2px solid #b4bd00;
-  //     width: 951px;
-  //     line-height: 27px;
-  //   }
-
-  //   h3 {
-  //     position: absolute;
-  //       right: 329px;
-  //     top: -13px;
-  //     background-color: #b4bd00;
-  //     width: 140px;
-  //   }
-
-  //   .articles {
-  //     position: relative;
-  //     top: 50px;
-  //     left: -300px;
-
-  //     img {
-  //       height: 230px;
-  //       width: 342px;
-  //     }
-
-  //     #underground {
-  //       position: absolute;
-  //       left: 300px;
-  //     }
-
-  //     #accessories {
-  //       position: absolute;
-  //       right: 186px;
-  //       top: 174px;
-  //     }
-
-  //     li {
-  //       display: flex;
-  //       flex-direction: row-reverse;
-
-      
-  //       h1 {
-  //         font-size: 30px;
-  //         line-height: 1em;
-  //         height: 64px;
-  //         margin-left: 20px;
-
-  //         :last-of-type {
-  //             position: absolute;
-  //             left: -34px;
-  //         }
-  //       }
-  //     }
-
-      
-
-  //     a {
-  //       display: flex;
-  //       flex-direction: row-reverse;
-  //       margin-right: 113px;
-  //       :hover {
-  //         background-color: #b4bd00;
-  //         color: #2a2a2a;
-  //       }
-  //     }
-  //   }
-  // }
-
-  // #acc-capt {
-  //   position: absolute;
-  //   left: 281px;
-  //   top: 335px; 
-  //   background-image: image_url("pacifier.png");
-  //   background-repeat: no-repeat;
-  //   background-position-x: 300px;
-  //   background-position-y: 34px;
-  // }
-
-  // #und-capt {
-  //   position: relative;
-  //   right: 58px;
-  // }
 }
 
 // @media only screen and (max-width: 1299px) and (min-width: 980px) {
@@ -661,6 +559,27 @@ h3 {
 
       @media only screen and (max-width: 1030px) {
       .splash-header-container{
+        height: 375px;
+        .slide-container {
+          height: 375px;
+          overflow: hidden;
+          #splash-caption {
+            font-size: 27px;
+            left: 170px;
+            bottom: 15px;
+          }
+          .react-slideshow-container {
+              height: 375px;
+          + div.indicators {
+              margin: 0 0 3px 540px !important;
+           }
+          }
+          .each-fade {
+            .image-container {
+              top: -60px;
+            }
+          }
+        }
          #links {
           font-size: 1em;
           left: unset;
