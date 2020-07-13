@@ -10,6 +10,7 @@ class EventShow extends React.Component {
   }
 
   componentDidMount() {
+    debugger
     this.props.fetchEvent(this.props.match.params.event.id);
   }
 

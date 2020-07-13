@@ -8,9 +8,9 @@ import SplashPage from './splash/splash';
 import Footer from './footer/footer';
 import EventIndexContainer from './events/event_index_container';
 import EventShowContainer from './events/event_show_container';
+// import EventShow from './events/event_show';
 
 // import Dropdown from './greeting/dropdown';
-
 
 const App = () => (
   <div>

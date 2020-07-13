@@ -5,8 +5,9 @@ import { fetchEvents, deleteEvent } from '../../actions/event_actions';
 const mapStateToProps = (state) => {
   // debugger;
   return {
-  events: Object.values(state.entities.events)
-}};
+    events: Object.values(state.entities.events)
+  }
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchEvents: () => dispatch(fetchEvents()),

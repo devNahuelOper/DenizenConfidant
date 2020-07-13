@@ -12,9 +12,12 @@ import { fetchEvent } from '../../actions/event_actions';
 //   };
 // };
 
-const mapStateToProps = (state, ownProps) => ({
-  event: state.entities[ownProps.match.params.event.id]
-});
+const mapStateToProps = (state, ownProps) =>{ 
+  // debugger
+ return {
+  event: state.entities.events[ownProps.match.params.event.id]
+ }
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchEvent: id => dispatch(fetchEvent(id))

@@ -7,7 +7,7 @@ const EventIndexItem = ({ event, deleteEvent}) => (
   // const artistLinks = {}
   <li className="eventlist-item">
     <article className="event">
-    <Link id="event-name" to={`/events/${event.id}`}>{event.name}</Link>
+    <Link id="event-name" to={`events/${event.id}`}>{event.name}</Link>
     <br/>
       <span id="event-date">Date: {event.date}</span>
     <br/>
