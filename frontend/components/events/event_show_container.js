@@ -5,7 +5,7 @@ import { fetchEvent } from '../../actions/event_actions';
 // const mapStateToProps = (state, { match }) => {
 //   // event: state.entities[ownProps.match.params.event.id]
 //   const eventId = parseInt(match.params.event.id);
-//   const event = fetchEvent(state.entities, eventId);
+//   const event = fetchEvent(state.entities.events, eventId);
 //   return {
 //     eventId,
 //     event
@@ -13,14 +13,13 @@ import { fetchEvent } from '../../actions/event_actions';
 // };
 
 const mapStateToProps = (state, ownProps) =>{ 
-  // debugger
  return {
-  event: state.entities.events[ownProps.match.params.event.id]
+  event: state.entities.events[ownProps.match.params.eventId]
  }
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchEvent: id => dispatch(fetchEvent(id))
+  fetchEvent: eventId => dispatch(fetchEvent(eventId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventShow);

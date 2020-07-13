@@ -132,3 +132,21 @@
   }
 
 }
+
+.eventshow-header {
+  margin: 0 auto;
+  width: 952px;
+  padding-top: 100px;
+  #prev {
+    position: relative;
+    top: 2px;
+    width: 16px;
+  }
+  a:hover {
+    filter: invert(1);
+  }
+  h2 {
+    font-size: 72px;
+    letter-spacing: -2px;
+  }
+}

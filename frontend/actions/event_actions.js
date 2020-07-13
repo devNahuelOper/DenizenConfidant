@@ -24,10 +24,15 @@ export const fetchEvents = events => dispatch => (
     .then(events => dispatch(receiveEvents(events)))
 );
 
-export const fetchEvent = id => dispatch => (
-  EventApiUtil.fetchEvent(id)
+export const fetchEvent = eventId => dispatch => (
+  EventApiUtil.fetchEvent(eventId)
     .then(event => dispatch(receiveEvent(event)))
 );
+
+// export const fetchEvent = event => dispatch => (
+//   EventApiUtil.fetchEvent(event)
+//     .then(event => dispatch(receiveEvent(event)))
+// );
 
 export const createEvent = event => dispatch => (
   EventApiUtil.createEvent(event)

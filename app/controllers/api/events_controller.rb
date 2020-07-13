@@ -12,12 +12,12 @@ class Api::EventsController < ApplicationController
 
   def index
     @events = Event.all
-    # render json: "api/events"
+    render :index
   end
 
   def show
     @event = Event.find(params[:id])
-    # render :show
+    render :show
     # render json: "api/events/:id"
   end
 
