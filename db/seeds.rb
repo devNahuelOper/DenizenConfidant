@@ -21,11 +21,11 @@ ultra = Event.create({name: 'Ultra', venue: 'Bayfront Park', location: '🇺🇸
 ultra.photo.attach(io: File.open('app/assets/images/ultra.png'), filename: 'ultra.png')
 # ultra.photo.attach(io: open('https://denizen-confidant-dev.s3.amazonaws.com/ultra.png'), filename: 'ultra.png')
 
-edc = Event.create({name: 'EDC', venue: 'Las Vegas Speedway', location: '🇺🇸 Las Vegas, NV', date: 20201003, headliners: 'Above and Beyond, Black Tiger Sex Machine, David Guetta, Deadmau5, Eric Prydz, Infected Mushroom, Nero, No Mana, Paul Oakenfold, Rezz, Steve Aoki' , description: 'Electronic Daisy Carnival is a music festival held in spring, summer, and fall months in the United States. Arguably it is the largest electronic music festival in North America.'})
+edc = Event.create({name: 'EDC', venue: 'Las Vegas Speedway', location: '🇺🇸 Las Vegas, NV', date: 20201003, headliners: 'Above and Beyond, Black Tiger Sex Machine, David Guetta, Deadmau5, Eric Prydz, Infected Mushroom, Nero, No Mana, Paul Oakenfold, Rezz, Steve Aoki' , description: 'EDC is a unique multi-day festival pushing the boundaries of imagination, and setting standards in the live entertainment industry. By incorporating carnival themes and attractions, cutting-edge stage production, world-class talent, and innovative art and technology, EDC is more than an electronic music festival - it is an unparalleled multi-sensory experience unlike any other.The foundation upon which the phenomenon was built is one of unity, love, self expression, and respect for one another.'})
 edc.photo.attach(io: File.open('app/assets/images/edc.png'), filename: 'edc.png')
 # edc.photo.attach(io: open('https://denizen-confidant-dev.s3.amazonaws.com/edc.png'), filename: 'edc.png')
 
-ezoo = Event.create({name: 'Electric Zoo', venue: 'Randalls Island', location: '🇺🇸 New York, NY', date: 20200904, headliners: 'Above and Beyond, Alison Wonderland, Benny Benassi, Dog Blood, Diplo, Eric Prydz, Flux Pavillion, Kaskade, Nora En Pure, Seven Lions', description: 'The Electric Zoo Festival is an annual electronic music festival held over Labor Day weekend in New York City on Randalls Island.'})
+ezoo = Event.create({name: 'Electric Zoo', venue: 'Randalls Island', location: '🇺🇸 New York, NY', date: 20200904, headliners: 'Above and Beyond, Alison Wonderland, Benny Benassi, Dog Blood, Diplo, Eric Prydz, Flux Pavillion, Kaskade, Nora En Pure, Seven Lions', description: 'Electric Zoo Festival is one of New York City’s largest music festivals and features the top names in electronic music, bringing a wide variety of acts from around the world and across the spectrum of electronic music’s various sub-genres. International editions of Electric Zoo have taken place in Mexico City, Tokyo, Shanghai and São Paulo.'})
 ezoo.photo.attach(io: File.open('app/assets/images/ezoo.png'), filename: 'ezoo.png')
 # ezoo.photo.attach(io: open('https://denizen-confidant-dev.s3.amazonaws.com/ezoo.png'), filename: 'ezoo.png')
 
@@ -38,3 +38,4 @@ transmission.photo.attach(io: File.open('app/assets/images/transmission.png'), f
 
 # ['Above and Beyond', 'Black Tiger Sex Machine', 'David Guetta', 'Deadmau5', 'Eric Prydz', 'Infected Mushroom', 'Nero', 'No Mana' 'Paul Oakenfold', 'Rezz', 'Steve Aoki']
 # ultra.photo.attach(io: File.open('app/assets/images/ultra.png'), filename: 'ultra.png')
+

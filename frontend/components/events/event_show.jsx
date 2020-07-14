@@ -55,10 +55,9 @@ class EventShow extends React.Component {
             <span id="headliners"><small>Line-up/</small> <br/> {event.headliners}</span>
             <br/>
             <p id="description">{event.description}</p>
+            <br/>
             {/* <img src={`window.${event.name.toLowerCase()}Url`} alt=""/> */}
-
-            <img id="event-image" src={`https://denizen-confidant-dev.s3.amazonaws.com/${event.name.toLowerCase()}.png`}/>
-            
+            <img id="event-image" src={`https://denizen-confidant-dev.s3.amazonaws.com/${event.name.toLowerCase().split(' ').join('')}.png`}/>
           </section>          
         </div>
       </div>
