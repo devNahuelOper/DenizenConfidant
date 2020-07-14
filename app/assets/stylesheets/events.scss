@@ -150,3 +150,61 @@
     letter-spacing: -2px;
   }
 }
+
+.subheader-container {
+  width: 100%;
+  .eventshow-subheader {
+    width: 952px;
+    margin: 0 auto;
+    .details {
+      width: 625px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      li {
+        color: #b4b4b4;
+        font-size: 12px;
+        h3 {
+          position: relative;
+          top: -10px;
+          color: #6b96c2;
+          font-size: 16px;
+          font-weight: normal;
+          height: 0;
+          text-align: left;
+        }
+        h4 {
+          position: relative;
+          top: -16px;
+          color: black;
+          font-size: 16px;
+          font-weight: normal;
+          height: 0;
+        }
+      }
+    }
+  }
+}
+
+.main-container {
+  width: 100%;
+  background-color: #f0f0f0;
+  .eventshow-main {
+    width: 952px;
+    margin: 0 auto;
+    #headliners {
+      color: black;
+      font-size: 36px;
+      small {
+        color: #b4b4b4;
+        font-size: 12px;
+      }
+    }
+    #description {
+      margin-top: 24px;
+    }
+    #event-image {
+      max-width: 800px;
+    }
+  }
+}

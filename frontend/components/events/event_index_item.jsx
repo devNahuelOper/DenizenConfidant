@@ -11,7 +11,7 @@ const EventIndexItem = ({ event, deleteEvent}) => (
     <br/>
       <span id="event-date">Date: {event.date}</span>
     <br/>
-      <span id="venue">Venue: {event.venue}, {event.location}</span>
+      <span id="venue">Venue: {event.venue} | {event.location}</span>
       <br/>
       <span id="headliners">Featuring: {event.headliners}</span>
       <br/>

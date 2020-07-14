@@ -5,6 +5,7 @@
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
+    "aws-sdk": "^2.713.0",
     "babel-loader": "^8.1.0",
     "moment": "^2.26.0",
     "react": "^16.13.1",

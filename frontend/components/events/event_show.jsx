@@ -28,25 +28,39 @@ class EventShow extends React.Component {
             <li>Search</li>
           </ul>
           <br/>
-            <i class="fas fa-arrow-alt-circle-left"></i>
           <section className="eventshow-header">
             <Link to='/events'><img id="prev" src={window.prevUrl} alt="Back"/> Events</Link>
             <h2>{event.name}</h2>
           </section>
         </div>
         <br/>
-        <ul>
-          <li>
-            <section className="eventshow-subheader">
-              <h3>{event.date}</h3> 
-              <h3>{event.venue}</h3>
-            </section>
-          </li>
-          <li className="eventshow-details">
-            <span>{event.headliners}</span>
-            <p>{event.description}</p>
-          </li>
-        </ul>
+        <div className="subheader-container">
+          <section className="eventshow-subheader">
+            <ul className="details">
+              <li>Date/ 
+                <h3>{event.date}</h3> 
+              </li>
+              <li>Venue/ 
+                <h3>{event.venue}</h3>
+                <h4>{event.location}</h4>
+              </li>
+              <li>Cost/ 
+                <h4>$100.00</h4>
+              </li>
+            </ul> 
+          </section>
+        </div>
+        <div className="main-container">
+          <section className="eventshow-main">
+            <span id="headliners"><small>Line-up/</small> <br/> {event.headliners}</span>
+            <br/>
+            <p id="description">{event.description}</p>
+            {/* <img src={`window.${event.name.toLowerCase()}Url`} alt=""/> */}
+
+            <img id="event-image" src={`https://denizen-confidant-dev.s3.amazonaws.com/${event.name.toLowerCase()}.png`}/>
+            
+          </section>          
+        </div>
       </div>
     )
   }
