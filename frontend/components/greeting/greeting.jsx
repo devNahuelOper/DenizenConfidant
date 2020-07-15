@@ -26,7 +26,8 @@ const Greeting = ({ currentUser, logout }) => {
 
   const personalGreeting = () => (
     <div className="user">
-     
+     <nav className="welcome-container">
+      <img src={window.djUrl} id="dj-icon"/>
       <ul className="welcome-group">
         <li className="welcome-name">Welcome</li>
         <li className="welcome-name">{currentUser.username}</li>
@@ -41,8 +42,7 @@ const Greeting = ({ currentUser, logout }) => {
           )}
         </button>
       </ul>
-      {/* <img src="/assets/dj3.png" id="dj-icon" /> */}
-      <img src={window.djUrl} id="dj-icon"/>
+    </nav>
       {/* <WelcomeDropdown onClick={logout}/> */}
       {/* <WelcomeDropdown />  */}
      

@@ -40,22 +40,17 @@ class SplashPage extends React.Component {
      <div>
        
        <div className="splash-header-container">
-          {/* <button onClick={() => sound.play()}> */}
-        {/* <button onClick={() => audio.play}></button> */}
+        <nav id="navbar">
           <img src={window.logoUrl} id="logo" />
-          {/* </button> */}
           <ul id="links">
             <li>DJs</li>
             <li><Link to="/events">Events</Link></li>
             <li>Music</li>
             <li>Search</li>
           </ul>
-          
+        </nav>
           <ImageCarousel /> 
-          {/* <section id="splash-caption">
-            <h1>Club Greyscale</h1>
-            <h1>Rumpin' thumpin' in... <br/> the Warehouse District</h1>
-          </section> */}
+         
        </div>
        <div className="splash-content-container">
           <nav className="main-banner">

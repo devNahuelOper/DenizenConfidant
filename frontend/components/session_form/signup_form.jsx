@@ -154,7 +154,14 @@ class SignupForm extends React.Component {
                     value={this.state.email}
                     onChange={this.update('email')}
                     className="email-input" />
-                  <p className="errors">{this.props.errors[4]}</p>
+                    {this.renderError("Email") ? (
+                      <div className="errors">
+                        The Email field is required.
+                      </div>
+                    ) : (
+                        ""
+                      )}
+                  {/* <p className="errors">{this.props.errors[4]}</p> */}
               </div>
 
                 <br />
@@ -167,7 +174,14 @@ class SignupForm extends React.Component {
                     value={this.state.email_confirmation}
                     onChange={this.update('email_confirmation')}
                     className="email-input"/>
-                  <p className="errors">{this.props.errors[5]}</p>
+                    {this.renderError("Email") ? (
+                      <div className="errors">
+                        The Email Confirmation field is required.
+                      </div>
+                    ) : (
+                        ""
+                      )}
+                  {/* <p className="errors">{this.props.errors[5]}</p> */}
               </div>
               </li>
 
@@ -235,7 +249,14 @@ class SignupForm extends React.Component {
               </li>
 
             
-                <p className="errors">{this.props.errors[6]}</p>
+                {/* <p className="errors">{this.props.errors[6]}</p> */}
+                {this.renderError("Gender") ? (
+                  <div className="errors">
+                    The Gender field is required.
+                  </div>
+                ) : (
+                    ""
+                  )}
               <li>
                 <div id="gender">Gender /
                 <br/>

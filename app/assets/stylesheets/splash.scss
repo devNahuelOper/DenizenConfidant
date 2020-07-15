@@ -151,20 +151,19 @@
     }
 } 
 
-#splash-caption, #neon-caption {
+#splash-caption {
+  width: 100%;
   position: absolute;
-  left: 159px;
+  bottom: 30px;
+  // left: 159px;
   color: white;
   font-size: 35px;
+  h1 {
+    width: 960px;
+    margin: 0 auto;
+  }
 }
 
-#neon-caption {
-  bottom: 107px;
-}
-
-#splash-caption {
-    bottom: 30px;
-}
 
 .react-slideshow-fade-wrapper {
   width: 100%;
@@ -674,3 +673,49 @@ h3 {
       }
 
 
+@media only screen and (min-width: 1280px) {
+  .user {
+    .welcome-container {
+      display: flex;
+      width: 980px;
+      margin: 0 auto;
+      #dj-icon, .welcome-group {
+        position: relative;
+        left: unset;
+      }
+    }
+  }
+  .splash-header-container {
+    display: flex;
+    justify-content: center;
+    #navbar {
+      position: absolute;
+      width: 980px;
+      #logo {
+        position: relative;
+        right: unset;
+      }
+    }
+    .slide-container {
+      width: 100%;
+      height: 575px;
+      overflow: hidden;
+      .each-fade {
+        position: relative;
+        top: -130px;
+        height: 100%;
+      }
+      .react-slideshow-container {
+        .nav {
+          position: relative; 
+          top: 50%;
+        }
+        .nav:last-of-type {
+          position: absolute;
+          top: 50%;
+          right: 10%;
+        }
+      }
+    }
+  }
+}
