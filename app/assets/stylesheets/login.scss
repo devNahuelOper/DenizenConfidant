@@ -243,6 +243,13 @@
   margin-top: 20px;
   color: white;
   // background-color: #2e2e2e;
+  .errors {
+    margin-top: 2px;
+  }
+  #un-signup-error {
+    white-space: normal !important;
+    width: 153px;
+  }
 }
 
 .signup-form li {
@@ -645,12 +652,56 @@
 }
 
 @media only screen and (min-width: 1280px) {
+  .login-wrap {
+    width: 952px;
+    margin: 0 auto;
+    .login-signup {
+      right: unset;
+      margin: unset;
+    }
+  }
+  #nav-container {
+    h1, #subnav ul {
+      width: 952px;
+      margin: 0 auto;
+      position: relative;
+      right: unset;
+      top: unset;
+    }
+    #navbar {
+      width: 952px;
+      height: 170px;
+      margin: 0 auto;
+    }
+    #links {
+      float: right;
+      margin-top: 26px;
+      position: relative;
+      top: unset;
+      left: unset;
+    }
+    #logo {
+      position: relative;
+      top: unset;
+      right: unset;
+      margin: unset;
+    }
+  }
   .login-form-container {
     .login-form {
       width: 952px;
       margin: 0 auto;
       position: relative;
       right: unset;
+    }
+  }
+  .form-wrap {
+    width: 952px;
+    margin: 0 auto;
+    .signup-form {
+      position: relative;
+      right: unset;
+      margin-left: unset;
     }
   }
 }

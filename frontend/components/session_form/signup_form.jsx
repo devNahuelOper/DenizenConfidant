@@ -7,25 +7,26 @@ import BirthdayDropdown from './birthday_dropdown';
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: '',
-      password: '',
-      fname: '',
-      lname: '',
-      email: '',
-      email_confirmation: '',
-      region: null,
-      language: null,
-      birthday: {
-        day: 1,
-        month: 'Jan',
-        year: '----'
-      },
-      gender: ''
-    };
+    this.state = this.props.user;
+    // this.state = {
+    //   username: '',
+    //   password: '',
+    //   fname: '',
+    //   lname: '',
+    //   email: '',
+    //   email_confirmation: '',
+    //   region: null,
+    //   language: null,
+    //   birthday: {
+    //     day: 1,
+    //     month: 'Jan',
+    //     year: '----'
+    //   },
+    //   gender: ''
+    // };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.checker = this.checker.bind(this);
-    this.emailError = "Enter a valid email address or profile url."
+    this.renderError = this.renderError.bind(this);
   }
 
   componentDidMount() {
@@ -37,19 +38,11 @@ class SignupForm extends React.Component {
     this.setState({ gender: e.target.value });
   }
 
-  // update(field) {
-  //   return e => {
-  //     e.preventDefault();
-  //     this.setState({
-  //     [field]: e.currentTarget.value
-  //   });}
-
-  // }
 
   update(field) {
     return e => {
-      this.props.clearErrors();
       this.setState({ [field]: e.currentTarget.value })
+      this.props.receiveErrors([]);
     }
   }
 
@@ -59,17 +52,21 @@ class SignupForm extends React.Component {
     this.props.processForm(user);
   }
 
-  renderErrors() {
-    return (
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`} className="error">
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+  renderError(field) {
+    const errors = this.props.errors;
+    return errors.some(error => error.includes(field))
   }
+  // renderErrors() {
+  //   return (
+  //     <ul>
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={`error-${i}`} className="error">
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   render() {
     const { errors } = this.props;
@@ -79,7 +76,6 @@ class SignupForm extends React.Component {
     };
     return (
       <div>
-       
         <div id="nav-container">
           <nav id="navbar">
             <img src={window.logoUrl} id="logo" />
@@ -102,12 +98,11 @@ class SignupForm extends React.Component {
           </section>
 
         </div>
-    <div className="signup-form-container">
+        <div className="signup-form-container">
 
-          {/* {this.renderErrors()} */}
-  <form>
-
-    <ul className="signup-form">
+        <div className="form-wrap">
+          <form>
+            <ul className="signup-form">
        <li>  
           <div>Username /
             <br/>
@@ -117,7 +112,14 @@ class SignupForm extends React.Component {
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="signup-input" />
-                <p className="errors">{this.props.errors['0']}</p>
+                  {this.renderError("Username") ? (
+                    <div id="un-signup-error" className="errors">
+                      Your Username should only contain letters and numbers. A full stop or hyphen is ok.
+                    </div>
+                  ) : (
+                      ""
+                    )}
+                {/* <p className="errors">{this.props.errors['0']}</p> */}
           </div> 
               <br />
 
@@ -130,7 +132,14 @@ class SignupForm extends React.Component {
                 onChange={this.update('password')}
                 className="signup-input"
               />
-                <p className="errors">{this.props.errors[1]}</p>
+                  {this.renderError("Password") ? (
+                    <div className="errors">
+                      The Password field is required.
+                    </div>
+                  ) : (
+                      ""
+                    )}
+                {/* <p className="errors">{this.props.errors[1]}</p> */}
           </div>
         </li> 
               <span id="no-space">No spaces, 18 char max.</span>
@@ -168,12 +177,19 @@ class SignupForm extends React.Component {
             <div>First Name /
               <br/>  
               <input
-                    style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }}
+                  style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }}
                   type="text"
                   value={this.state.fname}
                   onChange={this.update('fname')}
                   className="signup-input" />
-                <p className="errors">{this.props.errors[2]}</p>
+                  {this.renderError("Fname") ? (
+                    <div className="errors">
+                      The First Name field is required.
+                    </div>
+                  ) : (
+                      ""
+                    )}
+                {/* <p className="errors">{this.props.errors[2]}</p> */}
             </div>
               <br/>
             <div>Surname /
@@ -184,7 +200,14 @@ class SignupForm extends React.Component {
                   value={this.state.lname}
                   onChange={this.update('lname')}
                   className="signup-input" />
-                <p className="errors">{this.props.errors[3]}</p>
+                  {this.renderError("Lname") ? (
+                    <div className="errors">
+                      The Surname field is required.
+                    </div>
+                  ) : (
+                      ""
+                    )}
+                {/* <p className="errors">{this.props.errors[3]}</p> */}
             </div>
           </li>
 
@@ -244,9 +267,11 @@ class SignupForm extends React.Component {
           <div className="demo-login">
              <span id="demo-notice">See a demo login of a Denizen Confidant user by clicking below.</span>
              <button id="demo-button" onClick={this.props.demoUser}>Login with </button>
-          </div>
+         </div>
 
         </div>
+        </div>
+        
       </div>
     )
   }

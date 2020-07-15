@@ -7,11 +7,6 @@ class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.user;
-    // this.state = {
-    //   username: '',
-    //   password: ''
-    // }
-  
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.renderError = this.renderError.bind(this);
@@ -95,7 +90,7 @@ class LoginForm extends React.Component {
               <li>Username or email /</li>
               <li>
                 <input
-                  style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
+                  style={this.renderError("username") ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
                   type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
