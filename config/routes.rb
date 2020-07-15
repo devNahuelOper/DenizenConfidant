@@ -6,6 +6,5 @@ Rails.application.routes.draw do
     resources :events, only: [:create, :index, :show, :destroy, :edit, :update]
     resource :session, only: [:create, :destroy]
   end
-
   root "static_pages#root"
 end

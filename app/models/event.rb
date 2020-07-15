@@ -14,6 +14,7 @@
 #
 class Event < ApplicationRecord
   validates :name, :venue, :location, presence: true
+  # validates_attachment :image, content_type: {content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']}
 
-  
+  has_one_attached :photo 
 end

@@ -5,6 +5,11 @@ class Footer extends React.Component {
   render() {
     return (
       <div className="footer">
+       <div className="foothold">
+          <span id="footer-msg">
+            DC: Denizen Confidant is a clone of
+          <a href="https://www.residentadvisor.net/" target="_blank"> RA: Resident Advisor</a>
+          </span>
         <ul className="footer-links">
           <li>
             <a href="https://github.com/devNahuelOper/DenizenConfidant-.git" target="_blank">
@@ -24,9 +29,7 @@ class Footer extends React.Component {
             </a>
           </li>
         </ul>
-        <div>
-          DC: Denizen Confidant is a clone of
-          <a href="https://www.residentadvisor.net/" target="_blank"> RA: Resident Advisor</a>
+        
         </div>
       </div>
     )

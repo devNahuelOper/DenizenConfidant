@@ -4,18 +4,21 @@ import { Link } from 'react-router-dom';
 
 
 const EventIndexItem = ({ event, deleteEvent}) => (
-  // const artistLinks = {}
+ 
   <li className="eventlist-item">
     <article className="event">
-    <Link id="event-name" to={`/events/${event.id}`}>{event.name}</Link>
+    <Link id="event-name" to={`events/${event.id}`}>{event.name === 'Sonar' ? 'Sónar' : event.name}</Link>
     <br/>
       <span id="event-date">Date: {event.date}</span>
     <br/>
-      <span id="venue">Venue: {event.venue}, {event.location}</span>
+      <span id="venue">Venue: {event.venue} | {event.location}</span>
       <br/>
       <span id="headliners">Featuring: {event.headliners}</span>
       <br/>
       <p id="description">{event.description}</p>
+
+      {/* <img src={event.photoUrl}/> */}
+
       </article>
       <br/>
     {/* <Link to={`/events/${event.id}/edit`}>Edit</Link> */}

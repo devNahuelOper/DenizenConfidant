@@ -19,6 +19,7 @@ class EventIndex extends React.Component {
     return (
       <div className="events-index">
         <div className="events-nav-container">
+        <section className="events-nav">
         <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
           <ul id="links">
             <li>DJs</li>
@@ -27,8 +28,9 @@ class EventIndex extends React.Component {
             <li>Search</li>
           </ul>
           <h1>Events</h1>
+        </section>
         </div>
-        {/* <div> */}
+        <div className="subnav-container">
           <section id="events-subnav">
             <ul>
             <li><Link className="form" style={{ color: 'black' }} to="/events">All</Link></li>
@@ -37,6 +39,7 @@ class EventIndex extends React.Component {
             <li><Link to='/events/:id'>Submit an event</Link></li>
             </ul>
           </section>
+        </div>
           <div className="top-events">
             <h1 id="content-title">Top Events Worldwide</h1>
         <ul className="eventlist">

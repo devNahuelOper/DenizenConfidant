@@ -40,22 +40,17 @@ class SplashPage extends React.Component {
      <div>
        
        <div className="splash-header-container">
-          {/* <button onClick={() => sound.play()}> */}
-        {/* <button onClick={() => audio.play}></button> */}
+        <nav id="navbar">
           <img src={window.logoUrl} id="logo" />
-          {/* </button> */}
           <ul id="links">
             <li>DJs</li>
             <li><Link to="/events">Events</Link></li>
             <li>Music</li>
             <li>Search</li>
           </ul>
-          
+        </nav>
           <ImageCarousel /> 
-          {/* <section id="splash-caption">
-            <h1>Club Greyscale</h1>
-            <h1>Rumpin' thumpin' in... <br/> the Warehouse District</h1>
-          </section> */}
+         
        </div>
        <div className="splash-content-container">
           <nav className="main-banner">
@@ -142,7 +137,7 @@ class SplashPage extends React.Component {
                     <a href="https://www.youtube.com/watch?v=3boEAV4uUUU" target="_blank">
                       Gesaffelstein - Depravity
                     </a>
-                      {/* <audio id="depravity" src="depravity.mp3" controls></audio> */}
+                    <audio id="depravity" src="depravity.mp3" controls></audio>
                       
                   </article>
                 </li>
@@ -150,9 +145,10 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.deadmau5Url} id="deadmau5"/>
-                    <a href="https://www.youtube.com/watch?v=jVM_CjZLdOc" target="_blank">
-                      Deadmau5 - Stereo Fidelity
+                    <a href="https://www.youtube.com/watch?v=jQhkNqELyLc" target="_blank">
+                      Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small> 
                     </a>
+                    <audio id="speed" src="speed.mp3" controls></audio>
                   </article>
                 </li>
 
@@ -162,16 +158,17 @@ class SplashPage extends React.Component {
                     <a href="https://www.youtube.com/watch?v=lmxH1L7uubQ" target="_blank">
                       Noisuf X - Count to Seven
                     </a>
+                    <audio id="cseven" src="cseven.mp3" controls></audio>
                   </article>
                 </li>
 
                 <li className="song">
                   <article>
                     <img src={window.nomanaUrl} id="nomana"/>
-                    <a href="https://www.youtube.com/watch?v=WtGUGnVE5uU" target="_blank">
-                      No Mana - VVVR
+                    <a href="https://www.youtube.com/watch?v=nCJ8WJGStl4" target="_blank">
+                      No Mana - Other Side
                     </a>
-
+                    <audio id="otherside" src="otherside.mp3" controls></audio>
                   </article>
                 </li>
 
@@ -181,7 +178,7 @@ class SplashPage extends React.Component {
                     <a href="https://www.youtube.com/watch?v=-M8xBwVpET8" target="_blank">
                       Kayzo - The Fire
                     </a>
-
+                    <audio id="fire" src="fire.mp3" controls></audio>
                   </article>
                 </li>
                 <li className="song">
@@ -190,7 +187,7 @@ class SplashPage extends React.Component {
                     <a href="https://www.youtube.com/watch?v=jMro9nsr1OI" target="_blank">
                       Eric Prydz - The Matrix
                     </a>
-
+                    <audio id="matrix" src="matrix.mp3" controls></audio>
                   </article>
                 </li>
               </ul>

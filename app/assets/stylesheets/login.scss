@@ -172,6 +172,19 @@
     margin-right: 4px;
     margin-bottom: 12px;
   }
+  .error-container {
+      width: 230px;
+      margin-bottom: 5px;
+  }
+  .errors {  
+      white-space: normal !important;
+      color: #e10;
+      font-weight: bold;
+  }
+  #username-error {
+    line-height: 9px;
+    margin-bottom: 7px;
+  }
 }
 
 .login-input {
@@ -230,6 +243,13 @@
   margin-top: 20px;
   color: white;
   // background-color: #2e2e2e;
+  .errors {
+    margin-top: 2px;
+  }
+  #un-signup-error {
+    white-space: normal !important;
+    width: 153px;
+  }
 }
 
 .signup-form li {
@@ -371,13 +391,11 @@
   left: 0px;
   top: 57px;
   z-index: 1000;
-  // height: inherit;
   width: inherit;
 }
 
-.year-reveal {
-  max-height: 200px;
-  // overflow-x: hidden;
+.year-reveal, .day-reveal {
+  max-height: 180px;
   overflow-y: scroll;
 }
 
@@ -399,16 +417,6 @@
   background-color: white;
 }
 
-.language-reveal:hover, .region-reveal:hover, .day-reveal:hover, .month-reveal:hover {
-  height: 0px;
-  background-color: inherit;
-  color: black;
-}
-
-// .language-reveal li:hover {
-//   background-color: black;
-//   color: white;
-// }
 
 .language-hide, .day-hide, .month-hide, .year-hide {
   display: none;
@@ -554,9 +562,9 @@
 }
 
 @media only screen and (max-width: 1030px) {
-
-  .login-signup {
-    color: white;
+ 
+.login-signup {
+  color: white;
   position: absolute;
   right: 37%;
   margin-right: -85px;
@@ -628,6 +636,8 @@
       margin-right: 4px;
       margin-bottom: 12px;
     }
+    
+
   }
 
   .signup-form {
@@ -638,6 +648,61 @@
     right: 20%;
     top: 340px;
     margin-right: 337px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .login-wrap {
+    width: 952px;
+    margin: 0 auto;
+    .login-signup {
+      right: unset;
+      margin: unset;
+    }
+  }
+  #nav-container {
+    h1, #subnav ul {
+      width: 952px;
+      margin: 0 auto;
+      position: relative;
+      right: unset;
+      top: unset;
+    }
+    #navbar {
+      width: 952px;
+      height: 170px;
+      margin: 0 auto;
+    }
+    #links {
+      float: right;
+      margin-top: 26px;
+      position: relative;
+      top: unset;
+      left: unset;
+    }
+    #logo {
+      position: relative;
+      top: unset;
+      right: unset;
+      margin: unset;
+    }
+  }
+  .login-form-container {
+    .login-form {
+      width: 952px;
+      margin: 0 auto;
+      position: relative;
+      right: unset;
+    }
+  }
+  .form-wrap {
+    width: 952px;
+    margin: 0 auto;
+    .signup-form {
+      position: relative;
+      right: unset;
+      margin-left: unset;
+    }
   }
 }
 
