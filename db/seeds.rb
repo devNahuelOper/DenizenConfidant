@@ -12,10 +12,11 @@ require 'open-uri'
 User.destroy_all
 Event.destroy_all
 
-# deadmau5 = User.create({username: 'deadmau5', password: 'stereo', fname: 'Joel', lname: 'Zimmerman', email: 'mau5trap@deadmau5.com', region: 'Canada', language: 'English', birthday: 19810105, gender: 'M'})
-deadmau5 = User.create({username: 'deadmau5', password: 'stereo', fname: 'Joel', lname: 'Zimmerman'})
+deadmau5 = User.create({username: 'deadmau5', password: 'stereo', fname: 'Joel', lname: 'Zimmerman', email: 'mau5trap@deadmau5.com', region: 'Canada', language: 'English', birthday: 19810105, gender: 'Male'})
+# deadmau5 = User.create({username: 'deadmau5', password: 'stereo', fname: 'Joel', lname: 'Zimmerman'})
 
-tomorrowland = Event.create({name: 'Tomorrowland', venue: 'PRC de Schorre', location: '🇧🇪 Antwerp, Belgium', date: 20210716, headliners: 'Martin Garrix, Dimitri Vegas & Like Mike, Armin van Buuren, Martin Solveig, Afrojack, DJ Snake', description: 'Taking place in Belgium Tomorrowland is the largest electronic music festival held in the world. Incredible decorations and ten metre tulips tower over the worlds biggest DJs playing to the worlds best crowd.'})
+
+tomorrowland = Event.create({name: 'Tomorrowland', venue: 'PRC de Schorre', location: '🇧🇪 Antwerp, Belgium', date: 20210716, headliners: 'Tiesto, Martin Garrix, Dimitri Vegas & Like Mike, Armin van Buuren, Carl Cox, Martin Solveig, Afrojack, DJ Snake', description: 'Taking place in Belgium Tomorrowland is the largest electronic music festival held in the world. Incredible decorations and ten metre tulips tower over the worlds biggest DJs playing to the worlds best crowd.'})
 tomorrowland_photo = open('https://denizen-confidant-seeds.s3.us-east-1.amazonaws.com/tomorrowland.jpeg')
 tomorrowland.photo.attach(io: tomorrowland_photo, filename: 'tomorrowland.jpeg')
 # file = open('s3://denizen-confidant-seeds/tomorrowland.jpeg')
@@ -26,6 +27,8 @@ ultra_photo = open('https://denizen-confidant-seeds.s3.us-east-1.amazonaws.com/u
 ultra.photo.attach(io: ultra_photo, filename: 'ultra.jpeg')
 # file = open('s3://denizen-confidant-seeds/ultra.jpeg')
 # ultra.photo.attach(io: file, filename: 'ultra.jpeg')
+
+timewarp = Event.create({name: 'Time Warp', venue: 'TBD', location: '🇩🇪 Mannheim, Germany', date: 20210406, headliners: 'Adam Beyer, Adriatique, Âme, Amelie Lens, Baba Stiltz, Ben Klock, Boris Brejcha, Carl Cox, Charlotte de Witte, Chris Liebing, Craig Richards, Dixon, Dorian Paic, Dubfire, Fabe, Jamie Jones, Joseph Capriati, Joy Orbison, Karotte, Kölsch, Laurent Garnier, Len Faki, Loco Dice, Luciano, Maceo Plex, Magda, Marco Carola, Margaret Dygas, Monika Kruse, Nick Curly, Nina Kraviz b2b Helena Hauff, Pan-Pot, Peggy Gou, Recondite, Ricardo Villalobos b2b Craig Richards, Ricardo Villalobos, Richie Hawtin, Seebase, Seth Troxler, Solomun b2b Tale Of Us b2b Dixon, Solomun, Steffen Baumann, Sven Väth, Tale Of Us, The Martinez Brothers, tINI', description: 'Time Warp is an annual electronic music festival in Mannheim, Germany. The festival was introduced in 1994 on the other side of the river Rhine in Ludwigshafen. As a cultural festival, the main sponsor was TDK Marketing Europe from 2005 to 2007.' })
 
 edc = Event.create({name: 'EDC', venue: 'Las Vegas Speedway', location: '🇺🇸 Las Vegas, NV', date: 20201003, headliners: 'Above and Beyond, Black Tiger Sex Machine, David Guetta, Deadmau5, Eric Prydz, Infected Mushroom, Nero, No Mana, Paul Oakenfold, Rezz, Steve Aoki' , description: 'EDC is a unique multi-day festival pushing the boundaries of imagination, and setting standards in the live entertainment industry. By incorporating carnival themes and attractions, cutting-edge stage production, world-class talent, and innovative art and technology, EDC is more than an electronic music festival - it is an unparalleled multi-sensory experience unlike any other.The foundation upon which the phenomenon was built is one of unity, love, self expression, and respect for one another.'})
 edc_photo = open('https://denizen-confidant-seeds.s3.us-east-1.amazonaws.com/edc.jpeg')

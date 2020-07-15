@@ -3,7 +3,9 @@
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
   font-size: 16px;
   background-color: #fff;
-
+.hide {
+  color: #6b96c2;
+}
   .events-nav-container {
     background-color: #6b96c2;
   }
@@ -12,10 +14,15 @@
     color: white;
     position: relative;
     background-color: #6b96c2;
-    width: 1280px;
+    width: 952px;
     height: 215px;
+    margin: 0 auto;
 
     #logo {
+      position: relative;
+      right: unset;
+      top: unset;
+      margin: unset;
       filter: none;
       :hover {
         filter: none;
@@ -23,6 +30,7 @@
     }
 
     #links {
+      left: 330px;
       color: white;
       :hover {
        color: #2e2e2e;
@@ -35,25 +43,23 @@
 
     h1 {
       letter-spacing: -2px;
-      line-height: 1em;
-      padding-top: 141px;
+      line-height: 2em;
       font-size: 64px;
       margin: 0 auto;
       width: 952px;
       font-weight: normal;
-      display: block;
     } 
   }
 
   .subnav-container {
     background-color: #6a96c2;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
   }
 
   #events-subnav {
     height: 40px;
-    width: 1280px;
-    background-color: #6b96c2;
-    border-top: 1px solid rgba(255,255,255,.4);
+    width: 956px;
+    margin: 0 auto;
     position: relative;
     color: white;
 
@@ -95,14 +101,12 @@
     position: relative;
     // left: 164px;
     padding: 20px 0;
-    margin: 0 auto;
     background-color: #f0f0f0;
 
     #content-title {
       position: relative;
-      left: 164px;
-      font-size: 24px;
-      width: 75%;
+      width: 952px;
+      margin: 0 auto;
       padding-bottom: 2px;
       margin-bottom: 20px;
       border-bottom: 2px solid  #6b96c2;
@@ -110,7 +114,8 @@
 
     .eventlist {
       position: relative;
-      left: 164px;
+      width: 952px;
+      margin: 0 auto;
       white-space: nowrap;
       
       .event {
@@ -143,7 +148,6 @@
 .eventshow-header {
   margin: 0 auto;
   width: 952px;
-  padding-top: 100px;
   #prev {
     position: relative;
     top: 2px;
