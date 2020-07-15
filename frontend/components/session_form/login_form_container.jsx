@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { receiveErrors, clearErrors, login } from '../../actions/session_actions';
 import LoginForm from './login_form';
 
-const mapStateToProps = ({ errors }) => ({
-  errors: errors.session,
+const mapStateToProps = ( state ) => ({
+  user: { username: '', password: '' },
+  errors: state.errors.session,
   formType: 'Login',
   navLink: <Link to="/signup">Register</Link>,
 });
@@ -13,7 +14,7 @@ const mapStateToProps = ({ errors }) => ({
 const mapDispatchToProps = dispatch => {
   return {
     processForm: (user) => dispatch(login(user)),
-    demoUser: () => dispatch(login({username: 'deadmau5', password: 'stereo'})),
+    demoUser: () => dispatch(login({username: 'deadmau5', password: 'stereo', fname: 'Joel', lname: 'Zimmerman'})),
     receiveErrors: errors => dispatch(receiveErrors(errors)),
     clearErrors: () => dispatch(clearErrors)
   };

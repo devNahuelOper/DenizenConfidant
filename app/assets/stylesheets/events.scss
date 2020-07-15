@@ -4,8 +4,11 @@
   font-size: 16px;
   background-color: #fff;
 
-
   .events-nav-container {
+    background-color: #6b96c2;
+  }
+
+  .events-nav {
     color: white;
     position: relative;
     background-color: #6b96c2;
@@ -40,6 +43,10 @@
       font-weight: normal;
       display: block;
     } 
+  }
+
+  .subnav-container {
+    background-color: #6a96c2;
   }
 
   #events-subnav {

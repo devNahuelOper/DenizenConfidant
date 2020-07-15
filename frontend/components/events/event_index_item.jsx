@@ -16,6 +16,9 @@ const EventIndexItem = ({ event, deleteEvent}) => (
       <span id="headliners">Featuring: {event.headliners}</span>
       <br/>
       <p id="description">{event.description}</p>
+
+      {/* <img src={event.photoUrl}/> */}
+
       </article>
       <br/>
     {/* <Link to={`/events/${event.id}/edit`}>Edit</Link> */}

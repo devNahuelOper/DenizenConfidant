@@ -19,6 +19,7 @@ class EventShow extends React.Component {
     return (
       <div className="events-index">
         <div className="events-nav-container">
+        <section className="events-nav">
           <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
           <ul id="links">
             <li>DJs</li>
@@ -31,6 +32,7 @@ class EventShow extends React.Component {
             <Link to='/events'><img id="prev" src={window.prevUrl} alt="Back"/> Events</Link>
             <h2>{event.name}</h2>
           </section>
+        </section>
         </div>
         <br/>
         <div className="subheader-container">

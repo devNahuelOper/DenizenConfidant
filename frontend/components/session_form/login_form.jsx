@@ -6,28 +6,27 @@ import { Link } from 'react-router-dom';
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: '',
-      password: ''
-    }
+    this.state = this.props.user;
+    // this.state = {
+    //   username: '',
+    //   password: ''
+    // }
   
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.renderError = this.renderError.bind(this);
   }
 
   componentDidMount() {
     this.props.receiveErrors([]);
   }
 
-  // componentWillUnmount() {
-  //   this.props.clearErrors();
-  // }
-
   update(field) {
     return e => {
-      this.props.clearErrors(); 
       this.setState({ [field]: e.currentTarget.value })
+      this.props.receiveErrors([]);
     }
+    // this.props.clearErrors(); 
   }
 
   handleSubmit(e) {
@@ -37,20 +36,26 @@ class LoginForm extends React.Component {
     this.props.processForm(user);
   }
 
-  renderErrors() {
-    return (
-      <ul className="errors">
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`} className="error">
-           <p>{error}</p>
-          </li>
-        ))}
-      </ul>
-    );
+  // renderErrors() {
+  //   return (
+  //     <ul className="errors">
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={`error-${i}`} className="error">
+  //          <p>{error}</p>
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
+
+  renderError(field) {
+    const errors = this.props.errors;
+    return errors.some(error => error.includes(field))
   }
-  
+
 
   render() {
+    let length = this.state.username.length;
     const { errors } = this.props;
     const errorStyle = {
       outline: '2px solid #e10',
@@ -83,7 +88,6 @@ class LoginForm extends React.Component {
           </div>
         <div className="login-form-container">
 
-          {/* {this.renderErrors()} */}
           <form onSubmit={this.handleSubmit} className="login-form">
 
             <br/>
@@ -95,10 +99,15 @@ class LoginForm extends React.Component {
                   type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
+                  // onKeyPress={() => this.props.receiveErrors([])}
                   className="login-input"/>
-                 
-                  {/* {this.state.session.errors[0]} */}
-                {/* <p className="reg-error">{errors['username']}</p> */}
+                {this.renderError("username") && length <= 0 ? (
+                  <div id="username-error" className="errors">
+                     Username field is required
+                  </div>
+                ) : (
+                    ""
+                  )}
                 </li>
              
             {/* <br/> */}
@@ -112,10 +121,9 @@ class LoginForm extends React.Component {
                 className="login-input"
               /></li>
               <div className="error-container">
-              <p className="errors">{this.props.errors[0]}</p>
+              <p className="errors">{errors[0]}</p>
               </div>
-              {/* <p className="inlineError">{this.localErrors.username}</p> */}
-            {/* <br/>    */}
+     
             <li><input id="check-box" type="checkbox"/>'member?
               <img src={window.memberUrl} id="member"/>
             </li>
