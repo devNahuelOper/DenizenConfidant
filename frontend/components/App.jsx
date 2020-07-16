@@ -8,6 +8,7 @@ import SplashPage from './splash/splash';
 import Footer from './footer/footer';
 import EventIndexContainer from './events/event_index_container';
 import EventShowContainer from './events/event_show_container';
+import DjIndexContainer from './djs/dj_index_container';
 // import EventShow from './events/event_show';
 
 // import Dropdown from './greeting/dropdown';
@@ -23,6 +24,7 @@ const App = () => (
       <Route exact path="/" component={SplashPage} />
       <Route exact path="/events" component={EventIndexContainer}/>
       <Route exact path="/events/:eventId" component={EventShowContainer} />
+      <Route exact path="/djs" component={DjIndexContainer} />
     </Switch>
 
     <Footer />

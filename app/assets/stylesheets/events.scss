@@ -122,6 +122,7 @@
         white-space: normal;
         max-width: 1057px;
         font-size: 14px;
+       
         #event-name {
           text-decoration: underline;
           font-size: 18px;
@@ -138,7 +139,11 @@
         #description {
           font-size: 12px;
         }
+        #event-img {
+          width: 50px;
+        }
       }
+
     }
 
   }
