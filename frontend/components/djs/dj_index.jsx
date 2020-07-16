@@ -13,7 +13,7 @@ class DjIndex extends React.Component {
 
   render() {
     const { djs } = this.props;
-
+    const alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     return (
       <div className="djs-index">
         <div className="djs-nav-container">
@@ -21,7 +21,7 @@ class DjIndex extends React.Component {
             <nav>
               <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
               <ul id="links">
-                <li>DJs</li>
+                <li><Link to="/djs">DJs</Link></li>
                 <li><Link to="/events">Events</Link></li>
                 <li>Music</li>
                 <li>Search</li>
@@ -40,12 +40,20 @@ class DjIndex extends React.Component {
             </ul>
           </section>
         </div>
-        <div className="all-djs">
-            <ul className="djlist">
-              {djs.map(dj => 
-              <DjIndexItem key={dj.id} dj={dj} />
-                )}
-            </ul>
+        <div className="djs-container">
+          <br/><br/>
+          <section className="djs">
+            {alpha.map(letter => 
+            <span className="dj-sort">
+              <h1 id="first-char">{letter}</h1>
+              <ul id={`djlist-${letter}`} className="djlist">
+                 {Object.values(djs).filter(dj => dj.name.charAt(0).toUpperCase() === letter).map(dj =>
+                   <DjIndexItem key={dj.id} dj={dj} />
+                  )}
+              </ul>
+            </span>
+              )}
+          </section>
         </div>
       </div>
     )

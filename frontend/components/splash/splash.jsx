@@ -43,7 +43,7 @@ class SplashPage extends React.Component {
         <nav id="navbar">
           <img src={window.logoUrl} id="logo" />
           <ul id="links">
-            <li>DJs</li>
+              <li><Link to="/djs">DJs</Link></li>
             <li><Link to="/events">Events</Link></li>
             <li>Music</li>
             <li>Search</li>
