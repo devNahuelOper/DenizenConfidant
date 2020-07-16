@@ -22,7 +22,7 @@ class EventIndex extends React.Component {
         <section className="events-nav">
         <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
           <ul id="links">
-            <li>DJs</li>
+            <li><Link to="/djs">DJs</Link></li>
             <li><Link to="/events">Events</Link></li>
             <li>Music</li>
             <li>Search</li>
