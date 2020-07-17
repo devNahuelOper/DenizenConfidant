@@ -12,11 +12,15 @@ class DjShow extends React.Component {
 
   render() {
     const { dj } = this.props;
-
+    const first = dj.name.split(' ')[0];
+    const second = dj.name.split(' ')[1];
+    const hyphen = `${first}-${second}`;
     return (
       <div className="djs-index">
-        <div className="djshow-nav-container" style={{
-          backgroundImage: `url("${`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`}")`}}>
+        <div 
+          id={`${dj.name.toLowerCase().split(' ').join('')}-container`}
+          className="djshow-nav-container" 
+          style={{  backgroundImage: `url("${`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`}")`}}>
           <section className="djs-nav">
             <nav>
               <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
@@ -29,7 +33,7 @@ class DjShow extends React.Component {
             </nav>
             <section id="djshow-header" className="eventshow-header">
               <Link to='/djs'><img id="prev" src={window.prevUrl} alt="Back" /> DJs</Link>
-              <h1>{dj.name}</h1>
+              <h1>{(dj.name === 'Ran D') || (dj.name === 'Noisuf X') ? hyphen : dj.name}</h1>
             </section>
           </section>
         </div>
@@ -58,7 +62,12 @@ class DjShow extends React.Component {
           </section>
         </div>
         <div className="dj-main">
-          <section>
+          <section className="bio-container">
+            <h1>Biography</h1>
+            <hr/>
+            <p id="bio">
+              {dj.bio}
+            </p>
             {/* <img id="dj-image" src={`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`} /> */}
           </section>
         </div>
