@@ -10,6 +10,7 @@ import EventIndexContainer from './events/event_index_container';
 import EventShowContainer from './events/event_show_container';
 import DjIndexContainer from './djs/dj_index_container';
 import DjShowContainer from './djs/dj_show_container';
+import SplashContainer from './splash/splash_container';
 // import EventShow from './events/event_show';
 
 // import Dropdown from './greeting/dropdown';
@@ -22,11 +23,12 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-      <Route exact path="/" component={SplashPage} />
+      <Route exact path="/" component={SplashContainer} />
       <Route exact path="/events" component={EventIndexContainer}/>
       <Route exact path="/events/:eventId" component={EventShowContainer} />
       <Route exact path="/djs" component={DjIndexContainer} />
       <Route exact path="/djs/:djId" component={DjShowContainer} />
+      {/* <Route path={`/djs/${this.props.dj.name}`} component={DjShowContainer} /> */}
     </Switch>
 
     <Footer />

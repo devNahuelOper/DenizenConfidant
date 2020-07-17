@@ -1,14 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 class DjShow extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      name: this.props.dj.name,
+      genre: this.props.dj.genre
+    }
+    this.useQuery = this.useQuery.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchDj(this.props.match.params.djId);
     window.scrollTo(0, 0);
+  }
+
+  useQuery() {
+    return new URLSearchParams(useLocation().search);
   }
 
   render() {
