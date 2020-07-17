@@ -11,4 +11,3 @@ const DjIndexItem = ({dj}) => (
 
 export default DjIndexItem;
 
-// key = {`djlist-item-${letter}`}

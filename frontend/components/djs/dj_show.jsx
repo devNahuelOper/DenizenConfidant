@@ -15,7 +15,8 @@ class DjShow extends React.Component {
 
     return (
       <div className="djs-index">
-        <div className="djs-nav-container">
+        <div className="djshow-nav-container" style={{
+          backgroundImage: `url("${`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`}")`}}>
           <section className="djs-nav">
             <nav>
               <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
@@ -26,7 +27,39 @@ class DjShow extends React.Component {
                 <li>Search</li>
               </ul>
             </nav>
-            <h1>{dj.name}</h1>
+            <section id="djshow-header" className="eventshow-header">
+              <Link to='/djs'><img id="prev" src={window.prevUrl} alt="Back" /> DJs</Link>
+              <h1>{dj.name}</h1>
+            </section>
+          </section>
+        </div>
+        <div className="djs-subnav-container">
+          <section className="djs-subnav">
+            <ul>
+              <li><Link className="form" style={{ color: 'black' }} to="/djs">All</Link></li>
+              <li><Link to="/signup">Register</Link></li>
+              <li><Link to="/">Take me back home</Link></li>
+              <li><Link to='/djs/:id'>Create an artist profile</Link></li>
+            </ul>
+          </section>
+        </div>
+        <div className="djsubheader-container">
+          <section className="djshow-subheader">
+            <ul className="details">
+              <li>
+                <small>Country/</small><br/>
+                {dj.nationality.split(' ').reverse().join(' ')}
+              </li>
+              <li>
+                <small>Genre(s)/</small> <br/>
+                  {dj.genre}
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div className="dj-main">
+          <section>
+            {/* <img id="dj-image" src={`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`} /> */}
           </section>
         </div>
       </div>
