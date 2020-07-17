@@ -8,6 +8,7 @@ class DjShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchDj(this.props.match.params.djId);
+    window.scrollTo(0, 0);
   }
 
   render() {
