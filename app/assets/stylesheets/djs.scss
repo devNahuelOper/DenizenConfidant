@@ -6,23 +6,36 @@
   }
 }
 
+
+
+
+
 .djs-nav-container {
   background-color: #ff0;
+
+  #logo {
+    filter: invert(1);
+    :hover {
+      filter: none;
+    }
+  }
 }
 
 .djs-nav {
-  width: 952px;
-  height: 215px;
-  margin: 0 auto;
-  color: black;
+    width: 952px;
+    height: 215px;
+    margin: 0 auto;
+    color: black;
   nav {
     display: flex;
     justify-content: space-between;
+    width: 952px;
     margin: 0 auto;
     #links {
       height: 30px;
       position: relative;
       left: unset;
+    
       li:nth-of-type(3) {
         border-color: #ecec06;
       }
@@ -35,19 +48,194 @@
       right: unset;
       top: unset;
       margin: unset;
-      filter: invert(1);
-      :hover {
-        filter: none;
-      }
+      // filter: invert(1);
+    }
+    #logo:hover {
+      filter: none;
+    }
+  }
+
+  #djshow-header {
+    line-height: 3em;
+    a {
+      color: white;
     }
   }
   h1 {
     font-size: 64px;
     width: 952px;
     margin: 0 auto;
-    line-height: 2em;
   }
 }
+
+.djshow-nav-container {
+  height: 575px;
+  background-color: #ff0;
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  .djs-nav {
+    height: 554px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+  }
+  #links li  {
+    // background-color: #0000001c;
+  }
+  #logo {
+    filter: none;
+  }
+}
+
+#ambassador21-container {
+  background-position-y: -45px;
+}
+
+#blacktigersexmachine-container {
+  background-position-y: 0px;
+}
+#bloodybeetroots-container {
+  background-position-y: 0px;
+}
+#calvinharris-container {
+  background-position-y: -95px;
+}
+#carlcox-container {
+  background-position-y: 0px;
+}
+#colleendagostino-container {
+  background-position-y: -20px;
+}
+#crystalcastles-container {
+  background-position-y: -34px;
+  background-position-x: 864px;
+  background-repeat: repeat;
+}
+
+#diplo-container {
+  background-position-y: 0px;
+  background-position-x: 200px;
+  background-repeat: repeat;
+}
+#dirtyphonics-container {
+  background-position-y: -14px;
+}
+
+#fearoftigers-container {
+  .djs-nav {
+    color: black;
+    #djshow-header a, nav #logo {
+      filter: invert(1);
+    }
+  }
+}
+#gammer-container {
+  background-position-y: 0px;
+}
+#infectedmushroom-container {
+  background-position-y: -30px;
+}
+#justice-container {
+  background-position-y: -45px;
+}
+#kayzo-container {
+  background-position-y: -116px;
+}
+#killthenoise-container {
+  background-position-y: -40px;
+}
+#knifeparty-container {
+  background-position-y: -90px;
+}
+#kygo-container {
+  background-position-y: -60px;
+}
+#lnytnz-container {
+  background-position-y: -30px;
+}
+#markusschulz-container {
+  background-position-y: -30px;
+}
+#martingarrix-container {
+  background-position-y: -65px;
+}
+#martinezbrothers-container {
+  background-position-y: 0px;
+}
+#masterbootrecord-container {
+  background-position-y: -140px;
+  .djs-nav {
+    color: #a6a6a6;
+    #djshow-header a, nav #logo {
+      filter: contrast(0.5);
+    }
+  }
+}
+#nero-container {
+  background-position-y: -40px;
+}
+#noisufx-container {
+  background-position-y: -150px;
+}
+#noraenpure-container {
+  background-position-y: -85px;
+}
+#prettylights-container {
+  background-position-y: 0px;
+}
+#quintino-container {
+  background-position-y: -200px;
+}
+#rabbitjunk-container {
+  background-position-y: 0px;
+}
+#rezz-container {
+  background-position-y: -30px;
+}
+#savoy-container {
+  background-position-y: 0px;
+}
+#sevenlions-container {
+  background-position-y: -10px;
+}
+#skrillex-container {
+  background-position-y: -40px;
+}
+#underworld-container {
+  background-position-y: 0px;
+}
+#virtualself-container {
+  background-position-y: -100px;
+  .djs-nav {
+    color: black;
+    #djshow-header a, nav #logo {
+      filter: invert(1);
+    }
+  }
+}
+#vitalic-container {
+  background-position-y: -65px;
+}
+#warface-container {
+  background-position-y: -40px;
+}
+#yellowclaw-container {
+  background-position-y: 0px;
+}
+#zedd-container {
+  background-position-y: -50px;
+}
+#zedsdead-container {
+  background-position-y: 0px;
+}
+#zomboy-container {
+  background-position-y: -60px;
+}
+
+
 
 .djs-subnav-container {
   background-color: #ff0;
@@ -110,6 +298,47 @@
         background-color: #ff0;
         color: #1f1f1f;
       }
+    }
+  }
+}
+
+.djsubheader-container {
+  background-color: #3c3c3c;
+  .djshow-subheader {
+    
+    width: 952px;
+    margin: 0 auto;
+    .details {
+      display: flex;
+      li {
+          text-align: left;
+          font-weight: normal;
+          color: #fdff00;
+          font-size: 16px;
+          padding: 16px 0;
+          margin-right: 220px;
+        small {
+          color: #b4b4b4;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.dj-main {
+  background-color: #1e1e1e;
+  color: white;
+  height: 600px;
+  .bio-container {
+    width: 952px;
+    margin: 0 auto;
+    padding: 50px 0;
+    h1 {
+      font-size: 24px;
+    }
+    hr {
+      border-color: #fdff00;
     }
   }
 }
