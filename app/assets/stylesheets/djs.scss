@@ -98,6 +98,14 @@
 #ambassador21-container {
   background-position-y: -45px;
 }
+#aphextwin-container {
+  .djs-nav {
+    color: black;
+    #djshow-header a, nav #logo {
+      filter: invert(1);
+    }
+  }
+}
 
 #blacktigersexmachine-container {
   background-position-y: 0px;
