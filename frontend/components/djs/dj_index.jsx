@@ -49,7 +49,7 @@ class DjIndex extends React.Component {
               <h1 id="first-char">{letter}</h1>
               <ul id={`djlist-${letter}`} className="djlist">
                  {Object.values(djs).filter(dj => dj.name.charAt(0).toUpperCase() === letter).map(dj =>
-                   <DjIndexItem key={dj.id} dj={dj} />
+                   <DjIndexItem key={dj.id} value={dj.name} dj={dj} />
                   )}
               </ul>
             </span>

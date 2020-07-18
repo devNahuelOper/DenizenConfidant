@@ -29,7 +29,7 @@
   nav {
     display: flex;
     justify-content: space-between;
-    width: 952px;
+    width: 960px;
     margin: 0 auto;
     #links {
       height: 30px;
@@ -48,6 +48,7 @@
       right: unset;
       top: unset;
       margin: unset;
+      left: -4px;
       // filter: invert(1);
     }
     #logo:hover {
@@ -65,6 +66,7 @@
     font-size: 64px;
     width: 952px;
     margin: 0 auto;
+    line-height: 2.2em;
   }
 }
 
@@ -81,6 +83,9 @@
     flex-direction: column;
     justify-content: space-between;
     color: white;
+    h1 {
+      line-height: unset;
+    }
   }
   #links li  {
     // background-color: #0000001c;
@@ -92,6 +97,14 @@
 
 #ambassador21-container {
   background-position-y: -45px;
+}
+#aphextwin-container {
+  .djs-nav {
+    color: black;
+    #djshow-header a, nav #logo {
+      filter: invert(1);
+    }
+  }
 }
 
 #blacktigersexmachine-container {
@@ -178,7 +191,7 @@
   background-position-y: -40px;
 }
 #noisufx-container {
-  background-position-y: -150px;
+  // background-position-y: -150px;
 }
 #noraenpure-container {
   background-position-y: -85px;
@@ -203,6 +216,9 @@
 }
 #skrillex-container {
   background-position-y: -40px;
+}
+#stonebank-container {
+  background-color: #1c2426;
 }
 #underworld-container {
   background-position-y: 0px;
