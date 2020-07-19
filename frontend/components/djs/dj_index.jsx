@@ -8,13 +8,12 @@ class DjIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchDjs();
+    this.props.fetchDjs(); 
   }
 
   render() {
     const { djs } = this.props;
     const alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-
     return (
       <div className="djs-index">
         <div className="djs-nav-container">

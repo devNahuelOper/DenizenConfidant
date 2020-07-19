@@ -13,7 +13,7 @@ class SplashPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchDjs();
+    this.props.fetchDjs().then(djs => this.setState({djs: Object.values(djs.djs)}));
   }
 
   useQuery() {
@@ -21,7 +21,7 @@ class SplashPage extends React.Component {
   }
 
   render() {
-    // const { djs } = this.props;
+    const { djs } = this.state;
 
     let yesterday = new Date(this.state.date);
     yesterday.setDate(yesterday.getDate() - 1);
@@ -139,7 +139,7 @@ class SplashPage extends React.Component {
                     {/* <a href="https://www.youtube.com/watch?v=3boEAV4uUUU" target="_blank">
                       Gesaffelstein - Depravity
                     </a> */}
-                    <Link to="/djs/361">Gesaffelstein - Depravity</Link>
+                    <Link to="/djs/336">Gesaffelstein - Depravity</Link>
                     {/* <Link to={`/djs/${djs.find(dj => dj.name === 'Gesaffelstein')}`}>Gesaffelstein - Depravity</Link> */}
                     <audio id="depravity" src="depravity.mp3" controls></audio>
                       
@@ -152,7 +152,7 @@ class SplashPage extends React.Component {
                     {/* <a href="https://www.youtube.com/watch?v=jQhkNqELyLc" target="_blank">
                       Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small> 
                     </a> */}
-                    <Link to="/djs/347">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
+                    <Link to="/djs/322">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
                     <audio id="speed" src="speed.mp3" controls></audio>
                   </article>
                 </li>
@@ -163,7 +163,7 @@ class SplashPage extends React.Component {
                     {/* <a href="https://www.youtube.com/watch?v=lmxH1L7uubQ" target="_blank">
                       Noisuf X - Count to Seven
                     </a> */}
-                    <Link to="/djs/390">Noisuf-X - Count to Seven</Link>
+                    <Link to="/djs/365">Noisuf-X - Count to Seven</Link>
                     <audio id="cseven" src="cseven.mp3" controls></audio>
                   </article>
                 </li>
@@ -174,7 +174,7 @@ class SplashPage extends React.Component {
                     {/* <a href="https://www.youtube.com/watch?v=nCJ8WJGStl4" target="_blank">
                       No Mana - Other Side
                     </a> */}
-                    <Link to="/djs/391">No Mana - Other Side</Link>
+                    <Link to="/djs/366">No Mana - Other Side</Link>
                     <audio id="otherside" src="otherside.mp3" controls></audio>
                   </article>
                 </li>
@@ -185,7 +185,7 @@ class SplashPage extends React.Component {
                     {/* <a href="https://www.youtube.com/watch?v=-M8xBwVpET8" target="_blank">
                       Kayzo - The Fire
                     </a> */}
-                    <Link to="/djs/374">Kayzo - The Fire</Link>
+                    <Link to="/djs/349">Kayzo - The Fire</Link>
                     <audio id="fire" src="fire.mp3" controls></audio>
                   </article>
                 </li>
@@ -195,7 +195,7 @@ class SplashPage extends React.Component {
                     {/* <a href="https://www.youtube.com/watch?v=jMro9nsr1OI" target="_blank">
                       Eric Prydz - The Matrix
                     </a> */}
-                    <Link to="/djs/352">Eric Prydz - The Matrix</Link>
+                    <Link to="/djs/327">Eric Prydz - The Matrix</Link>
                     <audio id="matrix" src="matrix.mp3" controls></audio>
                   </article>
                 </li>
