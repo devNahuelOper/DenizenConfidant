@@ -6,7 +6,8 @@ import { fetchDj } from '../../actions/dj_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    dj: state.entities.djs[ownProps.match.params.djId]
+    dj: state.entities.djs[ownProps.match.params.djId],
+    name: state.entities.djs[ownProps.match.params.djId].name
   }
 };
 
