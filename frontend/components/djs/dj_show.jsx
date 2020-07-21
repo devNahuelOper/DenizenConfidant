@@ -6,7 +6,8 @@ class DjShow extends React.Component {
     super(props);
     this.state = {
       name: this.props.dj.name,
-      genre: this.props.dj.genre
+      genre: this.props.dj.genre,
+      songsUrl: this.props.dj.songsUrl
     }
     this.useQuery = this.useQuery.bind(this);
   }
@@ -79,6 +80,19 @@ class DjShow extends React.Component {
               {dj.bio}
             </p>
             {/* <img id="dj-image" src={`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`} /> */}
+          </section>
+          <section className="playlist">
+            <ul className="songs">
+              {dj.songsUrl.map(song =>
+              <li className="song" key={dj.songsUrl.indexOf(song)}>
+                <span id="song-title">
+                    {song.slice(song.lastIndexOf('/') + 1, song.lastIndexOf('.')).split('+').join(' ')}
+                </span>
+                <br/>
+                <audio src={song} controls></audio>
+              </li>
+                )}
+            </ul>
           </section>
         </div>
       </div>

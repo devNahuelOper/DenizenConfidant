@@ -35,6 +35,6 @@ class Api::DjsController < ApplicationController
    private
 
    def dj_params
-     params.require(:dj).permit(:name, :genre, :nationality, :bio)
+     params.require(:dj).permit(:name, :genre, :nationality, :bio, songs: [])
    end
 end

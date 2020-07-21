@@ -358,3 +358,15 @@
     }
   }
 }
+
+.playlist {
+  width: 952px;
+  margin: 0 auto;
+  #song-title {
+    color: #fdff00;
+    font-size: 18px;
+  }
+  audio {
+    height: 36px;
+  }
+}

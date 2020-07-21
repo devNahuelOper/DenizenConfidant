@@ -61,7 +61,7 @@ class LoginForm extends React.Component {
 
           <div id="nav-container">
             <nav id="navbar">
-            <img src={window.logoUrl} id="logo" />
+            <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
                 <ul id="links">
               <li><Link to="/djs">DJs</Link></li>
               <li><Link to="/events">Events</Link></li>
