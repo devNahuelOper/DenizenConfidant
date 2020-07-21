@@ -2,27 +2,48 @@ import React from 'react';
 import ImageCarousel from './image_carousel';
 import { Link, useLocation } from 'react-router-dom';
 
-
+let gesaffId, deamauId, noisufId, nomanaId, kayzoId, eprydzId;
 
 class SplashPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: new Date()
+      date: new Date(),
+      
     }
+    // this.findDj = this.findDj.bind(this);
   }
+
+  
 
   componentDidMount() {
     this.props.fetchDjs().then(djs => this.setState({djs: Object.values(djs.djs)}));
   }
+
+  // findDj(name) {
+  //   let djs = this.props.djs;
+  //   let query = djs.find(dj => dj.name === name);
+  //   return query;
+  // }
+
+  componentDidUpdate() {
+    gesaffId = this.props.djs.find(dj => dj.name === 'Gesaffelstein').id;
+    deamauId = this.props.djs.find(dj => dj.name === 'Deadmau5').id;
+    noisufId = this.props.djs.find(dj => dj.name === 'Noisuf X').id;
+    nomanaId = this.props.djs.find(dj => dj.name === 'No Mana').id;
+    kayzoId = this.props.djs.find(dj => dj.name === 'Kayzo').id;
+    eprydzId = this.props.djs.find(dj => dj.name === 'Eric Prydz').id;
+  }
+
+
 
   useQuery() {
     return new URLSearchParams(useLocation().search);
   }
 
   render() {
-    const { djs } = this.state;
-
+    const { djs } = this.props;
+    
     let yesterday = new Date(this.state.date);
     yesterday.setDate(yesterday.getDate() - 1);
 
@@ -40,6 +61,13 @@ class SplashPage extends React.Component {
     let today = this.state.date.getDate();
     return (
      <div>
+       {/* <div style={{display: 'none'}}>
+         <ul>
+           {djs.map(dj =>
+             <li>{dj.name},{dj.id}</li>
+            )}
+         </ul>
+       </div> */}
        <div className="splash-header-container">
         <nav id="navbar">
           <img src={window.logoUrl} id="logo" />
@@ -97,7 +125,6 @@ class SplashPage extends React.Component {
                     </div>
                     <div id="caption">
                         <h1 id="und-capt">Here's what it's like to go to an underground rave...</h1>
-                        
                     </div>
                   </div>
                 </a>
@@ -124,7 +151,7 @@ class SplashPage extends React.Component {
               </li>
             </ul>
           </section>
-        
+          {/* {console.log(gesaffId, deamauId, noisufId, nomanaId, kayzoId, eprydzId)} */}
      
           <section className="beats">
             <div className="beats-banner">
@@ -136,10 +163,8 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.gesaffelsteinUrl} id="gesaffelstein"/>
-                    {/* <a href="https://www.youtube.com/watch?v=3boEAV4uUUU" target="_blank">
-                      Gesaffelstein - Depravity
-                    </a> */}
-                    <Link to="/djs/336">Gesaffelstein - Depravity</Link>
+                    {/* <Link to="/djs/336">Gesaffelstein - Depravity</Link> */}
+                    <Link to={`/djs/${gesaffId}`}>Gesaffelstein - Depravity</Link>
                     {/* <Link to={`/djs/${djs.find(dj => dj.name === 'Gesaffelstein')}`}>Gesaffelstein - Depravity</Link> */}
                     <audio id="depravity" src="depravity.mp3" controls></audio>
                       
@@ -149,21 +174,18 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.deadmau5Url} id="deadmau5"/>
-                    {/* <a href="https://www.youtube.com/watch?v=jQhkNqELyLc" target="_blank">
-                      Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small> 
-                    </a> */}
-                    <Link to="/djs/322">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
+                   
+                    <Link to={`/djs/${deamauId}`}>Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
+                    {/* <Link to="/djs/322">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link> */}
                     <audio id="speed" src="speed.mp3" controls></audio>
                   </article>
                 </li>
 
                 <li className="song">
                   <article>
-                    <img src={window.noisufUrl} id="noisuf"/>
-                    {/* <a href="https://www.youtube.com/watch?v=lmxH1L7uubQ" target="_blank">
-                      Noisuf X - Count to Seven
-                    </a> */}
-                    <Link to="/djs/365">Noisuf-X - Count to Seven</Link>
+                    <img src={window.noisufUrl} id="noisuf"/>    
+                    <Link to={`/djs/${noisufId}`}>Noisuf-X - Count to Seven</Link>
+                    {/* <Link to="/djs/365">Noisuf-X - Count to Seven</Link> */}
                     <audio id="cseven" src="cseven.mp3" controls></audio>
                   </article>
                 </li>
@@ -171,10 +193,8 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.nomanaUrl} id="nomana"/>
-                    {/* <a href="https://www.youtube.com/watch?v=nCJ8WJGStl4" target="_blank">
-                      No Mana - Other Side
-                    </a> */}
-                    <Link to="/djs/366">No Mana - Other Side</Link>
+                    <Link to={`/djs/${nomanaId}`}>No Mana - Other Side</Link>
+                    {/* <Link to="/djs/366">No Mana - Other Side</Link> */}
                     <audio id="otherside" src="otherside.mp3" controls></audio>
                   </article>
                 </li>
@@ -182,20 +202,16 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.kayzoUrl} id="kayzo"/>
-                    {/* <a href="https://www.youtube.com/watch?v=-M8xBwVpET8" target="_blank">
-                      Kayzo - The Fire
-                    </a> */}
-                    <Link to="/djs/349">Kayzo - The Fire</Link>
+                    <Link to={`/djs/${kayzoId}`}>Kayzo - The Fire</Link>
+                    {/* <Link to="/djs/349">Kayzo - The Fire</Link> */}
                     <audio id="fire" src="fire.mp3" controls></audio>
                   </article>
                 </li>
                 <li className="song">
                   <article>
                     <img src={window.prydzUrl} id="prydz" />
-                    {/* <a href="https://www.youtube.com/watch?v=jMro9nsr1OI" target="_blank">
-                      Eric Prydz - The Matrix
-                    </a> */}
-                    <Link to="/djs/327">Eric Prydz - The Matrix</Link>
+                    <Link to={`/djs/${eprydzId}`}>Eric Prydz - The Matrix</Link>
+                    {/* <Link to="/djs/327">Eric Prydz - The Matrix</Link> */}
                     <audio id="matrix" src="matrix.mp3" controls></audio>
                   </article>
                 </li>
