@@ -100,25 +100,31 @@
   letter-spacing: -1px;
 }
 
-.denizen-confidant:hover {
-  opacity: 80%;
-  // font-weight: bold;
-  color: #ff0;
-  color: #2e2e2e;
-  background-image: image_url("ravve.png");
-  cursor: image_url("vinyl-record2.png"), auto;
-  background-size: 15%;
-  // background-position: center;
-  background-repeat: no-repeat;
-  background-position-x: -3.9px;
-  background-position-y: 10px;
-  filter: drop-shadow(2px 4px 6px black);  
-} 
+// .denizen-confidant:hover {
+//   opacity: 80%;
+//   color: #2e2e2e;
+//   background-image: image_url("ravve.png");
+//   cursor: image_url("vinyl-record2.png"), auto;
+//   background-size: 15%;
+//   background-repeat: no-repeat;
+//   background-position-x: -3.9px;
+//   background-position-y: 10px;
+//   filter: drop-shadow(2px 4px 6px black);  
+// } 
 
-.main-banner h1:first-letter:hover {
-   font-weight: bold;
-   font-size: 50px;
+.denizen-confidant:hover {
+  height: 29px;
+  background-image: image_url("ravve.png");
+  cursor: default;
+  background-size: 11%;
+  background-repeat: no-repeat;
+  background-position-x: -0.4px;
+  background-position-y: 12px;
 }
+.denizen-confidant::first-letter:hover {
+  overflow: hidden;
+}
+
 
 .days {
   display: flex;
