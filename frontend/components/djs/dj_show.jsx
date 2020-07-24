@@ -82,13 +82,15 @@ class DjShow extends React.Component {
             {/* <img id="dj-image" src={`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`} /> */}
           </section>
           <section className="playlist">
+            <h1>Tracks by {dj.name}</h1>
+            <hr />
             <ul className="songs">
               {dj.songsUrl.map(song =>
               <li className="song" key={dj.songsUrl.indexOf(song)}>
                 <span id="song-title">
                     {song.slice(song.lastIndexOf('/') + 1, song.lastIndexOf('.')).split('+').join(' ')}
                 </span>
-                <br/>
+                <hr/>
                 <audio src={song} controls></audio>
               </li>
                 )}

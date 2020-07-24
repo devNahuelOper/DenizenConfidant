@@ -95,6 +95,10 @@
   }
 }
 
+#aboveandbeyond-container {
+  background-position-y: -66px;
+}
+
 #ambassador21-container {
   background-position-y: -45px;
 }
@@ -356,7 +360,7 @@
 .dj-main {
   background-color: #1e1e1e;
   color: white;
-  height: 600px;
+  height: 700px;
   .bio-container {
     width: 952px;
     margin: 0 auto;
@@ -373,16 +377,33 @@
 .playlist {
   width: 952px;
   margin: 0 auto;
+  h1 {
+    font-size: 24px;
+  }
+  hr {
+    border-color: #fdff00;
+  }
   #song-title {
     color: #fdff00;
     font-size: 15px;
+    font-weight: 100;
   }
   .songs {
+    width:960px;
     display: flex;
     flex-direction: column;
     flex-flow: wrap;
     .song {
-      margin: 8px;
+      margin: 5px;
+      // background-color: #3d3d3d;
+      // border-radius: 12px;
+      padding: 5px;
+      hr {
+        border-color: #585858;
+      }
+    }
+    .song:hover {
+      background-color: #3d3d3d;
     }
   }
   audio {
