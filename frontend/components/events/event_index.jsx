@@ -33,10 +33,10 @@ class EventIndex extends React.Component {
         <div className="subnav-container">
           <section id="events-subnav">
             <ul>
-            <li><Link className="form" style={{ color: 'black' }} to="/events">All</Link></li>
-              <li><Link to="/signup">Register</Link></li>
+            <li><Link className="form" to="/events">All</Link></li>
+              {/* <li><Link to="/signup">Register</Link></li> */}
               <li><Link to="/">Take me back home</Link></li>
-            <li><Link to='/events/:id'>Submit an event</Link></li>
+              <li><Link to='/events'>Submit an event <br /> <small>Coming Soon!</small></Link></li>
             </ul>
           </section>
         </div>

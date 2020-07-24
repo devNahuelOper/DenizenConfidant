@@ -52,9 +52,9 @@ class DjShow extends React.Component {
           <section className="djs-subnav">
             <ul>
               <li><Link to="/djs">All</Link></li>
-              <li><Link className="form" style={{ color: 'black' }} to={`/djs/${dj.id}`}>{dj.name}</Link></li>
+              <li><Link className="form" to={`/djs/${dj.id}`}>{dj.name}</Link></li>
               <li><Link to="/">Take me back home</Link></li>
-              <li id="pending"><Link to='/djs'>Create an artist profile <br /> <small>In Development!</small></Link></li>
+              <li id="pending"><Link to='/djs'>Create an artist profile <br /> <small>Coming Soon!</small></Link></li>
             </ul>
           </section>
         </div>

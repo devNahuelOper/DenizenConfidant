@@ -6,17 +6,10 @@
   }
 }
 
-
-
-
-
 .djs-nav-container {
   background-color: #ff0;
   #logo {
     filter: invert(1);
-    :hover {
-      filter: none;
-    }
   }
 }
 
@@ -31,15 +24,18 @@
     width: 960px;
     margin: 0 auto;
     #links {
-      height: 30px;
+      height: 22px;
       position: relative;
       left: unset;
-    
+      li:first-of-type {
+        background-color: white;
+        border-color:  white;
+      }
       li:nth-of-type(3) {
-        border-color: #ecec06;
+        border-color: #b4bd02;
       }
       li:nth-of-type(3):hover {
-        background-color: #ecec06;
+        background-color: #b4bd02;
       }
     }
     #logo {
@@ -48,7 +44,6 @@
       top: unset;
       margin: unset;
       left: -4px;
-      // filter: invert(1);
     }
     #logo:hover {
       filter: none;
@@ -85,12 +80,22 @@
     h1 {
       line-height: unset;
     }
-  }
-  #links li  {
-    // background-color: #0000001c;
-  }
-  #logo {
-    filter: none;
+  
+    #links {
+      li:first-of-type {
+        background-color: unset;
+        border-color: #ff0;
+      }
+      li:first-of-type:hover {
+        background-color: #ff0;
+      }
+    }
+    #logo {
+      filter: none;
+    }
+    #logo:hover {
+      filter: invert(1);
+    }
   }
 }
 
@@ -136,7 +141,9 @@
   background-position-x: 864px;
   background-repeat: repeat;
 }
-
+#daftpunk-container {
+  background-position-y: -65px;
+}
 #diplo-container {
   background-position-y: 0px;
   background-position-x: 200px;
@@ -306,15 +313,21 @@
       font-size: 8px;
       position: relative;
       top: -7px;
-      left: 100px;
+      left: 105px;
     }
   }
   li:last-child:hover {
     small {
-      color: black;
+      color: white;
     }
   }
+  li:hover, .form:hover {
+    background-color: black;
+    color: white;
+  }
 }
+
+
 
 .djs-container {
   position: relative;
