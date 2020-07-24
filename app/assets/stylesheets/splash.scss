@@ -35,7 +35,7 @@
 }
 
 #logo:hover {
-  filter: invert(1) drop-shadow(-14px 5px 5px white);
+  filter: invert(1);
 }
 
 #splash-navbar {
@@ -532,7 +532,11 @@ h3 {
                     font-size: 5px;
                     font-weight: bold;
                   }
-                
+                }
+                a:hover {
+                  color: #000008;
+                  background-color: #b4bd00;
+                  border-color: #000008;
                 }
                 img {
                   vertical-align: middle;
