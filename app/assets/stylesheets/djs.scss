@@ -12,7 +12,6 @@
 
 .djs-nav-container {
   background-color: #ff0;
-
   #logo {
     filter: invert(1);
     :hover {
@@ -302,6 +301,18 @@
   }
    li:last-child {
     border-right: 1px solid rgba(69,69,69,.4);
+    small {
+      color: #ff0;
+      font-size: 8px;
+      position: relative;
+      top: -7px;
+      left: 100px;
+    }
+  }
+  li:last-child:hover {
+    small {
+      color: black;
+    }
   }
 }
 
