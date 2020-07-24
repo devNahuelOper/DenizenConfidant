@@ -148,6 +148,17 @@
 #gammer-container {
   background-position-y: 0px;
 }
+#heyz-container {
+  background-position-y: -20px;
+  .djs-nav {
+    #links {
+      color: black;
+    }
+    #logo {
+      filter: invert(1);
+    }
+  }
+}
 #infectedmushroom-container {
   background-position-y: -30px;
 }
@@ -364,7 +375,15 @@
   margin: 0 auto;
   #song-title {
     color: #fdff00;
-    font-size: 18px;
+    font-size: 15px;
+  }
+  .songs {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    .song {
+      margin: 8px;
+    }
   }
   audio {
     height: 36px;
