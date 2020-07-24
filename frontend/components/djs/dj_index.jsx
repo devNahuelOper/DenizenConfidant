@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import DjIndexItem from './dj_index_item';
 
@@ -34,9 +34,9 @@ class DjIndex extends React.Component {
           <section className="djs-subnav">
             <ul>
               <li><Link className="form" style={{ color: 'black' }} to="/djs">All</Link></li>
-              <li><Link to="/signup">Register</Link></li>
+              {/* <li><Link to="/signup">Register</Link></li> */}
               <li><Link to="/">Take me back home</Link></li>
-              <li><Link to='/djs/:id'>Create an artist profile</Link></li>
+              <li id="pending"><Link to='/djs'>Create an artist profile <br/> <small>In Development!</small></Link></li>
             </ul>
           </section>
         </div>

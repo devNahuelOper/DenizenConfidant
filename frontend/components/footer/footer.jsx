@@ -4,6 +4,7 @@ class Footer extends React.Component {
 
   render() {
     return (
+      <footer>
       <div className="footer">
        <div className="foothold">
           <span id="footer-msg">
@@ -32,6 +33,7 @@ class Footer extends React.Component {
         
         </div>
       </div>
+      </footer>
     )
   }
 }

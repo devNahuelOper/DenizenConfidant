@@ -12,7 +12,6 @@
 
 .djs-nav-container {
   background-color: #ff0;
-
   #logo {
     filter: invert(1);
     :hover {
@@ -94,6 +93,12 @@
     filter: none;
   }
 }
+
+#black, #dimitri  {
+  font-size: 15px;
+}
+
+
 
 #aboveandbeyond-container {
   background-position-y: -66px;
@@ -296,6 +301,18 @@
   }
    li:last-child {
     border-right: 1px solid rgba(69,69,69,.4);
+    small {
+      color: #ff0;
+      font-size: 8px;
+      position: relative;
+      top: -7px;
+      left: 100px;
+    }
+  }
+  li:last-child:hover {
+    small {
+      color: black;
+    }
   }
 }
 
@@ -395,8 +412,6 @@
     flex-flow: wrap;
     .song {
       margin: 5px;
-      // background-color: #3d3d3d;
-      // border-radius: 12px;
       padding: 5px;
       hr {
         border-color: #585858;
