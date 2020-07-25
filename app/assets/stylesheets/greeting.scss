@@ -245,6 +245,12 @@ body {
      border-radius: 17px;
     }
 
+    #headshot {
+      filter: none;
+      border-radius: 4px;
+      border: 1px solid black;
+    }
+
     #footer-msg {
       margin-top: 15px;
       a {
