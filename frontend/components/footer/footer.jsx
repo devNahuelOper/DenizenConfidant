@@ -13,6 +13,11 @@ class Footer extends React.Component {
           </span>
         <ul className="footer-links">
           <li>
+            <a href="https://devnahueloper.github.io/" target="_blank">
+              <img src="https://avatars1.githubusercontent.com/u/16979527?s=400&u=97a69e78167b0215e15d11fd3916af831bc611a0&v=4" alt="Personal Site" id="headshot"/>
+            </a>
+          </li>
+          <li>
             <a href="https://github.com/devNahuelOper/DenizenConfidant-.git" target="_blank">
               <img src={window.gitUrl} id="git-logo"/>
             </a>
