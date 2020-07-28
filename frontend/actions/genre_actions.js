@@ -16,4 +16,9 @@ export const receiveGenre = genre => ({
 export const fetchGenres = genres => dispatch => (
   GenreApiUtil.fetchGenres(genres)
     .then(genres => dispatch(receiveGenres(genres)))
-)
+);
+
+export const fetchGenre = genreId => dispatch =>(
+  GenreApiUtil.fetchGenre(genreId)
+    .then(genre => dispatch(receiveGenre(genre)))
+);

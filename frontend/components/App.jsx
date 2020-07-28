@@ -10,6 +10,8 @@ import EventIndexContainer from './events/event_index_container';
 import EventShowContainer from './events/event_show_container';
 import DjIndexContainer from './djs/dj_index_container';
 import DjShowContainer from './djs/dj_show_container';
+import GenreIndexContainer from './genres/genre_index_container';
+import GenreShowContainer from './genres/genre_show_container';
 import SplashContainer from './splash/splash_container';
 // import EventShow from './events/event_show';
 
@@ -28,6 +30,9 @@ const App = () => (
       <Route exact path="/events/:eventId" component={EventShowContainer} />
       <Route exact path="/djs" component={DjIndexContainer} />
       <Route exact path="/djs/:djId" component={DjShowContainer} />
+      <Route exact path="/genres" component={GenreIndexContainer}/>
+      <Route exact path="/genres/:genreId" component={GenreShowContainer} />
+
       {/* <Route path={`/djs/${this.props.dj.name}`} component={DjShowContainer} /> */}
     </Switch>
 
