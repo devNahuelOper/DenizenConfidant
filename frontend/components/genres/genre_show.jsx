@@ -8,11 +8,12 @@ class GenreShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchGenre(this.props.match.params.genreId);
+    this.props.fetchDjs();
   }
 
   render() {
     const { genre } = this.props;
-
+    const ids = genre.artist_ids;
     return (
       <div className="genre-index">
         <div className="genre-nav-container">
@@ -27,15 +28,15 @@ class GenreShow extends React.Component {
               </ul>
             </nav>
             <section className="genreshow-header">
-              <Link to='/genres'><img id="prev" src={window.prevUrl} alt="Back" /> Events</Link>
-              <h2>{genre.name}</h2>
+              <Link to='/genres'><img id="prev" src={window.prevUrl} alt="Back" /> Genres</Link>
+              <h1>{genre.name}</h1>
             </section>
           </section>
         </div>
         <div className="genre-subnav-container">
           <section className="genre-subnav">
             <ul>
-              <li><Link className="form" to="/genres">All</Link></li>
+              <li><Link to="/genres">All</Link></li>
               <li><Link className="form" to={`/genres/${genre.id}`}>{genre.name}</Link></li>
               <li><Link to="/">Take me back home</Link></li>
             </ul>
@@ -51,7 +52,9 @@ class GenreShow extends React.Component {
           <section className="examples">
             <ul>
               {genre.artists.map(artist => 
-              <li>{artist}</li>
+              // <li>{artist}</li>
+              <li><Link to={`/djs/${ids[genre.artists.indexOf(artist)]}`}>{artist}</Link></li>
+              // <li><Link to="/djs">{artist}</Link></li>
                 )}
             </ul>
           </section>

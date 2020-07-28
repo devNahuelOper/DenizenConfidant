@@ -96,3 +96,40 @@
     color: white;
   }
 }
+
+.genres-container {
+  position: relative;
+  padding: 20px 0;
+}
+
+.genres {
+  width: 960px;
+  margin: 0 auto;
+}
+
+
+//Genre Show
+
+.genreshow-header {
+   margin: 0 auto;
+   width: 952px;
+  a {
+    color: white;
+    position: relative;
+    top: 12px;
+  }
+  a:hover {
+    filter: invert(1);
+  }
+  #prev {
+    position: relative;
+    top: 2px;
+    width: 16px;
+  }
+  h1 {
+    font-size: 72px;
+    width: 952px;
+    margin: 0 auto;
+    line-height: 1.5em;
+  }
+}
