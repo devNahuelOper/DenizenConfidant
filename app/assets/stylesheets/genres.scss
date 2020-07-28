@@ -1,0 +1,135 @@
+.genre-index {
+  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  background-color: #595959;
+  .hide {
+    color: #b4be00;
+  }
+}
+
+.genre-nav-container {
+  background-color: #b4be00;
+  #logo {
+    filter: none;
+  }
+  #logo:hover {
+    filter: invert(1);
+  }
+}
+
+.genre-nav {
+  width: 952px;
+  height: 215px;
+  margin: 0 auto;
+  color: white;
+   nav {
+    display: flex;
+    justify-content: space-between;
+    width: 960px;
+    margin: 0 auto;
+    #links {
+      height: 22px;
+      position: relative;
+      left: unset;
+      // li:first-of-type {
+      //   background-color: white;
+      //   border-color:  white;
+      // }
+      li:nth-of-type(3) {
+        // border-color: #b4bd02;
+        background-color: white;
+        border-color:  white;
+        color: black;
+      }
+      // li:nth-of-type(3):hover {
+      //   background-color: #b4bd02;
+      // }
+    }
+    #logo {
+      position: relative;
+      right: unset;
+      top: unset;
+      margin: unset;
+      left: -4px;
+    }
+  }
+  h1 {
+    letter-spacing: -2px;
+    line-height: 2em;
+    font-size: 64px;
+    margin: 0 auto;
+    width: 960px;
+    font-weight: normal;
+  } 
+}
+
+.genre-subnav-container {
+  background-color: #b4be00;
+  border-top: 1px solid rgba(255,255,255,.4);
+  border-top-color: rgba(69,69,69,.4);
+}
+
+.genre-subnav {
+  height: 40px;
+  width: 952px;
+  margin: 0 auto;
+  position: relative;
+  color: black;
+  ul {
+    width: 952px;
+    margin: 0 auto;
+  }
+  li {
+    height: 40px;
+    float: left;
+    border-left: 1px solid rgba(69,69,69,.4);
+    a {
+     display: block;
+     padding: 10px 14px;
+     line-height: 19px;
+    }
+  }
+  li:last-child {
+    border-right: 1px solid rgba(69,69,69,.4);
+  }
+   li:hover, .form:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.genres-container {
+  position: relative;
+  padding: 20px 0;
+}
+
+.genres {
+  width: 960px;
+  margin: 0 auto;
+}
+
+
+//Genre Show
+
+.genreshow-header {
+   margin: 0 auto;
+   width: 952px;
+  a {
+    color: white;
+    position: relative;
+    top: 12px;
+  }
+  a:hover {
+    filter: invert(1);
+  }
+  #prev {
+    position: relative;
+    top: 2px;
+    width: 16px;
+  }
+  h1 {
+    font-size: 72px;
+    width: 952px;
+    margin: 0 auto;
+    line-height: 1.5em;
+  }
+}

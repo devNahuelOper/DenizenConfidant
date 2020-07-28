@@ -38,7 +38,7 @@ class DjShow extends React.Component {
               <ul id="links">
                 <li><Link to="/djs">DJs</Link></li>
                 <li><Link to="/events">Events</Link></li>
-                <li>Music</li>
+                <li><Link to="/genres">Music</Link></li>
                 <li>Search</li>
               </ul>
             </nav>
