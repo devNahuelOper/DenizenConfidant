@@ -13,6 +13,6 @@ class Api::GenresController < ApplicationController
   private
 
   def genre_params
-    params.require(:genre).permit(:name, :origin, :artists, :description, :photo)
+    params.require(:genre).permit(:name, :origin, :artists, :description, photos: [])
   end
 end
