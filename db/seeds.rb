@@ -640,3 +640,5 @@ zomboy.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/s
 zomboy.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/Raptor.mp3'), filename: 'Raptor.mp3')
 zomboy.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/WTF.mp3'), filename: 'WTF.mp3')
 
+# Genres
+# techno = Genre.create({name: 'Techno', origin: 'Detroit, USA', artists: [], description: 'Pulsating sounds of heavy machinery.'})
