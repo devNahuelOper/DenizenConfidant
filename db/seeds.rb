@@ -642,3 +642,4 @@ zomboy.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/s
 
 # Genres
 # techno = Genre.create({name: 'Techno', origin: 'Detroit, USA', artists: [], description: 'Pulsating sounds of heavy machinery.'})
+# electronic = Genre.create({name: 'Electronic', origin: 'London, UK', artists: [], description: 'Electronic music is music that employs electronic musical instruments, digital instruments and circuitry-based music technology.', artist_ids: []})

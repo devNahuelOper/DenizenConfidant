@@ -23,6 +23,7 @@ class Genre < ApplicationRecord
       genres = dj.genre.split
       if genres.include?(self.name)
         self.artists.push(dj.name)
+        self.artist_ids.push(dj.id)
       end
     end
   end
