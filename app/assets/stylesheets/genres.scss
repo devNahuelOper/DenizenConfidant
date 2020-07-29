@@ -150,6 +150,44 @@
     font-size: 72px;
     width: 952px;
     margin: 0 auto;
-    line-height: 1.5em;
+    line-height: 1.3em;
+  }
+}
+
+.genre-main {
+   h1 {
+    font-size: 24px;
+    color: white;
+  }
+  hr {
+    border-color: #b4be00;
+  }
+}
+
+.description-container, .examples {
+  width: 960px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+#genre-bio {
+  color: white;
+}
+
+.example-list {
+  // display: flex;
+  // justify-content: space-between;
+  columns: 5;
+  color: #b4be00;
+  // color: white;
+  #dj-link {
+    margin-bottom: 5px;
+    white-space: nowrap;
+    a:hover {
+      color: black;
+      // color: #ff0;
+      background-color: #ff0;
+      // background-color: white;
+    }
   }
 }
