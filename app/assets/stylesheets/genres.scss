@@ -137,7 +137,7 @@
   margin-bottom: 10px;
 }
 
-.genrelist-item a:hover {
+.genrelist-item strong:hover {
   color: black;
   background-color: #b4be00;
 }
@@ -150,6 +150,9 @@
   width: 25px;
   height: 25px;
   vertical-align: middle;
+}
+.genre-avatar:hover {
+  background-color: none;
 }
 
 //Genre Show
