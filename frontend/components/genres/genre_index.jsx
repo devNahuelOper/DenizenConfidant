@@ -39,8 +39,10 @@ class GenreIndex extends React.Component {
             </ul>
           </section>
         </div>
-        <div className="genres-container">
+        <div className="genres-container">        
           <section className="genres">
+            <h1>Electronic Music Genres  <small>(non-exhaustive list)</small></h1>
+            <hr />
             <ul className="genre-list">
               {genres.map(genre =>
               <GenreIndexItem key={genre.id} genre={genre}/>

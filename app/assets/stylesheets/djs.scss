@@ -105,6 +105,93 @@
 
 
 
+
+.djs-subnav-container {
+  background-color: #ff0;
+  border-top: 1px solid rgba(255,255,255,.4);
+  border-top-color: rgba(69,69,69,.4);
+}
+
+.djs-subnav {
+  height: 40px;
+  width: 952px;
+  margin: 0 auto;
+  position: relative;
+  color: black;
+  ul {
+    width: 952px;
+    margin: 0 auto;
+  }
+  li {
+    height: 40px;
+    float: left;
+    border-left: 1px solid rgba(69,69,69,.4);
+    a {
+     display: block;
+     padding: 10px 14px;
+     line-height: 19px;
+    }
+  }
+   li:last-child {
+    border-right: 1px solid rgba(69,69,69,.4);
+    small {
+      color: #ff0;
+      font-size: 8px;
+      position: relative;
+      top: -7px;
+      left: 105px;
+    }
+  }
+  li:last-child:hover {
+    small {
+      color: white;
+    }
+  }
+  li:hover, .form:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+
+
+.djs-container {
+  position: relative;
+}
+
+.djs {
+  position: relative;
+  top: 35px;
+  // width: 952px;
+  width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: wrap;
+}
+
+.dj-sort {
+  // width: 152px;
+  width: 188px;
+  min-height: 320px;
+  #first-char {
+    font-size: 64px;
+    color: white;
+  }
+  .djlist {
+    .djlist-item {
+      color: #ff0;
+      white-space: nowrap;
+      a:hover {
+        background-color: #ff0;
+        color: #1f1f1f;
+      }
+    }
+  }
+}
+
+
+// DJ Show Pages
+
 #aboveandbeyond-container {
   background-position-y: -66px;
 }
@@ -280,89 +367,6 @@
 
 
 
-.djs-subnav-container {
-  background-color: #ff0;
-  border-top: 1px solid rgba(255,255,255,.4);
-  border-top-color: rgba(69,69,69,.4);
-}
-
-.djs-subnav {
-  height: 40px;
-  width: 952px;
-  margin: 0 auto;
-  position: relative;
-  color: black;
-  ul {
-    width: 952px;
-    margin: 0 auto;
-  }
-  li {
-    height: 40px;
-    float: left;
-    border-left: 1px solid rgba(69,69,69,.4);
-    a {
-     display: block;
-     padding: 10px 14px;
-     line-height: 19px;
-    }
-  }
-   li:last-child {
-    border-right: 1px solid rgba(69,69,69,.4);
-    small {
-      color: #ff0;
-      font-size: 8px;
-      position: relative;
-      top: -7px;
-      left: 105px;
-    }
-  }
-  li:last-child:hover {
-    small {
-      color: white;
-    }
-  }
-  li:hover, .form:hover {
-    background-color: black;
-    color: white;
-  }
-}
-
-
-
-.djs-container {
-  position: relative;
-}
-
-.djs {
-  position: relative;
-  top: 35px;
-  // width: 952px;
-  width: 960px;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: wrap;
-}
-
-.dj-sort {
-  // width: 152px;
-  width: 188px;
-  min-height: 320px;
-  #first-char {
-    font-size: 64px;
-    color: white;
-  }
-  .djlist {
-    .djlist-item {
-      color: #ff0;
-      white-space: nowrap;
-      a:hover {
-        background-color: #ff0;
-        color: #1f1f1f;
-      }
-    }
-  }
-}
-
 .djsubheader-container {
   background-color: #3c3c3c;
   .djshow-subheader {
@@ -386,6 +390,15 @@
     }
   }
 }
+
+#genre-link {
+  margin-right: 10px;
+}
+#genre-link:hover {
+ color: black;
+ background-color:  #fdff00;
+}
+
 
 .dj-main {
   background-color: #1e1e1e;
