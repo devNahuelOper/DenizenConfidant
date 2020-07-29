@@ -14,6 +14,7 @@ class GenreShow extends React.Component {
   render() {
     const { genre } = this.props;
     const ids = genre.artist_ids;
+    const length = genre.artists.length / 2;
     return (
       <div className="genre-index">
         <div className="genre-nav-container">
@@ -45,16 +46,18 @@ class GenreShow extends React.Component {
 
         <div className="genre-main">
           <section className="description-container">
+            <h1>Overview</h1>
+            <hr/>
             <p id="genre-bio">
               {genre.description}
             </p>
           </section>
           <section className="examples">
-            <ul>
-              {genre.artists.map(artist => 
-              // <li>{artist}</li>
-              <li><Link to={`/djs/${ids[genre.artists.indexOf(artist)]}`}>{artist}</Link></li>
-              // <li><Link to="/djs">{artist}</Link></li>
+            <h1>{genre.name} DJs</h1>
+            <hr/>
+            <ul className="example-list">
+              {genre.artists.slice(0, length).sort().map(artist => 
+              <li id="dj-link"><Link to={`/djs/${ids[genre.artists.indexOf(artist)]}`}>{artist}</Link></li>
                 )}
             </ul>
           </section>
