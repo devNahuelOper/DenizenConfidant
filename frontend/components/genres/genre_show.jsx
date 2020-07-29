@@ -9,6 +9,7 @@ class GenreShow extends React.Component {
   componentDidMount() {
     this.props.fetchGenre(this.props.match.params.genreId);
     this.props.fetchDjs();
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -17,7 +18,7 @@ class GenreShow extends React.Component {
     const length = genre.artists.length / 2;
     return (
       <div className="genre-index">
-        <div className="genre-nav-container">
+        <div className="genre-nav-container" style={{backgroundImage: `url("${genre.photoUrl}")`}}>
           <section className="genre-nav">
             <nav>
               <Link to="/"><img src={window.logoUrl} id="logo" /></Link>

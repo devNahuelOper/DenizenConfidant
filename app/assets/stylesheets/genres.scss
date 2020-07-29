@@ -8,6 +8,7 @@
 
 .genre-nav-container {
   background-color: #b4be00;
+  background-position: center;
   #logo {
     filter: none;
   }
@@ -178,6 +179,7 @@
     width: 952px;
     margin: 0 auto;
     line-height: 1.3em;
+    -webkit-text-stroke: 1px black;
   }
 }
 
