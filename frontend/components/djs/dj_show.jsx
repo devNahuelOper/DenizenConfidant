@@ -67,7 +67,9 @@ class DjShow extends React.Component {
               </li>
               <li>
                 <small>Genre(s)/</small> <br/>
-                  {dj.genre}
+                  {dj.genre.split(' ').map(gen => 
+                  <Link id="genre-link" to="/genres">{gen}</Link>
+                    )}
               </li>
             </ul>
           </section>
