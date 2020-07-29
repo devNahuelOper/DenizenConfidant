@@ -13,6 +13,7 @@
 class Genre < ApplicationRecord
   validates :name, presence: true
   has_many_attached :photos
+  has_one_attached :avatar
   # has_many_attached :songs
 
   after_initialize :add_artists
