@@ -107,6 +107,26 @@
   margin: 0 auto;
 }
 
+.genre-list {
+  color: #b4be00;
+  columns: 3;
+
+  .genre {
+    width: fit-content;
+  }
+  .genre:hover {
+    transform: scale(1.1);
+  }
+}
+
+.genrelist-item {
+  margin-bottom: 10px;
+}
+
+.genrelist-item a:hover {
+  color: black;
+  background-color: #b4be00;
+}
 
 //Genre Show
 
