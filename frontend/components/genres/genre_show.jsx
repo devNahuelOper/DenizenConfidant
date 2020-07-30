@@ -54,8 +54,13 @@ class GenreShow extends React.Component {
             <h1>Overview</h1>
             <hr/>
             <p id="genre-bio">
-              {genre.description}
+              <ul>
+              {genre.description.split('  ').map(par =>
+              <li>{par}<br/></li> 
+                )} 
+              </ul>
             </p>
+            {/* <p id="genre-bio">{genre.description.split('  ')[1]}</p> */}
           </section>
           <section className="examples">
             <h1>{genre.name} DJs</h1>
