@@ -30,7 +30,7 @@ class Footer extends React.Component {
           </li>
           <br />
           <li>
-            <a href="https://www.facebook.com/nahuel.gorosito.5/">
+            <a href="https://www.facebook.com/nahuel.gorosito.5/" target="_blank">
               <img src={window.fbUrl} id="fb-logo"/>
             </a>
           </li>
