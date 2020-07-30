@@ -214,6 +214,24 @@
   .dj-sort {
     margin-right: 22px;
   }
+
+  .eventshow-header, #djshow-header {
+    width: 1272px;
+  }
+  .djsubheader-container {
+    .djshow-subheader {
+      width: 1272px !important;
+    }
+  }
+  .dj-main {
+    .bio-container, .playlist {
+      width: 1272px !important;
+      .songs {
+        width: 1272px;
+        justify-content: space-between;
+      }
+    }
+  }
 }
 
 
