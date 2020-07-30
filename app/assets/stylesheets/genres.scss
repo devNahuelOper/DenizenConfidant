@@ -111,7 +111,7 @@
   }
   hr {
     border-color: #b4be00;
-    width: 780px;
+    // width: 780px;
     margin: unset;
   }
 }
@@ -156,7 +156,13 @@
   background-color: none;
 }
 
+
+
 //Genre Show
+
+.genreshow-nav-container {
+  background-position: center;
+}
 
 .genreshow-header {
    margin: 0 auto;
@@ -240,5 +246,49 @@
   }
   .genreshow-header a {
     background-color: black;
+  }
+}
+
+@media only screen and (min-width: 1300px){
+ 
+  .genre-nav {
+    width: 1272px;
+    nav {
+      width: 1272px;
+      #links {
+        left: -147px;
+      }
+    }
+    h1 {
+      width: 1272px;
+    }
+  }
+  .genre-subnav {
+    width: 1272px;
+    ul {
+      width: 1272px;
+    }
+  }
+  .genres {
+    width: 1272px;
+    hr {
+      width: 1120px;
+    }
+  }
+  .genreshow-nav-container {
+    height: 300px;
+  }
+  .genreshow-header {
+    width: 1272px;
+    line-height: 6em;
+    a {
+      top: 44px;
+    }
+    h1 {
+      width: 1272px;
+    }
+  }
+  .description-container, .examples {
+    width: 1272px;
   }
 }

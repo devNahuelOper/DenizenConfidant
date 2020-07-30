@@ -17,7 +17,12 @@
     width: 960px;
     height: 215px;
     margin: 0 auto;
-
+    nav {
+      display: flex;
+      justify-content: space-between;
+      width: 960px;
+      margin: 0 auto;
+    }
     #logo {
       position: relative;
       right: unset;
@@ -30,8 +35,9 @@
     }
 
     #links {
-      left: 330px;
-      color: white;
+      height: 22px;
+      position: relative;
+      left: unset;
       :hover {
        color: #2e2e2e;
       }
@@ -110,14 +116,22 @@
     position: relative;
     padding: 20px 0;
     background-color: #f0f0f0;
-
+    section {
+      width: 952px;
+      margin: 0 auto;
+    }
+    hr {
+      border-color:  #6b96c2;
+      margin-bottom: 20px;
+      width: 952px;
+    }
     #content-title {
       position: relative;
       width: 952px;
       margin: 0 auto;
       padding-bottom: 2px;
-      margin-bottom: 20px;
-      border-bottom: 2px solid  #6b96c2;
+      // margin-bottom: 20px;
+      // border-bottom: 2px solid  #6b96c2;
     }
 
     .eventlist {
@@ -229,6 +243,57 @@
     }
     #event-image {
       max-width: 800px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1300px){
+
+  .events-index {
+    .events-nav {
+      width: 1272px;
+      nav {
+        width: 1272px;
+        #links {
+          left: -147px;
+        }
+      }
+      h1 {
+        width: 1272px;
+      }
+    }
+    #events-subnav {
+      width: 1272px;
+      ul {
+        width: 1272px;
+      }
+    }
+    .top-events {
+     section, #content-title, .eventlist {
+        width: 1272px;
+      }
+      hr {
+        margin: 0 0 20px 0;
+        width: 1120px;
+      }
+    }
+  }
+
+  .eventshow-header {
+     width: 1272px;
+  }
+  .subheader-container {
+    .eventshow-subheader {
+        width: 1272px;
+    }
+  }
+  .main-container .eventshow-main {
+      width: 1272px;
+  }
+
+  .footer {
+    .foothold {
+      width: 1272px !important;
     }
   }
 }

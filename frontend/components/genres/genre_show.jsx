@@ -9,6 +9,7 @@ class GenreShow extends React.Component {
   componentDidMount() {
     this.props.fetchGenre(this.props.match.params.genreId);
     this.props.fetchDjs();
+    // this.props.history.push(`/genres/${this.props.genre.id}`);
     window.scrollTo(0, 0);
   }
 
@@ -20,7 +21,7 @@ class GenreShow extends React.Component {
       <div className="genre-index">
         <div 
           id={`${genre.name.toLowerCase().split('-').join('')}-container`}
-        className="genre-nav-container" 
+        className="genreshow-nav-container" 
         style={{backgroundImage: `url("${genre.photoUrl}")`}}
         >
           <section className="genre-nav">
@@ -53,14 +54,13 @@ class GenreShow extends React.Component {
           <section className="description-container">
             <h1>Overview</h1>
             <hr/>
-            <p id="genre-bio">
+            <div id="genre-bio">
               <ul>
               {genre.description.split('  ').map(par =>
               <li>{par}<br/></li> 
                 )} 
               </ul>
-            </p>
-            {/* <p id="genre-bio">{genre.description.split('  ')[1]}</p> */}
+            </div>
           </section>
           <section className="examples">
             <h1>{genre.name} DJs</h1>

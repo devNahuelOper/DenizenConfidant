@@ -13,6 +13,7 @@ import DjShowContainer from './djs/dj_show_container';
 import GenreIndexContainer from './genres/genre_index_container';
 import GenreShowContainer from './genres/genre_show_container';
 import SplashContainer from './splash/splash_container';
+import Search from './search/search';
 // import EventShow from './events/event_show';
 
 // import Dropdown from './greeting/dropdown';
@@ -21,7 +22,7 @@ const App = () => (
   <div>
     
     <GreetingContainer />    
-    
+    <Search />
     <Switch>
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
