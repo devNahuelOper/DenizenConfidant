@@ -18,7 +18,11 @@ class GenreShow extends React.Component {
     const length = genre.artists.length / 2;
     return (
       <div className="genre-index">
-        <div className="genre-nav-container" style={{backgroundImage: `url("${genre.photoUrl}")`}}>
+        <div 
+          id={`${genre.name.toLowerCase().split('-').join('')}-container`}
+        className="genre-nav-container" 
+        style={{backgroundImage: `url("${genre.photoUrl}")`}}
+        >
           <section className="genre-nav">
             <nav>
               <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
