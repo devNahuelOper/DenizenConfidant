@@ -189,6 +189,33 @@
   }
 }
 
+@media only screen and (min-width: 1300px){
+  .djs-nav {
+    width: 1272px;
+    nav {
+      width: 1272px;
+      #links {
+        left: -147px;
+      }
+    }
+    h1 {
+      width: 1272px;
+    }
+  }
+  .djs-subnav {
+    width: 1272px;
+    ul {
+      width: 1272px;
+    }
+  }
+  .djs {
+    width: 1272px;
+  }
+  .dj-sort {
+    margin-right: 22px;
+  }
+}
+
 
 // DJ Show Pages
 
