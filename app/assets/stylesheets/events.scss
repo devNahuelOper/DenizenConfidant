@@ -232,3 +232,40 @@
     }
   }
 }
+
+@media only screen and (min-width: 1300px){
+  // #searchbar {
+  //   width: 1272px;
+  // }
+  // #search-input {
+  //   width: 792px;
+  // }
+  // #search-button-container {
+  //   margin-right: 162px;
+  // }
+  .events-index {
+    .events-nav {
+      width: 1272px;
+      h1 {
+        width: 1272px;
+      }
+    }
+    #events-subnav {
+      width: 1272px;
+      ul {
+        width: 1272px;
+      }
+    }
+    .top-events {
+      #content-title, .eventlist {
+        width: 1272px;
+      }
+    }
+  }
+
+  .footer {
+    .foothold {
+      width: 1272px !important;
+    }
+  }
+}

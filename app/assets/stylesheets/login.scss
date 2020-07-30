@@ -657,9 +657,10 @@
   }
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1300px) {
   .login-wrap {
-    width: 952px;
+    // width: 952px;
+    width: 1272px;
     margin: 0 auto;
     .login-signup {
       right: unset;
