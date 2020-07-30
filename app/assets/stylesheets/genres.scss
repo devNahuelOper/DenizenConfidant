@@ -202,6 +202,11 @@
 
 #genre-bio {
   color: white;
+  // text-indent: 1.0em;
+  li {
+    // text-indent: 1.0em;
+    font-weight: bold;
+  }
 }
 
 .example-list {
@@ -211,10 +216,29 @@
     margin-bottom: 5px;
     white-space: nowrap;
     font-weight: bold;
-    color: white;
+    // color: #1d1d1d;
+    color: #fdff00;
+    font-size: 18px;
+    a {
+    //  -webkit-text-stroke: 1px #b4be01;
+     -webkit-text-stroke: 1px black;
+    }
     a:hover {
       color: black;
+      -webkit-text-stroke: unset;
       background-color: #b4be00;
     }
+  }
+}
+
+#acidhouse-container {
+  #logo {
+    background-color: #0000001a;
+  }
+  #logo:hover {
+    background-color: unset;
+  }
+  .genreshow-header a {
+    background-color: black;
   }
 }
