@@ -8,7 +8,8 @@ class DjIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchDjs(); 
+    this.props.fetchDjs();
+    this.props.fetchGenres(); 
   }
 
   render() {

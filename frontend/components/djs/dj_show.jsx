@@ -14,6 +14,7 @@ class DjShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchDj(this.props.match.params.djId);
+    this.props.fetchGenres();
     window.scrollTo(0, 0);
   }
 
@@ -68,7 +69,7 @@ class DjShow extends React.Component {
               <li>
                 <small>Genre(s)/</small> <br/>
                   {dj.genre.split(' ').map(gen => 
-                  <Link id="genre-link" to="/genres">{gen}</Link>
+                  <Link id="genre-link" to={`/genres/${this.props.genres.find(g => g.name === gen).id}`}>{gen}</Link>
                     )}
               </li>
             </ul>
