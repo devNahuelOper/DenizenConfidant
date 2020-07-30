@@ -20,13 +20,15 @@ class EventIndex extends React.Component {
       <div className="events-index">
         <div className="events-nav-container">
         <section className="events-nav">
+          <nav>
         <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
-          <ul id="links">
-            <li><Link to="/djs">DJs</Link></li>
-            <li><Link to="/events">Events</Link></li>
-            <li><Link to="/genres">Music</Link></li>
-            <li>Search</li>
-          </ul>
+           <ul id="links">
+             <li><Link to="/djs">DJs</Link></li>
+             <li><Link to="/events">Events</Link></li>
+             <li><Link to="/genres">Music</Link></li>
+             <li>Search</li>
+           </ul>
+         </nav>
           <h1>Events</h1>
         </section>
         </div>
@@ -40,14 +42,17 @@ class EventIndex extends React.Component {
             </ul>
           </section>
         </div>
-          <div className="top-events">
+        <div className="top-events">
+         <section>
             <h1 id="content-title">Top Events Worldwide</h1>
-        <ul className="eventlist">
-          {events.map(event => 
-          <EventIndexItem key={event.id} event={event}/>
+            <hr/>
+          <ul className="eventlist">
+            {events.map(event => 
+            <EventIndexItem key={event.id} event={event}/>
             )}
-        </ul>
-          </div>
+          </ul>
+         </section>
+        </div>
       </div>
     )
   }

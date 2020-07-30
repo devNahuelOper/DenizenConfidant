@@ -160,6 +160,10 @@
 
 //Genre Show
 
+.genreshow-nav-container {
+  background-position: center;
+}
+
 .genreshow-header {
    margin: 0 auto;
    width: 952px;
@@ -246,6 +250,7 @@
 }
 
 @media only screen and (min-width: 1300px){
+ 
   .genre-nav {
     width: 1272px;
     nav {
@@ -270,9 +275,15 @@
       width: 1120px;
     }
   }
-
+  .genreshow-nav-container {
+    height: 300px;
+  }
   .genreshow-header {
     width: 1272px;
+    line-height: 6em;
+    a {
+      top: 44px;
+    }
     h1 {
       width: 1272px;
     }

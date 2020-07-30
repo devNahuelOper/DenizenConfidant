@@ -21,7 +21,7 @@ class GenreShow extends React.Component {
       <div className="genre-index">
         <div 
           id={`${genre.name.toLowerCase().split('-').join('')}-container`}
-        className="genre-nav-container" 
+        className="genreshow-nav-container" 
         style={{backgroundImage: `url("${genre.photoUrl}")`}}
         >
           <section className="genre-nav">
