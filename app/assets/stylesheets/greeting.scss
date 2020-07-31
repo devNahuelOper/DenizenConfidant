@@ -243,15 +243,16 @@ body {
       margin-right: 11px;
       display: flex;
       flex-direction: column;
+      // width: 35px;
       small {
         font-size: 8px;
         color: #2f2f2f;
         text-align: center;
       }
     }
-    li:last-child {
-        margin-top: 4px;
-    }
+    // li:last-child {
+    //     margin-top: 4px;
+    // }
       img {
         width: 45px;
         height: 40px;
@@ -268,7 +269,7 @@ body {
 
     #fb-logo {
       filter: none;
-      margin-top: 11px;
+      // margin-top: 11px;
       border-radius: 17px;
       background-color: #ffa200;
     }
@@ -296,4 +297,28 @@ body {
         padding-left: 2px;
       }
     }
+}
+
+@media only screen and (max-width: 1030px) {
+  .footer {
+    .foothold {
+      width: 675px;
+    }
+    #footer-msg {
+      font-size: 16px;
+    }
+    .footer-links {
+      img {
+        width: 30px;
+        height: 30px;
+      }
+      li {
+        margin-top: 8px;
+        small {
+          width: 30px;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
 }
