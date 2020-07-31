@@ -239,11 +239,11 @@ body {
   .footer-links {
     display: flex;
     li {
-      margin-top: 15px;
+      margin-top: 11px;
       margin-right: 11px;
       display: flex;
       flex-direction: column;
-      // width: 35px;
+      width: 35px;
       small {
         font-size: 8px;
         color: #2f2f2f;
@@ -254,8 +254,10 @@ body {
     //     margin-top: 4px;
     // }
       img {
-        width: 45px;
-        height: 40px;
+        // width: 45px;
+        // height: 40px;
+        width: 35px;
+        height: 30px;
         filter: invert(1);
         image-rendering: -webkit-optimize-contrast;
       }
@@ -314,6 +316,7 @@ body {
       }
       li {
         margin-top: 8px;
+        width: unset;
         small {
           width: 30px;
           white-space: nowrap;
