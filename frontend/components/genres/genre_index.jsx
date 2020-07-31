@@ -23,8 +23,8 @@ class GenreIndex extends React.Component {
               <ul id="links">
                 <li><Link to="/djs">DJs</Link></li>
                 <li><Link to="/events">Events</Link></li>
-                <li>Music</li>
-                <li>Search</li>
+                <li><Link to="/genres">Music</Link></li>
+                <li id="search">Search</li>
               </ul>
             </nav>
             <h1>Genres</h1>

@@ -43,7 +43,9 @@ class SplashPage extends React.Component {
 
   render() {
     const { djs } = this.props;
-    
+    const searchbar = document.getElementsByClassName('search-container')[0];
+    const search = document.getElementById('search');
+
     let yesterday = new Date(this.state.date);
     yesterday.setDate(yesterday.getDate() - 1);
 
@@ -60,14 +62,7 @@ class SplashPage extends React.Component {
     let weekday = this.state.date.toDateString().split(' ')[0];
     let today = this.state.date.getDate();
     return (
-     <div>
-       {/* <div style={{display: 'none'}}>
-         <ul>
-           {djs.map(dj =>
-             <li>{dj.name},{dj.id}</li>
-            )}
-         </ul>
-       </div> */}
+     <div> 
        <div className="splash-header-container">
         <section id="navbar">
           <nav>
@@ -76,7 +71,12 @@ class SplashPage extends React.Component {
             <li><Link to="/djs">DJs</Link></li>
             <li><Link to="/events">Events</Link></li>
             <li><Link to="/genres">Music</Link></li>
-            <li>Search</li>
+            <li id="search" 
+            // onClick={() => {
+            //   searchbar.style.display='block', 
+            //   search.style.backgroundColor='white', 
+            //   search.style.color='black'}}
+              >Search</li>
           </ul>
           </nav>
         </section>
