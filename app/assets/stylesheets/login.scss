@@ -4,44 +4,47 @@
   display: block;
   background-color: #ffa200;
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
-  height: 286px;
-  // background-image: image_url("logo.png");
-  // background-repeat: no-repeat;
-  // background-size: 100px;
-  // background-position-x: 159px;
-  // background-position-y: -2px;
+  height: 250px;
 
   #logo {
     filter: invert(1);
-    right: 37%;
-    left: unset;
-    margin-right: 549px;
+    position: relative;
+    left: -4px;
   }
   #logo:hover {
     filter: unset;
   }
 }
 
-// #logo {
-//   font-family: 'Audiowide', cursive;
-// }
+#navbar {
+  width: 960px;
+  // height: 215px;
+  margin: 0 auto;
+  nav {
+   display: flex;
+   justify-content: space-between;
+   width: 960px;
+   margin: 0 auto;
+  }
+  h1 {
+    margin: 0 auto;
+    width: 960px;
+    font-size: 64px;
+    letter-spacing: -2px;
+    font-weight: 500;
+    line-height: 3em;
+    height: 40px;
+  }
+}
 
-// #links {
-//   display: flex;
-//   flex-direction: row;
-//   // justify-content: space-evenly;
-//   align-items: flex-end;
-//   margin-left: 488px;
-//   padding-top: 22px;
-// }
 
 #links {
-  position: absolute;
+  position: relative;
   top: 24px;
-  left: 490px;
   z-index: 1000;
   display: flex;
   flex-direction: row;
+  height: 24px;
 }
 
 #links li {
@@ -56,97 +59,110 @@
     padding-right: 80%;
   }
 }
-
 #links li:hover {
   color: black;
 }
-
-
 #links li:first-child {
   border-color: #ff0;
 }
-
 #links li:first-child:hover {
   background-color: #ff0;
 }
-
 #links li:nth-of-type(2) {
   border-color: #6b96c2;
 }
-
 #links li:nth-of-type(2):hover {
   background-color: #6b96c2;
 }
-
 #links li:nth-of-type(3) {
   border-color: #b4bd02;
 }
-
 #links li:nth-of-type(3):hover {
   background-color: #b4bd02;
 }
-
 #links li:last-child {
   border-color: white;
 }
-
 #links li:last-child:hover {
   background-color: white;
 }
 
 
-#nav-container h1 {
-  position: absolute;
-  top: 167px;
-  right: 37%;
-  font-size: 64px;
-  letter-spacing: -2px;
-  font-weight: 500;
-  margin-right: 300px;
-  padding-bottom: 6px;
-}
+// #nav-container h1 {
+//   position: absolute;
+//   top: 167px;
+//   right: 37%;
+//   font-size: 64px;
+//   letter-spacing: -2px;
+//   font-weight: 500;
+//   margin-right: 300px;
+//   padding-bottom: 6px;
+// }
 
+.subnav-container {
+  border-top: 1px solid rgba(97, 71, 71, 0.4);
+  background-color: #ffa200;
+}
 
 
 #subnav {
-  border-top: 1px solid rgba(97, 71, 71, 0.4);
-  position: absolute;
-  width: 100%;
-  top: 246px;
-}
-
- 
-  // border-top: 1px solid rgba(97, 71, 71, 0.4);
-
-#subnav ul {
-  position: absolute;
-  right: 37%;
-  margin-right: 310px;
-}
-
-#subnav li {
-  float: left;
-  border-left: 1px solid rgba(97, 71, 71, 0.4);
-}
-
-#subnav li:hover {
-  color: white;
-  background-color: white;
-}
-
-#subnav li:last-child {
-  border-right: 1px solid rgba(97, 71, 71, 0.4);
-  padding-right: 5px;
+  width: 960px;
+  height: 40px;
+  margin: 0 auto;
+  ul {
+   width: 960px;
+   margin: 0 auto
+  }
+  li {
+  //  cursor: pointer;
+   height: 40px;
+   float: left;
+   border-left: 1px solid rgba(69,69,69,.4);
+    a {
+     display: block;
+     padding: 10px 14px;
+     line-height: 19px;
+    }
+  }
+  li:last-child {
+    border-right: 1px solid rgba(69,69,69,.4);
+  }
+  li:hover, .form:hover {
+    background-color: black;
+    color: white;
+  }
 }
 
 
+// #subnav ul {
+//   position: absolute;
+//   right: 37%;
+//   margin-right: 310px;
+// }
 
-#subnav a {
-  display: block;
-  color: black;
-  padding: 10px 14px;
-  line-height: 19px
-}
+// #subnav li {
+//   float: left;
+//   border-left: 1px solid rgba(97, 71, 71, 0.4);
+// }
+
+// #subnav li:hover {
+//   color: white;
+//   background-color: white;
+// }
+
+// #subnav li:last-child {
+//   border-right: 1px solid rgba(97, 71, 71, 0.4);
+//   padding-right: 5px;
+// }
+
+
+
+// #subnav a {
+//   display: block;
+//   color: black;
+//   padding: 10px 14px;
+//   line-height: 19px
+// }
 
 // #subnav-toggle {
 //   width: 500px;
@@ -166,14 +182,11 @@
 }
 
 .login-form {
-  position: absolute;
-  top: 6px;
-  right: 37%;
-  margin-right: 405px;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  // width: 240px;
+   width: 960px;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   color: white;
   #check-box {
     margin-right: 4px;
     margin-bottom: 12px;
@@ -205,7 +218,7 @@
 }
 
 
-
+// Signup Form
 
 
 .signup-form-container {
@@ -214,6 +227,17 @@
   padding-top: 10px;
   background-color: #2e2e2e;
 }
+
+ .form-wrap {
+    width: 960px;
+    margin: 0 auto;
+    display:flex;
+    // .signup-form {
+    //   position: relative;
+    //   right: unset;
+    //   margin-left: unset;
+    // }
+  }
 
 .signup-input {
   height: 30px;
@@ -241,11 +265,8 @@
 }
 
 .signup-form {
-  position: absolute;
-  right: 37%;
   display: flex;
   flex-flow: column;
-  margin-left: 174px;
   margin-top: 20px;
   color: white;
   // background-color: #2e2e2e;
@@ -502,28 +523,27 @@
 }
 
 .demo-login {
-  position: absolute;
-  right: 11%;
-  top: 352px;
   height: 154px;
   width: 312px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: #fff;
   background-color: #404040;
 }
 
 #demo-notice {
-  position: absolute;
-  top: 17px;
-  left: 10px;
+  position: relative;
+  top: -22px;
+  width: 294px;
+  margin: 0 auto;
 }
 
 #demo-button {
   height: 46px;
   width: 294px;
+  margin: 0 auto;
   background-color: #3b5998;
-  position: absolute;
-  top: 65px;
-  left: 9px;
   font-size: 26px;
   color: white;
   box-sizing: border-box;
@@ -545,10 +565,6 @@
 }
 
 #member {
-  position: absolute;
-  left: 91px;
-  bottom: 48px;
-  height: 17px;
   width: 17px;
 }
 
@@ -587,79 +603,65 @@
   background-position-y: 19px;
   background-size: 10px;
   font-size: .75em;
-  }
+}
 
   .log-link {
     padding-right: 520px;
   }
 
+  #navbar {
+    width: 632px;
+    nav {
+      width: 632px;
+    }
+  }
+
   #nav-container { 
+    height: 160px;
     #logo {
       filter: invert(1);
-      right: 37%;
+      right: 25px;
       left: unset;
-      top: 0;
-      margin-right: 419px;
+      top: 7px;
       width: 60px;
       height: 50px;
     }
     #links {
       font-size: .75em;
       left: unset;
-      right: 28%;
+      right: 90px;
       li {
         width: 80px;
       }
     }
     h1 {
-      position: absolute;
-      top: 167px;
-      right: 37%;
+      position: relative;
+      // top: 167px;
+      right: 20px;
       font-size: 48px;
-      letter-spacing: -2px;
-      font-weight: 500;
-      margin-right: 222px;
-      padding-bottom: 6px;
     }
   }
-
-  #subnav ul {
-    position: absolute;
-    right: 37%;
-    margin-right: 140px;
+  #subnav {
+    // height: 57px;
+    width: 674px;
+    ul {
+      width: 674px;
+    }
   }
 
   .login-form {
-    position: absolute;
-    top: 6px;
-    right: 37%;
-    margin-right: 235px;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    // width: 240px;
-    #check-box {
-      margin-right: 4px;
-      margin-bottom: 12px;
-    }
-    
-
+    width: 674px;
   }
 
-  .signup-form {
-    top: 73%;
-    right: 20%;
+  .form-wrap {
+    width: 674px;
+    flex-direction: column-reverse;
   }
-  .demo-login {
-    right: 20%;
-    top: 340px;
-    margin-right: 337px;
-  }
+
 }
 
 @media only screen and (min-width: 1300px) {
   .login-wrap {
-    // width: 952px;
     width: 1272px;
     margin: 0 auto;
     .login-signup {
@@ -668,49 +670,46 @@
     }
   }
   #nav-container {
-    h1, #subnav ul {
-      width: 952px;
-      margin: 0 auto;
-      position: relative;
-      right: unset;
-      top: unset;
-    }
-    #navbar {
-      width: 960px;
-      height: 170px;
-      margin: 0 auto;
-    }
-    #links {
-      float: right;
-      margin-top: 26px;
-      position: relative;
-      top: unset;
-      left: unset;
-    }
-    #logo {
-      position: relative;
-      top: unset;
-      right: unset;
-      margin: unset;
-    }
+    // h1, #subnav ul {
+    //   width: 952px;
+    //   margin: 0 auto;
+    //   position: relative;
+    //   right: unset;
+    //   top: unset;
+    // }
   }
-  .login-form-container {
-    .login-form {
-      width: 952px;
-      margin: 0 auto;
-      position: relative;
-      right: unset;
-    }
-  }
-  .form-wrap {
-    width: 952px;
-    margin: 0 auto;
-    .signup-form {
-      position: relative;
-      right: unset;
-      margin-left: unset;
-    }
-  }
+   #navbar {
+      width: 1272px;
+      nav {
+        width: 1272px;
+      }
+      #links {
+        left: -153px;
+      }
+      h1 {
+        width: 1272px;
+      }
+   }
+   #subnav {
+      width: 1272px;
+      ul {
+         width: 1272px;
+      }
+   }
+
+   .login-form {
+     width: 1272px;
+   }
+
+   .form-wrap {
+     width: 1272px;
+     justify-content: space-between;
+   }
+   .demo-login {
+     position: relative;
+     left: -145px;
+   }
+  
 }
 
 // Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>

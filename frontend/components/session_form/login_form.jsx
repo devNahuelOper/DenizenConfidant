@@ -58,20 +58,21 @@ class LoginForm extends React.Component {
     };
     return (
       <div>
-
           <div id="nav-container">
-            <nav id="navbar">
-            <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+            <section id="navbar">
+              <nav>
+               <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
                 <ul id="links">
                   <li><Link to="/djs">DJs</Link></li>
                   <li><Link to="/events">Events</Link></li>
                   <li><Link to="/genres">Music</Link></li>
                   <li>Search</li>
                 </ul>
-            </nav>
-  
-           <h1>Your account</h1>
-
+                </nav>
+                <h1>Your account</h1>
+            </section> 
+          </div>
+          <div className="subnav-container">
             <section id="subnav">
               <ul>
                 <li className="form"><Link to="/login">Login</Link></li>
@@ -79,8 +80,8 @@ class LoginForm extends React.Component {
                 <li><Link to="/">Take me back home</Link></li>
               </ul>
             </section>
-
           </div>
+         
         <div className="login-form-container">
 
           <form onSubmit={this.handleSubmit} className="login-form">
