@@ -69,7 +69,8 @@ class SplashPage extends React.Component {
          </ul>
        </div> */}
        <div className="splash-header-container">
-        <nav id="navbar">
+        <section id="navbar">
+          <nav>
           <img src={window.logoUrl} id="logo" />
           <ul id="links">
             <li><Link to="/djs">DJs</Link></li>
@@ -77,7 +78,8 @@ class SplashPage extends React.Component {
             <li><Link to="/genres">Music</Link></li>
             <li>Search</li>
           </ul>
-        </nav>
+          </nav>
+        </section>
           <ImageCarousel /> 
          
        </div>
