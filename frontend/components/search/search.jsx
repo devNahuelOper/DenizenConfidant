@@ -35,7 +35,7 @@ class Search extends React.Component {
     // search.addEventListener('click', this.handleClick);
     return (
       <div className="search-container" 
-      ref={node => { this.node = node; }}
+      // ref={node => { this.node = node; }}
       >
       
         {/* {this.state.shown && ()} */}

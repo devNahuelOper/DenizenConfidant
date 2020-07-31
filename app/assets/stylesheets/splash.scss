@@ -20,6 +20,14 @@
   }
 }
 
+#search {
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 10px;
+  // border-bottom: 2px solid white;
+}
+
 #logo {
   cursor: pointer;
   top: -3px;
@@ -665,11 +673,11 @@ h3 {
           }
         }
       }
-      .footer {
-       .foothold {
-         width: 600px;
-       }
-      }
+      // .footer {
+      //  .foothold {
+      //    width: 600px;
+      //  }
+      // }
       
       }
 

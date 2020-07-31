@@ -9,7 +9,26 @@ class DjIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchDjs();
-    this.props.fetchGenres(); 
+    this.props.fetchGenres();
+    const search = document.getElementById('search');
+    const searchbar = document.getElementsByClassName('search-container')[0];
+    search.onclick = function () {
+      searchbar.style.display = 'block';
+      search.style.backgroundColor = 'white';
+      search.style.color = 'black';
+      search.style.borderBottom = '2px solid white';
+    }
+    window.onclick = function (e) {
+      let inSearchbar = searchbar.contains(e.target);
+      let inSearch = search.contains(e.target);
+      if (inSearchbar || inSearch) {
+        return;
+      }
+      searchbar.style.display = 'none';
+      search.style.backgroundColor = 'transparent';
+      search.style.color = 'currentColor';
+      search.style.borderBottom = 'unset';
+    } 
   }
 
   render() {
@@ -25,7 +44,7 @@ class DjIndex extends React.Component {
                 <li><Link to="/djs">DJs</Link></li>
                 <li><Link to="/events">Events</Link></li>
                 <li><Link to="/genres">Music</Link></li>
-                <li id="search">Search</li>
+                <li><button id="search">Search</button></li>
               </ul>
             </nav>
             <h1>DJs</h1>
