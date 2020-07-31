@@ -9,9 +9,7 @@
   width: 100%;
 
   #links {
-    position: absolute;
     top: 24px;
-    left: 340px;
     z-index: 1000;
     display: flex;
     flex-direction: row;
@@ -24,10 +22,7 @@
 
 #logo {
   cursor: pointer;
-  // position: absolute;
-  // right: 37%;
   top: -3px;
-  // margin-right: 549px;
   height: 100px;
   width: 100px;
   filter: drop-shadow(7px -2px 7px #2e2e2e);
@@ -100,18 +95,6 @@
   letter-spacing: -1px;
 }
 
-// .denizen-confidant:hover {
-//   opacity: 80%;
-//   color: #2e2e2e;
-//   background-image: image_url("ravve.png");
-//   cursor: image_url("vinyl-record2.png"), auto;
-//   background-size: 15%;
-//   background-repeat: no-repeat;
-//   background-position-x: -3.9px;
-//   background-position-y: 10px;
-//   filter: drop-shadow(2px 4px 6px black);  
-// } 
-
 .denizen-confidant:hover {
   height: 29px;
   background-image: image_url("ravve.png");
@@ -124,7 +107,6 @@
 .denizen-confidant::first-letter:hover {
   overflow: hidden;
 }
-
 
 .days {
   display: flex;
@@ -180,6 +162,7 @@
 .slide-container {
   width: 100%;
   margin: auto; 
+  display: none;
 }
  
 h3 {
@@ -699,16 +682,7 @@ h3 {
     }
   }
   .splash-header-container {
-    display: flex;
-    justify-content: center;
-    #navbar {
-      position: absolute;
-      width: 960px;
-      #logo {
-        position: relative;
-        right: unset;
-      }
-    }
+   
     .slide-container {
       width: 100%;
       height: 575px;
@@ -733,3 +707,22 @@ h3 {
   }
 }
 
+@media only screen and (min-width: 1300px) {
+  .banner-hold {
+    width: 1272px;
+  }
+  .content {
+    .news-banner, .articles {
+        width: 1272px;
+    }
+  }
+  .beats {
+    .beats-banner, .beatwrap {
+      width: 1272px;
+    }
+    .beatwrap .beatlist {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
