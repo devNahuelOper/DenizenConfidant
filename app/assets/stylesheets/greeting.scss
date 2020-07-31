@@ -241,14 +241,28 @@ body {
     li {
       margin-top: 15px;
       margin-right: 11px;
+      display: flex;
+      flex-direction: column;
+      small {
+        font-size: 8px;
+        color: #2f2f2f;
+        text-align: center;
+      }
     }
     li:last-child {
         margin-top: 4px;
     }
       img {
-        height: 30px;
-        width: 30px;
+        width: 45px;
+        height: 40px;
         filter: invert(1);
+        image-rendering: -webkit-optimize-contrast;
+      }
+      img:hover {
+        transform: scale(0.9);
+      }
+      a:hover + small {
+        color: #afacac;
       }
     }
 
@@ -263,6 +277,11 @@ body {
      border-radius: 17px;
     }
 
+    #angel-logo {
+      border-radius: 20%;
+      border: 1px solid #89a5ff;
+    }
+
     #headshot {
       filter: none;
       border-radius: 4px;
@@ -270,7 +289,8 @@ body {
     }
 
     #footer-msg {
-      margin-top: 15px;
+      margin-top: 12px;
+      font-size: 20px;
       a {
         color: #ffa200;
         padding-left: 2px;
