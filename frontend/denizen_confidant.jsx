@@ -25,6 +25,14 @@
    window.getState = store.getState;
    window.dispatch = store.dispatch;
    window.createEvent = createEvent;
+
+  //  const search = document.getElementById('search');
+  
+  //  const searchbar = document.getElementsByClassName('search-container')[0];
+
+  //  search.onclick = () => {
+  //    searchbar.style.display = 'block';
+  //  }
    
    const root = document.getElementById('root');
 

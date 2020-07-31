@@ -40,7 +40,7 @@ class DjShow extends React.Component {
                 <li><Link to="/djs">DJs</Link></li>
                 <li><Link to="/events">Events</Link></li>
                 <li><Link to="/genres">Music</Link></li>
-                <li>Search</li>
+                <li id="search">Search</li>
               </ul>
             </nav>
             <section id="djshow-header" className="eventshow-header">
