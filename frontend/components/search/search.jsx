@@ -30,15 +30,6 @@ class Search extends React.Component {
   }
 
   render() {
-    // const containerStyle = {
-    //   height: '75px',
-    //   backgroundColor: 'white',
-    //   padding: '20px 0'
-    // }
-    // const searchStyle = {
-    //   width: '960px',
-    //   margin: '0 auto'
-    // }
     // const searchbar = document.getElementsByClassName('search-container')[0];
     const search = document.getElementById('search');
     // search.addEventListener('click', this.handleClick);
@@ -46,11 +37,7 @@ class Search extends React.Component {
       <div className="search-container" 
       ref={node => { this.node = node; }}
       >
-        {/* <button
-          onClick={this.handleClick}
-        >
-          Toggle Popover
-        </button> */}
+      
         {/* {this.state.shown && ()} */}
         <div id="searchbar" >
           <input type="text" id="search-input"/>

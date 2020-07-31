@@ -178,15 +178,25 @@
   position: relative;
   height: 353px;
   border-bottom: 1px #585858 solid;
-  // background-color:  #404040;
+
+  .demo-login {
+
+  }
+  #demo-notice {
+    top: -5px;
+    border-bottom: 2px solid #ffa200;
+    box-sizing: border-box;
+    padding-bottom: 2px;
+  }
 }
 
 .login-form {
-   width: 960px;
-   margin: 0 auto;
+  //  width: 960px;
+  //  margin: 0 auto;
    display: flex;
    flex-direction: column;
    color: white;
+   margin-right: 65px;
   #check-box {
     margin-right: 4px;
     margin-bottom: 12px;
@@ -698,7 +708,7 @@
    }
 
    .login-form {
-     width: 1272px;
+    //  width: 1272px;
    }
 
    .form-wrap {
@@ -709,7 +719,14 @@
      position: relative;
      left: -145px;
    }
-  
+   .login-form-container {
+     .form-wrap {
+       justify-content: normal;
+     }
+     .demo-login {
+       left: unset;
+     }
+   }
 }
 
 // Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>

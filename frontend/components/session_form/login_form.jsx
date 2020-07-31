@@ -83,7 +83,7 @@ class LoginForm extends React.Component {
           </div>
          
         <div className="login-form-container">
-
+        <div className="form-wrap">
           <form onSubmit={this.handleSubmit} className="login-form">
 
             <br/>
@@ -125,8 +125,12 @@ class LoginForm extends React.Component {
             </li>
             <li><input className="login-button" type="submit" value={this.props.formType} /></li>
             </ul>
-         </form>
-
+          </form>
+            <div className="demo-login">
+              <span id="demo-notice">Or login to DC as a Demo User/</span>
+              <button id="demo-button" onClick={this.props.demoUser}>Login with </button>
+            </div>
+        </div>
         </div>
       </div>
     )
