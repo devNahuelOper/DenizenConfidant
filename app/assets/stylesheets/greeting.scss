@@ -119,10 +119,16 @@ body {
 //   cursor: pointer;
 // }
 
+.welcome-wrap {
+  width: 960px;
+  margin: 0 auto;
+  display: flex;
+}
+
 
 .welcome-group {
   display: flex;
-  position: absolute;
+  // position: absolute;
   box-sizing: border-box;
   padding-top: 6px;
   margin-left: 3px;
@@ -130,7 +136,6 @@ body {
   font-size: 16px;
   color: #7e7e7e;
   border-right: 1px solid #404040;
-  height: 100%;
 }
 
 .welcome-name {
@@ -150,7 +155,7 @@ body {
 }
 
 #dj-icon {
-  position: absolute;
+  // position: absolute;
   left: 163px;
   background-color: #c1c1c1;
   padding: 10px 11px 11px 12px;
@@ -200,6 +205,19 @@ body {
   font-size: 7px;
   text-decoration: fade-in($color: #000000, $amount: 1);
 }
+
+@media only screen and (min-width: 1300px){
+  .welcome-wrap {
+    width: 1272px;
+  }
+}
+@media only screen and (max-width: 1030px) {
+  .welcome-wrap {
+    width: 675px;
+  }
+}
+
+// Footer
 
 .footer {
   display: flex;

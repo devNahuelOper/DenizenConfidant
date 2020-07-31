@@ -2,7 +2,7 @@
   position: relative;
   background-image: image_url("red-rave.png");
   background-repeat: no-repeat;
-  background-size: 1565px;
+  background-size: cover;
   background-position: center;
   background-position-x: 1px;
   height: 575px;
@@ -27,6 +27,7 @@
   width: 100px;
   filter: drop-shadow(7px -2px 7px #2e2e2e);
   z-index: 1000;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 #logo:hover {
@@ -553,9 +554,15 @@ h3 {
          }
       }
 
-      @media only screen and (max-width: 1030px) {
-      .splash-header-container{
+@media only screen and (max-width: 1030px) {
+    .splash-header-container {
         height: 375px;
+        #navbar {
+          width: 675px;
+          nav {
+            width: 675px;
+          }
+        }
         .slide-container {
           height: 375px;
           overflow: hidden;
@@ -579,17 +586,17 @@ h3 {
          #links {
           font-size: 1em;
           left: unset;
-          right: 28%;
+          // right: 28%;
             li {
               width: 75px;
             }
           }
         #logo {
-          right: 37%;
+          // right: 37%;
           top: 0;
-          margin-right: 409px;
-          width: 60px;
-          height: 50px;
+          // margin-right: 409px;
+          width: 65px;
+          height: 60px;
          }
       }
 
@@ -670,17 +677,17 @@ h3 {
 
 
 @media only screen and (min-width: 1240px) {
-  .user {
-    .welcome-container {
-      display: flex;
-      width: 980px;
-      margin: 0 auto;
-      #dj-icon, .welcome-group {
-        position: relative;
-        left: unset;
-      }
-    }
-  }
+  // .user {
+  //   .welcome-container {
+  //     display: flex;
+  //     width: 980px;
+  //     margin: 0 auto;
+  //     #dj-icon, .welcome-group {
+  //       position: relative;
+  //       left: unset;
+  //     }
+  //   }
+  // }
   .splash-header-container {
    
     .slide-container {
@@ -708,6 +715,13 @@ h3 {
 }
 
 @media only screen and (min-width: 1300px) {
+
+  .splash-header-container {
+    #navbar #links {
+      left: unset;
+    }
+  }
+
   .banner-hold {
     width: 1272px;
   }
