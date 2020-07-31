@@ -103,9 +103,9 @@ class SignupForm extends React.Component {
         <div className="signup-form-container">
 
         <div className="form-wrap">
-          <form>
-            <ul className="signup-form">
-       <li>  
+       <form>
+        <ul className="signup-form">
+          <li>  
           <div>Username /
             <br/>
             <input

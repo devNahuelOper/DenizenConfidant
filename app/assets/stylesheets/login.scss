@@ -218,7 +218,7 @@
 }
 
 
-
+// Signup Form
 
 
 .signup-form-container {
@@ -227,6 +227,17 @@
   padding-top: 10px;
   background-color: #2e2e2e;
 }
+
+ .form-wrap {
+    width: 960px;
+    margin: 0 auto;
+    display:flex;
+    // .signup-form {
+    //   position: relative;
+    //   right: unset;
+    //   margin-left: unset;
+    // }
+  }
 
 .signup-input {
   height: 30px;
@@ -254,11 +265,8 @@
 }
 
 .signup-form {
-  position: absolute;
-  right: 37%;
   display: flex;
   flex-flow: column;
-  margin-left: 174px;
   margin-top: 20px;
   color: white;
   // background-color: #2e2e2e;
@@ -515,28 +523,27 @@
 }
 
 .demo-login {
-  position: absolute;
-  right: 11%;
-  top: 352px;
   height: 154px;
   width: 312px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: #fff;
   background-color: #404040;
 }
 
 #demo-notice {
-  position: absolute;
-  top: 17px;
-  left: 10px;
+  position: relative;
+  top: -22px;
+  width: 294px;
+  margin: 0 auto;
 }
 
 #demo-button {
   height: 46px;
   width: 294px;
+  margin: 0 auto;
   background-color: #3b5998;
-  position: absolute;
-  top: 65px;
-  left: 9px;
   font-size: 26px;
   color: white;
   box-sizing: border-box;
@@ -646,20 +653,15 @@
     width: 674px;
   }
 
-  .signup-form {
-    top: 73%;
-    right: 20%;
+  .form-wrap {
+    width: 674px;
+    flex-direction: column-reverse;
   }
-  .demo-login {
-    right: 20%;
-    top: 340px;
-    margin-right: 337px;
-  }
+
 }
 
 @media only screen and (min-width: 1300px) {
   .login-wrap {
-    // width: 952px;
     width: 1272px;
     margin: 0 auto;
     .login-signup {
@@ -698,37 +700,16 @@
    .login-form {
      width: 1272px;
    }
-    // #links {
-    //   float: right;
-    //   margin-top: 26px;
-    //   position: relative;
-    //   top: unset;
-    //   left: unset;
-    // }
-    // #logo {
-    //   position: relative;
-    //   top: unset;
-    //   right: unset;
-    //   margin: unset;
-    // }
+
+   .form-wrap {
+     width: 1272px;
+     justify-content: space-between;
+   }
+   .demo-login {
+     position: relative;
+     left: -145px;
+   }
   
-  // .login-form-container {
-  //   .login-form {
-  //     width: 952px;
-  //     margin: 0 auto;
-  //     position: relative;
-  //     right: unset;
-  //   }
-  // }
-  // .form-wrap {
-  //   width: 952px;
-  //   margin: 0 auto;
-  //   .signup-form {
-  //     position: relative;
-  //     right: unset;
-  //     margin-left: unset;
-  //   }
-  // }
 }
 
 // Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
