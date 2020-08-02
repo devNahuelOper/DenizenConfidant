@@ -22,6 +22,12 @@ A one-stop shop for all things electronic music!
 
 <img src="https://user-images.githubusercontent.com/16979527/89132680-ea318500-d4e3-11ea-935f-5e17520bed51.png" width="700" height="800">
 
+* Events: List of some of the world's most popular Electronic Music events, each with their own show page.
+
+<img src="https://user-images.githubusercontent.com/16979527/89133032-83619b00-d4e6-11ea-8c50-d0c31e904dbd.png" width="700" height="800">
+
+<img src="https://user-images.githubusercontent.com/16979527/89133036-8e1c3000-d4e6-11ea-9d53-af7ecd174d25.png" width="700" height="800">
+
 ## Frontend
 * React.js
 * Redux.js
