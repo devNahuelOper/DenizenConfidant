@@ -16,7 +16,11 @@ A one-stop shop for all things electronic music!
 
 <img src="https://user-images.githubusercontent.com/16979527/89132246-cf114600-d4e0-11ea-9b7d-8613f075ad37.png" width="700" height="800">
 
+* Genres: Users can learn about many of the genres within Electronic Music. Genre show pages contain detailed overview + links to DJ show pages who are part of that genre.
 
+<img src="https://user-images.githubusercontent.com/16979527/89132641-a3dc2600-d4e3-11ea-9487-6fef9aa75ad9.png" width="700" height="800">
+
+<img src="https://user-images.githubusercontent.com/16979527/89132680-ea318500-d4e3-11ea-935f-5e17520bed51.png" width="700" height="800">
 
 ## Frontend
 * React.js
