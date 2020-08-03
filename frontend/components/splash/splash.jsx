@@ -57,8 +57,20 @@ class SplashPage extends React.Component {
 
   render() {
     const { djs } = this.props;
-    const searchbar = document.getElementsByClassName('search-container')[0];
-    const search = document.getElementById('search');
+    // const header = document.getElementsByClassName('splash-header-container')[0];
+    // const images = [
+    //   window.redRaveUrl,
+    //   window.etherealUrl,
+    //   window.raveNiteUrl,
+    //   window.tbilisiRaveUrl,
+    //   window.transmissionUrl,
+    //   window.berghainUrl,
+    // ];
+
+    // for (let i = 0; i < images.length; i++) {
+    //   let bg = header.style.backgroundImage;
+
+    // }
 
     let yesterday = new Date(this.state.date);
     yesterday.setDate(yesterday.getDate() - 1);
@@ -175,7 +187,7 @@ class SplashPage extends React.Component {
                   <article>
                     <img src={window.gesaffelsteinUrl} id="gesaffelstein"/>
                     {/* <Link to="/djs/336">Gesaffelstein - Depravity</Link> */}
-                    <Link to={`/djs/${gesaffId}`}>Gesaffelstein - Depravity</Link>
+                    <Link id="gesaffelstein-link" to={`/djs/${gesaffId}`}>Gesaffelstein - Depravity</Link>
                     {/* <Link to={`/djs/${djs.find(dj => dj.name === 'Gesaffelstein')}`}>Gesaffelstein - Depravity</Link> */}
                     <audio id="depravity" src="depravity.mp3" controls></audio>
                       
@@ -186,7 +198,7 @@ class SplashPage extends React.Component {
                   <article>
                     <img src={window.deadmau5Url} id="deadmau5"/>
                    
-                    <Link to={`/djs/${deamauId}`}>Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
+                    <Link id="deadmau5-link" to={`/djs/${deamauId}`}>Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
                     {/* <Link to="/djs/322">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link> */}
                     <audio id="speed" src="speed.mp3" controls></audio>
                   </article>
@@ -195,7 +207,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.noisufUrl} id="noisuf"/>    
-                    <Link to={`/djs/${noisufId}`}>Noisuf-X - Count to Seven</Link>
+                    <Link id="noisuf-link" to={`/djs/${noisufId}`}>Noisuf-X - Count to Seven</Link>
                     {/* <Link to="/djs/365">Noisuf-X - Count to Seven</Link> */}
                     <audio id="cseven" src="cseven.mp3" controls></audio>
                   </article>
@@ -204,7 +216,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.nomanaUrl} id="nomana"/>
-                    <Link to={`/djs/${nomanaId}`}>No Mana - Other Side</Link>
+                    <Link id="nomana-link" to={`/djs/${nomanaId}`}>No Mana - Other Side</Link>
                     {/* <Link to="/djs/366">No Mana - Other Side</Link> */}
                     <audio id="otherside" src="otherside.mp3" controls></audio>
                   </article>
@@ -213,7 +225,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.kayzoUrl} id="kayzo"/>
-                    <Link to={`/djs/${kayzoId}`}>Kayzo - The Fire</Link>
+                    <Link id="kayzo-link" to={`/djs/${kayzoId}`}>Kayzo - The Fire</Link>
                     {/* <Link to="/djs/349">Kayzo - The Fire</Link> */}
                     <audio id="fire" src="fire.mp3" controls></audio>
                   </article>
@@ -221,7 +233,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.prydzUrl} id="prydz" />
-                    <Link to={`/djs/${eprydzId}`}>Eric Prydz - The Matrix</Link>
+                    <Link id="prydz-link" to={`/djs/${eprydzId}`}>Eric Prydz - The Matrix</Link>
                     {/* <Link to="/djs/327">Eric Prydz - The Matrix</Link> */}
                     <audio id="matrix" src="matrix.mp3" controls></audio>
                   </article>

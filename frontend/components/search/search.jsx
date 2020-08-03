@@ -40,7 +40,7 @@ class Search extends React.Component {
       
         {/* {this.state.shown && ()} */}
         <div id="searchbar" >
-          <input type="text" id="search-input"/>
+          <input type="text" id="search-input" placeholder="Search Functionality Under Construction"/>
           <div id="search-button-container">
             <button id="search-button">Submit</button>
           </div>

@@ -217,6 +217,23 @@ body {
   }
 }
 
+
+@media only screen and (max-width: 700px) {
+  .login-wrap {
+    width: 530px;
+    margin: 0 auto;
+    height: 100%;
+  }
+  .login-signup {
+    position: relative !important;
+    width: 500px;
+    margin: 0 auto;
+    right: unset !important;
+    // right: 140px !important;
+    padding-right: 0 !important;
+    background-position-x: 480px !important;  }
+}
+
 // Footer
 
 .footer {
@@ -322,6 +339,36 @@ body {
           white-space: nowrap;
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .footer {
+    .foothold {
+      width: 500px;
+    }
+    #footer-msg {
+      font-size: 10px;
+    }
+    .footer-links {
+      li {
+        width: 20px;
+        height: 20px;
+        small {
+          width: 20px;
+          font-size: 5px;
+        }
+      }
+      img {
+        width: 25px;
+        height: 20px;
+      }
+    }
+    #headshot {
+      border-radius: 50%;
+      // border: 1px solid #2e2e2e;
+      border: unset;
     }
   }
 }

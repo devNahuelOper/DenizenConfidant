@@ -151,8 +151,8 @@
 
 #splash-caption {
   width: 100%;
-  position: absolute;
-  bottom: 30px;
+  position: relative;
+  bottom: 120px;
   // left: 159px;
   color: white;
   font-size: 35px;
@@ -171,7 +171,9 @@
 .slide-container {
   width: 100%;
   margin: auto; 
-  display: none;
+  // display: none;
+  position: absolute;
+  top: 0px;
 }
  
 h3 {
@@ -214,11 +216,7 @@ h3 {
 
 }
 
-@media only screen and  (max-width: 1200px) {
-  .each-fade img {
-      min-width: 100%;
-  }
-}
+
  
 .each-fade h2 {
   bottom: 84px;
@@ -248,6 +246,7 @@ h3 {
 .react-slideshow-container {
   display: flex;
   align-items: center;
+  background-color: black;
 }
 
 .react-slideshow-container .nav {
@@ -302,6 +301,7 @@ h3 {
 }
 
 .react-slideshow-container .nav:last-of-type {
+
   margin-left: -195px !important;
   opacity: 30% !important;
 }
@@ -318,6 +318,8 @@ h3 {
   justify-content: center;
   margin-top: -15px !important;
   margin-left: 787px !important;
+  position: relative;
+  // top: -290px;
 }
 
 .react-slideshow-container + div.indicators > .each-slideshow-indicator {
@@ -341,14 +343,30 @@ h3 {
 }
 
 
+@media only screen and  (min-width: 1240px) {
+  .each-fade img {
+      min-width: 100%;
+  }
+  .react-slideshow-container + div.indicators {
+    top: -290px;
+  }
+
+}
+@media only screen and  (max-width: 1240px) {
+  .react-slideshow-container .nav:first-of-type {
+    left: 100px !important;
+  }
+  .react-slideshow-container .nav:last-of-type {
+    margin-left: -130px !important;
+  }
+}
+
 .splash-content-container {
   font-family: Helvetica;
   position: relative;
   background-color: #595959;
   border-bottom: 1px #7a7a7a solid;
   height: 1000px;
-  // height: 1000px;
-  // background-image: image_url("logo.png");
 }
 
 // @media only screen and (max-width: 1299px) and (min-width: 980px) {
@@ -576,13 +594,14 @@ h3 {
           overflow: hidden;
           #splash-caption {
             font-size: 27px;
-            left: 170px;
-            bottom: 15px;
+             left: 60px;
+             bottom: 160px;
           }
           .react-slideshow-container {
-              height: 375px;
+              // height: 375px;
           + div.indicators {
               margin: 0 0 3px 540px !important;
+              top: -210px;
            }
           }
           .each-fade {
@@ -590,6 +609,15 @@ h3 {
               top: -60px;
             }
           }
+        }
+        .react-slideshow-container .nav:first-of-type {
+            left: 60px !important;
+            top: 160px;
+        }
+        .react-slideshow-container .nav:last-of-type {
+            position: absolute;
+            right: 50px;
+            top: 160px;
         }
          #links {
           font-size: 1em;
@@ -681,8 +709,134 @@ h3 {
       
       }
 
+@media only screen and (max-width: 700px) {
+  .splash-header-container {
+    #navbar {
+      width: 500px;
+      nav {
+        width: 500px;
+      }
+    }
+  }
+
+  .react-slideshow-container + div.indicators {
+    // top: -290px;
+    right: 88px;
+  }
+
+  .react-slideshow-container + div.indicators > .each-slideshow-indicator {
+    margin: -21px 3px 10px !important;
+  }
+
+  #splash-caption {
+    font-size: 20px !important;
+    left: 90px !important;
+  }
+
+  .main-banner {
+    min-height: 50px;
+    .banner-hold {
+      width: 500px;
+      .denizen-confidant {
+        font-size: 24px;
+      }
+      .days {
+        .day {
+          width: 50px;
+          height: 50px;
+          h1 {
+            font-size: 20px;
+            padding-left: 15px;
+            line-height: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    .news-banner, .articles {
+      width: 500px;
+      .main-article {
+        min-height: 190px;
+        article {
+          display: flex;
+        }
+      }
+    }
+    #main-image, #accessories {
+      width: 260px !important;
+      height: 170px !important;
+      left: unset !important;
+    }
+    #und-capt {
+      font-size: 20px !important;
+    }
+    #acc-capt {
+      font-size: 20px !important;
+      bottom: -35px !important;
+      left: 10px !important;
+    }
+  }
+
+  .beats {
+    .beats-banner {
+      width: 500px;
+    }
+    .beatwrap {
+      width: 500px;
+      white-space: normal;
+      .beatlist {
+        margin: 0 auto;
+        width: 520px;
+        .song {
+          min-height: 170px;
+          width: 161px;
+          article {
+            width: 160px;
+            overflow: hidden;
+          }
+          img {
+            margin-bottom: 2px;
+          }
+          a {
+            padding: 1px 73px 2px 13px;
+          }
+          #gesaffelstein-link {
+            padding: 1px 73px 2px 25px;
+          }
+          #deadmau5-link {
+            padding: 1px 73px 2px 17px;
+          }
+          #noisuf-link {
+            padding: 1px 73px 2px 20px;
+          }
+          #nomana-link {
+            padding: 1px 73px 2px 31px;
+          }
+          #kayzo-link {
+            padding: 1px 73px 2px 41px;
+          }
+          #prydz-link {
+            padding: 1px 73px 2px 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .splash-header-container {
+    .slide-container {
+      display: none;
+    }
+  }
+}
 
 
+
+// Media Queries -- Enlarge
 
 @media only screen and (min-width: 1240px) {
   // .user {

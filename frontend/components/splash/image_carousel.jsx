@@ -1,6 +1,6 @@
 import React from 'react';
 import { Fade } from 'react-slideshow-image';
-
+import { Link } from 'react-router-dom';
 
 class ImageCarousel extends React.Component {
   render() {
@@ -23,6 +23,17 @@ class ImageCarousel extends React.Component {
 
     return (
       <div className="slide-container">
+        {/* <section id="navbar">
+          <nav>
+            <img src={window.logoUrl} id="logo" />
+            <ul id="links">
+              <li><Link to="/djs">DJs</Link></li>
+              <li><Link to="/events">Events</Link></li>
+              <li><Link to="/genres">Music</Link></li>
+              <li><button id="search">Search</button></li>
+            </ul>
+          </nav>
+        </section> */}
         <Fade {...fadeProperties}>
           <div className="each-fade">
             <div className="image-container">
