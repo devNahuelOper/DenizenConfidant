@@ -581,8 +581,8 @@ h3 {
           overflow: hidden;
           #splash-caption {
             font-size: 27px;
-            left: 170px;
-            bottom: 15px;
+             left: 60px;
+             bottom: 160px;
           }
           .react-slideshow-container {
               // height: 375px;
@@ -696,8 +696,73 @@ h3 {
       
       }
 
+@media only screen and (max-width: 700px) {
+  .splash-header-container {
+    #navbar {
+      width: 500px;
+      nav {
+        width: 500px;
+      }
+    }
+  }
+
+  .main-banner {
+    min-height: 50px;
+    .banner-hold {
+      width: 500px;
+      .denizen-confidant {
+        font-size: 24px;
+      }
+      .days {
+        .day {
+          width: 50px;
+          height: 50px;
+          h1 {
+            font-size: 20px;
+            padding-left: 15px;
+            line-height: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .content {
+    .news-banner, .articles {
+      width: 500px;
+      .main-article {
+        min-height: 190px;
+        article {
+          display: flex;
+        }
+      }
+    }
+    #main-image, #accessories {
+      width: 260px !important;
+      height: 170px !important;
+      left: unset !important;
+    }
+    #und-capt {
+      font-size: 20px !important;
+    }
+    #acc-capt {
+      font-size: 20px !important;
+      bottom: -35px !important;
+      left: 10px !important;
+    }
+  }
+
+  .beats {
+    .beats-banner {
+      width: 500px;
+    }
+  }
+}
 
 
+
+
+// Media Queries -- Enlarge
 
 @media only screen and (min-width: 1240px) {
   // .user {
