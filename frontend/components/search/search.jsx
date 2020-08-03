@@ -1,54 +1,89 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { fetchDjs } from '../../actions/dj_actions';
+
+// const str = "";
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      shown: false
+      djs: [],
+      searchTerm: '',
+      resId: 0
     }
-    this.handleClick = this.handleClick.bind(this);
-    this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    this.editSearchTerm = this.editSearchTerm.bind(this);
+    this.dynamicSearch = this.dynamicSearch.bind(this);
   }
 
-  handleClick() {
-    if (!this.state.shown) {
-      document.addEventListener('click', this.handleOutsideClick, false);
+  componentDidMount() {
+    this.props.fetchDjs().then(djs => this.setState({ djs: Object.values(djs.djs) }));
+  }
+
+  componentWillUnmount() {
+    const query = document.getElementById('query');
+    query.style.display = 'none';
+  }
+
+
+
+  editSearchTerm(e) {
+    this.setState({searchTerm: e.target.value})
+  }
+
+  dynamicSearch(e) {
+    // const searchbar = document.getElementsByClassName('search-container')[0];
+    const query = document.getElementById('query');
+    let result = this.state.djs.find(dj => dj.name.toLowerCase() === (this.state.searchTerm.toLowerCase()));
+    e.preventDefault();
+    if (this.state.djs.find(dj => dj.name.toLowerCase() === (this.state.searchTerm.toLowerCase()))) {
+      query.style.display = 'block';
+      this.setState({ resId: result.id });
     } else {
-      document.removeEventListener('click', this.handleOutsideClick, false);
+      query.style.display = 'none';
     }
-
-    this.setState(prevState => ({
-      shown: !prevState.shown
-    }));
-  }
-
-  handleOutsideClick(e) {
-    if (this.node.contains(e.target)) {
-      return;
-    }
-    this.handleClick();
+    // return this.state.djs.filter(dj => dj.name.toLowerCase().includes(this.state.searchTerm.toLowerCase()));
+    // return this.state.names.filter(name => name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
   }
 
   render() {
     // const searchbar = document.getElementsByClassName('search-container')[0];
     const search = document.getElementById('search');
-    // search.addEventListener('click', this.handleClick);
+    const query = document.getElementById('query');
     return (
-      <div className="search-container" 
-      // ref={node => { this.node = node; }}
-      >
+      <div className="search-container">
       
-        {/* {this.state.shown && ()} */}
         <div id="searchbar" >
-          <input type="text" id="search-input" placeholder="Search Functionality Under Construction"/>
+        <form onSubmit={this.dynamicSearch}>
+          <input type="text" id="search-input" 
+          value={this.state.searchTerm}
+          onChange={this.editSearchTerm}
+          placeholder="Search Functionality Under Construction"
+          />
           <div id="search-button-container">
             <button id="search-button">Submit</button>
           </div>
+            <div id="query">
+              <Link id="search-link" to={`/djs/${this.state.resId}`}>{this.state.searchTerm}</Link>
+            </div>
+          </form>
         </div>
-        
+       
       </div>
     )
   }
 }
 
-export default Search;
+const mapStateToProps = (state) => {
+  return {
+    djs: Object.values(state.entities.djs)
+  }
+};
+
+const mapDispatchToProps = dispatch => ({
+  fetchDjs: () => dispatch(fetchDjs())
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
