@@ -216,11 +216,7 @@ h3 {
 
 }
 
-@media only screen and  (max-width: 1200px) {
-  .each-fade img {
-      min-width: 100%;
-  }
-}
+
  
 .each-fade h2 {
   bottom: 84px;
@@ -250,6 +246,7 @@ h3 {
 .react-slideshow-container {
   display: flex;
   align-items: center;
+  background-color: black;
 }
 
 .react-slideshow-container .nav {
@@ -322,7 +319,7 @@ h3 {
   margin-top: -15px !important;
   margin-left: 787px !important;
   position: relative;
-  top: -290px;
+  // top: -290px;
 }
 
 .react-slideshow-container + div.indicators > .each-slideshow-indicator {
@@ -346,14 +343,30 @@ h3 {
 }
 
 
+@media only screen and  (min-width: 1240px) {
+  .each-fade img {
+      min-width: 100%;
+  }
+  .react-slideshow-container + div.indicators {
+    top: -290px;
+  }
+
+}
+@media only screen and  (max-width: 1240px) {
+  .react-slideshow-container .nav:first-of-type {
+    left: 100px !important;
+  }
+  .react-slideshow-container .nav:last-of-type {
+    margin-left: -130px !important;
+  }
+}
+
 .splash-content-container {
   font-family: Helvetica;
   position: relative;
   background-color: #595959;
   border-bottom: 1px #7a7a7a solid;
   height: 1000px;
-  // height: 1000px;
-  // background-image: image_url("logo.png");
 }
 
 // @media only screen and (max-width: 1299px) and (min-width: 980px) {
@@ -706,6 +719,20 @@ h3 {
     }
   }
 
+  .react-slideshow-container + div.indicators {
+    // top: -290px;
+    right: 88px;
+  }
+
+  .react-slideshow-container + div.indicators > .each-slideshow-indicator {
+    margin: -21px 3px 10px !important;
+  }
+
+  #splash-caption {
+    font-size: 20px !important;
+    left: 90px !important;
+  }
+
   .main-banner {
     min-height: 50px;
     .banner-hold {
@@ -799,6 +826,13 @@ h3 {
   }
 }
 
+@media only screen and (max-width: 500px) {
+  .splash-header-container {
+    .slide-container {
+      display: none;
+    }
+  }
+}
 
 
 
