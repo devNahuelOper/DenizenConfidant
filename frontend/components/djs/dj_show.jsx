@@ -16,6 +16,7 @@ class DjShow extends React.Component {
     this.props.fetchDj(this.props.match.params.djId);
     this.props.fetchGenres();
     window.scrollTo(0, 0);
+
     const search = document.getElementById('search');
     const searchbar = document.getElementsByClassName('search-container')[0];
     search.onclick = function () {
@@ -35,7 +36,14 @@ class DjShow extends React.Component {
       search.style.color = 'currentColor';
       search.style.borderBottom = 'unset';
     }
+    const query = document.getElementById('query');
+    query.style.display = 'none';
   }
+
+  // componentWillUnmount() {
+  //   const query = document.getElementById('query');
+  //   query.style.display = 'none';
+  // }
 
   useQuery() {
     return new URLSearchParams(useLocation().search);
