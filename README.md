@@ -40,7 +40,7 @@ A one-stop shop for all things electronic music!
 
 ## Hosting
 * Heroku
-
+* AWS (Amazon Web Services)
 
 
 # Features to be implemented
