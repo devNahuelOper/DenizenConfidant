@@ -756,6 +756,46 @@ h3 {
     .beats-banner {
       width: 500px;
     }
+    .beatwrap {
+      width: 500px;
+      white-space: normal;
+      .beatlist {
+        margin: 0 auto;
+        width: 520px;
+        .song {
+          min-height: 170px;
+          width: 161px;
+          article {
+            width: 160px;
+            overflow: hidden;
+          }
+          img {
+            margin-bottom: 2px;
+          }
+          a {
+            padding: 1px 73px 2px 13px;
+          }
+          #gesaffelstein-link {
+            padding: 1px 73px 2px 25px;
+          }
+          #deadmau5-link {
+            padding: 1px 73px 2px 17px;
+          }
+          #noisuf-link {
+            padding: 1px 73px 2px 20px;
+          }
+          #nomana-link {
+            padding: 1px 73px 2px 31px;
+          }
+          #kayzo-link {
+            padding: 1px 73px 2px 41px;
+          }
+          #prydz-link {
+            padding: 1px 73px 2px 30px;
+          }
+        }
+      }
+    }
   }
 }
 
