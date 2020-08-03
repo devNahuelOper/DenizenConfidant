@@ -57,8 +57,20 @@ class SplashPage extends React.Component {
 
   render() {
     const { djs } = this.props;
-    const searchbar = document.getElementsByClassName('search-container')[0];
-    const search = document.getElementById('search');
+    // const header = document.getElementsByClassName('splash-header-container')[0];
+    // const images = [
+    //   window.redRaveUrl,
+    //   window.etherealUrl,
+    //   window.raveNiteUrl,
+    //   window.tbilisiRaveUrl,
+    //   window.transmissionUrl,
+    //   window.berghainUrl,
+    // ];
+
+    // for (let i = 0; i < images.length; i++) {
+    //   let bg = header.style.backgroundImage;
+
+    // }
 
     let yesterday = new Date(this.state.date);
     yesterday.setDate(yesterday.getDate() - 1);

@@ -151,8 +151,8 @@
 
 #splash-caption {
   width: 100%;
-  position: absolute;
-  bottom: 30px;
+  position: relative;
+  bottom: 120px;
   // left: 159px;
   color: white;
   font-size: 35px;
@@ -171,7 +171,9 @@
 .slide-container {
   width: 100%;
   margin: auto; 
-  display: none;
+  // display: none;
+  position: absolute;
+  top: 0px;
 }
  
 h3 {
@@ -302,6 +304,7 @@ h3 {
 }
 
 .react-slideshow-container .nav:last-of-type {
+
   margin-left: -195px !important;
   opacity: 30% !important;
 }
@@ -318,6 +321,8 @@ h3 {
   justify-content: center;
   margin-top: -15px !important;
   margin-left: 787px !important;
+  position: relative;
+  top: -290px;
 }
 
 .react-slideshow-container + div.indicators > .each-slideshow-indicator {
@@ -580,9 +585,10 @@ h3 {
             bottom: 15px;
           }
           .react-slideshow-container {
-              height: 375px;
+              // height: 375px;
           + div.indicators {
               margin: 0 0 3px 540px !important;
+              top: -210px;
            }
           }
           .each-fade {
@@ -590,6 +596,15 @@ h3 {
               top: -60px;
             }
           }
+        }
+        .react-slideshow-container .nav:first-of-type {
+            left: 60px !important;
+            top: 160px;
+        }
+        .react-slideshow-container .nav:last-of-type {
+            position: absolute;
+            right: 50px;
+            top: 160px;
         }
          #links {
           font-size: 1em;
