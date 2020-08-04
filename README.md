@@ -71,6 +71,7 @@ class DjQuery extends React.Component {
   Once I've created a query container and query item for each entity, I'm ready to attach these components to the search bar:
   
   ```Javascript
+         <div id="searchbar" >
           <input type="text" id="search-input" 
             value={this.state.searchTerm}
             onChange={this.editSearchTerm}
@@ -79,18 +80,20 @@ class DjQuery extends React.Component {
           <div id="search-button-container">
             <button id="search-button">Submit</button>
           </div>
-          <div
-            style={this.state.searchTerm.length ? { display: 'block' } : { display: 'none' }}
-          >
-          <ul id="searchlist">
+          <div>
+          { this.state.searchTerm.length &&
+            <ul id="searchlist">
             <li><DjQueryContainer djs = {this.djSearch()}/></li>
             <li><GenreQueryContainer genres = {this.genreSearch()}/></li>
             <li><EventQueryContainer events = {this.eventSearch()}/></li>
           </ul>
+          }
           </div>
+        </div>
   ```
-  I put all three query containers into an unorganized list, to facilitate in keeping the organized and nicely stacked on top of eachother. The div containing the searchlist has a conditional that the list should only be displayed if there is at least on character typed in the search bar, otherwise the searchlist would already be there before you typed anything in the search bar, and it would be massive since technically all elements start with an empty string!
-  
+  I put all three query containers into an unordered list, to facilitate in keeping the different entities organized and nicely stacked on top of eachother. 
+  This list will only render on the condition that there is at least one character in the inputted search term i.e. when the search has begun.
+ 
   
 * DJs: 100 DJs in the database, each with their own Show Page (w/ dynamic image & song rendering via Amazon Web Services). 
 
