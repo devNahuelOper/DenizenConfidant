@@ -2,7 +2,7 @@ import React from 'react';
 import ImageCarousel from './image_carousel';
 import { Link, useLocation } from 'react-router-dom';
 
-let gesaffId, deamauId, noisufId, nomanaId, kayzoId, eprydzId;
+// let gesaffId, deamauId, noisufId, nomanaId, kayzoId, eprydzId;
 
 class SplashPage extends React.Component {
   constructor(props) {
@@ -11,14 +11,10 @@ class SplashPage extends React.Component {
       date: new Date(),
       djs: []
     }
-    // this.findDj = this.findDj.bind(this);
   }
 
-  
   componentDidMount() {
     this.props.fetchDjs().then(djs => this.setState({djs: Object.values(djs.djs)}));
-    // this.props.fetchGenres().then(genres => this.setState({ genres: Object.values(genres.genres) }));
-    // this.props.fetchEvents().then(events => this.setState({ events: Object.values(events.events) }));  
     
     const search = document.getElementById('search');
     const searchbar = document.getElementsByClassName('search-container')[0];
@@ -39,9 +35,7 @@ class SplashPage extends React.Component {
       search.style.color = 'currentColor';
       search.style.borderBottom = 'unset';
     }
-    
   }
-
 
   // componentDidUpdate() {
   //   gesaffId = this.props.djs.find(dj => dj.name === 'Gesaffelstein').id;
@@ -54,22 +48,12 @@ class SplashPage extends React.Component {
 
 
 
-  useQuery() {
-    return new URLSearchParams(useLocation().search);
-  }
+  // useQuery() {
+  //   return new URLSearchParams(useLocation().search);
+  // }
 
   render() {
     const { djs } = this.props;
-    // const header = document.getElementsByClassName('splash-header-container')[0];
-    // const images = [
-    //   window.redRaveUrl,
-    //   window.etherealUrl,
-    //   window.raveNiteUrl,
-    //   window.tbilisiRaveUrl,
-    //   window.transmissionUrl,
-    //   window.berghainUrl,
-    // ];
-
 
     let yesterday = new Date(this.state.date);
     yesterday.setDate(yesterday.getDate() - 1);
@@ -82,7 +66,6 @@ class SplashPage extends React.Component {
 
     let tomorrowPlus = new Date(tomorrow);
     tomorrowPlus.setDate(tomorrowPlus.getDate() + 1);
-
 
     let weekday = this.state.date.toDateString().split(' ')[0];
     let today = this.state.date.getDate();
