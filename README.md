@@ -16,6 +16,26 @@ A one-stop shop for all things electronic music!
   
   Process:
   
+  I setup my state -- each entity starts off as an empty array, and the searchTerm (key piece of the operation) as an empty string:
+  
+  ```Javascript
+   this.state = {
+      djs: [],
+      genres: [],
+      events: [],
+      searchTerm: ''
+    }
+    this.editSearchTerm = this.editSearchTerm.bind(this);
+    this.djSearch = this.djSearch.bind(this);
+  ```
+  The two bound methods will do much of the heavy lifting. Here is the method for handling and updating user input:
+  
+  ```Javascript
+  editSearchTerm(e) {
+    this.setState({searchTerm: e.target.value})
+  }
+  ```
+  
   After importing entities, mapping state and dispatch to props for each and setting the state of each entity within the Search Component (via componentDidMount), I created a filtering mechanism through which all the entities matching the current search term will be displayed:
     
   ```Javascript
@@ -71,6 +91,7 @@ class DjQuery extends React.Component {
   ```
   I put all three query containers into an unorganized list, to facilitate in keeping the organized and nicely stacked on top of eachother. The div containing the searchlist has a conditional that the list should only be displayed if there is at least on character typed in the search bar, otherwise the searchlist would already be there before you typed anything in the search bar, and it would be massive since technically all elements start with an empty string!
   
+  
 * DJs: 100 DJs in the database, each with their own Show Page (w/ dynamic image & song rendering via Amazon Web Services). 
 
 <img src="https://user-images.githubusercontent.com/16979527/89132121-bc4a4180-d4df-11ea-9811-79917dbfcf42.png" width="700" height="800">
@@ -105,9 +126,10 @@ class DjQuery extends React.Component {
 
 
 # Features to be implemented
-* search for events in your area
 * create an event for others to attend
-* search for/upload music
+* create artist profile
+* upload music
+
 
 
 
