@@ -15,9 +15,11 @@ class SplashPage extends React.Component {
   }
 
   
-
   componentDidMount() {
     this.props.fetchDjs().then(djs => this.setState({djs: Object.values(djs.djs)}));
+    this.props.fetchGenres().then(genres => this.setState({ genres: Object.values(genres.genres) }));
+    this.props.fetchEvents().then(events => this.setState({ events: Object.values(events.events) }));  
+    
     const search = document.getElementById('search');
     const searchbar = document.getElementsByClassName('search-container')[0];
     search.onclick = function () {
