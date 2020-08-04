@@ -15,6 +15,7 @@ A one-stop shop for all things electronic music!
 ![image](https://user-images.githubusercontent.com/16979527/89317087-e9673300-d64a-11ea-98f8-7e54984622b6.png)
   
   Process:
+  
   After importing entities, mapping state and dispatch to props for each and setting the state of each entity within the Search Component (via componentDidMount), I created a filtering mechanism through which all the entities matching the current search term will be displayed:
     
   ```Javascript
