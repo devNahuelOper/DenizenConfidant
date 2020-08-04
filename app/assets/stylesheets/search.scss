@@ -93,8 +93,17 @@
 }
 
 #genre-query-container {
+  // background-color: #484747;
+  // color: black;
   background-color: #484747;
-  color: black;
+  color: darkgrey;
+}
+
+#event-query-container {
+  // color: #fff;
+  // background-color: #8e8e8e;
+  color: #404040;
+  background-color: #8e8e8e;
 }
 
 .query-item {
@@ -115,6 +124,11 @@
 .query-item:last-of-type {
   border-bottom: none;
 }
+.query-item:hover {
+  strong {
+    font-weight: bold;
+  }
+}
 
 #dj-query-item {
   border-color: #454545;
@@ -127,7 +141,22 @@
   border-color: #2e2e2e;
 }
 #genre-query-item:hover {
-  background-color: white;
+  background-color: #636363;
+  color: #cccccc;
+  small {
+    color: #a5a3a3;
+  }
+}
+
+#event-query-item {
+  border-color: #1f1e1e;
+  small {
+    color: #636262;
+  }
+}
+#event-query-item:hover {
+  // background-color: #333333;
+  background-color: #d8d8d8;
 }
 
 @media only screen and (min-width: 1300px){
