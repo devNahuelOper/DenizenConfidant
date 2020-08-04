@@ -6,9 +6,13 @@ A one-stop shop for all things electronic music!
 ![image](https://user-images.githubusercontent.com/16979527/89132069-768d7900-d4df-11ea-85df-8d0b2d89b8bb.png)
 
 # Features
-* User Authentication: users can sign up, log in and out, or log in as a demo user.
+* User Authentication: Users can sign up, log in and out, or log in as a demo user.
 
 <img src="https://user-images.githubusercontent.com/16979527/89132424-06342700-d4e2-11ea-9f5a-bc0d3c6dcaa1.png" width="700" height="800">
+
+* Search Functionality: Users can type in a DJ, Genre or Event name in the search bar, and navigate to that show page through the generated link. Each letter typed will update the search dropdown with narrowed-down results.
+
+![image](https://user-images.githubusercontent.com/16979527/89317087-e9673300-d64a-11ea-98f8-7e54984622b6.png)
 
 * DJs: 100 DJs in the database, each with their own Show Page (w/ dynamic image & song rendering via Amazon Web Services). 
 
