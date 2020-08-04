@@ -40,10 +40,6 @@ class DjShow extends React.Component {
     // query.style.display = 'none';
   }
 
-  // componentWillUnmount() {
-  //   const query = document.getElementById('query');
-  //   query.style.display = 'none';
-  // }
 
   useQuery() {
     return new URLSearchParams(useLocation().search);
