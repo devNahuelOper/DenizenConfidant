@@ -29,10 +29,8 @@ class Search extends React.Component {
   }
 
   render() {
-
     return (
       <div className="search-container">
-      
         <div id="searchbar" >
         <form onSubmit={this.dynamicSearch}>
           <input type="text" id="search-input" 
