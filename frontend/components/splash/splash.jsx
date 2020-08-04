@@ -9,7 +9,9 @@ class SplashPage extends React.Component {
     super(props);
     this.state = {
       date: new Date(),
-      
+      djs: [],
+      genres: [],
+      events: []
     }
     // this.findDj = this.findDj.bind(this);
   }
