@@ -16,6 +16,7 @@ class Search extends React.Component {
     }
     this.editSearchTerm = this.editSearchTerm.bind(this);
     this.dynamicSearch = this.dynamicSearch.bind(this);
+    this.genreSearch = this.genreSearch.bind(this);
   }
 
   componentDidMount() {
@@ -28,8 +29,11 @@ class Search extends React.Component {
   }
 
   dynamicSearch(e) {
-    // const genreSearch = this.state.genres.filter(genre => genre.name.toLowerCase().startsWith(this.state.searchTerm.toLowerCase()));
     return this.state.djs.filter(dj => dj.name.toLowerCase().startsWith(this.state.searchTerm.toLowerCase())); 
+  }
+  
+  genreSearch() {
+    return this.state.genres.filter(genre => genre.name.toLowerCase().startsWith(this.state.searchTerm.toLowerCase()));
   }
 
   render() {
@@ -40,7 +44,7 @@ class Search extends React.Component {
           <input type="text" id="search-input" 
           value={this.state.searchTerm}
           onChange={this.editSearchTerm}
-          placeholder="Type in a DJ"
+          placeholder="DJs, Genres"
           />
           <div id="search-button-container">
             <button id="search-button">Submit</button>
@@ -48,7 +52,10 @@ class Search extends React.Component {
           <div
             style={this.state.searchTerm.length ? { display: 'block' } : { display: 'none' }}
           >
-          <QueryContainer djs = {this.dynamicSearch()}/>
+          <ul id="searchlist">
+            <li><DjQueryContainer djs = {this.dynamicSearch()}/></li>
+            <li><GenreQueryContainer genres = {this.genreSearch()}/></li>
+          </ul>
           </div>
           </form>
         </div>
@@ -58,23 +65,45 @@ class Search extends React.Component {
   }
 }
 
-class QueryContainer extends React.Component {
+class DjQueryContainer extends React.Component {
   render() {
     return (
-      <div id="query-container">
-        {this.props.djs.map(dj => <Query dj= {dj}/>)}
+      <div id="dj-query-container">
+        {this.props.djs.map(dj => <DjQuery dj= {dj}/>)}
       </div>
     )
   }
 }
 
-class Query extends React.Component {
+class GenreQueryContainer extends React.Component {
+  render() {
+    return (
+      <div id="genre-query-container">
+        {this.props.genres.map(genre => <GenreQuery genre={genre} />)}
+      </div>
+    )
+  }
+}
+
+class DjQuery extends React.Component {
   render() {
     return (
       <Link to={`/djs/${this.props.dj.id}`}>
-      <div id="query-item">
+      <div className="query-item" id="dj-query-item">
        {this.props.dj.name}
       </div>
+      </Link >
+    )
+  }
+}
+
+class GenreQuery extends React.Component {
+  render() {
+    return (
+      <Link to={`/genres/${this.props.genre.id}`}>
+        <div className="query-item" id="genre-query-item">
+          {this.props.genre.name}
+        </div>
       </Link >
     )
   }
