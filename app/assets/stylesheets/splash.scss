@@ -150,15 +150,16 @@
 } 
 
 #splash-caption {
-  width: 100%;
+  width: 960px;
+  margin: 0 auto;
   position: relative;
-  bottom: 120px;
-  // left: 159px;
   color: white;
   font-size: 35px;
   h1 {
     width: 960px;
     margin: 0 auto;
+    position: relative;
+    bottom: 100px;
   }
 }
 
@@ -343,23 +344,23 @@ h3 {
 }
 
 
-@media only screen and  (min-width: 1240px) {
-  .each-fade img {
-      min-width: 100%;
-  }
-  .react-slideshow-container + div.indicators {
-    top: -290px;
-  }
+// @media only screen and  (min-width: 1240px) {
+//   .each-fade img {
+//       min-width: 100%;
+//   }
+//   .react-slideshow-container + div.indicators {
+//     top: -290px;
+//   }
 
-}
-@media only screen and  (max-width: 1240px) {
-  .react-slideshow-container .nav:first-of-type {
-    left: 100px !important;
-  }
-  .react-slideshow-container .nav:last-of-type {
-    margin-left: -130px !important;
-  }
-}
+// }
+// @media only screen and  (max-width: 1240px) {
+//   .react-slideshow-container .nav:first-of-type {
+//     left: 100px !important;
+//   }
+//   .react-slideshow-container .nav:last-of-type {
+//     margin-left: -130px !important;
+//   }
+// }
 
 .splash-content-container {
   font-family: Helvetica;
@@ -593,9 +594,13 @@ h3 {
           height: 375px;
           overflow: hidden;
           #splash-caption {
-            font-size: 27px;
-             left: 60px;
-             bottom: 160px;
+            font-size: 24px;
+            bottom: 170px;
+            width: 675px;
+            h1 {
+              width: 675px;
+              bottom: 55px;
+            }
           }
           .react-slideshow-container {
               // height: 375px;

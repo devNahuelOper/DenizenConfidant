@@ -9,9 +9,7 @@ class SplashPage extends React.Component {
     super(props);
     this.state = {
       date: new Date(),
-      djs: [],
-      genres: [],
-      events: []
+      djs: []
     }
     // this.findDj = this.findDj.bind(this);
   }
@@ -19,8 +17,8 @@ class SplashPage extends React.Component {
   
   componentDidMount() {
     this.props.fetchDjs().then(djs => this.setState({djs: Object.values(djs.djs)}));
-    this.props.fetchGenres().then(genres => this.setState({ genres: Object.values(genres.genres) }));
-    this.props.fetchEvents().then(events => this.setState({ events: Object.values(events.events) }));  
+    // this.props.fetchGenres().then(genres => this.setState({ genres: Object.values(genres.genres) }));
+    // this.props.fetchEvents().then(events => this.setState({ events: Object.values(events.events) }));  
     
     const search = document.getElementById('search');
     const searchbar = document.getElementsByClassName('search-container')[0];
@@ -41,17 +39,18 @@ class SplashPage extends React.Component {
       search.style.color = 'currentColor';
       search.style.borderBottom = 'unset';
     }
+    
   }
 
 
-  componentDidUpdate() {
-    gesaffId = this.props.djs.find(dj => dj.name === 'Gesaffelstein').id;
-    deamauId = this.props.djs.find(dj => dj.name === 'Deadmau5').id;
-    noisufId = this.props.djs.find(dj => dj.name === 'Noisuf X').id;
-    nomanaId = this.props.djs.find(dj => dj.name === 'No Mana').id;
-    kayzoId = this.props.djs.find(dj => dj.name === 'Kayzo').id;
-    eprydzId = this.props.djs.find(dj => dj.name === 'Eric Prydz').id;
-  }
+  // componentDidUpdate() {
+  //   gesaffId = this.props.djs.find(dj => dj.name === 'Gesaffelstein').id;
+  //   deamauId = this.props.djs.find(dj => dj.name === 'Deadmau5').id;
+  //   noisufId = this.props.djs.find(dj => dj.name === 'Noisuf X').id;
+  //   nomanaId = this.props.djs.find(dj => dj.name === 'No Mana').id;
+  //   kayzoId = this.props.djs.find(dj => dj.name === 'Kayzo').id;
+  //   eprydzId = this.props.djs.find(dj => dj.name === 'Eric Prydz').id;
+  // }
 
 
 
@@ -71,10 +70,6 @@ class SplashPage extends React.Component {
     //   window.berghainUrl,
     // ];
 
-    // for (let i = 0; i < images.length; i++) {
-    //   let bg = header.style.backgroundImage;
-
-    // }
 
     let yesterday = new Date(this.state.date);
     yesterday.setDate(yesterday.getDate() - 1);
@@ -190,8 +185,8 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.gesaffelsteinUrl} id="gesaffelstein"/>
-                    {/* <Link to="/djs/336">Gesaffelstein - Depravity</Link> */}
-                    <Link id="gesaffelstein-link" to={`/djs/${gesaffId}`}>Gesaffelstein - Depravity</Link>
+                    <Link to="/djs/739">Gesaffelstein - Depravity</Link>
+                    {/* <Link id="gesaffelstein-link" to={`/djs/${gesaffId}`}>Gesaffelstein - Depravity</Link> */}
                     {/* <Link to={`/djs/${djs.find(dj => dj.name === 'Gesaffelstein')}`}>Gesaffelstein - Depravity</Link> */}
                     <audio id="depravity" src="depravity.mp3" controls></audio>
                       
@@ -202,8 +197,8 @@ class SplashPage extends React.Component {
                   <article>
                     <img src={window.deadmau5Url} id="deadmau5"/>
                    
-                    <Link id="deadmau5-link" to={`/djs/${deamauId}`}>Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
-                    {/* <Link to="/djs/322">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link> */}
+                    {/* <Link id="deadmau5-link" to={`/djs/${deamauId}`}>Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link> */}
+                    <Link to="/djs/725">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
                     <audio id="speed" src="speed.mp3" controls></audio>
                   </article>
                 </li>
@@ -211,8 +206,8 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.noisufUrl} id="noisuf"/>    
-                    <Link id="noisuf-link" to={`/djs/${noisufId}`}>Noisuf-X - Count to Seven</Link>
-                    {/* <Link to="/djs/365">Noisuf-X - Count to Seven</Link> */}
+                    {/* <Link id="noisuf-link" to={`/djs/${noisufId}`}>Noisuf-X - Count to Seven</Link> */}
+                    <Link to="/djs/768">Noisuf-X - Count to Seven</Link>
                     <audio id="cseven" src="cseven.mp3" controls></audio>
                   </article>
                 </li>
@@ -220,8 +215,8 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.nomanaUrl} id="nomana"/>
-                    <Link id="nomana-link" to={`/djs/${nomanaId}`}>No Mana - Other Side</Link>
-                    {/* <Link to="/djs/366">No Mana - Other Side</Link> */}
+                    {/* <Link id="nomana-link" to={`/djs/${nomanaId}`}>No Mana - Other Side</Link> */}
+                    <Link to="/djs/769">No Mana - Other Side</Link>
                     <audio id="otherside" src="otherside.mp3" controls></audio>
                   </article>
                 </li>
@@ -229,16 +224,16 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.kayzoUrl} id="kayzo"/>
-                    <Link id="kayzo-link" to={`/djs/${kayzoId}`}>Kayzo - The Fire</Link>
-                    {/* <Link to="/djs/349">Kayzo - The Fire</Link> */}
+                    {/* <Link id="kayzo-link" to={`/djs/${kayzoId}`}>Kayzo - The Fire</Link> */}
+                    <Link to="/djs/752">Kayzo - The Fire</Link>
                     <audio id="fire" src="fire.mp3" controls></audio>
                   </article>
                 </li>
                 <li className="song">
                   <article>
                     <img src={window.prydzUrl} id="prydz" />
-                    <Link id="prydz-link" to={`/djs/${eprydzId}`}>Eric Prydz - The Matrix</Link>
-                    {/* <Link to="/djs/327">Eric Prydz - The Matrix</Link> */}
+                    {/* <Link id="prydz-link" to={`/djs/${eprydzId}`}>Eric Prydz - The Matrix</Link> */}
+                    <Link to="/djs/730">Eric Prydz - The Matrix</Link>
                     <audio id="matrix" src="matrix.mp3" controls></audio>
                   </article>
                 </li>
