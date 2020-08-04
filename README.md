@@ -17,11 +17,11 @@ A one-stop shop for all things electronic music!
   Process:
   After importing entities, mapping state and dispatch to props for each and setting the state of each entity within the Search Component (via componentDidMount), I created a filtering mechanism through which all the entities matching the current search term will be displayed:
     
-    ``` React
+  ```Javascript
      djSearch() {
       return this.state.djs.filter(dj => dj.name.toLowerCase().startsWith(this.state.searchTerm.toLowerCase())); 
      }
-    ```
+  ```
 
 * DJs: 100 DJs in the database, each with their own Show Page (w/ dynamic image & song rendering via Amazon Web Services). 
 
