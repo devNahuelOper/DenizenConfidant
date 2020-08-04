@@ -50,9 +50,9 @@ class Search extends React.Component {
         <div id="searchbar" >
         <form id="search-form" onSubmit={this.djSearch}>
           <input type="text" id="search-input" 
-          value={this.state.searchTerm}
-          onChange={this.editSearchTerm}
-          placeholder="DJs, Genres, Events"
+            value={this.state.searchTerm}
+            onChange={this.editSearchTerm}
+            placeholder="DJs, Genres, Events"
           />
           <div id="search-button-container">
             <button id="search-button">Submit</button>
@@ -83,6 +83,7 @@ class DjQueryContainer extends React.Component {
     )
   }
 }
+
 
 class GenreQueryContainer extends React.Component {
   render() {
