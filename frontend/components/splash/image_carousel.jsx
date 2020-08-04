@@ -36,12 +36,12 @@ class ImageCarousel extends React.Component {
         </section> */}
         <Fade {...fadeProperties}>
           <div className="each-fade">
-            <div className="image-container">
+            <div className="image-container" id="redrave">
               <img src={fadeImages[0]} />
             </div>
           </div>
           <div className="each-fade">
-            <div className="image-container">
+            <div className="image-container" id="ethereal">
               <img src={fadeImages[1]} />
               {/* <section id="splash-caption">
               </section> */}
@@ -49,7 +49,7 @@ class ImageCarousel extends React.Component {
             <h2></h2>
           </div>
           <div className="each-fade">
-            <div className="image-container">
+            <div className="image-container" id="ravenite">
               <img src={fadeImages[2]} />
               {/* <section id="splash-caption">
               </section> */}
@@ -57,12 +57,12 @@ class ImageCarousel extends React.Component {
             <h2></h2>
           </div>
           <div className="each-fade">
-            <div className="image-container">
+            <div className="image-container" id="tbilisi">
               <img src={fadeImages[3]} />
             </div>
           </div>
           <div className="each-fade">
-            <div className="image-container">
+            <div className="image-container" id="neon">
               <img src={fadeImages[4]} />
               <section id="splash-caption">
               <h1>3 days in the Neon Jungle</h1>
@@ -71,7 +71,7 @@ class ImageCarousel extends React.Component {
             <h2></h2>
           </div>
           <div className="each-fade">
-            <div className="image-container">
+            <div className="image-container" id="berghain">
               <img src={fadeImages[5]} />
               <section id="splash-caption">
                 <h1>Think you're getting in to Berghain?</h1>

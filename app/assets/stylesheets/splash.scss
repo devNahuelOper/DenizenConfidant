@@ -149,17 +149,20 @@
     }
 } 
 
+
+// Image Carousel 
+
 #splash-caption {
   width: 960px;
   margin: 0 auto;
   position: relative;
+  top: -15px;
   color: white;
   font-size: 35px;
   h1 {
     width: 960px;
     margin: 0 auto;
     position: relative;
-    bottom: 100px;
   }
 }
 
@@ -202,12 +205,15 @@ h3 {
 
   .image-container {
     width: 100%;
+    height: 575px;
     overflow: hidden;
-
+    display: flex;
+    align-items: flex-end;
     img {
       width: 100%;
       position: relative;
       bottom: 20px;
+      display: none;
     }
   }
 
@@ -217,7 +223,36 @@ h3 {
 
 }
 
-
+#redrave {
+  background-image: image_url('red-rave.png');
+  background-size: cover;
+  background-position: center;
+}
+#ethereal {
+  background-image: image_url('ethereal-rave.png');
+  background-size: cover;
+  background-position: center;
+}
+#ravenite {
+  background-image: image_url('rave-nite.png');
+  background-size: cover;
+  background-position: center;
+}
+#tbilisi {
+  background-image: image_url('tbilisi-rave.png');
+  background-size: cover;
+  background-position: center;
+}
+#neon {
+  background-image: image_url('rave.jpg');
+  background-size: cover;
+  background-position: center;
+}
+#berghain {
+  background-image: image_url('berghain.png');
+  background-size: cover;
+  background-position: center;
+}
  
 .each-fade h2 {
   bottom: 84px;
@@ -362,6 +397,8 @@ h3 {
 //   }
 // }
 
+// Mid Section
+
 .splash-content-container {
   font-family: Helvetica;
   position: relative;
@@ -370,7 +407,6 @@ h3 {
   height: 1000px;
 }
 
-// @media only screen and (max-width: 1299px) and (min-width: 980px) {
    .content {
       color: #b4bd00;
       position: relative;
@@ -595,11 +631,9 @@ h3 {
           overflow: hidden;
           #splash-caption {
             font-size: 24px;
-            bottom: 170px;
             width: 675px;
             h1 {
               width: 675px;
-              bottom: 55px;
             }
           }
           .react-slideshow-container {
@@ -611,7 +645,7 @@ h3 {
           }
           .each-fade {
             .image-container {
-              top: -60px;
+              height: 375px;
             }
           }
         }
@@ -863,8 +897,8 @@ h3 {
       overflow: hidden;
       .each-fade {
         position: relative;
-        top: -130px;
-        height: 100%;
+        // top: -130px;
+        // height: 100%;
       }
       .react-slideshow-container {
         .nav {
