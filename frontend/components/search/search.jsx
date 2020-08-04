@@ -90,7 +90,7 @@ class DjQuery extends React.Component {
     return (
       <Link to={`/djs/${this.props.dj.id}`}>
       <div className="query-item" id="dj-query-item">
-       {this.props.dj.name}
+        <strong>{this.props.dj.name}</strong> <small>DJ</small>
       </div>
       </Link >
     )
@@ -102,7 +102,7 @@ class GenreQuery extends React.Component {
     return (
       <Link to={`/genres/${this.props.genre.id}`}>
         <div className="query-item" id="genre-query-item">
-          {this.props.genre.name}
+          <strong>{this.props.genre.name}</strong> <small>Genre</small>
         </div>
       </Link >
     )
