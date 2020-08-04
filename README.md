@@ -13,6 +13,15 @@ A one-stop shop for all things electronic music!
 * Search Functionality: Users can type in a DJ, Genre or Event name in the search bar, and navigate to that show page through the generated link. Each letter typed will update the search dropdown with narrowed-down results.
 
 ![image](https://user-images.githubusercontent.com/16979527/89317087-e9673300-d64a-11ea-98f8-7e54984622b6.png)
+  
+  Process:
+  After importing entities, mapping state and dispatch to props for each and setting the state of each entity within the Search Component (via componentDidMount), I created a filtering mechanism through which all the entities matching the current search term will be displayed:
+    
+    ``` React
+     djSearch() {
+      return this.state.djs.filter(dj => dj.name.toLowerCase().startsWith(this.state.searchTerm.toLowerCase())); 
+     }
+    ```
 
 * DJs: 100 DJs in the database, each with their own Show Page (w/ dynamic image & song rendering via Amazon Web Services). 
 
