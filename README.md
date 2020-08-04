@@ -23,6 +23,30 @@ A one-stop shop for all things electronic music!
       return this.state.djs.filter(dj => dj.name.toLowerCase().startsWith(this.state.searchTerm.toLowerCase())); 
      }
   ```
+  Next, I create a query container component (displays all results for a given entity) and a query item component:
+  
+  ```Javascript
+  class DjQueryContainer extends React.Component {
+  render() {
+    return (
+      <div id="dj-query-container">
+        {this.props.djs.map(dj => <DjQuery dj= {dj}/>)}
+      </div>
+    )
+  }
+}
+class DjQuery extends React.Component {
+  render() {
+    return (
+      <Link to={`/djs/${this.props.dj.id}`}>
+        <div className="query-item" id="dj-query-item">
+          <strong>{this.props.dj.name}</strong> <small>DJ</small>
+        </div>
+      </Link >
+    )
+  }
+}
+  ```
 
 * DJs: 100 DJs in the database, each with their own Show Page (w/ dynamic image & song rendering via Amazon Web Services). 
 
