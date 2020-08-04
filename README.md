@@ -80,7 +80,9 @@ class DjQuery extends React.Component {
           <div id="search-button-container">
             <button id="search-button">Submit</button>
           </div>
-          <div>
+          <div
+          style={this.state.searchTerm.length ? { display: 'block' } : { display: 'none' }}
+          >
           { this.state.searchTerm.length &&
             <ul id="searchlist">
             <li><DjQueryContainer djs = {this.djSearch()}/></li>
