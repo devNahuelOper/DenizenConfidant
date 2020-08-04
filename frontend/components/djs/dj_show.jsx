@@ -36,8 +36,8 @@ class DjShow extends React.Component {
       search.style.color = 'currentColor';
       search.style.borderBottom = 'unset';
     }
-    const query = document.getElementById('query');
-    query.style.display = 'none';
+    // const query = document.getElementById('query');
+    // query.style.display = 'none';
   }
 
   // componentWillUnmount() {

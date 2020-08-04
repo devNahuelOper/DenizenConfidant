@@ -77,6 +77,28 @@
   text-transform: capitalize;
 }
 
+#query-container {
+  position: absolute;
+  top: 161px;
+  z-index: 1001;
+  color: #fff;
+  background-color: #2e2e2e;
+  overflow: hidden;
+  line-height: 24px;
+  width: 500px;
+}
+
+#query-item {
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: #454545;
+  padding: 10px 0 10px 10px;
+}
+
+#query-item:hover {
+  background-color: black;
+}
+
 @media only screen and (min-width: 1300px){
   #searchbar {
     width: 1272px;
