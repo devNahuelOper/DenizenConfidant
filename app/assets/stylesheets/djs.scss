@@ -556,38 +556,108 @@
     font-size: 12px;
   }
 
-  // .djshow-nav-container {
-  //   height: 475px;
-  //   .djs-nav {
-  //     height: 454px;
-  //     #djshow-header {
-  //       width: 675px;
-  //     }
-  //   }
-  // }
+  .djshow-nav-container {
+    height: 435px;
+    .djs-nav {
+       height: 420px;
+      #djshow-header {
+         width: 560px;
+      }
+    }
+  }
 
-  // .djsubheader-container {
-  //   .djshow-subheader {
-  //     width: 675px;
-  //     .details {
-  //       white-space: nowrap;
-  //     }
-  //   }
-  // }
-  // .dj-main {
-  //   .bio-container {
-  //     width: 675px;
-  //   }
-  //   .playlist {
-  //     width: 675px;
-  //     .songs {
-  //       width: 675px;
-  //     }
-  //   }
-  // }
+  .djsubheader-container {
+    .djshow-subheader {
+       width: 560px;
+      .details {
+        white-space: nowrap;
+      }
+    }
+  }
+  .dj-main {
+    .bio-container {
+       width: 560px;
+    }
+    .playlist {
+      width: 560px;
+      .songs {
+         width: 560px;
+         .song {
+           width: 260px;
+         }
+      }
+      audio {
+        width: 250px;
+      }
+    }
+  }
 }
 
+@media only screen and (max-width: 560px) {
+  .djs-nav {
+    width: 490px;
+    nav {
+      width: 490px;
+    }
+    h1 {
+      width: 490px;
+    }
+  }
+  .djs-subnav {
+    width: 490px;
+    ul {
+      width: 490px;
+    }
+  }
+  .djs {
+    width: 490px;
+  }
+  .dj-sort {
+    width: 160px;
+  }
+  .dj {
+    font-size: 15px;
+  }
+  #black, #dimitri {
+    font-size: 13px;
+  }
 
+  .djshow-nav-container {
+    height: 435px;
+    .djs-nav {
+       height: 420px;
+      #djshow-header {
+         width: 560px;
+      }
+    }
+  }
+
+  .djsubheader-container {
+    .djshow-subheader {
+       width: 560px;
+      .details {
+        white-space: nowrap;
+      }
+    }
+  }
+  .dj-main {
+    .bio-container {
+       width: 560px;
+    }
+    .playlist {
+      width: 560px;
+      .songs {
+         width: 560px;
+         .song {
+           width: 260px;
+         }
+      }
+      audio {
+        width: 250px;
+      }
+    }
+  }
+}
 
 // Larger
 
