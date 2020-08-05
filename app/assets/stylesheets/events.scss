@@ -247,6 +247,45 @@
   }
 }
 
+// Smaller
+
+@media only screen and (max-width: 1030px) {
+ .events-index .events-nav {
+    width: 675px;
+    nav {
+      width: 675px;
+      #logo {
+        width: 80px;
+        height: 75px;
+      }
+      #links li {
+        width: 75px;
+      }
+    }
+    h1 {
+      width: 675px;
+      line-height: 3em;
+    }
+  }
+ .events-index #events-subnav {
+    width: 675px;
+    ul {
+      width: 675px;
+    }
+  }
+  .events-index {
+    .top-events {
+      section, #content-title, .eventlist, hr {
+        width: 675px;
+      }
+    }
+  }
+}
+
+
+
+// Larger
+
 @media only screen and (min-width: 1300px){
 
   .events-index {
