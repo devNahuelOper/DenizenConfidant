@@ -883,7 +883,12 @@ h3 {
       }
     }
     .slide-container {
-      // display: none;
+      #splash-caption {
+        width: 490px;
+        h1 {
+          width: 490px !important;
+        }
+      }
     }
   }
   .main-banner {

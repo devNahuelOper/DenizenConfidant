@@ -159,6 +159,49 @@
   background-color: #d8d8d8;
 }
 
+// Small
+
+@media only screen and (max-width: 700px) {
+  .search-container {
+    height: 55px;
+  }
+  #searchbar {
+    width: 550px;
+    padding-top: 10px;
+  }
+  #search-input {
+    width: 400px;
+    height: 35px;
+    font-size: 32px;
+  }
+  #search-button-container {
+    font-size: 16pt;
+    width: 130px;
+    height: 35px;
+  }
+  #searchlist {
+    top: 152px;
+    left: 40px;
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  #searchbar {
+    width: 480px;
+  }
+  #search-input {
+    width: 340px;
+    font-size: 28px;
+  }
+  #searchlist {
+    left: 31px;
+    width: 345px;
+  }
+}
+
+// Large
+
 @media only screen and (min-width: 1300px){
   #searchbar {
     width: 1272px;
