@@ -1,6 +1,7 @@
 .djs-index {
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
   background-color: #1e1e1e;
+  border-bottom: 1px solid #575757;
   .hide {
     color: #ff0;
   }
@@ -139,7 +140,7 @@
       font-size: 8px;
       position: relative;
       top: -7px;
-      left: 105px;
+      float: right;
     }
   }
   li:last-child:hover {
@@ -231,7 +232,7 @@
   background-repeat: repeat;
 }
 #daftpunk-container {
-  background-position-y: -65px;
+  // background-position-y: -65px;
 }
 #diplo-container {
   background-position-y: 0px;
@@ -364,7 +365,7 @@
   background-position-y: 0px;
 }
 #zomboy-container {
-  background-position-y: -60px;
+  // background-position-y: -60px;
 }
 
 
@@ -383,7 +384,7 @@
           color: #fdff00;
           font-size: 16px;
           padding: 16px 0;
-          margin-right: 220px;
+          margin-right: 180px;
         small {
           color: #b4b4b4;
           font-size: 12px;
@@ -405,7 +406,7 @@
 .dj-main {
   background-color: #1e1e1e;
   color: white;
-  height: 700px;
+  padding-bottom: 70px;
   .bio-container {
     width: 952px;
     margin: 0 auto;
@@ -492,6 +493,37 @@
   #black, #dimitri {
     font-size: 14px;
   }
+
+  .djshow-nav-container {
+    height: 475px;
+    background-position-y: center !important;
+    .djs-nav {
+      height: 454px;
+      #djshow-header {
+        width: 675px;
+      }
+    }
+  }
+
+  .djsubheader-container {
+    .djshow-subheader {
+      width: 675px;
+      .details {
+        white-space: nowrap;
+      }
+    }
+  }
+  .dj-main {
+    .bio-container {
+      width: 675px;
+    }
+    .playlist {
+      width: 675px;
+      .songs {
+        width: 675px;
+      }
+    }
+  }
 }
 
 
@@ -523,9 +555,130 @@
   #black, #dimitri {
     font-size: 12px;
   }
+
+  .djshow-nav-container {
+    height: 435px;
+    .djs-nav {
+       height: 420px;
+      #djshow-header {
+         width: 560px;
+      }
+    }
+  }
+
+  // #dj-show .djs-subnav #pending small {
+  //   left: 65px;
+  // }
+  #dj-show {
+    .form {
+      font-size: 11px;
+    }
+  }
+
+  .djsubheader-container {
+    .djshow-subheader {
+       width: 560px;
+      .details {
+        white-space: nowrap;
+      }
+    }
+  }
+  .dj-main {
+    .bio-container {
+       width: 560px;
+    }
+    .playlist {
+      width: 560px;
+      #song-title {
+        font-size: 13px;
+      }
+      .songs {
+         width: 560px;
+         .song {
+           width: 245px;
+         }
+      }
+      audio {
+        width: 235px;
+      }
+    }
+  }
 }
 
+@media only screen and (max-width: 560px) {
+  .djs-nav {
+    width: 490px;
+    nav {
+      width: 490px;
+    }
+    h1 {
+      width: 490px;
+    }
+  }
+  .djs-subnav {
+    width: 490px;
+    ul {
+      width: 490px;
+    }
+  }
+  .djs {
+    width: 490px;
+  }
+  .dj-sort {
+    width: 160px;
+  }
+  .dj {
+    font-size: 15px;
+  }
+  #black, #dimitri {
+    font-size: 13px;
+  }
 
+  .djshow-nav-container {
+    height: 400px;
+    .djs-nav {
+       height: 380px;
+      #djshow-header {
+        width: 490px;
+      }
+    }
+  }
+
+  #dj-show {
+    .djs-subnav {
+      font-size: 12px;
+    }
+  }
+
+  .djsubheader-container {
+    .djshow-subheader {
+       width: 490px;
+      .details {
+        white-space: nowrap;
+        li {
+          margin-right: 80px;
+        }
+      }
+    }
+  }
+  .dj-main {
+    .bio-container {
+       width: 490px;
+    }
+    .playlist {
+      width: 490px;
+      .songs {
+         width: 490px;
+         .song {
+           width: 220px;
+         }
+      }
+      audio {
+        width: 220px;
+      }
+    }
+  }
+}
 
 // Larger
 
