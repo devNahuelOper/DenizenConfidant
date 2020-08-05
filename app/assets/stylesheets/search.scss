@@ -161,6 +161,25 @@
 
 // Small
 
+@media only screen and (max-width: 1030px) {
+  #searchbar {
+    width: 674px;
+    display: flex;
+  }
+  #search-input {
+    width: 394px;
+    margin-right: 10px;
+  }
+  #search-button-container {
+    width: 185px;
+  }
+  #searchlist {
+    top: 172px;
+    left: 68px;
+    width: 395px;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   .search-container {
     height: 55px;
