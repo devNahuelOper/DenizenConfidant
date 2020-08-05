@@ -1,6 +1,7 @@
 .djs-index {
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
   background-color: #1e1e1e;
+  border-bottom: 1px solid #575757;
   .hide {
     color: #ff0;
   }
@@ -364,7 +365,7 @@
   background-position-y: 0px;
 }
 #zomboy-container {
-  background-position-y: -60px;
+  // background-position-y: -60px;
 }
 
 
@@ -383,7 +384,7 @@
           color: #fdff00;
           font-size: 16px;
           padding: 16px 0;
-          margin-right: 220px;
+          margin-right: 180px;
         small {
           color: #b4b4b4;
           font-size: 12px;
@@ -405,7 +406,7 @@
 .dj-main {
   background-color: #1e1e1e;
   color: white;
-  height: 700px;
+  padding-bottom: 70px;
   .bio-container {
     width: 952px;
     margin: 0 auto;
@@ -492,6 +493,37 @@
   #black, #dimitri {
     font-size: 14px;
   }
+
+  .djshow-nav-container {
+    height: 475px;
+    background-position-y: center !important;
+    .djs-nav {
+      height: 454px;
+      #djshow-header {
+        width: 675px;
+      }
+    }
+  }
+
+  .djsubheader-container {
+    .djshow-subheader {
+      width: 675px;
+      .details {
+        white-space: nowrap;
+      }
+    }
+  }
+  .dj-main {
+    .bio-container {
+      width: 675px;
+    }
+    .playlist {
+      width: 675px;
+      .songs {
+        width: 675px;
+      }
+    }
+  }
 }
 
 
@@ -523,6 +555,36 @@
   #black, #dimitri {
     font-size: 12px;
   }
+
+  // .djshow-nav-container {
+  //   height: 475px;
+  //   .djs-nav {
+  //     height: 454px;
+  //     #djshow-header {
+  //       width: 675px;
+  //     }
+  //   }
+  // }
+
+  // .djsubheader-container {
+  //   .djshow-subheader {
+  //     width: 675px;
+  //     .details {
+  //       white-space: nowrap;
+  //     }
+  //   }
+  // }
+  // .dj-main {
+  //   .bio-container {
+  //     width: 675px;
+  //   }
+  //   .playlist {
+  //     width: 675px;
+  //     .songs {
+  //       width: 675px;
+  //     }
+  //   }
+  // }
 }
 
 

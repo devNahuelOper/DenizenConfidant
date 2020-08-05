@@ -75,7 +75,7 @@ class GenreShow extends React.Component {
             <div id="genre-bio">
               <ul>
               {genre.description.split('  ').map(par =>
-              <li>{par}<br/></li> 
+              <li key={par}>{par}<br/></li> 
                 )} 
               </ul>
             </div>
@@ -85,7 +85,7 @@ class GenreShow extends React.Component {
             <hr/>
             <ul className="example-list">
               {genre.artists.slice(0, length).sort().map(artist => 
-              <li id="dj-link"><Link to={`/djs/${ids[genre.artists.indexOf(artist)]}`}>{artist}</Link></li>
+              <li id="dj-link" key={artist}><Link to={`/djs/${ids[genre.artists.indexOf(artist)]}`}>{artist}</Link></li>
                 )}
             </ul>
           </section>

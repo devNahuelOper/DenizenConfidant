@@ -209,8 +209,18 @@ body {
 
 
 @media only screen and (max-width: 1030px) {
+  .welcome-container {
+    height: 56px;
+  }
   .welcome-wrap {
     width: 675px;
+    height: 56px;
+  }
+  .welcome-group {
+    padding-top: 12px;
+  }
+  #dj-icon {
+    padding: 18px 11px 17px 12px;
   }
 }
 
@@ -230,6 +240,9 @@ body {
     padding-right: 0 !important;
     background-position-x: 540px !important; 
    }
+   .welcome-wrap {
+     width: 560px;
+   }
 }
 
 @media only screen and (max-width: 560px) {
@@ -244,6 +257,9 @@ body {
   }
   .log-link {
     padding-right: 435px !important;
+  }
+  .welcome-wrap {
+    width: 490px;
   }
 }
 
