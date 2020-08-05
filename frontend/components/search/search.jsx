@@ -60,7 +60,6 @@ class Search extends React.Component {
           <div
             style={this.state.searchTerm.length ? { display: 'block' } : { display: 'none' }}
           >
-
           { this.state.searchTerm.length &&
             <ul id="searchlist">
             <li><DjQueryContainer djs = {this.djSearch()}/></li>
