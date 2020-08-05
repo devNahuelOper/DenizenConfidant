@@ -454,6 +454,8 @@
   }
 }
 
+// Smaller
+
 @media only screen and (max-width: 1030px) {
   .djs-nav {
     width: 675px;
@@ -493,9 +495,39 @@
 }
 
 
+@media only screen and (max-width: 700px) {
+  .djs-nav {
+    width: 560px;
+    nav {
+      width: 560px;
+    }
+    h1 {
+      width: 560px;
+    }
+  }
+  .djs-subnav {
+    width: 560px;
+    ul {
+      width: 560px;
+    }
+  }
+  .djs {
+    width: 560px;
+  }
+  .dj-sort {
+    width: 140px;
+  }
+  .dj {
+    font-size: 13px;
+  }
+  #black, #dimitri {
+    font-size: 12px;
+  }
+}
 
 
-// Large
+
+// Larger
 
 @media only screen and (min-width: 1300px){
   .djs-nav {
