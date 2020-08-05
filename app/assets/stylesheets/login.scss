@@ -600,6 +600,8 @@
   // line-height: 20px;
 }
 
+// Small
+
 @media only screen and (max-width: 1030px) {
 
 .user {
@@ -766,6 +768,12 @@
     }
   }
 }
+
+@media only screen and (max-width: 560px) {
+  
+}
+
+// Large
 
 @media only screen and (min-width: 1300px) {
   .login-wrap {
