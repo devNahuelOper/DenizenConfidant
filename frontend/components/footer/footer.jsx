@@ -5,7 +5,7 @@ class Footer extends React.Component {
   render() {
     return (
       <footer>
-        {/* <img src={window.splashUrl} alt=""/> */}
+        {/* <img src={window.splashUrl} alt="" style={{display: 'none'}}/> */}
       <div className="footer">
        <div className="foothold">
           <span id="footer-msg">

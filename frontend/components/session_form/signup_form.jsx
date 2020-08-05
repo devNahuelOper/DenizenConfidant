@@ -166,7 +166,7 @@ class SignupForm extends React.Component {
               <span id="no-space">No spaces, 18 char max.</span>
               
 
-            <li>
+            <li id="email-rows">
               <div>Email address /
                 <br/>
                 <input
