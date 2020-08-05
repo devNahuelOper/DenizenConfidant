@@ -282,6 +282,59 @@
   }
 }
 
+@media only screen and (max-width: 700px) {
+  .events-index {
+    .events-nav {
+      width: 560px;
+      nav {
+        width: 560px;
+      }
+      h1 {
+        width: 560px;
+        line-height: 3em;
+      }
+    }
+    #events-subnav {
+      width: 560px;
+      ul {
+        width: 560px;
+      }
+    }
+    .top-events {
+       section, #content-title, .eventlist, hr {
+        width: 560px;
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 560px) {
+  .events-index {
+    .events-nav {
+      width: 490px;
+      nav {
+        width: 490px;
+      }
+      h1 {
+        width: 490px;
+        line-height: 3em;
+      }
+    }
+    #events-subnav {
+      width: 490px;
+      ul {
+        width: 490px;
+      }
+    }
+    .top-events {
+       section, #content-title, .eventlist, hr {
+        width: 490px;
+      }
+    }
+  }
+}
+
 
 
 // Larger
