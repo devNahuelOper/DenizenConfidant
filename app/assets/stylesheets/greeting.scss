@@ -206,11 +206,7 @@ body {
   text-decoration: fade-in($color: #000000, $amount: 1);
 }
 
-@media only screen and (min-width: 1300px){
-  .welcome-wrap {
-    width: 1272px;
-  }
-}
+
 @media only screen and (max-width: 1030px) {
   .welcome-wrap {
     width: 675px;
@@ -234,6 +230,26 @@ body {
     background-position-x: 540px !important; 
    }
 }
+
+@media only screen and (max-width: 560px) {
+  .login-wrap {
+    width: 490px !important;
+    margin: unset !important;
+  }
+  .login-signup {
+    width: 490px !important;
+    margin: unset !important;
+    background-position-x: 470px !important;
+  }
+}
+
+
+@media only screen and (min-width: 1300px){
+  .welcome-wrap {
+    width: 1272px;
+  }
+}
+
 
 // Footer
 
@@ -370,6 +386,27 @@ body {
       border-radius: 50%;
       // border: 1px solid #2e2e2e;
       border: unset;
+    }
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .foothold {
+    width: 440px !important;
+  }
+  .footer .footer-links {
+    li {
+      width: 15px;
+    }
+    img {
+      width: 20px;
+      height: 19px;
+    }
+    #headshot {
+      margin-top: 1px;
+    }
+    #git-logo {
+      border: 1px solid;
     }
   }
 }
