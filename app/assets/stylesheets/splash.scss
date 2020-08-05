@@ -751,16 +751,16 @@ h3 {
 @media only screen and (max-width: 700px) {
   .splash-header-container {
     #navbar {
-      width: 500px;
+      width: 560px;
       nav {
-        width: 500px;
+        width: 560px;
       }
     }
   }
 
   .react-slideshow-container + div.indicators {
     // top: -290px;
-    right: 88px;
+    right: 50px;
   }
 
   .react-slideshow-container + div.indicators > .each-slideshow-indicator {
@@ -769,13 +769,17 @@ h3 {
 
   #splash-caption {
     font-size: 20px !important;
-    left: 90px !important;
+    // left: 60px !important;
+    width: 560px;
+    h1 {
+      width: 560px !important;
+    }
   }
 
   .main-banner {
     min-height: 50px;
     .banner-hold {
-      width: 500px;
+      width: 560px;
       .denizen-confidant {
         font-size: 24px;
       }
@@ -795,7 +799,7 @@ h3 {
 
   .content {
     .news-banner, .articles {
-      width: 500px;
+      width: 560px;
       .main-article {
         min-height: 190px;
         article {
@@ -820,45 +824,50 @@ h3 {
 
   .beats {
     .beats-banner {
-      width: 500px;
+      width: 560px;
     }
     .beatwrap {
-      width: 500px;
+      width: 560px;
       white-space: normal;
       .beatlist {
         margin: 0 auto;
-        width: 520px;
+        width: 560px;
         .song {
           min-height: 170px;
           width: 161px;
+          margin-right: 25px;
+          
           article {
-            width: 160px;
+            width: 170px;
             overflow: hidden;
           }
           img {
             margin-bottom: 2px;
           }
           a {
-            padding: 1px 73px 2px 13px;
-          }
-          #gesaffelstein-link {
             padding: 1px 73px 2px 25px;
           }
+          #gesaffelstein-link {
+            padding-left: 29px;
+          }
           #deadmau5-link {
-            padding: 1px 73px 2px 17px;
+            padding-left: 21px;
           }
           #noisuf-link {
-            padding: 1px 73px 2px 20px;
+            padding-left: 26px;
           }
           #nomana-link {
-            padding: 1px 73px 2px 31px;
+            padding-left: 35px;
           }
           #kayzo-link {
-            padding: 1px 73px 2px 41px;
+            padding-left: 48px;
           }
           #prydz-link {
-            padding: 1px 73px 2px 30px;
+            padding-left: 35px;
           }
+        }
+        .song:nth-of-type(3), .song:last-of-type {
+          margin-right: 0;
         }
       }
     }

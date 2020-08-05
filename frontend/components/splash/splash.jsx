@@ -168,7 +168,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.gesaffelsteinUrl} id="gesaffelstein"/>
-                    <Link to="/djs/739">Gesaffelstein - Depravity</Link>
+                    <Link id="gesaffelstein-link" to="/djs/739">Gesaffelstein - Depravity</Link>
                     {/* <Link id="gesaffelstein-link" to={`/djs/${gesaffId}`}>Gesaffelstein - Depravity</Link> */}
                     {/* <Link to={`/djs/${djs.find(dj => dj.name === 'Gesaffelstein')}`}>Gesaffelstein - Depravity</Link> */}
                     <audio id="depravity" src="depravity.mp3" controls></audio>
@@ -181,7 +181,7 @@ class SplashPage extends React.Component {
                     <img src={window.deadmau5Url} id="deadmau5"/>
                    
                     {/* <Link id="deadmau5-link" to={`/djs/${deamauId}`}>Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link> */}
-                    <Link to="/djs/725">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
+                    <Link id="deadmau5-link" to="/djs/725">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
                     <audio id="speed" src="speed.mp3" controls></audio>
                   </article>
                 </li>
@@ -190,7 +190,7 @@ class SplashPage extends React.Component {
                   <article>
                     <img src={window.noisufUrl} id="noisuf"/>    
                     {/* <Link id="noisuf-link" to={`/djs/${noisufId}`}>Noisuf-X - Count to Seven</Link> */}
-                    <Link to="/djs/768">Noisuf-X - Count to Seven</Link>
+                    <Link id="noisuf-link" to="/djs/768">Noisuf-X - Count to Seven</Link>
                     <audio id="cseven" src="cseven.mp3" controls></audio>
                   </article>
                 </li>
@@ -199,7 +199,7 @@ class SplashPage extends React.Component {
                   <article>
                     <img src={window.nomanaUrl} id="nomana"/>
                     {/* <Link id="nomana-link" to={`/djs/${nomanaId}`}>No Mana - Other Side</Link> */}
-                    <Link to="/djs/769">No Mana - Other Side</Link>
+                    <Link id="nomana-link" to="/djs/769">No Mana - Other Side</Link>
                     <audio id="otherside" src="otherside.mp3" controls></audio>
                   </article>
                 </li>
@@ -208,7 +208,7 @@ class SplashPage extends React.Component {
                   <article>
                     <img src={window.kayzoUrl} id="kayzo"/>
                     {/* <Link id="kayzo-link" to={`/djs/${kayzoId}`}>Kayzo - The Fire</Link> */}
-                    <Link to="/djs/752">Kayzo - The Fire</Link>
+                    <Link id="kayzo-link" to="/djs/752">Kayzo - The Fire</Link>
                     <audio id="fire" src="fire.mp3" controls></audio>
                   </article>
                 </li>
@@ -216,7 +216,7 @@ class SplashPage extends React.Component {
                   <article>
                     <img src={window.prydzUrl} id="prydz" />
                     {/* <Link id="prydz-link" to={`/djs/${eprydzId}`}>Eric Prydz - The Matrix</Link> */}
-                    <Link to="/djs/730">Eric Prydz - The Matrix</Link>
+                    <Link id="prydz-link" to="/djs/730">Eric Prydz - The Matrix</Link>
                     <audio id="matrix" src="matrix.mp3" controls></audio>
                   </article>
                 </li>
