@@ -3,9 +3,10 @@
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
   font-size: 16px;
   background-color: #fff;
-.hide {
-  color: #6b96c2;
-}
+  border-bottom: 1px solid #575757;
+  .hide {
+    color: #6b96c2;
+  }
   .events-nav-container {
     background-color: #6b96c2;
   }
@@ -185,7 +186,8 @@
   }
   h2 {
     font-size: 72px;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
+    line-height: 0.9em;
   }
 }
 
@@ -246,6 +248,165 @@
     }
   }
 }
+
+// Smaller
+
+@media only screen and (max-width: 1030px) {
+ .events-index .events-nav {
+    width: 675px;
+    nav {
+      width: 675px;
+      #logo {
+        width: 80px;
+        height: 75px;
+      }
+      #links li {
+        width: 75px;
+      }
+    }
+    h1 {
+      width: 675px;
+      line-height: 3em;
+    }
+  }
+ 
+ .events-index #events-subnav {
+    width: 675px;
+    ul {
+      width: 675px;
+    }
+  }
+  .events-index {
+    .top-events {
+      section, #content-title, .eventlist, hr {
+        width: 675px;
+      }
+    }
+  }
+  .eventshow-header {
+    width: 675px;
+    h2 {
+      line-height: unset;
+    }
+  }
+  .subheader-container {
+    .eventshow-subheader {
+      width: 675px;
+      height: 65px;
+    }
+  }
+  .main-container {
+    .eventshow-main {
+      width: 675px;
+      #event-image {
+        width: 675px;
+        height: 400px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .events-index {
+    .events-nav {
+      width: 560px;
+      nav {
+        width: 560px;
+      }
+      h1 {
+        width: 560px;
+        line-height: 3em;
+      }
+    }
+   
+    #events-subnav {
+      width: 560px;
+      ul {
+        width: 560px;
+      }
+    }
+    .top-events {
+       section, #content-title, .eventlist, hr {
+        width: 560px;
+      }
+    }
+  }
+  .eventshow-header {
+    width: 560px;
+  }
+  .subheader-container {
+    .eventshow-subheader {
+      width: 560px;
+      height: 65px;
+      .details {
+        width: 490px;
+      }
+    }
+  }
+  .main-container {
+    .eventshow-main {
+      width: 560px;
+      #headliners {
+        font-size: 28px;
+      }
+      #event-image {
+        width: 560px;
+        height: 400px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .events-index {
+    .events-nav {
+      width: 490px;
+      nav {
+        width: 490px;
+      }
+      h1 {
+        width: 490px;
+        line-height: 3em;
+      }
+    }
+    #events-subnav {
+      width: 490px;
+      ul {
+        width: 490px;
+      }
+    }
+    .top-events {
+       section, #content-title, .eventlist, hr {
+        width: 490px;
+      }
+    }
+  }
+  .eventshow-header {
+    width: 490px;
+  }
+  .subheader-container {
+    .eventshow-subheader {
+      width: 490px;
+      height: 65px;
+    }
+  }
+  .main-container {
+    .eventshow-main {
+      width: 490px;
+      #headliners {
+        font-size: 24px;
+      }
+      #event-image {
+        width: 490px;
+        height: 300px;
+      }
+    }
+  }
+}
+
+
+
+// Larger
 
 @media only screen and (min-width: 1300px){
 
