@@ -687,7 +687,9 @@
     width: 674px;
     flex-direction: column;
   }
-
+  .signup-form {
+      margin-bottom: 20px;
+  }
 }
 
 
@@ -708,6 +710,60 @@
   }
   .login-form-container .form-wrap {
     width: 560px;
+  }
+
+  .signup-form-container {
+    .form-wrap {
+      width: 560px;
+      flex-direction: column-reverse;
+    }
+  }
+  .signup-form {
+
+  }
+  .signup-input {
+    width: 151px;
+  }
+  #email-rows {
+    flex-direction: column;
+    div:first-of-type {
+      margin-bottom: unset;
+    }
+  }
+  .region-dropdown {
+    font-size: 22px;
+    width: 212px;
+    background-position-x: 195px;
+  }
+  .region-reveal {
+    width: 172px;
+    height: 152px;
+    overflow: scroll;
+    li {
+      width: 172px;
+    }
+  }
+  #preferred-language {
+    font-size: 24px;
+    width: 152px;
+    background-position-x: 135px;
+  }
+  .language-reveal {
+    width: 120px;
+    height: 152px;
+    overflow: scroll;
+    li {
+      width: 120px;
+    }
+  }
+  .day-dropdown, .month-dropdown, .year-dropdown {
+    font-size: 24px;
+    width: 70px;
+    background-position-x: 68px;
+    li {
+      width: 55px;
+      font-size: 16px;
+    }
   }
 }
 
