@@ -181,13 +181,19 @@
   border-bottom: 1px #585858 solid;
 
   .demo-login {
-
+    margin: 0 auto;
+    width: 674px;
   }
   #demo-notice {
+    width: 294px;
     top: -5px;
     border-bottom: 2px solid #ffa200;
     box-sizing: border-box;
     padding-bottom: 2px;
+    margin: unset;
+  }
+  #demo-button {
+    margin: unset;
   }
 }
 
@@ -595,23 +601,36 @@
 }
 
 @media only screen and (max-width: 1030px) {
- 
+
+.user {
+  height: 56px;
+}
+.login-wrap {
+  width: 704px;
+  margin: 0 auto;
+  height: 56px;
+  .reveal {
+    top: 56px;
+  }
+}
 .login-signup {
+  width: 583px;
+  margin: 0 auto;
   color: white;
-  position: absolute;
-  right: 33%;
-  margin-right: -85px;
+  position: relative;
+  right: unset;
   height: 100%;
+  // margin-right: -85px;
   border-right: 1px solid;
   border-left: none;
   padding-left: 19px;
-  padding-right: 466px;
+  padding-right: unset;
   border-color: #454545;
   background-color: #2e2e2e;
   background-image: image_url('arrowhite.png');
   background-repeat: no-repeat;
-  background-position-x: 527px;
-  background-position-y: 19px;
+  background-position-x: 570px;
+  background-position-y: 24px;
   background-size: 10px;
   font-size: .75em;
 }
@@ -666,9 +685,30 @@
 
   .form-wrap {
     width: 674px;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
+}
+
+
+@media only screen and (max-width: 700px) {
+  #nav-container {
+    #logo, #links, h1 {
+      right: unset;
+    }
+  }
+  #navbar {
+    width: 560px;
+    nav {
+      width: 560px;
+    }
+  }
+  #subnav {
+    width: 560px;
+  }
+  .login-form-container .form-wrap {
+    width: 560px;
+  }
 }
 
 @media only screen and (min-width: 1300px) {

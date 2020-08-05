@@ -220,18 +220,19 @@ body {
 
 @media only screen and (max-width: 700px) {
   .login-wrap {
-    width: 530px;
+    width: 591px !important;
     margin: 0 auto;
     height: 100%;
   }
   .login-signup {
     position: relative !important;
-    width: 500px;
-    margin: 0 auto;
+    width: 550px !important;
+    // margin: 0 auto;
     right: unset !important;
     // right: 140px !important;
     padding-right: 0 !important;
-    background-position-x: 480px !important;  }
+    background-position-x: 540px !important; 
+   }
 }
 
 // Footer
