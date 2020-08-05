@@ -189,50 +189,7 @@
   }
 }
 
-@media only screen and (min-width: 1300px){
-  .djs-nav {
-    width: 1272px;
-    nav {
-      width: 1272px;
-      #links {
-        left: -147px;
-      }
-    }
-    h1 {
-      width: 1272px;
-    }
-  }
-  .djs-subnav {
-    width: 1272px;
-    ul {
-      width: 1272px;
-    }
-  }
-  .djs {
-    width: 1272px;
-  }
-  .dj-sort {
-    margin-right: 22px;
-  }
 
-  .eventshow-header, #djshow-header {
-    width: 1272px;
-  }
-  .djsubheader-container {
-    .djshow-subheader {
-      width: 1272px !important;
-    }
-  }
-  .dj-main {
-    .bio-container, .playlist {
-      width: 1272px !important;
-      .songs {
-        width: 1272px;
-        justify-content: space-between;
-      }
-    }
-  }
-}
 
 
 // DJ Show Pages
@@ -494,5 +451,125 @@
   }
   audio {
     height: 36px;
+  }
+}
+
+// Smaller
+
+@media only screen and (max-width: 1030px) {
+  .djs-nav {
+    width: 675px;
+    nav {
+      width: 675px;
+      #logo {
+        width: 80px;
+        height: 75px;
+      }
+      #links li {
+        width: 75px;
+      }
+    }
+    h1 {
+      width: 675px;
+      line-height: 3em;
+    }
+  }
+  .djs-subnav {
+    width: 675px;
+    ul {
+      width: 675px;
+    }
+  }
+  .djs {
+    width: 675px;
+  }
+  .dj-sort {
+    width: 168px;
+  }
+  #dj-name {
+    width: fit-content;
+  }
+  #black, #dimitri {
+    font-size: 14px;
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  .djs-nav {
+    width: 560px;
+    nav {
+      width: 560px;
+    }
+    h1 {
+      width: 560px;
+    }
+  }
+  .djs-subnav {
+    width: 560px;
+    ul {
+      width: 560px;
+    }
+  }
+  .djs {
+    width: 560px;
+  }
+  .dj-sort {
+    width: 140px;
+  }
+  .dj {
+    font-size: 13px;
+  }
+  #black, #dimitri {
+    font-size: 12px;
+  }
+}
+
+
+
+// Larger
+
+@media only screen and (min-width: 1300px){
+  .djs-nav {
+    width: 1272px;
+    nav {
+      width: 1272px;
+      #links {
+        left: -147px;
+      }
+    }
+    h1 {
+      width: 1272px;
+    }
+  }
+  .djs-subnav {
+    width: 1272px;
+    ul {
+      width: 1272px;
+    }
+  }
+  .djs {
+    width: 1272px;
+  }
+  .dj-sort {
+    margin-right: 22px;
+  }
+
+  .eventshow-header, #djshow-header {
+    width: 1272px;
+  }
+  .djsubheader-container {
+    .djshow-subheader {
+      width: 1272px !important;
+    }
+  }
+  .dj-main {
+    .bio-container, .playlist {
+      width: 1272px !important;
+      .songs {
+        width: 1272px;
+        justify-content: space-between;
+      }
+    }
   }
 }

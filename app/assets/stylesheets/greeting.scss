@@ -77,7 +77,8 @@ body {
 .reveal li {
   box-sizing: border-box;
   padding-left: 20px;
-  padding-top: 12px;
+  padding-top: 14px;
+  font-size: 16px;
   border: 1px solid #454545;
   height: 50%;
   width: 100%;
@@ -240,6 +241,9 @@ body {
     width: 480px !important;
     margin: unset !important;
     background-position-x: 470px !important;
+  }
+  .log-link {
+    padding-right: 435px !important;
   }
 }
 
