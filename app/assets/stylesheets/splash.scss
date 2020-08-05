@@ -876,8 +876,45 @@ h3 {
 
 @media only screen and (max-width: 560px) {
   .splash-header-container {
+    #navbar {
+      width: 490px;
+      nav {
+        width: 490px;
+      }
+    }
     .slide-container {
       // display: none;
+    }
+  }
+  .main-banner {
+    .banner-hold {
+      width: 490px;
+    }
+  }
+  .content {
+    .news-banner, .articles {
+      width: 490px;
+    }
+    #acc-capt {
+      white-space: normal !important;
+    }
+  }
+  .beats {
+    .beats-banner {
+      width: 490px;
+    }
+    .beatwrap {
+      width: 490px;
+      .beatlist {
+        width: 490px;
+        .song {
+          margin-right: unset;
+          width: 154px;
+          article {
+            width: 160px;
+          }
+        }
+      }
     }
   }
 }

@@ -389,3 +389,24 @@ body {
     }
   }
 }
+
+@media only screen and (max-width: 560px) {
+  .foothold {
+    width: 440px !important;
+  }
+  .footer .footer-links {
+    li {
+      width: 15px;
+    }
+    img {
+      width: 20px;
+      height: 19px;
+    }
+    #headshot {
+      margin-top: 1px;
+    }
+    #git-logo {
+      border: 1px solid;
+    }
+  }
+}
