@@ -662,13 +662,14 @@
       font-size: .75em;
       left: unset;
       right: 90px;
+      height: 18px;
       li {
         width: 80px;
       }
     }
     h1 {
       position: relative;
-      // top: 167px;
+      width: 674px;
       right: 20px;
       font-size: 48px;
     }
@@ -700,6 +701,12 @@
     #logo, #links, h1 {
       right: unset;
     }
+    #links {
+      height: 18px;
+    }
+    h1 {
+      width: 560px;
+    }
   }
   #navbar {
     width: 560px;
@@ -709,9 +716,21 @@
   }
   #subnav {
     width: 560px;
+    ul {
+      width: 560px;
+    }
   }
   .login-form-container .form-wrap {
     width: 560px;
+    .login-form {
+      width: 560px;
+      ul {
+        width: 560px;
+      }
+    }
+    .demo-login {
+      width: 560px;
+    }
   }
 
   .signup-form-container {
