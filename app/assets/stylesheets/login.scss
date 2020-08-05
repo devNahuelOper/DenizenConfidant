@@ -789,7 +789,42 @@
 }
 
 @media only screen and (max-width: 560px) {
-  
+  #nav-container {
+    #navbar {
+      width: 490px;
+      nav {
+        width: 490px;
+      }
+    }
+    h1 {
+      width: 490px;
+    }
+  }
+  #subnav {
+    width: 490px;
+    ul {
+      width: 490px;
+    }
+  }
+  .login-form-container {
+    .form-wrap {
+      width: 490px;
+        .login-form {
+          width: 490px;
+            ul {
+              width: 490px;
+            }
+        }
+        .demo-login {
+          width: 490px;
+        }
+    }
+  }
+  .signup-form-container {
+    .form-wrap {
+      width: 490px;
+    }
+  }
 }
 
 // Large
