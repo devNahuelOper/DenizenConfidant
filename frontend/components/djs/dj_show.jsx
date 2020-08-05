@@ -52,7 +52,7 @@ class DjShow extends React.Component {
     const second = dj.name.split(' ')[1];
     const hyphen = `${first}-${second}`;
     return (
-      <div className="djs-index">
+      <div className="djs-index" id="dj-show">
         <div 
           id={`${dj.name.toLowerCase().split(' ').join('')}-container`}
           className="djshow-nav-container" 

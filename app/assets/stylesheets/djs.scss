@@ -140,7 +140,7 @@
       font-size: 8px;
       position: relative;
       top: -7px;
-      left: 105px;
+      float: right;
     }
   }
   li:last-child:hover {
@@ -232,7 +232,7 @@
   background-repeat: repeat;
 }
 #daftpunk-container {
-  background-position-y: -65px;
+  // background-position-y: -65px;
 }
 #diplo-container {
   background-position-y: 0px;
@@ -566,6 +566,15 @@
     }
   }
 
+  // #dj-show .djs-subnav #pending small {
+  //   left: 65px;
+  // }
+  #dj-show {
+    .form {
+      font-size: 11px;
+    }
+  }
+
   .djsubheader-container {
     .djshow-subheader {
        width: 560px;
@@ -580,14 +589,17 @@
     }
     .playlist {
       width: 560px;
+      #song-title {
+        font-size: 13px;
+      }
       .songs {
          width: 560px;
          .song {
-           width: 260px;
+           width: 245px;
          }
       }
       audio {
-        width: 250px;
+        width: 235px;
       }
     }
   }
@@ -623,37 +635,46 @@
   }
 
   .djshow-nav-container {
-    height: 435px;
+    height: 400px;
     .djs-nav {
-       height: 420px;
+       height: 380px;
       #djshow-header {
-         width: 560px;
+        width: 490px;
       }
+    }
+  }
+
+  #dj-show {
+    .djs-subnav {
+      font-size: 12px;
     }
   }
 
   .djsubheader-container {
     .djshow-subheader {
-       width: 560px;
+       width: 490px;
       .details {
         white-space: nowrap;
+        li {
+          margin-right: 80px;
+        }
       }
     }
   }
   .dj-main {
     .bio-container {
-       width: 560px;
+       width: 490px;
     }
     .playlist {
-      width: 560px;
+      width: 490px;
       .songs {
-         width: 560px;
+         width: 490px;
          .song {
-           width: 260px;
+           width: 220px;
          }
       }
       audio {
-        width: 250px;
+        width: 220px;
       }
     }
   }
