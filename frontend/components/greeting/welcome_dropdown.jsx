@@ -19,10 +19,7 @@ class WelcomeDropdown extends React.Component {
   }
 
   leave(e) {
-    const reveal = document.getElementsByClassName('reveal')[0];
-    if (reveal.contains(e.target)) {
-      this.setState({ "drop": false });
-    }
+    this.setState({ "drop": false });
   }
 
   // outside(e) {
@@ -35,17 +32,15 @@ class WelcomeDropdown extends React.Component {
     
     return (
       <div className="welcome-wrap">
-
-        <img src={window.djUrl} id="dj-icon" />
-
-        <button onFocus={this.clicker} onBlur={this.leave}  className="logout-dropdown">
-          <strong>Welcome</strong> {currentUser.username} <small>⬇︎</small> 
-        </button>
-
+        <button onFocus={this.clicker} onBlur={this.leave} className="logout-dropdown">
+          <span>
+            <img src={window.djUrl} id="dj-icon" />    
+            <strong>Welcome</strong> {currentUser.username} <small>⬇︎</small> 
+         </span>
         <ul className={this.state.drop ? "reveal" : "hide"}>
             <li onClick={logout}>Logout</li>
           </ul>
-      
+       </button>
       </div>
     )
   }
