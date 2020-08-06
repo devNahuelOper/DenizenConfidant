@@ -250,8 +250,155 @@
   }
 }
 
-@media only screen and (min-width: 1300px){
+// Smaller
+
+@media only screen and (max-width: 1030px) {
+  .genre-nav {
+    width: 675px;
+    nav {
+      width: 675px;
+      #logo {
+        width: 80px;
+        height: 75px;
+      }
+      #links li {
+        width: 75px;
+      }
+    }
+    h1 {
+      width: 675px;
+      line-height: 3em;
+    }
+  }
+  .genre-subnav {
+    width: 675px;
+    ul {
+      width: 675px;
+    }
+  }
+  .genres {
+    width: 675px;
+  }
+
+  .genreshow-header {
+    width: 675px;
+    h1 {
+      line-height: 2em;
+    }
+    a {
+      top: 30px;
+    }
+  }
+  .description-container, .examples {
+    width: 675px;
+  }
+  .example-list {
+    columns: 3;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .genre-nav {
+    width: 560px;
+    nav {
+      width: 560px;
+      #logo {
+        width: 80px;
+        height: 75px;
+      }
+      #links li {
+        width: 75px;
+      }
+    }
+    h1 {
+      width: 560px;
+      line-height: 3em;
+    }
+  }
+  .genre-subnav {
+    width: 560px;
+    ul {
+      width: 560px;
+    }
+  }
+  .genres {
+    width: 560px;
+  }
+
+  .genreshow-header {
+    width: 560px;
+    h1 {
+      line-height: 2em;
+    }
+    a {
+      top: 30px;
+    }
+  }
+  .genre-main h1 {
+    padding-top: 40px;
+  }
+  // .description-container {
+  //   padding: unset;
+  // }
+  .description-container, .examples {
+    width: 560px;
+    padding: 0 0 40px 0;
+  }
+  .example-list {
+    columns: 3;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .genre-nav {
+    width: 490px;
+    nav {
+      width: 490px;
+      #logo {
+        width: 80px;
+        height: 75px;
+      }
+      #links li {
+        width: 75px;
+      }
+    }
+    h1 {
+      width: 490px;
+      line-height: 3em;
+    }
+  }
+  .genre-subnav {
+    width: 490px;
+    ul {
+      width: 490px;
+    }
+  }
+  .genres {
+    width: 490px;
+  }
+
+  .genreshow-header {
+    width: 490px;
+    h1 {
+      line-height: 3em;
+      font-size: 52px;
+    }
+    a {
+      top: 30px;
+    }
+  }
  
+  .description-container, .examples {
+    width: 490px;
+  }
+  .example-list {
+    columns: 3;
+  }
+}
+
+// Larger
+
+@media only screen and (min-width: 1300px){
   .genre-nav {
     width: 1272px;
     nav {
