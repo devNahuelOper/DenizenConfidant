@@ -10,6 +10,9 @@ class GenreShow extends React.Component {
     this.props.fetchGenre(this.props.match.params.genreId);
     this.props.fetchDjs();
     window.scrollTo(0, 0);
+  }
+
+  componentDidUpdate() {
     const search = document.getElementById('search');
     const searchbar = document.getElementsByClassName('search-container')[0];
     search.onclick = function () {

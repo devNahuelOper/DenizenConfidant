@@ -5,20 +5,20 @@ class DjShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: this.props.dj.name,
-      genre: this.props.dj.genre,
-      songsUrl: this.props.dj.songsUrl
+      // name: this.props.dj.name,
+      // genre: this.props.dj.genre,
+      // songsUrl: this.props.dj.songsUrl
     }
-    // this.id = parseInt(this.props.match.params.djId);
   }
 
 
   componentDidMount() {
     this.props.fetchDj(this.props.match.params.djId);
-    // this.props.fetchDj(this.id);
     this.props.fetchGenres();
     window.scrollTo(0, 0);
+  }
 
+  componentDidUpdate() {
     const search = document.getElementById('search');
     const searchbar = document.getElementsByClassName('search-container')[0];
     search.onclick = function () {
@@ -38,13 +38,7 @@ class DjShow extends React.Component {
       search.style.color = 'currentColor';
       search.style.borderBottom = 'unset';
     }
-
   }
-
-
-  // useQuery() {
-  //   return new URLSearchParams(useLocation().search);
-  // }
 
   render() {
     if (!this.props.dj) {
@@ -96,6 +90,7 @@ class DjShow extends React.Component {
               <li>
                 <small>Genre(s)/</small> <br/>
                   {dj.genre.split(' ').map(gen => 
+                 
                   <Link id="genre-link" key={gen} to={`/genres/${this.props.genres.find(g => g.name === gen).id}`}>{gen}</Link>
                     )}
               </li>
