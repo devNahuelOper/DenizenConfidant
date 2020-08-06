@@ -12,7 +12,7 @@ A one-stop shop for all things electronic music!
 
 * Search Functionality: Users can type in a DJ, Genre or Event name in the search bar, and navigate to that show page through the generated link. Each letter typed will update the search dropdown with narrowed-down results.
 
-![image](https://user-images.githubusercontent.com/16979527/89317087-e9673300-d64a-11ea-98f8-7e54984622b6.png)
+![search gif](search.gif)
   
   Process:
   
