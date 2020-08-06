@@ -8,17 +8,6 @@ const Greeting = ({ currentUser, logout }) => {
     
     <nav className="user">
       <Dropdown />
-      {/* <ul className="login-signup">
-       
-        <li> 
-          <Link to="/login">Login</Link>
-          &nbsp;/&nbsp;
-          <Link to="/signup">Register</Link>
-        </li>
-        
-      </ul> */}
-      {/* <img src="/assets/turntable.png" /> */}
-      {/* <img src="/assets/dj3.png" id="dj-icon"/> */}
     </nav>
   );
 
@@ -27,13 +16,19 @@ const Greeting = ({ currentUser, logout }) => {
   const personalGreeting = () => (
     <div className="user">
      <nav className="welcome-container">
-      <div className="welcome-wrap">
+        <WelcomeDropdown />
+
+      {/* <div className="welcome-wrap">
       <img src={window.djUrl} id="dj-icon"/>
       <ul className="welcome-group">
         <li className="welcome-name">Welcome</li>
         <li className="welcome-name">{currentUser.username}</li>
-        {/* <WelcomeDropdown /> */}
-        <button className="logout-button" onClick={logout} onMouseEnter={() => setIsShown(true)}
+      </ul>
+      </div> */}
+
+    </nav>
+
+      {/* <button className="logout-button" onClick={logout} onMouseEnter={() => setIsShown(true)}
           onMouseLeave={() => setIsShown(false)}>
           <img src={window.logoutUrl} />
           {isShown && (
@@ -41,13 +36,7 @@ const Greeting = ({ currentUser, logout }) => {
               Logout
             </div>
           )}
-        </button>
-      </ul>
-      </div>
-    </nav>
-      {/* <WelcomeDropdown onClick={logout}/> */}
-      {/* <WelcomeDropdown />  */}
-     
+        </button> */}
     </div>
   );
 

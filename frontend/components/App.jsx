@@ -78,9 +78,6 @@ class App extends React.Component {
 
         <GreetingContainer />
        
-        {/* {this.state.shown && (
-            <Search ref={node => { this.node = node; }}/>
-        )} */}
         <Search />
       
         <Switch>
