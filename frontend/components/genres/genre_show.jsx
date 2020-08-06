@@ -10,6 +10,9 @@ class GenreShow extends React.Component {
     this.props.fetchGenre(this.props.match.params.genreId);
     this.props.fetchDjs();
     window.scrollTo(0, 0);
+  }
+
+  componentDidUpdate() {
     const search = document.getElementById('search');
     const searchbar = document.getElementsByClassName('search-container')[0];
     search.onclick = function () {
@@ -32,6 +35,9 @@ class GenreShow extends React.Component {
   }
 
   render() {
+    if (!this.props.genre) {
+      return null;
+    }
     const { genre } = this.props;
     const ids = genre.artist_ids;
     const length = genre.artists.length / 2;
@@ -75,7 +81,7 @@ class GenreShow extends React.Component {
             <div id="genre-bio">
               <ul>
               {genre.description.split('  ').map(par =>
-              <li key={par}>{par}<br/></li> 
+                <li key={par[0]}>{par}<br/></li> 
                 )} 
               </ul>
             </div>

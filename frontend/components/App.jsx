@@ -48,27 +48,27 @@ class App extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    const search = document.getElementById('search');
-    const searchbar = document.getElementsByClassName('search-container')[0];
-    search.onclick = function () {
-      searchbar.style.display = 'block';
-      search.style.backgroundColor = 'white';
-      search.style.color = 'black';
-      search.style.borderBottom = '2px solid white';
-    }
-    window.onclick = function (e) {
-      let inSearchbar = searchbar.contains(e.target);
-      let inSearch = search.contains(e.target);
-      if (inSearchbar || inSearch) {
-        return;
-      }
-      searchbar.style.display = 'none';
-      search.style.backgroundColor = 'transparent';
-      search.style.color = 'currentColor';
-      search.style.borderBottom = 'unset';
-    }
-  }
+  // componentDidMount() {
+  //   const search = document.getElementById('search');
+  //   const searchbar = document.getElementsByClassName('search-container')[0];
+  //   search.onclick = function () {
+  //     searchbar.style.display = 'block';
+  //     search.style.backgroundColor = 'white';
+  //     search.style.color = 'black';
+  //     search.style.borderBottom = '2px solid white';
+  //   }
+  //   window.onclick = function (e) {
+  //     let inSearchbar = searchbar.contains(e.target);
+  //     let inSearch = search.contains(e.target);
+  //     if (inSearchbar || inSearch) {
+  //       return;
+  //     }
+  //     searchbar.style.display = 'none';
+  //     search.style.backgroundColor = 'transparent';
+  //     search.style.color = 'currentColor';
+  //     search.style.borderBottom = 'unset';
+  //   }
+  // }
 
 
   render() {

@@ -11,7 +11,9 @@ class EventShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchEvent(this.props.match.params.eventId);
+  }
 
+  componentDidUpdate() {
     const search = document.getElementById('search');
     const searchbar = document.getElementsByClassName('search-container')[0];
     search.onclick = function () {
@@ -34,6 +36,9 @@ class EventShow extends React.Component {
   }
 
   render() {
+    if (!this.props.event) {
+      return null;
+    }
     const { event } = this.props;
 
     return (
