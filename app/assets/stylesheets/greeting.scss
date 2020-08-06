@@ -117,6 +117,10 @@ body {
   filter: invert(6);
 }
 
+#welcome-msg {
+  font-size: 16px;
+}
+
 .logout-dropdown {
   width: inherit;
   color: white;
@@ -144,58 +148,27 @@ body {
 }
 
 
+// .logout-button {
+//    position: relative;
+//   left: 15px;
+//   top: 7px;
+//   margin-right: 30px;
+//   width: 19px;
+//   background-color: whitesmoke;
+//   height: 18px;
+//   font-size: 12px;
+//   color: #404040;
+//   border-radius: 50%;
 
-.welcome-group {
-  display: flex;
-  box-sizing: border-box;
-  padding-top: 6px;
-  margin-left: 3px;
-  left: 208px;
-  font-size: 16px;
-  color: #7e7e7e;
-  border-right: 1px solid #404040;
-}
-
-.welcome-name {
-  position: relative;
-  line-height: 2em;
-  list-style: none;
-  font-size: 16px;
-}
-
-.welcome-name:first-of-type {
-  padding-left: 7px;
-}
-
-.welcome-name:last-of-type {
-  color: white;
-  padding-left: 4px;
-}
-
-
-
-
-.logout-button {
-   position: relative;
-  left: 15px;
-  top: 7px;
-  margin-right: 30px;
-  width: 19px;
-  background-color: whitesmoke;
-  height: 18px;
-  font-size: 12px;
-  color: #404040;
-  border-radius: 50%;
-
-  img {
-    height: 20px;
-    width: 21px;
-    position: absolute;
-    top: -1px;
-    right: -1px;
-    filter: contrast(0.5);
-  }
-}
+//   img {
+//     height: 20px;
+//     width: 21px;
+//     position: absolute;
+//     top: -1px;
+//     right: -1px;
+//     filter: contrast(0.5);
+//   }
+// }
 
 
 .logout-button:hover {
@@ -217,17 +190,25 @@ body {
 
 @media only screen and (max-width: 1030px) {
   .welcome-container {
-    height: 56px;
-  }
-  .welcome-wrap {
     width: 675px;
     height: 56px;
   }
-  .welcome-group {
-    padding-top: 12px;
+  .welcome-wrap {
+    width: 500px;
+    .reveal {
+      // height: 56px;
+    }
+  }
+  #welcome-msg {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: -160px;
+    bottom: 7px;
+    font-size: 14px;
   }
   #dj-icon {
-    padding: 18px 11px 17px 12px;
+    padding: 18px 11px 13px 12px;
   }
 }
 
@@ -247,7 +228,7 @@ body {
     padding-right: 0 !important;
     background-position-x: 540px !important; 
    }
-   .welcome-wrap {
+   .welcome-container {
      width: 560px;
    }
 }
@@ -265,14 +246,15 @@ body {
   .log-link {
     padding-right: 435px !important;
   }
-  .welcome-wrap {
+  .welcome-container {
     width: 490px;
+    margin: unset;
   }
 }
 
 
 @media only screen and (min-width: 1300px){
-  .welcome-wrap {
+  .welcome-container {
     width: 1272px;
   }
 }

@@ -11,7 +11,6 @@ class WelcomeDropdown extends React.Component {
     }
     this.clicker = this.clicker.bind(this);
     this.leave = this.leave.bind(this);
-    // this.outside = this.outside.bind(this);
   }
 
   clicker(e) {
@@ -22,20 +21,15 @@ class WelcomeDropdown extends React.Component {
     this.setState({ "drop": false });
   }
 
-  // outside(e) {
-  //   const reveal = document.getElementsByClassName('reveal')[0];
-  //   if (!reveal.contains(e.target)) return;
-  // }
-
   render() {
     const { currentUser, logout } = this.props;
     
     return (
       <div className="welcome-wrap">
-        <button onFocus={this.clicker} onBlur={this.leave} className="logout-dropdown">
+        <button onFocus={this.clicker} onBlur={this.leave}  className="logout-dropdown">
           <span>
             <img src={window.djUrl} id="dj-icon" />    
-            <strong>Welcome</strong> {currentUser.username} <small>⬇︎</small> 
+            <h1 id="welcome-msg">  <strong>Welcome</strong> {currentUser.username} </h1> <small>⬇︎</small> 
          </span>
         <ul className={this.state.drop ? "reveal" : "hide"}>
             <li onClick={logout}>Logout</li>
@@ -45,7 +39,6 @@ class WelcomeDropdown extends React.Component {
     )
   }
 }
-// onBlur = { this.leave }
 
 const mapStateToProps = ({ session, entities: { users } }) => {
   return {
