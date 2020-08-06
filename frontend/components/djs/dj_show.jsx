@@ -47,6 +47,9 @@ class DjShow extends React.Component {
   // }
 
   render() {
+    if (!this.props.dj) {
+      return null;
+    }
     const { dj } = this.props;
     const first = dj.name.split(' ')[0];
     const second = dj.name.split(' ')[1];

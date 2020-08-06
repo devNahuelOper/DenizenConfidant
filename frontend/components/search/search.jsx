@@ -80,7 +80,7 @@ class DjQueryContainer extends React.Component {
   render() {
     return (
       <div id="dj-query-container">
-        {this.props.djs.map(dj => <DjQuery dj= {dj}/>)}
+        {this.props.djs.map(dj => <DjQuery dj={dj} key={dj.id + 1}/>)}
       </div>
     )
   }
@@ -91,7 +91,7 @@ class GenreQueryContainer extends React.Component {
   render() {
     return (
       <div id="genre-query-container">
-        {this.props.genres.map(genre => <GenreQuery genre={genre} />)}
+        {this.props.genres.map(genre => <GenreQuery genre={genre} key={genre.id}/>)}
       </div>
     )
   }
@@ -101,7 +101,7 @@ class EventQueryContainer extends React.Component {
   render() {
     return (
       <div id="event-query-container">
-        {this.props.events.map(event => <EventQuery event={event} />)}
+        {this.props.events.map(event => <EventQuery event={event} key={event.id}/>)}
       </div>
     )
   }
