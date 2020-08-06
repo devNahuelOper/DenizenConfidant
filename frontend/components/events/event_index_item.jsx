@@ -14,6 +14,12 @@ const EventIndexItem = ({ event, deleteEvent}) => (
       <span id="venue">Venue: {event.venue} | {event.location}</span>
       <br/>
       <span id="headliners">Featuring: {event.headliners}</span>
+      {/* <span id="headliners">Featuring: {
+      event.headliners.split(', ').map(headliner => {
+      <article headliner={headliner}>{headliner}</article>
+      })
+      }
+      </span> */}
       <br/>
       <p id="description">{event.description}</p>
 
