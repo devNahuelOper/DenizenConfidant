@@ -40,7 +40,7 @@ body {
   position: absolute;
   top: 45px;
   left: 0px;
-  // background-color: inherit;
+  background-color: inherit;
   background-color: #2e2e2e;
   width: 100%;
   height: 200%;
@@ -78,30 +78,75 @@ body {
   z-index: -1;
 }
   
-
 .login-signup:hover {
   background-color: black;
   color: white;
 }
 
 
-// #login-icon {
-//   position: absolute;
-//   right: 13px;
-//   bottom: 0px;
-//   cursor: pointer;
-// }
-
-.welcome-wrap {
+.welcome-container {
   width: 960px;
   margin: 0 auto;
   display: flex;
 }
 
+.welcome-wrap {
+  width: 263px;
+  display: flex;
+  border-right: 1px solid #404040;
+  .reveal {
+    position: static;
+    width: inherit;
+    height: inherit;
+    color: white;
+    li {
+      cursor: pointer;
+      height: 100%;
+      width: inherit;
+      padding: 14px 0 14px 20px;
+      border: 1px solid #454545;
+      border-right: none;
+      border-left: none;
+    }
+  }
+}
+
+#dj-icon {
+  background-color: #c1c1c1;
+  padding: 10px 11px 11px 12px;
+  filter: invert(6);
+}
+
+.logout-dropdown {
+  width: inherit;
+  color: white;
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  span {
+    width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  white-space: nowrap;
+  strong {
+    color: #7e7e7e;
+  }
+  small {
+    font-size: 12px;
+    margin-left: 23px;
+    margin-right: 17px;
+  }
+}
+.logout-dropdown:hover {
+  background-color: black;
+}
+
+
 
 .welcome-group {
   display: flex;
-  // position: absolute;
   box-sizing: border-box;
   padding-top: 6px;
   margin-left: 3px;
@@ -127,17 +172,7 @@ body {
   padding-left: 4px;
 }
 
-#dj-icon {
-  // position: absolute;
-  left: 163px;
-  background-color: #c1c1c1;
-  padding: 10px 11px 11px 12px;
-  filter: invert(6);
-}
 
-// #dj-icon:hover {
-//   filter: contrast(1.5);
-// }
 
 
 .logout-button {
