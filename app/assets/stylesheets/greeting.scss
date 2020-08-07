@@ -97,6 +97,7 @@ body {
 
 .welcome-container {
   width: 960px;
+  height: inherit;
   margin: 0 auto;
   display: flex;
 }
@@ -159,44 +160,6 @@ body {
 }
 
 
-// .logout-button {
-//    position: relative;
-//   left: 15px;
-//   top: 7px;
-//   margin-right: 30px;
-//   width: 19px;
-//   background-color: whitesmoke;
-//   height: 18px;
-//   font-size: 12px;
-//   color: #404040;
-//   border-radius: 50%;
-
-//   img {
-//     height: 20px;
-//     width: 21px;
-//     position: absolute;
-//     top: -1px;
-//     right: -1px;
-//     filter: contrast(0.5);
-//   }
-// }
-
-
-.logout-button:hover {
-  border: 1px solid #000000;
-  background-color: white;
-  transform: scale(1.2);
-  filter: invert(1);
-}
-
-#alert {
-  position: relative;
-  top: 15px;
-  left: -3px;
-  color: #7e7e7e;
-  font-size: 7px;
-  text-decoration: fade-in($color: #000000, $amount: 1);
-}
 
 
 @media only screen and (max-width: 1030px) {
@@ -282,11 +245,11 @@ body {
   }
   .login-signup, .logout-dropdown {
     span {
-      width: 460px;
+      width: 490px;
     }
   }
   #welcome-msg {
-    left: -140px;
+    left: -160px;
     font-size: 12px;
   }
   .log-link {
