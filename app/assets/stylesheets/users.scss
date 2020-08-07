@@ -12,7 +12,7 @@
   }
 }
 
-.subheader-container {
+.user-subheader-container {
   background-color: #3c3c3c;
   .user-subheader {
     
@@ -36,6 +36,9 @@
           line-height: 1em;
         }
       }
+      li:first-of-type {
+        color: white;
+      }
     }
   }
 }
@@ -50,7 +53,7 @@
       line-height: 3em;
     }
   }
- .subheader-container {
+ .user-subheader-container {
     .user-subheader {
       width: 675px;
       .details {
@@ -62,7 +65,7 @@
 
 @media only screen and (max-width: 700px) {
 
-  .subheader-container {
+  .user-subheader-container {
     .user-subheader {
        width: 560px;
       .details {
@@ -74,7 +77,7 @@
 
 @media only screen and (max-width: 560px) {
 
-  .subheader-container {
+  .user-subheader-container {
     .user-subheader {
        width: 490px;
       .details {

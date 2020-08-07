@@ -2,9 +2,6 @@ import React from "react";
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
-import {
-  formatDateTime
-} from '../../util/date_util';
 
 class WelcomeDropdown extends React.Component {
   constructor(props) {
@@ -36,8 +33,8 @@ class WelcomeDropdown extends React.Component {
     <h1 id="welcome-msg">  <strong>Welcome</strong> {currentUser.username}</h1> <small>⬇︎</small> 
          </span>
         <ul className={this.state.drop ? "reveal" : "hide"}>
+            <li><Link onClick={this.leave} className="log-link" to={`/users/${currentUser.id}`}>My Profile</Link></li>
             <li onClick={logout}>Logout</li>
-            <li><Link to={`/users/${currentUser.id}`}>My Profile</Link></li>
           </ul>
        </button>
       </div>
