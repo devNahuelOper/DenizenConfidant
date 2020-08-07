@@ -17,6 +17,7 @@ class Search extends React.Component {
       searchTerm: ''
     }
     this.editSearchTerm = this.editSearchTerm.bind(this);
+    this.resetSearchTerm = this.resetSearchTerm.bind(this);
     this.djSearch = this.djSearch.bind(this);
     this.genreSearch = this.genreSearch.bind(this);
     this.eventSearch = this.eventSearch.bind(this);
@@ -29,7 +30,11 @@ class Search extends React.Component {
   }
 
   editSearchTerm(e) {
-    this.setState({searchTerm: e.target.value})
+    this.setState({searchTerm: e.target.value});
+  }
+
+  resetSearchTerm() {
+    this.setState({searchTerm: ''});
   }
 
   djSearch() {
@@ -61,7 +66,7 @@ class Search extends React.Component {
             style={this.state.searchTerm.length ? { display: 'block' } : { display: 'none' }}
           >
           { this.state.searchTerm.length &&
-            <ul id="searchlist">
+            <ul id="searchlist" onClick={this.resetSearchTerm}>
             <li><DjQueryContainer djs = {this.djSearch()}/></li>
             <li><GenreQueryContainer genres = {this.genreSearch()}/></li>
             <li><EventQueryContainer events = {this.eventSearch()}/></li>
