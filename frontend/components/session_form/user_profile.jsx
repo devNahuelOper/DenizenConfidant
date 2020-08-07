@@ -2,6 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchCurrentUser, getCurrentUser } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
+import {
+  formatDateTime
+} from '../../util/date_util';
+
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -11,7 +15,7 @@ class UserProfile extends React.Component {
   render() {
     const { currentUser } = this.props;
     return(
-      <div>
+      <div className="user-profile">
         <div id="nav-container">
           <section id="navbar">
             <nav>
@@ -24,6 +28,27 @@ class UserProfile extends React.Component {
               </ul>
             </nav>
             <h1>{currentUser.username}</h1>
+          </section>
+        </div>
+        <div className="subnav-container">
+          <section id="subnav">
+            <ul>
+              <li className="form"><Link to={`/users/${currentUser.id}`}>Overview</Link></li>
+              <li><Link to="/">Take me back home</Link></li>
+            </ul>
+          </section>
+        </div>
+        <div className="subheader-container">
+          <section className="user-subheader">
+            <ul className="details">
+              <li>
+                <small>DC since /</small><br />
+              </li>
+              <li>
+                <small>Location /</small> <br />
+                {currentUser.region}
+              </li>
+            </ul>
           </section>
         </div>
 

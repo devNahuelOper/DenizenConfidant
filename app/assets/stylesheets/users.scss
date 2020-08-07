@@ -1,3 +1,37 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.user-profile {
+  #nav-container {
+    height: 215px;
+  }
+  #navbar h1 {
+    line-height: 2em;
+  }
+}
+
+.subheader-container {
+  background-color: #3c3c3c;
+  .user-subheader {
+    
+    width: 952px;
+    margin: 0 auto;
+    .details {
+      display: flex;
+      li {
+          text-align: left;
+          font-weight: normal;
+          color: #ffa100;
+          font-size: 16px;
+          padding: 16px 0;
+          margin-right: 180px;
+        small {
+          color: #b4b4b4;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
