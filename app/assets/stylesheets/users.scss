@@ -35,3 +35,47 @@
     }
   }
 }
+
+
+@media only screen and (max-width: 1030px) {
+  .user-profile {
+    #nav-container {
+      height: 160px;
+    }
+    #navbar h1 {
+      line-height: 3em;
+    }
+  }
+ .subheader-container {
+    .user-subheader {
+      width: 675px;
+      .details {
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+
+  .subheader-container {
+    .user-subheader {
+       width: 560px;
+      .details {
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 560px) {
+
+  .subheader-container {
+    .user-subheader {
+       width: 490px;
+      .details {
+        white-space: nowrap;
+      }
+    }
+  }
+}
