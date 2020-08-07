@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchCurrentUser, getCurrentUser } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
 import {
-  formatDateTime
+  formatDate
 } from '../../util/date_util';
 
 
@@ -57,6 +57,7 @@ class UserProfile extends React.Component {
             <ul className="details">
               <li>
                 <small>DC since /</small><br />
+                {formatDate(currentUser.created_at).split(' ').slice(0, 3).join(' ')}
               </li>
               <li>
                 <small>Location /</small> <br />
