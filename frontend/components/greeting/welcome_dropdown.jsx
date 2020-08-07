@@ -27,7 +27,7 @@ class WelcomeDropdown extends React.Component {
 
   render() {
     const { currentUser, logout } = this.props;
-    
+    // onBlur = { this.leave } 
     return (
       <div className="welcome-wrap">
         <button onFocus={this.clicker} onBlur={this.leave}  className="logout-dropdown">
@@ -37,6 +37,7 @@ class WelcomeDropdown extends React.Component {
          </span>
         <ul className={this.state.drop ? "reveal" : "hide"}>
             <li onClick={logout}>Logout</li>
+            <li><Link to={`/users/${currentUser.id}`}>My Profile</Link></li>
           </ul>
        </button>
       </div>
@@ -55,3 +56,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(WelcomeDropdown);
+
+// {formatDateTime(currentUser.createdAt)}

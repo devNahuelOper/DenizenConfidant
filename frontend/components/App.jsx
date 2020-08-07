@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import UserProfile from './session_form/user_profile';
 import SplashPage from './splash/splash';
 import Footer from './footer/footer';
 import EventIndexContainer from './events/event_index_container';
@@ -84,6 +85,7 @@ class App extends React.Component {
         <Switch>
           <AuthRoute path="/login" component={LoginFormContainer} />
           <AuthRoute path="/signup" component={SignupFormContainer} />
+          <ProtectedRoute path="/users/:userId" component={UserProfile}/>
           <Route exact path="/" component={SplashContainer} />
           <Route exact path="/events" component={EventIndexContainer} />
           <Route exact path="/events/:eventId" component={EventShowContainer} />

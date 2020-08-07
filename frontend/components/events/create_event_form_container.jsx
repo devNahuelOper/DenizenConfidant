@@ -11,7 +11,8 @@ const mapStateToProps = state => ({
     venue: '',
     description: ''
   },
-  formType: 'Submit Event'
+  formType: 'Submit Event',
+  // events: Object.values(state.entities.events)
 });
 
 const mapDispatchToProps = dispatch => ({
