@@ -76,10 +76,10 @@ class App extends React.Component {
         <Search />
       
         <Switch>
-          <AuthRoute path="/login" component={LoginFormContainer} />
-          <AuthRoute path="/signup" component={SignupFormContainer} />
+          <AuthRoute path="/login" component={withTitle({component: LoginFormContainer, title: 'Login'})} />
+          <AuthRoute path="/signup" component={withTitle({ component: SignupFormContainer, title: 'Register as a DC member today' })} />
           <ProtectedRoute path="/users/:userId" component={UserProfile}/>
-          <Route exact path="/" component={SplashContainer} />
+          <Route exact path="/" component={withTitle({ component: SplashContainer, title: 'DC: Denizen Confidant - electronic music online'})} />
           <Route exact path="/events" component={EventsIndexContainer} />
           <Route exact path="/events/:eventId" component={EventShowContainer} />
           <Route path="/events/new" component={CreateEventFormContainer} />
