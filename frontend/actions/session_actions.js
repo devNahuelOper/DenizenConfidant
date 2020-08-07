@@ -56,3 +56,17 @@ export const logout = () => dispatch => (
     dispatch(logoutCurrentUser())
   ))
 ); 
+
+export const fetchCurrentUser = (id) => (dispatch) => (
+  APIUtil.fetchCurrentUser(id)
+    .then(user => dispatch(receiveCurrentUser(user)))
+);
+
+export const getCurrentUser = (state) => {
+  if (!state.session.id) return {};
+  const user = state.entities.users[state.session.id];
+  return {
+    ...user,
+    ...state.session,
+  };
+};
