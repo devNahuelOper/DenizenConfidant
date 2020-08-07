@@ -13,48 +13,63 @@ body {
   font-size: 16px;
 }
 
+.login-container {
+  width: 960px;
+  margin: 0 auto;
+  height: inherit;
+}
+
+.login-wrap {
+  width: 200px;
+  height: inherit;
+}
+
+
 .login-signup {
   cursor: pointer;
   color: white;
-  position: absolute;
-  right: 37%;
-  margin-right: 456px;
-  height: 100%;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 0 14px 0;
   border-left: 1px solid;
   border-right: 1px solid;
-  padding-left: 20px;
-  padding-right: 54px;
   border-color: #454545;
-  margin-left: 170px;
   background-color: #2e2e2e;
-  background-image: image_url('arrowhite.png');
-  background-repeat: no-repeat;
-  background-position-x: 157px;
-  background-position-y: 19px;
-  background-size: 10px;
+  // background-image: image_url('arrowhite.png');
+  // background-repeat: no-repeat;
+  // background-position-x: 157px;
+  // background-position-y: 19px;
+  // background-size: 10px;
+  span {
+    margin: 0 10px 13px 20px;
+    font-size: 16px;
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
+    small {
+      font-size: 12px;
+    }
+  }
 }
 
 .reveal {
-  box-sizing: content-box;
-  display: block;
-  position: absolute;
-  top: 45px;
-  left: 0px;
-  background-color: inherit;
+  // background-color: inherit;
   background-color: #2e2e2e;
-  width: 100%;
-  height: 200%;
+  width: inherit;
+  // height: 200%;
   z-index: 2000;
-}
-
-.reveal li {
-  box-sizing: border-box;
-  padding-left: 20px;
-  padding-top: 14px;
-  font-size: 16px;
-  border: 1px solid #454545;
-  height: 50%;
-  width: 100%;
+  li {
+    box-sizing: border-box;
+    padding: 14px 0 14px 20px;
+    font-size: 16px;
+    border: 1px solid #454545;
+    width: inherit;
+  }
+  li:hover {
+    background-color: black;
+  }
 }
 
 .log-link {
@@ -62,16 +77,14 @@ body {
   padding-right: 133px;
 }
 
-.reveal li:hover {
-  background-color: black;
-}
+
 
 .reveal li:first-child {
   border-bottom: none;
 }
 
 .hide {
-  position: absolute;
+  // position: absolute;
   top: 47px;
   opacity: 0.1;
   color: #404040;
@@ -82,6 +95,7 @@ body {
   background-color: black;
   color: white;
 }
+
 
 
 .welcome-container {
@@ -189,16 +203,33 @@ body {
 
 
 @media only screen and (max-width: 1030px) {
-  .welcome-container {
+  .user {
+    height: 56px;
+  }
+ .login-container, .welcome-container {
     width: 675px;
     height: 56px;
   }
-  .welcome-wrap {
-    width: 500px;
+ .login-wrap, .welcome-wrap {
+    width: 580px;
     .reveal {
       // height: 56px;
     }
   }
+  .login-signup {
+    border-left: none;
+    span {
+      font-size: 14px;
+      width: 560px;
+      margin: 5px 10px 19px 3px;
+    }
+  }
+  // .welcome-wrap:hover {
+  //   #dj-icon {
+  //     border-top: 1px solid black;
+  //     border-bottom: 1px solid black;
+  //   }
+  // }
   #welcome-msg {
     display: flex;
     flex-direction: column;
@@ -214,41 +245,44 @@ body {
 
 
 @media only screen and (max-width: 700px) {
-  .login-wrap {
-    width: 591px !important;
-    margin: 0 auto;
-    height: 100%;
-  }
-  .login-signup {
-    position: relative !important;
-    width: 550px !important;
-    // margin: 0 auto;
-    right: unset !important;
-    // right: 140px !important;
-    padding-right: 0 !important;
-    background-position-x: 540px !important; 
-   }
-   .welcome-container {
+  // .login-wrap {
+  //   width: 591px !important;
+  //   margin: 0 auto;
+  //   height: 100%;
+  // }
+  // .login-signup {
+  //   position: relative !important;
+  //   width: 550px !important;
+  //   // margin: 0 auto;
+  //   right: unset !important;
+  //   // right: 140px !important;
+  //   padding-right: 0 !important;
+  //   background-position-x: 540px !important; 
+  //  }
+   .log-link {
+      padding-right: 520px;
+    }
+
+   .login-container, .welcome-container {
      width: 560px;
    }
 }
 
 @media only screen and (max-width: 560px) {
   .login-wrap {
-    width: 480px !important;
-    margin: unset !important;
+    width: 495px;
   }
   .login-signup {
-    width: 480px !important;
-    margin: unset !important;
-    background-position-x: 470px !important;
+    span {
+      width: 460px;
+    }
   }
   .log-link {
     padding-right: 435px !important;
   }
-  .welcome-container {
+  .login-container, .welcome-container {
     width: 490px;
-    margin: unset;
+    // margin: unset;
   }
 }
 

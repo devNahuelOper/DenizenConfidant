@@ -5,10 +5,11 @@ import WelcomeDropdown from './welcome_dropdown';
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
-    
-    <nav className="user">
-      <Dropdown />
-    </nav>
+    <div className="user">
+      <nav className="login-container">
+        <Dropdown />
+      </nav>
+    </div>
   );
 
   const [isShown, setIsShown] = useState(false);
@@ -17,15 +18,6 @@ const Greeting = ({ currentUser, logout }) => {
     <div className="user">
      <nav className="welcome-container">
         <WelcomeDropdown />
-
-      {/* <div className="welcome-wrap">
-      <img src={window.djUrl} id="dj-icon"/>
-      <ul className="welcome-group">
-        <li className="welcome-name">Welcome</li>
-        <li className="welcome-name">{currentUser.username}</li>
-      </ul>
-      </div> */}
-
     </nav>
 
       {/* <button className="logout-button" onClick={logout} onMouseEnter={() => setIsShown(true)}
@@ -47,32 +39,3 @@ const Greeting = ({ currentUser, logout }) => {
 
 export default Greeting;
 
-
-// import React from "react";
-
-// class Dropdown extends React.Component {
-//   constructor(props) {
-//     this.state = {
-//       drop: false
-//     }
-//     this.clicker.bind(this)
-//   }
-
-//   clicker(e) {
-//     this.setState(drop, true)
-//   }
-
-//   leave(e) {
-//     this.setState(drop, false)
-//   }
-
-
-
-//   render() {
-//     <button onFocus={this.clicker} onBlur={this.leave}>
-//       <ul className={this.state ? reveal : hide}>
-//         <li>...
-//             </ul>
-//         </button> 
-//     }
-// }

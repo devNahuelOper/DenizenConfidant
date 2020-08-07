@@ -604,43 +604,38 @@
 
 @media only screen and (max-width: 1030px) {
 
-.user {
-  height: 56px;
-}
-.login-wrap {
-  width: 704px;
-  margin: 0 auto;
-  height: 56px;
-  .reveal {
-    top: 56px;
-  }
-}
-.login-signup {
-  width: 583px;
-  margin: 0 auto;
-  color: white;
-  position: relative;
-  right: unset;
-  height: 100%;
-  // margin-right: -85px;
-  border-right: 1px solid;
-  border-left: none;
-  padding-left: 19px;
-  padding-right: unset;
-  border-color: #454545;
-  background-color: #2e2e2e;
-  background-image: image_url('arrowhite.png');
-  background-repeat: no-repeat;
-  background-position-x: 570px;
-  background-position-y: 24px;
-  background-size: 10px;
-  font-size: .75em;
-}
 
-  .log-link {
-    padding-right: 520px;
-  }
+// .login-wrap {
+//   width: 704px;
+//   margin: 0 auto;
+//   height: 56px;
+//   .reveal {
+//     top: 56px;
+//   }
+// }
+// .login-signup {
+//   width: 583px;
+//   margin: 0 auto;
+//   color: white;
+//   position: relative;
+//   right: unset;
+//   height: 100%;
+//   // margin-right: -85px;
+//   border-right: 1px solid;
+//   border-left: none;
+//   padding-left: 19px;
+//   padding-right: unset;
+//   border-color: #454545;
+//   background-color: #2e2e2e;
+//   background-image: image_url('arrowhite.png');
+//   background-repeat: no-repeat;
+//   background-position-x: 570px;
+//   background-position-y: 24px;
+//   background-size: 10px;
+//   font-size: .75em;
+// }
 
+ 
   #navbar {
     width: 632px;
     nav {
