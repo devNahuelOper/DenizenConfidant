@@ -14,6 +14,20 @@ class UserProfile extends React.Component {
 
   render() {
     const { currentUser } = this.props;
+    const flags = {
+      'Argentina': '🇦🇷',
+      'Brazil': '🇧🇷',
+      'Canada': '🇨🇦',
+      'China': '🇨🇳',
+      'France': '🇫🇷',
+      'Germany': '🇩🇪',
+      'Italy': '🇮🇹',
+      'Japan': '🇯🇵',
+      'Netherlands': '🇳🇱',
+      'Spain': '🇪🇸',
+      'United Kingdom': '🇬🇧',
+      'United States': '🇺🇸'
+    }
     return(
       <div className="user-profile">
         <div id="nav-container">
@@ -46,7 +60,7 @@ class UserProfile extends React.Component {
               </li>
               <li>
                 <small>Location /</small> <br />
-                {currentUser.region}
+             <strong>{flags[`${currentUser.region}`]}</strong>{currentUser.region}
               </li>
             </ul>
           </section>
