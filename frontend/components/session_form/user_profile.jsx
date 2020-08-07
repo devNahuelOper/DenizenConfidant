@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchCurrentUser, getCurrentUser } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
 import {
-  formatDateTime
+  formatDate
 } from '../../util/date_util';
 
 
@@ -14,6 +14,20 @@ class UserProfile extends React.Component {
 
   render() {
     const { currentUser } = this.props;
+    const flags = {
+      'Argentina': '🇦🇷',
+      'Brazil': '🇧🇷',
+      'Canada': '🇨🇦',
+      'China': '🇨🇳',
+      'France': '🇫🇷',
+      'Germany': '🇩🇪',
+      'Italy': '🇮🇹',
+      'Japan': '🇯🇵',
+      'Netherlands': '🇳🇱',
+      'Spain': '🇪🇸',
+      'United Kingdom': '🇬🇧',
+      'United States': '🇺🇸'
+    }
     return(
       <div className="user-profile">
         <div id="nav-container">
@@ -43,10 +57,11 @@ class UserProfile extends React.Component {
             <ul className="details">
               <li>
                 <small>DC since /</small><br />
+                {formatDate(currentUser.created_at).split(' ').slice(0, 3).join(' ')}
               </li>
               <li>
                 <small>Location /</small> <br />
-                {currentUser.region}
+             <strong>{flags[`${currentUser.region}`]}</strong>{currentUser.region}
               </li>
             </ul>
           </section>
