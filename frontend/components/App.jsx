@@ -8,6 +8,7 @@ import SplashPage from './splash/splash';
 import Footer from './footer/footer';
 import EventIndexContainer from './events/event_index_container';
 import EventShowContainer from './events/event_show_container';
+import CreateEventFormContainer from './events/create_event_form_container';
 import DjIndexContainer from './djs/dj_index_container';
 import DjShowContainer from './djs/dj_show_container';
 import GenreIndexContainer from './genres/genre_index_container';
@@ -86,6 +87,7 @@ class App extends React.Component {
           <Route exact path="/" component={SplashContainer} />
           <Route exact path="/events" component={EventIndexContainer} />
           <Route exact path="/events/:eventId" component={EventShowContainer} />
+          <Route path="/events/new" component={CreateEventFormContainer} />
           <Route exact path="/djs" component={DjIndexContainer} />
           <Route exact path="/djs/:djId" component={DjShowContainer} />
           <Route exact path="/genres" component={GenreIndexContainer} />
