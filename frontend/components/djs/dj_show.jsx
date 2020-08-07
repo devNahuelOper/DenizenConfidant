@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { TitleComponent } from '../title_component.jsx';
 
 class DjShow extends React.Component {
   constructor(props) {
@@ -49,6 +50,8 @@ class DjShow extends React.Component {
     const second = dj.name.split(' ')[1];
     const hyphen = `${first}-${second}`;
     return (
+      <React.Fragment>
+        <TitleComponent title={`DC: ${dj.name}`} />
       <div className="djs-index" id="dj-show">
         <div 
           id={`${dj.name.toLowerCase().split(' ').join('')}-container`}
@@ -123,6 +126,7 @@ class DjShow extends React.Component {
           </section>
         </div>
       </div>
+      </React.Fragment>
     )
   }
 }

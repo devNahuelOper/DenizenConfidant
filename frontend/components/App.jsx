@@ -16,9 +16,8 @@ import GenreIndexContainer from './genres/genre_index_container';
 import GenreShowContainer from './genres/genre_show_container';
 import SplashContainer from './splash/splash_container';
 import Search from './search/search';
-// import EventShow from './events/event_show';
+import { TitleComponent } from './title_component.jsx';
 
-// import Dropdown from './greeting/dropdown';
 
 // const App = () => (
 //   <div>
@@ -44,37 +43,31 @@ import Search from './search/search';
 
 // const searchbar = document.getElementsByClassName('search-container')[0];
 
+const withTitle = ({ component: Component, title }) => {
+  return class Title extends React.Component {
+    render() {
+      return (
+        <React.Fragment>
+          <TitleComponent title={title} />
+          <Component {...this.props} />
+        </React.Fragment>
+      );
+    }
+  };
+};
+
+const EventsIndexContainer = withTitle({component: EventIndexContainer, title: 'DC: Events'});
+// const EventsShowContainer = withTitle({component: EventShowContainer, title: `DC: ${this.props.event.name}`});
+const DjsIndexContainer = withTitle({component: DjIndexContainer, title: 'DC: DJs'});
+const GenresIndexContainer = withTitle({component: GenreIndexContainer, title: 'DC: Genres'});
 
 class App extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  // componentDidMount() {
-  //   const search = document.getElementById('search');
-  //   const searchbar = document.getElementsByClassName('search-container')[0];
-  //   search.onclick = function () {
-  //     searchbar.style.display = 'block';
-  //     search.style.backgroundColor = 'white';
-  //     search.style.color = 'black';
-  //     search.style.borderBottom = '2px solid white';
-  //   }
-  //   window.onclick = function (e) {
-  //     let inSearchbar = searchbar.contains(e.target);
-  //     let inSearch = search.contains(e.target);
-  //     if (inSearchbar || inSearch) {
-  //       return;
-  //     }
-  //     searchbar.style.display = 'none';
-  //     search.style.backgroundColor = 'transparent';
-  //     search.style.color = 'currentColor';
-  //     search.style.borderBottom = 'unset';
-  //   }
-  // }
-
 
   render() {
-    // const search = document.getElementById('search');
     return (
       <div>
 
@@ -87,12 +80,12 @@ class App extends React.Component {
           <AuthRoute path="/signup" component={SignupFormContainer} />
           <ProtectedRoute path="/users/:userId" component={UserProfile}/>
           <Route exact path="/" component={SplashContainer} />
-          <Route exact path="/events" component={EventIndexContainer} />
+          <Route exact path="/events" component={EventsIndexContainer} />
           <Route exact path="/events/:eventId" component={EventShowContainer} />
           <Route path="/events/new" component={CreateEventFormContainer} />
-          <Route exact path="/djs" component={DjIndexContainer} />
+          <Route exact path="/djs" component={DjsIndexContainer} />
           <Route exact path="/djs/:djId" component={DjShowContainer} />
-          <Route exact path="/genres" component={GenreIndexContainer} />
+          <Route exact path="/genres" component={GenresIndexContainer} />
           <Route exact path="/genres/:genreId" component={GenreShowContainer} />
 
         </Switch>

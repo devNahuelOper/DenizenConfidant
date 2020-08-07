@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { TitleComponent } from '../title_component.jsx';
 
 class EventShow extends React.Component {
   constructor(props) {
@@ -42,6 +43,8 @@ class EventShow extends React.Component {
     const { event } = this.props;
 
     return (
+      <React.Fragment>
+        <TitleComponent title={`DC: ${event.name}`} />
       <div className="events-index">
         <div className="events-nav-container">
         <section className="events-nav">
@@ -89,6 +92,7 @@ class EventShow extends React.Component {
           </section>          
         </div>
       </div>
+      </React.Fragment>
     )
   }
 };
