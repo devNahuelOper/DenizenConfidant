@@ -224,6 +224,14 @@ body {
       margin: 5px 10px 19px 3px;
     }
   }
+  .logout-dropdown {
+    span {
+      font-size: 14px;
+      width: 560px;
+      box-sizing: border-box;
+      margin-bottom: 4px;
+    }
+  }
   // .welcome-wrap:hover {
   //   #dj-icon {
   //     border-top: 1px solid black;
@@ -234,12 +242,15 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    left: -160px;
-    bottom: 7px;
+    left: -185px;
+    bottom: 4px;
     font-size: 14px;
   }
   #dj-icon {
     padding: 18px 11px 13px 12px;
+    margin-top: 4px;
+    width: 51px;
+    height: 48px;
   }
 }
 
@@ -269,13 +280,17 @@ body {
 }
 
 @media only screen and (max-width: 560px) {
-  .login-wrap {
+  .login-wrap, .welcome-wrap {
     width: 495px;
   }
-  .login-signup {
+  .login-signup, .logout-dropdown {
     span {
       width: 460px;
     }
+  }
+  #welcome-msg {
+    left: -140px;
+    font-size: 12px;
   }
   .log-link {
     padding-right: 435px !important;
