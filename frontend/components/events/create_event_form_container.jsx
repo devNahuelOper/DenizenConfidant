@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { createEvent } from '../../actions/event_actions';
-import { createEventForm } from './create_event_form';
+import  CreateEventForm  from './create_event_form';
 
 
 const mapStateToProps = state => ({
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => ({
   action: event => dispatch(createEvent(event))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(createEventForm);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateEventForm);

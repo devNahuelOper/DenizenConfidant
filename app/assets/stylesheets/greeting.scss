@@ -32,7 +32,7 @@ body {
   height: inherit;
   display: flex;
   flex-direction: column;
-  padding: 14px 0 14px 0;
+  // padding: 14px 0 14px 0;
   border-left: 1px solid;
   border-right: 1px solid;
   border-color: #454545;
@@ -43,7 +43,9 @@ body {
   // background-position-y: 19px;
   // background-size: 10px;
   span {
-    margin: 0 10px 13px 20px;
+    padding: 14px 0 13px 0;
+    margin: 0 10px 0px 20px;
+    // margin: 0 10px 13px 20px;
     font-size: 16px;
     width: 160px;
     display: flex;
