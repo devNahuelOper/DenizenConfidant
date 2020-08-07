@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { TitleComponent } from '../title_component.jsx';
 
 class GenreShow extends React.Component {
   constructor(props) {
@@ -42,6 +43,8 @@ class GenreShow extends React.Component {
     const ids = genre.artist_ids;
     const length = genre.artists.length / 2;
     return (
+      <React.Fragment>
+        <TitleComponent title={`DC: ${genre.name}`} />
       <div className="genre-index">
         <div 
           id={`${genre.name.toLowerCase().split('-').join('')}-container`}
@@ -97,6 +100,7 @@ class GenreShow extends React.Component {
           </section>
         </div>
       </div>
+      </React.Fragment>
     )
   }
 }

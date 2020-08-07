@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import {
   formatDate
 } from '../../util/date_util';
+import { TitleComponent } from '../title_component.jsx';
 
 
 class UserProfile extends React.Component {
@@ -52,6 +53,8 @@ class UserProfile extends React.Component {
       'United States': '🇺🇸'
     }
     return(
+      <React.Fragment>
+        <TitleComponent title={`DC: ${currentUser.username}`} />
       <div className="user-profile">
         <div id="nav-container">
           <section id="navbar">
@@ -91,6 +94,7 @@ class UserProfile extends React.Component {
         </div>
 
       </div>
+      </React.Fragment>
     )
   }
 }
