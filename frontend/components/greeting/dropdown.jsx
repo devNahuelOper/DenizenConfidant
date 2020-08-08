@@ -23,7 +23,7 @@ class Dropdown extends React.Component {
   render() {
     return (
      <div className="login-wrap">
-        <Tappable onTap={this.clicker} onBlur={this.leave}>
+        <Tappable onTap={this.clicker} onTouchEnd={this.leave}>
         <button onFocus={this.clicker} onBlur={this.leave} className="login-signup"> <span>Login / Register <small>⬇︎</small></span> 
          <ul className={this.state.drop ? "reveal" : "hide"}>
             <li><Link onClick={this.leave} className="log-link" to="/login">Login</Link></li>

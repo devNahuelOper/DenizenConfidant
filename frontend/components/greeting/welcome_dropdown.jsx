@@ -28,7 +28,7 @@ class WelcomeDropdown extends React.Component {
     // onBlur = { this.leave } 
     return (
       <div className="welcome-wrap">
-        <Tappable onTap={this.clicker} onBlur={this.leave}>
+        <Tappable onTap={this.clicker} onTouchEnd={this.leave}>
         <button onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}  className="logout-dropdown">
           <span>
             <img src={window.djUrl} id="dj-icon" />    
