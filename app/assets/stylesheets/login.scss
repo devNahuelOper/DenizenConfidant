@@ -659,6 +659,17 @@
     }
 }
 
+.user-profile #expand {
+  height: 97px;
+}
+
+#user-reveal {
+  border-bottom: 1px solid black;
+  .log-link {
+    padding-right: 460px;
+  }
+}
+
 // .subnav-drop:hover {
 //   background-color: black;
 //   color: white;
@@ -868,6 +879,11 @@
     width: 490px;
     span {
       width: 470px;
+    }
+    span:hover {
+      small {
+        margin-right: 14px;
+      }
     }
   }
 

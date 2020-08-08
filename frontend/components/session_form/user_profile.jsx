@@ -77,6 +77,7 @@ class UserProfile extends React.Component {
               <li><Link to="/">Take me back home</Link></li>
             </ul>
           </section>
+          <SubnavToggle />
         </div>
         <div className="user-subheader-container">
           <section className="user-subheader">
@@ -99,6 +100,38 @@ class UserProfile extends React.Component {
   }
 }
 
+class SubnavToggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      drop: false
+    }
+    this.clicker = this.clicker.bind(this);
+    this.leave = this.leave.bind(this);
+  }
+
+  clicker(e) {
+    this.setState({ "drop": true });
+  }
+
+  leave(e) {
+    this.setState({ "drop": false });
+  }
+
+  render() {
+    return (
+      <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
+        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span>Overview <small>⬇︎</small></span>
+          <ul className={this.state.drop ? "reveal" : "hide"}>
+            {/* <li><Link className="log-link" onClick={this.leave} to="/signup">Register</Link></li> */}
+            <li id="user-reveal"><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
+          </ul>
+        </button>
+      </div>
+    )
+  }
+}
+// onBlur = { this.leave }
 const mapStateToProps = (state) => {
   return {
     // user: state.entities.users[ownProps.match.params.userId]
