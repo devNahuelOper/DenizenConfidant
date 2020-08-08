@@ -620,6 +620,8 @@
   margin-top: 8px;
   .reveal {
     background-color: #ffa100;
+    position: relative;
+    left: -1px;
     li {
       height: 40px;
       padding: 10px 0 14px 20px;
@@ -627,6 +629,7 @@
     li:hover {
       background-color: black;
       color: white;
+     
     }
     .log-link {
       white-space: nowrap;
@@ -643,48 +646,31 @@
     font-size: 12px;
   }
 }
-.subnav-drop:hover {
-  background-color: black;
-  color: white;
-  .reveal {
-    color: black;
-  }
+
+.subnav-drop span:hover {
+    width: 100%;
+    background-color: black;
+    color: white;
+    margin: 0 8px 1px 0px;
+    box-sizing: border-box;
+    padding-left: 21px;
+    small {
+      margin-right: 22px;
+    }
 }
+
+// .subnav-drop:hover {
+//   background-color: black;
+//   color: white;
+//   .reveal {
+//     color: black;
+//   }
+// }
+
 
 // Small
 
 @media only screen and (max-width: 972px) {
-
-
-// .login-wrap {
-//   width: 704px;
-//   margin: 0 auto;
-//   height: 56px;
-//   .reveal {
-//     top: 56px;
-//   }
-// }
-// .login-signup {
-//   width: 583px;
-//   margin: 0 auto;
-//   color: white;
-//   position: relative;
-//   right: unset;
-//   height: 100%;
-//   // margin-right: -85px;
-//   border-right: 1px solid;
-//   border-left: none;
-//   padding-left: 19px;
-//   padding-right: unset;
-//   border-color: #454545;
-//   background-color: #2e2e2e;
-//   background-image: image_url('arrowhite.png');
-//   background-repeat: no-repeat;
-//   background-position-x: 570px;
-//   background-position-y: 24px;
-//   background-size: 10px;
-//   font-size: .75em;
-// }
 
  
   #navbar {
