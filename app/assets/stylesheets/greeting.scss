@@ -159,8 +159,9 @@ body {
   background-color: black;
 }
 
-.Tappable-inactive {
+.Tappable-inactive, .Tappable-active {
   width: inherit;
+  user-select: auto;
 }
 
 
