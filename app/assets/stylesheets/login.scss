@@ -600,9 +600,60 @@
   // line-height: 20px;
 }
 
+.subnav-toggle {
+  display: none;
+  width: 674px;
+  margin: 0 auto;
+}
+#normal {
+  height: 57px;
+}
+#expand {
+  height: 134px;
+}
+.subnav-drop {
+  width: 630px;
+  height: 40px;
+  box-sizing: border-box;
+  // padding-left: 12px;
+  border: 1px solid #6147479e;
+  margin-top: 8px;
+  .reveal {
+    background-color: #ffa100;
+    li {
+      height: 40px;
+      padding: 10px 0 14px 20px;
+    }
+    li:hover {
+      background-color: black;
+      color: white;
+    }
+    .log-link {
+      white-space: nowrap;
+    }
+  }
+  span {
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 0px 9px 16px;
+    margin: 0 8px 1px 5px;
+  }
+  small {
+    font-size: 12px;
+  }
+}
+.subnav-drop:hover {
+  background-color: black;
+  color: white;
+  .reveal {
+    color: black;
+  }
+}
+
 // Small
 
-@media only screen and (max-width: 1030px) {
+@media only screen and (max-width: 972px) {
 
 
 // .login-wrap {
@@ -669,16 +720,28 @@
       font-size: 48px;
     }
   }
-  #subnav {
+
+  .subnav-container {
     // height: 57px;
+    display: flex;
+    align-items: center;
+  }
+
+  #subnav {
+    display: none;
     width: 674px;
-    ul {
-      width: 674px;
-    }
+    // ul {
+    //   width: 674px;
+    // }
+  }
+
+  .subnav-toggle {
+    display: flex;
   }
 
   .login-form {
     width: 674px;
+    z-index: -1;
   }
 
   .form-wrap {
