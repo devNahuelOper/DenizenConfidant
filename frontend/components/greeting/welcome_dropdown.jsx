@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
+import Tappable from 'react-tappable';
 
 class WelcomeDropdown extends React.Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class WelcomeDropdown extends React.Component {
     // onBlur = { this.leave } 
     return (
       <div className="welcome-wrap">
+        <Tappable onTap={this.clicker}>
         <button onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}  className="logout-dropdown">
           <span>
             <img src={window.djUrl} id="dj-icon" />    
@@ -37,6 +39,7 @@ class WelcomeDropdown extends React.Component {
             <li onClick={logout}>Logout</li>
           </ul>
        </button>
+       </Tappable>
       </div>
     )
   }
