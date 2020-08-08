@@ -772,12 +772,22 @@
       width: 560px;
     }
   }
-  #subnav {
+  .subnav-toggle {
     width: 560px;
-    ul {
-      width: 560px;
+  }
+
+  .subnav-drop {
+    width: 560px;
+    span {
+      width: 530px;
     }
   }
+  // #subnav {
+  //   width: 560px;
+  //   ul {
+  //     width: 560px;
+  //   }
+  // }
   .login-form-container .form-wrap {
     width: 560px;
     .login-form {
@@ -858,12 +868,24 @@
       width: 490px;
     }
   }
-  #subnav {
+  // #subnav {
+  //   width: 490px;
+  //   ul {
+  //     width: 490px;
+  //   }
+  // }
+   .subnav-toggle {
     width: 490px;
-    ul {
-      width: 490px;
+  }
+
+  .subnav-drop {
+    width: 490px;
+    span {
+      width: 470px;
     }
   }
+
+
   .login-form-container {
     .form-wrap {
       width: 490px;
