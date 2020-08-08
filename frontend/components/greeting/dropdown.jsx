@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-
+import Tappable from 'react-tappable';
 
 class Dropdown extends React.Component {
   constructor(props) {
@@ -23,12 +23,14 @@ class Dropdown extends React.Component {
   render() {
     return (
      <div className="login-wrap">
-        <button onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave} className="login-signup"> <span>Login / Register <small>⬇︎</small></span> 
+        <Tappable onTap={this.clicker}>
+        <button onFocus={this.clicker} onBlur={this.leave} className="login-signup"> <span>Login / Register <small>⬇︎</small></span> 
          <ul className={this.state.drop ? "reveal" : "hide"}>
             <li><Link onClick={this.leave} className="log-link" to="/login">Login</Link></li>
             <li><Link onClick={this.leave} className="log-link" to="/signup">Register</Link></li>
          </ul>
-       </button> 
+       </button>
+       </Tappable>
      </div>
     ) 
   }
