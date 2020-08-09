@@ -60,6 +60,7 @@ class EventIndex extends React.Component {
               <li><Link to='/events/new'>Submit an event <br /> <small>Coming Soon!</small></Link></li>
             </ul>
           </section>
+          <SubnavToggle />
         </div>
         <div className="top-events">
          <section>
@@ -76,5 +77,37 @@ class EventIndex extends React.Component {
     )
   }
 };
+
+class SubnavToggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      drop: false
+    }
+    this.clicker = this.clicker.bind(this);
+    this.leave = this.leave.bind(this);
+  }
+
+  clicker(e) {
+    this.setState({ "drop": true });
+  }
+
+  leave(e) {
+    this.setState({ "drop": false });
+  }
+  // onBlur = { this.leave }
+  render() {
+    return (
+      <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
+        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span>All <small>⬇︎</small></span>
+          <ul className={this.state.drop ? "reveal" : "hide"}>
+            <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
+            <li><Link to='/events/new'>Submit an event</Link></li>
+          </ul>
+        </button>
+      </div>
+    )
+  }
+}
 
 export default EventIndex;
