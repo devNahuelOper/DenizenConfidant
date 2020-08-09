@@ -49,6 +49,15 @@ body {
       font-size: 12px;
     }
   }
+  span:hover {
+    background-color: black;
+    width: 100%;
+    margin: unset;
+    // padding: 14px 20px 13px 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
 }
 
 .reveal {
@@ -88,10 +97,10 @@ body {
   z-index: -1;
 }
   
-.login-signup:hover {
-  background-color: black;
-  color: white;
-}
+// .login-signup:hover {
+//   background-color: black;
+//   color: white;
+// }
 
 
 
@@ -187,6 +196,9 @@ body {
       width: 560px;
       margin: 5px 10px 6px 3px;
     }
+    span:hover {
+      padding: 19px 17px 19px 3px;
+    }
   }
   .logout-dropdown {
     span {
@@ -251,6 +263,12 @@ body {
   .login-signup, .logout-dropdown {
     span {
       width: 480px;
+    }
+   
+  }
+  .login-signup {
+    span:hover {
+      padding-right: 12px;
     }
   }
   #welcome-msg {
