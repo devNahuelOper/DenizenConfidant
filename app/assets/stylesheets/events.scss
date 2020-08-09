@@ -173,6 +173,17 @@
 
 }
 
+.eventshow-nav-container {
+  background-color: #6b96c2;
+  height: 375px;
+  .events-nav {
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
 .eventshow-header {
   margin: 0 auto;
   width: 952px;
@@ -299,10 +310,18 @@
       }
     }
   }
+
+  .eventshow-nav-container {
+    height: 260px;
+    .events-nav {
+      height: 250px;
+    }
+  }
   .eventshow-header {
     width: 675px;
     h2 {
       line-height: unset;
+      font-size: 48px;
     }
   }
   .subheader-container {

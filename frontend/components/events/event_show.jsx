@@ -46,7 +46,7 @@ class EventShow extends React.Component {
       <React.Fragment>
         <TitleComponent title={`DC: ${event.name}`} />
       <div className="events-index">
-        <div className="events-nav-container">
+        <div className="eventshow-nav-container">
         <section className="events-nav">
           <nav>
           <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
@@ -57,13 +57,24 @@ class EventShow extends React.Component {
             <li><button id="search">Search</button></li>
           </ul>
           </nav>
-          <br/>
+          {/* <br/> */}
           <section className="eventshow-header">
             <Link to='/events'><img id="prev" src={window.prevUrl} alt="Back"/> Events</Link>
             <h2>{event.name}</h2>
           </section>
         </section>
         </div>
+          <div className="subnav-container">
+            <section id="events-subnav">
+              <ul>
+                <li><Link className="form" to="/events">All</Link></li>
+                {/* <li><Link to="/signup">Register</Link></li> */}
+                <li><Link to="/">Take me back home</Link></li>
+                <li><Link to='/events/new'>Submit an event <br /> <small>Coming Soon!</small></Link></li>
+              </ul>
+            </section>
+            <SubnavToggle />
+          </div>
         <br/>
         <div className="subheader-container">
           <section className="eventshow-subheader">
@@ -96,5 +107,37 @@ class EventShow extends React.Component {
     )
   }
 };
+
+class SubnavToggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      drop: false
+    }
+    this.clicker = this.clicker.bind(this);
+    this.leave = this.leave.bind(this);
+  }
+
+  clicker(e) {
+    this.setState({ "drop": true });
+  }
+
+  leave(e) {
+    this.setState({ "drop": false });
+  }
+  // onBlur = { this.leave }
+  render() {
+    return (
+      <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
+        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span>All <small>⬇︎</small></span>
+          <ul className={this.state.drop ? "reveal" : "hide"}>
+            <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
+            <li><Link to='/events/new'>Submit an event</Link></li>
+          </ul>
+        </button>
+      </div>
+    )
+  }
+}
 
 export default EventShow;
