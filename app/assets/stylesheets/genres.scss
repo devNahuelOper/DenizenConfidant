@@ -162,8 +162,20 @@
 //Genre Show
 
 .genreshow-nav-container {
+  height: 575px;
   background-position: center;
+  // background-repeat: no-repeat;
+  background-size: cover;
+  .genre-nav {
+     height: 554px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+  }
 }
+
+
 
 .genreshow-header {
    margin: 0 auto;
@@ -172,6 +184,7 @@
     color: white;
     position: relative;
     top: 12px;
+    -webkit-text-stroke: 1px black;
   }
   a:hover {
     filter: invert(1);
@@ -180,6 +193,8 @@
     position: relative;
     top: 2px;
     width: 16px;
+    background-color: black;
+    border-radius: 50%;
   }
   h1 {
     font-size: 72px;
@@ -250,11 +265,20 @@
   }
 }
 
+#electropunk-container {
+  background-position-y: -400px;
+}
+
+#neotrance-container {
+  background-position-y: -460px;
+}
+
 // Smaller
 
 @media only screen and (max-width: 972px) {
   .genre-nav {
     width: 675px;
+    height: 128px;
     nav {
       width: 675px;
       #logo {
@@ -267,10 +291,42 @@
     }
     h1 {
       width: 675px;
-      line-height: 3em;
+      // line-height: 3em;
+      line-height: 0.7em;
+      font-size: 48px;
     }
   }
+
+
+  .genreshow-nav-container {
+    height: 340px;
+    .genre-nav {
+      height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  .genreshow-header {
+    width: 675px;
+    h1 {
+      line-height: unset;
+    }
+    a {
+      top: unset;
+    }
+  }
+
+  #genre-show {
+    .reveal li:first-child {
+      border-bottom: none;
+    }
+  }
+
+
   .genre-subnav {
+    display: none;
     width: 675px;
     ul {
       width: 675px;
@@ -280,13 +336,15 @@
     width: 675px;
   }
 
-  .genreshow-header {
-    width: 675px;
-    h1 {
-      line-height: 2em;
-    }
-    a {
-      top: 30px;
+  .genre-subnav-container {
+    border-top: unset;
+    .subnav-drop {
+      .reveal {
+        background-color: #b4be00;
+        li:first-child {
+          border-bottom: 1px solid black;
+        }
+      }
     }
   }
   .description-container, .examples {
@@ -312,7 +370,6 @@
     }
     h1 {
       width: 560px;
-      line-height: 3em;
     }
   }
   .genre-subnav {
@@ -325,13 +382,21 @@
     width: 560px;
   }
 
+  .genreshow-nav-container {
+    height: 260px;
+    .genre-nav {
+      height: 250px;
+    }
+  }
+
+
   .genreshow-header {
     width: 560px;
     h1 {
-      line-height: 2em;
+      // line-height: 2em;
     }
     a {
-      top: 30px;
+      // top: 30px;
     }
   }
   .genre-main h1 {
@@ -364,7 +429,6 @@
     }
     h1 {
       width: 490px;
-      line-height: 3em;
     }
   }
   .genre-subnav {
@@ -377,14 +441,15 @@
     width: 490px;
   }
 
+  
   .genreshow-header {
     width: 490px;
     h1 {
-      line-height: 3em;
+      // line-height: 3em;
       font-size: 52px;
     }
     a {
-      top: 30px;
+      // top: 30px;
     }
   }
  

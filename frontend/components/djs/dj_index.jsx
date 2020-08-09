@@ -110,7 +110,6 @@ class SubnavToggle extends React.Component {
       </div>
     )
   }
-
 }
 
 export default DjIndex;
