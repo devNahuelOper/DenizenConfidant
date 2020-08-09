@@ -5,6 +5,11 @@ import { TitleComponent } from '../title_component.jsx';
 class GenreShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      drop: false
+    }
+    this.clicker = this.clicker.bind(this);
+    this.leave = this.leave.bind(this);
   }
 
   componentDidMount() {
@@ -35,6 +40,14 @@ class GenreShow extends React.Component {
     }
   }
 
+  clicker(e) {
+    this.setState({ "drop": true });
+  }
+
+  leave(e) {
+    this.setState({ "drop": false });
+  }
+
   render() {
     if (!this.props.genre) {
       return null;
@@ -45,7 +58,7 @@ class GenreShow extends React.Component {
     return (
       <React.Fragment>
         <TitleComponent title={`DC: ${genre.name}`} />
-      <div className="genre-index">
+      <div className="genre-index" id="genre-show">
         <div 
           id={`${genre.name.toLowerCase().split('-').join('')}-container`}
         className="genreshow-nav-container" 
@@ -75,6 +88,14 @@ class GenreShow extends React.Component {
               <li><Link to="/">Take me back home</Link></li>
             </ul>
           </section>
+            <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
+              <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>{genre.name} <small>⬇︎</small></span>
+                <ul className={this.state.drop ? "reveal" : "hide"}>
+                  <li><Link className="log-link" to="/genres">All</Link></li>
+                  <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
+                </ul>
+              </button>
+            </div>
         </div>
 
         <div className="genre-main">

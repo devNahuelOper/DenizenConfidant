@@ -2,9 +2,9 @@
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
   background-color: #1e1e1e;
   border-bottom: 1px solid #575757;
-  .hide {
-    color: #ff0;
-  }
+  // .hide {
+  //   color: #ff0;
+  // }
 }
 
 .djs-nav-container {
@@ -460,6 +460,7 @@
 @media only screen and (max-width: 972px) {
   .djs-nav {
     width: 675px;
+    height: 128px;
     nav {
       width: 675px;
       #logo {
@@ -472,10 +473,21 @@
     }
     h1 {
       width: 675px;
-      line-height: 3em;
+      // line-height: 3em;
+      line-height: 0.7em;
+      font-size: 48px;
     }
   }
+  .djs-subnav-container {
+    border-top: unset;
+   .subnav-drop {
+      .reveal {
+      background-color: #fdff00;
+    }
+  }
+  }
   .djs-subnav {
+    display: none;
     width: 675px;
     ul {
       width: 675px;
@@ -495,12 +507,15 @@
   }
 
   .djshow-nav-container {
-    height: 475px;
-    background-position-y: center !important;
+    // height: 475px;
+    height: 340px;
+    // background-position-y: center !important;
     .djs-nav {
-      height: 454px;
+      // height: 454px;
+      height: 330px;
       #djshow-header {
         width: 675px;
+        line-height: unset;
       }
     }
   }
@@ -557,9 +572,11 @@
   }
 
   .djshow-nav-container {
-    height: 435px;
+    // height: 435px;
+    height: 260px;
     .djs-nav {
-       height: 420px;
+      //  height: 420px;
+      height: 250px;
       #djshow-header {
          width: 560px;
       }
@@ -635,9 +652,9 @@
   }
 
   .djshow-nav-container {
-    height: 400px;
+    // height: 400px;
     .djs-nav {
-       height: 380px;
+      //  height: 380px;
       #djshow-header {
         width: 490px;
       }
