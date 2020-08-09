@@ -483,8 +483,14 @@
    .subnav-drop {
       .reveal {
       background-color: #fdff00;
-    }
+     }
+   }
   }
+  #dj-show #expand {
+    height: 177px;
+    .reveal li:last-child {
+      border-top: none !important;
+    }
   }
   .djs-subnav {
     display: none;
