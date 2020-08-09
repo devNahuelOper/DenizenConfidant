@@ -258,6 +258,7 @@
 @media only screen and (max-width: 972px) {
  .events-index .events-nav {
     width: 675px;
+    height: 128px;
     nav {
       width: 675px;
       #logo {
@@ -270,11 +271,22 @@
     }
     h1 {
       width: 675px;
-      line-height: 3em;
+      font-size: 48px;
+      line-height: unset;
     }
   }
+
+ .events-index {
+   .subnav-container {
+     border-top: unset;
+   }
+  .subnav-drop .reveal {
+     background-color: #6a96c2;
+   }
+ }
  
  .events-index #events-subnav {
+    display: none;
     width: 675px;
     ul {
       width: 675px;
@@ -319,7 +331,6 @@
       }
       h1 {
         width: 560px;
-        line-height: 3em;
       }
     }
    
@@ -370,7 +381,6 @@
       }
       h1 {
         width: 490px;
-        line-height: 3em;
       }
     }
     #events-subnav {
