@@ -9,7 +9,10 @@ class DjShow extends React.Component {
       // name: this.props.dj.name,
       // genre: this.props.dj.genre,
       // songsUrl: this.props.dj.songsUrl
+      drop: false
     }
+    this.clicker = this.clicker.bind(this);
+    this.leave = this.leave.bind(this);
   }
 
 
@@ -39,6 +42,14 @@ class DjShow extends React.Component {
       search.style.color = 'currentColor';
       search.style.borderBottom = 'unset';
     }
+  }
+
+  clicker(e) {
+    this.setState({ "drop": true });
+  }
+
+  leave(e) {
+    this.setState({ "drop": false });
   }
 
   render() {
@@ -82,7 +93,16 @@ class DjShow extends React.Component {
               <li id="pending"><Link to='/djs'>Create an artist profile <br /> <small>Coming Soon!</small></Link></li>
             </ul>
           </section>
-            <SubnavToggle />
+            {/* <SubnavToggle /> */}
+            <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
+              <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>{dj.name} <small>⬇︎</small></span>
+                <ul className={this.state.drop ? "reveal" : "hide"}>
+                  <li><Link className="log-link" to="/djs">All</Link></li>
+                  <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
+                  <li><Link className="log-link" onClick={this.leave} to="/signup">Create and artist profile</Link></li>
+                </ul>
+              </button>
+            </div>
         </div>
         <div className="djsubheader-container">
           <section className="djshow-subheader">
@@ -132,38 +152,38 @@ class DjShow extends React.Component {
   }
 }
 
-class SubnavToggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      drop: false
-    }
-    this.clicker = this.clicker.bind(this);
-    this.leave = this.leave.bind(this);
-  }
+// class SubnavToggle extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       drop: false
+//     }
+//     this.clicker = this.clicker.bind(this);
+//     this.leave = this.leave.bind(this);
+//   }
 
-  clicker(e) {
-    this.setState({ "drop": true });
-  }
+//   clicker(e) {
+//     this.setState({ "drop": true });
+//   }
 
-  leave(e) {
-    this.setState({ "drop": false });
-  }
+//   leave(e) {
+//     this.setState({ "drop": false });
+//   }
 
-  render() {
-    return (
-      <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>All <small>⬇︎</small></span>
-          <ul className={this.state.drop ? "reveal" : "hide"}>
-            {/* <li><Link className="form" to={`/djs/${dj.id}`}>{dj.name}</Link></li> */}
-            <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-            <li><Link className="log-link" onClick={this.leave} to="/signup">Create and artist profile</Link></li>
-          </ul>
-        </button>
-      </div>
-    )
-  }
+//   render() {
+//     return (
+//       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
+//         <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>All <small>⬇︎</small></span>
+//           <ul className={this.state.drop ? "reveal" : "hide"}>
+//             <li><Link className="form" to={`/djs/${dj.id}`}>{dj.name}</Link></li>
+//             <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
+//             <li><Link className="log-link" onClick={this.leave} to="/signup">Create and artist profile</Link></li>
+//           </ul>
+//         </button>
+//       </div>
+//     )
+//   }
 
-}
+// }
 
 export default DjShow;

@@ -572,9 +572,11 @@
   }
 
   .djshow-nav-container {
-    height: 435px;
+    // height: 435px;
+    height: 260px;
     .djs-nav {
-       height: 420px;
+      //  height: 420px;
+      height: 250px;
       #djshow-header {
          width: 560px;
       }
@@ -650,9 +652,9 @@
   }
 
   .djshow-nav-container {
-    height: 400px;
+    // height: 400px;
     .djs-nav {
-       height: 380px;
+      //  height: 380px;
       #djshow-header {
         width: 490px;
       }

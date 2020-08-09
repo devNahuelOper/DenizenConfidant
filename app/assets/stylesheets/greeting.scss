@@ -81,8 +81,8 @@ body {
 }
 
 .hide {
-  // position: absolute;
-  top: 47px;
+  position: relative;
+  // top: 47px;
   opacity: 0.1;
   color: transparent;
   z-index: -1;
