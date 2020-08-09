@@ -49,6 +49,15 @@ body {
       font-size: 12px;
     }
   }
+  span:hover {
+    background-color: black;
+    width: 100%;
+    margin: unset;
+    // padding: 14px 20px 13px 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
 }
 
 .reveal {
@@ -88,10 +97,10 @@ body {
   z-index: -1;
 }
   
-.login-signup:hover {
-  background-color: black;
-  color: white;
-}
+// .login-signup:hover {
+//   background-color: black;
+//   color: white;
+// }
 
 
 
@@ -145,6 +154,10 @@ body {
     align-items: center;
     justify-content: space-between;
   }
+  span:hover {
+    background-color: black;
+    width: 100%;
+  }
   white-space: nowrap;
   strong {
     color: #7e7e7e;
@@ -155,9 +168,9 @@ body {
     margin-right: 17px;
   }
 }
-.logout-dropdown:hover {
-  background-color: black;
-}
+// .logout-dropdown:hover {
+//   background-color: black;
+// }
 
 .Tappable-inactive, .Tappable-active {
   width: inherit;
@@ -187,6 +200,9 @@ body {
       width: 560px;
       margin: 5px 10px 6px 3px;
     }
+    span:hover {
+      padding: 19px 17px 19px 3px;
+    }
   }
   .logout-dropdown {
     span {
@@ -194,6 +210,13 @@ body {
       width: 560px;
       box-sizing: border-box;
       margin-bottom: 4px;
+    }
+    span:hover {
+      padding-bottom: 4px;
+      margin: unset;
+      small {
+        margin-right: 37px;
+      }
     }
   }
   // .welcome-wrap:hover {
@@ -223,22 +246,6 @@ body {
 
 
 @media only screen and (max-width: 700px) {
-  // .login-wrap {
-  //   width: 591px !important;
-  //   margin: 0 auto;
-  //   height: 100%;
-  // }
-  // .login-signup {
-  //   position: relative !important;
-  //   width: 550px !important;
-  //   // margin: 0 auto;
-  //   right: unset !important;
-  //   // right: 140px !important;
-  //   padding-right: 0 !important;
-  //   background-position-x: 540px !important; 
-  //  }
-  
-
    .login-container, .welcome-container {
      width: 560px;
    }
@@ -251,6 +258,18 @@ body {
   .login-signup, .logout-dropdown {
     span {
       width: 480px;
+    }
+  }
+  .login-signup {
+    span:hover {
+      padding-right: 12px;
+    }
+  }
+  .logout-dropdown {
+    span:hover {
+      small {
+        margin-right: 32px;
+      }
     }
   }
   #welcome-msg {
