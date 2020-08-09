@@ -87,7 +87,7 @@ class EventShow extends React.Component {
                 <h4>{event.location}</h4>
               </li>
               <li>Cost/ 
-                <h4>$100.00</h4>
+              <h4>{event.cost}</h4>
               </li>
             </ul> 
           </section>
