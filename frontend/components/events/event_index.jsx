@@ -62,6 +62,39 @@ class EventIndex extends React.Component {
           </section>
           <SubnavToggle />
         </div>
+        <div className="local-events-wrap">
+          <section className="local-events">
+            <h1 id="content-title">Popular events in New York</h1>
+            <hr />
+            <ul className="eventlist">
+              <li className="event">
+                <article>
+
+                </article>
+              </li>
+              <li className="event">
+                <article>
+
+                </article>
+              </li>
+              <li className="event">
+                <article>
+
+                </article>
+              </li>
+              <li className="event">
+                <article>
+
+                </article>
+              </li>
+              <li className="event">
+                <article>
+
+                </article>
+              </li>
+            </ul>
+          </section>
+        </div>
         <div className="top-events">
          <section>
             <h1 id="content-title">Top Events Worldwide</h1>
