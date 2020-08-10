@@ -143,7 +143,7 @@
         height: 75px;
       }
       #img-2 {
-        border: 1px solid #add1f5;
+        // border: 1px solid #add1f5;
       }
       a {
         color: #6b96c2;
@@ -530,6 +530,12 @@
       }
     }
   }
+
+  .create-event {
+    .form-wrap {
+      width: 560px;
+    }
+  }
 }
 
 @media only screen and (max-width: 560px) {
@@ -584,6 +590,12 @@
         width: 490px;
         height: 300px;
       }
+    }
+  }
+
+   .create-event {
+    .form-wrap {
+      width: 490px;
     }
   }
 }
