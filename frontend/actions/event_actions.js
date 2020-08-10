@@ -3,6 +3,8 @@ import * as EventApiUtil from '../util/event_api_util';
 export const RECEIVE_EVENTS = 'RECEIVE_EVENTS';
 export const RECEIVE_EVENT = 'RECEIVE_EVENT';
 export const REMOVE_EVENT = 'REMOVE_EVENT';
+export const RECEIVE_EVENT_ERRORS = 'RECEIVE_EVENT_ERRORS';
+export const CLEAR_EVENT_ERRORS = 'CLEAR_EVENT_ERRORS';
 
 export const receiveEvents = events => ({
   type: RECEIVE_EVENTS,
@@ -14,10 +16,19 @@ export const receiveEvent = event => ({
   event
 });
 
-export const removeEvent = id => ({
+export const removeEvent = eventId => ({
   type: REMOVE_EVENT,
-  id
+  eventId
 });
+
+export const receiveEventErrors = errors => ({
+  type: RECEIVE_EVENT_ERRORS,
+  errors
+});
+
+export const clearEventErrors = () => ({
+  type: CLEAR_EVENT_ERRORS
+})
 
 export const fetchEvents = events => dispatch => (
   EventApiUtil.fetchEvents(events)
@@ -36,7 +47,10 @@ export const fetchEvent = eventId => dispatch => (
 
 export const createEvent = event => dispatch => (
   EventApiUtil.createEvent(event)
-    .then(event => dispatch(receiveEvent(event)))
+    .then(event => dispatch(receiveEvent(event))
+    ), errors => (
+      dispatch(receiveEventErrors(errors.responseJSON))
+    )
 );
 
 export const updateEvent = event => dispatch => (
@@ -44,7 +58,7 @@ export const updateEvent = event => dispatch => (
     .then(event => dispatch(receiveEvent(event)))
 );
 
-export const deleteEvent = id => dispatch => (
-  EventApiUtil.deleteEvent(id)
-    .then(() => dispatch(removeEvent(id)))
+export const deleteEvent = eventId => dispatch => (
+  EventApiUtil.deleteEvent(eventId)
+    .then(() => dispatch(removeEvent(eventId)))
 );

@@ -383,6 +383,17 @@
   color: white;
 }
 
+.event-form {
+  width: 570px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-errors {
+  color: white;
+  margin-top: 91px;
+}
+
 
 // Smaller
 
@@ -472,6 +483,14 @@
         height: 400px;
       }
     }
+  }
+
+  .event-form {
+    flex-direction: column;
+    width: unset;
+  }
+  .event-errors {
+    margin: 40px 0;
   }
 }
 
