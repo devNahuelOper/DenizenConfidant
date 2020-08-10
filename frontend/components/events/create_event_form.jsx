@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
@@ -22,9 +22,9 @@ class CreateEventForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.receiveEventErrors([]);
-  // }
+  componentDidMount() {
+    this.props.receiveEventErrors([]);
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -35,8 +35,10 @@ class CreateEventForm extends React.Component {
     formData.append('event[location]', this.state.location);
     formData.append('event[venue]', this.state.venue);
     formData.append('event[description]', this.state.description);
-    this.props.createEvent(formData);
+    formData.append('event[headliners]', this.state.headliners);
+    formData.append('event[cost]', this.state.cost);
     this.props.receiveEventErrors(this.props.errors);
+    this.props.createEvent(formData);
   }
 
   update(field) {
@@ -58,6 +60,7 @@ class CreateEventForm extends React.Component {
   }
 
   render() {
+    // const [error, setError] = useState(false);
     const { name, date, venue, location, description } = this.state;
     return (
       <div className="create-event">
