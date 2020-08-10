@@ -5,9 +5,19 @@ import { withRouter } from 'react-router';
 class CreateEventForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.event;
+    // this.state = this.props.event;
+    this.state = {
+      name: '',
+      date: '',
+      location: '',
+      venue: '',
+      description: '',
+      headliners: '',
+      cost: ''
+    }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
   }
 
   handleSubmit(e) {
@@ -63,7 +73,7 @@ class CreateEventForm extends React.Component {
               <li> 
                 <label>Event date / <br />
                   <input
-                    type="text"
+                    type="date"
                     value={date}
                     onChange={this.update('date')} />
                 </label>
@@ -77,6 +87,7 @@ class CreateEventForm extends React.Component {
                     onChange={this.update('location')} /> */}
                 
                 <select name="Location" id="location-select" value={location || 'United States'} onChange={this.update('location')}>
+                  <option value="--Select a country--" disabled={true}>--Select a country--</option>
                   <option value="Argentina">Argentina</option>
                   <option value="Brazil">Brazil</option>
                   <option value="China">China</option>

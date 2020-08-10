@@ -9,7 +9,9 @@ const mapStateToProps = state => ({
     date: '',
     location: '',
     venue: '',
-    description: ''
+    description: '',
+    headliners: '',
+    cost: ''
   },
   formType: 'Submit Event',
   // events: Object.values(state.entities.events)
