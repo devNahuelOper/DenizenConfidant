@@ -132,7 +132,7 @@ class SubnavToggle extends React.Component {
         <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span>All <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
             <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-            <li><Link to='/events/new'>Submit an event</Link></li>
+            <li><Link className="log-link" to='/events/new'>Submit an event</Link></li>
           </ul>
         </button>
       </div>

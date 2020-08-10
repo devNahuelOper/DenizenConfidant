@@ -624,7 +624,7 @@
     left: -1px;
     li {
       height: 40px;
-      padding: 10px 0 14px 20px;
+      // padding: 10px 0 14px 20px;
     }
     li:hover {
       background-color: black;
@@ -633,6 +633,7 @@
     }
     .log-link {
       white-space: nowrap;
+      padding: 11px 0 14px 20px;
     }
   }
   span {

@@ -20,19 +20,19 @@ class Dropdown extends React.Component {
   leave(e) {
     this.setState({ "drop": false });
   }
-  
+  // onBlur = { this.leave }
   render() {
     return (
      <div className="login-wrap">
-        {/* <Tappable onTap={this.clicker} onTouchLeave={this.leave}> */}
-        <button onFocus={this.clicker} onBlur={this.leave} ontouchleave={this.leave} className="login-signup"> 
+        <Tappable onTap={this.clicker} onTouchEnter={this.clicker} onTouchLeave={this.leave}>
+        <button onFocus={this.clicker} onBlur={this.leave}  className="login-signup"> 
         <span>Login / Register <small>⬇︎</small></span> 
          <ul className={this.state.drop ? "reveal" : "hide"}>
             <li><Link onClick={this.leave} className="log-link" to="/login">Login</Link></li>
             <li><Link onClick={this.leave} className="log-link" to="/signup">Register</Link></li>
          </ul>
        </button>
-       {/* </Tappable> */}
+       </Tappable>
      </div>
     ) 
   }
