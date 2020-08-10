@@ -50,6 +50,21 @@ transmission = Event.create({name: 'Transmission', venue: 'O2 Arena', location: 
 transmission_photo = open('https://denizen-confidant-seeds.s3.us-east-1.amazonaws.com/transmission.jpeg')
 transmission.photo.attach(io: transmission_photo, filename: 'transmission.jpeg')
 
+lostminds = Event.create({name: 'Lost Minds', venue: 'TBA', location: 'New York', date: 20200809, headliners: 'SIMÓN HEYLIGER, SIMÓN WISH, Little New Yorkers, B2B, SKEL', description: 'Located at 395 Wythe Ave on the corner of South 6th St. and Wythe Ave in the shadow of the Williamsburg Bridge, TBA is 2 blocks from the world famous Peter Luger\'s Steakhouse in the historic and red-hot Southside neighborhood of Williamsburg', cost: '$40', local: true})
+lostminds.photo.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/events/lostminds.png'), filename: 'lostminds.png')
+
+allmyfriends = Event.create({name: 'All My Friends', venue: 'House Of Yes', location: 'New York', date: 20200814, headliners: 'DJ Bruce, Rimarkable, Mickey Perez', description: 'My friends. Your friends. Our friends. Best Friends, new friends, old friends, weird friends, wonderful friends, sexy friends, funny friends. Friends with benefits, friends with feelings. Make your own reunion. Make a new connection.', cost: '$30', local: true})
+allmyfriends.photo.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/events/allmyfriends.png'), filename: 'allmyfriends.png')
+
+edmlightsout = Event.create({name: 'EDM Lights Out Midnight Yacht Party', venue: 'Skyport Marina', location: 'New York', date: 20200815, headliners: 'Christian Arrango, Andy Cardona and more!', description: 'Saturday Aug 15th, 2020 - The Official House Midnight LED Booze Cruise Yacht party at Liberty Landing Marina located at 80 Audrey Zapp Dr, Jersey City, NJ 07305. Join us at the Hottest House Booze Cruise with NYC Hottests Djs -- Dj Christian Arrango, Andy Cardona & more enjoying the Manhattan Cities Skyline!', cost: '$50', local: true})
+edmlightsout.photo.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/events/edmlightsout.png'), filename: 'edmlightsout.png')
+
+chrislake = Event.create({name: 'Chris Lake', venue: 'Brooklyn Mirage', location: 'New York', date: 20200821, headliners: 'Chris Lake + more TBA!', description: 'The Brooklyn Mirage is a breathtaking open-air sanctuary in the heart of the Avant Gardner complex. The inner courtyard is a totally immersive space, surrounded by towering walls lined with tropical plants and captivating video projections.', cost: '$55', local: true})
+chrislake.photo.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/events/chrislake.png'), filename: 'chrislake.png')
+
+autograf = Event.create({name: 'Autograf', venue: 'Elsewhere Hall', location: 'New York', date: 20200822, headliners: 'Autograf + more TBA!', description: 'Elsewhere is a large venue, nightclub, and arts space housed in a converted warehouse in Bushwick, Brooklyn. Featuring multiple rooms, a large seasonal rooftop, a lounge bar, and an outdoor courtyard, Elsewhere is dedicated to the best in underground club music.', cost: '$35', local: true})
+autograf.photo.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/events/autograf.png'), filename: 'autograf.png')
+
 # Djs
 # aboveandbeyond = Dj.create({name: 'Above and Beyond', genre: 'Melodic-House Progressive-House Trance', nationality: 'UK 🇬🇧', bio: 'Above & Beyond are an English electronic music group consisting of Jono Grant, Tony McGuinness, and Paavo Siljamäki. Formed in 2000, they are the owners of London-based electronic dance music labels Anjunabeats and Anjunadeep, and also host a weekly radio show titled Group Therapy Radio. The trio has been consistently ranked among DJ Magazines Top 100 DJs Poll, having placed at No. 6 in 2007, No. 4 in 2008 & 2009, No. 5 in 2010 & 2011, No. 51 in 2018, and most recently No. 22 in 2019.'})
 # aboveandbeyond.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/Anjunafamily.mp3'), filename: 'Anjunafamily.mp3')
