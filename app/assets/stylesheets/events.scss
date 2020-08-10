@@ -328,10 +328,24 @@
   }
  
 }
+
+.new-event-formlist {
+  margin-top:24px;
+  li {
+    
+  }
+}
+
 .text-input {
   width: 464px;
   height: 24px;
   border-radius: 2px;
+}
+
+#location-select {
+  width: 178px;
+  height: 22px;
+  -webkit-appearance: auto;
 }
 #venue-input {
   height: 30px;
