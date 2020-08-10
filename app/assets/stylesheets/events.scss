@@ -330,6 +330,7 @@
     color: black;
     box-sizing: border-box;
     padding-left: 4px;
+    height: 30px;
   }
 }
 
@@ -342,21 +343,24 @@
 
 .text-input {
   width: 464px;
-  height: 24px;
+  height: 30px;
   border-radius: 2px;
   -webkit-appearance: auto;
 }
 #name-input:focus {
   outline: -webkit-focus-ring-color auto 1px;
 }
+#date-input {
+  width: 178px;
+}
 
 #location-select {
   width: 178px;
-  height: 22px;
+  height: 30px;
   -webkit-appearance: auto;
+  font-size: 16px;
 }
 #venue-input {
-  height: 30px;
   border-radius: 0;
   box-sizing: border-box;
   padding-left: 10px;
