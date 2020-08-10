@@ -1,14 +1,20 @@
 class Api::EventsController < ApplicationController
   before_action :require_logged_in, only: [:destroy]
 
+  # def create
+  #   @event = Event.new(event_params)
+  #   if @event.save
+  #     render json: "api/events/new"
+  #   else
+  #     render json: @event.errors.full_messages
+  #   end
+  # end
+
   def create
-    @event = Event.new(event_params)
-    if @event.save
-      render json: "api/events/new"
-    else
-      render json: @event.errors.full_messages
-    end
+    @event = Event.create!(event_params)
+    render :show
   end
+
 
   def index
     @events = Event.all

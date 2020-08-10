@@ -12,11 +12,11 @@ export const fetchEvent = eventId => (
   })
 );
 
-export const createEvent = event => (
+export const createEvent = createEventForm => (
   $.ajax({
     method: 'POST',
     url: 'api/events',
-    data:  { event } ,
+    data:   createEventForm,
     contentType: false,
     processData: false
   })
