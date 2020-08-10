@@ -83,32 +83,6 @@ class EventIndex extends React.Component {
               )}
 
               {/* <LocalEvent event={event} key={event.id} /> */}
-
-              {/* <li className="event">
-                <article>
-
-                </article>
-              </li>
-              <li className="event">
-                <article>
-
-                </article>
-              </li>
-              <li className="event">
-                <article>
-
-                </article>
-              </li>
-              <li className="event">
-                <article>
-
-                </article>
-              </li>
-              <li className="event">
-                <article>
-
-                </article>
-              </li> */}
             </ul>
           </section>
         </div>
