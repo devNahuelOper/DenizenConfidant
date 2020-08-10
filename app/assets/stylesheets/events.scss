@@ -263,7 +263,7 @@
         font-size: 12px;
         h3 {
           position: relative;
-          top: -10px;
+          top: -15px;
           color: #6b96c2;
           font-size: 16px;
           font-weight: normal;
@@ -272,7 +272,7 @@
         }
         h4 {
           position: relative;
-          top: -16px;
+          top: -24px;
           color: black;
           font-size: 16px;
           font-weight: normal;
@@ -280,6 +280,15 @@
         }
       }
     }
+  }
+}
+
+#event-date {
+  h3 {
+    top: -22px;
+  }
+  h4 {
+    top: -20px;
   }
 }
 
