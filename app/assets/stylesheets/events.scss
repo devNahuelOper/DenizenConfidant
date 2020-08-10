@@ -335,6 +335,13 @@
 
   .local-events {
     width: 675px;
+    .event {
+      width: 126px;
+      margin-right: 10px;
+      img {
+        width: 130px;
+      }
+    }
   }
 
  .events-index {
@@ -405,6 +412,12 @@
 
     .local-events {
       width: 560px;
+      .event {
+        font-size: 10px;
+        img {
+          width: 103px;
+        }
+      }
     }
    
     #events-subnav {
@@ -464,6 +477,13 @@
     }
     .local-events {
       width: 490px;
+      .event {
+        font-size: 9px;
+        margin-right: 11px;
+        img {
+          width: 89px;
+        }
+      }
     }
     .top-events {
        section, #content-title, .eventlist, hr {
