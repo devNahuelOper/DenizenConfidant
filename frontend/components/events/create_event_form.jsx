@@ -13,12 +13,18 @@ class CreateEventForm extends React.Component {
       venue: '',
       description: '',
       headliners: '',
-      cost: ''
+      cost: '',
+      errors: this.props.errors
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
+
+  // componentDidMount() {
+  //   this.props.receiveEventErrors([]);
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -30,12 +36,25 @@ class CreateEventForm extends React.Component {
     formData.append('event[venue]', this.state.venue);
     formData.append('event[description]', this.state.description);
     this.props.createEvent(formData);
+    this.props.receiveEventErrors(this.props.errors);
   }
 
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
     }
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {`- ${error}`}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
@@ -58,7 +77,7 @@ class CreateEventForm extends React.Component {
         </div>
         <div className="event-form-container">
           <div className="form-wrap">
-            <form onSubmit={this.handleSubmit}>
+            <form className="event-form" onSubmit={this.handleSubmit}>
              <ul className="new-event-formlist">
               <li>
                 <label>Event title / <br/>
@@ -134,6 +153,11 @@ class CreateEventForm extends React.Component {
                 <input id="submit-event" type="submit" value="Submit"/>
             </li>
               </ul>
+              {this.props.errors.length > 0  &&
+                <aside className="event-errors">Notifications /
+             {this.renderErrors()}
+                </aside>
+              }
             </form>
           </div>
         </div>
