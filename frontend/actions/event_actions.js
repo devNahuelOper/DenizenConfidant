@@ -45,12 +45,18 @@ export const fetchEvent = eventId => dispatch => (
 //     .then(event => dispatch(receiveEvent(event)))
 // );
 
+// export const createEvent = event => dispatch => (
+//   EventApiUtil.createEvent(event)
+//     .then(event => dispatch(receiveEvent(event))
+//     ), errors => (
+//       dispatch(receiveEventErrors(errors.responseJSON))
+//     )
+// );
+
 export const createEvent = event => dispatch => (
   EventApiUtil.createEvent(event)
-    .then(event => dispatch(receiveEvent(event))
-    ), errors => (
-      dispatch(receiveEventErrors(errors.responseJSON))
-    )
+    .then(event => dispatch(receiveEvent(event)))
+    .fail((errors) => dispatch(receiveEventErrors(errors.responseJSON)))
 );
 
 export const updateEvent = event => dispatch => (
