@@ -51,38 +51,48 @@ class CreateEventForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
               <label>Event title / <br/>
                 <input 
+                  className="text-input"
                   type="text"
                   value={name}
                   onChange={this.update('name')}/>
               </label>
+              <br/>
               <label>Event date / <br />
                 <input
+
                   type="text"
                   value={date}
                   onChange={this.update('date')} />
               </label>
+              <br/>
               <label>Location / <br />
                 <input
                   type="text"
                   value={location}
                   onChange={this.update('location')} />
               </label>
+              <br/>
               <label>Venue / <br />
                 <input
+                  className="text-input"
+                  id="venue-input"
                   type="text"
                   placeholder="Type venue name"
                   value={venue}
                   onChange={this.update('venue')} />
               </label>
-              <label>Description / <br />
-                <input
-                  type="text"
+              <br/>
+              <label>Description / <br/>
+              <textarea name="Description"
+                  className="text-input" 
+                  id="description-input" 
                   placeholder="Type a brief description of event"
                   value={description}
-                  onChange={this.update('description')} />
+                  onChange={this.update('description')}>
+              </textarea>
               </label>
               <br/>
-              <input type="submit" value="Submit"/>
+              <input id="submit-event" type="submit" value="Submit"/>
             </form>
           </div>
         </div>

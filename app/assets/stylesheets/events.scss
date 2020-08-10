@@ -315,9 +315,45 @@
   }
 }
 
+// Create Event Form
+
+.create-event {
+
+}
+
 .event-form-container {
   background-color: #404040;
+  label {
+    color: white;
+  }
+ 
 }
+.text-input {
+  width: 464px;
+  height: 24px;
+  border-radius: 2px;
+}
+#venue-input {
+  height: 30px;
+  border-radius: 0;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+#description-input {
+  height: 52px;
+}
+
+#submit-event {
+  background-color: #ffa100;
+  width: 304px;
+  height: 30px;
+  text-align: center;
+}
+#submit-event:hover {
+  background-color: black;
+  color: white;
+}
+
 
 // Smaller
 
@@ -409,6 +445,7 @@
     }
   }
 }
+
 
 @media only screen and (max-width: 700px) {
   .events-index {
