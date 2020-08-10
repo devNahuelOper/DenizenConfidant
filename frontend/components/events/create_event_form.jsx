@@ -74,6 +74,8 @@ class CreateEventForm extends React.Component {
               <li> 
                 <label>Event date / <br />
                   <input
+                    id="date-input"
+                    // className="text-input"
                     type="date"
                     value={date}
                     onChange={this.update('date')} />
