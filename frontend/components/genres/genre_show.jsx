@@ -89,7 +89,7 @@ class GenreShow extends React.Component {
             </ul>
           </section>
             <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-              <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>{genre.name} <small>⬇︎</small></span>
+              <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span>{genre.name} <small>⬇︎</small></span>
                 <ul className={this.state.drop ? "reveal" : "hide"}>
                   <li><Link className="log-link" to="/genres">All</Link></li>
                   <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
@@ -104,8 +104,8 @@ class GenreShow extends React.Component {
             <hr/>
             <div id="genre-bio">
               <ul>
-              {genre.description.split('  ').map(par =>
-                <li key={par[0]}>{par}<br/></li> 
+              {genre.description.split('  ').map((par, i) =>
+                <li key={i}>{par}<br/></li> 
                 )} 
               </ul>
             </div>

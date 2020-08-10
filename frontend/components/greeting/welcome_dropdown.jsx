@@ -36,7 +36,7 @@ class WelcomeDropdown extends React.Component {
          </span>
         <ul className={this.state.drop ? "reveal" : "hide"}>
             <li><Link onClick={this.leave} className="log-link" to={`/users/${currentUser.id}`}>My Profile</Link></li>
-            <li onClick={logout}>Logout</li>
+              <li className="log-link" onClick={logout}>Logout</li>
           </ul>
        </button>
        </Tappable>
