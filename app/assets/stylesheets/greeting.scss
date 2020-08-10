@@ -68,7 +68,7 @@ body {
   z-index: 2000;
   li {
     box-sizing: border-box;
-    padding: 14px 0 14px 20px;
+    // padding: 14px 0 14px 20px;
     font-size: 16px;
     border: 1px solid #454545;
     width: inherit;
@@ -79,8 +79,10 @@ body {
 }
 
 .log-link {
+  display: inline-block;
   width: 100%;
-  padding-right: 133px;
+  height: 100%;
+  padding: 14px 0 14px 20px;
 }
 
 
@@ -124,7 +126,7 @@ body {
       cursor: pointer;
       // height: 100%;
       width: inherit;
-      padding: 14px 0 14px 20px;
+      // padding: 14px 0 14px 20px;
       border: 1px solid #454545;
       border-right: none;
       border-left: none;
@@ -240,7 +242,7 @@ body {
     height: 48px;
   }
   .log-link {
-    padding-right: 520px;
+    // padding-right: 520px;
   }
 }
 
@@ -277,7 +279,7 @@ body {
     font-size: 12px;
   }
   .log-link {
-    padding-right: 435px !important;
+    // padding-right: 435px !important;
   }
   .login-container, .welcome-container {
     width: 490px;
