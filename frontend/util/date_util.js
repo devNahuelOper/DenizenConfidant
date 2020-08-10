@@ -30,6 +30,71 @@ export const formatDate = date => {
   return `${month} ${day}, ${year} (${dayOfWeek})`;
 };
 
+export const formatDateStyle = date => {
+  const months = {
+    0: 'Jan',
+    1: 'Feb',
+    2: 'Mar',
+    3: 'Apr',
+    4: 'May',
+    5: 'Jun',
+    6: 'Jul',
+    7: 'Aug',
+    8: 'Sep',
+    9: 'Oct',
+    10: 'Nov',
+    11: 'Dec',
+  };
+  const daysOfWeek = {
+    0: 'Sun',
+    1: 'Mon',
+    2: 'Tue',
+    3: 'Wed',
+    4: 'Thu',
+    5: 'Fri',
+    6: 'Sat',
+  };
+  const obj = new Date(date);
+  const month = months[obj.getMonth()];
+  const day = obj.getDate();
+  const year = obj.getFullYear();
+  const dayOfWeek = daysOfWeek[obj.getDay()];
+  return `${dayOfWeek}, ${day} ${month} ${year}`;
+}
+
+export const formatDateShowStyle = date => {
+  const months = {
+    0: 'Jan',
+    1: 'Feb',
+    2: 'Mar',
+    3: 'Apr',
+    4: 'May',
+    5: 'Jun',
+    6: 'Jul',
+    7: 'Aug',
+    8: 'Sep',
+    9: 'Oct',
+    10: 'Nov',
+    11: 'Dec',
+  };
+  const daysOfWeek = {
+    0: 'Sunday',
+    1: 'Monday',
+    2: 'Tuesday',
+    3: 'Wednesday',
+    4: 'Thursday',
+    5: 'Friday',
+    6: 'Saturday',
+  };
+  const obj = new Date(date);
+  const month = months[obj.getMonth()];
+  const day = obj.getDate();
+  const year = obj.getFullYear();
+  const dayOfWeek = daysOfWeek[obj.getDay()];
+  return `${dayOfWeek} ${day} ${month} ${year}`;
+}
+
+
 export const formatTime = date => {
   const obj = new Date(date);
   const fullHours = obj.getHours();

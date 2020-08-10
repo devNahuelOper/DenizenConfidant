@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TitleComponent } from '../title_component.jsx';
+import {
+  formatDateShowStyle
+} from '../../util/date_util';
 
 class EventShow extends React.Component {
   constructor(props) {
@@ -79,8 +82,9 @@ class EventShow extends React.Component {
         <div className="subheader-container">
           <section className="eventshow-subheader">
             <ul className="details">
-              <li>Date/ 
-                <h3>{event.date}</h3> 
+              <li id="event-date">Date/ 
+                <h4>{formatDateShowStyle(event.date).split(' ')[0]}</h4> 
+                <h3>{formatDateShowStyle(event.date).split(' ').slice(1).join(' ')}</h3> 
               </li>
               <li>Venue/ 
                 <h3>{event.venue}</h3>

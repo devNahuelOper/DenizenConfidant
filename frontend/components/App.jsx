@@ -80,9 +80,9 @@ class App extends React.Component {
           <AuthRoute path="/signup" component={withTitle({ component: SignupFormContainer, title: 'Register as a DC member today' })} />
           <ProtectedRoute path="/users/:userId" component={UserProfile}/>
           <Route exact path="/" component={withTitle({ component: SplashContainer, title: 'DC: Denizen Confidant - electronic music online'})} />
+          <Route path="/events/new" component={CreateEventFormContainer} />
           <Route exact path="/events" component={EventsIndexContainer} />
           <Route exact path="/events/:eventId" component={EventShowContainer} />
-          <Route path="/events/new" component={CreateEventFormContainer} />
           <Route exact path="/djs" component={DjsIndexContainer} />
           <Route exact path="/djs/:djId" component={DjShowContainer} />
           <Route exact path="/genres" component={GenresIndexContainer} />
