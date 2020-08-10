@@ -346,6 +346,9 @@
   border-radius: 2px;
   -webkit-appearance: auto;
 }
+#name-input:focus {
+  outline: -webkit-focus-ring-color auto 1px;
+}
 
 #location-select {
   width: 178px;

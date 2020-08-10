@@ -63,6 +63,7 @@ class CreateEventForm extends React.Component {
               <li>
                 <label>Event title / <br/>
                   <input 
+                    id="name-input"
                     className="text-input"
                     type="text"
                     value={name}
