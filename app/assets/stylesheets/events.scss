@@ -530,6 +530,12 @@
       }
     }
   }
+
+  .create-event {
+    .form-wrap {
+      width: 560px;
+    }
+  }
 }
 
 @media only screen and (max-width: 560px) {
@@ -584,6 +590,12 @@
         width: 490px;
         height: 300px;
       }
+    }
+  }
+
+   .create-event {
+    .form-wrap {
+      width: 490px;
     }
   }
 }
