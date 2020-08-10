@@ -93,7 +93,7 @@ class EventIndex extends React.Component {
             <h1 id="content-title">Top Events Worldwide</h1>
             <hr/>
           <ul className="eventlist">
-            {events.map(event => 
+            {events.slice(0, 8).map(event => 
            
             <EventIndexItem key={event.id} event={event}/>
             

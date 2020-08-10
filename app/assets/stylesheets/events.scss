@@ -326,12 +326,34 @@
   label {
     color: white;
   }
- 
+  input {
+    color: black;
+    box-sizing: border-box;
+    padding-left: 4px;
+  }
 }
+
+.new-event-formlist {
+  margin: 24px 0;
+  li {
+    
+  }
+}
+
 .text-input {
   width: 464px;
   height: 24px;
   border-radius: 2px;
+  -webkit-appearance: auto;
+}
+#name-input:focus {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+#location-select {
+  width: 178px;
+  height: 22px;
+  -webkit-appearance: auto;
 }
 #venue-input {
   height: 30px;
@@ -341,6 +363,9 @@
 }
 #description-input {
   height: 52px;
+  color: black;
+  box-sizing: border-box;
+  padding-left: 4px;
 }
 
 #submit-event {

@@ -26,6 +26,7 @@ const EventIndexItem = ({ event, deleteEvent}) => (
       <br/>
       <p id="description">{event.description}</p>
       {/* <img id="event-img" src={event.photoUrl}/> */}
+      {/* <button onClick={() => deleteEvent(event.id)}>Cancel Event</button> */}
       </article>
       }
       <br/>
