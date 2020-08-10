@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
@@ -13,11 +13,17 @@ class CreateEventForm extends React.Component {
       venue: '',
       description: '',
       headliners: '',
-      cost: ''
+      cost: '',
+      errors: this.props.errors
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.receiveEventErrors([]);
   }
 
   handleSubmit(e) {
@@ -29,6 +35,9 @@ class CreateEventForm extends React.Component {
     formData.append('event[location]', this.state.location);
     formData.append('event[venue]', this.state.venue);
     formData.append('event[description]', this.state.description);
+    formData.append('event[headliners]', this.state.headliners);
+    formData.append('event[cost]', this.state.cost);
+    this.props.receiveEventErrors(this.props.errors);
     this.props.createEvent(formData);
   }
 
@@ -38,7 +47,20 @@ class CreateEventForm extends React.Component {
     }
   }
 
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {`- ${error}`}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
+    // const [error, setError] = useState(false);
     const { name, date, venue, location, description } = this.state;
     return (
       <div className="create-event">
@@ -58,7 +80,7 @@ class CreateEventForm extends React.Component {
         </div>
         <div className="event-form-container">
           <div className="form-wrap">
-            <form onSubmit={this.handleSubmit}>
+            <form className="event-form" onSubmit={this.handleSubmit}>
              <ul className="new-event-formlist">
               <li>
                 <label>Event title / <br/>
@@ -74,6 +96,8 @@ class CreateEventForm extends React.Component {
               <li> 
                 <label>Event date / <br />
                   <input
+                    id="date-input"
+                    // className="text-input"
                     type="date"
                     value={date}
                     onChange={this.update('date')} />
@@ -132,6 +156,11 @@ class CreateEventForm extends React.Component {
                 <input id="submit-event" type="submit" value="Submit"/>
             </li>
               </ul>
+              {this.props.errors.length > 0  &&
+                <aside className="event-errors">Notifications /
+             {this.renderErrors()}
+                </aside>
+              }
             </form>
           </div>
         </div>

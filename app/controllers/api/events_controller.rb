@@ -6,7 +6,7 @@ class Api::EventsController < ApplicationController
     if @event.save
       render :show
     else
-      render json: @event.errors.full_messages
+      render json: @event.errors.full_messages, status: 422
     end
   end
 
