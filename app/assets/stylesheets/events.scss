@@ -114,6 +114,10 @@
     }
   }
 }
+
+#content-title {
+  font-size: 24px;
+}
   .local-events-wrap {
     background-color: #f0f0f0;
   }
@@ -143,6 +147,10 @@
       }
       a {
         color: #6b96c2;
+      }
+      a:hover {
+        color: white;
+        background-color: #6b96c2;
       }
       #venue {
         color: #9c9c9c;
@@ -327,6 +335,13 @@
 
   .local-events {
     width: 675px;
+    .event {
+      width: 126px;
+      margin-right: 10px;
+      img {
+        width: 130px;
+      }
+    }
   }
 
  .events-index {
@@ -397,6 +412,12 @@
 
     .local-events {
       width: 560px;
+      .event {
+        font-size: 10px;
+        img {
+          width: 103px;
+        }
+      }
     }
    
     #events-subnav {
@@ -456,6 +477,13 @@
     }
     .local-events {
       width: 490px;
+      .event {
+        font-size: 9px;
+        margin-right: 11px;
+        img {
+          width: 89px;
+        }
+      }
     }
     .top-events {
        section, #content-title, .eventlist, hr {
