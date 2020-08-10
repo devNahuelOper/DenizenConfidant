@@ -36,7 +36,7 @@ export const fetchEvent = eventId => dispatch => (
 
 export const createEvent = event => dispatch => (
   EventApiUtil.createEvent(event)
-    .then(event => dispatch(reveiveEvent(event)))
+    .then(event => dispatch(receiveEvent(event)))
 );
 
 export const updateEvent = event => dispatch => (

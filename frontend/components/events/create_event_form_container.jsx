@@ -9,14 +9,16 @@ const mapStateToProps = state => ({
     date: '',
     location: '',
     venue: '',
-    description: ''
+    description: '',
+    headliners: '',
+    cost: ''
   },
   formType: 'Submit Event',
   // events: Object.values(state.entities.events)
 });
 
 const mapDispatchToProps = dispatch => ({
-  action: event => dispatch(createEvent(event))
+  createEvent: event => dispatch(createEvent(event))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateEventForm);

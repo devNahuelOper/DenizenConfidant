@@ -1,17 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 class CreateEventForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.event;
+    // this.state = this.props.event;
+    this.state = {
+      name: '',
+      date: '',
+      location: '',
+      venue: '',
+      description: '',
+      headliners: '',
+      cost: ''
+    }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state);
+    // this.props.createEvent(this.state);
+    const formData = new FormData();
+    formData.append('event[name]', this.state.name);
+    formData.append('event[date]', this.state.date);
+    formData.append('event[location]', this.state.location);
+    formData.append('event[venue]', this.state.venue);
+    formData.append('event[description]', this.state.description);
+    this.props.createEvent(formData);
   }
 
   update(field) {
@@ -21,8 +39,9 @@ class CreateEventForm extends React.Component {
   }
 
   render() {
+    const { name, date, venue, location, description } = this.state;
     return (
-      <div>
+      <div className="create-event">
         <div id="nav-container">
           <section id="navbar">
             <nav>
@@ -40,12 +59,79 @@ class CreateEventForm extends React.Component {
         <div className="event-form-container">
           <div className="form-wrap">
             <form onSubmit={this.handleSubmit}>
-              <label>Event title/ <br/>
-                <input 
-                  type="text"
-                  value={this.state.name}
-                  onChange={this.update('name')}/>
-              </label>
+             <ul className="new-event-formlist">
+              <li>
+                <label>Event title / <br/>
+                  <input 
+                    id="name-input"
+                    className="text-input"
+                    type="text"
+                    value={name}
+                    onChange={this.update('name')}/>
+                  </label>
+              </li>
+              <br/>
+              <li> 
+                <label>Event date / <br />
+                  <input
+                    type="date"
+                    value={date}
+                    onChange={this.update('date')} />
+                </label>
+              </li> 
+              <br/>
+              <li>
+                <label>Location / <br />
+                  {/* <input
+                    type="text"
+                    value={location}
+                    onChange={this.update('location')} /> */}
+                
+                <select name="Location" id="location-select" value={location || 'United States'} onChange={this.update('location')}>
+                  <option value="--Select a country--" disabled={true}>--Select a country--</option>
+                  <option value="Argentina">Argentina</option>
+                  <option value="Brazil">Brazil</option>
+                  <option value="China">China</option>
+                  <option value="France">France</option>
+                  <option value="Germany">Germany</option>
+                  <option value="Italy">Italy</option>
+                  <option value="Japan">Japan</option>
+                  <option value="Netherlands">Netherlands</option>
+                  <option value="Spain">Spain</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="United States">United States</option>
+                </select>
+                </label>
+              </li>
+              <br/>
+              <li>
+                <label>Venue / <br />
+                  <input
+                    className="text-input"
+                    id="venue-input"
+                    type="text"
+                    placeholder="Type venue name"
+                    value={venue}
+                    onChange={this.update('venue')} />
+                </label>
+              </li>
+              <br/>
+              <li>
+                <label>Description / <br/>
+                <textarea name="Description"
+                  className="text-input" 
+                  id="description-input" 
+                  placeholder="Type a brief description of event"
+                  value={description}
+                  onChange={this.update('description')}>
+                </textarea>
+                </label>
+              </li>
+              <br/>
+            <li>
+                <input id="submit-event" type="submit" value="Submit"/>
+            </li>
+              </ul>
             </form>
           </div>
         </div>
@@ -55,4 +141,4 @@ class CreateEventForm extends React.Component {
   }
 }
 
-export default CreateEventForm;
+export default withRouter(CreateEventForm);

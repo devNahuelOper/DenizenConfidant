@@ -263,7 +263,7 @@
         font-size: 12px;
         h3 {
           position: relative;
-          top: -10px;
+          top: -15px;
           color: #6b96c2;
           font-size: 16px;
           font-weight: normal;
@@ -272,7 +272,7 @@
         }
         h4 {
           position: relative;
-          top: -16px;
+          top: -24px;
           color: black;
           font-size: 16px;
           font-weight: normal;
@@ -280,6 +280,15 @@
         }
       }
     }
+  }
+}
+
+#event-date {
+  h3 {
+    top: -22px;
+  }
+  h4 {
+    top: -20px;
   }
 }
 
@@ -306,9 +315,70 @@
   }
 }
 
+// Create Event Form
+
+.create-event {
+
+}
+
 .event-form-container {
   background-color: #404040;
+  label {
+    color: white;
+  }
+  input {
+    color: black;
+    box-sizing: border-box;
+    padding-left: 4px;
+  }
 }
+
+.new-event-formlist {
+  margin: 24px 0;
+  li {
+    
+  }
+}
+
+.text-input {
+  width: 464px;
+  height: 24px;
+  border-radius: 2px;
+  -webkit-appearance: auto;
+}
+#name-input:focus {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
+#location-select {
+  width: 178px;
+  height: 22px;
+  -webkit-appearance: auto;
+}
+#venue-input {
+  height: 30px;
+  border-radius: 0;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+#description-input {
+  height: 52px;
+  color: black;
+  box-sizing: border-box;
+  padding-left: 4px;
+}
+
+#submit-event {
+  background-color: #ffa100;
+  width: 304px;
+  height: 30px;
+  text-align: center;
+}
+#submit-event:hover {
+  background-color: black;
+  color: white;
+}
+
 
 // Smaller
 
@@ -400,6 +470,7 @@
     }
   }
 }
+
 
 @media only screen and (max-width: 700px) {
   .events-index {

@@ -4,11 +4,17 @@ class Api::EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      render json: "api/events/new"
+      render :show
     else
       render json: @event.errors.full_messages
     end
   end
+
+  # def create
+  #   @event = Event.create!(event_params)
+  #   render :show
+  # end
+
 
   def index
     @events = Event.all

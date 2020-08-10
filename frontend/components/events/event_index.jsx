@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import EventIndexItem from './event_index_item';
-
+import {
+  formatDateStyle
+} from '../../util/date_util';
 
 
 class EventIndex extends React.Component {
@@ -72,7 +74,7 @@ class EventIndex extends React.Component {
                 
                     { event.local &&
                       <article id="local-event">
-                      <h2>{event.date}</h2>
+                      <h2>{formatDateStyle(event.date)}</h2>
                       <img id={`img-${i}`} src={event.photoUrl} alt=""/>
                       <Link to={`/events/${event.id}`}>{event.name}</Link> <br/>
                       <span id="venue">{event.venue} - {event.location}</span>
@@ -91,7 +93,7 @@ class EventIndex extends React.Component {
             <h1 id="content-title">Top Events Worldwide</h1>
             <hr/>
           <ul className="eventlist">
-            {events.map(event => 
+            {events.slice(0, 8).map(event => 
            
             <EventIndexItem key={event.id} event={event}/>
             

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import {
+  formatDateStyle
+} from '../../util/date_util';
 
 
 const EventIndexItem = ({ event, deleteEvent}) => (
@@ -10,7 +12,7 @@ const EventIndexItem = ({ event, deleteEvent}) => (
    <article className="event">
     <Link id="event-name" to={`events/${event.id}`}>{event.name === 'Sonar' ? 'Sónar' : event.name}</Link>
     <br/>
-      <span id="event-date">Date: {event.date}</span>
+      <span id="event-date">Date: {formatDateStyle(event.date)}</span>
     <br/>
       <span id="venue">Venue: {event.venue} | {event.location}</span>
       <br/>
@@ -24,6 +26,7 @@ const EventIndexItem = ({ event, deleteEvent}) => (
       <br/>
       <p id="description">{event.description}</p>
       {/* <img id="event-img" src={event.photoUrl}/> */}
+      {/* <button onClick={() => deleteEvent(event.id)}>Cancel Event</button> */}
       </article>
       }
       <br/>
