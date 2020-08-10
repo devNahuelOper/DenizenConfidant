@@ -67,7 +67,24 @@ class EventIndex extends React.Component {
             <h1 id="content-title">Popular events in New York</h1>
             <hr />
             <ul className="eventlist">
-              <li className="event">
+              {events.slice(8).map((event, i) => 
+                <li className="event" key={event.id}>
+                
+                    { event.local &&
+                      <article id="local-event">
+                      <h2>{event.date}</h2>
+                      <img id={`img-${i}`} src={event.photoUrl} alt=""/>
+                      <Link to={`/events/${event.id}`}>{event.name}</Link> <br/>
+                      <span id="venue">{event.venue} - {event.location}</span>
+                    </article>
+                    }
+                
+                  </li>
+              )}
+
+              {/* <LocalEvent event={event} key={event.id} /> */}
+
+              {/* <li className="event">
                 <article>
 
                 </article>
@@ -91,7 +108,7 @@ class EventIndex extends React.Component {
                 <article>
 
                 </article>
-              </li>
+              </li> */}
             </ul>
           </section>
         </div>
@@ -101,15 +118,38 @@ class EventIndex extends React.Component {
             <hr/>
           <ul className="eventlist">
             {events.map(event => 
+           
             <EventIndexItem key={event.id} event={event}/>
+            
             )}
           </ul>
+          
          </section>
         </div>
       </div>
     )
   }
 };
+
+// class LocalEvent extends React.Component {
+ 
+//   render() {
+//     const { event } = this.props;
+//     return(
+//       <li className="local-event" key={event.id}>
+       
+//         <article>
+//           <h2>{event.date}</h2>
+//           {/* <img src={event.photoUrl} alt="" /> */}
+//           <Link to={`/events/${event.id}`}>{event.name}</Link>
+//           <span>{event.venue} - {event.location}</span>
+//         </article>
+        
+
+//       </li>
+//     )
+//   }
+// }
 
 class SubnavToggle extends React.Component {
   constructor(props) {
