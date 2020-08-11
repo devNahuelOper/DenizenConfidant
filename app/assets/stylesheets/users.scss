@@ -64,6 +64,7 @@
   padding-top:20px;
   h1 {
     color: white;
+    padding: 4px 0;
   }
 }
 #myevents-header {
@@ -85,6 +86,39 @@
   padding-top:20px;
 }
 
+.user-event {
+  display: flex;
+  justify-content: space-between;
+  height: 63px;
+  border-bottom: 1px solid #5d5b5b;
+  border-top: 1px solid #5d5b5b;
+  padding: 4px 0;
+  background-color: #404040;
+}
+
+.myevent-details {
+  color: #9c9c9c;
+  small {
+    color: #9c9c9c;
+  }
+  strong {
+    color: #ffa200;
+  }
+  strong:hover {
+    color: #404040;
+    background-color: #ffa200;
+  }
+}
+
+.manage-event {
+  color: #ffa200;
+  box-sizing: border-box;
+  padding: 4px 14px;
+  a:hover {
+    color: #404040;
+    background-color: #ffa200;
+  }
+}
 
 @media only screen and (max-width: 972px) {
   .user-profile {
@@ -115,6 +149,9 @@
   #myevents-list {
     width: 675px;
   }
+  .user-event {
+    width: 632px;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -131,6 +168,9 @@
     width: 560px;
   }
   #myevents-list {
+    width: 560px;
+  }
+  .user-event {
     width: 560px;
   }
 }
@@ -151,6 +191,9 @@
   #myevents-list {
     width: 490px;
   }
+  .user-event {
+    width: 490px;
+  }
 }
 
 // Larger
@@ -166,5 +209,8 @@
   }
   #myevents-list {
     width: 1272px;
+  }
+  .manage-event {
+    margin-right: 312px;
   }
 }

@@ -45,10 +45,13 @@ class CreateEventForm extends React.Component {
     // console.log(this.props.currentUser.id);
   }
 
-  // handleReset(e) {
-  //   e.preventDefault();
-  //   this.props.clearEventErrors();
-  // }
+  resetForm(e) {
+    e.preventDefault();
+    const form = document.getElementsByClassName('event-form')[0];
+    form.reset();
+  }
+
+
 
   handleSubmit(e) {
     e.preventDefault();
