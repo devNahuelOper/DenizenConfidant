@@ -18,6 +18,7 @@ class CreateEventForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleReset = this.handleReset.bind(this);
     this.update = this.update.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
@@ -25,6 +26,11 @@ class CreateEventForm extends React.Component {
   componentDidMount() {
     this.props.receiveEventErrors([]);
   }
+
+  // handleReset(e) {
+  //   e.preventDefault();
+  //   this.props.clearEventErrors();
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -44,6 +50,7 @@ class CreateEventForm extends React.Component {
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
+      this.props.receiveEventErrors([]);
     }
   }
 
