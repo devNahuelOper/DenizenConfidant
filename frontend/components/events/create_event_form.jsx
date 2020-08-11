@@ -25,6 +25,7 @@ class CreateEventForm extends React.Component {
 
   componentDidMount() {
     this.props.receiveEventErrors([]);
+    window.scrollTo(0,0);
   }
 
   // handleReset(e) {
@@ -69,6 +70,7 @@ class CreateEventForm extends React.Component {
   render() {
     // const [error, setError] = useState(false);
     const { name, date, venue, location, description } = this.state;
+    const { currentUser } = this.props;
     return (
       <div className="create-event">
         <div id="nav-container">
@@ -83,7 +85,8 @@ class CreateEventForm extends React.Component {
               </ul>
             </nav>
             <section className="eventform-header">
-              <Link to='/events'><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link>
+              {/* <Link to='/events'><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link> */}
+              <Link to={`/users/${currentUser.id}/events`}><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link>
               <h1>Submit an event</h1>
             </section>
           </section>

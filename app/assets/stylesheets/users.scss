@@ -16,7 +16,7 @@
   background-color: #3c3c3c;
   .user-subheader {
     
-    width: 952px;
+    width: 960px;
     margin: 0 auto;
     .details {
       display: flex;
@@ -41,6 +41,25 @@
       }
     }
   }
+}
+
+#user-events {
+  // border-bottom: 0.1px solid #585858;
+  .user-subheader {
+    height: 98px;
+  }
+  .user-subheader-container {
+    background-color: #2f2f2f;
+    border-bottom: 0.1px solid #585858;
+    .details li {
+      color: white;
+    }
+  }
+}
+
+.my-events {
+  border-bottom: 0.1px solid #585858;
+  min-height: 166px;
 }
 
 
