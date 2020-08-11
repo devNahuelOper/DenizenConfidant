@@ -1,6 +1,6 @@
 body {
-  /* background-color: rgb(174, 190, 30); */
-  background-color:  #404040; 
+  // background-color:  #404040; 
+  background-color: #2f2f2f;
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
 }
 
@@ -506,6 +506,14 @@ body {
     }
     #git-logo {
       border: 1px solid;
+    }
+  }
+}
+
+@media only screen and (min-width: 1300px){
+   .footer {
+    .foothold, .upper-foot {
+      width: 1272px;
     }
   }
 }
