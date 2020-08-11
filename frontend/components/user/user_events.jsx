@@ -57,7 +57,13 @@ class UserEvents extends React.Component {
             </section>
           </div>
           <div className="my-events">
-
+            <span id="myevents-header">
+              <h1>Events under your administration.</h1>
+              <Link id="submit-event" to="/events/new">Submit an event</Link>
+            </span>
+            <section id="myevents-list">
+              <h1>No events were found.</h1>
+            </section>
           </div>
         </div>
       </React.Fragment>
