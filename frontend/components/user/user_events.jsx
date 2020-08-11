@@ -81,6 +81,15 @@ class UserEvents extends React.Component {
             </span>
             <section id="myevents-list">
               <h1>No events were found.</h1>
+              <article className="user-event">
+                <span className="myevent-details">
+                  <small>Mon, 31 / </small> <strong><Link to="/events">Decibelligerent</Link></strong> <br/>
+                  <small>at </small> <strong>Villain</strong>, <strong>New York </strong>
+                </span>
+                <span className="manage-event">
+                  <Link to="/events">Event Management</Link>
+                </span>
+              </article>
             </section>
           </div>
         </div>
