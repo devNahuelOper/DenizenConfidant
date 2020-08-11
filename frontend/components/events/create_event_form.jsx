@@ -18,6 +18,7 @@ class CreateEventForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleReset = this.handleReset.bind(this);
     this.update = this.update.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
@@ -25,6 +26,11 @@ class CreateEventForm extends React.Component {
   componentDidMount() {
     this.props.receiveEventErrors([]);
   }
+
+  // handleReset(e) {
+  //   e.preventDefault();
+  //   this.props.clearEventErrors();
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -37,13 +43,14 @@ class CreateEventForm extends React.Component {
     formData.append('event[description]', this.state.description);
     formData.append('event[headliners]', this.state.headliners);
     formData.append('event[cost]', this.state.cost);
-    this.props.receiveEventErrors(this.props.errors);
+    
     this.props.createEvent(formData);
   }
 
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
+      this.props.receiveEventErrors([]);
     }
   }
 
@@ -52,7 +59,7 @@ class CreateEventForm extends React.Component {
       <ul>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
-            {`- ${error}`}
+            {`- ${error.split(' ').slice(1).join(' ')}`}
           </li>
         ))}
       </ul>
@@ -145,7 +152,7 @@ class CreateEventForm extends React.Component {
                 <textarea name="Description"
                   className="text-input" 
                   id="description-input" 
-                  placeholder="Type a brief description of event"
+                  placeholder="Type a brief description of event (optional)"
                   value={description}
                   onChange={this.update('description')}>
                 </textarea>
