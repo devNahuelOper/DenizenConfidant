@@ -14,9 +14,7 @@ class DjIndex extends React.Component {
     const searchbar = document.getElementsByClassName('search-container')[0];
     search.onclick = function () {
       searchbar.style.display = 'block';
-      search.style.backgroundColor = 'white';
-      search.style.color = 'black';
-      search.style.borderBottom = '2px solid white';
+      search.className = 'show-search';
     }
     window.onclick = function (e) {
       let inSearchbar = searchbar.contains(e.target);
@@ -25,10 +23,8 @@ class DjIndex extends React.Component {
         return;
       }
       searchbar.style.display = 'none';
-      search.style.backgroundColor = 'transparent';
-      search.style.color = 'currentColor';
-      search.style.borderBottom = 'unset';
-    } 
+      search.className = 'hide-search';
+    }
   }
 
   render() {

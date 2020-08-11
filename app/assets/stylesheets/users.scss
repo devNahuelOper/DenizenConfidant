@@ -60,6 +60,29 @@
 .my-events {
   border-bottom: 0.1px solid #585858;
   min-height: 166px;
+  box-sizing: border-box;
+  padding-top:20px;
+  h1 {
+    color: white;
+  }
+}
+#myevents-header {
+  width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  
+  #submit-event {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+#myevents-list {
+  width: 960px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top:20px;
 }
 
 
@@ -73,12 +96,24 @@
     }
   }
  .user-subheader-container {
+    position: relative;
+    z-index: 100;
     .user-subheader {
       width: 675px;
       .details {
         white-space: nowrap;
       }
     }
+  }
+   #myevents-header {
+    width: 675px;
+    justify-content: normal;
+    #submit-event {
+      margin-left: 88px;
+    }
+  }
+  #myevents-list {
+    width: 675px;
   }
 }
 
@@ -92,6 +127,12 @@
       }
     }
   }
+   #myevents-header {
+    width: 560px;
+  }
+  #myevents-list {
+    width: 560px;
+  }
 }
 
 @media only screen and (max-width: 560px) {
@@ -104,6 +145,12 @@
       }
     }
   }
+   #myevents-header {
+    width: 490px;
+  }
+  #myevents-list {
+    width: 490px;
+  }
 }
 
 // Larger
@@ -113,5 +160,11 @@
     .user-subheader {
         width: 1272px;
     }
+  }
+  #myevents-header {
+    width: 1272px;
+  }
+  #myevents-list {
+    width: 1272px;
   }
 }

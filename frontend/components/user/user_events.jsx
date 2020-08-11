@@ -12,6 +12,24 @@ class UserEvents extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    const search = document.getElementById('search');
+    const searchbar = document.getElementsByClassName('search-container')[0];
+    search.onclick = function () {
+      searchbar.style.display = 'block';
+      search.className = 'show-search';
+    }
+    window.onclick = function (e) {
+      let inSearchbar = searchbar.contains(e.target);
+      let inSearch = search.contains(e.target);
+      if (inSearchbar || inSearch) {
+        return;
+      }
+      searchbar.style.display = 'none';
+      search.className = 'hide-search';
+    }
+  }
+
   render() {
     const { currentUser } = this.props;
 
@@ -57,7 +75,13 @@ class UserEvents extends React.Component {
             </section>
           </div>
           <div className="my-events">
-
+            <span id="myevents-header">
+              <h1>Events under your administration.</h1>
+              <Link id="submit-event" to="/events/new">Submit an event</Link>
+            </span>
+            <section id="myevents-list">
+              <h1>No events were found.</h1>
+            </section>
           </div>
         </div>
       </React.Fragment>

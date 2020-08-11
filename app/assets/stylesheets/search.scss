@@ -5,6 +5,17 @@
   display: none;
 }
 
+.hide-search {
+  background-color: transparent;
+  color: currentColor;
+  border-bottom: unset;
+}
+.show-search {
+  background-color: white !important;
+  color: black;
+  border-bottom: 2px solid white;
+}
+
 #searchbar {
   width: 960px;
   margin: 0 auto;
