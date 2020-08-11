@@ -14,7 +14,7 @@ class CreateEventForm extends React.Component {
       description: '',
       headliners: '',
       cost: '',
-      user_id: '',
+      user_id: this.props.currentUser.id,
       errors: this.props.errors
     }
 
@@ -42,6 +42,7 @@ class CreateEventForm extends React.Component {
       searchbar.style.display = 'none';
       search.className = 'hide-search';
     }
+    // console.log(this.props.currentUser.id);
   }
 
   // handleReset(e) {
@@ -52,7 +53,6 @@ class CreateEventForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.setState({user_id: this.props.currentUser.id });
-    // this.props.createEvent(this.state);
     const formData = new FormData();
     formData.append('event[name]', this.state.name);
     formData.append('event[date]', this.state.date);
