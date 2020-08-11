@@ -513,6 +513,20 @@
     }
   }
 
+  .create-event {
+    #navbar {
+      height: 152px;
+      h1 {
+        right: unset;
+      }
+    }
+  }
+
+  .eventform-header {
+    position: relative;
+    right: 20px;
+  }
+
   .event-form {
     flex-direction: column;
     width: unset;
@@ -583,9 +597,21 @@
   }
 
   .create-event {
+    #nav-container {
+      height: 141px;
+    }
+    #navbar {
+     height: 140px;
+     h1 {
+       font-size: 36px;
+     }
+    }
     .form-wrap {
       width: 560px;
     }
+  }
+  .eventform-header {
+    right: unset;
   }
 }
 
