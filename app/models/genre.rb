@@ -9,6 +9,7 @@
 #  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  artist_ids  :text             default([]), is an Array
 #
 class Genre < ApplicationRecord
   validates :name, presence: true

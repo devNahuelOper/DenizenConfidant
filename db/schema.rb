@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_09_230350) do
+ActiveRecord::Schema.define(version: 2020_08_11_181102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 2020_08_09_230350) do
     t.datetime "updated_at", null: false
     t.string "cost"
     t.boolean "local", default: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_events_on_user_id", unique: true
   end
 
   create_table "genres", force: :cascade do |t|

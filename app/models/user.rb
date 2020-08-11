@@ -28,6 +28,7 @@ class User < ApplicationRecord
   # validates :email_confirmation, presence: true
   validates :gender, presence: true
 
+  has_many :events, foreign_key: :user_id, class_name: :Event, dependent: :destroy
 
   after_initialize :ensure_session_token
   

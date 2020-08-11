@@ -4,7 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './session_form/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import UserProfile from './session_form/user_profile';
+import UserProfile from './user/user_profile';
+import UserEvents from './user/user_events';
 import SplashPage from './splash/splash';
 import Footer from './footer/footer';
 import EventIndexContainer from './events/event_index_container';
@@ -78,7 +79,8 @@ class App extends React.Component {
         <Switch>
           <AuthRoute path="/login" component={withTitle({component: LoginFormContainer, title: 'Login'})} />
           <AuthRoute path="/signup" component={withTitle({ component: SignupFormContainer, title: 'Register as a DC member today' })} />
-          <ProtectedRoute path="/users/:userId" component={UserProfile}/>
+          <ProtectedRoute exact path="/users/:userId" component={UserProfile}/>
+          <ProtectedRoute exact path="/users/:userId/events" component={UserEvents} />
           <Route exact path="/" component={withTitle({ component: SplashContainer, title: 'DC: Denizen Confidant - electronic music online'})} />
           <ProtectedRoute path="/events/new" component={withTitle({ component: CreateEventFormContainer, title: 'DC: Submit an event'})} />
           <Route exact path="/events" component={EventsIndexContainer} />
