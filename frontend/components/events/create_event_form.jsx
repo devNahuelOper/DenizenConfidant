@@ -14,6 +14,7 @@ class CreateEventForm extends React.Component {
       description: '',
       headliners: '',
       cost: '',
+      user_id: '',
       errors: this.props.errors
     }
 
@@ -26,6 +27,21 @@ class CreateEventForm extends React.Component {
   componentDidMount() {
     this.props.receiveEventErrors([]);
     window.scrollTo(0,0);
+    const search = document.getElementById('search');
+    const searchbar = document.getElementsByClassName('search-container')[0];
+    search.onclick = function () {
+      searchbar.style.display = 'block';
+      search.className = 'show-search';
+    }
+    window.onclick = function (e) {
+      let inSearchbar = searchbar.contains(e.target);
+      let inSearch = search.contains(e.target);
+      if (inSearchbar || inSearch) {
+        return;
+      }
+      searchbar.style.display = 'none';
+      search.className = 'hide-search';
+    }
   }
 
   // handleReset(e) {
@@ -35,6 +51,7 @@ class CreateEventForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.setState({user_id: this.props.currentUser.id });
     // this.props.createEvent(this.state);
     const formData = new FormData();
     formData.append('event[name]', this.state.name);
@@ -44,7 +61,7 @@ class CreateEventForm extends React.Component {
     formData.append('event[description]', this.state.description);
     formData.append('event[headliners]', this.state.headliners);
     formData.append('event[cost]', this.state.cost);
-    
+    formData.append('event[user_id]', this.state.user_id);
     this.props.createEvent(formData);
   }
 

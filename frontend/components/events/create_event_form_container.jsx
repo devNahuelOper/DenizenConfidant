@@ -13,7 +13,8 @@ const mapStateToProps = state => ({
     venue: '',
     description: '',
     headliners: '',
-    cost: ''
+    cost: '',
+    user_id: ''
   },
   errors: state.errors.events,
   currentUser: getCurrentUser(state),
