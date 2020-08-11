@@ -96,12 +96,24 @@
     }
   }
  .user-subheader-container {
+    position: relative;
+    z-index: 100;
     .user-subheader {
       width: 675px;
       .details {
         white-space: nowrap;
       }
     }
+  }
+   #myevents-header {
+    width: 675px;
+    justify-content: normal;
+    #submit-event {
+      margin-left: 88px;
+    }
+  }
+  #myevents-list {
+    width: 675px;
   }
 }
 
@@ -115,6 +127,12 @@
       }
     }
   }
+   #myevents-header {
+    width: 560px;
+  }
+  #myevents-list {
+    width: 560px;
+  }
 }
 
 @media only screen and (max-width: 560px) {
@@ -127,6 +145,12 @@
       }
     }
   }
+   #myevents-header {
+    width: 490px;
+  }
+  #myevents-list {
+    width: 490px;
+  }
 }
 
 // Larger
@@ -136,5 +160,11 @@
     .user-subheader {
         width: 1272px;
     }
+  }
+  #myevents-header {
+    width: 1272px;
+  }
+  #myevents-list {
+    width: 1272px;
   }
 }
