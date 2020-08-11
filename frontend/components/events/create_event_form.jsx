@@ -82,7 +82,10 @@ class CreateEventForm extends React.Component {
                 <li><button id="search">Search</button></li>
               </ul>
             </nav>
-            <h1>Submit an event</h1>
+            <section className="eventform-header">
+              <Link to='/events'><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link>
+              <h1>Submit an event</h1>
+            </section>
           </section>
         </div>
         <div className="event-form-container">
