@@ -73,7 +73,7 @@ class UserProfile extends React.Component {
         <div className="subnav-container">
           <section id="subnav">
             <ul>
-              <li className="form"><Link to={`/users/${currentUser.id}`}>Overview</Link></li>
+              <li className="form"><Link to={`/users/${currentUser.id}/events`}>Overview</Link></li>
               <li><Link to="/">Take me back home</Link></li>
             </ul>
           </section>
@@ -134,7 +134,6 @@ class SubnavToggle extends React.Component {
 // onBlur = { this.leave }
 const mapStateToProps = (state) => {
   return {
-    // user: state.entities.users[ownProps.match.params.userId]
     currentUser: getCurrentUser(state)
   }
 }

@@ -11,6 +11,9 @@
 #  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  cost        :string
+#  local       :boolean          default(FALSE)
+#  user_id     :integer
 #
 
 one:
