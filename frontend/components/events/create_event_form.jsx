@@ -25,6 +25,7 @@ class CreateEventForm extends React.Component {
 
   componentDidMount() {
     this.props.receiveEventErrors([]);
+    window.scrollTo(0,0);
   }
 
   // handleReset(e) {
