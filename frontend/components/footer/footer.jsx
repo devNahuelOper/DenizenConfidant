@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Footer extends React.Component {
 
@@ -7,10 +8,24 @@ class Footer extends React.Component {
       <footer>
         {/* <img src={window.splashUrl} alt="" style={{display: 'none'}}/> */}
       <div className="footer">
-       <div className="foothold">
+        <section className="upper-foot">
+          <span className="disclaimer-wrap">
+            <p id="disclaimer">
+                Event dates should not be used for actual planning. Though some may  
+                match the real event dates, most do not and they are there for styling purposes. <br/>
+                In fact, it's safe to assume that all of these events have been cancelled/postponed
+                due to our current circumstances. <br/>
+                For up to date information, swing on over to <a href="https://www.residentadvisor.net/" target="_blank">Resident Advisor</a>.
+            </p>
+          </span>
+          <span className="submit-wrap">
+              <Link id="submit-btn" to='/events/new'>Submit event</Link>
+          </span>
+        </section>
+       <section className="foothold">
           <span id="footer-msg">
             DC: Denizen Confidant is a clone of
-          <a href="https://www.residentadvisor.net/" target="_blank"> RA: Resident Advisor</a>
+          <a href="https://www.residentadvisor.net/" target="_blank">  RA: Resident Advisor</a>
           </span>
         <ul className="footer-links">
           <li>
@@ -49,7 +64,8 @@ class Footer extends React.Component {
           </li>
         </ul>
         
-        </div>
+        </section>
+
       </div>
       </footer>
     )
