@@ -299,11 +299,15 @@ body {
 
 .footer {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
+  // align-items: flex-end;
   width: 100%;
-  height: 375px;
+  height: 425px;
   color: #fff;
   background-color: #2e2e2e;
+  box-sizing: border-box;
+  padding-top: 40px;
 
 .foothold {
   width: 864px;
@@ -312,6 +316,40 @@ body {
   justify-content: space-between;
   border-top: 0.1px solid #585858;
   margin: 0 auto;
+}
+
+.upper-foot {
+  width: 864px;
+  margin: 0 auto;
+  height: 174px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.disclaimer-wrap {
+  margin-top: 42px;
+}
+#disclaimer {
+  font-size: 10px;
+  a {
+    color: #ffa200;
+  }
+  a:hover {
+    background-color: #ffa200;
+    color: #2e2e2e;
+  }
+}
+.submit-wrap {
+  text-align: center;
+}
+#submit-btn {
+  color: black;
+  background-color: #ffa200;
+  padding: 6px 30px;
+}
+#submit-btn:hover {
+  color: white;
+  background-color: black;
 }
 
   .footer-links {
@@ -376,12 +414,18 @@ body {
         color: #ffa200;
         padding-left: 2px;
       }
+      a:hover {
+        background-color: #ffa200;
+        color: #2e2e2e;
+        margin-left: 6px;
+        padding-right: 8px;
+      }
     }
 }
 
 @media only screen and (max-width: 972px) {
   .footer {
-    .foothold {
+    .foothold, .upper-foot {
       width: 675px;
     }
     #footer-msg {
@@ -406,11 +450,15 @@ body {
 
 @media only screen and (max-width: 700px) {
   .footer {
-    .foothold {
+    .foothold, .upper-foot {
       width: 500px;
     }
     #footer-msg {
       font-size: 10px;
+    }
+    #disclaimer {
+      font-size: 9px;
+      width: 466px;
     }
     .footer-links {
       li {
@@ -435,8 +483,15 @@ body {
 }
 
 @media only screen and (max-width: 560px) {
-  .foothold {
-    width: 440px !important;
+  .footer {
+    height: 400px;
+    #disclaimer {
+      font-size: 7px;
+      width: 468px;
+    }
+    .foothold, .upper-foot {
+      width: 440px;
+    }
   }
   .footer .footer-links {
     li {
