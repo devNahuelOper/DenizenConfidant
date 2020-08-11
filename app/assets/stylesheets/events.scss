@@ -715,6 +715,17 @@
     }
   }
 
+  .local-events {
+    width: 1272px;
+    hr {
+      width: 1122px;
+      margin: 10px 0;
+    }
+    .eventlist {
+      width: 1130px;
+    }
+  }
+
   .eventshow-header {
      width: 1272px;
   }
@@ -725,11 +736,5 @@
   }
   .main-container .eventshow-main {
       width: 1272px;
-  }
-
-  .footer {
-    .foothold {
-      width: 1272px !important;
-    }
   }
 }

@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchEvents: () => dispatch(fetchEvents()),
-  deleteEvent: id => dispatch(deleteEvent(id))
+  deleteEvent: eventId => dispatch(deleteEvent(eventId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventIndex);
