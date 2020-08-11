@@ -248,6 +248,7 @@
   }
 }
 
+
 .subheader-container {
   width: 100%;
   .eventshow-subheader {
@@ -318,8 +319,34 @@
 // Create Event Form
 
 .create-event {
-
+  #navbar {
+    height: 244px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h1 {
+      line-height: unset;
+      height: unset;
+      width: unset;
+      margin: unset;
+    }
+  }
 }
+
+.eventform-header {
+  // margin: 0 auto;
+  // width: 960px;
+  #prev {
+    width: 20px;
+    filter: invert(1);
+    position: relative;
+    top: 4px;
+  }
+  a:hover {
+    filter: invert(1);
+  }
+}
+
 
 .event-form-container {
   background-color: #404040;
