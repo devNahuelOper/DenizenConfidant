@@ -188,6 +188,9 @@
   li {
     margin: 24px 0;
   }
+  hr {
+    border-color: grey;
+  }
 }
 .input-hold {
   display: flex;
@@ -205,6 +208,12 @@
   box-sizing: border-box;
   padding: 4px;
 }
+
+.file-input {
+  color: #b4b4b4 !important;
+  padding-left: unset !important;
+}
+
 #update-venue {
   display: flex;
   flex-direction: column;

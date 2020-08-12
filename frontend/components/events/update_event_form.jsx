@@ -154,6 +154,13 @@ class UpdateEventForm extends React.Component {
                     </textarea>
                   </label>
               </li>
+              <hr/>
+              <li>
+                <label htmlFor="photo">Flyer / <br/>
+                  <input type="file" 
+                    className="file-input"/>
+                </label>
+              </li>
               </ul>
             </form>
           </div>
