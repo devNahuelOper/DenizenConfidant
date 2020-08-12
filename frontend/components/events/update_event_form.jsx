@@ -49,6 +49,20 @@ class UpdateEventForm extends React.Component {
       'United Kingdom': '🇬🇧',
       'United States': '🇺🇸'
     }
+    const currencies = {
+      'Argentina': 'ARS',
+      'Brazil': 'BRL',
+      'Canada': 'CAD',
+      'China': 'CNY',
+      'France': 'EUR',
+      'Germany': 'EUR',
+      'Italy': 'EUR',
+      'Japan': 'JPY',
+      'Netherlands': 'EUR',
+      'Spain': 'EUR',
+      'United Kingdom': 'GBP',
+      'United States': 'USD'
+    }
 
     if (!event) return null;
     return (
@@ -121,11 +135,25 @@ class UpdateEventForm extends React.Component {
                       value={event.headliners}>
                       
                     </textarea>
-
                   </label>
-
               </li>
-              
+              <li>
+                  <label htmlFor="cost">Cost / <small>{currencies[`${event.location}`]}</small> <br/>
+                    <input type="text"
+                      className="update-input"
+                      value={event.cost}/>
+                </label>
+              </li>
+              <li>
+                  <label>Description and updates/ <small>Use this space to tell the world about your event. You can add new updates at any time.</small><br />
+                    <textarea name="Description"
+                      id="update-description"
+                      value={event.description}
+                      // onChange={this.update('description')}
+                      >
+                    </textarea>
+                  </label>
+              </li>
               </ul>
             </form>
           </div>
