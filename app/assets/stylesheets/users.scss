@@ -188,6 +188,9 @@
   li {
     margin: 24px 0;
   }
+  hr {
+    border-color: grey;
+  }
 }
 .input-hold {
   display: flex;
@@ -205,6 +208,12 @@
   box-sizing: border-box;
   padding: 4px;
 }
+
+.file-input {
+  color: #b4b4b4 !important;
+  padding-left: unset !important;
+}
+
 #update-venue {
   display: flex;
   flex-direction: column;
@@ -218,6 +227,10 @@
 #update-headliners {
   height: 152px;
   width:100%;
+}
+#update-description {
+  height: 248px;
+  width: 100%;
 }
 
 // User Events Index
@@ -362,6 +375,7 @@
   }
   .eventform-subheader {
     width: 675px;
+    height: 146px;
   }
 
   .event-form {
@@ -412,6 +426,21 @@
   }
   .eventform-subheader {
     width: 560px;
+  }
+  .update-event-form {
+    width: 590px;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .update-event-form {
+    width: unset;
+  }
+  .input-hold {
+    display: block;
+  }
+  #update-venue {
+    margin-top: 24px;
   }
 }
 
