@@ -154,6 +154,12 @@
 
 // Update Event Form
 
+#update-event {
+  .reveal li:first-child {
+    border-bottom: 1px solid #454545;
+  }
+}
+
 .prev-hold {
   display: flex;
   align-items: flex-end;
@@ -201,8 +207,12 @@
     padding: 4px;
     color: black;
   }
-  ::placeholder {
-    color: black;
+  // ::placeholder {
+  //   color: black;
+  // }
+  #submit-event {
+    height: 34px;
+    margin-bottom: 36px;
   }
 }
 .input-hold {

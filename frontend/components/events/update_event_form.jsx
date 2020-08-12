@@ -100,7 +100,7 @@ class UpdateEventForm extends React.Component {
     return (
       <React.Fragment>
         <TitleComponent title={`DC: Update ${event.name}`} />
-      <div className="create-event">
+      <div className="create-event" id="update-event">
         <div id="nav-container">
           <section id="navbar">
             <nav>
@@ -204,11 +204,12 @@ class UpdateEventForm extends React.Component {
                 <label htmlFor="photo">Flyer / <br/>
                   <input type="file" 
                     className="file-input"
+                    accept=".jpg,.jpeg,.png,.gif"
                     onChange={this.handleFile.bind(this)}/>
                 </label>
               </li>
               <li>
-                    <input id="submit-event" type="submit" value="Submit" accept=".jpg,.jpeg,.png,.gif"/>
+                    <input id="submit-event" type="submit" value="Submit"/>
               </li>
               </ul>
             </form>
@@ -246,7 +247,7 @@ class SubnavToggle extends React.Component {
         <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>Overview <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
             {/* <li><Link className="log-link" onClick={this.leave} to="/signup">Register</Link></li> */}
-            <li className="form"><Link to={`/users/${currentUser.id}/events`}>Submit update</Link></li>
+            <li><Link className="log-link" to={`/users/${currentUser.id}/events`}>Submit update</Link></li>
           </ul>
         </button>
       </div>
