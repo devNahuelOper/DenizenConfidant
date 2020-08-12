@@ -196,6 +196,14 @@
   hr {
     border-color: grey;
   }
+  input, textarea {
+    box-sizing: border-box;
+    padding: 4px;
+    color: black;
+  }
+  ::placeholder {
+    color: black;
+  }
 }
 .input-hold {
   display: flex;

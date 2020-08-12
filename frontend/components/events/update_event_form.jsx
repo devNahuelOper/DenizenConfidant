@@ -7,20 +7,33 @@ class UpdateEventForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      name: '',
+      venue: '',
+      cost: '',
+      headliners: '',
+      description: ''
     }
+    // this.state = this.props.event;
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
+    this.update = this.update.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchEvent(this.props.match.params.eventId);
   }
 
+  update(field) {
+    return e => {
+      this.setState({ [field]: e.currentTarget.value });
+      // this.props.receiveEventErrors([]);
+      console.log(this.state);
+    }
+  }
 
-  update(property) {
-    return e => this.setState({
-      [property]: e.target.value
-    });
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.updateEvent(this.state);
   }
 
   handleFile(e) {
@@ -113,21 +126,24 @@ class UpdateEventForm extends React.Component {
         </div>
         <div className="event-form-container">
           <div className="form-wrap">
-            <form className="update-event-form">
+            <form className="update-event-form" onSubmit={this.handleSubmit}>
               <ul>
               <li>
                 <span className="input-hold">
                   <label htmlFor="name">Event title / <br/>
                   <input type="text"
                     className="update-input"
-                    value={event.name}/> 
+                    defaultValue={event.name}
+                    onChange={this.update('name')}/> 
                   </label>
                  <b>at</b> 
                 <article id="update-venue"> 
                   <label htmlFor="venue">Venue / <br/>
                   <input type="text"
                     className="update-input"
-                    value={event.venue}/>
+                    defaultValue={event.venue}
+                    onChange={this.update('venue')}
+                    />
                     </label>
                     <span>
                       <strong>{flags[`${event.location}`]}</strong> {event.location}
@@ -139,8 +155,9 @@ class UpdateEventForm extends React.Component {
                   <label htmlFor="headliners">Line-up / &nbsp; <small>Do not include urls, artist biographies or general event information.</small> <br/>
                     <textarea name="headliners" 
                       id="update-headliners"
-                      value={event.headliners}>
-                      
+                      defaultValue={event.headliners}
+                      onChange={this.update('headliners')}
+                      >
                     </textarea>
                   </label>
               </li>
@@ -148,15 +165,18 @@ class UpdateEventForm extends React.Component {
                   <label htmlFor="cost">Cost / <small>{currencies[`${event.location}`]}</small> <br/>
                     <input type="text"
                       className="update-input"
-                      value={event.cost}/>
+                      defaultValue={event.cost}
+                      onChange={this.update('cost')}
+                      />
                 </label>
               </li>
               <li>
                   <label>Description and updates/ <small>Use this space to tell the world about your event. You can add new updates at any time.</small><br />
                     <textarea name="Description"
                       id="update-description"
-                      value={event.description}
-                      // onChange={this.update('description')}
+                      defaultValue={event.description}
+                      // value={this.state.description}
+                      onChange={this.update('description')}
                       >
                     </textarea>
                   </label>
@@ -165,8 +185,12 @@ class UpdateEventForm extends React.Component {
               <li>
                 <label htmlFor="photo">Flyer / <br/>
                   <input type="file" 
-                    className="file-input"/>
+                    className="file-input"
+                    onChange={this.handleFile.bind(this)}/>
                 </label>
+              </li>
+              <li>
+                    <input id="submit-event" type="submit" value="Submit" accept=".jpg,.jpeg,.png,.gif"/>
               </li>
               </ul>
             </form>
