@@ -19,7 +19,7 @@ class CreateEventForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleReset = this.handleReset.bind(this);
+    this.resetForm = this.resetForm.bind(this);
     this.update = this.update.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
@@ -45,10 +45,15 @@ class CreateEventForm extends React.Component {
     // console.log(this.props.currentUser.id);
   }
 
-  // handleReset(e) {
-  //   e.preventDefault();
-  //   this.props.clearEventErrors();
-  // }
+  resetForm() {
+    this.props.clearEventErrors([]);
+    const form = document.getElementsByClassName('event-form')[0];
+    const success = document.getElementById('success-msg');
+    form.reset();
+    success.innerHTML = 'Event Submitted!';
+  }
+
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -63,12 +68,13 @@ class CreateEventForm extends React.Component {
     formData.append('event[cost]', this.state.cost);
     formData.append('event[user_id]', this.state.user_id);
     this.props.createEvent(formData);
+    // e.target.reset();
   }
 
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
-      this.props.receiveEventErrors([]);
+      // this.props.receiveEventErrors([]);
     }
   }
 
@@ -110,7 +116,9 @@ class CreateEventForm extends React.Component {
         </div>
         <div className="event-form-container">
           <div className="form-wrap">
-            <form className="event-form" onSubmit={this.handleSubmit}>
+
+            <form className="event-form" onSubmit={this.handleSubmit} onReset={this.resetForm}>
+              {/* onReset={this.resetForm} */}
              <ul className="new-event-formlist">
               <li>
                 <label>Event title / <br/>
@@ -191,6 +199,8 @@ class CreateEventForm extends React.Component {
              {this.renderErrors()}
                 </aside>
               }
+              <aside id="success-msg">
+              </aside>
             </form>
           </div>
         </div>

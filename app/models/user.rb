@@ -31,6 +31,15 @@ class User < ApplicationRecord
   has_many :events, foreign_key: :user_id, class_name: :Event, dependent: :destroy
 
   after_initialize :ensure_session_token
+
+  # def add_events
+  #   all_events = Event.all
+  #   all_events.each do |event|
+  #     if event.user_id === self.id
+  #       self.events.push(event.name)
+  #     end
+  #   end
+  # end
   
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

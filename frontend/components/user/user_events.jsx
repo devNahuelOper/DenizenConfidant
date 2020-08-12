@@ -1,18 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchCurrentUser, getCurrentUser } from '../../actions/session_actions';
+import { fetchEvents, deleteEvent } from '../../actions/event_actions';
 import { Link } from 'react-router-dom';
 import {
-  formatDate
+  formatMonthDay,
+  formatDateStyle
 } from '../../util/date_util';
 import { TitleComponent } from '../title_component.jsx';
 
 class UserEvents extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      events: []
+    }
   }
 
   componentDidMount() {
+    this.props.fetchEvents().then(events => this.setState({events: Object.values(events.events)}));
     const search = document.getElementById('search');
     const searchbar = document.getElementsByClassName('search-container')[0];
     search.onclick = function () {
@@ -28,6 +34,7 @@ class UserEvents extends React.Component {
       searchbar.style.display = 'none';
       search.className = 'hide-search';
     }
+    // console.log(this.props.currentUser);
   }
 
   render() {
@@ -65,7 +72,7 @@ class UserEvents extends React.Component {
               <ul className="details">
                 <li>
                   <small>Events submitted /</small><br />
-                   0
+                   {currentUser.events.length}
                 </li>
                 <li>
                   <small>Access level /</small> <br />
@@ -80,7 +87,24 @@ class UserEvents extends React.Component {
               <Link id="submit-event" to="/events/new">Submit an event</Link>
             </span>
             <section id="myevents-list">
-              <h1>No events were found.</h1>
+              {currentUser.events.length ? 
+              <ul>
+                {currentUser.events.map((event, i) => 
+                <li key={i}>
+                  <h1 id="myevent-date">{formatMonthDay(event.created_at)}</h1>
+                    <article className="user-event">
+                      <span className="myevent-details">
+                        <small>{formatDateStyle(event.date).split(' ').slice(0,2).join(' ')} / </small> <strong><Link to="/events">{event.name}</Link></strong> <br />
+                        <small>at </small> <strong>{event.venue}</strong>, <strong>{event.location} </strong>
+                      </span>
+                      <span className="manage-event">
+                        <Link to="/events">Event Management</Link>
+                      </span>
+                    </article>
+                </li>
+                  )}
+              </ul> : <h1>No events were found.</h1>
+              }
             </section>
           </div>
         </div>
@@ -124,12 +148,17 @@ class SubnavToggle extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: getCurrentUser(state)
+    currentUser: getCurrentUser(state),
+    // events: Object.values(state.entities.events).filter(
+    //   event => {event.user_id === currentUser.id}
+    // )
+    events: Object.values(state.entities.events)
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  fetchCurrentUser: (userId) => dispatch(fetchCurrentUser(userId))
+  fetchCurrentUser: (userId) => dispatch(fetchCurrentUser(userId)),
+  fetchEvents: () => dispatch(fetchEvents())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserEvents);

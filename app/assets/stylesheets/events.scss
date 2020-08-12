@@ -316,112 +316,6 @@
   }
 }
 
-// Create Event Form
-
-.create-event {
-  border-bottom: 1px solid #575757;
-  #navbar {
-    height: 244px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    h1 {
-      line-height: unset;
-      height: unset;
-      width: unset;
-      margin: unset;
-    }
-  }
-}
-
-.eventform-header {
-  // margin: 0 auto;
-  // width: 960px;
-  #prev {
-    width: 20px;
-    filter: invert(1);
-    position: relative;
-    top: 4px;
-  }
-  a:hover {
-    filter: invert(1);
-  }
-}
-
-
-.event-form-container {
-  background-color: #404040;
-  label {
-    color: white;
-  }
-  input {
-    color: black;
-    box-sizing: border-box;
-    padding-left: 4px;
-    height: 30px;
-  }
-}
-
-.new-event-formlist {
-  margin: 24px 0;
-  li {
-    
-  }
-}
-
-.text-input {
-  width: 464px;
-  height: 30px;
-  border-radius: 2px;
-  -webkit-appearance: auto;
-}
-#name-input:focus {
-  outline: -webkit-focus-ring-color auto 1px;
-}
-#date-input {
-  width: 178px;
-}
-
-#location-select {
-  width: 178px;
-  height: 30px;
-  -webkit-appearance: auto;
-  font-size: 16px;
-}
-#venue-input {
-  border-radius: 0;
-  box-sizing: border-box;
-  padding-left: 10px;
-}
-#description-input {
-  height: 52px;
-  color: black;
-  box-sizing: border-box;
-  padding-left: 4px;
-}
-
-#submit-event {
-  background-color: #ffa100;
-  width: 304px;
-  height: 30px;
-  text-align: center;
-}
-#submit-event:hover {
-  background-color: black;
-  color: white;
-}
-
-.event-form {
-  width: 570px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.event-errors {
-  color: white;
-  margin-top: 91px;
-  white-space: nowrap;
-}
 
 
 // Smaller
@@ -514,28 +408,6 @@
     }
   }
 
-  .create-event {
-    
-    #navbar {
-      height: 152px;
-      h1 {
-        right: unset;
-      }
-    }
-  }
-
-  .eventform-header {
-    position: relative;
-    right: 20px;
-  }
-
-  .event-form {
-    flex-direction: column;
-    width: unset;
-  }
-  .event-errors {
-    margin: 40px 0;
-  }
 }
 
 
@@ -597,24 +469,6 @@
       }
     }
   }
-
-  .create-event {
-    #nav-container {
-      height: 141px;
-    }
-    #navbar {
-     height: 140px;
-     h1 {
-       font-size: 36px;
-     }
-    }
-    .form-wrap {
-      width: 560px;
-    }
-  }
-  .eventform-header {
-    right: unset;
-  }
 }
 
 @media only screen and (max-width: 560px) {
@@ -671,12 +525,6 @@
       }
     }
   }
-
-   .create-event {
-    .form-wrap {
-      width: 490px;
-    }
-  }
 }
 
 
@@ -684,7 +532,6 @@
 // Larger
 
 @media only screen and (min-width: 1300px){
-
   .events-index {
     .events-nav {
       width: 1272px;
