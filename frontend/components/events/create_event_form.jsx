@@ -148,10 +148,6 @@ class CreateEventForm extends React.Component {
               <br/>
               <li>
                 <label>Location / <br />
-                  {/* <input
-                    type="text"
-                    value={location}
-                    onChange={this.update('location')} /> */}
                 
                 <select name="Location" id="location-select" value={location || 'United States'} onChange={this.update('location')}>
                   <option value="--Select a country--" disabled={true}>--Select a country--</option>

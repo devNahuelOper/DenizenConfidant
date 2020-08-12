@@ -95,7 +95,7 @@ class UserEvents extends React.Component {
                         <small>at </small> <strong>{event.venue}</strong>, <strong>{event.location} </strong>
                       </span>
                       <span className="manage-event">
-                        <Link to="/events">Event Management</Link>
+                        <Link to={`/events/${event.id}/edit`}>Event Management</Link>
                         <button id="delete-event" onClick={() => deleteEvent(event.id)}>Cancel Event</button>
                       </span>
                     </article>
