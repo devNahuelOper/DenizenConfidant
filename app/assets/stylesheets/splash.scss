@@ -982,6 +982,12 @@ h3 {
     #navbar #links {
       left: unset;
     }
+    #navbar {
+      width: 1272px;
+      nav {
+        width: 1272px;
+      }
+    }
   }
 
   .banner-hold {
