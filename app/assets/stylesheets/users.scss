@@ -152,6 +152,74 @@
 }
 
 
+// Update Event Form
+
+.eventform-subheader-container {
+  background-color: #2f2f2f;
+  border-bottom: 1px solid #585858;
+}
+.eventform-subheader {
+  width: 960px;
+  height: 116px;
+  margin: 0 auto;
+  .details {
+    display: flex;
+    li {
+      color: white;
+      text-align: left;
+      font-weight: normal;
+      font-size: 24px;
+      padding: 16px 0;
+      margin-right: 180px;
+      small {
+        color: #b4b4b4;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.update-event-form {
+  // padding: 24px 0;
+  width: 624px;
+  small {
+    color: #b4b4b4;
+  }
+  li {
+    margin: 24px 0;
+  }
+}
+.input-hold {
+  display: flex;
+  label {
+    color: white;
+  }
+  b {
+    color: white;
+    padding: 22px 8px;
+  }
+}
+.update-input {
+  width: 280px;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 4px;
+}
+#update-venue {
+  display: flex;
+  flex-direction: column;
+  span {
+    color: white;
+    strong {
+      font-size: 18px;
+    }
+  }
+}
+#update-headliners {
+  height: 152px;
+  width:100%;
+}
+
 // User Events Index
 
 #user-events {
@@ -292,6 +360,9 @@
     position: relative;
     right: 20px;
   }
+  .eventform-subheader {
+    width: 675px;
+  }
 
   .event-form {
     flex-direction: column;
@@ -339,6 +410,9 @@
   .eventform-header {
     right: unset;
   }
+  .eventform-subheader {
+    width: 560px;
+  }
 }
 
 @media only screen and (max-width: 560px) {
@@ -365,6 +439,9 @@
       width: 490px;
     }
   }
+  .eventform-subheader {
+    width: 490px;
+  }
 }
 
 // Larger
@@ -383,5 +460,8 @@
   }
   .manage-event {
     margin-right: 312px;
+  }
+  .eventform-subheader {
+    width: 1272px;
   }
 }

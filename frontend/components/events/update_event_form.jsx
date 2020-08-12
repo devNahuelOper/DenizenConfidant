@@ -35,6 +35,20 @@ class UpdateEventForm extends React.Component {
 
   render() {
     const { event, currentUser } = this.props;
+    const flags = {
+      'Argentina': '🇦🇷',
+      'Brazil': '🇧🇷',
+      'Canada': '🇨🇦',
+      'China': '🇨🇳',
+      'France': '🇫🇷',
+      'Germany': '🇩🇪',
+      'Italy': '🇮🇹',
+      'Japan': '🇯🇵',
+      'Netherlands': '🇳🇱',
+      'Spain': '🇪🇸',
+      'United Kingdom': '🇬🇧',
+      'United States': '🇺🇸'
+    }
 
     if (!event) return null;
     return (
@@ -64,10 +78,10 @@ class UpdateEventForm extends React.Component {
               <li className="form"><Link to={`/users/${currentUser.id}/events`}>Submit update</Link></li>
             </ul>
           </section>
-          <SubnavToggle />
+          <SubnavToggle currentUser={currentUser}/>
         </div>
-        <div className="user-subheader-container">
-          <section className="user-subheader">
+        <div className="eventform-subheader-container">
+          <section className="eventform-subheader">
             <ul className="details">
               <li>
                 <small>Status /</small> <br />
@@ -78,7 +92,42 @@ class UpdateEventForm extends React.Component {
         </div>
         <div className="event-form-container">
           <div className="form-wrap">
+            <form className="update-event-form">
+              <ul>
+              <li>
+                <span className="input-hold">
+                  <label htmlFor="name">Event title / <br/>
+                  <input type="text"
+                    className="update-input"
+                    value={event.name}/> 
+                  </label>
+                 <b>at</b> 
+                <article id="update-venue"> 
+                  <label htmlFor="venue">Venue / <br/>
+                  <input type="text"
+                    className="update-input"
+                    value={event.venue}/>
+                    </label>
+                    <span>
+                      <strong>{flags[`${event.location}`]}</strong> {event.location}
+                    </span>
+                  </article>
+                </span>
+              </li>
+              <li>
+                  <label htmlFor="headliners">Line-up / &nbsp; <small>Do not include urls, artist biographies or general event information.</small> <br/>
+                    <textarea name="headliners" 
+                      id="update-headliners"
+                      value={event.headliners}>
+                      
+                    </textarea>
 
+                  </label>
+
+              </li>
+              
+              </ul>
+            </form>
           </div>
         </div>
 
@@ -106,12 +155,13 @@ class SubnavToggle extends React.Component {
   }
 
   render() {
+    const { currentUser } = this.props;
     return (
       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
         <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>Overview <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
             {/* <li><Link className="log-link" onClick={this.leave} to="/signup">Register</Link></li> */}
-            <li id="user-reveal"><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
+            <li className="form"><Link to={`/users/${currentUser.id}/events`}>Submit update</Link></li>
           </ul>
         </button>
       </div>
