@@ -66,8 +66,8 @@ class UpdateEventForm extends React.Component {
           </section>
           <SubnavToggle />
         </div>
-        <div className="user-subheader-container">
-          <section className="user-subheader">
+        <div className="eventform-subheader-container">
+          <section className="eventform-subheader">
             <ul className="details">
               <li>
                 <small>Status /</small> <br />
@@ -111,7 +111,7 @@ class SubnavToggle extends React.Component {
         <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>Overview <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
             {/* <li><Link className="log-link" onClick={this.leave} to="/signup">Register</Link></li> */}
-            <li id="user-reveal"><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
+            <li className="form"><Link to={`/users/${currentUser.id}/events`}>Submit update</Link></li>
           </ul>
         </button>
       </div>

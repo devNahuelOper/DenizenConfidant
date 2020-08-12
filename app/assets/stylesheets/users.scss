@@ -152,6 +152,32 @@
 }
 
 
+// Update Event Form
+
+.eventform-subheader-container {
+  background-color: #2f2f2f;
+}
+.eventform-subheader {
+  width: 960px;
+  height: 116px;
+  margin: 0 auto;
+  .details {
+    display: flex;
+    li {
+      color: white;
+      text-align: left;
+      font-weight: normal;
+      font-size: 24px;
+      padding: 16px 0;
+      margin-right: 180px;
+      small {
+        color: #b4b4b4;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
 // User Events Index
 
 #user-events {
@@ -292,6 +318,9 @@
     position: relative;
     right: 20px;
   }
+  .eventform-subheader {
+    width: 675px;
+  }
 
   .event-form {
     flex-direction: column;
@@ -339,6 +368,9 @@
   .eventform-header {
     right: unset;
   }
+  .eventform-subheader {
+    width: 560px;
+  }
 }
 
 @media only screen and (max-width: 560px) {
@@ -365,6 +397,9 @@
       width: 490px;
     }
   }
+  .eventform-subheader {
+    width: 490px;
+  }
 }
 
 // Larger
@@ -383,5 +418,8 @@
   }
   .manage-event {
     margin-right: 312px;
+  }
+  .eventform-subheader {
+    width: 1272px;
   }
 }
