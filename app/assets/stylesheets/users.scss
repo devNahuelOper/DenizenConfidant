@@ -219,13 +219,16 @@
   strong {
     color: #ffa200;
   }
-  strong:hover {
+  a:hover {
     color: #404040;
     background-color: #ffa200;
   }
 }
 
 .manage-event {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: #ffa200;
   box-sizing: border-box;
   padding: 4px 14px;
@@ -233,6 +236,15 @@
     color: #404040;
     background-color: #ffa200;
   }
+}
+#delete-event {
+  // background-color: #ffa200;
+  background-color: #404040;
+  text-align: center;
+}
+#delete-event:hover {
+  background-color: #080808;
+  color: #f8a102;
 }
 
 @media only screen and (max-width: 972px) {

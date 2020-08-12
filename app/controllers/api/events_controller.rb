@@ -5,6 +5,7 @@ class Api::EventsController < ApplicationController
     @event = Event.new(event_params)
     if @event.save
       render :show
+      # render json: ['Event Submitted!'], status 200
     else
       render json: @event.errors.full_messages, status: 422
     end

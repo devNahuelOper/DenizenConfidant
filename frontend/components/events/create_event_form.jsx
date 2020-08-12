@@ -45,12 +45,16 @@ class CreateEventForm extends React.Component {
     // console.log(this.props.currentUser.id);
   }
 
-  resetForm() {
+  resetForm(e) {
+    e.preventDefault();
     this.props.clearEventErrors([]);
-    const form = document.getElementsByClassName('event-form')[0];
+    // const form = document.getElementsByClassName('event-form')[0];
     const success = document.getElementById('success-msg');
-    form.reset();
-    success.innerHTML = 'Event Submitted!';
+    // form.reset();
+    e.target.reset();
+    window.setTimeout(() => {
+      success.innerHTML = 'Event Submitted!';
+    }, 1000);
   }
 
 
@@ -68,13 +72,13 @@ class CreateEventForm extends React.Component {
     formData.append('event[cost]', this.state.cost);
     formData.append('event[user_id]', this.state.user_id);
     this.props.createEvent(formData);
-    // e.target.reset();
+    e.target.reset();
   }
 
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
-      // this.props.receiveEventErrors([]);
+      this.props.receiveEventErrors([]);
     }
   }
 
@@ -199,8 +203,11 @@ class CreateEventForm extends React.Component {
              {this.renderErrors()}
                 </aside>
               }
+              { this.props.errors.length === 0 &&
               <aside id="success-msg">
               </aside>
+              }
+              
             </form>
           </div>
         </div>
