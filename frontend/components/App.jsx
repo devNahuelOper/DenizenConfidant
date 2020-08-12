@@ -11,6 +11,7 @@ import Footer from './footer/footer';
 import EventIndexContainer from './events/event_index_container';
 import EventShowContainer from './events/event_show_container';
 import CreateEventFormContainer from './events/create_event_form_container';
+import UpdateEventFormContainer from './events/update_event_form_container';
 import DjIndexContainer from './djs/dj_index_container';
 import DjShowContainer from './djs/dj_show_container';
 import GenreIndexContainer from './genres/genre_index_container';
@@ -83,6 +84,7 @@ class App extends React.Component {
           <ProtectedRoute exact path="/users/:userId/events" component={UserEvents} />
           <Route exact path="/" component={withTitle({ component: SplashContainer, title: 'DC: Denizen Confidant - electronic music online'})} />
           <ProtectedRoute path="/events/new" component={withTitle({ component: CreateEventFormContainer, title: 'DC: Submit an event'})} />
+          <ProtectedRoute path="/events/:eventId/edit" component={withTitle({ component: UpdateEventFormContainer, title: 'DC: Update event'})} />
           <Route exact path="/events" component={EventsIndexContainer} />
           <Route exact path="/events/:eventId" component={EventShowContainer} />
           <Route exact path="/djs" component={DjsIndexContainer} />
