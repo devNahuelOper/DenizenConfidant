@@ -12,13 +12,10 @@ import { TitleComponent } from '../title_component.jsx';
 class UserEvents extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      events: []
-    }
   }
 
   componentDidMount() {
-    this.props.fetchEvents().then(events => this.setState({events: Object.values(events.events)}));
+    // this.props.fetchEvents().then(events => this.setState({events: Object.values(events.events)}));
     const search = document.getElementById('search');
     const searchbar = document.getElementsByClassName('search-container')[0];
     search.onclick = function () {
@@ -34,11 +31,11 @@ class UserEvents extends React.Component {
       searchbar.style.display = 'none';
       search.className = 'hide-search';
     }
-    // console.log(this.props.currentUser);
+    // console.log(this.props);
   }
 
   render() {
-    const { currentUser } = this.props;
+    const { currentUser, deleteEvent } = this.props;
 
     return(
       <React.Fragment>
@@ -99,6 +96,7 @@ class UserEvents extends React.Component {
                       </span>
                       <span className="manage-event">
                         <Link to="/events">Event Management</Link>
+                        <button id="delete-event" onClick={() => deleteEvent(event.id)}>Cancel Event</button>
                       </span>
                     </article>
                 </li>
@@ -158,7 +156,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchCurrentUser: (userId) => dispatch(fetchCurrentUser(userId)),
-  fetchEvents: () => dispatch(fetchEvents())
+  fetchEvents: () => dispatch(fetchEvents()),
+  deleteEvent: eventId => dispatch(deleteEvent(eventId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserEvents);
