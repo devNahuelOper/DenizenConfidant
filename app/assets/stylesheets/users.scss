@@ -154,6 +154,11 @@
 
 // Update Event Form
 
+.prev-hold {
+  display: flex;
+  align-items: flex-end;
+}
+
 .eventform-subheader-container {
   background-color: #2f2f2f;
   border-bottom: 1px solid #585858;

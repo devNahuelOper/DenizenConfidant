@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
+import { TitleComponent } from '../title_component.jsx';
 
 class UpdateEventForm extends React.Component {
   constructor(props) {
@@ -66,6 +67,8 @@ class UpdateEventForm extends React.Component {
 
     if (!event) return null;
     return (
+      <React.Fragment>
+        <TitleComponent title={`DC: Update ${event.name}`} />
       <div className="create-event">
         <div id="nav-container">
           <section id="navbar">
@@ -80,7 +83,11 @@ class UpdateEventForm extends React.Component {
             </nav>
             <section className="eventform-header">
               {/* <Link to='/events'><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link> */}
-              <Link to={`/users/${currentUser.id}/events`}><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link>
+              <span className="prev-hold">
+                <Link to={`/users/${currentUser.id}/events`}><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link>
+                       &nbsp; / &nbsp;
+                <Link to={`/events/${event.id}/edit`}><img id="prev" src={window.prevUrl} alt="Back" /> {event.name}</Link>
+              </span>
               <h1>Event management</h1>
             </section>
           </section>
@@ -89,7 +96,7 @@ class UpdateEventForm extends React.Component {
           <section id="subnav">
             <ul>
               <li><Link to={`/users/${currentUser.id}/events`}>Overview</Link></li>
-              <li className="form"><Link to={`/users/${currentUser.id}/events`}>Submit update</Link></li>
+              <li className="form"><Link to={`/events/${event.id}/edit`}>Submit update</Link></li>
             </ul>
           </section>
           <SubnavToggle currentUser={currentUser}/>
@@ -167,6 +174,7 @@ class UpdateEventForm extends React.Component {
         </div>
 
       </div>
+      </React.Fragment>
     )
   }
 };
