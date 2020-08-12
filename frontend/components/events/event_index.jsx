@@ -66,7 +66,7 @@ class EventIndex extends React.Component {
             <h1 id="content-title">Popular events in New York</h1>
             <hr />
             <ul className="eventlist">
-              {events.slice(8).map((event, i) => 
+              {events.slice(8, 13).map((event, i) => 
                 <li className="event" key={event.id}>
                 
                     { event.local &&
