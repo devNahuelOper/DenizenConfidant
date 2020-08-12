@@ -84,7 +84,7 @@ class App extends React.Component {
           <ProtectedRoute exact path="/users/:userId/events" component={UserEvents} />
           <Route exact path="/" component={withTitle({ component: SplashContainer, title: 'DC: Denizen Confidant - electronic music online'})} />
           <ProtectedRoute path="/events/new" component={withTitle({ component: CreateEventFormContainer, title: 'DC: Submit an event'})} />
-          <ProtectedRoute path="/events/:eventId/edit" component={withTitle({ component: UpdateEventFormContainer, title: 'DC: Update event'})} />
+          <ProtectedRoute path="/events/:eventId/edit" component={UpdateEventFormContainer} />
           <Route exact path="/events" component={EventsIndexContainer} />
           <Route exact path="/events/:eventId" component={EventShowContainer} />
           <Route exact path="/djs" component={DjsIndexContainer} />

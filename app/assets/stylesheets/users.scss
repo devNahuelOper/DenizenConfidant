@@ -154,6 +154,17 @@
 
 // Update Event Form
 
+#update-event {
+  .reveal li:first-child {
+    border-bottom: 1px solid #454545;
+  }
+}
+
+.prev-hold {
+  display: flex;
+  align-items: flex-end;
+}
+
 .eventform-subheader-container {
   background-color: #2f2f2f;
   border-bottom: 1px solid #585858;
@@ -190,6 +201,18 @@
   }
   hr {
     border-color: grey;
+  }
+  input, textarea {
+    box-sizing: border-box;
+    padding: 4px;
+    color: black;
+  }
+  // ::placeholder {
+  //   color: black;
+  // }
+  #submit-event {
+    height: 34px;
+    margin-bottom: 36px;
   }
 }
 .input-hold {

@@ -42,7 +42,6 @@ class CreateEventForm extends React.Component {
       searchbar.style.display = 'none';
       search.className = 'hide-search';
     }
-    // console.log(this.props.currentUser.id);
   }
 
   resetForm(e) {
