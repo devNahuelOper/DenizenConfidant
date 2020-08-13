@@ -12,6 +12,7 @@ import { TitleComponent } from '../title_component.jsx';
 class UserEvents extends React.Component {
   constructor(props) {
     super(props);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +33,12 @@ class UserEvents extends React.Component {
       search.className = 'hide-search';
     }
     // console.log(this.props);
+  }
+
+  handleDelete(e) {
+    e.preventDefault();
+    e.target.parentNode.parentNode.parentNode.parentNode.remove();
+    window.location.reload(true);
   }
 
 
@@ -89,7 +96,7 @@ class UserEvents extends React.Component {
               {currentUser.events.length ? 
               <ul>
                 {currentUser.events.map((event, i) => 
-                <li key={i}>
+                <li key={i} id={event.id || null}>
                   <h1 id="myevent-date">{formatMonthDay(event.created_at)}</h1>
                     <article className="user-event">
                       <span className="myevent-details">
@@ -98,7 +105,9 @@ class UserEvents extends React.Component {
                       </span>
                       <span className="manage-event">
                         <Link to={`/events/${event.id}/edit`}>Event Management</Link>
-                        <button id="delete-event" onClick={() => deleteEvent(event.id).then(window.location.reload(true))}>Cancel Event</button>
+                        <div onClick={this.handleDelete}>
+                        <button id="delete-event" onClick={() => deleteEvent(event.id)}>Cancel Event</button>
+                        </div>
                       </span>
                     </article>
                 </li>
