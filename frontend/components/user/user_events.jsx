@@ -34,6 +34,7 @@ class UserEvents extends React.Component {
     // console.log(this.props);
   }
 
+
   render() {
     const { currentUser, deleteEvent } = this.props;
 
@@ -97,7 +98,7 @@ class UserEvents extends React.Component {
                       </span>
                       <span className="manage-event">
                         <Link to={`/events/${event.id}/edit`}>Event Management</Link>
-                        <button id="delete-event" onClick={() => deleteEvent(event.id)}>Cancel Event</button>
+                        <button id="delete-event" onClick={() => deleteEvent(event.id).then(window.location.reload(true))}>Cancel Event</button>
                       </span>
                     </article>
                 </li>
