@@ -91,7 +91,7 @@ export const formatDateStyle = date => {
   const day = obj.getDate();
   const year = obj.getFullYear();
   const dayOfWeek = daysOfWeek[obj.getDay()];
-  return `${dayOfWeek}, ${day + 1} ${month} ${year}`;
+  return `${dayOfWeek}, ${day} ${month} ${year}`;
 }
 
 export const formatDateShowStyle = date => {
