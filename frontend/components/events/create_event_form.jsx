@@ -15,10 +15,13 @@ class CreateEventForm extends React.Component {
       headliners: '',
       cost: '',
       user_id: this.props.currentUser.id,
-      errors: this.props.errors
+      errors: this.props.errors,
+      photoFile: null,
+      photoUrl: null
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
     this.resetForm = this.resetForm.bind(this);
     this.update = this.update.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
@@ -57,6 +60,17 @@ class CreateEventForm extends React.Component {
     }, 1000);
   }
 
+  handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
 
 
   handleSubmit(e) {
@@ -71,12 +85,12 @@ class CreateEventForm extends React.Component {
     formData.append('event[headliners]', this.state.headliners);
     formData.append('event[cost]', this.state.cost);
     formData.append('event[user_id]', this.state.user_id);
+    if (this.state.photoFile) {
+      formData.append('event[photo]', this.state.photoFile);
+    }
     this.props.createEvent(formData).then(() => 
       this.props.history.push(`/users/${this.props.currentUser.id}/events`)
     )
-    // if (this.state.errors.length === 0) {
-    //   this.props.history.push(`/users/${this.props.currentUser.id}/events`);
-    // }
     e.target.reset();
   }
 
@@ -220,6 +234,15 @@ class CreateEventForm extends React.Component {
                 </label>
               </li>
               <br/>
+                <li>
+                  <label htmlFor="photo">Flyer / <br />
+                    <input type="file"
+                      className="file-input"
+                      accept=".jpg,.jpeg,.png,.gif"
+                      onChange={this.handleFile.bind(this)} />
+                  </label>
+                </li>
+                <br/>
             <li>
                 <input id="submit-event" type="submit" value="Submit"/>
             </li>
