@@ -2,21 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import { TitleComponent } from '../title_component.jsx';
+import {
+  formatDateStyle
+} from '../../util/date_util';
 
 class UpdateEventForm extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   name: '',
-    //   venue: '',
-    //   cost: '',
-    //   headliners: '',
-    //   description: '',
-    //   id: 257,
-    //   user_id: 57,
-    //   location: 'United States',
-    //   id: this.props.event ? this.props.event.id : null
-    // }
+    this.state = {
+      name: '',
+      venue: '',
+      cost: '',
+      date: '',
+      headliners: '',
+      description: '',
+      // id: '',
+      // user_id: '',
+      // location: '',
+      // id: this.props.event ? this.props.event.id : null
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.update = this.update.bind(this);
@@ -65,6 +69,7 @@ class UpdateEventForm extends React.Component {
     formData.append('event[description]', this.state.description);
     formData.append('event[headliners]', this.state.headliners);
     formData.append('event[cost]', this.state.cost);
+    formData.append('event[date]', this.state.date);
     this.props.updateEvent(formData).then(() =>
       this.props.history.push(`/users/${currentUser.id}/events`)
     )
@@ -183,6 +188,19 @@ class UpdateEventForm extends React.Component {
                       <strong>{flags[`${event.location}`]}</strong> {event.location}
                     </span>
                   </article>
+                </span>
+              </li>
+              <li>
+                <label htmlFor="date">Date / <br/>
+                <input type="date"
+                  id="date-input"
+                  defaultValue={event.date}
+                  onChange={this.update('date')}
+                  />
+                </label>
+                <br/><br/>
+                <span id="date-notice">
+                  <small>This event is on</small> {formatDateStyle(event.date)}.
                 </span>
               </li>
               <li>
