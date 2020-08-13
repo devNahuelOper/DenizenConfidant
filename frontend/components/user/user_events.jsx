@@ -37,7 +37,9 @@ class UserEvents extends React.Component {
   handleDelete(e) {
     e.preventDefault();
     e.target.parentNode.parentNode.parentNode.parentNode.remove();
-    window.location.reload(true);
+    window.setTimeout(() => {
+      window.location.reload(true);
+    }, 1000)
   }
 
 
