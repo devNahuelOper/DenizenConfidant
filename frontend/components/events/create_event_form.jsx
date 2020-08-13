@@ -15,10 +15,13 @@ class CreateEventForm extends React.Component {
       headliners: '',
       cost: '',
       user_id: this.props.currentUser.id,
-      errors: this.props.errors
+      errors: this.props.errors,
+      photoFile: null,
+      photoUrl: null
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
     this.resetForm = this.resetForm.bind(this);
     this.update = this.update.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
@@ -57,6 +60,17 @@ class CreateEventForm extends React.Component {
     }, 1000);
   }
 
+  handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
 
 
   handleSubmit(e) {
@@ -71,12 +85,12 @@ class CreateEventForm extends React.Component {
     formData.append('event[headliners]', this.state.headliners);
     formData.append('event[cost]', this.state.cost);
     formData.append('event[user_id]', this.state.user_id);
+    if (this.state.photoFile) {
+      formData.append('event[photo]', this.state.photoFile);
+    }
     this.props.createEvent(formData).then(() => 
       this.props.history.push(`/users/${this.props.currentUser.id}/events`)
     )
-    // if (this.state.errors.length === 0) {
-    //   this.props.history.push(`/users/${this.props.currentUser.id}/events`);
-    // }
     e.target.reset();
   }
 
@@ -101,8 +115,9 @@ class CreateEventForm extends React.Component {
 
   render() {
     // const [error, setError] = useState(false);
-    const { name, date, venue, location, description } = this.state;
+    const { name, date, venue, location, description, headliners, cost } = this.state;
     const { currentUser } = this.props;
+    const preview = this.state.photoUrl ? <img width="265px" height="150px" src={this.state.photoUrl} /> : null;
     return (
       <div className="create-event">
         <div id="nav-container">
@@ -158,6 +173,7 @@ class CreateEventForm extends React.Component {
                   <option value="--Select a country--" disabled={true}>--Select a country--</option>
                   <option value="Argentina">Argentina</option>
                   <option value="Brazil">Brazil</option>
+                  <option value="Canada">Canada</option>
                   <option value="China">China</option>
                   <option value="France">France</option>
                   <option value="Germany">Germany</option>
@@ -183,6 +199,30 @@ class CreateEventForm extends React.Component {
                 </label>
               </li>
               <br/>
+                <li>
+                  <label>Line-up / <br />
+                    <textarea name="Headliners"
+                      className="text-input"
+                      id="description-input"
+                      placeholder="Who will be playing at this event? (optional)"
+                      value={headliners}
+                      onChange={this.update('headliners')}>
+                    </textarea>
+                  </label>
+                </li>
+                <br/>
+                <li>
+                  <label>Cost / <br />
+                    <input
+                      className="text-input"
+                      id="date-input"
+                      type="text"
+                      // placeholder="How much?"
+                      value={cost}
+                      onChange={this.update('cost')} />
+                  </label>
+                </li>
+                <br/>
               <li>
                 <label>Description / <br/>
                 <textarea name="Description"
@@ -195,6 +235,18 @@ class CreateEventForm extends React.Component {
                 </label>
               </li>
               <br/>
+                <li>
+                  <div id="preview-frame">
+                  <span>{preview}</span> <br/>
+                  <label htmlFor="photo">Flyer / <br />
+                    <input type="file"
+                      className="file-input"
+                      accept=".jpg,.jpeg,.png,.gif"
+                      onChange={this.handleFile.bind(this)} />
+                  </label>
+                  </div>
+                </li>
+                <br/>
             <li>
                 <input id="submit-event" type="submit" value="Submit"/>
             </li>

@@ -2,6 +2,8 @@ import * as DjApiUtil from '../util/dj_api_util';
 
 export const RECEIVE_DJS = 'RECEIVE_DJS';
 export const RECEIVE_DJ = 'RECEIVE_DJ';
+export const RECEIVE_DJ_ERRORS = 'RECEIVE_DJ_ERRORS';
+export const CLEAR_DJ_ERRORS = 'CLEAR_DJ_ERRORS';
 
 export const receiveDjs = djs => ({
   type: RECEIVE_DJS,
@@ -13,10 +15,19 @@ export const receiveDj = dj => ({
   dj
 });
 
+export const receiveDjErrors = errors => ({
+  type: RECEIVE_DJ_ERRORS,
+  errors
+});
+
+export const clearDjErrors = () => ({
+  type: CLEAR_DJ_ERRORS
+});
+
 export const fetchDjs = djs => dispatch => (
   DjApiUtil.fetchDjs(djs)
     .then(djs => dispatch(receiveDjs(djs)))
-)
+);
 
 export const fetchDj = djId => dispatch => (
   DjApiUtil.fetchDj(djId)

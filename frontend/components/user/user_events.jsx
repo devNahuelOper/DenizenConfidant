@@ -12,6 +12,7 @@ import { TitleComponent } from '../title_component.jsx';
 class UserEvents extends React.Component {
   constructor(props) {
     super(props);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -33,6 +34,13 @@ class UserEvents extends React.Component {
     }
     // console.log(this.props);
   }
+
+  handleDelete(e) {
+    e.preventDefault();
+    e.target.parentNode.parentNode.parentNode.parentNode.remove();
+    window.location.reload(true);
+  }
+
 
   render() {
     const { currentUser, deleteEvent } = this.props;
@@ -58,11 +66,12 @@ class UserEvents extends React.Component {
           <div className="subnav-container">
             <section id="subnav">
               <ul>
-                <li className="form"><Link to={`/users/${currentUser.id}`}>My Events</Link></li>
-                {/* <li><Link to="/">My Events</Link></li> */}
+                <li><Link to={`/users/${currentUser.id}`}>Overview</Link></li>
+                <li className="form"><Link to={`/users/${currentUser.id}/events`}>My Events</Link></li>
+                <li><Link to="/">Take me back home</Link></li>
               </ul>
             </section>
-            <SubnavToggle />
+            <SubnavToggle currentUser={currentUser}/>
           </div>
           <div className="user-subheader-container">
             <section className="user-subheader">
@@ -87,16 +96,18 @@ class UserEvents extends React.Component {
               {currentUser.events.length ? 
               <ul>
                 {currentUser.events.map((event, i) => 
-                <li key={i}>
+                <li key={i} id={event.id || null}>
                   <h1 id="myevent-date">{formatMonthDay(event.created_at)}</h1>
                     <article className="user-event">
                       <span className="myevent-details">
-                        <small>{formatDateStyle(event.date).split(' ').slice(0,2).join(' ')} / </small> <strong><Link to="/events">{event.name}</Link></strong> <br />
+                        <small>{formatDateStyle(event.date).split(' ').slice(0,2).join(' ')} / </small> <strong><Link to={`/events/${event.id}`}>{event.name}</Link></strong> <br />
                         <small>at </small> <strong>{event.venue}</strong>, <strong>{event.location} </strong>
                       </span>
                       <span className="manage-event">
                         <Link to={`/events/${event.id}/edit`}>Event Management</Link>
+                        <div onClick={this.handleDelete}>
                         <button id="delete-event" onClick={() => deleteEvent(event.id)}>Cancel Event</button>
+                        </div>
                       </span>
                     </article>
                 </li>
@@ -130,12 +141,12 @@ class SubnavToggle extends React.Component {
   }
 
   render() {
-    
+    const { currentUser } = this.props;
     return (
       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
         <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>My Events <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
-            {/* <li><Link className="log-link" onClick={this.leave} to="/signup">Register</Link></li> */}
+            <li><Link className="log-link" to={`/users/${currentUser.id}`}>Overview</Link></li>
             <li id="user-reveal"><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
           </ul>
         </button>

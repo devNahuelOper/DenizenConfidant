@@ -184,10 +184,11 @@
     color: white;
     position: relative;
     top: 12px;
-    -webkit-text-stroke: 1px black;
+    
   }
   a:hover {
     filter: invert(1);
+    -webkit-text-stroke: 1px black;
   }
   #prev {
     position: relative;
@@ -271,6 +272,10 @@
 
 #neotrance-container {
   background-position-y: -460px;
+}
+
+#synthpop-container {
+  background-position-y: -100px;
 }
 
 // Smaller

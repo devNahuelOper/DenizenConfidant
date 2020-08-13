@@ -69,11 +69,12 @@ class UserProfile extends React.Component {
         <div className="subnav-container">
           <section id="subnav">
             <ul>
-              <li className="form"><Link to={`/users/${currentUser.id}/events`}>Overview</Link></li>
+              <li className="form"><Link to={`/users/${currentUser.id}`}>Overview</Link></li>
+              <li><Link to={`/users/${currentUser.id}/events`}>My Events</Link></li>
               <li><Link to="/">Take me back home</Link></li>
             </ul>
           </section>
-          <SubnavToggle />
+          <SubnavToggle currentUser={currentUser} />
         </div>
         <div className="user-subheader-container">
           <section className="user-subheader">
@@ -115,11 +116,12 @@ class SubnavToggle extends React.Component {
   }
 
   render() {
+    const { currentUser } = this.props;
     return (
       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
         <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>Overview <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
-            {/* <li><Link className="log-link" onClick={this.leave} to="/signup">Register</Link></li> */}
+            <li><Link className="log-link" to={`/users/${currentUser.id}/events`}>My Events</Link></li>
             <li id="user-reveal"><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
           </ul>
         </button>
