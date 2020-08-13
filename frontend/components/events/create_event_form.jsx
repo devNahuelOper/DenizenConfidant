@@ -45,7 +45,6 @@ class CreateEventForm extends React.Component {
       searchbar.style.display = 'none';
       search.className = 'hide-search';
     }
-    console.log(this.state.errors.length);
   }
 
   resetForm(e) {

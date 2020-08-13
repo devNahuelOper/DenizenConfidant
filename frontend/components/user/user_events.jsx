@@ -32,7 +32,6 @@ class UserEvents extends React.Component {
       searchbar.style.display = 'none';
       search.className = 'hide-search';
     }
-    // console.log(this.props);
   }
 
   handleDelete(e) {
