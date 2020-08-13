@@ -58,8 +58,8 @@ class UserEvents extends React.Component {
           <div className="subnav-container">
             <section id="subnav">
               <ul>
-                <li className="form"><Link to={`/users/${currentUser.id}`}>My Events</Link></li>
-                {/* <li><Link to="/">My Events</Link></li> */}
+                <li className="form"><Link to={`/users/${currentUser.id}/events`}>My Events</Link></li>
+                <li><Link to="/">Take me back home</Link></li>
               </ul>
             </section>
             <SubnavToggle />
@@ -91,7 +91,7 @@ class UserEvents extends React.Component {
                   <h1 id="myevent-date">{formatMonthDay(event.created_at)}</h1>
                     <article className="user-event">
                       <span className="myevent-details">
-                        <small>{formatDateStyle(event.date).split(' ').slice(0,2).join(' ')} / </small> <strong><Link to="/events">{event.name}</Link></strong> <br />
+                        <small>{formatDateStyle(event.date).split(' ').slice(0,2).join(' ')} / </small> <strong><Link to={`/events/${event.id}`}>{event.name}</Link></strong> <br />
                         <small>at </small> <strong>{event.venue}</strong>, <strong>{event.location} </strong>
                       </span>
                       <span className="manage-event">
