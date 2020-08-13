@@ -28,7 +28,7 @@ export const receiveEventErrors = errors => ({
 
 export const clearEventErrors = () => ({
   type: CLEAR_EVENT_ERRORS
-})
+});
 
 export const fetchEvents = events => dispatch => (
   EventApiUtil.fetchEvents(events)
