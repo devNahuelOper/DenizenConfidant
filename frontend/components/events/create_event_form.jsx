@@ -117,6 +117,7 @@ class CreateEventForm extends React.Component {
     // const [error, setError] = useState(false);
     const { name, date, venue, location, description, headliners, cost } = this.state;
     const { currentUser } = this.props;
+    const preview = this.state.photoUrl ? <img width="265px" height="150px" src={this.state.photoUrl} /> : null;
     return (
       <div className="create-event">
         <div id="nav-container">
@@ -235,12 +236,15 @@ class CreateEventForm extends React.Component {
               </li>
               <br/>
                 <li>
+                  <div id="preview-frame">
+                  <span>{preview}</span> <br/>
                   <label htmlFor="photo">Flyer / <br />
                     <input type="file"
                       className="file-input"
                       accept=".jpg,.jpeg,.png,.gif"
                       onChange={this.handleFile.bind(this)} />
                   </label>
+                  </div>
                 </li>
                 <br/>
             <li>

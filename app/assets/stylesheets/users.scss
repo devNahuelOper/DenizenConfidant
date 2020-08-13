@@ -142,6 +142,17 @@
   justify-content: space-between;
 }
 
+#preview-frame {
+  display: flex;
+  flex-direction: column-reverse;
+  img {
+    // outline: 1px solid #6a96c2;
+    // border: 1px solid #ffffff;
+    border: 18px solid #4d4c4c;
+    border-radius: 4px;
+  }
+}
+
 .event-errors, #success-msg {
   color: white;
   margin-top: 91px;
