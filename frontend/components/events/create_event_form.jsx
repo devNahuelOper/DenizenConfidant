@@ -101,7 +101,7 @@ class CreateEventForm extends React.Component {
 
   render() {
     // const [error, setError] = useState(false);
-    const { name, date, venue, location, description } = this.state;
+    const { name, date, venue, location, description, headliners, cost } = this.state;
     const { currentUser } = this.props;
     return (
       <div className="create-event">
@@ -183,6 +183,30 @@ class CreateEventForm extends React.Component {
                 </label>
               </li>
               <br/>
+                <li>
+                  <label>Line-up / <br />
+                    <textarea name="Headliners"
+                      className="text-input"
+                      id="description-input"
+                      placeholder="Who will be playing at this event? (optional)"
+                      value={headliners}
+                      onChange={this.update('headliners')}>
+                    </textarea>
+                  </label>
+                </li>
+                <br/>
+                <li>
+                  <label>Cost / <br />
+                    <input
+                      className="text-input"
+                      id="date-input"
+                      type="text"
+                      // placeholder="How much?"
+                      value={cost}
+                      onChange={this.update('cost')} />
+                  </label>
+                </li>
+                <br/>
               <li>
                 <label>Description / <br/>
                 <textarea name="Description"

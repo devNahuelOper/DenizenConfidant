@@ -27,7 +27,7 @@ export const clearDjErrors = () => ({
 export const fetchDjs = djs => dispatch => (
   DjApiUtil.fetchDjs(djs)
     .then(djs => dispatch(receiveDjs(djs)))
-)
+);
 
 export const fetchDj = djId => dispatch => (
   DjApiUtil.fetchDj(djId)
