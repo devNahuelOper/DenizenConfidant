@@ -6,14 +6,17 @@ import { TitleComponent } from '../title_component.jsx';
 class UpdateEventForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: '',
-      venue: '',
-      cost: '',
-      headliners: '',
-      description: ''
-    }
-    // this.state = this.props.event;
+    // this.state = {
+    //   name: '',
+    //   venue: '',
+    //   cost: '',
+    //   headliners: '',
+    //   description: '',
+    //   id: 257,
+    //   user_id: 57,
+    //   location: 'United States',
+    //   id: this.props.event ? this.props.event.id : null
+    // }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.update = this.update.bind(this);
@@ -23,6 +26,7 @@ class UpdateEventForm extends React.Component {
     this.props.fetchEvent(this.props.match.params.eventId);
     window.scrollTo(0, 0);
   }
+
 
   componentDidUpdate() {
     const search = document.getElementById('search');
@@ -51,7 +55,19 @@ class UpdateEventForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateEvent(this.state);
+    // this.props.updateEvent(this.state);
+    const formData = new FormData();
+    formData.append('event[id]', this.state.id);
+    formData.append('event[user_id]', this.state.user_id);
+    formData.append('event[location]', this.state.location);
+    formData.append('event[name]', this.state.name);
+    formData.append('event[venue]', this.state.venue);
+    formData.append('event[description]', this.state.description);
+    formData.append('event[headliners]', this.state.headliners);
+    formData.append('event[cost]', this.state.cost);
+    this.props.updateEvent(formData).then(() =>
+      this.props.history.push(`/users/${currentUser.id}/events`)
+    )
   }
 
   handleFile(e) {

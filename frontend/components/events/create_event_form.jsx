@@ -42,6 +42,7 @@ class CreateEventForm extends React.Component {
       searchbar.style.display = 'none';
       search.className = 'hide-search';
     }
+    console.log(this.state.errors.length);
   }
 
   resetForm(e) {
@@ -70,7 +71,12 @@ class CreateEventForm extends React.Component {
     formData.append('event[headliners]', this.state.headliners);
     formData.append('event[cost]', this.state.cost);
     formData.append('event[user_id]', this.state.user_id);
-    this.props.createEvent(formData);
+    this.props.createEvent(formData).then(() => 
+      this.props.history.push(`/users/${this.props.currentUser.id}/events`)
+    )
+    // if (this.state.errors.length === 0) {
+    //   this.props.history.push(`/users/${this.props.currentUser.id}/events`);
+    // }
     e.target.reset();
   }
 
