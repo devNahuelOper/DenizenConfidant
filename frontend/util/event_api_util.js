@@ -23,25 +23,25 @@ export const createEvent = event => (
 );
 
 
-export const updateEvent = (id, event) => (
-  $.ajax({
-    method: 'PATCH',
-    url: `api/events/${id}`,
-    data: event,
-    contentType: false,
-    processData: false
-  })
-);
-
-// export const updateEvent = event => (
+// export const updateEvent = (id, event) => (
 //   $.ajax({
 //     method: 'PATCH',
-//     url: `api/events/${event.id}`,
+//     url: `api/events/${id}`,
 //     data: event,
 //     contentType: false,
 //     processData: false
 //   })
 // );
+
+export const updateEvent = event => (
+  $.ajax({
+    method: 'PATCH',
+    url: `api/events/${event.id}`,
+    data: { event },
+    contentType: false,
+    processData: false
+  })
+);
 
 export const deleteEvent = eventId => (
   $.ajax({

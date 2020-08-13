@@ -6,15 +6,15 @@ import UpdateEventForm from './update_event_form';
 const mapStateToProps = (state, ownProps) => ({
   event: state.entities.events[ownProps.match.params.eventId],
   currentUser: getCurrentUser(state),
-  errors: state.errors.events
+  // errors: state.errors.events
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchEvent: eventId => dispatch(fetchEvent(eventId)),
   fetchCurrentUser: (userId) => dispatch(fetchCurrentUser(userId)),
-  // updateEvent: (id, event) => dispatch(updateEvent(id, event)),
-  action: event => dispatch(updateEvent(id, event)),
-  receiveEventErrors: errors => dispatch(receiveEventErrors(errors)),
+  updateEvent: (event) => dispatch(updateEvent(event)),
+  // action: event => dispatch(updateEvent(event)),
+  // receiveEventErrors: errors => dispatch(receiveEventErrors(errors)),
   clearEventErrors: () => dispatch(clearEventErrors),
 });
 
