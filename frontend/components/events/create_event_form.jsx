@@ -158,6 +158,7 @@ class CreateEventForm extends React.Component {
                   <option value="--Select a country--" disabled={true}>--Select a country--</option>
                   <option value="Argentina">Argentina</option>
                   <option value="Brazil">Brazil</option>
+                  <option value="Canada">Canada</option>
                   <option value="China">China</option>
                   <option value="France">France</option>
                   <option value="Germany">Germany</option>
