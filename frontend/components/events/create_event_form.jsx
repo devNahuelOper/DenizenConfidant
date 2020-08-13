@@ -87,7 +87,8 @@ class CreateEventForm extends React.Component {
     if (this.state.photoFile) {
       formData.append('event[photo]', this.state.photoFile);
     }
-    this.props.createEvent(formData).then(() => 
+    this.props.createEvent(formData)
+    .then(() => 
       this.props.history.push(`/users/${this.props.currentUser.id}/events`)
     )
     e.target.reset();
