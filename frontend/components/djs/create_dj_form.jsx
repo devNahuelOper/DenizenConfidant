@@ -48,6 +48,7 @@ class CreateDjForm extends React.Component {
               </li>
               <li>
                 <h2>You must be a registered DC member.</h2>
+                <p>That criteria does apply. No ifs ands or buts about it.</p>
               </li>
             </ol>
           </section>
