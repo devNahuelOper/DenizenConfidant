@@ -31,6 +31,7 @@ class SignupForm extends React.Component {
 
   componentDidMount() {
     this.props.receiveErrors([]);
+    window.scrollTo(0, 0);
     const search = document.getElementById('search');
     const searchbar = document.getElementsByClassName('search-container')[0];
     search.onclick = function () {
