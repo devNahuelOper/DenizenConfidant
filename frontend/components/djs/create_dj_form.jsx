@@ -42,7 +42,9 @@ class CreateDjForm extends React.Component {
             <ol>
               <li>
                 <h2>You must have performed at a public venue or had your music charted on DC.</h2>
-
+                <p>Actually you could be just about anybody and create a profile. This is just here to
+                  fill in the space for styling purposes. Even a desk can create a profile here.
+                </p>
               </li>
               <li>
                 <h2>You must be a registered DC member.</h2>
@@ -53,6 +55,7 @@ class CreateDjForm extends React.Component {
         <div className="dj-form-container">
           <div className="form-wrap">
             <h1>Create a DJ profile.</h1>
+            <hr/>
           </div>
         </div>
       </div>
