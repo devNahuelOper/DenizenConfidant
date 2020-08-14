@@ -36,7 +36,18 @@ class CreateDjForm extends React.Component {
         </div>
         <div className="dj-requirements">
           <section id="requirements">
+            <h1>So you want an artist profile? <br/>
+              There are two criteria you have to meet.
+            </h1>
+            <ol>
+              <li>
+                <h2>You must have performed at a public venue or had your music charted on DC.</h2>
 
+              </li>
+              <li>
+                <h2>You must be a registered DC member.</h2>
+              </li>
+            </ol>
           </section>
         </div>
         <div className="dj-form-container">
