@@ -36,7 +36,7 @@ class CreateDjForm extends React.Component {
         </div>
         <div className="dj-requirements">
           <section id="requirements">
-            <h1>So you want an artist profile? <br/>
+            <h1>So you want a DJ profile? <br/>
               There are two criteria you have to meet.
             </h1>
             <ol>
@@ -52,7 +52,7 @@ class CreateDjForm extends React.Component {
         </div>
         <div className="dj-form-container">
           <div className="form-wrap">
-
+            <h1>Create a DJ profile.</h1>
           </div>
         </div>
       </div>
