@@ -44,11 +44,14 @@ class CreateDjForm extends React.Component {
                 <h2>You must have performed at a public venue or had your music charted on DC.</h2>
                 <p>Actually you could be just about anybody and create a profile. This is just here to
                   fill in the space for styling purposes. Even a desk can create a profile here.
+
                 </p>
               </li>
               <li>
                 <h2>You must be a registered DC member.</h2>
-                <p>That criteria does apply. No ifs ands or buts about it.</p>
+                <p>That criteria does apply. No ifs ands or buts about it.
+                  Don't have a profile? Head on over to the signup page!
+                </p>
               </li>
             </ol>
           </section>
