@@ -34,6 +34,16 @@ class CreateDjForm extends React.Component {
           </section>
           <SubnavToggle />
         </div>
+        <div className="dj-requirements">
+          <section id="requirements">
+
+          </section>
+        </div>
+        <div className="dj-form-container">
+          <div className="form-wrap">
+
+          </div>
+        </div>
       </div>
     )
   }
