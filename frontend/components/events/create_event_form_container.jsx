@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createEvent, receiveEventErrors, clearEventErrors } from '../../actions/event_actions';
 import { fetchCurrentUser, getCurrentUser } from '../../actions/session_actions';
-import  CreateEventForm  from './create_event_form';
+import  CreateEventForm from './create_event_form';
 
 
 const mapStateToProps = state => ({
