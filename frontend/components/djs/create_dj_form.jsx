@@ -43,7 +43,7 @@ class CreateDjForm extends React.Component {
               <li>
                 <h2>You must have performed at a public venue or had your music charted on DC.</h2>
                 <p>Actually you could be just about anybody and create a profile. This is just here to
-                  fill in the space for styling purposes. Even a desk can create a profile here.
+                  fill in the space for styling purposes. Even a ferret could create a profile here.
 
                 </p>
               </li>
