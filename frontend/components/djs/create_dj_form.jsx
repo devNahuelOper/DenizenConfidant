@@ -29,7 +29,7 @@ class CreateDjForm extends React.Component {
             <ul>
               <li><Link to="/djs">All</Link></li>
               <li><Link to="/">Take me back home</Link></li>
-              <li id="pending"><Link className="form" to='/djs'>Create an artist profile <br /> <small>Coming Soon!</small></Link></li>
+              <li id="pending"><Link className="form" to='/djs'>Create an artist profile</Link></li>
             </ul>
           </section>
           <SubnavToggle />
@@ -37,7 +37,7 @@ class CreateDjForm extends React.Component {
         <div className="dj-requirements">
           <section id="requirements">
             <h1>So you want to create an artist profile? <br/>
-              There are two criteria you have to meet.
+              There are two criteria you have to meet:
             </h1>
             <br/>
             <ul>
@@ -95,8 +95,8 @@ class SubnavToggle extends React.Component {
       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
         <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>Create and artist profile <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
-            <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
             <li><Link className="log-link" onClick={this.leave} to="/djs">All</Link></li>
+            <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
           </ul>
         </button>
       </div>
