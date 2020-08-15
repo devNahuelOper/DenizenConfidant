@@ -50,7 +50,7 @@ class CreateDjForm extends React.Component {
               <li>
                 <h2>You must be a registered DC member.</h2>
                 <p>That criteria does apply. No ifs ands or buts about it.
-                  Don't have a profile? Head on over to the signup page!
+                  Don't have a profile? Signup <Link>Here</Link>.
                 </p>
               </li>
             </ol>
@@ -60,6 +60,10 @@ class CreateDjForm extends React.Component {
           <div className="form-wrap">
             <h1>Create a DJ profile.</h1>
             <hr/>
+            <p>
+              DJ name should be submitted exactly as it is billed on flyers. <br/>
+              Please use correct capitalisation and double check your spelling.
+            </p>
           </div>
         </div>
       </div>
