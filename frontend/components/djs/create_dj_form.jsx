@@ -27,9 +27,9 @@ class CreateDjForm extends React.Component {
         <div className="djs-subnav-container">
           <section className="djs-subnav">
             <ul>
-              <li><Link className="form" to="/djs">All</Link></li>
+              <li><Link to="/djs">All</Link></li>
               <li><Link to="/">Take me back home</Link></li>
-              <li id="pending"><Link to='/djs'>Create an artist profile <br /> <small>Coming Soon!</small></Link></li>
+              <li id="pending"><Link className="form" to='/djs'>Create an artist profile <br /> <small>Coming Soon!</small></Link></li>
             </ul>
           </section>
           <SubnavToggle />
@@ -92,10 +92,10 @@ class SubnavToggle extends React.Component {
   render() {
     return (
       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>All <small>⬇︎</small></span>
+        <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>Create and artist profile <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
             <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-            <li><Link className="log-link" onClick={this.leave} to="/signup">Create and artist profile</Link></li>
+            <li><Link className="log-link" onClick={this.leave} to="/djs">All</Link></li>
           </ul>
         </button>
       </div>
