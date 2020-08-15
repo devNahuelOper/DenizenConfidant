@@ -14,6 +14,7 @@ import CreateEventFormContainer from './events/create_event_form_container';
 import UpdateEventFormContainer from './events/update_event_form_container';
 import DjIndexContainer from './djs/dj_index_container';
 import DjShowContainer from './djs/dj_show_container';
+import CreateDjFormContainer from './djs/create_dj_form_container';
 import GenreIndexContainer from './genres/genre_index_container';
 import GenreShowContainer from './genres/genre_show_container';
 import SplashContainer from './splash/splash_container';
