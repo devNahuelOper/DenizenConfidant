@@ -13,6 +13,21 @@ class CreateDjForm extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    const search = document.getElementById('search');
+    const searchbar = document.getElementsByClassName('search-container')[0];
+    search.onclick = function () {
+      searchbar.style.display = 'block';
+      search.className = 'show-search';
+    }
+    window.onclick = function (e) {
+      let inSearchbar = searchbar.contains(e.target);
+      let inSearch = search.contains(e.target);
+      if (inSearchbar || inSearch) {
+        return;
+      }
+      searchbar.style.display = 'none';
+      search.className = 'hide-search';
+    }
   }
 
   update(field) {
