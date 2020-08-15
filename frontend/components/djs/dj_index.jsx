@@ -51,7 +51,7 @@ class DjIndex extends React.Component {
             <ul>
               <li><Link className="form" to="/djs">All</Link></li>
               <li><Link to="/">Take me back home</Link></li>
-              <li id="pending"><Link to='/djs'>Create an artist profile <br/> <small>Coming Soon!</small></Link></li>
+              <li id="pending"><Link to='/djs/new'>Create an artist profile <br/> <small>Coming Soon!</small></Link></li>
             </ul>
           </section>
           <SubnavToggle />
