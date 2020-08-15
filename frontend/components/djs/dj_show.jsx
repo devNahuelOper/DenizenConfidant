@@ -86,7 +86,7 @@ class DjShow extends React.Component {
               <li><Link to="/djs">All</Link></li>
               <li><Link className="form" to={`/djs/${dj.id}`}>{dj.name}</Link></li>
               <li><Link to="/">Take me back home</Link></li>
-              <li id="pending"><Link to='/djs'>Create an artist profile <br /> <small>Coming Soon!</small></Link></li>
+              <li id="pending"><Link to='/djs/new'>Create an artist profile</Link></li>
             </ul>
           </section>
             <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
@@ -94,7 +94,7 @@ class DjShow extends React.Component {
                 <ul className={this.state.drop ? "reveal" : "hide"}>
                   <li><Link className="log-link" to="/djs">All</Link></li>
                   <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-                  <li><Link className="log-link" onClick={this.leave} to="/signup">Create and artist profile</Link></li>
+                  <li><Link className="log-link" onClick={this.leave} to="/djs/new">Create and artist profile</Link></li>
                 </ul>
               </button>
             </div>
