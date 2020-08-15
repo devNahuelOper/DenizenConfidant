@@ -50,7 +50,7 @@ class CreateDjForm extends React.Component {
               <li>
                 <h2>You must be a registered DC member.</h2>
                 <p>That criteria does apply. No ifs ands or buts about it.
-                  Don't have a profile? Signup <Link>Here</Link>.
+                  Don't have a profile? Signup <Link to="/signup">Here</Link>.
                 </p>
               </li>
             </ol>
