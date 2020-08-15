@@ -7,6 +7,10 @@ class CreateDjForm extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <div className="dj-index" id="create-dj">
