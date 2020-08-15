@@ -77,8 +77,8 @@ class CreateDjForm extends React.Component {
             <h1>Create an artist profile.</h1>
             <hr/>
             <p>
-              DJ name should be submitted exactly as it is billed on flyers. <br/>
-              Please use correct capitalisation and double check your spelling.
+              Artist name should be submitted exactly as it is billed on flyers. <br/>
+              Please use correct capitalization and double check your spelling.
             </p>
 
             <form className="dj-form">
