@@ -494,7 +494,30 @@
   p {
     color: #9c9c9c;
     margin: 20px 0;
+    i {
+      font-style: italic;
+      font-size: 12px;
+    }
   }
+  .text-input {
+    width: 312px;
+    color: black;
+    box-sizing: border-box;
+    padding: 4px;
+  }
+}
+
+.new-dj-formlist {
+  li {
+    margin: 24px 0;
+  }
+}
+
+#submit-dj {
+  background-color: #ffa100;
+  color: black;
+  box-sizing: border-box;
+  padding: 8px 54px;
 }
 
 // Smaller

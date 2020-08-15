@@ -5,13 +5,24 @@ import { withRouter } from 'react-router';
 class CreateDjForm extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      name: ''
+    }
+    this.update = this.update.bind(this);
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
   }
 
+  update(field) {
+    return e => {
+      this.setState({ [field]: e.currentTarget.value });
+    }
+  }
+
   render() {
+    const { name } = this.state;
     return (
       <div className="dj-index" id="create-dj">
         <div className="djs-nav-container">
@@ -49,7 +60,7 @@ class CreateDjForm extends React.Component {
                 <h2>1. You must have performed at a public venue or had your music charted on DC.</h2>
                 <p>This does not include your cousin's barmitzvah, or that house warming party where you were in charge of the playlist. <br/>
                   Actually you could be just about anybody and create a profile. This is just here to
-                  fill in the space for styling purposes. Even a ferret could create a DJ profile.
+                  fill in the space for styling purposes. Even a ferret could create an artist profile.
                 </p>
               </li>
               <li>
@@ -63,12 +74,31 @@ class CreateDjForm extends React.Component {
         </div>
         <div className="dj-form-container">
           <div className="form-wrap">
-            <h1>Create a DJ profile.</h1>
+            <h1>Create an artist profile.</h1>
             <hr/>
             <p>
               DJ name should be submitted exactly as it is billed on flyers. <br/>
               Please use correct capitalisation and double check your spelling.
             </p>
+
+            <form className="dj-form">
+              <ul className="new-dj-formlist">
+                <li>
+                  <label htmlFor="name">Enter your artist name / <br/>
+                    <input type="text"
+                    className="text-input"
+                    value={name}
+                    onChange={this.update('name')}/>
+                  </label>
+                </li>
+                <li>
+                  {/* <input id="submit-dj" type="submit" value="Create"/> <br/> */}
+                  <span id="submit-dj">Create</span>
+                  <br/>
+                  <p><i>Under Construction</i></p>
+                </li>
+              </ul>
+            </form>
           </div>
         </div>
       </div>
