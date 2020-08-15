@@ -455,6 +455,71 @@
   }
 }
 
+// Create DJ Form
+
+.dj-requirements {
+  background-color: #1e1e1e;
+  color: white;
+}
+#requirements {
+  width: 952px;
+  margin: 0 auto;
+  padding: 20px 0;
+  p {
+    color: #9c9c9c;
+    a {
+      color: #fdff00;
+    }
+    a:hover {
+      color: #1e1e1e;
+      background-color: #fdff00;
+    }
+  }
+}
+
+.dj-form-container {
+  background-color: #404040;
+  color: white;
+  .form-wrap {
+    display: block;
+    padding: 20px 0;
+  }
+  h1 {
+    font-size: 24px;
+
+  }
+  hr {
+     border-color: #fdff00;
+  }
+  p {
+    color: #9c9c9c;
+    margin: 20px 0;
+    i {
+      font-style: italic;
+      font-size: 12px;
+    }
+  }
+  .text-input {
+    width: 312px;
+    color: black;
+    box-sizing: border-box;
+    padding: 4px;
+  }
+}
+
+.new-dj-formlist {
+  li {
+    margin: 24px 0;
+  }
+}
+
+#submit-dj {
+  background-color: #ffa100;
+  color: black;
+  box-sizing: border-box;
+  padding: 8px 54px;
+}
+
 // Smaller
 
 @media only screen and (max-width: 972px) {
@@ -545,6 +610,9 @@
       }
     }
   }
+  #requirements {
+    width: 675px;
+  }
 }
 
 
@@ -587,6 +655,7 @@
          width: 560px;
       }
     }
+   
   }
 
   // #dj-show .djs-subnav #pending small {
@@ -624,6 +693,15 @@
       audio {
         width: 235px;
       }
+    }
+  }
+
+  #requirements {
+    width: 560px;
+  }
+  .dj-form-container {
+    .form-wrap {
+      width: 560px;
     }
   }
 }
@@ -701,6 +779,14 @@
       }
     }
   }
+  #requirements {
+    width: 490px;
+  }
+  .dj-form-container {
+    .form-wrap {
+      width: 490px;
+    }
+  }
 }
 
 // Larger
@@ -746,6 +832,14 @@
         width: 1272px;
         justify-content: space-between;
       }
+    }
+  }
+  #requirements {
+    width: 1272px;
+  }
+  .dj-form-container {
+    .form-wrap {
+      width: 1272px;
     }
   }
 }

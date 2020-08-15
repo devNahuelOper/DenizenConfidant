@@ -51,7 +51,7 @@ class DjIndex extends React.Component {
             <ul>
               <li><Link className="form" to="/djs">All</Link></li>
               <li><Link to="/">Take me back home</Link></li>
-              <li id="pending"><Link to='/djs'>Create an artist profile <br/> <small>Coming Soon!</small></Link></li>
+              <li id="pending"><Link to='/djs/new'>Create an artist profile</Link></li>
             </ul>
           </section>
           <SubnavToggle />
@@ -100,7 +100,7 @@ class SubnavToggle extends React.Component {
         <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>All <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
             <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-            <li><Link className="log-link" onClick={this.leave} to="/signup">Create and artist profile</Link></li>
+            <li><Link className="log-link" onClick={this.leave} to="/djs/new">Create and artist profile</Link></li>
           </ul>
         </button>
       </div>
