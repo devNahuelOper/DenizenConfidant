@@ -9,7 +9,7 @@ class CreateDjForm extends React.Component {
 
   render() {
     return (
-      <div className="create-dj">
+      <div className="dj-index" id="create-dj">
         <div className="djs-nav-container">
           <section className="djs-nav">
             <nav>
@@ -36,24 +36,25 @@ class CreateDjForm extends React.Component {
         </div>
         <div className="dj-requirements">
           <section id="requirements">
-            <h1>So you want a DJ profile? <br/>
+            <h1>So you want to create an artist profile? <br/>
               There are two criteria you have to meet.
             </h1>
-            <ol>
+            <br/>
+            <ul>
               <li>
-                <h2>You must have performed at a public venue or had your music charted on DC.</h2>
+                <h2>1. You must have performed at a public venue or had your music charted on DC.</h2>
                 <p>This does not include your cousin's barmitzvah, or that house warming party where you were in charge of the playlist. <br/>
                   Actually you could be just about anybody and create a profile. This is just here to
                   fill in the space for styling purposes. Even a ferret could create a DJ profile.
                 </p>
               </li>
               <li>
-                <h2>You must be a registered DC member.</h2>
-                <p>That criteria does apply. No ifs ands or buts about it.
+                <h2>2. You must be a registered DC member.</h2>
+                <p>This criteria does apply. No ifs ands or buts about it.
                   Don't have a profile? Signup <Link to="/signup">Here</Link>.
                 </p>
               </li>
-            </ol>
+            </ul>
           </section>
         </div>
         <div className="dj-form-container">

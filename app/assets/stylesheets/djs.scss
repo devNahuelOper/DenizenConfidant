@@ -455,6 +455,21 @@
   }
 }
 
+// Create DJ Form
+
+.dj-requirements {
+  background-color: #1e1e1e;
+  color: white;
+}
+#requirements {
+  width: 952px;
+  margin: 0 auto;
+  padding: 20px 0;
+  ol {
+    padding-inline-start: 18px;
+  }
+}
+
 // Smaller
 
 @media only screen and (max-width: 972px) {
