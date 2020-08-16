@@ -126,6 +126,7 @@ class DjQuery extends React.Component {
 * CSS/SCSS
 
 ## Backend
+* Ruby
 * Ruby on Rails
 * PostgreSQL
 
@@ -135,17 +136,5 @@ class DjQuery extends React.Component {
 
 
 # Features to be implemented
-* create artist profile
-* upload music
-
-
-
-
-
-
-
-
-
-
-* ...
+* Artists can create a profile and upload their music
 
