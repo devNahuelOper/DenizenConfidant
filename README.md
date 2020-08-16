@@ -131,7 +131,6 @@ class DjQuery extends React.Component {
 
 
 # Features to be implemented
-* create an event for others to attend
 * create artist profile
 * upload music
 
