@@ -246,6 +246,7 @@ class UpdateEventForm extends React.Component {
                     <input id="submit-event" type="submit" value="Submit"/>
               </li>
               </ul>
+              <small></small>
             </form>
           </div>
         </div>
