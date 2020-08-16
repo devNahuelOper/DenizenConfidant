@@ -243,10 +243,11 @@ class UpdateEventForm extends React.Component {
                 </label>
               </li>
               <li>
-                    <input id="submit-event" type="submit" value="Submit"/>
+                  <input id="submit-event" type="submit" value="Submit"/>
+                    <br/>
+                  <small><i>Under Construction</i></small>
               </li>
               </ul>
-              <small><i>Under Construction</i></small>
             </form>
           </div>
         </div>
