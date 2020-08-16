@@ -75,7 +75,7 @@ class CreateDjForm extends React.Component {
                 <h2>1. You must have performed at a public venue or had your music charted on DC.</h2>
                 <p>This does not include your cousin's barmitzvah, or that house warming party where you were in charge of the playlist. <br/>
                   Actually you could be just about anybody and create a profile. This is just here to
-                  fill in the space for styling purposes. Even a ferret could create an artist profile.
+                  fill in space for styling purposes. Even a ferret could create an artist profile.
                 </p>
               </li>
               <li>
