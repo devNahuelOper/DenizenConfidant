@@ -109,7 +109,11 @@ class DjQuery extends React.Component {
 
 <img src="https://user-images.githubusercontent.com/16979527/89132680-ea318500-d4e3-11ea-935f-5e17520bed51.png" width="700" height="800">
 
-* Events: List of some of the world's most popular Electronic Music events, each with their own show page.
+* Events: Users can create their own events via a form that also allows image previewing of event flyer.
+
+![image](https://user-images.githubusercontent.com/16979527/90344113-94310700-dfe4-11ea-80b7-0bb667bf373f.png)
+
+ List of some of the world's most popular Electronic Music events, each with their own show page.
 
 <img src="https://user-images.githubusercontent.com/16979527/89133032-83619b00-d4e6-11ea-8c50-d0c31e904dbd.png" width="700" height="800">
 
