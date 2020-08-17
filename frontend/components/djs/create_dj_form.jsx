@@ -131,12 +131,26 @@ class CreateDjForm extends React.Component {
                   </label>
                 </li>
                 <li>
-                  <label htmlFor="Genre">Musical Style / <br/>
+                  <label htmlFor="Genre">Musical Style(s) / <br/>
                     <select name="Genre" id="genre-select" value={genre || '--Select a style--'} onChange={this.update('genre')}>
                       <option value="--Select a style--" disabled={true}>--Select a style--</option>
                         {genres.map(genre => 
                         <option key={genre.id} value={genre.name}>{genre.name}</option>
                           )}
+                    </select>
+                    <br/>
+                    <select name="Genre" id="genre-select" value={genre || '--Select a style--'} onChange={this.update('genre')}>
+                      <option value="--Select a style--" disabled={true}>--Select a style--</option>
+                      {genres.map(genre =>
+                        <option key={genre.id} value={genre.name}>{genre.name}</option>
+                      )}
+                    </select>
+                    <br/>
+                    <select name="Genre" id="genre-select" value={genre || '--Select a style--'} onChange={this.update('genre')}>
+                      <option value="--Select a style--" disabled={true}>--Select a style--</option>
+                      {genres.map(genre =>
+                        <option key={genre.id} value={genre.name}>{genre.name}</option>
+                      )}
                     </select>
                   </label>
                 </li>
