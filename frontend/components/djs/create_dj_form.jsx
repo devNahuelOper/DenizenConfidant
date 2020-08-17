@@ -7,7 +7,16 @@ class CreateDjForm extends React.Component {
     super(props);
     this.state = {
       name: '',
+      // genre: {
+      //   gen1: '',
+      //   gen2: '',
+      //   gen3: ''
+      // },
+      gen1: '',
+      gen2: '',
+      gen3: '',
       genre: '',
+      // genre: gen1 + gen2 + gen3,
       nationality: ''
     }
     this.update = this.update.bind(this);
@@ -40,7 +49,7 @@ class CreateDjForm extends React.Component {
   }
 
   render() {
-    const { name, genre, nationality } = this.state;
+    const { name, genre, gen1, gen2, gen3, nationality } = this.state;
     const { genres } = this.props;
     return (
       <div className="dj-index" id="create-dj">
@@ -132,24 +141,24 @@ class CreateDjForm extends React.Component {
                 </li>
                 <li>
                   <label htmlFor="Genre">Musical Style(s) / <br/>
-                    <select name="Genre" id="genre-select" value={genre || '--Select a style--'} onChange={this.update('genre')}>
+                    <select name="Genre" id="genre-select" value={gen1 || '--Select a style--'} onChange={this.update('gen1')}>
                       <option value="--Select a style--" disabled={true}>--Select a style--</option>
                         {genres.map(genre => 
                         <option key={genre.id} value={genre.name}>{genre.name}</option>
                           )}
                     </select>
                     <br/>
-                    <select name="Genre" id="genre-select" value={genre || '--Select a style--'} onChange={this.update('genre')}>
+                    <select name="Genre" id="genre-select" value={gen2 || '--Select a style--'} onChange={this.update('gen2')}>
                       <option value="--Select a style--" disabled={true}>--Select a style--</option>
                       {genres.map(genre =>
-                        <option key={genre.id} value={genre.name}>{genre.name}</option>
+                        <option key={genre.id} value={genre.name}> {genre.name}</option>
                       )}
                     </select>
                     <br/>
-                    <select name="Genre" id="genre-select" value={genre || '--Select a style--'} onChange={this.update('genre')}>
+                    <select name="Genre" id="genre-select" value={gen3 || '--Select a style--'} onChange={this.update('gen3')}>
                       <option value="--Select a style--" disabled={true}>--Select a style--</option>
                       {genres.map(genre =>
-                        <option key={genre.id} value={genre.name}>{genre.name}</option>
+                        <option key={genre.id} value={genre.name}> {genre.name}</option>
                       )}
                     </select>
                   </label>
