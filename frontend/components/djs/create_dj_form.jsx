@@ -41,6 +41,7 @@ class CreateDjForm extends React.Component {
 
   render() {
     const { name, genre, nationality } = this.state;
+    const { genres } = this.props;
     return (
       <div className="dj-index" id="create-dj">
         <div className="djs-nav-container">
@@ -133,7 +134,9 @@ class CreateDjForm extends React.Component {
                   <label htmlFor="Genre">Musical Style / <br/>
                     <select name="Genre" id="genre-select" value={genre || '--Select a style--'} onChange={this.update('genre')}>
                       <option value="--Select a style--" disabled={true}>--Select a style--</option>
-
+                        {genres.map(genre => 
+                        <option key={genre.id} value={genre.name}>{genre.name}</option>
+                          )}
                     </select>
                   </label>
                 </li>
