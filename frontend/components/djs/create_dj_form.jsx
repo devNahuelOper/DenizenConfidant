@@ -6,13 +6,25 @@ class CreateDjForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ''
+      name: '',
+      genre: {
+        gen1: '',
+        gen2: '',
+        gen3: ''
+      },
+      nationality: '',
+      bio: '',
+      photoFile: null,
+      photoUrl: null
     }
     this.update = this.update.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    this.props.fetchGenres()
     const search = document.getElementById('search');
     const searchbar = document.getElementsByClassName('search-container')[0];
     search.onclick = function () {
@@ -33,11 +45,53 @@ class CreateDjForm extends React.Component {
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
+      console.log(this.state);
     }
   }
 
+  handleChange({ target }) {
+    this.setState({
+      ...this.state,
+      genre: {
+        ...this.state.genre,
+        [target.name]: target.value
+      }
+    });
+    console.log(this.state);
+  }
+
+  handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
+
   render() {
-    const { name } = this.state;
+    const { name, genre, nationality, bio } = this.state;
+    const { genres } = this.props;
+
+    const selectedGenre = Object.values(this.state.genre).join(' ');
+    // const gen1Options = this.state.genres.filter(gen =>
+    //   selectedGenre.find(sGen => sGen !== gen) ||
+    //   gen === this.state.genre.gen1
+    //   );
+    // const gen1Options = Object.values(this.state.genres);
+    // const gen2Options = this.state.genres.filter(gen =>
+    //   selectedGenre.find(sGen => sGen !== gen) ||
+    //   gen !== this.state.genre.gen1
+    // );
+    // const gen3Options = this.state.genres.filter(gen =>
+    //   selectedGenre.find(sGen => sGen !== gen) ||
+    //   gen !== this.state.genre.gen2
+    // );
+  const preview = this.state.photoUrl ? <article className="dj-disp"><img  src={this.state.photoUrl} /><h1 id="disp-name">{name}</h1><span id="disp-banner"><h2 id="disp-country"><small>Country / </small><br/>{nationality}</h2> <h2 id="disp-genre"><small>Genre(s) / </small><br/>{selectedGenre}</h2></span></article> : null;
+    // width = "265px" height = "150px"
     return (
       <div className="dj-index" id="create-dj">
         <div className="djs-nav-container">
@@ -106,6 +160,77 @@ class CreateDjForm extends React.Component {
                     onChange={this.update('name')}/>
                   </label>
                 </li>
+                <li>
+                  <label>Country / <br />
+                    <select name="Nationality" id="nationality-select" value={nationality || '🇺🇸 United States'} onChange={this.update('nationality')}>
+                      <option value="--Select a country--" disabled={true}>--Select a country--</option>
+                      <option value="🇦🇷 Argentina">🇦🇷 Argentina</option>
+                      <option value="🇧🇷 Brazil">🇧🇷 Brazil</option>
+                      <option value="🇨🇦 Canada">🇨🇦 Canada</option>
+                      <option value="🇨🇳 China">🇨🇳 China</option>
+                      <option value="🇫🇷 France">🇫🇷 France</option>
+                      <option value="🇩🇪 Germany">🇩🇪 Germany</option>
+                      <option value="🇮🇹 Italy">🇮🇹 Italy</option>
+                      <option value="🇯🇵 Japan">🇯🇵 Japan</option>
+                      <option value="🇳🇱 Netherlands">🇳🇱 Netherlands</option>
+                      <option value="🇪🇸 Spain">🇪🇸 Spain</option>
+                      <option value="🇸🇪 Sweden">🇸🇪 Sweden</option>
+                      <option value="🇬🇧 United Kingdom">🇬🇧 United Kingdom</option>
+                      <option value="🇺🇸 United States">🇺🇸 United States</option>
+                    </select>
+                  </label>
+                </li>
+                <li>
+                  <label htmlFor="Genre">Musical Style(s) / <br/>
+                    <select name="gen1" id="genre-select" value={genre.gen1 || '--Select a style--'} onChange={this.handleChange}>
+                      <option value="--Select a style--" disabled={true}>--Select a style--</option>
+                      {genres.map(genre => 
+                        <option key={genre.id} >{genre.name}</option>
+                          )}
+                    </select>
+                    <br/>
+                    <select name="gen2" id="genre-select" value={genre.gen2 || '--Select a style--'} onChange={this.handleChange}>
+                      <option value="--Select a style--" disabled={true}>--Select a style--</option>
+                      {genres.map(genre =>
+                        <option key={genre.id} > {genre.name}</option>
+                      )}
+                    </select>
+                    <br/>
+                    <select name="gen3" id="genre-select" value={genre.gen3 || '--Select a style--'} onChange={this.handleChange}>
+                      <option value="--Select a style--" disabled={true}>--Select a style--</option>
+                      {genres.map(genre =>
+                        <option key={genre.id} > {genre.name}</option>
+                      )}
+                    </select>
+                  </label>
+                </li>
+                {/* <input id="genre-display" type="text" placeholder={selectedGenre}/> */}
+                <li>
+                  <div id="dj-preview-frame">
+                    {preview}
+                      
+                     <br />
+                  <label htmlFor="photo">Primary DJ Photo / <br/>
+                      <input type="file"
+                      className="file-input"
+                      accept=".jpg,.jpeg,.png,.gif"
+                      onChange={this.handleFile.bind(this)}
+                      />
+                  </label>
+                  </div>
+                </li>
+                <li>
+                  <label htmlFor="bio">Biography / <br/>
+                    <textarea name="bio" 
+                      id="bio-input"
+                      value={bio}
+                      placeholder={`Tell us a bit about who the real ${name || '____'} is`}
+                      onChange={this.update('bio')}>
+
+                    </textarea>
+                  </label> 
+                </li>
+                <br/>
                 <li>
                   {/* <input id="submit-dj" type="submit" value="Create"/> <br/> */}
                   <span id="submit-dj">Create</span>
