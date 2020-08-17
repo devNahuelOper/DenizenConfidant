@@ -7,6 +7,7 @@ class CreateDjForm extends React.Component {
     super(props);
     this.state = {
       name: '',
+      genre: '',
       nationality: ''
     }
     this.update = this.update.bind(this);
@@ -38,7 +39,7 @@ class CreateDjForm extends React.Component {
   }
 
   render() {
-    const { name, nationality } = this.state;
+    const { name, genre, nationality } = this.state;
     return (
       <div className="dj-index" id="create-dj">
         <div className="djs-nav-container">
@@ -109,7 +110,7 @@ class CreateDjForm extends React.Component {
                 </li>
                 <li>
                   <label>Country / <br />
-                    <select name="Location" id="location-select" value={nationality || 'United States'} onChange={this.update('nationality')}>
+                    <select name="Nationality" id="nationality-select" value={nationality || 'United States'} onChange={this.update('nationality')}>
                       <option value="--Select a country--" disabled={true}>--Select a country--</option>
                       <option value="Argentina">Argentina</option>
                       <option value="Brazil">Brazil</option>
@@ -128,7 +129,12 @@ class CreateDjForm extends React.Component {
                   </label>
                 </li>
                 <li>
-                  
+                  <label htmlFor="Genre">Musical Style / <br/>
+                    <select name="Genre" id="genre-select" value={genre || '--Select a style--'} onChange={this.update('genre')}>
+                      <option value="--Select a style--" disabled={true}>--Select a style--</option>
+
+                    </select>
+                  </label>
                 </li>
                 <li>
                   {/* <input id="submit-dj" type="submit" value="Create"/> <br/> */}

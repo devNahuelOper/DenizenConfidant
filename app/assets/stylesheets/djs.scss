@@ -513,6 +513,13 @@
   }
 }
 
+#genre-select, #nationality-select {
+  width: 150px;
+  height: 30px;
+  -webkit-appearance: auto;
+  font-size: 16px;
+}
+
 #submit-dj {
   background-color: #ffa100;
   color: black;
