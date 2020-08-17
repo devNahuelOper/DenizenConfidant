@@ -13,6 +13,7 @@ class CreateDjForm extends React.Component {
         gen3: ''
       },
       nationality: '',
+      bio: '',
       photoFile: null,
       photoUrl: null
     }
@@ -72,7 +73,7 @@ class CreateDjForm extends React.Component {
 
 
   render() {
-    const { name, genre, nationality } = this.state;
+    const { name, genre, nationality, bio } = this.state;
     const { genres } = this.props;
 
     const selectedGenre = Object.values(this.state.genre).join(' ');
@@ -217,6 +218,17 @@ class CreateDjForm extends React.Component {
                       />
                   </label>
                   </div>
+                </li>
+                <li>
+                  <label htmlFor="bio">Biography / <br/>
+                    <textarea name="bio" 
+                      id="bio-input"
+                      value={bio}
+                      placeholder={`Tell us a bit about who the real ${name || '___'} is`}
+                      onChange={this.update('bio')}>
+
+                    </textarea>
+                  </label> 
                 </li>
                 <br/>
                 <li>
