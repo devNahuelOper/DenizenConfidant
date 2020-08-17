@@ -6,7 +6,8 @@ class CreateDjForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ''
+      name: '',
+      nationality: ''
     }
     this.update = this.update.bind(this);
   }
@@ -37,7 +38,7 @@ class CreateDjForm extends React.Component {
   }
 
   render() {
-    const { name } = this.state;
+    const { name, nationality } = this.state;
     return (
       <div className="dj-index" id="create-dj">
         <div className="djs-nav-container">
@@ -104,6 +105,27 @@ class CreateDjForm extends React.Component {
                     className="text-input"
                     value={name}
                     onChange={this.update('name')}/>
+                  </label>
+                </li>
+                
+                <li>
+                  <label>Country / <br />
+                    <select name="Location" id="location-select" value={nationality || 'United States'} onChange={this.update('nationality')}>
+                      <option value="--Select a country--" disabled={true}>--Select a country--</option>
+                      <option value="Argentina">Argentina</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Canada">Canada</option>
+                      <option value="China">China</option>
+                      <option value="France">France</option>
+                      <option value="Germany">Germany</option>
+                      <option value="Italy">Italy</option>
+                      <option value="Japan">Japan</option>
+                      <option value="Netherlands">Netherlands</option>
+                      <option value="Spain">Spain</option>
+                      <option value="Sweden">Sweden</option>
+                      <option value="United Kingdom">United Kingdom</option>
+                      <option value="United States">United States</option>
+                    </select>
                   </label>
                 </li>
                 <li>
