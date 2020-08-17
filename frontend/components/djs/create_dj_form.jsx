@@ -107,7 +107,6 @@ class CreateDjForm extends React.Component {
                     onChange={this.update('name')}/>
                   </label>
                 </li>
-                
                 <li>
                   <label>Country / <br />
                     <select name="Location" id="location-select" value={nationality || 'United States'} onChange={this.update('nationality')}>
@@ -127,6 +126,9 @@ class CreateDjForm extends React.Component {
                       <option value="United States">United States</option>
                     </select>
                   </label>
+                </li>
+                <li>
+                  
                 </li>
                 <li>
                   {/* <input id="submit-dj" type="submit" value="Create"/> <br/> */}
