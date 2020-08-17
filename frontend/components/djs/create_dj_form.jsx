@@ -12,38 +12,33 @@ class CreateDjForm extends React.Component {
         gen2: '',
         gen3: ''
       },
-      style: '',
-      genres: this.props.genres,
-      // gen1: '',
-      // gen2: '',
-      // gen3: '',
-      // genre: '',
-      nationality: ''
+      nationality: '',
+      photoFile: null,
+      photoUrl: null
     }
     this.update = this.update.bind(this);
-    // this.updateGenre = this.updateGenre.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.setGenre = this.setGenre.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.props.fetchGenres().then(genres => this.setState({ genres: Object.values(genres.genres)  }));
-    // const search = document.getElementById('search');
-    // const searchbar = document.getElementsByClassName('search-container')[0];
-    // search.onclick = function () {
-    //   searchbar.style.display = 'block';
-    //   search.className = 'show-search';
-    // }
-    // window.onclick = function (e) {
-    //   let inSearchbar = searchbar.contains(e.target);
-    //   let inSearch = search.contains(e.target);
-    //   if (inSearchbar || inSearch) {
-    //     return;
-    //   }
-    //   searchbar.style.display = 'none';
-    //   search.className = 'hide-search';
-    // }
+    this.props.fetchGenres()
+    const search = document.getElementById('search');
+    const searchbar = document.getElementsByClassName('search-container')[0];
+    search.onclick = function () {
+      searchbar.style.display = 'block';
+      search.className = 'show-search';
+    }
+    window.onclick = function (e) {
+      let inSearchbar = searchbar.contains(e.target);
+      let inSearch = search.contains(e.target);
+      if (inSearchbar || inSearch) {
+        return;
+      }
+      searchbar.style.display = 'none';
+      search.className = 'hide-search';
+    }
   }
 
   update(field) {
@@ -52,15 +47,6 @@ class CreateDjForm extends React.Component {
       console.log(this.state);
     }
   }
-
-  // updateGenre(field) {
-  //   return e => {
-  //     this.setState({ [field]: e.currentTarget.value })
-  //       .then(() => {
-  //         this.setState({ genre: genre.concat(field)});
-  //       })
-  //   }
-  // }
 
   handleChange({ target }) {
     this.setState({
@@ -73,13 +59,20 @@ class CreateDjForm extends React.Component {
     console.log(this.state);
   }
 
-  setGenre() {
-    this.setState({ style: Object.values(this.state.genre).join(' ')});
+  handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
 
   render() {
-    const { name, genre, gen1, gen2, gen3, nationality, style } = this.state;
+    const { name, genre, nationality } = this.state;
     const { genres } = this.props;
 
     const selectedGenre = Object.values(this.state.genre).join(' ');
@@ -96,6 +89,8 @@ class CreateDjForm extends React.Component {
     //   selectedGenre.find(sGen => sGen !== gen) ||
     //   gen !== this.state.genre.gen2
     // );
+  const preview = this.state.photoUrl ? <article className="dj-disp"><img  src={this.state.photoUrl} /><h1 id="disp-name">{name}</h1><span id="disp-banner"><h2><small>Country / </small><br/>{nationality}</h2> <h2><small>Genre / </small><br/>{selectedGenre}</h2></span></article> : null;
+    // width = "265px" height = "150px"
     return (
       <div className="dj-index" id="create-dj">
         <div className="djs-nav-container">
@@ -187,7 +182,6 @@ class CreateDjForm extends React.Component {
                 <li>
                   <label htmlFor="Genre">Musical Style(s) / <br/>
                     <select name="gen1" id="genre-select" value={genre.gen1 || '--Select a style--'} onChange={this.handleChange}>
-                      {/* onChange={this.updateGenre('gen1')} */}
                       <option value="--Select a style--" disabled={true}>--Select a style--</option>
                       {genres.map(genre => 
                         <option key={genre.id} >{genre.name}</option>
@@ -209,7 +203,22 @@ class CreateDjForm extends React.Component {
                     </select>
                   </label>
                 </li>
-                <input id="genre-display" type="text" value={selectedGenre} onChange={this.setGenre}/>
+                <input id="genre-display" type="text" placeholder={selectedGenre}/>
+                <li>
+                  <div id="dj-preview-frame">
+                    {preview}
+                      
+                     <br />
+                  <label htmlFor="photo">Primary DJ Photo / <br/>
+                      <input type="file"
+                      className="file-input"
+                      accept=".jpg,.jpeg,.png,.gif"
+                      onChange={this.handleFile.bind(this)}
+                      />
+                  </label>
+                  </div>
+                </li>
+                <br/>
                 <li>
                   {/* <input id="submit-dj" type="submit" value="Create"/> <br/> */}
                   <span id="submit-dj">Create</span>
