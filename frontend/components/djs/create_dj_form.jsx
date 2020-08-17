@@ -12,6 +12,8 @@ class CreateDjForm extends React.Component {
         gen2: '',
         gen3: ''
       },
+      style: '',
+      genres: this.props.genres,
       // gen1: '',
       // gen2: '',
       // gen3: '',
@@ -21,31 +23,33 @@ class CreateDjForm extends React.Component {
     this.update = this.update.bind(this);
     // this.updateGenre = this.updateGenre.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.setGenre = this.setGenre.bind(this);
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.props.fetchGenres();
-    const search = document.getElementById('search');
-    const searchbar = document.getElementsByClassName('search-container')[0];
-    search.onclick = function () {
-      searchbar.style.display = 'block';
-      search.className = 'show-search';
-    }
-    window.onclick = function (e) {
-      let inSearchbar = searchbar.contains(e.target);
-      let inSearch = search.contains(e.target);
-      if (inSearchbar || inSearch) {
-        return;
-      }
-      searchbar.style.display = 'none';
-      search.className = 'hide-search';
-    }
+    this.props.fetchGenres().then(genres => this.setState({ genres: Object.values(genres.genres)  }));
+    // const search = document.getElementById('search');
+    // const searchbar = document.getElementsByClassName('search-container')[0];
+    // search.onclick = function () {
+    //   searchbar.style.display = 'block';
+    //   search.className = 'show-search';
+    // }
+    // window.onclick = function (e) {
+    //   let inSearchbar = searchbar.contains(e.target);
+    //   let inSearch = search.contains(e.target);
+    //   if (inSearchbar || inSearch) {
+    //     return;
+    //   }
+    //   searchbar.style.display = 'none';
+    //   search.className = 'hide-search';
+    // }
   }
 
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
+      console.log(this.state);
     }
   }
 
@@ -66,13 +70,32 @@ class CreateDjForm extends React.Component {
         [target.name]: target.value
       }
     });
+    console.log(this.state);
+  }
+
+  setGenre() {
+    this.setState({ style: Object.values(this.state.genre).join(' ')});
   }
 
 
   render() {
-    const { name, genre, gen1, gen2, gen3, nationality } = this.state;
+    const { name, genre, gen1, gen2, gen3, nationality, style } = this.state;
     const { genres } = this.props;
-    const selectedGenre = Object.values(this.state.genre);
+
+    const selectedGenre = Object.values(this.state.genre).join(' ');
+    // const gen1Options = this.state.genres.filter(gen =>
+    //   selectedGenre.find(sGen => sGen !== gen) ||
+    //   gen === this.state.genre.gen1
+    //   );
+    // const gen1Options = Object.values(this.state.genres);
+    // const gen2Options = this.state.genres.filter(gen =>
+    //   selectedGenre.find(sGen => sGen !== gen) ||
+    //   gen !== this.state.genre.gen1
+    // );
+    // const gen3Options = this.state.genres.filter(gen =>
+    //   selectedGenre.find(sGen => sGen !== gen) ||
+    //   gen !== this.state.genre.gen2
+    // );
     return (
       <div className="dj-index" id="create-dj">
         <div className="djs-nav-container">
@@ -163,29 +186,30 @@ class CreateDjForm extends React.Component {
                 </li>
                 <li>
                   <label htmlFor="Genre">Musical Style(s) / <br/>
-                    <select name="Genre" id="genre-select" value={genre.gen1 || '--Select a style--'} onChange={this.handleChange}>
+                    <select name="gen1" id="genre-select" value={genre.gen1 || '--Select a style--'} onChange={this.handleChange}>
                       {/* onChange={this.updateGenre('gen1')} */}
                       <option value="--Select a style--" disabled={true}>--Select a style--</option>
-                        {genres.map(genre => 
-                        <option key={genre.id} value={genre.name}>{genre.name}</option>
+                      {genres.map(genre => 
+                        <option key={genre.id} >{genre.name}</option>
                           )}
                     </select>
                     <br/>
-                    <select name="Genre" id="genre-select" value={genre.gen2 || '--Select a style--'} onChange={this.handleChange}>
+                    <select name="gen2" id="genre-select" value={genre.gen2 || '--Select a style--'} onChange={this.handleChange}>
                       <option value="--Select a style--" disabled={true}>--Select a style--</option>
                       {genres.map(genre =>
-                        <option key={genre.id} value={genre.name}> {genre.name}</option>
+                        <option key={genre.id} > {genre.name}</option>
                       )}
                     </select>
                     <br/>
-                    <select name="Genre" id="genre-select" value={genre.gen3 || '--Select a style--'} onChange={this.handleChange}>
+                    <select name="gen3" id="genre-select" value={genre.gen3 || '--Select a style--'} onChange={this.handleChange}>
                       <option value="--Select a style--" disabled={true}>--Select a style--</option>
                       {genres.map(genre =>
-                        <option key={genre.id} value={genre.name}> {genre.name}</option>
+                        <option key={genre.id} > {genre.name}</option>
                       )}
                     </select>
                   </label>
                 </li>
+                <input id="genre-display" type="text" value={selectedGenre} onChange={this.setGenre}/>
                 <li>
                   {/* <input id="submit-dj" type="submit" value="Create"/> <br/> */}
                   <span id="submit-dj">Create</span>
