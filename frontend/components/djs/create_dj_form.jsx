@@ -15,6 +15,7 @@ class CreateDjForm extends React.Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    this.props.fetchGenres();
     const search = document.getElementById('search');
     const searchbar = document.getElementsByClassName('search-container')[0];
     search.onclick = function () {
