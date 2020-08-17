@@ -224,7 +224,7 @@ class CreateDjForm extends React.Component {
                     <textarea name="bio" 
                       id="bio-input"
                       value={bio}
-                      placeholder={`Tell us a bit about who the real ${name || '___'} is`}
+                      placeholder={`Tell us a bit about who the real ${name || '____'} is`}
                       onChange={this.update('bio')}>
 
                     </textarea>

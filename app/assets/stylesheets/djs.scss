@@ -587,6 +587,9 @@
   box-sizing: border-box;
   padding: 4px;
 }
+#bio-input::placeholder {
+  font-size: 13px;
+}
 
 #submit-dj {
   background-color: #ffa100;
