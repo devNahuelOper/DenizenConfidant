@@ -89,7 +89,7 @@ class CreateDjForm extends React.Component {
     //   selectedGenre.find(sGen => sGen !== gen) ||
     //   gen !== this.state.genre.gen2
     // );
-  const preview = this.state.photoUrl ? <article className="dj-disp"><img  src={this.state.photoUrl} /><h1 id="disp-name">{name}</h1><span id="disp-banner"><h2><small>Country / </small><br/>{nationality}</h2> <h2><small>Genre / </small><br/>{selectedGenre}</h2></span></article> : null;
+  const preview = this.state.photoUrl ? <article className="dj-disp"><img  src={this.state.photoUrl} /><h1 id="disp-name">{name}</h1><span id="disp-banner"><h2 id="disp-country"><small>Country / </small><br/>{nationality}</h2> <h2 id="disp-genre"><small>Genre(s) / </small><br/>{selectedGenre}</h2></span></article> : null;
     // width = "265px" height = "150px"
     return (
       <div className="dj-index" id="create-dj">
@@ -161,21 +161,21 @@ class CreateDjForm extends React.Component {
                 </li>
                 <li>
                   <label>Country / <br />
-                    <select name="Nationality" id="nationality-select" value={nationality || 'United States'} onChange={this.update('nationality')}>
+                    <select name="Nationality" id="nationality-select" value={nationality || '🇺🇸 United States'} onChange={this.update('nationality')}>
                       <option value="--Select a country--" disabled={true}>--Select a country--</option>
-                      <option value="Argentina">Argentina</option>
-                      <option value="Brazil">Brazil</option>
-                      <option value="Canada">Canada</option>
-                      <option value="China">China</option>
-                      <option value="France">France</option>
-                      <option value="Germany">Germany</option>
-                      <option value="Italy">Italy</option>
-                      <option value="Japan">Japan</option>
-                      <option value="Netherlands">Netherlands</option>
-                      <option value="Spain">Spain</option>
-                      <option value="Sweden">Sweden</option>
-                      <option value="United Kingdom">United Kingdom</option>
-                      <option value="United States">United States</option>
+                      <option value="🇦🇷 Argentina">🇦🇷 Argentina</option>
+                      <option value="🇧🇷 Brazil">🇧🇷 Brazil</option>
+                      <option value="🇨🇦 Canada">🇨🇦 Canada</option>
+                      <option value="🇨🇳 China">🇨🇳 China</option>
+                      <option value="🇫🇷 France">🇫🇷 France</option>
+                      <option value="🇩🇪 Germany">🇩🇪 Germany</option>
+                      <option value="🇮🇹 Italy">🇮🇹 Italy</option>
+                      <option value="🇯🇵 Japan">🇯🇵 Japan</option>
+                      <option value="🇳🇱 Netherlands">🇳🇱 Netherlands</option>
+                      <option value="🇪🇸 Spain">🇪🇸 Spain</option>
+                      <option value="🇸🇪 Sweden">🇸🇪 Sweden</option>
+                      <option value="🇬🇧 United Kingdom">🇬🇧 United Kingdom</option>
+                      <option value="🇺🇸 United States">🇺🇸 United States</option>
                     </select>
                   </label>
                 </li>
@@ -203,7 +203,7 @@ class CreateDjForm extends React.Component {
                     </select>
                   </label>
                 </li>
-                <input id="genre-display" type="text" placeholder={selectedGenre}/>
+                {/* <input id="genre-display" type="text" placeholder={selectedGenre}/> */}
                 <li>
                   <div id="dj-preview-frame">
                     {preview}
