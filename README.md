@@ -6,9 +6,6 @@ A one-stop shop for all things electronic music!
 ![image](https://user-images.githubusercontent.com/16979527/89132069-768d7900-d4df-11ea-85df-8d0b2d89b8bb.png)
 
 # Features
-* User Authentication: Users can sign up, log in and out, or log in as a demo user.
-
-<img src="https://user-images.githubusercontent.com/16979527/89132424-06342700-d4e2-11ea-9f5a-bc0d3c6dcaa1.png" width="700" height="800">
 
 * Search Functionality: Users can type in a DJ, Genre or Event name in the search bar, and navigate to that show page through the generated link. Each letter typed will update the search dropdown with narrowed-down results.
 
@@ -122,6 +119,10 @@ class DjQuery extends React.Component {
 <img src="https://user-images.githubusercontent.com/16979527/89133032-83619b00-d4e6-11ea-8c50-d0c31e904dbd.png" width="700" height="800">
 
 <img src="https://user-images.githubusercontent.com/16979527/89133036-8e1c3000-d4e6-11ea-9d53-af7ecd174d25.png" width="700" height="800">
+
+* User Authentication: Users can sign up, log in and out, or log in as a demo user.
+
+<img src="https://user-images.githubusercontent.com/16979527/89132424-06342700-d4e2-11ea-9f5a-bc0d3c6dcaa1.png" width="700" height="800">
 
 ## Frontend
 * React.js
