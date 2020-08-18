@@ -19,8 +19,9 @@ class CreateDjForm extends React.Component {
       photoFile: null,
       photoUrl: null,
       songFile: null,
-      songsUrl: null,
-      songFiles: []
+      songFiles: [],
+      songUrl: null,
+      songsUrl:  null,
     }
     this.update = this.update.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -51,7 +52,7 @@ class CreateDjForm extends React.Component {
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
-      // console.log(this.state);
+      console.log(this.state);
     }
   }
 
@@ -63,7 +64,7 @@ class CreateDjForm extends React.Component {
         [target.name]: target.value
       }
     });
-    // console.log(this.state);
+    console.log(this.state);
   }
 
   handleFile(e) {
@@ -83,7 +84,7 @@ class CreateDjForm extends React.Component {
     for (let file of files) {
       const fileReader = new FileReader();
       fileReader.onloadend = () => {
-        this.setState({ songFile: file, songsUrl: fileReader.result, songFiles: Array.from(files) });
+        this.setState({ songFile: file, songUrl: fileReader.result, songFiles: Array.from(files), songsUrl: [] });
       }
       let audio = new Audio();
       // audio.src = fileReader.readAsDataURL(file);
@@ -92,6 +93,7 @@ class CreateDjForm extends React.Component {
       frame.appendChild(audio);
       if (file) {
         fileReader.readAsDataURL(file);
+        // songsUrl.push(file);
       }
     }
   }
