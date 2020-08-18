@@ -539,18 +539,22 @@
     width: inherit;
     height: inherit;
     border-bottom: 24px solid #ffff01;
+    image-rendering: -webkit-optimize-contrast;
   }
 }
 
 #disp-name {
   position: relative;
-  font-size: 20px;
-  top: -60px;
+  // font-size: 20px;
+  font-size: 36px;
+  top: -75px;
+  // top: -60px;
   left: 9px;
 }
 #disp-banner {
   position: relative;
-  top: -25px;
+  // top: -25px;
+  top: -44px;
   background-color: #3c3c3c;
   color: #ffff01;
   font-size: 12px;
