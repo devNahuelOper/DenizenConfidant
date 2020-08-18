@@ -56,6 +56,12 @@ class DjShow extends React.Component {
     const first = dj.name.split(' ')[0];
     const second = dj.name.split(' ')[1];
     const hyphen = `${first}-${second}`;
+    const noAttach = {
+        backgroundImage: `url("${`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`}")` 
+    }
+    const yesAttach = {
+      backgroundImage: `url("${dj.photoUrl}")`
+    }
     return (
       <React.Fragment>
         <TitleComponent title={`DC: ${dj.name}`} />
@@ -63,7 +69,9 @@ class DjShow extends React.Component {
         <div 
           id={`${dj.name.toLowerCase().split(' ').join('')}-container`}
           className="djshow-nav-container" 
-          style={{  backgroundImage: `url("${`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`}")`}}>
+          style={!dj.photoUrl ? noAttach : yesAttach}
+          // style={{  backgroundImage:  `url("${`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`}")`}}
+          >
           <section className="djs-nav">
             <nav>
               <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
