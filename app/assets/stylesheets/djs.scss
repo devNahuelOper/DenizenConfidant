@@ -595,6 +595,15 @@
   font-size: 13px;
 }
 
+#song-preview-frame {
+  display: flex;
+  flex-direction: column;
+  audio {
+    height: 36px;
+    margin-top: 12px;
+  }
+}
+
 #submit-dj {
   background-color: #ffa100;
   color: black;

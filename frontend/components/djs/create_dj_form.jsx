@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
+
 class CreateDjForm extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -15,11 +17,15 @@ class CreateDjForm extends React.Component {
       nationality: '',
       bio: '',
       photoFile: null,
-      photoUrl: null
+      photoUrl: null,
+      songFile: null,
+      songsUrl: null,
+      songFiles: []
     }
     this.update = this.update.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleFile = this.handleFile.bind(this);
+    this.handleSong = this.handleSong.bind(this);
   }
 
   componentDidMount() {
@@ -45,7 +51,7 @@ class CreateDjForm extends React.Component {
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
-      console.log(this.state);
+      // console.log(this.state);
     }
   }
 
@@ -57,7 +63,7 @@ class CreateDjForm extends React.Component {
         [target.name]: target.value
       }
     });
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   handleFile(e) {
@@ -71,27 +77,45 @@ class CreateDjForm extends React.Component {
     }
   }
 
+  handleSong(e) {
+    const files = Array.from(e.currentTarget.files);
+    const frame = document.getElementById('song-preview-frame');
+    for (let file of files) {
+      const fileReader = new FileReader();
+      fileReader.onloadend = () => {
+        this.setState({ songFile: file, songsUrl: fileReader.result, songFiles: Array.from(files) });
+      }
+      let audio = new Audio();
+      // audio.src = fileReader.readAsDataURL(file);
+      audio.src = file.name;
+      audio.controls = true;
+      frame.appendChild(audio);
+      if (file) {
+        fileReader.readAsDataURL(file);
+      }
+    }
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('dj[name]', this.state.name);
+    formData.append('dj[nationality]', this.state.nationality);
+    formData.append('dj[genre]', Object.values(this.state.genre).join(' '));
+    if (this.state.photoFile) {
+      formData.append('dj[photo]', this.state.photoFile);
+    }
+  }
+
 
   render() {
     const { name, genre, nationality, bio } = this.state;
     const { genres } = this.props;
 
     const selectedGenre = Object.values(this.state.genre).join(' ');
-    // const gen1Options = this.state.genres.filter(gen =>
-    //   selectedGenre.find(sGen => sGen !== gen) ||
-    //   gen === this.state.genre.gen1
-    //   );
-    // const gen1Options = Object.values(this.state.genres);
-    // const gen2Options = this.state.genres.filter(gen =>
-    //   selectedGenre.find(sGen => sGen !== gen) ||
-    //   gen !== this.state.genre.gen1
-    // );
-    // const gen3Options = this.state.genres.filter(gen =>
-    //   selectedGenre.find(sGen => sGen !== gen) ||
-    //   gen !== this.state.genre.gen2
-    // );
-  const preview = this.state.photoUrl ? <article className="dj-disp"><img  src={this.state.photoUrl} /><h1 id="disp-name">{name}</h1><span id="disp-banner"><h2 id="disp-country"><small>Country / </small><br/>{nationality.split('  ').reverse().join(' ')}</h2> <h2 id="disp-genre"><small>Genre(s) / </small><br/>{selectedGenre}</h2></span></article> : null;
-    // width = "265px" height = "150px"
+
+    const preview = this.state.photoUrl ? <article className="dj-disp"><img  src={this.state.photoUrl} /><h1 id="disp-name">{name}</h1><span id="disp-banner"><h2 id="disp-country"><small>Country / </small><br/>{nationality.split('  ').reverse().join(' ')}</h2> <h2 id="disp-genre"><small>Genre(s) / </small><br/>{selectedGenre}</h2></span></article> : null;
+    const songPreview = this.state.songsUrl ? <audio src={this.state.songFile.name} controls></audio> : null;
     return (
       <div className="dj-index" id="create-dj">
         <div className="djs-nav-container">
@@ -226,9 +250,29 @@ class CreateDjForm extends React.Component {
                       value={bio}
                       placeholder={`Tell us a bit about who the real ${name || '____'} is`}
                       onChange={this.update('bio')}>
-
                     </textarea>
                   </label> 
+                </li>
+                <li>
+                  <div id="song-preview-frame">
+                  <label htmlFor="song">Upload some music / <br/>
+                    <input type="file"
+                      className="file-input"
+                      accept=".mp3"
+                    multiple  onChange={this.handleSong.bind(this)}/>
+                  </label>
+                    {/* {songPreview} */}
+                  </div>
+                  {/* <br/>
+                  <div id="song-preview-frame">
+                    
+                      <input type="file"
+                        className="file-input"
+                        accept=".mp3"
+                        onChange={this.handleSong.bind(this)} />
+                  
+                    {songPreview}
+                  </div> */}
                 </li>
                 <br/>
                 <li>
