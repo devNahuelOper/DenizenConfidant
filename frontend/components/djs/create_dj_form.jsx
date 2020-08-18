@@ -19,8 +19,9 @@ class CreateDjForm extends React.Component {
       photoFile: null,
       photoUrl: null,
       songFile: null,
-      songsUrl: null,
-      songFiles: []
+      songFiles: [],
+      songUrl: null,
+      songsUrl:  null,
     }
     this.update = this.update.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -51,7 +52,7 @@ class CreateDjForm extends React.Component {
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
-      // console.log(this.state);
+      console.log(this.state);
     }
   }
 
@@ -63,7 +64,7 @@ class CreateDjForm extends React.Component {
         [target.name]: target.value
       }
     });
-    // console.log(this.state);
+    console.log(this.state);
   }
 
   handleFile(e) {
@@ -80,15 +81,20 @@ class CreateDjForm extends React.Component {
   handleSong(e) {
     const files = Array.from(e.currentTarget.files);
     const frame = document.getElementById('song-preview-frame');
+   
     for (let file of files) {
       const fileReader = new FileReader();
       fileReader.onloadend = () => {
-        this.setState({ songFile: file, songsUrl: fileReader.result, songFiles: Array.from(files) });
+        this.setState({ songFile: file, songUrl: fileReader.result, songFiles: Array.from(files), songsUrl: [] });
       }
+      let songTitle = document.createElement('h2');
+      songTitle.id = 'prev-songTitle';
+      songTitle.setAttribute('style', 'color: #ffff01;' );
+      songTitle.innerHTML = file.name.split('.')[0];
       let audio = new Audio();
-      // audio.src = fileReader.readAsDataURL(file);
       audio.src = file.name;
       audio.controls = true;
+      frame.appendChild(songTitle);
       frame.appendChild(audio);
       if (file) {
         fileReader.readAsDataURL(file);
@@ -104,6 +110,9 @@ class CreateDjForm extends React.Component {
     formData.append('dj[genre]', Object.values(this.state.genre).join(' '));
     if (this.state.photoFile) {
       formData.append('dj[photo]', this.state.photoFile);
+    }
+    if (this.state.songFiles) {
+      formData.append('dj[songs]', this.state.songFiles);
     }
   }
 
@@ -261,18 +270,9 @@ class CreateDjForm extends React.Component {
                       accept=".mp3"
                     multiple  onChange={this.handleSong.bind(this)}/>
                   </label>
+                  <br/>
                     {/* {songPreview} */}
                   </div>
-                  {/* <br/>
-                  <div id="song-preview-frame">
-                    
-                      <input type="file"
-                        className="file-input"
-                        accept=".mp3"
-                        onChange={this.handleSong.bind(this)} />
-                  
-                    {songPreview}
-                  </div> */}
                 </li>
                 <br/>
                 <li>
