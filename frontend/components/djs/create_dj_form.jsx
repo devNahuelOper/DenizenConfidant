@@ -79,6 +79,7 @@ class CreateDjForm extends React.Component {
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
       this.setState({ songFile: file, songsUrl: this.state.songsUrl ? songsUrl.push(fileReader.result) : [fileReader.result]});
+      // this.setState({ songFile: !this.state.songFile ? [file] : songFile.push(file), songsUrl: this.state.songsUrl ? songsUrl.push(fileReader.result) : [fileReader.result]});
     }
     if (file) {
       fileReader.readAsDataURL(file);
@@ -103,8 +104,8 @@ class CreateDjForm extends React.Component {
 
     const selectedGenre = Object.values(this.state.genre).join(' ');
 
-  const preview = this.state.photoUrl ? <article className="dj-disp"><img  src={this.state.photoUrl} /><h1 id="disp-name">{name}</h1><span id="disp-banner"><h2 id="disp-country"><small>Country / </small><br/>{nationality.split('  ').reverse().join(' ')}</h2> <h2 id="disp-genre"><small>Genre(s) / </small><br/>{selectedGenre}</h2></span></article> : null;
-  const songPreview = this.state.songsUrl ? <audio src={this.state.songFile.name} controls></audio> : null;
+    const preview = this.state.photoUrl ? <article className="dj-disp"><img  src={this.state.photoUrl} /><h1 id="disp-name">{name}</h1><span id="disp-banner"><h2 id="disp-country"><small>Country / </small><br/>{nationality.split('  ').reverse().join(' ')}</h2> <h2 id="disp-genre"><small>Genre(s) / </small><br/>{selectedGenre}</h2></span></article> : null;
+    const songPreview = this.state.songsUrl ? <audio src={this.state.songFile.name} controls></audio> : null;
     return (
       <div className="dj-index" id="create-dj">
         <div className="djs-nav-container">
