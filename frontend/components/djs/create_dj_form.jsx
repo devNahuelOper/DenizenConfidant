@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
+
 class CreateDjForm extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +20,6 @@ class CreateDjForm extends React.Component {
       photoUrl: null,
       songFile: null,
       songsUrl: null,
-      songFiles: []
     }
     this.update = this.update.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -69,7 +70,6 @@ class CreateDjForm extends React.Component {
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
       this.setState({ photoFile: file, photoUrl: fileReader.result });
-      
     };
     if (file) {
       fileReader.readAsDataURL(file);
@@ -77,10 +77,11 @@ class CreateDjForm extends React.Component {
   }
 
   // handleSong(e) {
-  //   const file = e.currentTarget.files;
+  //   const files = Array.from(e.currentTarget.files);
   //   const fileReader = new FileReader();
   //   fileReader.onloadend = () => {
-  //     this.setState({ songFile: file, songsUrl: this.state.songsUrl ? songsUrl.push(fileReader.result) : [fileReader.result]});
+  //     console.log(file);
+  //     this.setState({ songFile: file, songsUrl: fileReader.result });
   //   }
   //   if (file) {
   //     fileReader.readAsDataURL(file);
@@ -88,25 +89,23 @@ class CreateDjForm extends React.Component {
   // }
 
   handleSong(e) {
-    const file = e.currentTarget.files[0];
-    let fileReader = new FileReader();
-    fileReader.onload = () => {
-      console.log('SONG LOADED : ', fileReader.result);
-      const files = {
-        name: file.name,
-        size: file.size,
-        type: file.type,
-        data: fileReader.result,
-        isUploading: false
+    const files = Array.from(e.currentTarget.files);
+    const frame = document.getElementById('song-preview-frame');
+    for (let file of files) {
+      const fileReader = new FileReader();
+      fileReader.onloadend = () => {
+        this.setState({ songFile: file, songsUrl: fileReader.result });
       }
-      // this.addLoadedFile(files);
-      this.setState({songFile: files, songsUrl: fileReader.result});
-    }
-    if (e.currentTarget.files && file) {
-      fileReader.readAsDataURL(file);
+      let audio = new Audio();
+      // audio.src = fileReader.readAsDataURL(file);
+      audio.src = file.name;
+      audio.controls = true;
+      frame.appendChild(audio);
+      if (file) {
+        fileReader.readAsDataURL(file);
+      }
     }
   }
-
 
   handleSubmit(e) {
     e.preventDefault();
@@ -273,7 +272,7 @@ class CreateDjForm extends React.Component {
                       accept=".mp3"
                     multiple  onChange={this.handleSong.bind(this)}/>
                   </label>
-                    {songPreview}
+                    {/* {songPreview} */}
                   </div>
                   {/* <br/>
                   <div id="song-preview-frame">
