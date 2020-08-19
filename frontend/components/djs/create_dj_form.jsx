@@ -114,7 +114,9 @@ class CreateDjForm extends React.Component {
       formData.append('dj[photo]', this.state.photoFile);
     }
     if (this.state.songFiles) {
-      formData.append('dj[songs]', this.state.songFiles);
+      for (let i = 0; i < this.state.songFiles.length; i++) {
+        formData.append('dj[songs]', this.state.songFiles[i]);
+      }
     }
     this.props.createDj(formData).then(() =>
       this.props.history.push('/djs'),
