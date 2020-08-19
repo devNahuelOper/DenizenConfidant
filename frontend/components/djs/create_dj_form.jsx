@@ -28,6 +28,7 @@ class CreateDjForm extends React.Component {
     this.handleFile = this.handleFile.bind(this);
     this.handleSong = this.handleSong.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.success = this.success.bind(this);
   }
 
   componentDidMount() {
@@ -50,10 +51,17 @@ class CreateDjForm extends React.Component {
     }
   }
 
+  success() {
+    // const container = document.getElementsByClassName('dj-form-container')[0];
+    const msg = document.getElementById('success-msg');
+    msg.style.display = 'block';
+  }
+
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
       console.log(this.state);
+      
     }
   }
 
@@ -115,17 +123,14 @@ class CreateDjForm extends React.Component {
     }
     if (this.state.songFiles) {
       for (let i = 0; i < this.state.songFiles.length; i++) {
-        formData.append('dj[track]', this.state.songFiles[i]);
-        console.log(this.state.songFiles[i]);
+        formData.append('dj[songs][]', this.state.songFiles[i]);
+        console.log(formData.getAll('dj[songs][]'));
       }
     }
-    // if (this.state.songFile) {
-    //   formData.append('dj[track]', this.state.songFile);
-    // }
     this.props.createDj(formData).then(() =>
       // this.props.history.push(`/${this.state.id}`),
-      this.props.history.push('/events'),
-      alert('DJ profile created!'),
+      // alert('DJ profile created! Look for your name on the DJs index page.'),
+      this.success(),
       e.target.reset()
     )
   }
@@ -190,6 +195,7 @@ class CreateDjForm extends React.Component {
         </div>
         <div className="dj-form-container">
           <div className="form-wrap">
+            <form className="dj-form" onSubmit={this.handleSubmit}>
             <h1>Create an artist profile.</h1>
             <hr/>
             <p>
@@ -197,7 +203,7 @@ class CreateDjForm extends React.Component {
               Please use correct capitalization and double check your spelling.
             </p>
 
-            <form className="dj-form" onSubmit={this.handleSubmit}>
+            
               <ul className="new-dj-formlist">
                 <li>
                   <label htmlFor="name">Enter your artist name / <br/>
@@ -298,6 +304,9 @@ class CreateDjForm extends React.Component {
                 </li>
               </ul>
             </form>
+            <aside id="success-msg">
+              DJ profile created! Look for your name  <Link id="success-link" to="/djs">Here</Link>
+            </aside>
           </div>
         </div>
       </div>
@@ -326,7 +335,7 @@ class SubnavToggle extends React.Component {
   render() {
     return (
       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>Create and artist profile <small>⬇︎</small></span>
+        <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>Create an artist profile <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
             <li><Link className="log-link" onClick={this.leave} to="/djs">All</Link></li>
             <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
