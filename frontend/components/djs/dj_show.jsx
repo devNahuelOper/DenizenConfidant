@@ -146,6 +146,15 @@ class DjShow extends React.Component {
                 <audio src={song} controls></audio>
               </li>
                 ) : null}
+            {dj.trackUrl ? 
+            <li className="song">
+                <span id="song-title">
+                  {dj.trackUrl.slice(dj.trackUrl.lastIndexOf('/') + 1, dj.trackUrl.lastIndexOf('.')).split('+').join(' ')}
+                </span>
+                <hr/>
+                <audio src={dj.trackUrl} controls></audio> 
+            </li>
+            : null }
             </ul>
           </section>
         </div>
