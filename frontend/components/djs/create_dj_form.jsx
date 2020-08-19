@@ -21,7 +21,7 @@ class CreateDjForm extends React.Component {
       songFile: null,
       songFiles: [],
       songUrl: null,
-      songsUrl:  null,
+      // songsUrl:  null,
     }
     this.update = this.update.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -86,7 +86,7 @@ class CreateDjForm extends React.Component {
     for (let file of files) {
       const fileReader = new FileReader();
       fileReader.onloadend = () => {
-        this.setState({ songFile: file, songUrl: fileReader.result, songFiles: Array.from(files), songsUrl: [] });
+        this.setState({ songFile: file, songUrl: fileReader.result, songFiles: Array.from(files)});
       }
       let songTitle = document.createElement('h2');
       songTitle.id = 'prev-songTitle';
@@ -115,12 +115,18 @@ class CreateDjForm extends React.Component {
     }
     if (this.state.songFiles) {
       for (let i = 0; i < this.state.songFiles.length; i++) {
-        formData.append('dj[songs]', this.state.songFiles[i]);
+        formData.append('dj[song]', this.state.songFiles[i]);
+        console.log(this.state.songFiles[i]);
       }
     }
+    // if (this.state.songFiles) {
+    //   formData.append('dj[songs]', this.state.songFiles);
+    // }
     this.props.createDj(formData).then(() =>
-      this.props.history.push('/djs'),
-      alert('DJ profile created!')
+      // this.props.history.push(`/${this.state.id}`),
+      this.props.history.push('/events'),
+      alert('DJ profile created!'),
+      e.target.reset()
     )
   }
 
@@ -275,7 +281,7 @@ class CreateDjForm extends React.Component {
                   <label htmlFor="song">Upload some music / <br/>
                     <input type="file"
                       className="file-input"
-                      accept=".mp3"
+                      accept=".mp3,.mpeg,.mpeg3,.audio/*"
                     multiple  onChange={this.handleSong.bind(this)}/>
                   </label>
                   <br/>
