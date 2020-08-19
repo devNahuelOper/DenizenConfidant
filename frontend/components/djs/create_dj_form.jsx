@@ -21,12 +21,13 @@ class CreateDjForm extends React.Component {
       songFile: null,
       songFiles: [],
       songUrl: null,
-      songsUrl:  null,
     }
     this.update = this.update.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.handleSong = this.handleSong.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.success = this.success.bind(this);
   }
 
   componentDidMount() {
@@ -49,10 +50,16 @@ class CreateDjForm extends React.Component {
     }
   }
 
+  success() {
+    // const container = document.getElementsByClassName('dj-form-container')[0];
+    const msg = document.getElementById('success-msg');
+    msg.style.display = 'block';
+  }
+
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
-      console.log(this.state);
+      // console.log(this.state);
     }
   }
 
@@ -64,7 +71,7 @@ class CreateDjForm extends React.Component {
         [target.name]: target.value
       }
     });
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   handleFile(e) {
@@ -85,7 +92,7 @@ class CreateDjForm extends React.Component {
     for (let file of files) {
       const fileReader = new FileReader();
       fileReader.onloadend = () => {
-        this.setState({ songFile: file, songUrl: fileReader.result, songFiles: Array.from(files), songsUrl: [] });
+        this.setState({ songFile: file, songUrl: fileReader.result, songFiles: Array.from(files)});
       }
       let songTitle = document.createElement('h2');
       songTitle.id = 'prev-songTitle';
@@ -108,12 +115,22 @@ class CreateDjForm extends React.Component {
     formData.append('dj[name]', this.state.name);
     formData.append('dj[nationality]', this.state.nationality);
     formData.append('dj[genre]', Object.values(this.state.genre).join(' '));
+    formData.append('dj[bio]', this.state.bio);
     if (this.state.photoFile) {
       formData.append('dj[photo]', this.state.photoFile);
     }
     if (this.state.songFiles) {
-      formData.append('dj[songs]', this.state.songFiles);
+      for (let i = 0; i < this.state.songFiles.length; i++) {
+        formData.append('dj[songs][]', this.state.songFiles[i]);
+        // console.log(formData.getAll('dj[songs][]'));
+      }
     }
+    this.props.createDj(formData).then(() =>
+      // this.props.history.push(`/${this.state.id}`),
+      // alert('DJ profile created! Look for your name on the DJs index page.'),
+      e.target.reset()
+    )
+    this.success();
   }
 
 
@@ -124,7 +141,7 @@ class CreateDjForm extends React.Component {
     const selectedGenre = Object.values(this.state.genre).join(' ');
 
     const preview = this.state.photoUrl ? <article className="dj-disp"><img  src={this.state.photoUrl} /><h1 id="disp-name">{name}</h1><span id="disp-banner"><h2 id="disp-country"><small>Country / </small><br/>{nationality.split('  ').reverse().join(' ')}</h2> <h2 id="disp-genre"><small>Genre(s) / </small><br/>{selectedGenre}</h2></span></article> : null;
-    const songPreview = this.state.songsUrl ? <audio src={this.state.songFile.name} controls></audio> : null;
+    // const songPreview = this.state.songsUrl ? <audio src={this.state.songFile.name} controls></audio> : null;
     return (
       <div className="dj-index" id="create-dj">
         <div className="djs-nav-container">
@@ -176,6 +193,7 @@ class CreateDjForm extends React.Component {
         </div>
         <div className="dj-form-container">
           <div className="form-wrap">
+            <form className="dj-form" onSubmit={this.handleSubmit}>
             <h1>Create an artist profile.</h1>
             <hr/>
             <p>
@@ -183,7 +201,7 @@ class CreateDjForm extends React.Component {
               Please use correct capitalization and double check your spelling.
             </p>
 
-            <form className="dj-form">
+            
               <ul className="new-dj-formlist">
                 <li>
                   <label htmlFor="name">Enter your artist name / <br/>
@@ -267,7 +285,7 @@ class CreateDjForm extends React.Component {
                   <label htmlFor="song">Upload some music / <br/>
                     <input type="file"
                       className="file-input"
-                      accept=".mp3"
+                      accept=".mp3,.mpeg,.mpeg3,.audio/*"
                     multiple  onChange={this.handleSong.bind(this)}/>
                   </label>
                   <br/>
@@ -276,13 +294,17 @@ class CreateDjForm extends React.Component {
                 </li>
                 <br/>
                 <li>
-                  {/* <input id="submit-dj" type="submit" value="Create"/> <br/> */}
-                  <span id="submit-dj">Create</span>
+                  <input id="submit-dj" type="submit" value="Create"/> 
+                  {/* <br/>
+                  <span id="submit-dj">Create</span> */}
                   <br/>
-                  <p><i>Under Construction</i></p>
+                  {/* <p><i>Under Construction</i></p> */}
                 </li>
               </ul>
             </form>
+            <aside id="success-msg">
+              DJ profile created! Look for your name  <Link id="success-link" to="/djs">Here</Link>
+            </aside>
           </div>
         </div>
       </div>
@@ -311,7 +333,7 @@ class SubnavToggle extends React.Component {
   render() {
     return (
       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>Create and artist profile <small>⬇︎</small></span>
+        <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>Create an artist profile <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
             <li><Link className="log-link" onClick={this.leave} to="/djs">All</Link></li>
             <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>

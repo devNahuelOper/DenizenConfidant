@@ -56,6 +56,12 @@ class DjShow extends React.Component {
     const first = dj.name.split(' ')[0];
     const second = dj.name.split(' ')[1];
     const hyphen = `${first}-${second}`;
+    const noAttach = {
+        backgroundImage: `url("${`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`}")` 
+    }
+    const yesAttach = {
+      backgroundImage: `url("${dj.photoUrl}")`
+    }
     return (
       <React.Fragment>
         <TitleComponent title={`DC: ${dj.name}`} />
@@ -63,7 +69,9 @@ class DjShow extends React.Component {
         <div 
           id={`${dj.name.toLowerCase().split(' ').join('')}-container`}
           className="djshow-nav-container" 
-          style={{  backgroundImage: `url("${`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`}")`}}>
+          style={!dj.photoUrl ? noAttach : yesAttach}
+          // style={{  backgroundImage:  `url("${`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`}")`}}
+          >
           <section className="djs-nav">
             <nav>
               <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
@@ -121,7 +129,7 @@ class DjShow extends React.Component {
             <h1>Biography</h1>
             <hr/>
             <p id="bio">
-              {dj.bio}
+              {dj.bio ? dj.bio : null}
             </p>
             {/* <img id="dj-image" src={`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`} /> */}
           </section>
@@ -129,7 +137,7 @@ class DjShow extends React.Component {
             <h1>Tracks by {dj.name}</h1>
             <hr />
             <ul className="songs">
-              {dj.songsUrl.map(song =>
+              {dj.songsUrl ? dj.songsUrl.map(song =>
               <li className="song" key={dj.songsUrl.indexOf(song)}>
                 <span id="song-title">
                     {song.slice(song.lastIndexOf('/') + 1, song.lastIndexOf('.')).split('+').join(' ')}
@@ -137,7 +145,16 @@ class DjShow extends React.Component {
                 <hr/>
                 <audio src={song} controls></audio>
               </li>
-                )}
+                ) : null}
+            {dj.trackUrl ? 
+            <li className="song">
+                <span id="song-title">
+                  {dj.trackUrl.slice(dj.trackUrl.lastIndexOf('/') + 1, dj.trackUrl.lastIndexOf('.')).split('+').join(' ')}
+                </span>
+                <hr/>
+                <audio src={dj.trackUrl} controls></audio> 
+            </li>
+            : null }
             </ul>
           </section>
         </div>

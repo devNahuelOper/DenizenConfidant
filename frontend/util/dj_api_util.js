@@ -12,11 +12,11 @@ export const fetchDj = djId => (
   })
 );
 
-export const createDj = djData => (
+export const createDj = dj => (
   $.ajax({
     method: 'POST',
     url: 'api/djs',
-    data: djData,
+    data: dj,
     contentType: false,
     processData: false
   })
