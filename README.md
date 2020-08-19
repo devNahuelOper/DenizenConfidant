@@ -96,9 +96,12 @@ class DjQuery extends React.Component {
   
 * DJs: Enhanced image previewing on DJ page create form, where the user sees not just the previewed photo, but a mini version of how their DJ Show page would look with the current photo. DJ details (i.e. name, genre(s) and country) are displayed in the preview, and update in real time on user input.
 
+![dj create gif](djCreate.gif)
+
 ![dj_prev_gif](dj-prev.gif)
 
- 100 DJs in the database, each with their own Show Page (w/ dynamic image & song rendering via Amazon Web Services). 
+
+ 100+ DJs in the database, each with their own Show Page (w/ dynamic image & song rendering via Amazon Web Services). 
  
 <img src="https://user-images.githubusercontent.com/16979527/89132121-bc4a4180-d4df-11ea-9811-79917dbfcf42.png" width="700" height="800">
 
