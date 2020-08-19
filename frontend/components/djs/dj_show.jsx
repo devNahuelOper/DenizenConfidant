@@ -129,7 +129,7 @@ class DjShow extends React.Component {
             <h1>Biography</h1>
             <hr/>
             <p id="bio">
-              {dj.bio}
+              {dj.bio ? dj.bio : null}
             </p>
             {/* <img id="dj-image" src={`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`} /> */}
           </section>
@@ -137,7 +137,7 @@ class DjShow extends React.Component {
             <h1>Tracks by {dj.name}</h1>
             <hr />
             <ul className="songs">
-              {dj.songsUrl.map(song =>
+              {dj.songsUrl ? dj.songsUrl.map(song =>
               <li className="song" key={dj.songsUrl.indexOf(song)}>
                 <span id="song-title">
                     {song.slice(song.lastIndexOf('/') + 1, song.lastIndexOf('.')).split('+').join(' ')}
@@ -145,9 +145,12 @@ class DjShow extends React.Component {
                 <hr/>
                 <audio src={song} controls></audio>
               </li>
-                )}
+                ) : null}
             </ul>
           </section>
+          {dj.photoUrl &&
+            <img src={dj.photoUrl} alt=""/>
+          }
         </div>
       </div>
       </React.Fragment>

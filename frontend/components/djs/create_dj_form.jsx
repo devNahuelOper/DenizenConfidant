@@ -27,6 +27,7 @@ class CreateDjForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.handleSong = this.handleSong.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -114,6 +115,10 @@ class CreateDjForm extends React.Component {
     if (this.state.songFiles) {
       formData.append('dj[songs]', this.state.songFiles);
     }
+    this.props.createDj(formData).then(() =>
+      this.props.history.push('/djs'),
+      alert('DJ profile created!')
+    )
   }
 
 
@@ -124,7 +129,7 @@ class CreateDjForm extends React.Component {
     const selectedGenre = Object.values(this.state.genre).join(' ');
 
     const preview = this.state.photoUrl ? <article className="dj-disp"><img  src={this.state.photoUrl} /><h1 id="disp-name">{name}</h1><span id="disp-banner"><h2 id="disp-country"><small>Country / </small><br/>{nationality.split('  ').reverse().join(' ')}</h2> <h2 id="disp-genre"><small>Genre(s) / </small><br/>{selectedGenre}</h2></span></article> : null;
-    const songPreview = this.state.songsUrl ? <audio src={this.state.songFile.name} controls></audio> : null;
+    // const songPreview = this.state.songsUrl ? <audio src={this.state.songFile.name} controls></audio> : null;
     return (
       <div className="dj-index" id="create-dj">
         <div className="djs-nav-container">
@@ -183,7 +188,7 @@ class CreateDjForm extends React.Component {
               Please use correct capitalization and double check your spelling.
             </p>
 
-            <form className="dj-form">
+            <form className="dj-form" onSubmit={this.handleSubmit}>
               <ul className="new-dj-formlist">
                 <li>
                   <label htmlFor="name">Enter your artist name / <br/>
@@ -276,8 +281,9 @@ class CreateDjForm extends React.Component {
                 </li>
                 <br/>
                 <li>
-                  {/* <input id="submit-dj" type="submit" value="Create"/> <br/> */}
-                  <span id="submit-dj">Create</span>
+                  <input id="submit-dj" type="submit" value="Create"/> 
+                  {/* <br/>
+                  <span id="submit-dj">Create</span> */}
                   <br/>
                   <p><i>Under Construction</i></p>
                 </li>
