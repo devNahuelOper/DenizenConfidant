@@ -588,6 +588,10 @@
   }
 }
 
+.dj-input-hold {
+  display: flex;
+}
+
 #bio-input {
   width: 312px;
   height: 55px;
@@ -812,6 +816,11 @@
     .form-wrap {
       width: 560px;
     }
+  }
+  .dj-input-hold {
+    flex-direction: column;
+    height: 100px;
+    justify-content: space-between;
   }
 }
 
