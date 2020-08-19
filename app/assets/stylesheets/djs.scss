@@ -481,7 +481,7 @@
   background-color: #404040;
   color: white;
   .form-wrap {
-    display: block;
+    // display: block;
     padding: 20px 0;
   }
   h1 {
@@ -504,6 +504,10 @@
     color: black;
     box-sizing: border-box;
     padding: 4px;
+  }
+  #success-msg {
+    display: none;
+    margin-top: 121px;
   }
 }
 
@@ -618,6 +622,11 @@
 #submit-dj:hover {
   background-color: black;
   color: white;
+}
+
+#success-link {
+  
+  color: #ffff01;
 }
 
 // Smaller
