@@ -21,7 +21,6 @@ class CreateDjForm extends React.Component {
       songFile: null,
       songFiles: [],
       songUrl: null,
-      // songsUrl:  null,
     }
     this.update = this.update.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -60,8 +59,7 @@ class CreateDjForm extends React.Component {
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
-      console.log(this.state);
-      
+      // console.log(this.state);
     }
   }
 
@@ -73,7 +71,7 @@ class CreateDjForm extends React.Component {
         [target.name]: target.value
       }
     });
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   handleFile(e) {
@@ -130,9 +128,10 @@ class CreateDjForm extends React.Component {
     this.props.createDj(formData).then(() =>
       // this.props.history.push(`/${this.state.id}`),
       // alert('DJ profile created! Look for your name on the DJs index page.'),
-      this.success(),
+      // this.success(),
       e.target.reset()
     )
+    this.success();
   }
 
 
@@ -300,7 +299,7 @@ class CreateDjForm extends React.Component {
                   {/* <br/>
                   <span id="submit-dj">Create</span> */}
                   <br/>
-                  <p><i>Under Construction</i></p>
+                  {/* <p><i>Under Construction</i></p> */}
                 </li>
               </ul>
             </form>
