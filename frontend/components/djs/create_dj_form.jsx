@@ -109,6 +109,7 @@ class CreateDjForm extends React.Component {
     formData.append('dj[name]', this.state.name);
     formData.append('dj[nationality]', this.state.nationality);
     formData.append('dj[genre]', Object.values(this.state.genre).join(' '));
+    formData.append('dj[bio]', this.state.bio);
     if (this.state.photoFile) {
       formData.append('dj[photo]', this.state.photoFile);
     }
