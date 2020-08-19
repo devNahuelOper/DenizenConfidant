@@ -122,13 +122,12 @@ class CreateDjForm extends React.Component {
     if (this.state.songFiles) {
       for (let i = 0; i < this.state.songFiles.length; i++) {
         formData.append('dj[songs][]', this.state.songFiles[i]);
-        console.log(formData.getAll('dj[songs][]'));
+        // console.log(formData.getAll('dj[songs][]'));
       }
     }
     this.props.createDj(formData).then(() =>
       // this.props.history.push(`/${this.state.id}`),
       // alert('DJ profile created! Look for your name on the DJs index page.'),
-      // this.success(),
       e.target.reset()
     )
     this.success();
