@@ -113,16 +113,15 @@ class CreateDjForm extends React.Component {
     if (this.state.photoFile) {
       formData.append('dj[photo]', this.state.photoFile);
     }
-    // if (this.state.songFiles) {
-    //   for (let i = 0; i < this.state.songFiles.length; i++) {
-    //     formData.append('dj[song]', this.state.songFiles[i]);
-    //     console.log(this.state.songFiles[i]);
-    //   }
-    // }
-    if (this.state.songFile) {
-      formData.append('dj[track]', this.state.songFile);
-      // formData.set('dj[songs]', this.state.songFile, this.state.songFile.name);
+    if (this.state.songFiles) {
+      for (let i = 0; i < this.state.songFiles.length; i++) {
+        formData.append('dj[songs][i]', this.state.songFiles[i]);
+        console.log(this.state.songFiles[i]);
+      }
     }
+    // if (this.state.songFile) {
+    //   formData.append('dj[track]', this.state.songFile);
+    // }
     this.props.createDj(formData).then(() =>
       // this.props.history.push(`/${this.state.id}`),
       this.props.history.push('/events'),
