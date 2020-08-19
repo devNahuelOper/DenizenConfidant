@@ -148,9 +148,6 @@ class DjShow extends React.Component {
                 ) : null}
             </ul>
           </section>
-          {dj.photoUrl &&
-            <img src={dj.photoUrl} alt=""/>
-          }
         </div>
       </div>
       </React.Fragment>
