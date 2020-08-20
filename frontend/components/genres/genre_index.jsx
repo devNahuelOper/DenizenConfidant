@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GenreIndexItem from './genre_index_item';
+import {
+  toggleSearch
+} from '../../util/search_util';
 
 class GenreIndex extends React.Component {
   constructor(props) {
@@ -9,21 +12,7 @@ class GenreIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchGenres();
-    const search = document.getElementById('search');
-    const searchbar = document.getElementsByClassName('search-container')[0];
-    search.onclick = function () {
-      searchbar.style.display = 'block';
-      search.className = 'show-search';
-    }
-    window.onclick = function (e) {
-      let inSearchbar = searchbar.contains(e.target);
-      let inSearch = search.contains(e.target);
-      if (inSearchbar || inSearch) {
-        return;
-      }
-      searchbar.style.display = 'none';
-      search.className = 'hide-search';
-    }
+    toggleSearch();
   }
 
   render() {

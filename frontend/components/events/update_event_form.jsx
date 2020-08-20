@@ -5,6 +5,9 @@ import { TitleComponent } from '../title_component.jsx';
 import {
   formatDateStyle
 } from '../../util/date_util';
+import {
+  toggleSearch
+} from '../../util/search_util';
 
 class UpdateEventForm extends React.Component {
   constructor(props) {
@@ -33,21 +36,7 @@ class UpdateEventForm extends React.Component {
 
 
   componentDidUpdate() {
-    const search = document.getElementById('search');
-    const searchbar = document.getElementsByClassName('search-container')[0];
-    search.onclick = function () {
-      searchbar.style.display = 'block';
-      search.className = 'show-search';
-    }
-    window.onclick = function (e) {
-      let inSearchbar = searchbar.contains(e.target);
-      let inSearch = search.contains(e.target);
-      if (inSearchbar || inSearch) {
-        return;
-      }
-      searchbar.style.display = 'none';
-      search.className = 'hide-search';
-    }
+    toggleSearch();
   }
 
   update(field) {
