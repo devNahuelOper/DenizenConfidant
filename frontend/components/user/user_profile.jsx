@@ -20,7 +20,6 @@ class UserProfile extends React.Component {
     toggleSearch();
   }
 
-
   render() {
     const { currentUser } = this.props;
     const flags = {
