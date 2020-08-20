@@ -1,6 +1,9 @@
 import React from 'react';
 import ImageCarousel from './image_carousel';
 import { Link, useLocation } from 'react-router-dom';
+import {
+  toggleSearch
+} from '../../util/search_util';
 
 // let gesaffId, deamauId, noisufId, nomanaId, kayzoId, eprydzId;
 
@@ -15,22 +18,7 @@ class SplashPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchDjs().then(djs => this.setState({djs: Object.values(djs.djs)}));
-    
-    const search = document.getElementById('search');
-    const searchbar = document.getElementsByClassName('search-container')[0];
-    search.onclick = function () {
-      searchbar.style.display = 'block';
-      search.className = 'show-search';
-    }
-    window.onclick = function (e) {
-      let inSearchbar = searchbar.contains(e.target);
-      let inSearch = search.contains(e.target);
-      if (inSearchbar || inSearch) {
-        return;
-      }
-      searchbar.style.display = 'none';
-      search.className = 'hide-search';
-    }
+    toggleSearch();
   }
 
   // componentDidUpdate() {

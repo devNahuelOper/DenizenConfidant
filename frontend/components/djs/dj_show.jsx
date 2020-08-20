@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { TitleComponent } from '../title_component.jsx';
+import {
+  toggleSearch
+} from '../../util/search_util';
 
 class DjShow extends React.Component {
   constructor(props) {
@@ -23,21 +26,7 @@ class DjShow extends React.Component {
   }
 
   componentDidUpdate() {
-    const search = document.getElementById('search');
-    const searchbar = document.getElementsByClassName('search-container')[0];
-    search.onclick = function () {
-      searchbar.style.display = 'block';
-      search.className = 'show-search';
-    }
-    window.onclick = function (e) {
-      let inSearchbar = searchbar.contains(e.target);
-      let inSearch = search.contains(e.target);
-      if (inSearchbar || inSearch) {
-        return;
-      }
-      searchbar.style.display = 'none';
-      search.className = 'hide-search';
-    }
+    toggleSearch();
   }
 
   clicker(e) {
@@ -102,7 +91,7 @@ class DjShow extends React.Component {
                 <ul className={this.state.drop ? "reveal" : "hide"}>
                   <li><Link className="log-link" to="/djs">All</Link></li>
                   <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-                  <li><Link className="log-link" onClick={this.leave} to="/djs/new">Create and artist profile</Link></li>
+                  <li><Link className="log-link" onClick={this.leave} to="/djs/new">Create an artist profile</Link></li>
                 </ul>
               </button>
             </div>
@@ -116,8 +105,8 @@ class DjShow extends React.Component {
               </li>
               <li>
                 <small>Genre(s)/</small> <br/>
+                
                   {dj.genre.split(' ').map(gen => 
-                 
                   <Link id="genre-link" key={gen} to={`/genres/${this.props.genres.find(g => g.name === gen).id}`}>{gen}</Link>
                     )}
               </li>
