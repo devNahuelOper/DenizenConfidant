@@ -506,7 +506,7 @@
     padding: 4px;
   }
   #success-msg {
-    display: none;
+    // display: none;
     margin: unset;
     // margin-top: 121px;
   }
@@ -522,6 +522,12 @@
       font-style: normal;
     }
   }
+ .hidden {
+    display: none;
+  }
+ .show {
+   display: block;
+ }
 }
 
 
@@ -633,6 +639,7 @@
   text-transform: capitalize;
   position: relative;
   top: 8px;
+  color: #ffff01;
 }
 
 #submit-dj {
@@ -649,6 +656,12 @@
 #success-link {
   color: #ffff01;
 }
+#success-link:hover {
+  color: #1e1e1e;
+  background-color: #fdff00;
+}
+
+
 
 // Smaller
 
