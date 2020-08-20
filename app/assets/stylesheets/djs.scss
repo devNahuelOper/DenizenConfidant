@@ -515,6 +515,11 @@
   }
   strong {
     color: #ffa000;
+    // color: #ffff01;
+    i {
+      color: #9c9c9c;
+      font-style: normal;
+    }
   }
 }
 
@@ -609,6 +614,10 @@
 }
 #bio-input::placeholder {
   font-size: 13px;
+}
+
+#external {
+  display: none;
 }
 
 #song-preview-frame {
