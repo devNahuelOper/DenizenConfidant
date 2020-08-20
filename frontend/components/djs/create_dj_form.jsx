@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
-
+import {
+  toggleSearch
+} from '../../util/search_util';
 
 class CreateDjForm extends React.Component {
 
@@ -34,21 +36,7 @@ class CreateDjForm extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchGenres()
-    const search = document.getElementById('search');
-    const searchbar = document.getElementsByClassName('search-container')[0];
-    search.onclick = function () {
-      searchbar.style.display = 'block';
-      search.className = 'show-search';
-    }
-    window.onclick = function (e) {
-      let inSearchbar = searchbar.contains(e.target);
-      let inSearch = search.contains(e.target);
-      if (inSearchbar || inSearch) {
-        return;
-      }
-      searchbar.style.display = 'none';
-      search.className = 'hide-search';
-    }
+    toggleSearch();
   }
 
   success() {

@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import {
   formatDate
 } from '../../util/date_util';
+import {
+  toggleSearch
+} from '../../util/search_util';
 import { TitleComponent } from '../title_component.jsx';
 
 
@@ -14,21 +17,7 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
-    const search = document.getElementById('search');
-    const searchbar = document.getElementsByClassName('search-container')[0];
-    search.onclick = function () {
-      searchbar.style.display = 'block';
-      search.className = 'show-search';
-    }
-    window.onclick = function (e) {
-      let inSearchbar = searchbar.contains(e.target);
-      let inSearch = search.contains(e.target);
-      if (inSearchbar || inSearch) {
-        return;
-      }
-      searchbar.style.display = 'none';
-      search.className = 'hide-search';
-    }
+    toggleSearch();
   }
 
 

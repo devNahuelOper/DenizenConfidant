@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import DjIndexItem from './dj_index_item';
+import {
+  toggleSearch
+} from '../../util/search_util';
 
 class DjIndex extends React.Component {
   constructor(props) {
@@ -10,21 +13,7 @@ class DjIndex extends React.Component {
   componentDidMount() {
     this.props.fetchDjs();
     this.props.fetchGenres();
-    const search = document.getElementById('search');
-    const searchbar = document.getElementsByClassName('search-container')[0];
-    search.onclick = function () {
-      searchbar.style.display = 'block';
-      search.className = 'show-search';
-    }
-    window.onclick = function (e) {
-      let inSearchbar = searchbar.contains(e.target);
-      let inSearch = search.contains(e.target);
-      if (inSearchbar || inSearch) {
-        return;
-      }
-      searchbar.style.display = 'none';
-      search.className = 'hide-search';
-    }
+    toggleSearch();
   }
 
   render() {
@@ -100,7 +89,7 @@ class SubnavToggle extends React.Component {
         <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>All <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
             <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-            <li><Link className="log-link" onClick={this.leave} to="/djs/new">Create and artist profile</Link></li>
+            <li><Link className="log-link" onClick={this.leave} to="/djs/new">Create an artist profile</Link></li>
           </ul>
         </button>
       </div>
