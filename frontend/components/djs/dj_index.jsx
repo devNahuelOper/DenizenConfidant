@@ -14,6 +14,7 @@ class DjIndex extends React.Component {
     this.props.fetchDjs();
     this.props.fetchGenres();
     toggleSearch();
+    window.scrollTo(0, 0);
   }
 
   render() {

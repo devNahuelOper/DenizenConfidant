@@ -481,7 +481,7 @@
   background-color: #404040;
   color: white;
   .form-wrap {
-    // display: block;
+    display: block;
     padding: 20px 0;
   }
   h1 {
@@ -507,7 +507,8 @@
   }
   #success-msg {
     display: none;
-    margin-top: 121px;
+    margin: unset;
+    // margin-top: 121px;
   }
   small {
     color: #9c9c9c;
@@ -646,7 +647,6 @@
 }
 
 #success-link {
-  
   color: #ffff01;
 }
 
