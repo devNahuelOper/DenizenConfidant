@@ -31,6 +31,7 @@ class CreateDjForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUrl = this.handleUrl.bind(this);
     this.success = this.success.bind(this);
+    this.clearForm = this.clearForm.bind(this);
   }
 
   componentDidMount() {
@@ -45,10 +46,24 @@ class CreateDjForm extends React.Component {
     msg.style.display = 'block';
   }
 
+  clearForm() {
+    this.setState({
+      name: '',
+      nationality: '',
+      genre: '',
+      bio: '',
+      photoFile: null,
+      photoUrl: null,
+      songUrl: null,
+      songFiles: []
+    });
+    this.success();
+  }
+
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
-      console.log(this.state);
+      // console.log(this.state);
     }
   }
 
@@ -60,7 +75,7 @@ class CreateDjForm extends React.Component {
         [target.name]: target.value
       }
     });
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   handleFile(e) {
@@ -122,11 +137,9 @@ class CreateDjForm extends React.Component {
       }
     }
     this.props.createDj(formData).then(() =>
-      // this.props.history.push(`/${this.state.id}`),
-      // alert('DJ profile created! Look for your name on the DJs index page.'),
-      e.target.reset()
+      this.clearForm()
     )
-    this.success();
+    // this.success();
   }
 
 
@@ -312,6 +325,7 @@ class CreateDjForm extends React.Component {
             <aside id="success-msg">
               DJ profile created! Look for your name  <Link id="success-link" to="/djs">Here</Link>
             </aside>
+                  {/* <span onClick={this.clearForm}>Reset</span> */}
           </div>
         </div>
       </div>

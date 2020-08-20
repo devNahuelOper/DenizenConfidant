@@ -36,10 +36,10 @@ export const fetchDj = djId => dispatch => (
 
 export const createDj = dj => dispatch => (
   DjApiUtil.createDj(dj)
-    .then(dj => dispatch(reveiveDj(dj)))
+    .then(dj => dispatch(receiveDj(dj)))
 );
 
 export const updateDj = dj => dispatch => (
   DjApiUtil.updateDj(dj)
-    .then(dj => dispatch(reveiveDj(dj)))
+    .then(dj => dispatch(receiveDj(dj)))
 );
