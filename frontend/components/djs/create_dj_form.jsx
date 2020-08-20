@@ -303,8 +303,12 @@ class CreateDjForm extends React.Component {
                       accept=".mp3,.mpeg,.mpeg3,.audio/*"
                     multiple  onChange={this.handleSong.bind(this)}/>
                   </label>
+                  <small>
+                    Attach as many as you like. <br/>
+                    Hold <strong>shift</strong> to select a list of files <br/>
+                    or <strong>cmd / alt</strong> for a scattered list.
+                  </small>
                   <br/>
-                    {/* {songPreview} */}
                   </div>
                 </li>
                 <br/>
