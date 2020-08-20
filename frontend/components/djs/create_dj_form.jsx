@@ -27,6 +27,7 @@ class CreateDjForm extends React.Component {
     this.handleFile = this.handleFile.bind(this);
     this.handleSong = this.handleSong.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUrl = this.handleUrl.bind(this);
     this.success = this.success.bind(this);
   }
 
@@ -59,7 +60,7 @@ class CreateDjForm extends React.Component {
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
-      // console.log(this.state);
+      console.log(this.state);
     }
   }
 
@@ -71,7 +72,7 @@ class CreateDjForm extends React.Component {
         [target.name]: target.value
       }
     });
-    // console.log(this.state);
+    console.log(this.state);
   }
 
   handleFile(e) {
@@ -83,6 +84,13 @@ class CreateDjForm extends React.Component {
     if (file) {
       fileReader.readAsDataURL(file);
     }
+  }
+
+  handleUrl(e) {
+    const url = e.currentTarget.value;
+    const file = url.split('/').reverse()[0];
+    this.setState({photoFile: file, photoUrl: url});
+    // console.log(file);
   }
 
   handleSong(e) {
@@ -255,12 +263,22 @@ class CreateDjForm extends React.Component {
                     </select>
                   </label>
                 </li>
-                {/* <input id="genre-display" type="text" placeholder={selectedGenre}/> */}
+                <li>
+                  <label htmlFor="bio">Biography / <br />
+                    <textarea name="bio"
+                      id="bio-input"
+                      value={bio}
+                      placeholder={`Tell us a bit about who the real ${name || '____'} is`}
+                      onChange={this.update('bio')}>
+                    </textarea>
+                  </label>
+                </li>
                 <li>
                   <div id="dj-preview-frame">
                     {preview}
                       
                      <br />
+                  <div className="dj-input-hold">
                   <label htmlFor="photo">Primary DJ Photo / <br/>
                       <input type="file"
                       className="file-input"
@@ -268,18 +286,15 @@ class CreateDjForm extends React.Component {
                       onChange={this.handleFile.bind(this)}
                       />
                   </label>
+                  <label id="external" htmlFor="photo">or enter an external image URL... <br/>
+                      <input type="text"
+                        className="text-input"
+                        onChange={this.handleUrl.bind(this)}/>
+                  </label>
+                  </div>
                   </div>
                 </li>
-                <li>
-                  <label htmlFor="bio">Biography / <br/>
-                    <textarea name="bio" 
-                      id="bio-input"
-                      value={bio}
-                      placeholder={`Tell us a bit about who the real ${name || '____'} is`}
-                      onChange={this.update('bio')}>
-                    </textarea>
-                  </label> 
-                </li>
+               
                 <li>
                   <div id="song-preview-frame">
                   <label htmlFor="song">Upload some music / <br/>
@@ -288,8 +303,12 @@ class CreateDjForm extends React.Component {
                       accept=".mp3,.mpeg,.mpeg3,.audio/*"
                     multiple  onChange={this.handleSong.bind(this)}/>
                   </label>
+                  <small>
+                    {/* Attach as many as you like. <br/> */}
+                    Hold <strong>shift</strong> to select a list of files or<br/>
+                     <strong>cmd<i>(mac) /</i> alt<i>(pc)</i></strong> for a scattered list.
+                  </small>
                   <br/>
-                    {/* {songPreview} */}
                   </div>
                 </li>
                 <br/>
