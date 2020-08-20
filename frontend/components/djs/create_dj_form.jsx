@@ -286,7 +286,7 @@ class CreateDjForm extends React.Component {
                       onChange={this.handleFile.bind(this)}
                       />
                   </label>
-                  <label htmlFor="photo">or enter an external image URL... <br/>
+                  <label id="external" htmlFor="photo">or enter an external image URL... <br/>
                       <input type="text"
                         className="text-input"
                         onChange={this.handleUrl.bind(this)}/>
@@ -304,9 +304,9 @@ class CreateDjForm extends React.Component {
                     multiple  onChange={this.handleSong.bind(this)}/>
                   </label>
                   <small>
-                    Attach as many as you like. <br/>
-                    Hold <strong>shift</strong> to select a list of files <br/>
-                    or <strong>cmd / alt</strong> for a scattered list.
+                    {/* Attach as many as you like. <br/> */}
+                    Hold <strong>shift</strong> to select a list of files or<br/>
+                     <strong>cmd<i>(mac) /</i> alt<i>(pc)</i></strong> for a scattered list.
                   </small>
                   <br/>
                   </div>
