@@ -849,8 +849,11 @@
   }
   .dj-input-hold {
     flex-direction: column;
-    height: 100px;
+    height: 130px;
     justify-content: space-between;
+    section {
+      margin: 12px 0;
+    }
   }
 }
 

@@ -284,15 +284,22 @@ class CreateDjForm extends React.Component {
                       onChange={this.handleFile.bind(this)}
                       />
                   </label>
+                  <section>
                   <label id="external" htmlFor="photo">or enter an external image URL... <br/>
                       <input type="text"
                         className="text-input"
                         onChange={this.handleUrl.bind(this)}/>
                   </label>
+                  <br/>
+                  <small>
+                    Right-click on your image, then select <strong>Copy Image Address</strong>. <br/>
+                    The URL should start with something like <strong>'data:image/jpeg;base64...'</strong>
+                  </small>
+                  </section>
+                  
                   </div>
                   </div>
                 </li>
-               
                 <li>
                   <div id="song-preview-frame">
                   <label htmlFor="song">Upload some music / <br/>
