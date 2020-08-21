@@ -15,7 +15,6 @@ const mapDispatchToProps = dispatch => ({
   fetchEvent: eventId => dispatch(fetchEvent(eventId)),
   fetchCurrentUser: (userId) => dispatch(fetchCurrentUser(userId)),
   updateEvent: (event) => dispatch(updateEvent(event)),
-  // action: event => dispatch(updateEvent(event)),
   // receiveEventErrors: errors => dispatch(receiveEventErrors(errors)),
   clearEventErrors: () => dispatch(clearEventErrors),
 });
