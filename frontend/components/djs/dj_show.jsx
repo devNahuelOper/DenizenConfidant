@@ -87,7 +87,7 @@ class DjShow extends React.Component {
             </ul>
           </section>
             <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-              <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>{dj.name} <small>⬇︎</small></span>
+              <button className="subnav-drop" onFocus={this.clicker}  onBlur={this.leave}> <span>{dj.name} <small>⬇︎</small></span>
                 <ul className={this.state.drop ? "reveal" : "hide"}>
                   <li><Link className="log-link" to="/djs">All</Link></li>
                   <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
