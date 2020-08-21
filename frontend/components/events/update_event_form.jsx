@@ -65,6 +65,7 @@ class UpdateEventForm extends React.Component {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
       // this.props.receiveEventErrors([]);
+      this.setEvent();
     }
   }
 
@@ -87,24 +88,7 @@ class UpdateEventForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.setEvent();
-    // .then(() => 
-    // this.props.updateEvent(this.state.event)
-    // )
     this.props.updateEvent(this.state.event);
-    // const formData = new FormData();
-    // formData.append('event[id]', this.state.id);
-    // formData.append('event[user_id]', this.state.user_id);
-    // formData.append('event[location]', this.state.location);
-    // formData.append('event[name]', this.state.name);
-    // formData.append('event[venue]', this.state.venue);
-    // formData.append('event[description]', this.state.description);
-    // formData.append('event[headliners]', this.state.headliners);
-    // formData.append('event[cost]', this.state.cost);
-    // formData.append('event[date]', this.state.date);
-    // this.props.updateEvent(formData).then(() =>
-    //   this.props.history.push(`/users/${currentUser.id}/events`)
-    // )
   }
 
   handleFile(e) {
