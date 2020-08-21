@@ -50,7 +50,7 @@ class EditEventForm extends React.Component {
       .then(event => this.props.history.push(`/events/${event.event.id}`));
   }
 
-
+  
   render() {
     const { event, currentUser } = this.props;
     // const { event } = this.state;
