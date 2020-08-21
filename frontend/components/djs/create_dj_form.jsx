@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
-import {
-  toggleSearch
-} from '../../util/search_util';
+import { toggleSearch } from '../../util/search_util';
+import { dataURLtoFile } from '../../util/url_util';
+
 
 class CreateDjForm extends React.Component {
 
@@ -86,12 +86,14 @@ class CreateDjForm extends React.Component {
 
   handleUrl(e) {
     const url = e.currentTarget.value;
-    const file = url.split('/').reverse()[0];
+    let type = dataURLtoFile(url).type.split('/')[1];
+    // let filename = url.split('/').reverse()[0];
+    let filename = this.state.name || 'image';
+    const file = dataURLtoFile(url, `${filename}.${type}`);
+    // const file = new File([""], url);
     this.setState({photoFile: file, photoUrl: url});
 
-    const fyle = new File([""], url);
-
-    console.log(fyle);
+    // console.log(file);
   }
 
   handleSong(e) {
