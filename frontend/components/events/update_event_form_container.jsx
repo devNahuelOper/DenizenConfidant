@@ -3,11 +3,14 @@ import { fetchEvent, updateEvent, receiveEventErrors, clearEventErrors } from '.
 import { fetchCurrentUser, getCurrentUser } from '../../actions/session_actions';
 import UpdateEventForm from './update_event_form';
 
-const mapStateToProps = (state, ownProps) => ({
-  event: state.entities.events[ownProps.match.params.eventId],
-  currentUser: getCurrentUser(state),
+const mapStateToProps = (state, ownProps) => {
+  // debugger
+  return {
+    currentUser: getCurrentUser(state),
+    event: state.entities.events[ownProps.match.params.eventId],
+  }
   // errors: state.errors.events
-});
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchEvent: eventId => dispatch(fetchEvent(eventId)),
