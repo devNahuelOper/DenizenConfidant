@@ -85,6 +85,18 @@
     padding-left: 4px;
     height: 30px;
   }
+  small {
+    color: #9c9c9c;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  strong {
+    color: #ffa000;
+    i {
+      color: #9c9c9c;
+      font-style: normal;
+    }
+  }
 }
 
 .new-event-formlist {
@@ -140,6 +152,13 @@
   width: 570px;
   display: flex;
   justify-content: space-between;
+}
+
+.event-input-hold {
+  display: flex;
+}
+#external {
+  width: 312px;
 }
 
 #preview-frame {
