@@ -4,6 +4,8 @@ import { withRouter } from 'react-router';
 import {
   toggleSearch
 } from '../../util/search_util';
+import { dataURLtoFile } from '../../util/url_util';
+
 
 class CreateEventForm extends React.Component {
   constructor(props) {
@@ -25,6 +27,7 @@ class CreateEventForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
+    this.handleUrl = this.handleUrl.bind(this);
     this.resetForm = this.resetForm.bind(this);
     this.update = this.update.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
@@ -39,10 +42,17 @@ class CreateEventForm extends React.Component {
   resetForm(e) {
     e.preventDefault();
     this.props.clearEventErrors([]);
-    // const form = document.getElementsByClassName('event-form')[0];
     const success = document.getElementById('success-msg');
-    // form.reset();
-    e.target.reset();
+    // e.target.reset();
+    this.setState({
+      name: '',
+      date: '',
+      location: '',
+      venue: '',
+      description: '',
+      headliners: '',
+      cost: ''
+    })
     window.setTimeout(() => {
       success.innerHTML = 'Event Submitted!';
     }, 1000);
@@ -59,7 +69,14 @@ class CreateEventForm extends React.Component {
     }
   }
 
-
+  handleUrl(e) {
+    const url = e.currentTarget.value;
+    let type = dataURLtoFile(url).type.split('/')[1];
+    let filename = this.state.name || 'image';
+    const file = dataURLtoFile(url, `${filename}.${type}`);
+    this.setState({ photoFile: file, photoUrl: url });
+    // console.log(file);
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -87,6 +104,7 @@ class CreateEventForm extends React.Component {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
       this.props.receiveEventErrors([]);
+      // console.log(this.state);
     }
   }
 
@@ -226,13 +244,27 @@ class CreateEventForm extends React.Component {
               <br/>
                 <li>
                   <div id="preview-frame">
-                  <span>{preview}</span> <br/>
-                  <label htmlFor="photo">Flyer / <br />
-                    <input type="file"
-                      className="file-input"
-                      accept=".jpg,.jpeg,.png,.gif"
-                      onChange={this.handleFile.bind(this)} />
-                  </label>
+                    <span>{preview}</span> <br/>
+                      <div className="event-input-hold">
+                        <label htmlFor="photo">Flyer / <br />
+                          <input type="file"
+                            className="file-input"
+                            accept=".jpg,.jpeg,.png,.gif"
+                            onChange={this.handleFile.bind(this)} />
+                        </label>
+                      <section>
+                        <label id="external" htmlFor="photo">or enter an external image URL... <br />
+                          <input type="text"
+                            id="external"
+                            onChange={this.handleUrl.bind(this)} />
+                        </label>
+                        <br />
+                        <small>
+                          Right-click on your image, then select <strong>Copy Image Address</strong>. <br />
+                          URL should start with something like <strong>'data:image/jpeg;base64...'</strong>
+                        </small>
+                      </section>
+                      </div>
                   </div>
                 </li>
                 <br/>
