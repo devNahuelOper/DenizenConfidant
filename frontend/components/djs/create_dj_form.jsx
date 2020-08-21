@@ -88,7 +88,10 @@ class CreateDjForm extends React.Component {
     const url = e.currentTarget.value;
     const file = url.split('/').reverse()[0];
     this.setState({photoFile: file, photoUrl: url});
-    // console.log(file);
+
+    const fyle = new File([""], url);
+
+    console.log(fyle);
   }
 
   handleSong(e) {
@@ -314,7 +317,7 @@ class CreateDjForm extends React.Component {
                 </li>
               </ul>
             </form>
-            <aside id="success-msg" class="hidden">
+            <aside id="success-msg" className="hidden">
               DJ profile created! Look for your name  <Link id="success-link" to="/djs">Here</Link>
             </aside>
 
@@ -347,7 +350,7 @@ class SubnavToggle extends React.Component {
   render() {
     return (
       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>Create an artist profile <small>⬇︎</small></span>
+        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span>Create an artist profile <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
             <li><Link className="log-link" onClick={this.leave} to="/djs">All</Link></li>
             <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>

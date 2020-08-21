@@ -2,7 +2,9 @@ const path = require('path');
 
 module.exports = {
   context: __dirname,
-  entry: './frontend/denizen_confidant.jsx',
+  entry: {
+   index: ['babel-polyfill','./frontend/denizen_confidant.jsx']
+  },
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: 'bundle.js'
