@@ -4,7 +4,6 @@ import { fetchCurrentUser, getCurrentUser } from '../../actions/session_actions'
 import UpdateEventForm from './update_event_form';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return {
     currentUser: getCurrentUser(state),
     event: state.entities.events[ownProps.match.params.eventId],
@@ -16,7 +15,6 @@ const mapDispatchToProps = dispatch => ({
   fetchEvent: eventId => dispatch(fetchEvent(eventId)),
   fetchCurrentUser: (userId) => dispatch(fetchCurrentUser(userId)),
   updateEvent: (event) => dispatch(updateEvent(event)),
-  // action: event => dispatch(updateEvent(event)),
   // receiveEventErrors: errors => dispatch(receiveEventErrors(errors)),
   clearEventErrors: () => dispatch(clearEventErrors),
 });
