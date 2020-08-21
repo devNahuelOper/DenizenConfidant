@@ -8,7 +8,7 @@ import {
   toggleSearch
 } from '../../util/search_util';
 
-class EditEventForm extends React.Component {
+class UpdateEventForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.event;
@@ -24,10 +24,10 @@ class EditEventForm extends React.Component {
     toggleSearch();
   }
 
-  componentDidUpdate() {
-    console.log(this.state);
-    // toggleSearch();
-  }
+  // componentDidUpdate() {
+  //   console.log(this.state);
+  // }
+
 
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
@@ -37,7 +37,7 @@ class EditEventForm extends React.Component {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
-      this.setState({ photoFile: file, photoUrl: fileReader.result });
+      this.setState({ photoUrl: fileReader.result });
     };
     if (file) {
       fileReader.readAsDataURL(file);
@@ -258,4 +258,4 @@ class SubnavToggle extends React.Component {
   }
 }
 
-export default EditEventForm;
+export default UpdateEventForm;
