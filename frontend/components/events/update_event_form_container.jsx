@@ -4,7 +4,6 @@ import { fetchCurrentUser, getCurrentUser } from '../../actions/session_actions'
 import UpdateEventForm from './update_event_form';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return {
     currentUser: getCurrentUser(state),
     event: state.entities.events[ownProps.match.params.eventId],
