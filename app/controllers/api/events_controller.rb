@@ -33,15 +33,20 @@ class Api::EventsController < ApplicationController
   #   render json: "api/events/:id"
   # end
 
-  def update
+  # def update
+  #   @event = Event.find(params[:id])
+  #   if @event.update(event_params)
+  #     render :show
+  #     # render json: "api/events/:id"
+  #   else
+  #     render json: @event.errors.full_messages, status: 422
+  #   end
+  # end
+
+  def update 
     @event = Event.find(params[:id])
-    if @event.update(event_params)
-      render :show
-      # render json: "api/events/:id"
-    else
-      render json: @event.errors.full_messages, status: 422
-    end
-      # render json: "api/events/:id"
+    @event.update!(event_params)
+    render :show
   end
 
   # def update
@@ -62,7 +67,7 @@ class Api::EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :venue, :location, :date, :headliners, :description, :cost, :local, :user_id, :photo)
+    params.fetch(:event, {}).permit(:name, :venue, :location, :date, :headliners, :description, :cost, :local, :user_id, :photo)
   end
 
 end
