@@ -269,7 +269,7 @@ class SubnavToggle extends React.Component {
     const { currentUser } = this.props;
     return (
       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>Submit Update <small>⬇︎</small></span>
+        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span>Submit Update <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
             {/* <li><Link className="log-link" onClick={this.leave} to="/signup">Register</Link></li> */}
             <li><Link className="log-link" to={`/users/${currentUser.id}/events`}>My Events</Link></li>
