@@ -13,30 +13,52 @@ class UpdateEventForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      event: {
+      },
       name: '',
       venue: '',
-      cost: '',
+      location: '',
       date: '',
       headliners: '',
+      cost: '',
       description: '',
-      // id: '',
-      // user_id: '',
-      // location: '',
-      // id: this.props.event ? this.props.event.id : null
+      photoUrl: null
     }
+    // this.state = {
+    //   name: '',
+    //   venue: '',
+    //   cost: '',
+    //   date: '',
+    //   headliners: '',
+    //   description: '',
+    // }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.update = this.update.bind(this);
+    this.setEvent = this.setEvent.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchEvent(this.props.match.params.eventId);
+    this.props.fetchEvent(this.props.match.params.eventId)
+    .then(() => this.setState({event: this.props.event}))
+    .then(() => this.setState({
+      name: this.props.event.name,
+      venue: this.props.event.venue,
+      location: this.props.event.location,
+      date: this.props.event.date,
+      headliners: this.props.event.headliners,
+      cost: this.props.event.cost,
+      description: this.props.event.description,
+      photoUrl: this.props.event.photoUrl
+    }));
     window.scrollTo(0, 0);
+    console.log(this.props);
   }
 
 
   componentDidUpdate() {
     toggleSearch();
+    console.log(this.state);
   }
 
   update(field) {
@@ -46,22 +68,43 @@ class UpdateEventForm extends React.Component {
     }
   }
 
+  setEvent() {
+    this.setState({
+      event: {
+        id: this.state.event.id,
+        user_id: this.state.event.user_id,
+        name: this.state.name,
+        venue: this.state.venue,
+        location: this.state.location,
+        date: this.state.date,
+        headliners: this.state.headliners,
+        cost: this.state.cost,
+        description: this.state.description,
+        photoUrl: this.state.photoUrl
+      }
+    });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    // this.props.updateEvent(this.state);
-    const formData = new FormData();
-    formData.append('event[id]', this.state.id);
-    formData.append('event[user_id]', this.state.user_id);
-    formData.append('event[location]', this.state.location);
-    formData.append('event[name]', this.state.name);
-    formData.append('event[venue]', this.state.venue);
-    formData.append('event[description]', this.state.description);
-    formData.append('event[headliners]', this.state.headliners);
-    formData.append('event[cost]', this.state.cost);
-    formData.append('event[date]', this.state.date);
-    this.props.updateEvent(formData).then(() =>
-      this.props.history.push(`/users/${currentUser.id}/events`)
-    )
+    this.setEvent();
+    // .then(() => 
+    // this.props.updateEvent(this.state.event)
+    // )
+    this.props.updateEvent(this.state.event);
+    // const formData = new FormData();
+    // formData.append('event[id]', this.state.id);
+    // formData.append('event[user_id]', this.state.user_id);
+    // formData.append('event[location]', this.state.location);
+    // formData.append('event[name]', this.state.name);
+    // formData.append('event[venue]', this.state.venue);
+    // formData.append('event[description]', this.state.description);
+    // formData.append('event[headliners]', this.state.headliners);
+    // formData.append('event[cost]', this.state.cost);
+    // formData.append('event[date]', this.state.date);
+    // this.props.updateEvent(formData).then(() =>
+    //   this.props.history.push(`/users/${currentUser.id}/events`)
+    // )
   }
 
   handleFile(e) {
@@ -76,7 +119,10 @@ class UpdateEventForm extends React.Component {
   }
 
   render() {
-    const { event, currentUser } = this.props;
+    const { currentUser } = this.props;
+    // const { event } = this.state;
+    const { event, name, date, venue, location, description, headliners, cost } = this.state;
+
     const flags = {
       'Argentina': '🇦🇷',
       'Brazil': '🇧🇷',
@@ -162,6 +208,8 @@ class UpdateEventForm extends React.Component {
                   <input type="text"
                     className="update-input"
                     defaultValue={event.name}
+                    name="name"
+                    value={name}
                     onChange={this.update('name')}/> 
                   </label>
                  <b>at</b> 
@@ -169,7 +217,8 @@ class UpdateEventForm extends React.Component {
                   <label htmlFor="venue">Venue / <br/>
                   <input type="text"
                     className="update-input"
-                    defaultValue={event.venue}
+                    // defaultValue={event.venue}
+                    value={venue}
                     onChange={this.update('venue')}
                     />
                     </label>
@@ -183,7 +232,8 @@ class UpdateEventForm extends React.Component {
                 <label htmlFor="date">Date / <br/>
                 <input type="date"
                   id="date-input"
-                  defaultValue={event.date}
+                  // defaultValue={event.date}
+                  value={date}
                   onChange={this.update('date')}
                   />
                 </label>
@@ -196,7 +246,8 @@ class UpdateEventForm extends React.Component {
                   <label htmlFor="headliners">Line-up / &nbsp; <small>Do not include urls, artist biographies or general event information.</small> <br/>
                     <textarea name="headliners" 
                       id="update-headliners"
-                      defaultValue={event.headliners}
+                      // defaultValue={event.headliners}
+                      value={headliners}
                       onChange={this.update('headliners')}
                       >
                     </textarea>
@@ -206,7 +257,8 @@ class UpdateEventForm extends React.Component {
                   <label htmlFor="cost">Cost / <small>{currencies[`${event.location}`]}</small> <br/>
                     <input type="text"
                       className="update-input"
-                      defaultValue={event.cost}
+                      // defaultValue={event.cost}
+                      value={cost}
                       onChange={this.update('cost')}
                       />
                 </label>
@@ -215,8 +267,8 @@ class UpdateEventForm extends React.Component {
                   <label>Description and updates/ <small>Use this space to tell the world about your event. You can add new updates at any time.</small><br />
                     <textarea name="Description"
                       id="update-description"
-                      defaultValue={event.description}
-                      // value={this.state.description}
+                      // defaultValue={event.description}
+                      value={description}
                       onChange={this.update('description')}
                       >
                     </textarea>
@@ -228,6 +280,7 @@ class UpdateEventForm extends React.Component {
                   <input type="file" 
                     className="file-input"
                     accept=".jpg,.jpeg,.png,.gif"
+                    // value={event.photoUrl}
                     onChange={this.handleFile.bind(this)}/>
                 </label>
               </li>
