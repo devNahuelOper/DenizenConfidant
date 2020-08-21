@@ -293,7 +293,7 @@ class CreateDjForm extends React.Component {
                   <br/>
                   <small>
                     Right-click on your image, then select <strong>Copy Image Address</strong>. <br/>
-                    The URL should start with something like <strong>'data:image/jpeg;base64...'</strong>
+                    URL should start with something like <strong>'data:image/jpeg;base64...'</strong>
                   </small>
                   </section>
                   
