@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
-import {
-  toggleSearch
-} from '../../util/search_util';
+import { toggleSearch } from '../../util/search_util';
+import { dataURLtoFile } from '../../util/url_util';
+
 
 class CreateDjForm extends React.Component {
 
@@ -25,24 +25,34 @@ class CreateDjForm extends React.Component {
       songUrl: null,
     }
     this.update = this.update.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleGenre = this.handleGenre.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.handleSong = this.handleSong.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUrl = this.handleUrl.bind(this);
-    this.success = this.success.bind(this);
+    this.clearForm = this.clearForm.bind(this);
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.props.fetchGenres()
+    this.props.fetchGenres();
     toggleSearch();
   }
 
-  success() {
-    // const container = document.getElementsByClassName('dj-form-container')[0];
-    const msg = document.getElementById('success-msg');
-    msg.style.display = 'block';
+  clearForm() {
+    this.setState({
+      name: '',
+      nationality: '',
+      genre: '',
+      bio: '',
+      photoFile: null,
+      photoUrl: null,
+      // songFile: null,
+      // songUrl: null,
+      // songFiles: []
+    });
+    $('#success-msg').toggleClass('show hidden')
+    $('#song-hold').toggleClass('show hidden');
   }
 
   update(field) {
@@ -52,7 +62,7 @@ class CreateDjForm extends React.Component {
     }
   }
 
-  handleChange({ target }) {
+  handleGenre({ target }) {
     this.setState({
       ...this.state,
       genre: {
@@ -76,15 +86,20 @@ class CreateDjForm extends React.Component {
 
   handleUrl(e) {
     const url = e.currentTarget.value;
-    const file = url.split('/').reverse()[0];
+    let type = dataURLtoFile(url).type.split('/')[1];
+    // let filename = url.split('/').reverse()[0];
+    let filename = this.state.name || 'image';
+    const file = dataURLtoFile(url, `${filename}.${type}`);
+    // const file = new File([""], url);
     this.setState({photoFile: file, photoUrl: url});
+
     // console.log(file);
   }
 
   handleSong(e) {
     const files = Array.from(e.currentTarget.files);
-    const frame = document.getElementById('song-preview-frame');
-   
+    const frame = document.getElementById('song-hold');
+
     for (let file of files) {
       const fileReader = new FileReader();
       fileReader.onloadend = () => {
@@ -92,7 +107,6 @@ class CreateDjForm extends React.Component {
       }
       let songTitle = document.createElement('h2');
       songTitle.id = 'prev-songTitle';
-      songTitle.setAttribute('style', 'color: #ffff01;' );
       songTitle.innerHTML = file.name.split('.')[0];
       let audio = new Audio();
       audio.src = file.name;
@@ -122,11 +136,8 @@ class CreateDjForm extends React.Component {
       }
     }
     this.props.createDj(formData).then(() =>
-      // this.props.history.push(`/${this.state.id}`),
-      // alert('DJ profile created! Look for your name on the DJs index page.'),
-      e.target.reset()
+      this.clearForm()
     )
-    this.success();
   }
 
 
@@ -197,7 +208,6 @@ class CreateDjForm extends React.Component {
               Please use correct capitalization and double check your spelling.
             </p>
 
-            
               <ul className="new-dj-formlist">
                 <li>
                   <label htmlFor="name">Enter your artist name / <br/>
@@ -209,7 +219,7 @@ class CreateDjForm extends React.Component {
                 </li>
                 <li>
                   <label>Country / <br />
-                    <select name="Nationality" id="nationality-select" value={nationality || 'United States  🇺🇸'} onChange={this.update('nationality')}>
+                    <select name="Nationality" id="nationality-select" value={nationality || '--Select a country--'} onChange={this.update('nationality')}>
                       <option value="--Select a country--" disabled={true}>--Select a country--</option>
                       <option value="Argentina  🇦🇷">Argentina  🇦🇷</option>
                       <option value="Brazil  🇧🇷">Brazil  🇧🇷</option>
@@ -222,28 +232,28 @@ class CreateDjForm extends React.Component {
                       <option value="Netherlands  🇳🇱">Netherlands  🇳🇱</option>
                       <option value="Spain  🇪🇸">Spain  🇪🇸</option>
                       <option value="Sweden  🇸🇪">Sweden  🇸🇪</option>
-                      <option value="United Kingdom  🇬🇧">United Kingdom  🇬🇧</option>
-                      <option value="United States  🇺🇸">United States  🇺🇸</option>
+                      <option value="UK  🇬🇧">UK  🇬🇧</option>
+                      <option value="USA  🇺🇸">USA  🇺🇸</option>
                     </select>
                   </label>
                 </li>
                 <li>
                   <label htmlFor="Genre">Musical Style(s) / <br/>
-                    <select name="gen1" id="genre-select" value={genre.gen1 || '--Select a style--'} onChange={this.handleChange}>
+                    <select name="gen1" id="genre-select" value={genre.gen1 || '--Select a style--'} onChange={this.handleGenre}>
                       <option value="--Select a style--" disabled={true}>--Select a style--</option>
                       {genres.map(genre => 
                         <option key={genre.id} >{genre.name}</option>
                           )}
                     </select>
                     <br/>
-                    <select name="gen2" id="genre-select" value={genre.gen2 || '--Select a style--'} onChange={this.handleChange}>
+                    <select name="gen2" id="genre-select" value={genre.gen2 || '--Select a style--'} onChange={this.handleGenre}>
                       <option value="--Select a style--" disabled={true}>--Select a style--</option>
                       {genres.map(genre =>
                         <option key={genre.id} > {genre.name}</option>
                       )}
                     </select>
                     <br/>
-                    <select name="gen3" id="genre-select" value={genre.gen3 || '--Select a style--'} onChange={this.handleChange}>
+                    <select name="gen3" id="genre-select" value={genre.gen3 || '--Select a style--'} onChange={this.handleGenre}>
                       <option value="--Select a style--" disabled={true}>--Select a style--</option>
                       {genres.map(genre =>
                         <option key={genre.id} > {genre.name}</option>
@@ -274,15 +284,22 @@ class CreateDjForm extends React.Component {
                       onChange={this.handleFile.bind(this)}
                       />
                   </label>
+                  <section>
                   <label id="external" htmlFor="photo">or enter an external image URL... <br/>
                       <input type="text"
                         className="text-input"
                         onChange={this.handleUrl.bind(this)}/>
                   </label>
+                  <br/>
+                  <small>
+                    Right-click on your image, then select <strong>Copy Image Address</strong>. <br/>
+                    URL should start with something like <strong>'data:image/jpeg;base64...'</strong>
+                  </small>
+                  </section>
+                  
                   </div>
                   </div>
                 </li>
-               
                 <li>
                   <div id="song-preview-frame">
                   <label htmlFor="song">Upload some music / <br/>
@@ -292,26 +309,28 @@ class CreateDjForm extends React.Component {
                     multiple  onChange={this.handleSong.bind(this)}/>
                   </label>
                   <small>
-                    {/* Attach as many as you like. <br/> */}
                     Hold <strong>shift</strong> to select a list of files or<br/>
                      <strong>cmd<i>(mac) /</i> alt<i>(pc)</i></strong> for a scattered list.
                   </small>
+                  <div id="song-hold">
+
+                  </div>
                   <br/>
                   </div>
                 </li>
                 <br/>
                 <li>
                   <input id="submit-dj" type="submit" value="Create"/> 
-                  {/* <br/>
-                  <span id="submit-dj">Create</span> */}
                   <br/>
                   {/* <p><i>Under Construction</i></p> */}
                 </li>
               </ul>
             </form>
-            <aside id="success-msg">
+            <aside id="success-msg" className="hidden">
               DJ profile created! Look for your name  <Link id="success-link" to="/djs">Here</Link>
             </aside>
+
+              {/* <span onClick={this.clearForm}>Reset</span> */}
           </div>
         </div>
       </div>
@@ -340,7 +359,7 @@ class SubnavToggle extends React.Component {
   render() {
     return (
       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker} onTap={this.clicker} onBlur={this.leave}> <span>Create an artist profile <small>⬇︎</small></span>
+        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span>Create an artist profile <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
             <li><Link className="log-link" onClick={this.leave} to="/djs">All</Link></li>
             <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>

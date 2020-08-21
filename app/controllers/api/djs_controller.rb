@@ -3,9 +3,10 @@ class Api::DjsController < ApplicationController
    def create
       @dj = Dj.new(dj_params)
       if @dj.save
-        render json: "api/djs"
+        # render json: "api/djs"
+        render :show
       else
-        render json: @dj.errors.full_messages
+        render json: @dj.errors.full_messages, status: 422
       end
    end
 

@@ -481,7 +481,7 @@
   background-color: #404040;
   color: white;
   .form-wrap {
-    // display: block;
+    display: block;
     padding: 20px 0;
   }
   h1 {
@@ -506,8 +506,9 @@
     padding: 4px;
   }
   #success-msg {
-    display: none;
-    margin-top: 121px;
+    // display: none;
+    margin: unset;
+    // margin-top: 121px;
   }
   small {
     color: #9c9c9c;
@@ -521,6 +522,12 @@
       font-style: normal;
     }
   }
+ .hidden {
+    display: none;
+  }
+ .show {
+   display: block;
+ }
 }
 
 
@@ -617,7 +624,7 @@
 }
 
 #external {
-  display: none;
+  // display: none;
 }
 
 #song-preview-frame {
@@ -632,6 +639,7 @@
   text-transform: capitalize;
   position: relative;
   top: 8px;
+  color: #ffff01;
 }
 
 #submit-dj {
@@ -646,9 +654,14 @@
 }
 
 #success-link {
-  
   color: #ffff01;
 }
+#success-link:hover {
+  color: #1e1e1e;
+  background-color: #fdff00;
+}
+
+
 
 // Smaller
 
@@ -836,8 +849,11 @@
   }
   .dj-input-hold {
     flex-direction: column;
-    height: 100px;
+    height: 130px;
     justify-content: space-between;
+    section {
+      margin: 12px 0;
+    }
   }
 }
 
