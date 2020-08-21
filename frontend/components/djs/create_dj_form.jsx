@@ -58,7 +58,7 @@ class CreateDjForm extends React.Component {
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
-      console.log(this.state);
+      // console.log(this.state);
     }
   }
 
@@ -70,7 +70,7 @@ class CreateDjForm extends React.Component {
         [target.name]: target.value
       }
     });
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   handleFile(e) {

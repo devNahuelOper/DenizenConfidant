@@ -27,6 +27,7 @@ class CreateEventForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
+    this.handleUrl = this.handleUrl.bind(this);
     this.resetForm = this.resetForm.bind(this);
     this.update = this.update.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
@@ -42,7 +43,16 @@ class CreateEventForm extends React.Component {
     e.preventDefault();
     this.props.clearEventErrors([]);
     const success = document.getElementById('success-msg');
-    e.target.reset();
+    // e.target.reset();
+    this.setState({
+      name: '',
+      date: '',
+      location: '',
+      venue: '',
+      description: '',
+      headliners: '',
+      cost: ''
+    })
     window.setTimeout(() => {
       success.innerHTML = 'Event Submitted!';
     }, 1000);
@@ -67,8 +77,6 @@ class CreateEventForm extends React.Component {
     this.setState({ photoFile: file, photoUrl: url });
     // console.log(file);
   }
-
-
 
   handleSubmit(e) {
     e.preventDefault();
@@ -96,6 +104,7 @@ class CreateEventForm extends React.Component {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
       this.props.receiveEventErrors([]);
+      // console.log(this.state);
     }
   }
 

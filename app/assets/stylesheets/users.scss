@@ -494,6 +494,9 @@ i {
   .update-event-form {
     width: 590px;
   }
+  .event-input-hold {
+    flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 620px) {
