@@ -24,9 +24,9 @@ class UpdateEventForm extends React.Component {
     toggleSearch();
   }
 
-  // componentDidUpdate() {
-  //   console.log(this.state);
-  // }
+  componentDidUpdate() {
+    console.log(this.state);
+  }
 
 
   update(field) {
@@ -44,6 +44,10 @@ class UpdateEventForm extends React.Component {
     };
     if (file) {
       fileReader.readAsDataURL(file);
+      // const { event } = this.props;
+      const formData = new FormData();
+      formData.append('event[photo]', file);
+      this.props.updateEvent(formData);
     }
     // console.log(`${file.lastModified},${file.lastModifiedDate},${file.name},${file.size},${file.type}`);
  
