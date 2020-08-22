@@ -23,11 +23,11 @@ export const createEvent = event => (
 );
 
 
-// export const updateEvent = (id, event) => (
+// export const updateEvent = (eventData, id) => (
 //   $.ajax({
 //     method: 'PATCH',
 //     url: `api/events/${id}`,
-//     data: event,
+//     data: eventData,
 //     contentType: false,
 //     processData: false
 //   })
@@ -38,7 +38,7 @@ export const updateEvent = (event) => (
   $.ajax({
     method: 'PATCH',
     url: `api/events/${event.id}`,
-    data: { event },
+    data: { event }
   })
 );
 
