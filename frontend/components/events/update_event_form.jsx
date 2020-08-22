@@ -24,24 +24,29 @@ class UpdateEventForm extends React.Component {
     toggleSearch();
   }
 
-  // componentDidUpdate() {
-  //   console.log(this.state);
-  // }
+  componentDidUpdate() {
+    console.log(this.state);
+  }
 
 
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
 
+
   handleFile(e) {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
+
     fileReader.onloadend = () => {
-      this.setState({ photoUrl: fileReader.result });
+      // const fileString = `${file.lastModified},${file.lastModifiedDate},${file.name},${file.size},${file.type}`;
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
     };
     if (file) {
       fileReader.readAsDataURL(file);
     }
+    // console.log(`${file.lastModified},${file.lastModifiedDate},${file.name},${file.size},${file.type}`);
+ 
   }
 
   handleSubmit(e) {
@@ -84,6 +89,9 @@ class UpdateEventForm extends React.Component {
       'United Kingdom': 'GBP',
       'United States': 'USD'
     }
+
+    const preview = this.state.photoUrl ? <img width="265px" height="150px" src={this.state.photoUrl} /> : null;
+
 
     if (!event) return null;
     return (
@@ -203,12 +211,15 @@ class UpdateEventForm extends React.Component {
                   </li>
                   <hr />
                   <li>
-                    <label htmlFor="photo">Flyer / <br />
-                      <input type="file"
-                        className="file-input"
-                        accept=".jpg,.jpeg,.png,.gif"
-                        onChange={this.handleFile.bind(this)} />
-                    </label>
+                    <div id="preview-frame">
+                      <span>{preview}</span> <br />
+                      <label htmlFor="photo">Flyer / <br />
+                        <input type="file"
+                          className="file-input"
+                          accept=".jpg,.jpeg,.png,.gif"
+                          onChange={this.handleFile.bind(this)} />
+                      </label>
+                    </div>
                   </li>
                   <li>
                     <input id="submit-event" type="submit" value="Submit" />
