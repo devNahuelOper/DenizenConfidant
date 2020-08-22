@@ -49,6 +49,7 @@ class UpdateEventForm extends React.Component {
       this.props.updateEventPhoto(formData, this.props.event.id)
         .then(event => this.props.history.push(`/events/${event.event.id}`))
         .then(() => window.scrollTo(500, 500))
+        .then(() => this.props.history.push(`/events/${this.props.event.id}/edit`))
     }
     // console.log(`${file.lastModified},${file.lastModifiedDate},${file.name},${file.size},${file.type}`);
  
@@ -182,7 +183,7 @@ class UpdateEventForm extends React.Component {
                     </label>
                     <br /><br />
                     <span id="date-notice">
-                      <small>This event is on</small> {formatDateStyle(event.date)}.
+                      <small>This event is on</small> {formatDateStyle(this.state.date)}.
                 </span>
                   </li>
                   <li>
