@@ -24,9 +24,9 @@ class UpdateEventForm extends React.Component {
     toggleSearch();
   }
 
-  componentDidUpdate() {
-    console.log(this.state);
-  }
+  // componentDidUpdate() {
+  //   console.log(this.state);
+  // }
 
 
   update(field) {
