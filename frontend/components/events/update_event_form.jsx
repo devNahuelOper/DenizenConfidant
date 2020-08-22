@@ -44,6 +44,12 @@ class UpdateEventForm extends React.Component {
     };
     if (file) {
       fileReader.readAsDataURL(file);
+      const formData = new FormData();
+      formData.append('event[photo]', file);
+      this.props.updateEventPhoto(formData, this.props.event.id)
+        .then(event => this.props.history.push(`/events/${event.event.id}`))
+        .then(() => window.scrollTo(500, 500))
+        .then(() => this.props.history.push(`/events/${this.props.event.id}/edit`))
     }
     // console.log(`${file.lastModified},${file.lastModifiedDate},${file.name},${file.size},${file.type}`);
  
@@ -177,7 +183,7 @@ class UpdateEventForm extends React.Component {
                     </label>
                     <br /><br />
                     <span id="date-notice">
-                      <small>This event is on</small> {formatDateStyle(event.date)}.
+                      <small>This event is on</small> {formatDateStyle(this.state.date)}.
                 </span>
                   </li>
                   <li>
@@ -220,12 +226,10 @@ class UpdateEventForm extends React.Component {
                           onChange={this.handleFile.bind(this)} />
                       </label>
                     </div>
-                    <small><i>image updating under construction</i></small>
+                    <small id="img-notice"><i>If you've made any other changes to this event, submit those first and come back for the photo.</i></small>
                   </li>
                   <li>
-                    <input id="submit-event" type="submit" value="Submit" />
-                    <br />
-                    
+                    <input id="submit-event" type="submit" value="Submit" />                    
                   </li>
                 </ul>
               </form>
