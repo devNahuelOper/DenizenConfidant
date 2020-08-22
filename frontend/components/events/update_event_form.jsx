@@ -220,11 +220,12 @@ class UpdateEventForm extends React.Component {
                           onChange={this.handleFile.bind(this)} />
                       </label>
                     </div>
+                    <small><i>under construction</i></small>
                   </li>
                   <li>
                     <input id="submit-event" type="submit" value="Submit" />
                     <br />
-                    <small><i>Under Construction</i></small>
+                    
                   </li>
                 </ul>
               </form>
