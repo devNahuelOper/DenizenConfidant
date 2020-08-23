@@ -29,7 +29,7 @@ class WelcomeDropdown extends React.Component {
     // this.props.logout;
     window.setTimeout(() => {
       localStorage.setItem('lastOnline', date);
-      console.log(localStorage.getItem('lastOnline'));
+      // console.log(localStorage.getItem('lastOnline'));
     }, 1000);
   }
 

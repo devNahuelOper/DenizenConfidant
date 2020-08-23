@@ -19,7 +19,7 @@ class UserProfile extends React.Component {
 
   componentDidMount() {
     toggleSearch();
-    console.log(localStorage.getItem('lastOnline'));
+    // console.log(localStorage.getItem('lastOnline'));
   }
 
   render() {
