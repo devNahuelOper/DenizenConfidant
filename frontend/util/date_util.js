@@ -87,7 +87,7 @@ export const formatDateStyle = date => {
     6: 'Sat',
   };
   const obj = new Date(date);
-  // const obj = ebj.setMinutes(ebj.getMinutes() + ebj.getTimezoneOffset());
+  obj.setMinutes(obj.getMinutes() + obj.getTimezoneOffset());
   const month = months[obj.getMonth()];
   const day = obj.getDate();
   const year = obj.getFullYear();
