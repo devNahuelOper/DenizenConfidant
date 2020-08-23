@@ -12,6 +12,7 @@ class WelcomeDropdown extends React.Component {
     }
     this.clicker = this.clicker.bind(this);
     this.leave = this.leave.bind(this);
+    this.lastOnline = this.lastOnline.bind(this);
   }
 
 
@@ -23,8 +24,18 @@ class WelcomeDropdown extends React.Component {
     this.setState({ "drop": false });
   }
 
+  lastOnline() {
+    let date = new Date();
+    // this.props.logout;
+    window.setTimeout(() => {
+      localStorage.setItem('lastOnline', date);
+      // console.log(localStorage.getItem('lastOnline'));
+    }, 1000);
+  }
+
   render() {
     const { currentUser, logout } = this.props;
+
     // onBlur = { this.leave } 
     return (
       <div className="welcome-wrap">
@@ -32,12 +43,12 @@ class WelcomeDropdown extends React.Component {
         <button onFocus={this.clicker} onBlur={this.leave}  className="logout-dropdown">
           <span>
             <img src={window.djUrl} id="dj-icon" />    
-    <h1 id="welcome-msg">  <strong>Welcome</strong> {currentUser.username}</h1> <small>⬇︎</small> 
+            <h1 id="welcome-msg">  <strong>Welcome</strong> {currentUser.username}</h1> <small>⬇︎</small> 
          </span>
         <ul className={this.state.drop ? "reveal" : "hide"}>
             <li><Link onClick={this.leave} className="log-link" to={`/users/${currentUser.id}`}>My Profile</Link></li>
             <li><Link onClick={this.leave} className="log-link" to={`/users/${currentUser.id}/events`}>My Events</Link></li>
-              <li className="log-link" onClick={logout}>Logout</li>
+            <li className="log-link" onClick={logout} onMouseUp={this.lastOnline}>Logout</li>
           </ul>
        </button>
        {/* </Tappable> */}
