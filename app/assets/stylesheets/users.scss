@@ -45,6 +45,11 @@
   }
 }
 
+.user-main {
+  height: 76px;
+  border-bottom: 1px #585858 solid;
+}
+
 // Create Event Form
 
 .create-event {
@@ -413,6 +418,9 @@ i {
       width: 675px;
       .details {
         white-space: nowrap;
+        li {
+          margin-right: 160px;
+        }
       }
     }
   }
@@ -463,6 +471,9 @@ i {
        width: 560px;
       .details {
         white-space: nowrap;
+        li {
+          margin-right: 125px;
+        }
       }
     }
   }
@@ -522,6 +533,9 @@ i {
        width: 490px;
       .details {
         white-space: nowrap;
+        li {
+          margin-right: 90px;
+        }
       }
     }
   }

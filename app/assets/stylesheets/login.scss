@@ -240,9 +240,10 @@
 
 .signup-form-container {
   font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
-  height: 1000px;
-  padding-top: 10px;
+  max-height: 1100px;
+  padding: 20px 0;
   background-color: #2e2e2e;
+  border-bottom: 1px #585858 solid;
 }
 
  .form-wrap {
@@ -660,9 +661,9 @@
     }
 }
 
-.user-profile #expand {
-  height: 97px;
-}
+// .user-profile #expand {
+//   height: 97px;
+// }
 
 #user-reveal {
   border-bottom: 1px solid black;

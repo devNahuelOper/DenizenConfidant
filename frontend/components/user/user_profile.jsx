@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { fetchCurrentUser, getCurrentUser } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
 import {
-  formatDate,
-  formatDateStyle
+  formatMonthYear,
+  formatLastOnline,
+  formatTime
 } from '../../util/date_util';
 import {
   toggleSearch
@@ -72,11 +73,12 @@ class UserProfile extends React.Component {
             <ul className="details">
               <li>
                 <small>DC since /</small><br />
-                {formatDate(currentUser.created_at).split(' ').slice(0, 3).join(' ')}
+                {/* {formatDate(currentUser.created_at).split(' ').slice(0, 3).join(' ')} */}
+                  {formatMonthYear(currentUser.created_at)}
               </li>
               <li>
                 <small>Last online /</small><br/>
-                {formatDateStyle(lastOnline)}
+                {formatLastOnline(lastOnline)} <small>{formatTime(lastOnline)}</small>
               </li>
               <li>
                 <small>Location /</small> <br />
@@ -85,7 +87,9 @@ class UserProfile extends React.Component {
             </ul>
           </section>
         </div>
+        <div className="user-main">
 
+        </div>
       </div>
       </React.Fragment>
     )
