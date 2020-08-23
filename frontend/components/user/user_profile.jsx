@@ -87,7 +87,9 @@ class UserProfile extends React.Component {
             </ul>
           </section>
         </div>
+        <div className="user-main">
 
+        </div>
       </div>
       </React.Fragment>
     )
