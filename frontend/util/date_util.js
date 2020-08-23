@@ -23,6 +23,7 @@ export const formatDate = date => {
     6: 'Saturday',
   };
   const obj = new Date(date);
+  obj.setMinutes(obj.getMinutes() + obj.getTimezoneOffset());
   const month = months[obj.getMonth()];
   const day = obj.getDate();
   const year = obj.getFullYear();
@@ -55,6 +56,7 @@ export const formatMonthDay = date => {
     6: 'Saturday',
   };
   const obj = new Date(date);
+  obj.setMinutes(obj.getMinutes() + obj.getTimezoneOffset());
   const month = months[obj.getMonth()];
   const day = obj.getDate();
   const year = obj.getFullYear();
@@ -87,7 +89,7 @@ export const formatDateStyle = date => {
     6: 'Sat',
   };
   const obj = new Date(date);
-  // const obj = ebj.setMinutes(ebj.getMinutes() + ebj.getTimezoneOffset());
+  obj.setMinutes(obj.getMinutes() + obj.getTimezoneOffset());
   const month = months[obj.getMonth()];
   const day = obj.getDate();
   const year = obj.getFullYear();
@@ -120,6 +122,7 @@ export const formatDateShowStyle = date => {
     6: 'Saturday',
   };
   const obj = new Date(date);
+  obj.setMinutes(obj.getMinutes() + obj.getTimezoneOffset());
   const month = months[obj.getMonth()];
   const day = obj.getDate();
   const year = obj.getFullYear();
@@ -130,6 +133,7 @@ export const formatDateShowStyle = date => {
 
 export const formatTime = date => {
   const obj = new Date(date);
+  obj.setMinutes(obj.getMinutes() + obj.getTimezoneOffset());
   const fullHours = obj.getHours();
   let hours = fullHours % 12;
   if (hours === 0) hours = 12;
