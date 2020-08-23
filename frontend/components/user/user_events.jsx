@@ -4,7 +4,7 @@ import { fetchCurrentUser, getCurrentUser } from '../../actions/session_actions'
 import { fetchEvents, deleteEvent } from '../../actions/event_actions';
 import { Link } from 'react-router-dom';
 import {
-  formatMonthDay,
+  formatMonthYear,
   formatDateStyle
 } from '../../util/date_util';
 import {
@@ -86,7 +86,7 @@ class UserEvents extends React.Component {
               <ul>
                 {currentUser.events.map((event, i) => 
                 <li key={i} id={event.id || null}>
-                  <h1 id="myevent-date">{formatMonthDay(event.created_at)}</h1>
+                  <h1 id="myevent-date">{formatMonthYear(event.created_at)}</h1>
                     <article className="user-event">
                       <span className="myevent-details">
                         <small>{formatDateStyle(event.date).split(' ').slice(0,2).join(' ')} / </small> <strong><Link to={`/events/${event.id}`}>{event.name}</Link></strong> <br />
