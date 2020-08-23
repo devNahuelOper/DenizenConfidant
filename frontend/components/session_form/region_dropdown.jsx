@@ -14,6 +14,7 @@ class RegionDropdown extends React.Component {
 
   clicker(e) {
     e.stopPropagation();
+    // e.preventDefault();
     this.setState({ "drop": true });
   }
 
