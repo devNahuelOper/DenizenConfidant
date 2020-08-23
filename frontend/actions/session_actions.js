@@ -65,3 +65,8 @@ export const getCurrentUser = (state) => {
     ...state.session,
   };
 };
+
+// .then(() => (
+//   localStorage.setItem('lastOnline', new Date())
+
+// ))
