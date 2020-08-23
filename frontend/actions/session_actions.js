@@ -40,11 +40,6 @@ export const login = user => dispatch => (
   ))
 );
 
-// export const updateDefaultRegion = defaultRegion => ({
-//   type: UPDATE_DEFAULT_REGION,
-//   defaultRegion
-// });
-
 // export const login = user => dispatch => (
 //   APIUtil.login(user).then(user => (
 //     dispatch(receiveCurrentUser(user))
