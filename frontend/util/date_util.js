@@ -31,7 +31,7 @@ export const formatDate = date => {
   return `${month} ${day}, ${year} (${dayOfWeek})`;
 };
 
-export const formatMonthDay = date => {
+export const formatLastOnline = date => {
   const months = {
     0: 'January',
     1: 'February',
@@ -61,7 +61,40 @@ export const formatMonthDay = date => {
   const day = obj.getDate();
   const year = obj.getFullYear();
   const dayOfWeek = daysOfWeek[obj.getDay()];
-  return `${month}, ${year}`;
+  return `${day} ${month} ${year}`;
+};
+
+export const formatMonthYear = date => {
+  const months = {
+    0: 'January',
+    1: 'February',
+    2: 'March',
+    3: 'April',
+    4: 'May',
+    5: 'June',
+    6: 'July',
+    7: 'August',
+    8: 'September',
+    9: 'October',
+    10: 'November',
+    11: 'December',
+  };
+  const daysOfWeek = {
+    0: 'Sunday',
+    1: 'Monday',
+    2: 'Tuesday',
+    3: 'Wednesday',
+    4: 'Thursday',
+    5: 'Friday',
+    6: 'Saturday',
+  };
+  const obj = new Date(date);
+  obj.setMinutes(obj.getMinutes() + obj.getTimezoneOffset());
+  const month = months[obj.getMonth()];
+  const day = obj.getDate();
+  const year = obj.getFullYear();
+  const dayOfWeek = daysOfWeek[obj.getDay()];
+  return `${month} ${year}`;
 };
 
 export const formatDateStyle = date => {
@@ -133,7 +166,7 @@ export const formatDateShowStyle = date => {
 
 export const formatTime = date => {
   const obj = new Date(date);
-  obj.setMinutes(obj.getMinutes() + obj.getTimezoneOffset());
+  // obj.setMinutes(obj.getMinutes() + obj.getTimezoneOffset());
   const fullHours = obj.getHours();
   let hours = fullHours % 12;
   if (hours === 0) hours = 12;
