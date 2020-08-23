@@ -23,7 +23,8 @@
       li {
           text-align: left;
           font-weight: normal;
-          color: #ffa100;
+          // color: #ffa100;
+          color: white;
           font-size: 16px;
           padding: 16px 0;
           margin-right: 180px;
@@ -36,8 +37,9 @@
           line-height: 1em;
         }
       }
-      li:first-of-type {
-        color: white;
+      li:last-of-type {
+        // color: white;
+        color: #ffa100;
       }
     }
   }
