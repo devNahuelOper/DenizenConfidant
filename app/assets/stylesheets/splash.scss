@@ -524,11 +524,14 @@ h3 {
          align-items: center;
          flex-direction: column;
          color: #b4bd00;
+        //  color: #ffff01;
          position: relative;
          top: 65px;
          margin: 0 auto;
          width: 100%;
          border-top: 1px solid #676767;
+        //  background-color: #1e1e1e;
+        //  border-bottom: 1px #4b4b4b solid;
         .beats-banner {
             width: 960px;
             padding-top: 18px;
@@ -536,6 +539,7 @@ h3 {
             font-size: 16px;
           h1 {
             border-bottom-color: #b4bd00;
+            // border-bottom-color: #ffff01;
             border-bottom-style: solid;
             border-bottom-width: 2px;
             padding-bottom: 2px;
@@ -546,7 +550,9 @@ h3 {
             text-align: center;
             display: block;
             color: #b4bd00;
+            // color: #ffff01;
             background-color: #b4bd00;
+            // background-color: #ffff01;
             float: right;
             width: 152px;
             margin-top: -30px;
@@ -579,8 +585,10 @@ h3 {
                 a {
                   white-space: nowrap;
                   color: #b4bd00;
+                  // color: #ffff01;
                   background-color: #000008;
                   border: 1px groove #b4bd00;
+                  // border: 1px groove #ffff01;
                   padding: 1px 2px 2px 2px;
                   small {
                     font-size: 5px;
