@@ -11,7 +11,10 @@
 #  updated_at  :datetime         not null
 #
 class Dj < ApplicationRecord
-  validates :name, presence: true
+  # validates :name, :genre, :nationality, presence: true
+  validates :name, presence: { message: " Name must be entered"}
+  validates :genre, presence: { message: " Enter at least 1 genre"}
+  validates :nationality, presence: { message: " Please enter where you're from"}
   has_one_attached :photo
   has_many_attached :songs
   has_one_attached :track
