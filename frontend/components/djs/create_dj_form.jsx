@@ -32,6 +32,7 @@ class CreateDjForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUrl = this.handleUrl.bind(this);
     this.clearForm = this.clearForm.bind(this);
+    // this.navToshow = this.navToShow.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
 
@@ -58,7 +59,10 @@ class CreateDjForm extends React.Component {
     $('#song-hold').toggleClass('show hidden');
   }
 
-  
+  // navToShow() {
+  //   this.clearForm()
+  //     .then(dj => this.props.history.push(`/djs/${dj.dj.id}`));
+  // }
 
   update(field) {
     return e => {
@@ -141,9 +145,8 @@ class CreateDjForm extends React.Component {
         // console.log(formData.getAll('dj[songs][]'));
       }
     }
-    this.props.createDj(formData).then(() =>
-      this.clearForm()
-    )
+    this.props.createDj(formData)
+    .then(dj => this.props.history.push(`/djs/${dj.dj.id}`))    
   }
 
   renderErrors() {

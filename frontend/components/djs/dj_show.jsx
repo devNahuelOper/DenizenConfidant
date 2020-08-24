@@ -23,6 +23,7 @@ class DjShow extends React.Component {
     this.props.fetchDj(this.props.match.params.djId);
     this.props.fetchGenres();
     window.scrollTo(0, 0);
+    // console.log(this.props.dj.genre.split(' '));
   }
 
   componentDidUpdate() {
@@ -105,8 +106,8 @@ class DjShow extends React.Component {
               </li>
               <li>
                 <small>Genre(s)/</small> <br/>
-                
-                  {dj.genre.split(' ').map(gen => 
+                {/* {dj.genre} */}
+                  {dj.genre.split(' ').filter(String).map(gen => 
                   <Link id="genre-link" key={gen} to={`/genres/${this.props.genres.find(g => g.name === gen).id}`}>{gen}</Link>
                     )}
               </li>
