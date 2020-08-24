@@ -23,6 +23,7 @@ class CreateDjForm extends React.Component {
       songFile: null,
       songFiles: [],
       songUrl: null,
+      errors: this.props.errors
     }
     this.update = this.update.bind(this);
     this.handleGenre = this.handleGenre.bind(this);
@@ -31,11 +32,13 @@ class CreateDjForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUrl = this.handleUrl.bind(this);
     this.clearForm = this.clearForm.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchGenres();
+    this.props.receiveDjErrors([]);
     toggleSearch();
   }
 
@@ -55,9 +58,12 @@ class CreateDjForm extends React.Component {
     $('#song-hold').toggleClass('show hidden');
   }
 
+  
+
   update(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value });
+      this.props.receiveDjErrors([]);
       // console.log(this.state);
     }
   }
@@ -138,6 +144,18 @@ class CreateDjForm extends React.Component {
     this.props.createDj(formData).then(() =>
       this.clearForm()
     )
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {`- ${error.split(' ').slice(1).join(' ')}`}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
 
@@ -326,6 +344,11 @@ class CreateDjForm extends React.Component {
                 </li>
               </ul>
             </form>
+            {this.props.errors.length > 0 &&
+              <aside className="dj-errors">Notifications /
+             {this.renderErrors()}
+              </aside>
+            }
             <aside id="success-msg" className="hidden">
               DJ profile created! Look for your name  <Link id="success-link" to="/djs">Here</Link>
             </aside>
