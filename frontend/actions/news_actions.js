@@ -8,6 +8,6 @@ export const receiveAllNews = news => ({
 });
 
 export const fetchAllNews = news => dispatch => (
-  NewsApiUtil.fetchNews(news)
+  NewsApiUtil.fetchAllNews(news)
     .then(news => dispatch(receiveAllNews(news)))
 );
