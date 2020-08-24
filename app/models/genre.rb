@@ -26,7 +26,6 @@ class Genre < ApplicationRecord
       if genres.include?(self.name)
         self.artists.push(dj.name)
         self.artist_ids.push(dj.id)
-        dj.genre_ids.push(self.id)
       end
     end
   end
