@@ -123,6 +123,7 @@
 .news-main {
   background-color: #585858;
   padding: 20px 0;
+  min-height: 512px;
 }
 
 .blurb-wrap, .body-wrap {
@@ -241,5 +242,29 @@
   }
   .blurb-wrap, .body-wrap {
     width: 490px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .news-nav {
+    width: 1272px;
+    nav {
+      width: 1272px;
+    }
+  }
+  .news-header {
+    width: 1272px;
+    h1 {
+      width: 1272px;
+    }
+  }
+  .news-subheader {
+    width: 1272px;
+    .details {
+      width: 1160px;
+    }
+  }
+  .blurb-wrap, .body-wrap {
+    width: 1272px;
   }
 }

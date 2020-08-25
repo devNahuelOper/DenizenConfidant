@@ -534,7 +534,7 @@ h3 {
   font-size: 12px;
   li {
     width: 152px;
-    min-height: 320px;
+    min-height: 300px;
     position: relative;
     display: inline-block;
     white-space: normal;
@@ -587,6 +587,7 @@ h3 {
          margin: 0 auto;
          width: 100%;
          border-top: 1px solid #676767;
+         padding: 40px 0;
         //  background-color: #1e1e1e;
         //  border-bottom: 1px #4b4b4b solid;
         .beats-banner {
@@ -819,7 +820,10 @@ h3 {
       }
   .newsbar {
     width: 675px;
-  }    
+  } 
+  .newslist li {
+    width: 162px;
+  }   
 }
 
 @media only screen and (max-width: 700px) {
@@ -903,6 +907,7 @@ h3 {
     .beatwrap {
       width: 560px;
       white-space: normal;
+      padding-bottom: 40px;
       .beatlist {
         margin: 0 auto;
         width: 560px;
@@ -950,6 +955,9 @@ h3 {
   .newsbar {
     width: 560px;
   }
+  .newslist li {
+    width: 180px;
+  } 
 }
 
 @media only screen and (max-width: 560px) {
@@ -1003,6 +1011,12 @@ h3 {
 
   .newsbar {
     width: 490px;
+  }
+  .newslist li {
+    width: 158px;
+  } 
+  .newspiece a {
+    font-size: 14px;
   }
 }
 
@@ -1078,5 +1092,11 @@ h3 {
       display: flex;
       justify-content: space-between;
     }
+  }
+  .newsbar {
+    width: 1272px;
+  }
+  .newslist li {
+    width: 182px;
   }
 }
