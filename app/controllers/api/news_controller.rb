@@ -1,12 +1,12 @@
 class Api::NewsController < ApplicationController
 
   def index
-    @djs = Dj.all
+    @newss = News.all
     render :index
   end
 
   def show
-    @dj = Dj.find(params[:id])
+    @news = News.find(params[:id])
     render :show
   end
 
