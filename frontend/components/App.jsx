@@ -19,6 +19,7 @@ import GenreIndexContainer from './genres/genre_index_container';
 import GenreShowContainer from './genres/genre_show_container';
 import SplashContainer from './splash/splash_container';
 import Search from './search/search';
+import NewsShow from './news/news_show';
 import { TitleComponent } from './title_component.jsx';
 
 
@@ -93,7 +94,7 @@ class App extends React.Component {
           <Route exact path="/djs/:djId" component={DjShowContainer} />
           <Route exact path="/genres" component={GenresIndexContainer} />
           <Route exact path="/genres/:genreId" component={GenreShowContainer} />
-
+          <Route exact path="/news/:newsId" component={NewsShow}/>
         </Switch>
 
         <Footer />

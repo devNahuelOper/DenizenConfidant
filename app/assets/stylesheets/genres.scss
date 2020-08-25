@@ -32,19 +32,11 @@
       height: 22px;
       position: relative;
       left: unset;
-      // li:first-of-type {
-      //   background-color: white;
-      //   border-color:  white;
-      // }
       li:nth-of-type(3) {
-        // border-color: #b4bd02;
         background-color: white;
         border-color:  white;
         color: black;
       }
-      // li:nth-of-type(3):hover {
-      //   background-color: #b4bd02;
-      // }
     }
     #logo {
       position: relative;
