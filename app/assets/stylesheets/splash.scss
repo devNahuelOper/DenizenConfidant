@@ -411,7 +411,7 @@ h3 {
   position: relative;
   background-color: #595959;
   border-bottom: 1px #7a7a7a solid;
-  height: 1000px;
+  // height: 1000px;
 }
 
    .content {
@@ -524,7 +524,7 @@ h3 {
   overflow: hidden;
   white-space: nowrap;
   padding-top: 32px;
-  width: 956px;
+  width: 960px;
   margin: 0 auto;
 }
 
@@ -557,6 +557,12 @@ h3 {
     font-size: 16px;
     line-height: 1.15em;
     display: inline;
+  }
+  a:hover {
+   h1 {
+    background-color: #b4bd00;
+    color: #2a2a2a;
+   }
   }
 }
 
@@ -811,13 +817,10 @@ h3 {
           }
         }
       }
-      // .footer {
-      //  .foothold {
-      //    width: 600px;
-      //  }
-      // }
-      
-      }
+  .newsbar {
+    width: 675px;
+  }    
+}
 
 @media only screen and (max-width: 700px) {
   .splash-header-container {
@@ -943,6 +946,10 @@ h3 {
       }
     }
   }
+
+  .newsbar {
+    width: 560px;
+  }
 }
 
 @media only screen and (max-width: 560px) {
@@ -992,6 +999,10 @@ h3 {
         }
       }
     }
+  }
+
+  .newsbar {
+    width: 490px;
   }
 }
 
