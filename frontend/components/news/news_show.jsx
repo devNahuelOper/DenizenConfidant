@@ -69,6 +69,24 @@ class NewsShow extends React.Component {
             </ul>
           </section>
         </div>
+        <div className="news-main">
+          <section className="blurb-wrap">
+            <p className="blurb">
+              {news.blurb}
+            </p>
+          </section>
+          <section className="body-wrap">
+            <ul className="body">
+              {news.body.split('~').map((para, i) => 
+                <li key={i}>
+                  <strong>{para.split(' ')[0]}</strong> {para.split(' ').slice(1).join(' ')}
+                  
+                </li>
+              )}
+                <br />
+            </ul>
+          </section>
+        </div>
       </div>
     </React.Fragment>
     )
