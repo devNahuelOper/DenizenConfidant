@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchNews } from '../../actions/news_actions';
-import { formatDateNews } from '../../util/date_util';
+import { formatDateNewsShow } from '../../util/date_util';
 import { TitleComponent } from '../title_component.jsx';
 
 class NewsShow extends React.Component {
@@ -17,6 +17,15 @@ class NewsShow extends React.Component {
   render() {
     const { news } = this.props;
     if (!news) return null;
+    // const newsTime = () => {
+    //   const split = formatDateNewsShow(news.created_at).split('~');
+    //   split.map((part, i) => {
+    //     return {
+         
+    //     }
+    //   })
+    // }
+    const newsTime = formatDateNewsShow(news.created_at).split('~');
     return (
     <React.Fragment>
       <TitleComponent title={`DC News: ${news.title}`} />
@@ -36,6 +45,28 @@ class NewsShow extends React.Component {
               <Link to='/'><img id="prev" src={window.prevUrl} alt="Back" /> News</Link>
               <h1>{news.title}</h1>
             </section>
+          </section>
+        </div>
+        <div className="news-subheader-container">
+          <section className="news-subheader">
+            <ul className="details">
+              <li>
+                <small>Words /</small><br/>
+                {news.author}
+              </li>
+              <li>
+                <small>Published /</small><br/>
+                <ul className="date-split">
+                {newsTime.map((part, i) => 
+                  <li key={i} id={`date-${i}`}>{part}</li>
+                )}
+                </ul>
+              </li>
+              <li>
+                <small>Category /</small><br/>
+                {news.category}
+              </li>
+            </ul>
           </section>
         </div>
       </div>
