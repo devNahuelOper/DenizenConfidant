@@ -1,9 +1,10 @@
 import React from 'react';
 import ImageCarousel from './image_carousel';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   toggleSearch
 } from '../../util/search_util';
+import NewsIndex from '../news/news_index';
 
 // let gesaffId, deamauId, noisufId, nomanaId, kayzoId, eprydzId;
 
@@ -18,6 +19,7 @@ class SplashPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchDjs().then(djs => this.setState({djs: Object.values(djs.djs)}));
+    this.props.fetchAllNews();
     toggleSearch();
   }
 
@@ -37,7 +39,7 @@ class SplashPage extends React.Component {
   // }
 
   render() {
-    const { djs } = this.props;
+    const { djs, news } = this.props;
 
     let yesterday = new Date(this.state.date);
     yesterday.setDate(yesterday.getDate() - 1);
@@ -121,7 +123,7 @@ class SplashPage extends React.Component {
                 </div>
               </li>
 
-              <li>
+              {/* <li>
                 <div className="main-article">
                   <article>
                     <a href="https://www.jonesaroundtheworld.com/festival-accessories-gear-must-haves/" target="_blank">
@@ -134,11 +136,11 @@ class SplashPage extends React.Component {
                           <h1 id="acc-capt">Top 44 festival accessories</h1>
                           </a>
                       </div>
-                    
                   </article>
                 </div>
-              </li>
+              </li> */}
             </ul>
+            <NewsIndex news={news}/>
           </section>
           {/* {console.log(gesaffId, deamauId, noisufId, nomanaId, kayzoId, eprydzId)} */}
      
