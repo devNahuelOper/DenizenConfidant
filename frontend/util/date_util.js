@@ -163,6 +163,22 @@ export const formatDateShowStyle = date => {
   return `${dayOfWeek} ${day} ${month} ${year}`;
 }
 
+export const formatDateNews = date => {
+  const daysOfWeek = {
+    0: 'Sun',
+    1: 'Mon',
+    2: 'Tue',
+    3: 'Wed',
+    4: 'Thu',
+    5: 'Fri',
+    6: 'Sat',
+  };
+  const obj = new Date(date);
+  obj.setMinutes(obj.getMinutes() + obj.getTimezoneOffset());
+  const dayOfWeek = daysOfWeek[obj.getDay()];
+  return `${dayOfWeek}, ${formatTime(date)}`;
+}
+
 
 export const formatTime = date => {
   const obj = new Date(date);
