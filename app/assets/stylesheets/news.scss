@@ -1,0 +1,270 @@
+.news-show {
+    border-bottom: 1px solid #575757;
+
+}
+
+.news-nav-container {
+  // background-color: #b4be00;
+  background-color: #b3c702;
+  // height: 374px;
+  min-height: 310px;
+}
+
+.news-nav {
+  width: 960px;
+  min-height: 310px;
+  margin: 0 auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    width: 960px;
+    margin: 0 auto;
+    #links {
+      height: 22px;
+      position: relative;
+      left: unset;
+      // li:nth-of-type(3) {
+      //   border-color:  white;
+      // }
+    }
+    #logo {
+      position: relative;
+      right: unset;
+      top: unset;
+      margin: unset;
+      left: -4px;
+      filter: unset;
+    }
+    #logo:hover {
+      filter: invert(1);
+    }
+  }
+  // h1 {
+  //   letter-spacing: -2px;
+  //   line-height: 2em;
+  //   font-size: 64px;
+  //   margin: 0 auto;
+  //   width: 960px;
+  //   font-weight: normal;
+  // } 
+}
+
+.news-header {
+  margin: 0 auto;
+  width: 960px;
+  a {
+    color: white;
+    position: relative;
+    // top: 12px;
+  }
+  a:hover {
+    filter: invert(1);
+  }
+  #prev {
+    position: relative;
+    top: 2px;
+    width: 16px;
+    // background-color: black;
+    border-radius: 50%;
+  }
+  h1 {
+    font-size: 64px;
+    width: 960px;
+    margin: 0 auto;
+    line-height: 1em;
+    letter-spacing: -2px;
+    padding-bottom: 10px;
+  }
+}
+
+.news-subheader-container {
+  background-color: #676767;
+  height: 82px;
+}
+
+.news-subheader {
+  width: 960px;
+  margin: 0 auto;
+  .details {
+    display: flex;
+    justify-content: space-between;
+    width: 910px;
+    li {
+      text-align: left;
+      font-weight: normal;
+      // color: #b3c702;
+      color: white;
+      font-size: 16px;
+      padding: 16px 0;
+      // margin-right: 180px;
+      white-space: nowrap;
+      small {
+        color: #b4b4b4;
+        font-size: 12px;
+      }
+    }
+  }
+}
+.date-split {
+  display: flex;
+  li {
+    margin-right: 4px !important;
+    padding: unset !important;
+  }
+  #date-1 {
+    color: #b3c702;
+  }
+}
+
+.news-main {
+  background-color: #585858;
+  padding: 20px 0;
+  min-height: 512px;
+}
+
+.blurb-wrap, .body-wrap {
+  width: 960px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.blurb {
+  color: white;
+  font-size: 2.6em;
+}
+
+// .body-wrap {
+//   display: flex;
+// }
+
+.body {
+  color: white;
+  li {
+      margin-bottom: 20px;
+      strong {
+        color: #b3c702;
+      }
+  }
+}
+.news-photo {
+  width: 472px;
+  height: 312px;
+  // margin: 20px;
+  margin: 0 0 16px 16px;
+  float: right;
+}
+
+
+@media only screen and (max-width: 972px) {
+  .news-nav {
+    width: 675px;
+    nav {
+      width: 675px;
+    }
+    #logo {
+      width: 80px;
+      height: 75px;
+    }
+    #links li {
+      width: 75px;
+    }
+  }
+  .news-header {
+    width: 675px;
+    h1 {
+      width: 675px;
+      font-size: 48px;
+    }
+  }
+  .news-subheader {
+    width: 675px;
+    .details {
+      width: 660px;
+    }
+  }
+  .blurb-wrap, .body-wrap {
+    width: 675px;
+  }
+  .blurb {
+    font-size: 24px;
+  }
+  .news-photo {
+    width: 100%;
+    height: unset;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .news-nav {
+    width: 560px;
+    nav {
+      width: 560px;
+    }
+  }
+  .news-header {
+    width: 560px;
+    h1 {
+      width: 560px;
+    }
+  }
+  .news-subheader {
+    width: 560px;
+    .details {
+      width: 545px;
+    }
+  }
+  .blurb-wrap, .body-wrap {
+    width: 560px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .news-nav {
+    width: 490px;
+    nav {
+      width: 490px;
+    }
+  }
+  .news-header {
+    width: 490px;
+    h1 {
+      width: 490px;
+    }
+  }
+  .news-subheader {
+    width: 490px;
+    .details {
+      width: 475px;
+    }
+  }
+  .blurb-wrap, .body-wrap {
+    width: 490px;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .news-nav {
+    width: 1272px;
+    nav {
+      width: 1272px;
+    }
+  }
+  .news-header {
+    width: 1272px;
+    h1 {
+      width: 1272px;
+    }
+  }
+  .news-subheader {
+    width: 1272px;
+    .details {
+      width: 1160px;
+    }
+  }
+  .blurb-wrap, .body-wrap {
+    width: 1272px;
+  }
+}
