@@ -101,11 +101,11 @@ class DjShow extends React.Component {
           <section className="djshow-subheader">
             <ul className="details">
               <li>
-                <small>Country/</small><br/>
+                <small>Country /</small><br/>
                 {dj.nationality.split(' ').reverse().join(' ')}
               </li>
               <li>
-                <small>Genre(s)/</small> <br/>
+                <small>Genre(s) /</small> <br/>
                 {/* {dj.genre} */}
                   {dj.genre.split(' ').filter(String).map(gen => 
                   <Link id="genre-link" key={gen} to={`/genres/${this.props.genres.find(g => g.name === gen).id}`}>{gen}</Link>
