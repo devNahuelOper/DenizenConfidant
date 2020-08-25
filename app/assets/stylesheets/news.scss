@@ -134,14 +134,26 @@
   color: white;
   font-size: 2.6em;
 }
+
+// .body-wrap {
+//   display: flex;
+// }
+
 .body {
   color: white;
   li {
-      margin: 20px 0;
+      margin-bottom: 20px;
       strong {
         color: #b3c702;
       }
   }
+}
+.news-photo {
+  width: 472px;
+  height: 312px;
+  // margin: 20px;
+  margin: 0 0 16px 16px;
+  float: right;
 }
 
 
@@ -177,6 +189,10 @@
   }
   .blurb {
     font-size: 24px;
+  }
+  .news-photo {
+    width: 100%;
+    height: unset;
   }
 }
 
