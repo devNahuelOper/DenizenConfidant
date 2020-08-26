@@ -44,12 +44,12 @@ class UpdateEventForm extends React.Component {
     };
     if (file) {
       fileReader.readAsDataURL(file);
-      const formData = new FormData();
-      formData.append('event[photo]', file);
-      this.props.updateEventPhoto(formData, this.props.event.id)
-        .then(event => this.props.history.push(`/events/${event.event.id}`))
-        .then(() => window.scrollTo(500, 500))
-        .then(() => this.props.history.push(`/events/${this.props.event.id}/edit`))
+      // const formData = new FormData();
+      // formData.append('event[photo]', file);
+      // this.props.updateEventPhoto(formData, this.props.event.id)
+      //   .then(event => this.props.history.push(`/events/${event.event.id}`))
+      //   .then(() => window.scrollTo(500, 500))
+      //   .then(() => this.props.history.push(`/events/${this.props.event.id}/edit`))
     }
     // console.log(`${file.lastModified},${file.lastModifiedDate},${file.name},${file.size},${file.type}`);
  
@@ -57,7 +57,18 @@ class UpdateEventForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateEvent(this.state)
+    const formData = new FormData();
+    formData.append('event[name]', this.state.name);
+    formData.append('event[date]', this.state.date);
+    formData.append('event[location]', this.state.location);
+    formData.append('event[venue]', this.state.venue);
+    formData.append('event[description]', this.state.description);
+    formData.append('event[headliners]', this.state.headliners);
+    formData.append('event[cost]', this.state.cost);
+    if (this.state.photoFile) {
+      formData.append('event[photo]', this.state.photoFile);
+    }
+    this.props.updateEventPhoto(formData, this.props.event.id)
       .then(event => this.props.history.push(`/events/${event.event.id}`));
   }
 
