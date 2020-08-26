@@ -68,15 +68,13 @@ class UpdateEventForm extends React.Component {
     if (this.state.photoFile) {
       formData.append('event[photo]', this.state.photoFile);
     }
-    this.props.updateEventPhoto(formData, this.props.event.id)
+    this.props.updateEvent(formData, this.props.event.id)
       .then(event => this.props.history.push(`/events/${event.event.id}`));
   }
 
 
   render() {
     const { event, currentUser } = this.props;
-    // const { event } = this.state;
-    // const { event, name, date, venue, location, description, headliners, cost } = this.state;
 
     const flags = {
       'Argentina': '🇦🇷',
