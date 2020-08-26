@@ -21,12 +21,12 @@ class UpdateEventForm extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchEvent(this.props.match.params.eventId);
-    toggleSearch();
   }
 
-  // componentDidUpdate() {
-  //   console.log(this.state);
-  // }
+  componentDidUpdate() {
+    // console.log(this.state);
+    toggleSearch();
+  }
 
 
   update(field) {
@@ -44,28 +44,35 @@ class UpdateEventForm extends React.Component {
     };
     if (file) {
       fileReader.readAsDataURL(file);
-      const formData = new FormData();
-      formData.append('event[photo]', file);
-      this.props.updateEventPhoto(formData, this.props.event.id)
-        .then(event => this.props.history.push(`/events/${event.event.id}`))
-        .then(() => window.scrollTo(500, 500))
-        .then(() => this.props.history.push(`/events/${this.props.event.id}/edit`))
-    }
-    // console.log(`${file.lastModified},${file.lastModifiedDate},${file.name},${file.size},${file.type}`);
- 
+      // const formData = new FormData();
+      // formData.append('event[photo]', file);
+      // this.props.updateEventPhoto(formData, this.props.event.id)
+      //   .then(event => this.props.history.push(`/events/${event.event.id}`))
+      //   .then(() => window.scrollTo(500, 500))
+      //   .then(() => this.props.history.push(`/events/${this.props.event.id}/edit`))
+    } 
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateEvent(this.state)
+    const formData = new FormData();
+    formData.append('event[name]', this.state.name);
+    formData.append('event[date]', this.state.date);
+    formData.append('event[location]', this.state.location);
+    formData.append('event[venue]', this.state.venue);
+    formData.append('event[description]', this.state.description);
+    formData.append('event[headliners]', this.state.headliners);
+    formData.append('event[cost]', this.state.cost);
+    if (this.state.photoFile) {
+      formData.append('event[photo]', this.state.photoFile);
+    }
+    this.props.updateEvent(formData, this.props.event.id)
       .then(event => this.props.history.push(`/events/${event.event.id}`));
   }
 
 
   render() {
     const { event, currentUser } = this.props;
-    // const { event } = this.state;
-    // const { event, name, date, venue, location, description, headliners, cost } = this.state;
 
     const flags = {
       'Argentina': '🇦🇷',
@@ -96,10 +103,9 @@ class UpdateEventForm extends React.Component {
       'United States': 'USD'
     }
 
+    if (!event) return null;
     const preview = this.state.photoUrl ? <img width="265px" height="150px" src={this.state.photoUrl} /> : null;
 
-
-    if (!event) return null;
     return (
       <React.Fragment>
         <TitleComponent title={`DC: Update ${event.name}`} />
@@ -226,7 +232,7 @@ class UpdateEventForm extends React.Component {
                           onChange={this.handleFile.bind(this)} />
                       </label>
                     </div>
-                    <small id="img-notice"><i>If you've made any other changes to this event, submit those first and come back for the photo.</i></small>
+                    {/* <small id="img-notice"><i>If you've made any other changes to this event, submit those first and come back for the photo.</i></small> */}
                   </li>
                   <li>
                     <input id="submit-event" type="submit" value="Submit" />                    
