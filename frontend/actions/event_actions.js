@@ -65,11 +65,11 @@ export const updateEvent = (event, id) => dispatch => (
     .fail((errors) => dispatch(receiveEventErrors(errors.responseJSON)))
 );
 
-export const updateEventPhoto = (event, id) => dispatch => (
-  EventApiUtil.updateEventPhoto(event, id)
-    .then(event => dispatch(receiveEvent(event)))
-    .fail((errors) => dispatch(receiveEventErrors(errors.responseJSON)))
-);
+// export const updateEventPhoto = (event, id) => dispatch => (
+//   EventApiUtil.updateEventPhoto(event, id)
+//     .then(event => dispatch(receiveEvent(event)))
+//     .fail((errors) => dispatch(receiveEventErrors(errors.responseJSON)))
+// );
 
 export const deleteEvent = eventId => dispatch => (
   EventApiUtil.deleteEvent(eventId)

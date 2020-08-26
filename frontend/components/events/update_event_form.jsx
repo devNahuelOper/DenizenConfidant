@@ -21,12 +21,12 @@ class UpdateEventForm extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchEvent(this.props.match.params.eventId);
-    toggleSearch();
   }
 
-  // componentDidUpdate() {
-  //   console.log(this.state);
-  // }
+  componentDidUpdate() {
+    // console.log(this.state);
+    toggleSearch();
+  }
 
 
   update(field) {
@@ -50,9 +50,7 @@ class UpdateEventForm extends React.Component {
       //   .then(event => this.props.history.push(`/events/${event.event.id}`))
       //   .then(() => window.scrollTo(500, 500))
       //   .then(() => this.props.history.push(`/events/${this.props.event.id}/edit`))
-    }
-    // console.log(`${file.lastModified},${file.lastModifiedDate},${file.name},${file.size},${file.type}`);
- 
+    } 
   }
 
   handleSubmit(e) {
@@ -105,10 +103,9 @@ class UpdateEventForm extends React.Component {
       'United States': 'USD'
     }
 
+    if (!event) return null;
     const preview = this.state.photoUrl ? <img width="265px" height="150px" src={this.state.photoUrl} /> : null;
 
-
-    if (!event) return null;
     return (
       <React.Fragment>
         <TitleComponent title={`DC: Update ${event.name}`} />
