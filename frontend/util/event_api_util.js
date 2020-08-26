@@ -23,11 +23,13 @@ export const createEvent = event => (
 );
 
 
-export const updateEvent = (event) => (
+export const updateEvent = (eventData, id) => (
   $.ajax({
     method: 'PATCH',
-    url: `api/events/${event.id}`,
-    data: { event }
+    url: `api/events/${id}`,
+    data: eventData,
+    contentType: false,
+    processData: false
   })
 );
 

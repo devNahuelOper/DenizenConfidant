@@ -59,8 +59,8 @@ export const createEvent = event => dispatch => (
     .fail((errors) => dispatch(receiveEventErrors(errors.responseJSON)))
 );
 
-export const updateEvent = (event) => dispatch => (
-  EventApiUtil.updateEvent(event)
+export const updateEvent = (event, id) => dispatch => (
+  EventApiUtil.updateEvent(event, id)
     .then((event) => dispatch(receiveEvent(event)))
     .fail((errors) => dispatch(receiveEventErrors(errors.responseJSON)))
 );
