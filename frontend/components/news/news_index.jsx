@@ -19,8 +19,19 @@ class NewsIndex extends React.Component {
     if (!news) return null;
     return (
       <div className="newsbar">
+          {news.slice(6).map(nws => 
+          <section key={nws.id} className="main-news">
+            <img src={nws.photoUrl} alt={`${nws.title.split(' ')[0]}-photo`}/>
+            <span className="main-news-hold">
+              <p className="news-date">{formatDateNews(nws.created_at)}</p>
+              <Link to={`/news/${nws.id}`}>
+                  <h1>{nws.title}</h1>
+              </Link>  
+            </span>
+          </section>
+            )}
         <ul className="newslist">
-          {news.map((nws, i) =>
+          {news.slice(0, 6).map((nws, i) =>
             <li key={i}>
               <article className="newspiece">
           <p className="news-date">{formatDateNews(nws.created_at)}</p> 

@@ -104,7 +104,7 @@ class SplashPage extends React.Component {
             </div>
            
 
-            <ul className="articles">
+            {/* <ul className="articles">
               <li>
                 <div className="main-article">
                 <article>
@@ -123,7 +123,7 @@ class SplashPage extends React.Component {
                 </div>
               </li>
 
-              {/* <li>
+              <li>
                 <div className="main-article">
                   <article>
                     <a href="https://www.jonesaroundtheworld.com/festival-accessories-gear-must-haves/" target="_blank">
@@ -138,8 +138,8 @@ class SplashPage extends React.Component {
                       </div>
                   </article>
                 </div>
-              </li> */}
-            </ul>
+              </li>
+            </ul> */}
             <NewsIndex news={news}/>
           </section>
           {/* {console.log(gesaffId, deamauId, noisufId, nomanaId, kayzoId, eprydzId)} */}

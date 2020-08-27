@@ -523,9 +523,36 @@ h3 {
 .newsbar {
   overflow: hidden;
   white-space: nowrap;
-  padding-top: 32px;
+  // padding-top: 32px;
   width: 960px;
   margin: 0 auto;
+   a:hover {
+   h1 {
+    background-color: #b4bd00;
+    color: #2a2a2a;
+   }
+  }
+}
+
+.main-news {
+  display: flex;
+  img {
+    width: 312px;
+    height: 206px;
+    margin: 0 8px 6px 0;
+  }
+  p {
+    color: #b4b4b4;
+    // margin: 24px 0;
+  }
+  h1 {
+    font-size: 31px;
+    line-height: 1.15em;
+    display: inline;
+  }
+}
+.main-news-hold {
+  margin-top: 16px;
 }
 
 .newslist {
@@ -558,12 +585,12 @@ h3 {
     line-height: 1.15em;
     display: inline;
   }
-  a:hover {
-   h1 {
-    background-color: #b4bd00;
-    color: #2a2a2a;
-   }
-  }
+  // a:hover {
+  //  h1 {
+  //   background-color: #b4bd00;
+  //   color: #2a2a2a;
+  //  }
+  // }
 }
 
 .news-date {
