@@ -933,3 +933,5 @@ require 'open-uri'
 
 # goonclub = News.create({title: 'Goon Club Allstars cofounder Moleskin changes alias to Kamran, releases first EP in six years', blurb: 'Transmission is due out in September via 1000Doors.', category: 'Music News', author: 'Andrew Ryce', body: 'Moleskin is releasing his first record under his given name, Kamran, next month. ~ Transmission comes via 1000Doors. It\'s his first solo record in six years (since 2014\'s Satis House EP on Keysound) and, as with his name change, it\'s heavily inspired by his Iranian heritage. He makes heavy use of the Persian tombak drum, and the EP also features spoken word in Farsi by him and his father. ~ Kamran is probably best known for co-running the label Goon Club Allstars, which released classic tracks like Mssingno\'s XE2 and put out some of the earliest gqom music on wax.'})
 # goonclub.photo.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/news/goonclub.png'), filename: 'goonclub.png')
+
+# nahuel = News.create({title: 'New York developer clones Resident Advisor'})
