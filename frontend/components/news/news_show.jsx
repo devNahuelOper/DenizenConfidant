@@ -82,7 +82,7 @@ class NewsShow extends React.Component {
             </p>
           </section>
           <section className="body-wrap">
-            <img src={news.photoUrl} alt={`${news.title.split(' ')[0]}-photo`} className="news-photo" />
+            <img src={news.photoUrl} alt={`${news.title.split(' ')[0]}-photo`} className="news-photo" id={`${news.title.split(' ')[0]}-photo`}/>
 
             <ul className="body">
               {news.body.split('~').map((para, i) => 
