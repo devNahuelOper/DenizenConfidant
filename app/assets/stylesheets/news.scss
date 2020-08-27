@@ -156,6 +156,9 @@
   margin: 0 0 16px 16px;
   float: right;
 }
+#New-photo {
+  height: 412px;
+}
 
 
 @media only screen and (max-width: 972px) {
@@ -194,6 +197,9 @@
   .news-photo {
     width: 100%;
     height: unset;
+  }
+  #New-photo {
+    height: 612px;
   }
 }
 
