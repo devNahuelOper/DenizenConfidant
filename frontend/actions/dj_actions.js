@@ -40,7 +40,7 @@ export const createDj = dj => dispatch => (
     .fail(errors => dispatch(receiveDjErrors(errors.responseJSON)))
 );
 
-export const updateDj = dj => dispatch => (
-  DjApiUtil.updateDj(dj)
+export const updateDj = (dj, id) => dispatch => (
+  DjApiUtil.updateDj(dj, id)
     .then(dj => dispatch(receiveDj(dj)))
 );

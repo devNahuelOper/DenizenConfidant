@@ -102,44 +102,7 @@ class SplashPage extends React.Component {
               <h1>Pulse</h1>
               <h2>more pulse</h2>
             </div>
-           
-
-            <ul className="articles">
-              <li>
-                <div className="main-article">
-                <article>
-                  
-                    <a href="https://www.society19.com/uk/heres-what-its-like-to-go-to-an-underground-rave/" target="_blank">
-                  <div>
-                    <div id="main-image">
-                      <img src={window.undergroundUrl} id="underground"/>
-                    </div>
-                    <div id="caption">
-                        <h1 id="und-capt">Here's what it's like to go to an underground rave...</h1>
-                    </div>
-                  </div>
-                </a>
-                </article>
-                </div>
-              </li>
-
-              {/* <li>
-                <div className="main-article">
-                  <article>
-                    <a href="https://www.jonesaroundtheworld.com/festival-accessories-gear-must-haves/" target="_blank">
-                      <div id="main-image">
-                        <img src={window.raveAccUrl} id="accessories"/>
-                      </div>
-                      </a>
-                      <div id="caption2">
-                      <a href="https://www.jonesaroundtheworld.com/festival-accessories-gear-must-haves/" target="_blank">
-                          <h1 id="acc-capt">Top 44 festival accessories</h1>
-                          </a>
-                      </div>
-                  </article>
-                </div>
-              </li> */}
-            </ul>
+          
             <NewsIndex news={news}/>
           </section>
           {/* {console.log(gesaffId, deamauId, noisufId, nomanaId, kayzoId, eprydzId)} */}

@@ -156,6 +156,11 @@
   margin: 0 0 16px 16px;
   float: right;
 }
+#New-photo {
+  height: 412px;
+  object-fit: contain;
+  width: unset;
+}
 
 
 @media only screen and (max-width: 972px) {
@@ -195,6 +200,9 @@
     width: 100%;
     height: unset;
   }
+  // #New-photo {
+  //   height: 612px;
+  // }
 }
 
 @media only screen and (max-width: 700px) {
