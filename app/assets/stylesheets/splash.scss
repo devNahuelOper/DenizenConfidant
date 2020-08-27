@@ -537,11 +537,11 @@ h3 {
 
 .main-news {
   display: flex;
-  img {
-    width: 312px;
-    height: 206px;
-    margin: 0 8px 6px 0;
-  }
+  // img {
+  //   width: 312px;
+  //   height: 206px;
+  //   margin: 0 8px 6px 0;
+  // }
   p {
     color: #b4b4b4;
     // margin: 24px 0;
@@ -602,6 +602,22 @@ h3 {
   margin-top: 5px;
 }
 
+.nahuel-frame {
+  display: flex;
+  margin: 0 8px 6px 0;
+}
+
+#nahuel {
+  width: 170px;
+  height: 206px;
+  object-fit: contain;
+  border-left: 1px solid #414344;
+}
+#nahuel-pre {
+  filter: blur(4px);
+  width: 144px;
+  height: 206px;
+}
 
 
       .beats {
@@ -819,6 +835,13 @@ h3 {
        
       }
 
+      .main-news {
+        h1 {
+            white-space: normal;
+            font-size: 36px;
+        }
+      }
+
       .beats {
         .beats-banner {
           margin: 0 auto;
@@ -928,6 +951,10 @@ h3 {
     }
   }
 
+  .main-news h1 {
+    font-size: 30px;
+  }
+
   .beats {
     .beats-banner {
       width: 560px;
@@ -1018,6 +1045,25 @@ h3 {
       white-space: normal !important;
     }
   }
+
+  .main-news {
+    flex-direction: column;
+    img {
+      width: 100%;
+      height: 306px;
+    }
+    h1 {
+      font-size: 24px;
+    }
+  }
+  .main-news-hold {
+    margin-top: 0px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+
   .beats {
     .beats-banner {
       width: 490px;
@@ -1126,5 +1172,8 @@ h3 {
   }
   .newslist li {
     width: 182px;
+  }
+  .main-news h1 {
+    font-size: 40px;
   }
 }

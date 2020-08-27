@@ -21,7 +21,11 @@ class NewsIndex extends React.Component {
       <div className="newsbar">
           {news.slice(6).map(nws => 
           <section key={nws.id} className="main-news">
-            <img src={nws.photoUrl} alt={`${nws.title.split(' ')[0]}-photo`}/>
+            {/* <img src={nws.photoUrl} alt={`${nws.title.split(' ')[0]}-photo`}/> */}
+              <div className="nahuel-frame">
+                <img src={window.nahuelUrl} alt="" id="nahuel-pre" />
+                <img src={window.nahuelUrl} alt="" id="nahuel" />
+              </div>
             <span className="main-news-hold">
               <p className="news-date">{formatDateNews(nws.created_at)}</p>
               <Link to={`/news/${nws.id}`}>

@@ -158,6 +158,8 @@
 }
 #New-photo {
   height: 412px;
+  object-fit: contain;
+  width: unset;
 }
 
 
@@ -198,9 +200,9 @@
     width: 100%;
     height: unset;
   }
-  #New-photo {
-    height: 612px;
-  }
+  // #New-photo {
+  //   height: 612px;
+  // }
 }
 
 @media only screen and (max-width: 700px) {
