@@ -623,78 +623,79 @@ h3 {
       
 
 @media only screen and (max-width: 972px) {
-    .splash-header-container {
-        height: 375px;
-        #navbar {
+  .splash-header-container {
+    height: 375px;
+      #navbar {
+        width: 675px;
+        nav {
           width: 675px;
-          nav {
-            width: 675px;
-          }
         }
-        .slide-container {
-          height: 375px;
-          overflow: hidden;
-          #splash-caption {
-            font-size: 24px;
-            width: 675px;
-            h1 {
-              width: 675px;
-            }
-          }
-          .react-slideshow-container {
-              // height: 375px;
-          + div.indicators {
-              margin: 0 0 3px 540px !important;
-              top: -210px;
-           }
-          }
-          .each-fade {
-            .image-container {
-              height: 375px;
-            }
-          }
+      }
+      #links {
+        font-size: 1em;
+        left: unset;
+        li {
+          width: 75px;
         }
-        .react-slideshow-container .nav:first-of-type {
-            left: 60px !important;
-            top: 160px;
-        }
-        .react-slideshow-container .nav:last-of-type {
-            position: absolute;
-            right: 50px;
-            top: 160px;
-        }
-         #links {
-          font-size: 1em;
-          left: unset;
-          // right: 28%;
-            li {
-              width: 75px;
-            }
-          }
-        #logo {
-          top: 0;
-          width: 80px;
-          height: 75px;
-         }
+      }
+      #logo {
+        top: 0;
+        width: 80px;
+        height: 75px;
       }
 
-      .main-banner {
-        .banner-hold {
+    .slide-container {
+      height: 375px;
+      overflow: hidden;
+      #splash-caption {
+        font-size: 24px;
+        width: 675px;
+        h1 {
           width: 675px;
-          .denizen-confidant {
-            font-size: 28px;
-          }
-          .days {
-            .day {
-              font-size: 10px;
-              width: 70px;
-              h1 {
-                font-size: 28px;
-              }
-            }
-          }
         }
       }
+      .react-slideshow-container {
+          // height: 375px;
+        + div.indicators {
+          margin: 0 0 3px 540px !important;
+          top: -210px;
+        }
+      }
+      .each-fade {
+        .image-container {
+          height: 375px;
+        }
+      }
+    }
+    .react-slideshow-container .nav:first-of-type {
+      left: 60px !important;
+      top: 160px;
+    }
+    .react-slideshow-container .nav:last-of-type {
+      position: absolute;
+      right: 50px;
+      top: 160px;
+    }
+}
+
+
+.main-banner {
+  .banner-hold {
+    width: 675px;
+    .denizen-confidant {
+      font-size: 28px;
+     }
+    .days {
+      .day {
+        font-size: 10px;
+        width: 70px;
+        h1 {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+}
 
       .content {
         .news-banner, .articles {
