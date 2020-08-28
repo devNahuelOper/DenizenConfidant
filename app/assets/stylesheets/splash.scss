@@ -560,13 +560,13 @@ h3 {
 }
           
 .song {
-    width: 152px;
-    min-height: 320px;
-    position: relative;
-    display: inline-block;
-    white-space: normal;
-    vertical-align: top;
-    padding-right: 9px;
+  width: 152px;
+  min-height: 320px;
+  position: relative;
+  display: inline-block;
+  white-space: normal;
+  vertical-align: top;
+  padding-right: 9px;
     a {
       white-space: nowrap;
       color: #b4bd00;
@@ -716,12 +716,11 @@ h3 {
   width: 162px;
 } 
 
-.beats {
-  .beats-banner {
-    margin: 0 auto;
-    width: 675px;
-  }
-}       
+
+.beats-banner {
+  margin: 0 auto;
+  width: 675px;
+}      
 .beatwrap {
   width: 675px;
 }  
@@ -796,92 +795,70 @@ h3 {
   }
 
   .content {
-    .news-banner, .articles {
+    .news-banner {
       width: 560px;
-      .main-article {
-        min-height: 190px;
-        article {
-          display: flex;
-        }
-      }
-    }
-    #main-image, #accessories {
-      width: 260px !important;
-      height: 170px !important;
-      left: unset !important;
-    }
-    #und-capt {
-      font-size: 20px !important;
-    }
-    #acc-capt {
-      font-size: 20px !important;
-      bottom: -35px !important;
-      left: 10px !important;
     }
   }
 
   .main-news h1 {
     font-size: 30px;
   }
-
-  .beats {
-    .beats-banner {
-      width: 560px;
-    }
-    .beatwrap {
-      width: 560px;
-      white-space: normal;
-      padding-bottom: 40px;
-      .beatlist {
-        margin: 0 auto;
-        width: 560px;
-        .song {
-          min-height: 170px;
-          width: 161px;
-          margin-right: 25px;
-          
-          article {
-            width: 170px;
-            overflow: hidden;
-          }
-          img {
-            margin-bottom: 2px;
-          }
-          a {
-            padding: 1px 73px 2px 25px;
-          }
-          #gesaffelstein-link {
-            padding-left: 29px;
-          }
-          #deadmau5-link {
-            padding-left: 21px;
-          }
-          #noisuf-link {
-            padding-left: 26px;
-          }
-          #nomana-link {
-            padding-left: 35px;
-          }
-          #kayzo-link {
-            padding-left: 48px;
-          }
-          #prydz-link {
-            padding-left: 35px;
-          }
-        }
-        .song:nth-of-type(3), .song:last-of-type {
-          margin-right: 0;
-        }
-      }
-    }
-  }
-
   .newsbar {
     width: 560px;
   }
   .newslist li {
     width: 180px;
   } 
+
+  .beats-banner {
+    width: 560px;
+  }
+  .beatwrap {
+    width: 560px;
+    white-space: normal;
+    padding-bottom: 40px;
+  }  
+  .beatlist {
+    margin: 0 auto;
+    width: 560px;
+  } 
+  .song {
+    min-height: 170px;
+    width: 161px;
+    margin-right: 25px;
+    article {
+      width: 170px;
+      overflow: hidden;
+    }
+    img {
+      margin-bottom: 2px;
+    }
+    a {
+      padding: 1px 73px 2px 25px;
+      padding-right: 73px !important;
+    }
+    #gesaffelstein-link {
+      padding-left: 29px;
+    }
+    #deadmau5-link {
+      padding-left: 21px;
+    }
+    #noisuf-link {
+      padding-left: 26px;
+    }
+    #nomana-link {
+      padding-left: 35px;
+    }
+    #kayzo-link {
+      padding-left: 48px;
+    }
+    #prydz-link {
+      padding-left: 35px;
+    }
+  }
+  .song:nth-of-type(3), .song:last-of-type {
+    margin-right: 0;
+  }
 }
 
 @media only screen and (max-width: 560px) {
@@ -907,11 +884,8 @@ h3 {
     }
   }
   .content {
-    .news-banner, .articles {
+    .news-banner {
       width: 490px;
-    }
-    #acc-capt {
-      white-space: normal !important;
     }
   }
 
@@ -931,27 +905,6 @@ h3 {
     display: flex;
     flex-direction: column-reverse;
   }
-
-
-  .beats {
-    .beats-banner {
-      width: 490px;
-    }
-    .beatwrap {
-      width: 490px;
-      .beatlist {
-        width: 490px;
-        .song {
-          margin-right: unset;
-          width: 154px;
-          article {
-            width: 160px;
-          }
-        }
-      }
-    }
-  }
-
   .newsbar {
     width: 490px;
   }
@@ -961,12 +914,29 @@ h3 {
   .newspiece a {
     font-size: 14px;
   }
+
+
+  .beats-banner {
+    width: 490px;
+  }
+  .beatwrap {
+    width: 490px;
+  } 
+  .beatlist {
+    width: 490px;
+  } 
+  .song {
+    margin-right: unset;
+    width: 154px;
+    article {
+      width: 160px;
+    }
+  }
+      
 }
 
 
-
 // Media Queries -- Enlarge
-
 @media only screen and (min-width: 1240px) {
   .splash-header-container {
    
