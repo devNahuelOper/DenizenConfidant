@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import DjIndexItem from './dj_index_item';
 import {
   toggleSearch
@@ -47,10 +48,19 @@ class DjIndex extends React.Component {
           <SubnavToggle />
         </div>
         <div className="djs-container">
-          <br/><br/>
+          <nav className="dj-directory">
+            {/* <HashLink to="djs#djlist-Z">Z</HashLink> */}
+            {alpha.map(letter => 
+            // <a href={`#djlist-${letter}`}>{letter} / </a>
+            <h1 id={`dir-${letter}`}>
+            <HashLink to={`djs#dj-sort-${letter}`}>{letter}</HashLink><b>/</b></h1>
+              )}
+          </nav>
+          <nav></nav>
+          {/* <br/><br/> */}
           <section className="djs">
             {alpha.map(letter => 
-            <span key={letter} className="dj-sort">
+              <span key={letter} className="dj-sort" id={`dj-sort-${letter}`}>
               <h1 id="first-char">{letter}</h1>
               <ul id={`djlist-${letter}`} className="djlist">
                  {Object.values(djs).filter(dj => dj.name.charAt(0).toUpperCase() === letter).map(dj =>
