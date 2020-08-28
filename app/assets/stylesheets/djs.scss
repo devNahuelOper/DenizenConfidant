@@ -439,14 +439,14 @@
     display: flex;
     flex-direction: column;
     flex-flow: wrap;
-    .song {
+    .dj-song {
       margin: 5px;
       padding: 5px;
       hr {
         border-color: #585858;
       }
     }
-    .song:hover {
+    .dj-song:hover {
       background-color: #3d3d3d;
     }
   }
@@ -831,7 +831,7 @@
       }
       .songs {
          width: 560px;
-         .song {
+         .dj-song {
            width: 245px;
          }
       }
@@ -923,7 +923,7 @@
       width: 490px;
       .songs {
          width: 490px;
-         .song {
+         .dj-song {
            width: 220px;
          }
       }
