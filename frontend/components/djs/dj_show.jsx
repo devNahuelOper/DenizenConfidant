@@ -124,7 +124,7 @@ class DjShow extends React.Component {
             <hr />
             <ul className="songs">
               {dj.songsUrl ? dj.songsUrl.map(song =>
-              <li className="song" key={dj.songsUrl.indexOf(song)}>
+              <li className="dj-song" key={dj.songsUrl.indexOf(song)}>
                 <span id="song-title">
                     {song.slice(song.lastIndexOf('/') + 1, song.lastIndexOf('.')).split('+').join(' ')}
                 </span>
@@ -133,7 +133,7 @@ class DjShow extends React.Component {
               </li>
                 ) : null}
             {dj.trackUrl ? 
-            <li className="song">
+            <li className="dj-song">
                 <span id="song-title">
                   {dj.trackUrl.slice(dj.trackUrl.lastIndexOf('/') + 1, dj.trackUrl.lastIndexOf('.')).split('+').join(' ')}
                 </span>
