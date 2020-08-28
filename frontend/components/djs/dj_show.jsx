@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { TitleComponent } from '../title_component.jsx';
 import {
   toggleSearch
@@ -9,9 +9,6 @@ class DjShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // name: this.props.dj.name,
-      // genre: this.props.dj.genre,
-      // songsUrl: this.props.dj.songsUrl
       drop: false
     }
     this.clicker = this.clicker.bind(this);
@@ -60,7 +57,6 @@ class DjShow extends React.Component {
           id={`${dj.name.toLowerCase().split(' ').join('')}-container`}
           className="djshow-nav-container" 
           style={!dj.photoUrl ? noAttach : yesAttach}
-          // style={{  backgroundImage:  `url("${`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`}")`}}
           >
           <section className="djs-nav">
             <nav>
