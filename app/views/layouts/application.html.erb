@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+
     <title>DC: Denizen Confidant - electronic music online</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +13,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
     <%# <meta name="image" property="og:image" content="https://denizen-confidant.herokuapp.com/assets/main-b19dc25f93d8520152156a65c42da3eec2d3c17eebd75eff11f8cbb0c23ad4f0.png"> %>
     <meta property="og:image" content="https://denizen-confidant.herokuapp.com/assets/splaash-d2d61bf9dcf86c626de17d760488e6d3618d2fbfa229919b2f050cf529703984.png">
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176699762-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-176699762-1');
+    </script>
   </head>
   <body>
     <%= yield %>
