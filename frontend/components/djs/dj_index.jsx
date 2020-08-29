@@ -55,7 +55,6 @@ class DjIndex extends React.Component {
               )}
           </nav>
           <nav></nav>
-          {/* <br/><br/> */}
           <section className="djs">
             {alpha.map(letter => 
               <span key={letter} className="dj-sort" id={`dj-sort-${letter}`}>
