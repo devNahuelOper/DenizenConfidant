@@ -49,7 +49,6 @@ class DjIndex extends React.Component {
         </div>
         <div className="djs-container">
           <nav className="dj-directory">
-            {/* <HashLink to="djs#djlist-Z">Z</HashLink> */}
             {alpha.map(letter => 
             // <a href={`#djlist-${letter}`}>{letter} / </a>
             <h1 id={`dir-${letter}`}>
