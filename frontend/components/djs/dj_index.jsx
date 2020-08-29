@@ -50,7 +50,6 @@ class DjIndex extends React.Component {
         <div className="djs-container">
           <nav className="dj-directory">
             {alpha.map(letter => 
-            // <a href={`#djlist-${letter}`}>{letter} / </a>
             <h1 id={`dir-${letter}`}>
             <HashLink to={`djs#dj-sort-${letter}`}>{letter}</HashLink><b>/</b></h1>
               )}
