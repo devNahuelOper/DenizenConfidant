@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { TitleComponent } from '../title_component.jsx';
 import {
   toggleSearch
@@ -9,9 +9,6 @@ class DjShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // name: this.props.dj.name,
-      // genre: this.props.dj.genre,
-      // songsUrl: this.props.dj.songsUrl
       drop: false
     }
     this.clicker = this.clicker.bind(this);
@@ -60,7 +57,6 @@ class DjShow extends React.Component {
           id={`${dj.name.toLowerCase().split(' ').join('')}-container`}
           className="djshow-nav-container" 
           style={!dj.photoUrl ? noAttach : yesAttach}
-          // style={{  backgroundImage:  `url("${`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`}")`}}
           >
           <section className="djs-nav">
             <nav>
@@ -128,7 +124,7 @@ class DjShow extends React.Component {
             <hr />
             <ul className="songs">
               {dj.songsUrl ? dj.songsUrl.map(song =>
-              <li className="song" key={dj.songsUrl.indexOf(song)}>
+              <li className="dj-song" key={dj.songsUrl.indexOf(song)}>
                 <span id="song-title">
                     {song.slice(song.lastIndexOf('/') + 1, song.lastIndexOf('.')).split('+').join(' ')}
                 </span>
@@ -137,7 +133,7 @@ class DjShow extends React.Component {
               </li>
                 ) : null}
             {dj.trackUrl ? 
-            <li className="song">
+            <li className="dj-song">
                 <span id="song-title">
                   {dj.trackUrl.slice(dj.trackUrl.lastIndexOf('/') + 1, dj.trackUrl.lastIndexOf('.')).split('+').join(' ')}
                 </span>

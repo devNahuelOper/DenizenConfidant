@@ -33,16 +33,6 @@ export const updateEvent = (eventData, id) => (
   })
 );
 
-// export const updateEventPhoto = (eventData, id) => (
-//   $.ajax({
-//     method: 'PATCH',
-//     url: `api/events/${id}`,
-//     data: eventData,
-//     contentType: false,
-//     processData: false
-//   })
-// );
-
 
 export const deleteEvent = eventId => (
   $.ajax({
@@ -51,9 +41,3 @@ export const deleteEvent = eventId => (
   })
 );
 
-// export const fetchNews = news => (
-//   $.ajax({
-//     url: 'https://cors-anywhere.herokuapp.com/https://www.residentadvisor.net/news',
-//     data: news
-//   })
-// )
