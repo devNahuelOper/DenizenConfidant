@@ -54,7 +54,6 @@ class DjIndex extends React.Component {
             <HashLink to={`djs#dj-sort-${letter}`}>{letter}</HashLink><b>/</b></h1>
               )}
           </nav>
-          <nav></nav>
           <section className="djs">
             {alpha.map(letter => 
               <span key={letter} className="dj-sort" id={`dj-sort-${letter}`}>
