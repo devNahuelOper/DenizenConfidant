@@ -69,7 +69,6 @@ class EventIndex extends React.Component {
                   </li>
               )}
 
-              {/* <LocalEvent event={event} key={event.id} /> */}
             </ul>
           </section>
         </div>
@@ -92,25 +91,6 @@ class EventIndex extends React.Component {
   }
 };
 
-// class LocalEvent extends React.Component {
- 
-//   render() {
-//     const { event } = this.props;
-//     return(
-//       <li className="local-event" key={event.id}>
-       
-//         <article>
-//           <h2>{event.date}</h2>
-//           {/* <img src={event.photoUrl} alt="" /> */}
-//           <Link to={`/events/${event.id}`}>{event.name}</Link>
-//           <span>{event.venue} - {event.location}</span>
-//         </article>
-        
-
-//       </li>
-//     )
-//   }
-// }
 
 class SubnavToggle extends React.Component {
   constructor(props) {
