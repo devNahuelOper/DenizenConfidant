@@ -45,7 +45,6 @@ class EventIndex extends React.Component {
               {/* <li><Link to="/signup">Register</Link></li> */}
               <li><Link to="/">Take me back home</Link></li>
               <li><Link to='/events/new'>Submit an event</Link></li>
-              {/* <br /> <small>Coming Soon!</small> */}
             </ul>
           </section>
           <SubnavToggle />
