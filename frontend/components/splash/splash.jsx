@@ -173,9 +173,6 @@ class SplashPage extends React.Component {
             </div>
           </section>
        </div>
-       {/* <section>
-         {this.props.news}
-       </section> */}
      </div>
     )
   }
