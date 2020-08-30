@@ -20,7 +20,6 @@ class DjShow extends React.Component {
     this.props.fetchDj(this.props.match.params.djId);
     this.props.fetchGenres();
     window.scrollTo(0, 0);
-    // console.log(this.props.dj.genre.split(' '));
   }
 
   componentDidUpdate() {
