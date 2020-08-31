@@ -512,15 +512,15 @@ h3 {
   display: flex;
   align-items: center;
   flex-direction: column;
-  color: #b4bd00;
-//  color: #ffff01;
+  // color: #b4bd00;
+  color: $dj-yellow;
   position: relative;
   top: 65px;
   margin: 0 auto;
   width: 100%;
   border-top: 1px solid #676767;
   padding: 40px 0;
-//  background-color: #1e1e1e;
+  background-color: $djbg-grey;
 //  border-bottom: 1px #4b4b4b solid;
 }
 
@@ -530,8 +530,8 @@ h3 {
   color: #fff;
   font-size: 16px;
   h1 {
-    border-bottom: 2px solid #b4bd00;
-    // border-bottom: 2px solid #ffff01;
+    // border-bottom: 2px solid #b4bd00;
+    border-bottom: 2px solid $dj-yellow;
     padding-bottom: 2px;
     margin: 0 0 4px 0;
   }
@@ -539,10 +539,10 @@ h3 {
     position: relative;
     text-align: center;
     display: block;
-    color: #b4bd00;
-    // color: #ffff01;
-    background-color: #b4bd00;
-    // background-color: #ffff01;
+    // color: #b4bd00;
+    color: $dj-yellow;
+    // background-color: #b4bd00;
+    background-color: $dj-yellow;
     float: right;
     width: 152px;
     margin-top: -30px;
