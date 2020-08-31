@@ -631,7 +631,7 @@ h3 {
   padding-right: 60px;
 }
 .song:nth-of-type(6) a {
-  padding-right: 27px;
+  padding-right: 25px;
 }  
          
 .controls-bar {
@@ -752,14 +752,20 @@ h3 {
     }
   }
 }
-.song:nth-of-type(2) a {
+#deadmau5-link {
   padding-right: 0;
 }
-.song:nth-of-type(3) a {
-  padding-right: 11px;
+#speed {
+  width: 100%;
 }
-.song:nth-of-type(4) a {
+#noisuf-link {
+  padding-right: 9px;
+}
+#nomana-link {
   padding-right: 28px;
+}
+#kayzo-link {
+  padding-right: 46px;
 }
   
 }
@@ -854,25 +860,30 @@ h3 {
     }
     a {
       padding: 1px 73px 2px 25px;
-      padding-right: 73px !important;
+      // padding-right: 73px !important;
     }
     #gesaffelstein-link {
       padding-left: 29px;
+      padding-right: 30px;
     }
     #deadmau5-link {
-      padding-left: 21px;
+      // padding-left: 21px;
+      padding-right: 16px;
     }
     #noisuf-link {
       padding-left: 26px;
+      padding-right: 26px;
     }
     #nomana-link {
       padding-left: 35px;
+      padding-right: 36px;
     }
     #kayzo-link {
       padding-left: 48px;
     }
     #prydz-link {
       padding-left: 35px;
+      padding-right: 31px;
     }
   }
   .song:nth-of-type(3), .song:last-of-type {
@@ -950,6 +961,10 @@ h3 {
     article {
       width: 160px;
     }
+  }
+
+  #gesaffelstein-link {
+    padding-right: 20px;
   }
       
 }
