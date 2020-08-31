@@ -526,8 +526,9 @@ h3 {
 //  border-bottom: 1px #4b4b4b solid;
 }
 
-.yellow {
+.yellow-banner {
   background-color: $dj-yellow;
+  margin-bottom: 32px;
 }
 
 #splash-djs {
@@ -587,11 +588,11 @@ h3 {
   padding-right: 9px;
     a {
       white-space: nowrap;
-      color: #b4bd00;
-      // color: #ffff01;
+      // color: #b4bd00;
+      color: $dj-yellow;
       background-color: #000008;
-      border: 1px groove #b4bd00;
-      // border: 1px groove #ffff01;
+      // border: 1px groove #b4bd00;
+      border: 1px groove $dj-yellow;
       padding: 1px 2px 2px 2px;
       small {
         font-size: 5px;
@@ -600,7 +601,7 @@ h3 {
     }
     a:hover {
       color: #000008;
-      background-color: #b4bd00;
+      background-color: $dj-yellow;
       border-color: #000008;
     }
     img {
