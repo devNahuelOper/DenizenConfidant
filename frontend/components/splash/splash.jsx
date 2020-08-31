@@ -108,6 +108,11 @@ class SplashPage extends React.Component {
           {/* {console.log(gesaffId, deamauId, noisufId, nomanaId, kayzoId, eprydzId)} */}
      
           <section className="beats">
+            <nav className="main-banner yellow">
+              <div className="banner-hold">
+                <h1 id="splash-djs">DJs</h1>
+              </div>
+            </nav>
             <div className="beats-banner">
               <h1>Beats</h1>
               <h2>more beats</h2>

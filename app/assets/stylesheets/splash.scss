@@ -508,6 +508,8 @@ h3 {
   height: 206px;
 }
 
+
+
 .beats {
   display: flex;
   align-items: center;
@@ -522,6 +524,17 @@ h3 {
   padding: 40px 0;
   background-color: $djbg-grey;
 //  border-bottom: 1px #4b4b4b solid;
+}
+
+.yellow {
+  background-color: $dj-yellow;
+}
+
+#splash-djs {
+  color: black;
+  float: left;
+  margin: 14px 14px 0 0;
+  font-size: 36px;
 }
 
 .beats-banner {
