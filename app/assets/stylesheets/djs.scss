@@ -428,18 +428,24 @@
   background-color: #1e1e1e;
   color: white;
   padding-bottom: 70px;
-  .bio-container {
-    width: 952px;
-    margin: 0 auto;
-    padding: 50px 0;
-    h1 {
-      font-size: 24px;
-    }
-    hr {
-      border-color: #fdff00;
-    }
+}
+
+.bio-container {
+  width: 952px;
+  margin: 0 auto;
+  padding: 50px 0;
+  h1 {
+    font-size: 24px;
+  }
+  hr {
+    border-color: #fdff00;
+  }
+  #bio {
+    line-height: 1.4;
   }
 }
+
+
 
 .playlist {
   width: 952px;
