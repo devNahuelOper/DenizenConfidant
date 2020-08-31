@@ -521,7 +521,7 @@ h3 {
   margin: 0 auto;
   width: 100%;
   border-top: 1px solid #676767;
-  padding-bottom: 40px;
+  // padding-bottom: 40px;
   background-color: $djbg-grey;
 //  border-bottom: 1px #4b4b4b solid;
 }
@@ -697,76 +697,81 @@ h3 {
     }
   }
 
-.main-banner {
-  .banner-hold {
-    width: 675px;
-    .denizen-confidant {
-      font-size: 28px;
-     }
-    .days {
-      .day {
-        font-size: 10px;
-        width: 70px;
-        h1 {
-          font-size: 28px;
+  .main-banner {
+    .banner-hold {
+      width: 675px;
+      .denizen-confidant {
+        font-size: 28px;
+      }
+      .days {
+        .day {
+          font-size: 10px;
+          width: 70px;
+          h1 {
+            font-size: 28px;
+          }
         }
       }
     }
   }
-}
-
-.content {
-  .news-banner {
-    margin: 0 auto;
-    width: 675px;
+  .denizen-confidant:hover {
+    background-position-y: 10px;
   }
-}
 
-.main-news {
-  h1 {
-      white-space: normal;
-      font-size: 36px;
-  }
-}
-.newsbar {
-  width: 675px;
-} 
-.newslist li {
-  width: 162px;
-} 
-
-
-.beats-banner {
-  margin: 0 auto;
-  width: 675px;
-}      
-.beatwrap {
-  width: 675px;
-}  
-.song {
-  width: 129px;
-  a {
-    font-size: 10px;
-    small {
-      font-weight: normal;
+  .content {
+    .news-banner {
+      margin: 0 auto;
+      width: 675px;
     }
   }
-}
-#deadmau5-link {
-  padding-right: 0;
-}
-#speed {
-  width: 100%;
-}
-#noisuf-link {
-  padding-right: 9px;
-}
-#nomana-link {
-  padding-right: 28px;
-}
-#kayzo-link {
-  padding-right: 46px;
-}
+
+  .main-news {
+    h1 {
+        white-space: normal;
+        font-size: 36px;
+    }
+  }
+  .newsbar {
+    width: 675px;
+  } 
+  .newslist li {
+    width: 162px;
+  } 
+
+  .beats-banner {
+    margin: 0 auto;
+    width: 675px;
+  }      
+  .beatwrap {
+    width: 675px;
+  }  
+  .song {
+    width: 129px;
+    a {
+      font-size: 10px;
+      small {
+        font-weight: normal;
+      }
+    }
+  }
+  #gesaffelstein-link {
+    padding-right: 16px;
+  }
+  #deadmau5-link {
+    padding-right: 0;
+  }
+  #speed {
+    width: 100%;
+  }
+  #noisuf-link {
+    padding-right: 9px;
+  }
+  #nomana-link {
+    padding-right: 28px;
+  }
+  #kayzo-link {
+    padding-right: 45px;
+  }
   
 }
 
@@ -862,6 +867,8 @@ h3 {
       padding: 1px 73px 2px 25px;
       // padding-right: 73px !important;
     }
+  }
+
     #gesaffelstein-link {
       padding-left: 29px;
       padding-right: 30px;
@@ -885,7 +892,7 @@ h3 {
       padding-left: 35px;
       padding-right: 31px;
     }
-  }
+  
   .song:nth-of-type(3), .song:last-of-type {
     margin-right: 0;
   }
@@ -912,6 +919,9 @@ h3 {
     .banner-hold {
       width: 490px;
     }
+  }
+  .denizen-confidant:hover {
+    background-position-y: 7px;
   }
   .content {
     .news-banner {
@@ -966,7 +976,26 @@ h3 {
   #gesaffelstein-link {
     padding-right: 20px;
   }
-      
+  #deadmau5-link {
+    padding-right: 11px;
+    padding-left: 20px;
+  }
+  #noisuf-link {
+    padding-left: 23px;
+    padding-right: 18px;
+  }
+  #nomana-link {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  #kayzo-link {
+    padding-left: 44px;
+    padding-right: 40px;
+  }
+  #prydz-link {
+    padding-left: 30px;
+    padding-right: 25px;
+  }    
 }
 
 
