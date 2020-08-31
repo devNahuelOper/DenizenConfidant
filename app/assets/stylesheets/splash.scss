@@ -1049,6 +1049,19 @@ h3 {
         width: 1272px;
     }
   }
+  .newsbar {
+    width: 1272px;
+  }
+  .newslist {
+    display: flex;
+    justify-content: space-between;
+  }
+  .newslist li {
+    width: 182px;
+  }
+  .main-news h1 {
+    font-size: 40px;
+  }
   .beats {
     .beats-banner, .beatwrap {
       width: 1272px;
@@ -1057,15 +1070,33 @@ h3 {
       display: flex;
       justify-content: space-between;
     }
+    .song {
+      width: 166px;
+      padding-right: unset;
+      // margin-right: 16px;
+      a {
+        padding: 1px 15px 2px 2px;
+      }
+      img {
+        height: 105px;
+        margin-bottom: 3px;
+      }
+    }
   }
-  .newsbar {
-    width: 1272px;
+  #gesaffelstein-link {
+    padding-right: 30px;
   }
-  .newslist li {
-    width: 182px;
+  #noisuf-link {
+    padding-right: 22px;
   }
-  .main-news h1 {
-    font-size: 40px;
+  #nomana-link {
+    padding-right: 45px;
+  }
+  #kayzo-link {
+    padding-right: 73px;
+  }
+  #prydz-link {
+    padding-right: 39px;
   }
 }
 
