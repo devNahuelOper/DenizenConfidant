@@ -41,11 +41,9 @@ class EventIndex extends React.Component {
         <div className="subnav-container">
           <section id="events-subnav">
             <ul>
-            <li><Link className="form" to="/events">All</Link></li>
-              {/* <li><Link to="/signup">Register</Link></li> */}
+              <li><Link className="form" to="/events">All</Link></li>
               <li><Link to="/">Take me back home</Link></li>
               <li><Link to='/events/new'>Submit an event</Link></li>
-              {/* <br /> <small>Coming Soon!</small> */}
             </ul>
           </section>
           <SubnavToggle />
@@ -70,7 +68,6 @@ class EventIndex extends React.Component {
                   </li>
               )}
 
-              {/* <LocalEvent event={event} key={event.id} /> */}
             </ul>
           </section>
         </div>
@@ -93,25 +90,6 @@ class EventIndex extends React.Component {
   }
 };
 
-// class LocalEvent extends React.Component {
- 
-//   render() {
-//     const { event } = this.props;
-//     return(
-//       <li className="local-event" key={event.id}>
-       
-//         <article>
-//           <h2>{event.date}</h2>
-//           {/* <img src={event.photoUrl} alt="" /> */}
-//           <Link to={`/events/${event.id}`}>{event.name}</Link>
-//           <span>{event.venue} - {event.location}</span>
-//         </article>
-        
-
-//       </li>
-//     )
-//   }
-// }
 
 class SubnavToggle extends React.Component {
   constructor(props) {

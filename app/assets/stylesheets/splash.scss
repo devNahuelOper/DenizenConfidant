@@ -1,3 +1,8 @@
+$djbg-grey: #1e1e1e;
+$dj-yellow: #ffff01;
+$genre-green: #b4bd00;
+$event-blue: #6a96c2;
+
 .splash-header-container {
   position: relative;
   background-image: image_url("red-rave.png");
@@ -503,20 +508,35 @@ h3 {
   height: 206px;
 }
 
+
+
 .beats {
   display: flex;
   align-items: center;
   flex-direction: column;
-  color: #b4bd00;
-//  color: #ffff01;
+  // color: #b4bd00;
+  color: $dj-yellow;
   position: relative;
   top: 65px;
   margin: 0 auto;
   width: 100%;
   border-top: 1px solid #676767;
-  padding: 40px 0;
-//  background-color: #1e1e1e;
+  border-bottom: 1px solid #3e3e3e;
+  // padding-bottom: 40px;
+  background-color: $djbg-grey;
 //  border-bottom: 1px #4b4b4b solid;
+}
+
+.yellow-banner {
+  background-color: $dj-yellow;
+  margin-bottom: 32px;
+}
+
+#splash-djs {
+  color: black;
+  float: left;
+  margin: 14px 14px 0 0;
+  font-size: 36px;
 }
 
 .beats-banner {
@@ -525,8 +545,8 @@ h3 {
   color: #fff;
   font-size: 16px;
   h1 {
-    border-bottom: 2px solid #b4bd00;
-    // border-bottom: 2px solid #ffff01;
+    // border-bottom: 2px solid #b4bd00;
+    border-bottom: 2px solid $dj-yellow;
     padding-bottom: 2px;
     margin: 0 0 4px 0;
   }
@@ -534,10 +554,10 @@ h3 {
     position: relative;
     text-align: center;
     display: block;
-    color: #b4bd00;
-    // color: #ffff01;
-    background-color: #b4bd00;
-    // background-color: #ffff01;
+    // color: #b4bd00;
+    color: $dj-yellow;
+    // background-color: #b4bd00;
+    background-color: $dj-yellow;
     float: right;
     width: 152px;
     margin-top: -30px;
@@ -569,12 +589,12 @@ h3 {
   padding-right: 9px;
     a {
       white-space: nowrap;
-      color: #b4bd00;
-      // color: #ffff01;
+      // color: #b4bd00;
+      color: $dj-yellow;
       background-color: #000008;
-      border: 1px groove #b4bd00;
-      // border: 1px groove #ffff01;
-      padding: 1px 2px 2px 2px;
+      // border: 1px groove #b4bd00;
+      border: 1px groove $dj-yellow;
+      padding: 1px 1px 2px 2px;
       small {
         font-size: 5px;
         font-weight: bold;
@@ -582,7 +602,7 @@ h3 {
     }
     a:hover {
       color: #000008;
-      background-color: #b4bd00;
+      background-color: $dj-yellow;
       border-color: #000008;
     }
     img {
@@ -600,7 +620,7 @@ h3 {
     }
 }
 .song:first-of-type a {
-  padding-right: 18px;
+  padding-right: 17px;
 }
 .song:nth-of-type(3) a {
   padding-right: 9px;
@@ -612,7 +632,7 @@ h3 {
   padding-right: 60px;
 }
 .song:nth-of-type(6) a {
-  padding-right: 27px;
+  padding-right: 25px;
 }  
          
 .controls-bar {
@@ -678,70 +698,81 @@ h3 {
     }
   }
 
-.main-banner {
-  .banner-hold {
-    width: 675px;
-    .denizen-confidant {
-      font-size: 28px;
-     }
-    .days {
-      .day {
-        font-size: 10px;
-        width: 70px;
-        h1 {
-          font-size: 28px;
+  .main-banner {
+    .banner-hold {
+      width: 675px;
+      .denizen-confidant {
+        font-size: 28px;
+      }
+      .days {
+        .day {
+          font-size: 10px;
+          width: 70px;
+          h1 {
+            font-size: 28px;
+          }
         }
       }
     }
   }
-}
-
-.content {
-  .news-banner {
-    margin: 0 auto;
-    width: 675px;
+  .denizen-confidant:hover {
+    background-position-y: 10px;
   }
-}
 
-.main-news {
-  h1 {
-      white-space: normal;
-      font-size: 36px;
-  }
-}
-.newsbar {
-  width: 675px;
-} 
-.newslist li {
-  width: 162px;
-} 
-
-
-.beats-banner {
-  margin: 0 auto;
-  width: 675px;
-}      
-.beatwrap {
-  width: 675px;
-}  
-.song {
-  width: 129px;
-  a {
-    font-size: 10px;
-    small {
-      font-weight: normal;
+  .content {
+    .news-banner {
+      margin: 0 auto;
+      width: 675px;
     }
   }
-}
-.song:nth-of-type(2) a {
-  padding-right: 0;
-}
-.song:nth-of-type(3) a {
-  padding-right: 11px;
-}
-.song:nth-of-type(4) a {
-  padding-right: 28px;
-}
+
+  .main-news {
+    h1 {
+        white-space: normal;
+        font-size: 36px;
+    }
+  }
+  .newsbar {
+    width: 675px;
+  } 
+  .newslist li {
+    width: 162px;
+  } 
+
+  .beats-banner {
+    margin: 0 auto;
+    width: 675px;
+  }      
+  .beatwrap {
+    width: 675px;
+  }  
+  .song {
+    width: 129px;
+    a {
+      font-size: 10px;
+      small {
+        font-weight: normal;
+      }
+    }
+  }
+  #gesaffelstein-link {
+    padding-right: 16px;
+  }
+  #deadmau5-link {
+    padding-right: 0;
+  }
+  #speed {
+    width: 100%;
+  }
+  #noisuf-link {
+    padding-right: 9px;
+  }
+  #nomana-link {
+    padding-right: 28px;
+  }
+  #kayzo-link {
+    padding-right: 45px;
+  }
   
 }
 
@@ -835,27 +866,34 @@ h3 {
     }
     a {
       padding: 1px 73px 2px 25px;
-      padding-right: 73px !important;
+      // padding-right: 73px !important;
     }
+  }
+
     #gesaffelstein-link {
       padding-left: 29px;
+      padding-right: 30px;
     }
     #deadmau5-link {
-      padding-left: 21px;
+      // padding-left: 21px;
+      padding-right: 16px;
     }
     #noisuf-link {
       padding-left: 26px;
+      padding-right: 26px;
     }
     #nomana-link {
       padding-left: 35px;
+      padding-right: 36px;
     }
     #kayzo-link {
       padding-left: 48px;
     }
     #prydz-link {
       padding-left: 35px;
+      padding-right: 31px;
     }
-  }
+  
   .song:nth-of-type(3), .song:last-of-type {
     margin-right: 0;
   }
@@ -882,6 +920,9 @@ h3 {
     .banner-hold {
       width: 490px;
     }
+  }
+  .denizen-confidant:hover {
+    background-position-y: 7px;
   }
   .content {
     .news-banner {
@@ -932,7 +973,30 @@ h3 {
       width: 160px;
     }
   }
-      
+
+  #gesaffelstein-link {
+    padding-right: 20px;
+  }
+  #deadmau5-link {
+    padding-right: 11px;
+    padding-left: 20px;
+  }
+  #noisuf-link {
+    padding-left: 23px;
+    padding-right: 18px;
+  }
+  #nomana-link {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  #kayzo-link {
+    padding-left: 44px;
+    padding-right: 40px;
+  }
+  #prydz-link {
+    padding-left: 30px;
+    padding-right: 25px;
+  }    
 }
 
 
@@ -986,6 +1050,19 @@ h3 {
         width: 1272px;
     }
   }
+  .newsbar {
+    width: 1272px;
+  }
+  .newslist {
+    display: flex;
+    justify-content: space-between;
+  }
+  .newslist li {
+    width: 182px;
+  }
+  .main-news h1 {
+    font-size: 40px;
+  }
   .beats {
     .beats-banner, .beatwrap {
       width: 1272px;
@@ -994,15 +1071,33 @@ h3 {
       display: flex;
       justify-content: space-between;
     }
+    .song {
+      width: 166px;
+      padding-right: unset;
+      // margin-right: 16px;
+      a {
+        padding: 1px 15px 2px 2px;
+      }
+      img {
+        height: 105px;
+        margin-bottom: 3px;
+      }
+    }
   }
-  .newsbar {
-    width: 1272px;
+  #gesaffelstein-link {
+    padding-right: 30px;
   }
-  .newslist li {
-    width: 182px;
+  #noisuf-link {
+    padding-right: 22px;
   }
-  .main-news h1 {
-    font-size: 40px;
+  #nomana-link {
+    padding-right: 45px;
+  }
+  #kayzo-link {
+    padding-right: 73px;
+  }
+  #prydz-link {
+    padding-right: 39px;
   }
 }
 
