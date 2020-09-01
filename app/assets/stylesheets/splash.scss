@@ -1096,6 +1096,9 @@ h3 {
       width: 1272px;
     }
   }
+  .react-slideshow-container + div.indicators {
+    margin-left: 1120px !important;
+  }
 
   .banner-hold {
     width: 1272px;
