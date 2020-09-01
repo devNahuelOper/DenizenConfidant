@@ -232,7 +232,6 @@ class UpdateEventForm extends React.Component {
                           onChange={this.handleFile.bind(this)} />
                       </label>
                     </div>
-                    {/* <small id="img-notice"><i>If you've made any other changes to this event, submit those first and come back for the photo.</i></small> */}
                   </li>
                   <li>
                     <input id="submit-event" type="submit" value="Submit" />                    
