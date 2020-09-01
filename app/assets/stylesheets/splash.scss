@@ -813,17 +813,17 @@ h3 {
         width: 560px;
       }
     }
+  
+    .slide-container {
+      .react-slideshow-container + div.indicators {
+          right: 5px;
+          margin: 0 0 3px 430px !important;
+      }
+      .react-slideshow-container + div.indicators > .each-slideshow-indicator {
+        margin: -21px 3px 10px !important;
+      }
+    }
   }
-
-  .react-slideshow-container + div.indicators {
-    // top: -290px;
-    right: 50px;
-  }
-
-  .react-slideshow-container + div.indicators > .each-slideshow-indicator {
-    margin: -21px 3px 10px !important;
-  }
-
   #splash-caption {
     font-size: 20px !important;
     // left: 60px !important;
@@ -946,6 +946,10 @@ h3 {
         h1 {
           width: 490px !important;
         }
+      }
+      .react-slideshow-container + div.indicators {
+          right: 5px;
+          margin: 0 0 3px 365px !important;
       }
     }
   }
