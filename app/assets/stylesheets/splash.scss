@@ -428,12 +428,10 @@ h3 {
   // padding-top: 32px;
   width: 960px;
   margin: 0 auto;
-   a:hover {
-   h1 {
+  a h1:hover {
     background-color: #b4bd00;
     color: #2a2a2a;
    }
-  }
 }
 
 .main-news {
