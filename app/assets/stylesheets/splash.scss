@@ -296,6 +296,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+  display: none !important;
 }
 
 .react-slideshow-container .nav span {
@@ -377,6 +378,31 @@ h3 {
   background: white !important;
 }
 
+.arrow-hold {
+  // color: yellow;
+  width: 960px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  right: 0px;
+  z-index: 1000;
+}
+
+#left-arrow, #right-arrow {
+    background: rgba(255, 255, 255, 0.6);
+    // background: #ffffff99;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+#left-arrow:hover, #right-arrow:hover {
+  opacity: 0.8;
+}
 
 // Mid Section
 
@@ -695,6 +721,11 @@ h3 {
       top: 160px;
     }
   }
+  .arrow-hold {
+    width: 675px;
+  }
+
+  
 
   .main-banner {
     .banner-hold {
@@ -800,6 +831,10 @@ h3 {
     h1 {
       width: 560px !important;
     }
+  }
+
+  .arrow-hold {
+    width: 560px;
   }
 
   .main-banner {
@@ -914,6 +949,10 @@ h3 {
       }
     }
   }
+  .arrow-hold {
+    width: 490px;
+  }
+
   .main-banner {
     .banner-hold {
       width: 490px;
@@ -998,6 +1037,7 @@ h3 {
 }
 
 
+
 // Media Queries -- Enlarge
 @media only screen and (min-width: 1240px) {
   .splash-header-container {
@@ -1015,11 +1055,15 @@ h3 {
         .nav {
           position: relative; 
           top: 50%;
+          // left: 6%;
         }
         .nav:last-of-type {
-          position: absolute;
+          // position: absolute;
+          // top: 50%;
+          // right: 10%;
+          position: relative;
           top: 50%;
-          right: 10%;
+          // left: 8%;
         }
       }
     }
