@@ -57,6 +57,7 @@ class SplashPage extends React.Component {
     let today = this.state.date.getDate();
     return (
      <div> 
+       <header>
        <div className="splash-header-container">
         <section id="navbar">
           <nav>
@@ -70,8 +71,8 @@ class SplashPage extends React.Component {
           </nav>
         </section>
           <ImageCarousel /> 
-         
        </div>
+      </header>
        <div className="splash-content-container">
           <nav className="main-banner">
             <div className="banner-hold">
