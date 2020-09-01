@@ -23,7 +23,7 @@ class NewsIndex extends React.Component {
           <section key={nws.id} className="main-news">
               <div className="nahuel-frame">
                 <img src={window.nahuelUrl} alt="Blurred Nahuel Photo" id="nahuel-pre" />
-                <img src={window.nahuelUrl} alt="Nahuel Photo" id="nahuel" />
+                <Link to={`/news/${nws.id}`}><img src={window.nahuelUrl} alt="Nahuel Photo" id="nahuel" /></Link>
               </div>
             <span className="main-news-hold">
               <p className="news-date">{formatDateNews(nws.created_at)}</p>
@@ -38,8 +38,8 @@ class NewsIndex extends React.Component {
             <li key={i}>
               <article className="newspiece">
           <p className="news-date">{formatDateNews(nws.created_at)}</p> 
-                <img src={nws.photoUrl} alt={`${nws.title.split(' ')[0]}-photo`}/> <br/>
                 <Link to={`/news/${nws.id}`}>
+                <img src={nws.photoUrl} alt={`${nws.title.split(' ')[0]}-photo`}/> <br/>
                   <h1>{nws.title}</h1>
                 </Link> 
                 <p className="news-blurb">{nws.blurb}</p>

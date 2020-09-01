@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Fade } from 'react-slideshow-image';
 import { Link } from 'react-router-dom';
 
-class ImageCarousel extends React.Component {
-  render() {
+const ImageCarousel = () => {
+  
     const fadeImages = [
       window.redRaveUrl,
       window.etherealUrl,
@@ -21,6 +21,29 @@ class ImageCarousel extends React.Component {
       arrows: true,
     }
 
+    const holdStyle = {
+      color: 'yellow',
+      width: '960px',
+      margin: '0 auto',
+      display: 'flex',
+      justifyContent: 'space-between',
+      position: 'absolute',
+      top: '50%',
+      left: '0',
+      right: '0',
+      zIndex: '1000'
+    }
+
+    const slideRef = useRef();
+
+    const back = () => {
+      slideRef.current.goBack();
+    }
+
+    const next = () => {
+      slideRef.current.goNext();
+    }
+
     return (
       <div className="slide-container">
         {/* <section id="navbar">
@@ -34,7 +57,16 @@ class ImageCarousel extends React.Component {
             </ul>
           </nav>
         </section> */}
-        <Fade {...fadeProperties}>
+        <div className="arrow-hold">
+          <span id="left-arrow" onClick={back}>
+
+          </span>
+          <span id="right-arrow" onClick={next}>
+
+          </span>
+        </div>
+      
+        <Fade ref={slideRef} {...fadeProperties}>
           <div className="each-fade">
             <div className="image-container" id="redrave">
               <img src={fadeImages[0]} />
@@ -79,10 +111,11 @@ class ImageCarousel extends React.Component {
               </section>
             </div>
           </div>
+         
         </Fade>
       </div>
     );
-  }
+  
 }
 
 export default ImageCarousel;
