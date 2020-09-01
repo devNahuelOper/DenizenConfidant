@@ -100,7 +100,7 @@ class SplashPage extends React.Component {
           <section className="content">
             <div className="news-banner">
               <h1>Pulse</h1>
-              <h2>more pulse</h2>
+              <h2></h2>
             </div>
           
             <NewsIndex news={news}/>
