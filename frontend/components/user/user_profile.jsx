@@ -42,22 +42,24 @@ class UserProfile extends React.Component {
     const lastOnline = localStorage.getItem('lastOnline');
     return(
       <React.Fragment>
-        <TitleComponent title={`DC: ${currentUser.username}`} />
+      <TitleComponent title={`DC: ${currentUser.username}`} />
       <div className="user-profile">
-        <div id="nav-container">
-          <section id="navbar">
-            <nav>
-              <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
-              <ul id="links">
-                <li><Link to="/djs">DJs</Link></li>
-                <li><Link to="/events">Events</Link></li>
-                <li><Link to="/genres">Music</Link></li>
-                <li><button id="search">Search</button></li>
-              </ul>
-            </nav>
-            <h1>{currentUser.username}</h1>
-          </section>
-        </div>
+        <header>
+          <div id="nav-container">
+            <section id="navbar">
+              <nav>
+                <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+                <ul id="links">
+                  <li><Link to="/djs">DJs</Link></li>
+                  <li><Link to="/events">Events</Link></li>
+                  <li><Link to="/genres">Music</Link></li>
+                  <li><button id="search">Search</button></li>
+                </ul>
+              </nav>
+              <h1>{currentUser.username}</h1>
+            </section>
+          </div>
+        </header>
         <div className="subnav-container">
           <section id="subnav">
             <ul>

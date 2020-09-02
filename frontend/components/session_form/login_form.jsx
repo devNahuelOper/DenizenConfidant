@@ -64,6 +64,7 @@ class LoginForm extends React.Component {
     };
     return (
       <div>
+        <header>
           <div id="nav-container">
             <section id="navbar">
               <nav>
@@ -78,6 +79,7 @@ class LoginForm extends React.Component {
                 <h1>Your account</h1>
             </section> 
           </div>
+        </header>
           <div className="subnav-container">
             <section id="subnav">
               <ul>
