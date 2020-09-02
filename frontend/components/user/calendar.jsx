@@ -11,13 +11,13 @@ const Calendar = () => {
     <table className="calendar">
       <tbody>
         <tr className="weekdays">
-          <th>Sun</th>
-          <th>Mon</th>
-          <th>Tue</th>
-          <th>Wed</th>
-          <th>Thu</th>
-          <th>Fri</th>
-          <th>Sat</th>
+          <th id="sun">Sun</th>
+          <th id="mon">Mon</th>
+          <th id="tue">Tue</th>
+          <th id="wed">Wed</th>
+          <th id="thu">Thu</th>
+          <th id="fri">Fri</th>
+          <th id="sat">Sat</th>
         </tr>
         {month.map((week, i) =>
         <tr className="week">
