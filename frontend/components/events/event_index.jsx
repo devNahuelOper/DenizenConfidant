@@ -24,20 +24,22 @@ class EventIndex extends React.Component {
 
     return (
       <div className="events-index">
-        <div className="events-nav-container">
-        <section className="events-nav">
-          <nav>
-        <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
-           <ul id="links">
-             <li><Link to="/djs">DJs</Link></li>
-             <li><Link to="/events">Events</Link></li>
-             <li><Link to="/genres">Music</Link></li>
-              <li><button id="search">Search</button></li>
-           </ul>
-         </nav>
-          <h1>Events</h1>
-        </section>
-        </div>
+        <header>
+          <div className="events-nav-container">
+          <section className="events-nav">
+            <nav>
+              <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+              <ul id="links">
+                <li><Link to="/djs">DJs</Link></li>
+                <li><Link to="/events">Events</Link></li>
+                <li><Link to="/genres">Music</Link></li>
+                <li><button id="search">Search</button></li>
+              </ul>
+            </nav>
+            <h1>Events</h1>
+          </section>
+          </div>
+        </header>
         <div className="subnav-container">
           <section id="events-subnav">
             <ul>

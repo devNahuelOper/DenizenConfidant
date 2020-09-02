@@ -23,20 +23,22 @@ class DjIndex extends React.Component {
     const alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
     return (
       <div className="djs-index">
-        <div className="djs-nav-container">
-          <section className="djs-nav">
-            <nav>
-              <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
-              <ul id="links">
-                <li><Link to="/djs">DJs</Link></li>
-                <li><Link to="/events">Events</Link></li>
-                <li><Link to="/genres">Music</Link></li>
-                <li><button id="search">Search</button></li>
-              </ul>
-            </nav>
-            <h1>DJs</h1>
-          </section>
-        </div>
+        <header>
+          <div className="djs-nav-container">
+            <section className="djs-nav">
+              <nav>
+                <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+                <ul id="links">
+                  <li><Link to="/djs">DJs</Link></li>
+                  <li><Link to="/events">Events</Link></li>
+                  <li><Link to="/genres">Music</Link></li>
+                  <li><button id="search">Search</button></li>
+                </ul>
+              </nav>
+              <h1>DJs</h1>
+            </section>
+          </div>
+        </header>
         <div className="djs-subnav-container">
           <section className="djs-subnav">
             <ul>
