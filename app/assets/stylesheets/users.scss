@@ -48,7 +48,9 @@
 .user-main {
   // height: 76px;
   border-bottom: 1px #585858 solid;
-  padding: 60px 0;
+  padding: 40px 0;
+  position: relative;
+  z-index: 1000;
 }
 
 .calendar {
@@ -86,6 +88,19 @@
     // padding: 4px 0 0 0;
   }
 } 
+
+#sun, #thu, #fri {
+  width: 160px;
+}
+#mon, #tue {
+  width: 107px;
+}
+#wed {
+  width: 106px;
+}
+#sat {
+  width: 152px;
+}
 
 // Create Event Form
 
@@ -461,6 +476,9 @@ i {
       }
     }
   }
+  .calendar {
+    width: 675px;
+  }
    #myevents-header {
     width: 675px;
     justify-content: normal;
@@ -514,7 +532,15 @@ i {
       }
     }
   }
-   #myevents-header {
+
+  .calendar {
+    width: 560px;
+  }
+  .cal-day b {
+    font-size: 2em;
+  }
+
+  #myevents-header {
     width: 560px;
   }
   #myevents-list {
@@ -571,12 +597,16 @@ i {
       .details {
         white-space: nowrap;
         li {
-          margin-right: 90px;
+          margin-right: 80px;
         }
       }
     }
   }
-   #myevents-header {
+  .calendar {
+    width: 490px;
+  }
+  
+  #myevents-header {
     width: 490px;
   }
   #myevents-list {
@@ -606,6 +636,9 @@ i {
     .user-subheader {
         width: 1272px;
     }
+  }
+  .calendar {
+    width: 1272px;
   }
   #myevents-header {
     width: 1272px;
