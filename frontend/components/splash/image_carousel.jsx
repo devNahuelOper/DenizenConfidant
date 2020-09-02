@@ -21,19 +21,6 @@ const ImageCarousel = () => {
       arrows: true,
     }
 
-    const holdStyle = {
-      color: 'yellow',
-      width: '960px',
-      margin: '0 auto',
-      display: 'flex',
-      justifyContent: 'space-between',
-      position: 'absolute',
-      top: '50%',
-      left: '0',
-      right: '0',
-      zIndex: '1000'
-    }
-
     const slideRef = useRef();
 
     const back = () => {
