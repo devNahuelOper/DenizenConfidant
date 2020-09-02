@@ -1,9 +1,7 @@
 import React, { useRef } from 'react';
 import { Fade } from 'react-slideshow-image';
-import { Link } from 'react-router-dom';
 
 const ImageCarousel = () => {
-  
     const fadeImages = [
       window.redRaveUrl,
       window.etherealUrl,
@@ -33,16 +31,10 @@ const ImageCarousel = () => {
 
     return (
       <div className="slide-container">
-      
         <div className="arrow-hold">
-          <span id="left-arrow" onClick={back}>
-
-          </span>
-          <span id="right-arrow" onClick={next}>
-
-          </span>
+          <span id="left-arrow" onClick={back}></span>
+          <span id="right-arrow" onClick={next}></span>
         </div>
-      
         <Fade ref={slideRef} {...fadeProperties}>
           <div className="each-fade">
             <div className="image-container" id="redrave">
@@ -88,7 +80,6 @@ const ImageCarousel = () => {
               </section>
             </div>
           </div>
-         
         </Fade>
       </div>
     );

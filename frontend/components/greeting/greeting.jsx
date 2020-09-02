@@ -5,20 +5,20 @@ import WelcomeDropdown from './welcome_dropdown';
 
 const Greeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
-    <div className="user">
-      <nav className="login-container">
+    <nav className="user">
+      <div className="login-container">
         <Dropdown />
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 
   const [isShown, setIsShown] = useState(false);
 
   const personalGreeting = () => (
-    <div className="user">
-     <nav className="welcome-container">
+    <nav className="user">
+     <div className="welcome-container">
         <WelcomeDropdown />
-    </nav>
+    </div>
 
       {/* <button className="logout-button" onClick={logout} onMouseEnter={() => setIsShown(true)}
           onMouseLeave={() => setIsShown(false)}>
@@ -29,7 +29,7 @@ const Greeting = ({ currentUser, logout }) => {
             </div>
           )}
         </button> */}
-    </div>
+    </nav>
   );
 
   return currentUser ? personalGreeting() : sessionLinks()
