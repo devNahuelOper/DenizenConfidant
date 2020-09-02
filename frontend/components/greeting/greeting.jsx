@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Dropdown from './dropdown';
 import WelcomeDropdown from './welcome_dropdown';
 

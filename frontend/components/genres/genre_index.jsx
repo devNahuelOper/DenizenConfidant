@@ -20,20 +20,22 @@ class GenreIndex extends React.Component {
 
     return (
       <div className="genre-index">
-        <div className="genre-nav-container">
-          <section className="genre-nav">
-            <nav>
-              <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
-              <ul id="links">
-                <li><Link to="/djs">DJs</Link></li>
-                <li><Link to="/events">Events</Link></li>
-                <li><Link to="/genres">Music</Link></li>
-                <li><button id="search">Search</button></li>
-              </ul>
-            </nav>
-            <h1>Genres</h1>
-          </section>
-        </div>
+        <header>
+          <div className="genre-nav-container">
+            <section className="genre-nav">
+              <nav>
+                <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+                <ul id="links">
+                  <li><Link to="/djs">DJs</Link></li>
+                  <li><Link to="/events">Events</Link></li>
+                  <li><Link to="/genres">Music</Link></li>
+                  <li><button id="search">Search</button></li>
+                </ul>
+              </nav>
+              <h1>Genres</h1>
+            </section>
+          </div>
+        </header>
         <div className="genre-subnav-container">
           <section className="genre-subnav">
             <ul>
