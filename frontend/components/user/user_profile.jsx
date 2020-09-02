@@ -11,7 +11,7 @@ import {
   toggleSearch
 } from '../../util/search_util';
 import { TitleComponent } from '../title_component.jsx';
-
+import Calendar from './calendar';
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -90,7 +90,7 @@ class UserProfile extends React.Component {
           </section>
         </div>
         <div className="user-main">
-
+          <Calendar />
         </div>
       </div>
       </React.Fragment>

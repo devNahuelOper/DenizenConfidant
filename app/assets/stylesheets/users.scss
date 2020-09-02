@@ -46,9 +46,46 @@
 }
 
 .user-main {
-  height: 76px;
+  // height: 76px;
   border-bottom: 1px #585858 solid;
+  padding: 60px 0;
 }
+
+.calendar {
+  width: 960px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.weekdays {
+  color: #9c9c9c;
+  text-align: left;
+  th {
+    font-size: 1em;
+    font-weight: normal;
+    padding: 0 0 4px 8px;
+  }
+}
+.cal-day {
+  font-size: 1em;
+  padding-bottom: 32px;
+  box-sizing: border-box;
+  color: #ffa200;
+  margin: 2px;
+  background-color: #2e2e2e;
+  border: 2px solid #222;
+  b {
+    color: #fff;
+    font-size: 3em;
+    padding-left: 8px;
+    display: block;
+    font-weight: normal;
+  }
+  hr {
+    border: 1px solid;
+    // padding: 4px 0 0 0;
+  }
+} 
 
 // Create Event Form
 
