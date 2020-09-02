@@ -38,20 +38,22 @@ class UserEvents extends React.Component {
       <React.Fragment>
         <TitleComponent title="DC: My Events" />
         <div className="user-profile" id="user-events">
-          <div id="nav-container">
-            <section id="navbar">
-              <nav>
-                <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
-                <ul id="links">
-                  <li><Link to="/djs">DJs</Link></li>
-                  <li><Link to="/events">Events</Link></li>
-                  <li><Link to="/genres">Music</Link></li>
-                  <li><button id="search">Search</button></li>
-                </ul>
-              </nav>
-              <h1>My Events</h1>
-            </section>
-          </div>
+          <header>
+            <div id="nav-container">
+              <section id="navbar">
+                <nav>
+                  <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+                  <ul id="links">
+                    <li><Link to="/djs">DJs</Link></li>
+                    <li><Link to="/events">Events</Link></li>
+                    <li><Link to="/genres">Music</Link></li>
+                    <li><button id="search">Search</button></li>
+                  </ul>
+                </nav>
+                <h1>My Events</h1>
+              </section>
+            </div>
+          </header>
           <div className="subnav-container">
             <section id="subnav">
               <ul>
