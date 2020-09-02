@@ -46,17 +46,7 @@ const ImageCarousel = () => {
 
     return (
       <div className="slide-container">
-        {/* <section id="navbar">
-          <nav>
-            <img src={window.logoUrl} id="logo" />
-            <ul id="links">
-              <li><Link to="/djs">DJs</Link></li>
-              <li><Link to="/events">Events</Link></li>
-              <li><Link to="/genres">Music</Link></li>
-              <li><button id="search">Search</button></li>
-            </ul>
-          </nav>
-        </section> */}
+      
         <div className="arrow-hold">
           <span id="left-arrow" onClick={back}>
 
