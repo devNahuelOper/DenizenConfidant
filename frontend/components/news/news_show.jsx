@@ -36,23 +36,25 @@ class NewsShow extends React.Component {
     <React.Fragment>
       <TitleComponent title={`DC News: ${news.title}`} />
       <div className="news-show">
-        <div className="news-nav-container">
-          <section className="news-nav">
-            <nav>
-              <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
-              <ul id="links">
-                <li><Link to="/djs">DJs</Link></li>
-                <li><Link to="/events">Events</Link></li>
-                <li><Link to="/genres">Music</Link></li>
-                <li><button id="search">Search</button></li>
-              </ul>
-            </nav>
-            <section className="news-header">
-              <Link to='/'><img id="prev" src={window.prevUrl} alt="Back" /> News</Link>
-              <h1>{news.title}</h1>
+        <header>
+          <div className="news-nav-container">
+            <section className="news-nav">
+              <nav>
+                <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+                <ul id="links">
+                  <li><Link to="/djs">DJs</Link></li>
+                  <li><Link to="/events">Events</Link></li>
+                  <li><Link to="/genres">Music</Link></li>
+                  <li><button id="search">Search</button></li>
+                </ul>
+              </nav>
+              <section className="news-header">
+                <Link to='/'><img id="prev" src={window.prevUrl} alt="Back" /> News</Link>
+                <h1>{news.title}</h1>
+              </section>
             </section>
-          </section>
-        </div>
+          </div>
+        </header>
         <div className="news-subheader-container">
           <section className="news-subheader">
             <ul className="details">

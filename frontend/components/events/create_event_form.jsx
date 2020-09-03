@@ -94,10 +94,10 @@ class CreateEventForm extends React.Component {
       formData.append('event[photo]', this.state.photoFile);
     }
     this.props.createEvent(formData)
-    .then(() => 
-      this.props.history.push(`/users/${this.props.currentUser.id}/events`)
-    )
-    e.target.reset();
+      .then(event => this.props.history.push(`/events/${event.event.id}`))
+      .then(() => window.location.reload(true))
+
+    // e.target.reset();
   }
 
   update(field) {
@@ -127,27 +127,28 @@ class CreateEventForm extends React.Component {
     const preview = this.state.photoUrl ? <img width="265px" height="150px" src={this.state.photoUrl} /> : null;
     return (
       <div className="create-event">
-        <div id="nav-container">
-          <section id="navbar">
-            <nav>
-              <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
-              <ul id="links">
-                <li><Link to="/djs">DJs</Link></li>
-                <li><Link to="/events">Events</Link></li>
-                <li><Link to="/genres">Music</Link></li>
-                <li><button id="search">Search</button></li>
-              </ul>
-            </nav>
-            <section className="eventform-header">
-              {/* <Link to='/events'><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link> */}
-              <Link to={`/users/${currentUser.id}/events`}><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link>
-              <h1>Submit an event</h1>
+        <header>
+          <div id="nav-container">
+            <section id="navbar">
+              <nav>
+                <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+                <ul id="links">
+                  <li><Link to="/djs">DJs</Link></li>
+                  <li><Link to="/events">Events</Link></li>
+                  <li><Link to="/genres">Music</Link></li>
+                  <li><button id="search">Search</button></li>
+                </ul>
+              </nav>
+              <section className="eventform-header">
+                {/* <Link to='/events'><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link> */}
+                <Link to={`/users/${currentUser.id}/events`}><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link>
+                <h1>Submit an event</h1>
+              </section>
             </section>
-          </section>
-        </div>
+          </div>
+        </header>
         <div className="event-form-container">
           <div className="form-wrap">
-
             <form className="event-form" onSubmit={this.handleSubmit} onReset={this.resetForm}>
               {/* onReset={this.resetForm} */}
              <ul className="new-event-formlist">

@@ -46,8 +46,70 @@
 }
 
 .user-main {
-  height: 76px;
+  // height: 76px;
   border-bottom: 1px #585858 solid;
+  padding: 40px 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.cal-bg {
+   background: #404040;
+   padding: 70px 0;
+}
+
+#calendar-toggle {
+  cursor: pointer;
+}
+
+.calendar {
+  width: 960px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: none;
+}
+.weekdays {
+  color: #9c9c9c;
+  text-align: left;
+  th {
+    font-size: 1em;
+    font-weight: normal;
+    padding: 0 0 4px 8px;
+  }
+}
+.cal-day {
+  font-size: 1em;
+  padding-bottom: 32px;
+  box-sizing: border-box;
+  color: #ffa200;
+  margin: 2px;
+  background-color: #2e2e2e;
+  border: 2px solid #222;
+  b {
+    color: #fff;
+    font-size: 3em;
+    padding-left: 8px;
+    display: block;
+    font-weight: normal;
+  }
+  hr {
+    border: 1px solid;
+    // padding: 4px 0 0 0;
+  }
+} 
+
+#sun, #thu, #fri {
+  width: 160px;
+}
+#mon, #tue {
+  width: 107px;
+}
+#wed {
+  width: 106px;
+}
+#sat {
+  width: 152px;
 }
 
 // Create Event Form
@@ -424,6 +486,9 @@ i {
       }
     }
   }
+  .calendar {
+    width: 675px;
+  }
    #myevents-header {
     width: 675px;
     justify-content: normal;
@@ -472,12 +537,20 @@ i {
       .details {
         white-space: nowrap;
         li {
-          margin-right: 125px;
+          margin-right: 115px;
         }
       }
     }
   }
-   #myevents-header {
+
+  .calendar {
+    width: 560px;
+  }
+  .cal-day b {
+    font-size: 2em;
+  }
+
+  #myevents-header {
     width: 560px;
   }
   #myevents-list {
@@ -534,12 +607,16 @@ i {
       .details {
         white-space: nowrap;
         li {
-          margin-right: 90px;
+          margin-right: 80px;
         }
       }
     }
   }
-   #myevents-header {
+  .calendar {
+    width: 490px;
+  }
+  
+  #myevents-header {
     width: 490px;
   }
   #myevents-list {
@@ -569,6 +646,9 @@ i {
     .user-subheader {
         width: 1272px;
     }
+  }
+  .calendar {
+    width: 1272px;
   }
   #myevents-header {
     width: 1272px;

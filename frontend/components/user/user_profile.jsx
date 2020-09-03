@@ -11,16 +11,32 @@ import {
   toggleSearch
 } from '../../util/search_util';
 import { TitleComponent } from '../title_component.jsx';
-
+import Calendar from './calendar';
 
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
+    this.toggleCalendar = this.toggleCalendar.bind(this);
   }
 
   componentDidMount() {
     toggleSearch();
     // console.log(localStorage.getItem('lastOnline'));
+  }
+
+  toggleCalendar() {
+    $('.calendar').toggle();
+    $('#calendar-toggle').toggleClass('form');
+    $('#overview').toggleClass('form');
+    $('.user-main').toggleClass('cal-bg');
+    $('.user-subheader-container').toggle();
+    $('#overview').on('click', () => {
+      $('.calendar').hide();
+      $('#overview').addClass('form');
+      $('#calendar-toggle').removeClass('form');
+      $('.user-main').removeClass('cal-bg');
+      $('.user-subheader-container').show();
+    });
   }
 
   render() {
@@ -42,31 +58,34 @@ class UserProfile extends React.Component {
     const lastOnline = localStorage.getItem('lastOnline');
     return(
       <React.Fragment>
-        <TitleComponent title={`DC: ${currentUser.username}`} />
+      <TitleComponent title={`DC: ${currentUser.username}`} />
       <div className="user-profile">
-        <div id="nav-container">
-          <section id="navbar">
-            <nav>
-              <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
-              <ul id="links">
-                <li><Link to="/djs">DJs</Link></li>
-                <li><Link to="/events">Events</Link></li>
-                <li><Link to="/genres">Music</Link></li>
-                <li><button id="search">Search</button></li>
-              </ul>
-            </nav>
-            <h1>{currentUser.username}</h1>
-          </section>
-        </div>
+        <header>
+          <div id="nav-container">
+            <section id="navbar">
+              <nav>
+                <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+                <ul id="links">
+                  <li><Link to="/djs">DJs</Link></li>
+                  <li><Link to="/events">Events</Link></li>
+                  <li><Link to="/genres">Music</Link></li>
+                  <li><button id="search">Search</button></li>
+                </ul>
+              </nav>
+              <h1>{currentUser.username}</h1>
+            </section>
+          </div>
+        </header>
         <div className="subnav-container">
           <section id="subnav">
             <ul>
-              <li className="form"><Link to={`/users/${currentUser.id}`}>Overview</Link></li>
+              <li className="form" id="overview"><Link to={`/users/${currentUser.id}`}>Overview</Link></li>
+              <li id="calendar-toggle" onClick={this.toggleCalendar}><a>Calendar</a></li>
               <li><Link to={`/users/${currentUser.id}/events`}>My Events</Link></li>
-              <li><Link to="/">Take me back home</Link></li>
+              {/* <li><Link to="/">Take me back home</Link></li> */}
             </ul>
           </section>
-          <SubnavToggle currentUser={currentUser} />
+          <SubnavToggle currentUser={currentUser} toggleCalendar={this.toggleCalendar}/>
         </div>
         <div className="user-subheader-container">
           <section className="user-subheader">
@@ -88,7 +107,7 @@ class UserProfile extends React.Component {
           </section>
         </div>
         <div className="user-main">
-
+          <Calendar />
         </div>
       </div>
       </React.Fragment>
@@ -104,6 +123,7 @@ class SubnavToggle extends React.Component {
     }
     this.clicker = this.clicker.bind(this);
     this.leave = this.leave.bind(this);
+    this.toggleCalendar = this.toggleCalendar.bind(this);
   }
 
   clicker(e) {
@@ -114,14 +134,20 @@ class SubnavToggle extends React.Component {
     this.setState({ "drop": false });
   }
 
+  toggleCalendar() {
+    this.props.toggleCalendar();
+    this.leave();
+  }
+
   render() {
     const { currentUser } = this.props;
     return (
       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span>Overview <small>⬇︎</small></span>
+        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span id="overview">Overview <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
+            <li id="calendar-toggle" onClick={this.toggleCalendar}><a className="log-link">Calendar</a></li>
             <li><Link className="log-link" to={`/users/${currentUser.id}/events`}>My Events</Link></li>
-            <li id="user-reveal"><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
+            {/* <li id="user-reveal"><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li> */}
           </ul>
         </button>
       </div>

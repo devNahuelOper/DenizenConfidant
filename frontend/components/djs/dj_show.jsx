@@ -53,27 +53,29 @@ class DjShow extends React.Component {
       <React.Fragment>
         <TitleComponent title={`DC: ${dj.name}`} />
       <div className="djs-index" id="dj-show">
-        <div 
-          id={`${dj.name.toLowerCase().split(' ').join('')}-container`}
-          className="djshow-nav-container" 
-          style={!dj.photoUrl ? noAttach : yesAttach}
-          >
-          <section className="djs-nav">
-            <nav>
-              <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
-              <ul id="links">
-                <li><Link to="/djs">DJs</Link></li>
-                <li><Link to="/events">Events</Link></li>
-                <li><Link to="/genres">Music</Link></li>
-                <li><button id="search">Search</button></li>
-              </ul>
-            </nav>
-            <section id="djshow-header" className="eventshow-header">
-              <Link to='/djs'><img id="prev" src={window.prevUrl} alt="Back" /> DJs</Link>
-              <h1>{(dj.name === 'Ran D') || (dj.name === 'Noisuf X') ? hyphen : dj.name}</h1>
+        <header>
+          <div 
+            id={`${dj.name.toLowerCase().split(' ').join('')}-container`}
+            className="djshow-nav-container" 
+            style={!dj.photoUrl ? noAttach : yesAttach}
+            >
+            <section className="djs-nav">
+              <nav>
+                <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+                <ul id="links">
+                  <li><Link to="/djs">DJs</Link></li>
+                  <li><Link to="/events">Events</Link></li>
+                  <li><Link to="/genres">Music</Link></li>
+                  <li><button id="search">Search</button></li>
+                </ul>
+              </nav>
+              <section id="djshow-header" className="eventshow-header">
+                <Link to='/djs'><img id="prev" src={window.prevUrl} alt="Back" /> DJs</Link>
+                <h1>{(dj.name === 'Ran D') || (dj.name === 'Noisuf X') ? hyphen : dj.name}</h1>
+              </section>
             </section>
-          </section>
-        </div>
+          </div>
+        </header>
         <div className="djs-subnav-container">
           <section className="djs-subnav">
             <ul>

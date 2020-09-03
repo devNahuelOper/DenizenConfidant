@@ -44,27 +44,29 @@ class GenreShow extends React.Component {
       <React.Fragment>
         <TitleComponent title={`DC: ${genre.name}`} />
       <div className="genre-index" id="genre-show">
-        <div 
-          id={`${genre.name.toLowerCase().split('-').join('')}-container`}
-        className="genreshow-nav-container" 
-        style={{backgroundImage: `url("${genre.photoUrl}")`}}
-        >
-          <section className="genre-nav">
-            <nav>
-              <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
-              <ul id="links">
-                <li><Link to="/djs">DJs</Link></li>
-                <li><Link to="/events">Events</Link></li>
-                <li><Link to="/genres">Music</Link></li>
-                <li><button id="search">Search</button></li>
-              </ul>
-            </nav>
-            <section className="genreshow-header">
-              <Link to='/genres'><img id="prev" src={window.prevUrl} alt="Back" /> Genres</Link>
-              <h1>{genre.name}</h1>
+        <header>
+          <div 
+            id={`${genre.name.toLowerCase().split('-').join('')}-container`}
+            className="genreshow-nav-container" 
+            style={{backgroundImage: `url("${genre.photoUrl}")`}}
+          >
+            <section className="genre-nav">
+              <nav>
+                <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+                <ul id="links">
+                  <li><Link to="/djs">DJs</Link></li>
+                  <li><Link to="/events">Events</Link></li>
+                  <li><Link to="/genres">Music</Link></li>
+                  <li><button id="search">Search</button></li>
+                </ul>
+              </nav>
+              <section className="genreshow-header">
+                <Link to='/genres'><img id="prev" src={window.prevUrl} alt="Back" /> Genres</Link>
+                <h1>{genre.name}</h1>
+              </section>
             </section>
-          </section>
-        </div>
+          </div>
+        </header>
         <div className="genre-subnav-container">
           <section className="genre-subnav">
             <ul>
