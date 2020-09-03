@@ -24,10 +24,10 @@ const Calendar = () => {
           <th id="sat">Sat</th>
         </tr>
         {month.map((week, i) =>
-        <tr className="week">
+        <tr className="week" key={week}>
           {week.map(day => 
-          <td className="cal-day">
-            <b>{day * (i+1)}/</b>
+          <td className="cal-day" key={day}>
+            <b></b>
             <hr/>
             </td>
             )}
