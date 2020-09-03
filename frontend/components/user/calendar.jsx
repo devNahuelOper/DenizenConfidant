@@ -3,11 +3,13 @@ import { daysInMonth, firstDay, daysInLastMonth } from '../../util/date_util';
 
 
 const Calendar = () => {
+
+  const week = Array.from(Array(8).keys()).slice(1);
+  const month = Array.from(Array(6)).slice(1).fill(week);
+
   let numDays = daysInMonth();
   let dayOne = firstDay();
-  let week = Array.from(Array(8).keys()).slice(1);
-  let month = Array.from(Array(6)).slice(1).fill(week);
-  // let $exactMonth = $('td').slice(dayOne, numDays + 2);
+  let lastMonth = daysInLastMonth();
   $('td b').slice(dayOne, numDays + 2).each(function(idx) {
     $(this).text(`${idx+1}/`);
   });
@@ -16,6 +18,12 @@ const Calendar = () => {
     $(this).css({color: '#787878'});
     $(this).parent().css({ color: '#787878', background: '#3c3c3c'});
   });
+  let daysLeft = $('td').slice(0, dayOne).length - 1;
+  $('td b').slice(0, dayOne).each(function(idx) {
+    $(this).text(`${(lastMonth - daysLeft)+idx}/`);
+    $(this).css({ color: '#787878' });
+    $(this).parent().css({ color: '#787878', background: '#3c3c3c' });
+  })
   return (
     <table className="calendar">
       <tbody>
