@@ -29,11 +29,13 @@ class UserProfile extends React.Component {
     $('#calendar-toggle').toggleClass('form');
     $('#overview').toggleClass('form');
     $('.user-main').toggleClass('cal-bg');
+    $('.user-subheader-container').toggle();
     $('#overview').on('click', () => {
       $('.calendar').hide();
       $('#overview').addClass('form');
       $('#calendar-toggle').removeClass('form');
       $('.user-main').removeClass('cal-bg');
+      $('.user-subheader-container').show();
     });
   }
 
@@ -83,7 +85,7 @@ class UserProfile extends React.Component {
               {/* <li><Link to="/">Take me back home</Link></li> */}
             </ul>
           </section>
-          <SubnavToggle currentUser={currentUser} />
+          <SubnavToggle currentUser={currentUser} toggleCalendar={this.toggleCalendar}/>
         </div>
         <div className="user-subheader-container">
           <section className="user-subheader">
@@ -121,6 +123,7 @@ class SubnavToggle extends React.Component {
     }
     this.clicker = this.clicker.bind(this);
     this.leave = this.leave.bind(this);
+    this.toggleCalendar = this.toggleCalendar.bind(this);
   }
 
   clicker(e) {
@@ -131,14 +134,20 @@ class SubnavToggle extends React.Component {
     this.setState({ "drop": false });
   }
 
+  toggleCalendar() {
+    this.props.toggleCalendar();
+    this.leave();
+  }
+
   render() {
     const { currentUser } = this.props;
     return (
       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span>Overview <small>⬇︎</small></span>
+        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span id="overview">Overview <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
+            <li id="calendar-toggle" onClick={this.toggleCalendar}><a className="log-link">Calendar</a></li>
             <li><Link className="log-link" to={`/users/${currentUser.id}/events`}>My Events</Link></li>
-            <li id="user-reveal"><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
+            {/* <li id="user-reveal"><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li> */}
           </ul>
         </button>
       </div>
