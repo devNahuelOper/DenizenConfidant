@@ -236,6 +236,11 @@ export const daysInMonth = () => {
   return new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
 };
 
+export const daysInLastMonth = () => {
+  let now = new Date();
+  return new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+};
+
 export const firstDay = () => {
   let now = new Date();
   return new Date(now.getFullYear(), now.getMonth(), 1).getDay();
