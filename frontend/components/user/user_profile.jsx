@@ -80,7 +80,7 @@ class UserProfile extends React.Component {
           <section id="subnav">
             <ul>
               <li className="form" id="overview"><Link to={`/users/${currentUser.id}`}>Overview</Link></li>
-              <li id="calendar-toggle" onClick={this.toggleCalendar}><a>Calendar</a></li>
+                <li id="calendar-toggle" onClick={this.toggleCalendar}><Link to={`/users/${currentUser.id}`}>Calendar</Link></li>
               <li><Link to={`/users/${currentUser.id}/events`}>My Events</Link></li>
               {/* <li><Link to="/">Take me back home</Link></li> */}
             </ul>
@@ -145,7 +145,7 @@ class SubnavToggle extends React.Component {
       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
         <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span id="overview">Overview <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
-            <li id="calendar-toggle" onClick={this.toggleCalendar}><a className="log-link">Calendar</a></li>
+            <li id="calendar-toggle" onClick={this.toggleCalendar}><Link className="log-link" to={`/users/${currentUser.id}`}>Calendar</Link></li>
             <li><Link className="log-link" to={`/users/${currentUser.id}/events`}>My Events</Link></li>
             {/* <li id="user-reveal"><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li> */}
           </ul>
