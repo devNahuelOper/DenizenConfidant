@@ -7,8 +7,10 @@ const Calendar = () => {
   let dayOne = firstDay();
   let week = Array.from(Array(8).keys()).slice(1);
   let month = Array.from(Array(6)).slice(1).fill(week);
+  let $exactMonth = $('td').slice(dayOne, numDays + 2);
   return (
     <table className="calendar">
+      <h1>{dayOne}</h1>
       <tbody>
         <tr className="weekdays">
           <th id="sun">Sun</th>
