@@ -14,7 +14,7 @@ const Calendar = () => {
   $('td b').slice(numDays + 2).each(function(idx) {
     $(this).text(`${idx + 1}/`);
     $(this).css({color: '#787878'});
-    // $(this).parent().css({});
+    $(this).parent().css({ color: '#787878', background: '#3c3c3c'});
   });
   return (
     <table className="calendar">
