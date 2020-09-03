@@ -53,11 +53,20 @@
   z-index: 1000;
 }
 
+.cal-bg {
+   background: #404040;
+}
+
+#calendar-toggle {
+  cursor: pointer;
+}
+
 .calendar {
   width: 960px;
   margin: 0 auto;
   border-collapse: collapse;
   border-spacing: 0;
+  display: none;
 }
 .weekdays {
   color: #9c9c9c;
