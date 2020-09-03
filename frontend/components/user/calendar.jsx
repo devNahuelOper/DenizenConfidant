@@ -11,6 +11,11 @@ const Calendar = () => {
   $('td b').slice(dayOne, numDays + 2).each(function(idx) {
     $(this).text(`${idx+1}/`);
   });
+  $('td b').slice(numDays + 2).each(function(idx) {
+    $(this).text(`${idx + 1}/`);
+    $(this).css({color: '#787878'});
+    // $(this).parent().css({});
+  });
   return (
     <table className="calendar">
       <tbody>
@@ -24,7 +29,7 @@ const Calendar = () => {
           <th id="sat">Sat</th>
         </tr>
         {month.map((week, i) =>
-        <tr className="week" key={week}>
+        <tr className="week" key={`week-${i}`}>
           {week.map(day => 
           <td className="cal-day" key={day}>
             <b></b>
