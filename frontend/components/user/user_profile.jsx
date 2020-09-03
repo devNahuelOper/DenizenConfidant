@@ -16,11 +16,25 @@ import Calendar from './calendar';
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
+    this.toggleCalendar = this.toggleCalendar.bind(this);
   }
 
   componentDidMount() {
     toggleSearch();
     // console.log(localStorage.getItem('lastOnline'));
+  }
+
+  toggleCalendar() {
+    $('.calendar').toggle();
+    $('#calendar-toggle').toggleClass('form');
+    $('#overview').toggleClass('form');
+    $('.user-main').toggleClass('cal-bg');
+    $('#overview').on('click', () => {
+      $('.calendar').hide();
+      $('#overview').addClass('form');
+      $('#calendar-toggle').removeClass('form');
+      $('.user-main').removeClass('cal-bg');
+    });
   }
 
   render() {
@@ -63,9 +77,10 @@ class UserProfile extends React.Component {
         <div className="subnav-container">
           <section id="subnav">
             <ul>
-              <li className="form"><Link to={`/users/${currentUser.id}`}>Overview</Link></li>
+              <li className="form" id="overview"><Link to={`/users/${currentUser.id}`}>Overview</Link></li>
+              <li id="calendar-toggle" onClick={this.toggleCalendar}><a>Calendar</a></li>
               <li><Link to={`/users/${currentUser.id}/events`}>My Events</Link></li>
-              <li><Link to="/">Take me back home</Link></li>
+              {/* <li><Link to="/">Take me back home</Link></li> */}
             </ul>
           </section>
           <SubnavToggle currentUser={currentUser} />
