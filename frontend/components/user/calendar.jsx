@@ -1,5 +1,5 @@
 import React from 'react';
-import { daysInMonth, firstDay } from '../../util/date_util';
+import { daysInMonth, firstDay, daysInLastMonth } from '../../util/date_util';
 
 
 const Calendar = () => {
