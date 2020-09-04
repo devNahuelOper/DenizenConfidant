@@ -538,11 +538,11 @@ h3 {
         font-size: 5px;
         font-weight: bold;
       }
-    }
-    a:hover {
-      color: #000008;
-      background-color: $dj-yellow;
-      border-color: #000008;
+      &:hover {
+        color: #000008;
+        background-color: $dj-yellow;
+        border-color: #000008;
+      }
     }
     img {
       vertical-align: middle;
