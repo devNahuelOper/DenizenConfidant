@@ -12,9 +12,9 @@
   background-position: center;
   #logo {
     filter: none;
-  }
-  #logo:hover {
-    filter: invert(1);
+    &:hover {
+      filter: invert(1);
+    }
   }
 }
 
@@ -121,9 +121,9 @@
 
   .genre {
     width: fit-content;
-  }
-  .genre:hover {
-    transform: scale(1.1);
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -136,19 +136,15 @@
   background-color: #b4be00;
 }
 
-#genre-name {
-  // vertical-align: super;
-}
 
 .genre-avatar {
   width: 25px;
   height: 25px;
   vertical-align: middle;
+  &:hover {
+    background-color: none;
+  }
 }
-.genre-avatar:hover {
-  background-color: none;
-}
-
 
 
 //Genre Show
