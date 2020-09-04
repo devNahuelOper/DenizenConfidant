@@ -10,13 +10,16 @@ $event-blue: #6a96c2;
   }
 }
 
+@mixin bg-image($image, $repeat, $size, $position: center) {
+  background-image: image_url($image);
+  background-repeat: $repeat;
+  background-size: $size;
+  background-position: $position;
+}
+
 .splash-header-container {
   position: relative;
-  background-image: image_url("red-rave.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-position-x: 1px;
+  @include bg-image("red-rave.png", no-repeat, cover, 1px center);
   height: 575px;
   width: 100%;
 
@@ -59,11 +62,10 @@ $event-blue: #6a96c2;
   }
 }
 
+
+
 #splash-navbar {
-  background-image: image_url("logo.png");
-  background-repeat: no-repeat;
-  background-size: 100px;
-  background-position-x: 168px;
+  @include bg-image("logo.png", no-repeat, 100px, 168px center);
 }
 
 #berlin-rave {
@@ -98,8 +100,8 @@ $event-blue: #6a96c2;
   letter-spacing: -1px;
   &:hover {
     height: 29px;
-    background-image: image_url("ravve.png");
     cursor: default;
+    background-image: image_url("ravve.png");
     background-size: 11%;
     background-repeat: no-repeat;
     background-position-x: -0.4px;
