@@ -90,17 +90,17 @@ $event-blue: #6a96c2;
   text-align: center;
   font-size: 36px;
   letter-spacing: -1px;
+  &:hover {
+    height: 29px;
+    background-image: image_url("ravve.png");
+    cursor: default;
+    background-size: 11%;
+    background-repeat: no-repeat;
+    background-position-x: -0.4px;
+    background-position-y: 12px;
+  }
 }
 
-.denizen-confidant:hover {
-  height: 29px;
-  background-image: image_url("ravve.png");
-  cursor: default;
-  background-size: 11%;
-  background-repeat: no-repeat;
-  background-position-x: -0.4px;
-  background-position-y: 12px;
-}
 .denizen-confidant::first-letter:hover {
   overflow: hidden;
 }
