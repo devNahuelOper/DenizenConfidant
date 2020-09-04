@@ -86,6 +86,9 @@
   margin: 2px;
   background-color: #2e2e2e;
   border: 2px solid #222;
+  &:hover {
+    background-color: black;
+  }
   b {
     color: #fff;
     font-size: 3em;
