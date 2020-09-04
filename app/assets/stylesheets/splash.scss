@@ -315,9 +315,9 @@ h3 {
     height: 30px;
     opacity: 0.5;
     cursor: pointer;
-}
-#left-arrow:hover, #right-arrow:hover {
-  opacity: 0.8;
+    &:hover {
+      opacity: 0.8;
+    }
 }
 
 // Mid Section
