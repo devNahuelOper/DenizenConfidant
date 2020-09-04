@@ -3,6 +3,13 @@ $dj-yellow: #ffff01;
 $genre-green: #b4bd00;
 $event-blue: #6a96c2;
 
+@mixin text-hover($color, $background) {
+  &:hover {
+    color: $color;
+    background-color: $background;
+  }
+}
+
 .splash-header-container {
   position: relative;
   background-image: image_url("red-rave.png");
@@ -47,10 +54,9 @@ $event-blue: #6a96c2;
   width: 100px;
   filter: drop-shadow(7px -2px 7px #2e2e2e);
   z-index: 1000;
-}
-
-#logo:hover {
-  filter: invert(1);
+  &:hover {
+    filter: invert(1);
+  }
 }
 
 #splash-navbar {
@@ -449,6 +455,7 @@ h3 {
 
 
 
+
 .beats {
   display: flex;
   align-items: center;
@@ -539,8 +546,7 @@ h3 {
         font-weight: bold;
       }
       &:hover {
-        color: #000008;
-        background-color: $dj-yellow;
+        @include text-hover(#000008, $dj-yellow);
         border-color: #000008;
       }
     }
