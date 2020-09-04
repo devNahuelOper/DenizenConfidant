@@ -101,11 +101,7 @@ $event-blue: #6a96c2;
   &:hover {
     height: 29px;
     cursor: default;
-    background-image: image_url("ravve.png");
-    background-size: 11%;
-    background-repeat: no-repeat;
-    background-position-x: -0.4px;
-    background-position-y: 12px;
+    @include bg-image("ravve.png", no-repeat, 11%, -0.4px 12px);
   }
 }
 
@@ -177,7 +173,8 @@ $event-blue: #6a96c2;
 }
  
 h3 {
-  text-align: center; }
+  text-align: center; 
+}
  
 .each-slide > div {
   display: flex;
@@ -212,42 +209,28 @@ h3 {
       display: none;
     }
   }
-
   img:first-of-type {
     float: inline-start;
   }
-
 }
 
 #redrave {
-  background-image: image_url('red-rave.png');
-  background-size: cover;
-  background-position: center;
+  @include bg-image('red-rave.png', repeat, cover, center);
 }
 #ethereal {
-  background-image: image_url('ethereal-rave.png');
-  background-size: cover;
-  background-position: center;
+  @include bg-image('ethereal-rave.png', repeat, cover, center);
 }
 #ravenite {
-  background-image: image_url('rave-nite.png');
-  background-size: cover;
-  background-position: center;
+  @include bg-image('rave-nite.png', repeat, cover, center);
 }
 #tbilisi {
-  background-image: image_url('tbilisi-rave.png');
-  background-size: cover;
-  background-position: center;
+  @include bg-image('tbilisi-rave.png', repeat, cover, center);
 }
 #neon {
-  background-image: image_url('rave.jpg');
-  background-size: cover;
-  background-position: center;
+  @include bg-image('rave.jpg', repeat, cover, center);
 }
 #berghain {
-  background-image: image_url('berghain.png');
-  background-size: cover;
-  background-position: center;
+  @include bg-image('berghain.png', repeat, cover, center);
 }
  
 .each-fade h2 {
@@ -378,9 +361,8 @@ h3 {
   width: 960px;
   margin: 0 auto;
   a h1:hover {
-    background-color: #b4bd00;
-    color: #2a2a2a;
-   }
+    @include text-hover(#2a2a2a, $genre-green);
+  }
 }
 
 .main-news {
