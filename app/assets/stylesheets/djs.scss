@@ -468,12 +468,12 @@
     .dj-song {
       margin: 5px;
       padding: 5px;
+      &:hover {
+        background-color: #3d3d3d;
+      }
       hr {
         border-color: #585858;
       }
-    }
-    .dj-song:hover {
-      background-color: #3d3d3d;
     }
   }
   audio {
