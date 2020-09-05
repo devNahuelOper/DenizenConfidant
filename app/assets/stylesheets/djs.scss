@@ -417,12 +417,11 @@
 
 #genre-link {
   margin-right: 10px;
+  &:hover {
+    color: black;
+    background-color:  #fdff00;
+  }
 }
-#genre-link:hover {
- color: black;
- background-color:  #fdff00;
-}
-
 
 .dj-main {
   background-color: #1e1e1e;
