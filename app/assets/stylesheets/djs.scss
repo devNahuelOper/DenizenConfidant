@@ -86,9 +86,9 @@
       li:first-of-type {
         background-color: unset;
         border-color: #ff0;
-      }
-      li:first-of-type:hover {
-        background-color: #ff0;
+        &:hover {
+          background-color: #ff0;
+        }
       }
     }
     #logo {
