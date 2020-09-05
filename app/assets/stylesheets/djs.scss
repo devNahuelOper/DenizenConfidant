@@ -681,11 +681,12 @@
 
 #success-link {
   color: #ffff01;
+  &:hover {
+    color: #1e1e1e;
+    background-color: #fdff00;
+  }
 }
-#success-link:hover {
-  color: #1e1e1e;
-  background-color: #fdff00;
-}
+
 
 .dj-errors {
   white-space: nowrap;
