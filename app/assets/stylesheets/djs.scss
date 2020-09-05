@@ -93,9 +93,9 @@
     }
     #logo {
       filter: none;
-    }
-    #logo:hover {
-      filter: invert(1);
+      &:hover {
+        filter: invert(1);
+      }
     }
   }
 }
@@ -132,22 +132,11 @@
      padding: 10px 14px;
      line-height: 19px;
     }
-  }
-   li:last-child {
-    border-right: 1px solid rgba(69,69,69,.4);
-    small {
-      color: #ff0;
-      font-size: 8px;
-      position: relative;
-      top: -7px;
-      float: right;
+    &:last-child {
+      border-right: 1px solid rgba(69,69,69,.4);
     }
   }
-  li:last-child:hover {
-    small {
-      color: white;
-    }
-  }
+
   li:hover, .form:hover {
     background-color: black;
     color: white;
@@ -162,10 +151,10 @@
   padding-top: 36px;
   a {
     color: #ffff01;
-  }
-  a:hover {
-    background-color: #ffff01;
-    color: #1e1e1e;
+    &:hover {
+      background-color: #ffff01;
+      color: #1e1e1e;
+    }
   }
   b {
     margin: 0 5px;
