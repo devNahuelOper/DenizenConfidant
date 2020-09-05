@@ -672,11 +672,12 @@
   color: black;
   box-sizing: border-box;
   padding: 8px 54px;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
 }
-#submit-dj:hover {
-  background-color: black;
-  color: white;
-}
+
 
 #success-link {
   color: #ffff01;
