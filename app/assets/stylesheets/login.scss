@@ -370,6 +370,26 @@
   height: inherit;
   width: inherit;
   z-index: 2;
+  li {
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-size: 18px;
+    border-bottom: none;
+    padding-top: 4px;
+    height: 30px;
+    width: 315px;
+    border-top: 1px solid black;
+    background-color: #ffa200;
+    &:first-child {
+      line-height: 18px;
+      color: black;
+      background-color: white;
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
 }
 
 .region-reveal li:hover, .day-reveal li:hover, .month-reveal li:hover, .year-reveal li:hover {
@@ -377,29 +397,6 @@
   color: white;
 }
 
-.region-reveal li {
-  box-sizing: border-box;
-  padding-left: 10px;
-  font-size: 18px;
-  border-bottom: none;
-  padding-top: 4px;
-  height: 30px;
-  width: 315px;
-  border-top: 1px solid black;
-  background-color: #ffa200;
-  // z-index: 2;
-}
-
-.region-reveal li:first-child {
-  line-height: 18px;
-  color: black;
-  background-color: white;
-}
-
-.region-reveal li:first-child:hover {
-  background-color: black;
-  color: white;
-}
 
 .region-hide {
   display: none;
@@ -412,7 +409,6 @@
 
 #preferred-language, .day-dropdown, .month-dropdown, .year-dropdown {
   position: relative;
-  box-sizing: content-box;
   padding-left: 10px;
   font-size: 36px;
   height: 57px;
@@ -435,6 +431,17 @@
   top: 57px;
   z-index: 1000;
   width: inherit;
+  li {
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-size: 18px;
+    border-bottom: none;
+    padding-top: 4px;
+    height: 30px;
+    width: 154px;
+    border-top: 1px solid black;
+    background-color: #ffa200;
+  }
 }
 
 .year-reveal, .day-reveal {
@@ -442,17 +449,7 @@
   overflow-y: scroll;
 }
 
-.language-reveal li, .day-reveal li, .month-reveal li, .year-reveal li {
-  box-sizing: border-box;
-  padding-left: 10px;
-  font-size: 18px;
-  border-bottom: none;
-  padding-top: 4px;
-  height: 30px;
-  width: 154px;
-  border-top: 1px solid black;
-  background-color: #ffa200;
-}
+
 
 .language-reveal li:first-child {
   line-height: 18px;
