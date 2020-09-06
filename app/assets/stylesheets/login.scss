@@ -339,11 +339,6 @@
   background-image: image_url("arrow.png");
 }
 
-#default-region {
-  width: 312px;
-  background-position-x: 295px;
-  background-size: 13px;
-}
 
 .region-dropdown {
   position: relative;
@@ -403,7 +398,6 @@
 }
 
 #default-region-msg {
-  // margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -482,37 +476,38 @@
 }
 
 .day-dropdown {
-  box-sizing: content-box;
   padding-left: 17px;
   width: 70px;
   background-position-x: 68px;;
 }
-.month-dropdown, .year-dropdown {
+.month-dropdown {
   width: 106px;
   background-position-x: 108px;
-  box-sizing: content-box;
   padding-left: 22px;
 }
 
 .year-dropdown {
   width: 112px;
   background-position-x: 114px;
+  padding-left: 22px;
 }
 
-.day-dropdown:hover, .month-dropdown:hover, .year-dropdown:hover {
-  background-color: black;
-  color: white;
+.birthday-dropdown {
+  li:hover {
+    background-color: black;
+    color: white;
+  }
+}
 
-    li {
+.birthday-dropdown:hover {
+   background-color: black;
+   color: white;
+   li {
       color: black;
       background-color: #ffa200;
     }
 }
 
-.day-dropdown li:hover, .month-dropdown li:hover, .year-dropdown li:hover {
-  background-color: black;
-  color: white;
-}
 
 .day-reveal li, .month-reveal li, .year-reveal li {
   width: 70%;
