@@ -332,7 +332,6 @@
 
 
 // DROPDOWNS
-
 %dropdown {
   position: relative;
   background-color: #ffa200;
@@ -358,6 +357,29 @@
   li:hover {
     background-color: black;
     color: white;
+  }
+}
+
+%dropdown-reveal {
+  position: absolute;
+  display: block;
+  left: 0px;
+  top: 57px;
+  z-index: 1000;
+  width: inherit;
+  li {
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-size: 18px;
+    border-bottom: none;
+    padding-top: 4px;
+    height: 30px;
+    border-top: 1px solid black;
+    background-color: #ffa200;
+     &:hover {
+      background-color: black;
+      color: white;
+    }
   }
 }
 
@@ -403,24 +425,10 @@
 }
 
 
-.region-reveal {
-  position: absolute;
-  display: block;
-  left: 0px;
-  top: 57px;
-  height: inherit;
-  width: inherit;
-  z-index: 2;
+.region-reveal, .language-reveal {
+  @extend %dropdown-reveal;
   li {
-    box-sizing: border-box;
-    padding-left: 10px;
-    font-size: 18px;
-    border-bottom: none;
-    padding-top: 4px;
-    height: 30px;
     width: 315px;
-    border-top: 1px solid black;
-    background-color: #ffa200;
     &:first-child {
       line-height: 18px;
       color: black;
@@ -433,28 +441,14 @@
   }
 }
 
+.language-reveal li {
+  width: 154px;
+}
 
-.language-reveal, .day-reveal, .month-reveal, .year-reveal {
-  position: absolute;
-  display: block;
-  left: 0px;
-  top: 57px;
-  z-index: 1000;
-  width: inherit;
+.day-reveal, .month-reveal, .year-reveal {
+  @extend %dropdown-reveal;
   li {
-    box-sizing: border-box;
-    padding-left: 10px;
-    font-size: 18px;
-    border-bottom: none;
-    padding-top: 4px;
-    height: 30px;
-    width: 154px;
-    border-top: 1px solid black;
-    background-color: #ffa200;
-    &:hover {
-      background-color: black;
-      color: white;
-    }
+    width: 70%;
   }
 }
 
@@ -463,32 +457,8 @@
   overflow-y: scroll;
 }
 
-
-
-.language-reveal li:first-child {
-  line-height: 18px;
-  color: black;
-  background-color: white;
-}
-
-
 .region-hide, .language-hide, .day-hide, .month-hide, .year-hide {
   display: none;
-}
-
-
-.region-dropdown li:hover, #preferred-language li:hover {
-  background-color: black;
-  color: white;
-}
-
-
-
-
-
-
-.day-reveal li, .month-reveal li, .year-reveal li {
-  width: 70%;
 }
 
 // 
