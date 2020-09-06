@@ -29,7 +29,7 @@ class LanguageDropdown extends React.Component {
     return (
       <div>Preferred language /
         <br />
-        <button onClick={() => { this.setState({ drop: !this.state.drop }) }} onBlur={this.leave} id="preferred-language">
+        <button onClick={() => { this.setState({ drop: !this.state.drop }) }} onBlur={this.leave} className="language-dropdown" id="preferred-language">
           {this.props.language || 'English'}
           <ul className={this.state.drop ? "language-reveal" : "language-hide"}>
             {/* <li>Select a country:</li> */}

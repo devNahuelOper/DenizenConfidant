@@ -332,12 +332,6 @@
 
 
 // DROPDOWNS
-@mixin bg-image($image, $repeat, $size, $position: center) {
-  background-image: image_url($image);
-  background-repeat: $repeat;
-  background-size: $size;
-  background-position: $position;
-}
 
 %dropdown {
   position: relative;
@@ -373,6 +367,42 @@
   background-position-x: 295px;
 }
 
+#default-region-msg {
+  margin-bottom: 10px;
+}
+
+.language-dropdown {
+  @extend %dropdown;
+  width: 210px;
+  background-position-x: 198px;
+}
+
+.birthday-dropdown {
+  @extend %dropdown;
+  li:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.day-dropdown {
+  padding-left: 17px;
+  width: 70px;
+  background-position-x: 68px;;
+}
+.month-dropdown {
+  width: 106px;
+  background-position-x: 108px;
+  padding-left: 22px;
+}
+
+.year-dropdown {
+  width: 112px;
+  background-position-x: 114px;
+  padding-left: 22px;
+}
+
+
 .region-reveal {
   position: absolute;
   display: block;
@@ -403,26 +433,6 @@
   }
 }
 
-.region-reveal li:hover, .day-reveal li:hover, .month-reveal li:hover, .year-reveal li:hover {
-  background-color: black;
-  color: white;
-}
-
-.region-hide {
-  display: none;
-}
-
-#default-region-msg {
-  margin-bottom: 10px;
-}
-
-#preferred-language {
-  @extend %dropdown;
-  width: 210px;
-  background-position-x: 198px;
-}
-
-
 
 .language-reveal, .day-reveal, .month-reveal, .year-reveal {
   position: absolute;
@@ -441,6 +451,10 @@
     width: 154px;
     border-top: 1px solid black;
     background-color: #ffa200;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
   }
 }
 
@@ -458,7 +472,7 @@
 }
 
 
-.language-hide, .day-hide, .month-hide, .year-hide {
+.region-hide, .language-hide, .day-hide, .month-hide, .year-hide {
   display: none;
 }
 
@@ -468,30 +482,6 @@
   color: white;
 }
 
-.birthday-dropdown {
-  @extend %dropdown;
-  li:hover {
-    background-color: black;
-    color: white;
-  }
-}
-
-.day-dropdown {
-  padding-left: 17px;
-  width: 70px;
-  background-position-x: 68px;;
-}
-.month-dropdown {
-  width: 106px;
-  background-position-x: 108px;
-  padding-left: 22px;
-}
-
-.year-dropdown {
-  width: 112px;
-  background-position-x: 114px;
-  padding-left: 22px;
-}
 
 
 
