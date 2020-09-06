@@ -484,10 +484,10 @@
     color: #9c9c9c;
     a {
       color: #fdff00;
-    }
-    a:hover {
-      color: #1e1e1e;
-      background-color: #fdff00;
+      &:hover {
+        color: #1e1e1e;
+        background-color: #fdff00;
+      }
     }
   }
 }
