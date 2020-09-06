@@ -29,7 +29,7 @@ class BirthdayDropdown extends React.Component {
     return (
       <div>Birthday /
         <br />
-        <button onClick={() => { this.setState({ day: !this.state.day }) }} onBlur={this.leave('day')} className="day-dropdown">
+        <button onClick={() => { this.setState({ day: !this.state.day }) }} onBlur={this.leave('day')} className="day-dropdown birthday-dropdown">
           {this.props.birthday.day}
           <ul className={this.state.day ? "day-reveal" : "day-hide"}>
            
@@ -46,7 +46,7 @@ class BirthdayDropdown extends React.Component {
 
           </ul>
         </button>
-        <button onClick={() => { this.setState({ month: !this.state.month }) }} onBlur={this.leave('month')} className="month-dropdown">
+        <button onClick={() => { this.setState({ month: !this.state.month }) }} onBlur={this.leave('month')} className="month-dropdown birthday-dropdown">
           {this.props.birthday.month}
           <ul className={this.state.month ? "month-reveal" : "month-hide"}>
            
@@ -63,7 +63,7 @@ class BirthdayDropdown extends React.Component {
 
           </ul>
         </button>
-        <button onClick={() => { this.setState({ year: !this.state.year }) }} onBlur={this.leave('year')} className="year-dropdown">
+        <button onClick={() => { this.setState({ year: !this.state.year }) }} onBlur={this.leave('year')} className="year-dropdown birthday-dropdown">
           {this.props.birthday.year}
           <ul className={this.state.year ? "year-reveal" : "year-hide"}>
           

@@ -327,7 +327,6 @@
 }
 
 #default-region, #preferred-language {
-  box-sizing: content-box;
   padding-left: 10px;
   font-size: 36px;
   height: 57px;
@@ -348,7 +347,6 @@
 
 .region-dropdown {
   position: relative;
-  box-sizing: content-box;
   padding-left: 10px;
   font-size: 36px;
   height: 57px;
