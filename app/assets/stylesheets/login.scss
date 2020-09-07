@@ -45,60 +45,38 @@
   display: flex;
   flex-direction: row;
   height: 22px;
-}
-
-#links li {
-  width: 141px;
-  border-bottom: 2px solid;
-  box-sizing: content-box;
-  padding-left: 8px;
-  padding-bottom: 2px;
-  margin-right: 8px;
-  cursor: pointer;
-  a {
-    padding-right: 80%;
+  li {
+    width: 141px;
+    border-bottom: 2px solid;
+    box-sizing: content-box;
+    padding-left: 8px;
+    padding-bottom: 2px;
+    margin-right: 8px;
+    cursor: pointer;
+    &:hover {
+      color: black;
+    }
+    &:last-child {
+      padding-left: 0;
+    }
+    a {
+      padding-right: 80%;
+    }
   }
 }
-#links li:hover {
-  color: black;
-}
-#links li:first-child {
-  border-color: #ff0;
-}
-#links li:first-child:hover {
-  background-color: #ff0;
-}
-#links li:nth-of-type(2) {
-  border-color: #6b96c2;
-}
-#links li:nth-of-type(2):hover {
-  background-color: #6b96c2;
-}
-#links li:nth-of-type(3) {
-  border-color: #b4bd02;
-}
-#links li:nth-of-type(3):hover {
-  background-color: #b4bd02;
-}
-#links li:last-child {
-  border-color: white;
-  padding-left: 0;
-}
-#links li:last-child:hover {
-  background-color: white;
+
+$colors: (#ff0, #6b96c2, #b4bd02, white);
+@each $color in $colors {
+  $i: index($colors, $color);
+  #links li:nth-of-type(#{$i}) {
+    border-color: $color;
+    &:hover {
+      background-color: $color;
+    }
+  }
 }
 
 
-// #nav-container h1 {
-//   position: absolute;
-//   top: 167px;
-//   right: 37%;
-//   font-size: 64px;
-//   letter-spacing: -2px;
-//   font-weight: 500;
-//   margin-right: 300px;
-//   padding-bottom: 6px;
-// }
 
 .subnav-container {
   border-top: 1px solid rgba(97, 71, 71, 0.4);
@@ -250,11 +228,6 @@
     width: 960px;
     margin: 0 auto;
     display:flex;
-    // .signup-form {
-    //   position: relative;
-    //   right: unset;
-    //   margin-left: unset;
-    // }
   }
 
 .signup-input {
@@ -276,6 +249,10 @@
   width: 240px;
   text-align: center;
   font-size: 24px;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
 }
 
 .signup-button {
@@ -326,117 +303,126 @@
   margin-bottom: 10px;
 }
 
-#default-region, #preferred-language {
-  box-sizing: content-box;
-  padding-left: 10px;
-  font-size: 36px;
-  height: 57px;
-  border: 1px solid black;
-  background-color: #ffa200;
-  -webkit-appearance: none;
-  background-repeat: no-repeat;
-  background-position-y: center;
-  
-  background-image: image_url("arrow.png");
-}
 
-#default-region {
-  width: 312px;
-  background-position-x: 295px;
-  background-size: 13px;
-}
-
-.region-dropdown {
+// DROPDOWNS
+%dropdown {
   position: relative;
-  box-sizing: content-box;
-  padding-left: 10px;
-  font-size: 36px;
+  background-color: #ffa200;
+  color: black;
   height: 57px;
-  width: 312px;
-  border: 1px solid black;
-  background-color: #ffa200;
-  color: black;
-  -webkit-appearance: none;
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-image: image_url("arrow.png");
-  background-position-x: 295px;
-  background-size: 13px;
-}
-
-.region-reveal {
-  position: absolute;
-  display: block;
-  left: 0px;
-  top: 57px;
-  height: inherit;
-  width: inherit;
-  z-index: 2;
-}
-
-.region-reveal li:hover, .day-reveal li:hover, .month-reveal li:hover, .year-reveal li:hover {
-  background-color: black;
-  color: white;
-}
-
-.region-reveal li {
-  box-sizing: border-box;
-  padding-left: 10px;
-  font-size: 18px;
-  border-bottom: none;
-  padding-top: 4px;
-  height: 30px;
-  width: 315px;
-  border-top: 1px solid black;
-  background-color: #ffa200;
-  // z-index: 2;
-}
-
-.region-reveal li:first-child {
-  line-height: 18px;
-  color: black;
-  background-color: white;
-}
-
-.region-reveal li:first-child:hover {
-  background-color: black;
-  color: white;
-}
-
-.region-hide {
-  display: none;
-}
-
-#default-region-msg {
-  // margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-#preferred-language, .day-dropdown, .month-dropdown, .year-dropdown {
-  position: relative;
-  box-sizing: content-box;
-  padding-left: 10px;
   font-size: 36px;
-  height: 57px;
-  width: 210px;
   border: 1px solid black;
-  background-color: #ffa200;
-  color: black;
+  padding-left: 10px;
   -webkit-appearance: none;
-  background-repeat: no-repeat;
-  background-position-y: center;
   background-image: image_url("arrow.png");
-  background-position-x: 198px;
+  background-repeat: no-repeat;
   background-size: 13px;
+  background-position-y: center;
+  &:hover {
+    background-color: black;
+    color: white;
+    background-image: image_url("arrowhite.png");
+     li {
+      color: black;
+      background-color: #ffa200;
+    }
+  }
+  li:hover {
+    background-color: black;
+    color: white;
+  }
 }
 
-.language-reveal, .day-reveal, .month-reveal, .year-reveal {
+%dropdown-reveal {
   position: absolute;
   display: block;
   left: 0px;
   top: 57px;
   z-index: 1000;
   width: inherit;
+  li {
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-size: 18px;
+    border-bottom: none;
+    padding-top: 4px;
+    height: 30px;
+    border-top: 1px solid black;
+    background-color: #ffa200;
+     &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+}
+
+.region-dropdown {
+  @extend %dropdown;
+  width: 312px;
+  background-position-x: 295px;
+}
+
+#default-region-msg {
+  margin-bottom: 10px;
+}
+
+.language-dropdown {
+  @extend %dropdown;
+  width: 210px;
+  background-position-x: 198px;
+}
+
+.birthday-dropdown {
+  @extend %dropdown;
+  li:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.day-dropdown {
+  padding-left: 17px;
+  width: 70px;
+  background-position-x: 68px;;
+}
+.month-dropdown {
+  width: 106px;
+  background-position-x: 108px;
+  padding-left: 22px;
+}
+
+.year-dropdown {
+  width: 112px;
+  background-position-x: 114px;
+  padding-left: 22px;
+}
+
+
+.region-reveal, .language-reveal {
+  @extend %dropdown-reveal;
+  li {
+    width: 315px;
+    &:first-child {
+      line-height: 18px;
+      color: black;
+      background-color: white;
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+  }
+}
+
+.language-reveal li {
+  width: 154px;
+}
+
+.day-reveal, .month-reveal, .year-reveal {
+  @extend %dropdown-reveal;
+  li {
+    width: 70%;
+  }
 }
 
 .year-reveal, .day-reveal {
@@ -444,84 +430,11 @@
   overflow-y: scroll;
 }
 
-.language-reveal li, .day-reveal li, .month-reveal li, .year-reveal li {
-  box-sizing: border-box;
-  padding-left: 10px;
-  font-size: 18px;
-  border-bottom: none;
-  padding-top: 4px;
-  height: 30px;
-  width: 154px;
-  border-top: 1px solid black;
-  background-color: #ffa200;
-}
-
-.language-reveal li:first-child {
-  line-height: 18px;
-  color: black;
-  background-color: white;
-}
-
-
-.language-hide, .day-hide, .month-hide, .year-hide {
+.region-hide, .language-hide, .day-hide, .month-hide, .year-hide {
   display: none;
 }
 
-.region-dropdown:hover, #preferred-language:hover, .login-button:hover, .signup-button:hover {
-  background-color: black;
-  color: white;
-  cursor: pointer;
-}
-
-.region-dropdown:hover, #preferred-language:hover, .day-dropdown:hover, .month-dropdown:hover, .year-dropdown:hover {
-  background-image: image_url("arrowhite.png");
-    li {
-      color: black;
-      background-color: #ffa200;
-    }
-}
-
-.region-dropdown li:hover, #preferred-language li:hover {
-  background-color: black;
-  color: white;
-}
-
-.day-dropdown {
-  box-sizing: content-box;
-  padding-left: 17px;
-  width: 70px;
-  background-position-x: 68px;;
-}
-.month-dropdown, .year-dropdown {
-  width: 106px;
-  background-position-x: 108px;
-  box-sizing: content-box;
-  padding-left: 22px;
-}
-
-.year-dropdown {
-  width: 112px;
-  background-position-x: 114px;
-}
-
-.day-dropdown:hover, .month-dropdown:hover, .year-dropdown:hover {
-  background-color: black;
-  color: white;
-
-    li {
-      color: black;
-      background-color: #ffa200;
-    }
-}
-
-.day-dropdown li:hover, .month-dropdown li:hover, .year-dropdown li:hover {
-  background-color: black;
-  color: white;
-}
-
-.day-reveal li, .month-reveal li, .year-reveal li {
-  width: 70%;
-}
+// 
 
 
 #gender {
@@ -672,16 +585,8 @@
   }
 }
 
-// .subnav-drop:hover {
-//   background-color: black;
-//   color: white;
-//   .reveal {
-//     color: black;
-//   }
-// }
 
-
-// Small
+// MEDIA QUERIES
 
 @media only screen and (max-width: 972px) {
 
@@ -729,9 +634,6 @@
   #subnav {
     display: none;
     width: 674px;
-    // ul {
-    //   width: 674px;
-    // }
   }
 
   .subnav-toggle {

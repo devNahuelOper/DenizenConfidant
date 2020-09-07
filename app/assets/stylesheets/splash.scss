@@ -3,13 +3,23 @@ $dj-yellow: #ffff01;
 $genre-green: #b4bd00;
 $event-blue: #6a96c2;
 
+@mixin text-hover($color, $background) {
+  &:hover {
+    color: $color;
+    background-color: $background;
+  }
+}
+
+@mixin bg-image($image, $repeat, $size, $position: center) {
+  background-image: image_url($image);
+  background-repeat: $repeat;
+  background-size: $size;
+  background-position: $position;
+}
+
 .splash-header-container {
   position: relative;
-  background-image: image_url("red-rave.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-position-x: 1px;
+  @include bg-image("red-rave.png", no-repeat, cover, 1px center);
   height: 575px;
   width: 100%;
 
@@ -47,18 +57,15 @@ $event-blue: #6a96c2;
   width: 100px;
   filter: drop-shadow(7px -2px 7px #2e2e2e);
   z-index: 1000;
-  image-rendering: -webkit-optimize-contrast;
+  &:hover {
+    filter: invert(1);
+  }
 }
 
-#logo:hover {
-  filter: invert(1);
-}
+
 
 #splash-navbar {
-  background-image: image_url("logo.png");
-  background-repeat: no-repeat;
-  background-size: 100px;
-  background-position-x: 168px;
+  @include bg-image("logo.png", no-repeat, 100px, 168px center);
 }
 
 #berlin-rave {
@@ -91,17 +98,13 @@ $event-blue: #6a96c2;
   text-align: center;
   font-size: 36px;
   letter-spacing: -1px;
+  &:hover {
+    height: 29px;
+    cursor: default;
+    @include bg-image("ravve.png", no-repeat, 11%, -0.4px 12px);
+  }
 }
 
-.denizen-confidant:hover {
-  height: 29px;
-  background-image: image_url("ravve.png");
-  cursor: default;
-  background-size: 11%;
-  background-repeat: no-repeat;
-  background-position-x: -0.4px;
-  background-position-y: 12px;
-}
 .denizen-confidant::first-letter:hover {
   overflow: hidden;
 }
@@ -170,7 +173,8 @@ $event-blue: #6a96c2;
 }
  
 h3 {
-  text-align: center; }
+  text-align: center; 
+}
  
 .each-slide > div {
   display: flex;
@@ -205,42 +209,28 @@ h3 {
       display: none;
     }
   }
-
   img:first-of-type {
     float: inline-start;
   }
-
 }
 
 #redrave {
-  background-image: image_url('red-rave.png');
-  background-size: cover;
-  background-position: center;
+  @include bg-image('red-rave.png', repeat, cover, center);
 }
 #ethereal {
-  background-image: image_url('ethereal-rave.png');
-  background-size: cover;
-  background-position: center;
+  @include bg-image('ethereal-rave.png', repeat, cover, center);
 }
 #ravenite {
-  background-image: image_url('rave-nite.png');
-  background-size: cover;
-  background-position: center;
+  @include bg-image('rave-nite.png', repeat, cover, center);
 }
 #tbilisi {
-  background-image: image_url('tbilisi-rave.png');
-  background-size: cover;
-  background-position: center;
+  @include bg-image('tbilisi-rave.png', repeat, cover, center);
 }
 #neon {
-  background-image: image_url('rave.jpg');
-  background-size: cover;
-  background-position: center;
+  @include bg-image('rave.jpg', repeat, cover, center);
 }
 #berghain {
-  background-image: image_url('berghain.png');
-  background-size: cover;
-  background-position: center;
+  @include bg-image('berghain.png', repeat, cover, center);
 }
  
 .each-fade h2 {
@@ -315,9 +305,9 @@ h3 {
     height: 30px;
     opacity: 0.5;
     cursor: pointer;
-}
-#left-arrow:hover, #right-arrow:hover {
-  opacity: 0.8;
+    &:hover {
+      opacity: 0.8;
+    }
 }
 
 // Mid Section
@@ -371,9 +361,8 @@ h3 {
   width: 960px;
   margin: 0 auto;
   a h1:hover {
-    background-color: #b4bd00;
-    color: #2a2a2a;
-   }
+    @include text-hover(#2a2a2a, $genre-green);
+  }
 }
 
 .main-news {
@@ -447,6 +436,7 @@ h3 {
   width: 144px;
   height: 206px;
 }
+
 
 
 
@@ -539,11 +529,10 @@ h3 {
         font-size: 5px;
         font-weight: bold;
       }
-    }
-    a:hover {
-      color: #000008;
-      background-color: $dj-yellow;
-      border-color: #000008;
+      &:hover {
+        @include text-hover(#000008, $dj-yellow);
+        border-color: #000008;
+      }
     }
     img {
       vertical-align: middle;
@@ -556,9 +545,17 @@ h3 {
       width: 99%;
       position: relative;
       box-shadow: 0px 0px 0px 5px #f1f3f4 inset;
-      border: 1px groove #b4bd00;
+      border: 1px groove #b4bd00;      
     }
+    @media not all and (min-resolution:.001dpcm)
+    { @supports (-webkit-appearance:none) {
+      audio { 
+        width: 197px;
+        -webkit-transform: scale(0.76) translateX(-31px);
+      }
+    }}
 }
+
 .song:first-of-type a {
   padding-right: 17px;
 }

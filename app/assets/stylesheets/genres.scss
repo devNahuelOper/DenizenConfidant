@@ -12,9 +12,9 @@
   background-position: center;
   #logo {
     filter: none;
-  }
-  #logo:hover {
-    filter: invert(1);
+    &:hover {
+      filter: invert(1);
+    }
   }
 }
 
@@ -121,9 +121,9 @@
 
   .genre {
     width: fit-content;
-  }
-  .genre:hover {
-    transform: scale(1.1);
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -136,19 +136,15 @@
   background-color: #b4be00;
 }
 
-#genre-name {
-  // vertical-align: super;
-}
 
 .genre-avatar {
   width: 25px;
   height: 25px;
   vertical-align: middle;
+  &:hover {
+    background-color: none;
+  }
 }
-.genre-avatar:hover {
-  background-color: none;
-}
-
 
 
 //Genre Show
@@ -176,12 +172,12 @@
     color: white;
     position: relative;
     top: 12px;
-    
+    &:hover {
+      filter: invert(1);
+      -webkit-text-stroke: 1px black;
+    }
   }
-  a:hover {
-    filter: invert(1);
-    -webkit-text-stroke: 1px black;
-  }
+  
   #prev {
     position: relative;
     top: 2px;
@@ -234,10 +230,6 @@
     // color: #1d1d1d;
     color: #fdff00;
     font-size: 18px;
-    a {
-    //  -webkit-text-stroke: 1px #b4be01;
-    //  -webkit-text-stroke: 1px black;
-    }
     a:hover {
       color: #1e1e1e;
       background-color: #fdff00;
