@@ -53,6 +53,9 @@
     padding-bottom: 2px;
     margin-right: 8px;
     cursor: pointer;
+    &:hover {
+      color: black;
+    }
     a {
       padding-right: 80%;
     }
@@ -60,9 +63,6 @@
 }
 
 
-#links li:hover {
-  color: black;
-}
 #links li:first-child {
   border-color: #ff0;
 }
