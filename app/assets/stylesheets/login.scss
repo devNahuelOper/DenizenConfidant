@@ -56,6 +56,12 @@
     &:hover {
       color: black;
     }
+    &:first-child {
+      border-color: #ff0;
+      &:hover {
+        background-color: #ff0;
+      }
+    }
     a {
       padding-right: 80%;
     }
@@ -63,12 +69,6 @@
 }
 
 
-#links li:first-child {
-  border-color: #ff0;
-}
-#links li:first-child:hover {
-  background-color: #ff0;
-}
 #links li:nth-of-type(2) {
   border-color: #6b96c2;
 }
