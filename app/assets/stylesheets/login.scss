@@ -45,20 +45,21 @@
   display: flex;
   flex-direction: row;
   height: 22px;
-}
-
-#links li {
-  width: 141px;
-  border-bottom: 2px solid;
-  box-sizing: content-box;
-  padding-left: 8px;
-  padding-bottom: 2px;
-  margin-right: 8px;
-  cursor: pointer;
-  a {
-    padding-right: 80%;
+  li {
+    width: 141px;
+    border-bottom: 2px solid;
+    box-sizing: content-box;
+    padding-left: 8px;
+    padding-bottom: 2px;
+    margin-right: 8px;
+    cursor: pointer;
+    a {
+      padding-right: 80%;
+    }
   }
 }
+
+
 #links li:hover {
   color: black;
 }
