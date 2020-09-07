@@ -56,11 +56,8 @@
     &:hover {
       color: black;
     }
-    &:first-child {
-      border-color: #ff0;
-      &:hover {
-        background-color: #ff0;
-      }
+    &:last-child {
+      padding-left: 0;
     }
     a {
       padding-right: 80%;
@@ -68,26 +65,18 @@
   }
 }
 
+$colors: (#ff0, #6b96c2, #b4bd02, white);
+@each $color in $colors {
+  $i: index($colors, $color);
+  #links li:nth-of-type(#{$i}) {
+    border-color: $color;
+    &:hover {
+      background-color: $color;
+    }
+  }
+}
 
-#links li:nth-of-type(2) {
-  border-color: #6b96c2;
-}
-#links li:nth-of-type(2):hover {
-  background-color: #6b96c2;
-}
-#links li:nth-of-type(3) {
-  border-color: #b4bd02;
-}
-#links li:nth-of-type(3):hover {
-  background-color: #b4bd02;
-}
-#links li:last-child {
-  border-color: white;
-  padding-left: 0;
-}
-#links li:last-child:hover {
-  background-color: white;
-}
+
 
 .subnav-container {
   border-top: 1px solid rgba(97, 71, 71, 0.4);
