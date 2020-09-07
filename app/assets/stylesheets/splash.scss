@@ -545,9 +545,17 @@ h3 {
       width: 99%;
       position: relative;
       box-shadow: 0px 0px 0px 5px #f1f3f4 inset;
-      border: 1px groove #b4bd00;
+      border: 1px groove #b4bd00;      
     }
+    @media not all and (min-resolution:.001dpcm)
+    { @supports (-webkit-appearance:none) {
+      audio { 
+        width: 197px;
+        -webkit-transform: scale(0.76) translateX(-31px);
+      }
+    }}
 }
+
 .song:first-of-type a {
   padding-right: 17px;
 }
