@@ -17,6 +17,7 @@ class WelcomeDropdown extends React.Component {
 
 
   clicker(e) {
+    e.preventDefault();
     this.setState({ "drop": true });
   }
 
