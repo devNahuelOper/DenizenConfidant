@@ -10,11 +10,37 @@ class Dropdown extends React.Component {
     }
     this.clicker = this.clicker.bind(this);
     this.leave = this.leave.bind(this);
+    this.mobileDrop = this.mobileDrop.bind(this);
+  }
+
+  mobileDrop(e) {
+    e.preventDefault();
+    this.setState({ "drop": true });
+    window.onfocus = function (e) {
+      const reveal = $('.reveal');
+      if (reveal.contains(e.target)) {
+        return;
+      }
+      this.leave();
+    }
+    $('.log-link').on('click', () => {
+      $('.login-signup ul').hide();
+      $('.login-signup span').on('click', () => {
+        $('.login-signup ul').show();
+      });
+    })
   }
 
   clicker(e) {
     e.preventDefault();
     this.setState({ "drop": true });
+    // window.onclick = function (e) {
+    //   const reveal = $('.reveal');
+    //   if (reveal.contains(e.target)) {
+    //     return;
+    //   }
+    //   this.leave();
+    // }
   }
 
   leave(e) {
@@ -26,7 +52,7 @@ class Dropdown extends React.Component {
     return (
      <div className="login-wrap">
         {/* <Tappable onTap={this.clicker}> */}
-        <button onClick={this.clicker} onFocus={this.clicker} onBlur={this.leave}  className="login-signup"> 
+        <button onClick={this.mobileDrop} onFocus={this.clicker} onBlur={this.leave}  className="login-signup"> 
         <span>Login / Register <small>⬇︎</small></span> 
          <ul className={this.state.drop ? "reveal" : "hide"}>
             <li><Link onClick={this.leave} className="log-link" to="/login">Login</Link></li>
