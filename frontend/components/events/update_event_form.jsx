@@ -214,7 +214,7 @@ class UpdateEventForm extends React.Component {
                     </label>
                   </li>
                   <li>
-                    <label>Description and updates/ <small>Use this space to tell the world about your event. You can add new updates at any time.</small><br />
+                    <label>Description and updates/ <small id="description-msg">Use this space to tell the world about your event. You can add new updates at any time.</small><br />
                       <textarea name="Description"
                         id="update-description"
                         value={this.state.description}

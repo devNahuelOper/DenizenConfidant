@@ -566,8 +566,17 @@
       }
     }
   }
+  .eventshow-nav-container {
+    height: 240px;
+    .events-nav {
+      height: 235px;
+    }
+  }
   .eventshow-header {
     width: 360px;
+    #longH2 {
+      font-size: 40px;
+    }
   }
   .subheader-container {
     .eventshow-subheader {
