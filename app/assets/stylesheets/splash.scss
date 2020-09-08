@@ -549,8 +549,8 @@ h3 {
     }
     @media not all and (min-resolution:.001dpcm)
     { @supports (-webkit-appearance:none) {
-      audio { 
-        width: 200x;
+      audio, #speed { 
+        width: 197px !important;
         -webkit-transform: scale(0.76) translateX(-31px);
       }
     }}
