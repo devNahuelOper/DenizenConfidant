@@ -968,6 +968,93 @@
   }
 }
 
+@media only screen and (max-width: 499px) {
+  .djs-nav {
+    width: 360px;
+    nav {
+      width: 360px;
+    }
+    h1 {
+      width: 360px;
+    }
+  }
+  .djs-subnav {
+    width: 360px;
+    ul {
+      width: 360px;
+    }
+  }
+  .dj-directory {
+    width: 360px;
+  }
+  .djs {
+    width: 360px;
+  }
+  .dj-sort {
+    width: 160px;
+  }
+  .dj {
+    font-size: 15px;
+  }
+  #black, #dimitri {
+    font-size: 13px;
+  }
+
+  .djshow-nav-container {
+    // height: 400px;
+    .djs-nav {
+      //  height: 380px;
+      #djshow-header {
+        width: 360px;
+      }
+    }
+  }
+
+  #dj-show {
+    .djs-subnav {
+      font-size: 12px;
+    }
+  }
+
+  .djsubheader-container {
+    .djshow-subheader {
+       width: 360px;
+      .details {
+        white-space: nowrap;
+        li {
+          margin-right: 80px;
+        }
+      }
+    }
+  }
+  .dj-main {
+    .bio-container {
+       width: 360px;
+    }
+    .playlist {
+      width: 360px;
+      .songs {
+         width: 360px;
+         .dj-song {
+           width: 220px;
+         }
+      }
+      audio {
+        width: 100%;
+      }
+    }
+  }
+  #requirements {
+    width: 360px;
+  }
+  .dj-form-container {
+    .form-wrap {
+      width: 360px;
+    }
+  }
+}
+
+
 // Larger
 
 @media only screen and (min-width: 1300px){

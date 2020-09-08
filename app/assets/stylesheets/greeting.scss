@@ -58,6 +58,15 @@ body {
     padding-right: 20px;
     box-sizing: border-box;
   }
+     @media not all and (min-resolution:.001dpcm)
+    { @supports (-webkit-appearance:none) {
+      span {
+        padding-bottom: 31px;
+        &:hover {
+          padding-bottom: 37px !important;
+        }
+      }
+    }}
 }
 
 .reveal {
@@ -201,10 +210,19 @@ body {
       font-size: 14px;
       width: 560px;
       margin: 5px 10px 6px 3px;
+      &:hover {
+        padding: 19px 17px 19px 3px;
+      }
     }
-    span:hover {
-      padding: 19px 17px 19px 3px;
-    }
+    //   @media not all and (min-resolution:.001dpcm)
+    // { @supports (-webkit-appearance:none) {
+    //   span {
+    //     margin: 5px 10px 24px 3px;
+    //     &:hover {
+    //       padding: 19px 17px 37px 3px;
+    //     }
+    //   }
+    // }}
   }
   .logout-dropdown {
     span {
