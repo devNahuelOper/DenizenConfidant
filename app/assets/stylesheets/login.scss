@@ -768,12 +768,7 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
       width: 490px;
     }
   }
-  // #subnav {
-  //   width: 490px;
-  //   ul {
-  //     width: 490px;
-  //   }
-  // }
+
    .subnav-toggle {
     width: 490px;
   }
@@ -809,6 +804,63 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     .form-wrap {
       width: 490px;
     }
+  }
+}
+
+@media only screen and (max-width: 499px) {
+  #nav-container {
+    #navbar {
+      width: 360px;
+      nav {
+        width: 360px;
+        #links {
+          flex-direction: column;
+        }
+      }
+    }
+    h1 {
+      width: 360px;
+    }
+  }
+
+  //  .subnav-toggle {
+  //   width: 490px;
+  // }
+
+  // .subnav-drop {
+  //   width: 490px;
+  //   span {
+  //     width: 470px;
+  //   }
+  //   span:hover {
+  //     small {
+  //       margin-right: 14px;
+  //     }
+  //   }
+  // }
+
+
+  .login-form-container {
+    .form-wrap {
+      width: 360px;
+        .login-form {
+          width: 360px;
+            ul {
+              width: 360px;
+            }
+        }
+        .demo-login {
+          width: 360px;
+        }
+    }
+  }
+  .signup-form-container {
+    .form-wrap {
+      width: 360px;
+    }
+  }
+  #lang-bday {
+    flex-direction: column;
   }
 }
 

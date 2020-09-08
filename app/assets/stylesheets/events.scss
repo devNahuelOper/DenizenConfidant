@@ -527,6 +527,72 @@
   }
 }
 
+@media only screen and (max-width: 499px) {
+  .events-index {
+    .events-nav {
+      width: 360px;
+      nav {
+        width: 360px;
+        #links {
+          flex-direction: column;
+        }
+      }
+      h1 {
+        width: 360px;
+      }
+    }
+    #events-subnav {
+      width: 360px;
+      ul {
+        width: 360px;
+      }
+    }
+    .local-events {
+      width: 360px;
+      .eventlist {
+        overflow: hidden;
+      }
+      .event {
+        font-size: 8px;
+        margin-right: 11px;
+        img {
+          width: 82px;
+        }
+      }
+    }
+    .top-events {
+       section, #content-title, .eventlist, hr {
+        width: 360px;
+      }
+    }
+  }
+  .eventshow-header {
+    width: 360px;
+  }
+  .subheader-container {
+    .eventshow-subheader {
+      width: 360px;
+      height: 65px;
+      .details {
+        width: 360px;
+      }
+    }
+  }
+  .main-container {
+    .eventshow-main {
+      width: 360px;
+      #headliners {
+        font-size: 24px;
+      }
+      #event-image {
+        width: 360px;
+        height: 300px;
+      }
+    }
+  }
+}
+
+
 
 
 // Larger
