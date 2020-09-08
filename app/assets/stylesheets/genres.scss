@@ -452,6 +452,73 @@
   }
 }
 
+@media only screen and (max-width: 499px) {
+  .genre-nav {
+    width: 360px;
+    nav {
+      width: 360px;
+      #logo {
+        width: 80px;
+        height: 75px;
+      }
+      #links  {
+       flex-direction: column;
+       li {
+         width: 75px;
+       }
+      }
+    }
+    h1 {
+      width: 360px;
+    }
+  }
+  .genre-subnav {
+    width: 360px;
+    ul {
+      width: 360px;
+    }
+  }
+  .genres-container h1 {
+    font-size: 20px;
+  }
+  .genres {
+    width: 360px;
+    font-size: 12px;
+  }
+  #progressive {
+    font-size: 10px;
+  }
+  .genre-avatar {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .genreshow-header {
+    width: 360px;
+    h1 {
+      // line-height: 3em;
+      font-size: 52px;
+    }
+    a {
+      // top: 30px;
+    }
+  }
+  #genre-bio {
+    max-height: 300px;
+    overflow: scroll;
+  }
+ 
+  .description-container, .examples {
+    width: 360px;
+  }
+  .example-list {
+    columns: 3;
+    #dj-link {
+      font-size: 12px;
+    }
+  }
+}
+
 // Larger
 
 @media only screen and (min-width: 1300px){

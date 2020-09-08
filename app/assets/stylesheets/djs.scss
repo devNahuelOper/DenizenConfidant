@@ -973,6 +973,9 @@
     width: 360px;
     nav {
       width: 360px;
+      #links {
+        flex-direction: column;
+      }
     }
     h1 {
       width: 360px;
@@ -984,6 +987,18 @@
       width: 360px;
     }
   }
+  .subnav-toggle {
+    width: 360px !important;
+  }
+  .subnav-drop {
+    width: 360px !important;
+    span {
+      width: 340px !important;
+      &:hover {
+        width: 360px !important;
+      }
+    }
+  }
   .dj-directory {
     width: 360px;
   }
@@ -991,7 +1006,8 @@
     width: 360px;
   }
   .dj-sort {
-    width: 160px;
+    width: 180px;
+    min-height: 250px;
   }
   .dj {
     font-size: 15px;
@@ -1030,11 +1046,17 @@
   .dj-main {
     .bio-container {
        width: 360px;
+       #bio {
+        max-height: 400px;
+        overflow: scroll;
+       }
     }
     .playlist {
       width: 360px;
       .songs {
          width: 360px;
+         overflow: scroll;
+         max-height: 300px;
          .dj-song {
            width: 220px;
          }
