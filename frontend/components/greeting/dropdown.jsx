@@ -34,13 +34,6 @@ class Dropdown extends React.Component {
   clicker(e) {
     e.preventDefault();
     this.setState({ "drop": true });
-    // window.onclick = function (e) {
-    //   const reveal = $('.reveal');
-    //   if (reveal.contains(e.target)) {
-    //     return;
-    //   }
-    //   this.leave();
-    // }
   }
 
   leave(e) {

@@ -532,6 +532,7 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
   // padding-left: 12px;
   border: 1px solid #6147479e;
   margin-top: 8px;
+  background-color: white;
   .reveal {
     background-color: #ffa100;
     position: relative;
@@ -556,6 +557,7 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     justify-content: space-between;
     padding: 11px 0px 9px 16px;
     margin: 0 8px 1px 5px;
+    background-color: white;
   }
   small {
     font-size: 12px;
@@ -815,6 +817,11 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
         width: 360px;
         #links {
           flex-direction: column;
+          li a {
+            display: inline-block;
+            width: 100%;
+            padding-right: unset;
+          }
         }
       }
     }

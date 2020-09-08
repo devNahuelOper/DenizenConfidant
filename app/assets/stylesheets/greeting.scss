@@ -326,14 +326,17 @@ body {
       margin-right: 12px;
     }
   }
+  .welcome-container {
+    width: 360px;
+  }
   .welcome-wrap {
     border-right: unset;
   }
   #welcome-msg {
-    left: -95px;
+    left: -100px;
   }
   #dj-icon {
-    margin-left: 4px;
+    margin-left: -5px;
   }
 }
 
