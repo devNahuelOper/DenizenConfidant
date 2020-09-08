@@ -243,19 +243,19 @@ class SignupForm extends React.Component {
 
               <span id="default-region-msg">This selection is your default for viewing events, clubs and other local content.</span>
 
-              <li>
-          <div><LanguageDropdown 
+              <li id="lang-bday">
+                <LanguageDropdown 
                   language={this.state.language}
-                  onChange={(language) => this.setState({ language: language })} /></div>
+                  onChange={(language) => this.setState({ language: language })} />
 
-         <div><BirthdayDropdown 
+                <BirthdayDropdown 
                   birthday={this.state.birthday}
                   handleChange={(field, input) => {
                     const newBirthday = this.state.birthday;
                     newBirthday[field] = input;
                     this.setState({birthday: newBirthday});
                   }
-                  } /></div>
+                  } />
               </li>
 
             
