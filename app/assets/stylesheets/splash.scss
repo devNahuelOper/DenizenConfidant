@@ -550,7 +550,7 @@ h3 {
     @media not all and (min-resolution:.001dpcm)
     { @supports (-webkit-appearance:none) {
       audio { 
-        width: 197px;
+        width: 200x;
         -webkit-transform: scale(0.76) translateX(-31px);
       }
     }}
@@ -945,7 +945,7 @@ h3 {
   }    
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 499px) {
   .splash-header-container {
     #navbar {
       width: 360px;
