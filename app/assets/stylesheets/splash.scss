@@ -953,20 +953,48 @@ h3 {
         width: 360px;
       }
     }
+    #links {
+      flex-direction: column;
+      li a {
+        padding-right: unset;
+        display: inline-block;
+        width: 100%;
+      }
+    }
+     .slide-container {
+      #splash-caption {
+        width: 360px;
+        h1 {
+          width: 360px !important;
+        }
+      }
+      .react-slideshow-container + div.indicators {
+          right: 5px;
+          margin: 0 0 3px 240px !important;
+      }
+    }
   }
   .arrow-hold {
     width: 360px;
   }
-  #splash-caption {
-    width: 360px;
-    h1 {
-      width: 360px;
-    }
-  }
+  
   .main-banner .banner-hold {
     width: 360px;
+    .days {
+      border-right: unset;
+      .day {
+        max-width: 40px;
+        padding-left: 4px;
+        h1 {
+          padding-left: 10px;
+        }
+      }
+    }
+    .denizen-confidant {
+      font-size: 19px;
+    }
   }
-  .content .newsbanner {
+  .content .news-banner {
     width: 360px;
   }
   .newsbar {
