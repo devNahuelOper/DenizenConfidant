@@ -713,9 +713,9 @@ h3 {
 @media only screen and (max-width: 700px) {
   .splash-header-container {
     #navbar {
-      width: 560px;
+      max-width: 560px;
       nav {
-        width: 560px;
+        max-width: 560px;
       }
     }
   
@@ -732,26 +732,26 @@ h3 {
   #splash-caption {
     font-size: 20px !important;
     // left: 60px !important;
-    width: 560px;
+    max-width: 560px;
     h1 {
-      width: 560px !important;
+      max-width: 560px !important;
     }
   }
 
   .arrow-hold {
-    width: 560px;
+    max-width: 560px;
   }
 
   .main-banner {
     min-height: 50px;
     .banner-hold {
-      width: 560px;
+      max-width: 560px;
       .denizen-confidant {
         font-size: 24px;
       }
       .days {
         .day {
-          width: 50px;
+          max-width: 50px;
           height: 50px;
           h1 {
             font-size: 20px;
@@ -765,7 +765,7 @@ h3 {
 
   .content {
     .news-banner {
-      width: 560px;
+      max-width: 560px;
     }
   }
 
@@ -773,23 +773,23 @@ h3 {
     font-size: 30px;
   }
   .newsbar {
-    width: 560px;
+    max-width: 560px;
   }
   .newslist li {
-    width: 180px;
+    max-width: 180px;
   } 
 
   .beats-banner {
     width: 560px;
   }
   .beatwrap {
-    width: 560px;
+    max-width: 560px;
     white-space: normal;
     padding-bottom: 40px;
   }  
   .beatlist {
     margin: 0 auto;
-    width: 560px;
+    max-width: 560px;
   } 
   .song {
     min-height: 170px;
@@ -943,6 +943,95 @@ h3 {
     padding-left: 30px;
     padding-right: 25px;
   }    
+}
+
+@media only screen and (max-width: 400px) {
+  .splash-header-container {
+    #navbar {
+      width: 360px;
+      nav {
+        width: 360px;
+      }
+    }
+    #links {
+      flex-direction: column;
+      li a {
+        padding-right: unset;
+        display: inline-block;
+        width: 100%;
+      }
+      li {
+        padding-left: unset;
+        &:nth-of-type(4):active {
+          margin-top: 2px;
+        }
+      }
+    }
+    #search {
+      padding-left: unset;
+    }
+     .slide-container {
+      #splash-caption {
+        width: 360px;
+        h1 {
+          width: 360px !important;
+          font-size: 18px;
+        }
+      }
+      .react-slideshow-container + div.indicators {
+          right: 5px;
+          margin: 0 0 3px 240px !important;
+      }
+    }
+  }
+  .arrow-hold {
+    width: 360px;
+  }
+  
+  .main-banner .banner-hold {
+    width: 360px;
+    .days {
+      border-right: unset;
+      .day {
+        max-width: 40px;
+        padding-left: 4px;
+        h1 {
+          padding-left: 10px;
+        }
+      }
+    }
+    .denizen-confidant {
+      font-size: 19px;
+    }
+  }
+  .content .news-banner {
+    width: 360px;
+  }
+  .newsbar {
+    width: 360px;
+  }
+  .newslist li {
+    width: 175px;
+  }
+  #nahuel-pre {
+    width: 178px;
+  }
+  #nahuel {
+    width: 180px;
+    object-fit: unset;
+  }
+  .beats-banner {
+    width: 360px;
+  }
+  .beatwrap {
+    width: 360px;
+  }
+  .beatlist {
+    width: 360px;
+  }
+  .song {
+    margin-right: 17px !important;
+  }
 }
 
 

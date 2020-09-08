@@ -287,6 +287,38 @@ body {
   }
 }
 
+@media only screen and (max-width: 400px) {
+  .login-container {
+    width: 360px;
+  }
+  .login-wrap, .welcome-wrap {
+    width: 360px;
+  }
+  .login-signup, .logout-dropdown {
+    border-right: unset;
+    span {
+      width: 350px;
+    }
+  }
+  .logout-dropdown {
+    small {
+      margin-right: 0;
+    }
+    span:hover small {
+      margin-right: 12px;
+    }
+  }
+  .welcome-wrap {
+    border-right: unset;
+  }
+  #welcome-msg {
+    left: -95px;
+  }
+  #dj-icon {
+    margin-left: 4px;
+  }
+}
+
 
 @media only screen and (min-width: 1300px){
   .welcome-container {
@@ -506,6 +538,17 @@ body {
     }
     #git-logo {
       border: 1px solid;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .footer {
+    #disclaimer {
+      width: 360px;
+    }
+    .foothold, .upper-foot {
+      width: 360px;
     }
   }
 }
