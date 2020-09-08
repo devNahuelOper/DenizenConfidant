@@ -945,6 +945,44 @@ h3 {
   }    
 }
 
+@media only screen and (max-width: 400px) {
+  .splash-header-container {
+    #navbar {
+      width: 360px;
+      nav {
+        width: 360px;
+      }
+    }
+  }
+  .arrow-hold {
+    width: 360px;
+  }
+  #splash-caption {
+    width: 360px;
+    h1 {
+      width: 360px;
+    }
+  }
+  .main-banner .banner-hold {
+    width: 360px;
+  }
+  .content .newsbanner {
+    width: 360px;
+  }
+  .newsbar {
+    width: 360px;
+  }
+  .beats-banner {
+    width: 360px;
+  }
+  .beatwrap {
+    width: 360px;
+  }
+  .beatlist {
+    width: 360px;
+  }
+}
+
 
 
 // MEDIA QUERIES -- Enlarge
