@@ -713,9 +713,9 @@ h3 {
 @media only screen and (max-width: 700px) {
   .splash-header-container {
     #navbar {
-      width: 560px;
+      max-width: 560px;
       nav {
-        width: 560px;
+        max-width: 560px;
       }
     }
   
@@ -732,26 +732,26 @@ h3 {
   #splash-caption {
     font-size: 20px !important;
     // left: 60px !important;
-    width: 560px;
+    max-width: 560px;
     h1 {
-      width: 560px !important;
+      max-width: 560px !important;
     }
   }
 
   .arrow-hold {
-    width: 560px;
+    max-width: 560px;
   }
 
   .main-banner {
     min-height: 50px;
     .banner-hold {
-      width: 560px;
+      max-width: 560px;
       .denizen-confidant {
         font-size: 24px;
       }
       .days {
         .day {
-          width: 50px;
+          max-width: 50px;
           height: 50px;
           h1 {
             font-size: 20px;
@@ -765,7 +765,7 @@ h3 {
 
   .content {
     .news-banner {
-      width: 560px;
+      max-width: 560px;
     }
   }
 
@@ -773,23 +773,23 @@ h3 {
     font-size: 30px;
   }
   .newsbar {
-    width: 560px;
+    max-width: 560px;
   }
   .newslist li {
-    width: 180px;
+    max-width: 180px;
   } 
 
   .beats-banner {
     width: 560px;
   }
   .beatwrap {
-    width: 560px;
+    max-width: 560px;
     white-space: normal;
     padding-bottom: 40px;
   }  
   .beatlist {
     margin: 0 auto;
-    width: 560px;
+    max-width: 560px;
   } 
   .song {
     min-height: 170px;
