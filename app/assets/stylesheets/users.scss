@@ -639,6 +639,65 @@ i {
   }
 }
 
+@media only screen and (max-width: 499px) {
+  .user-subheader-container {
+    .user-subheader {
+       width: 360px;
+      .details {
+        white-space: nowrap;
+        li {
+          margin-right: 30px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .calendar {
+    width: 360px;
+  }
+  .cal-day {
+    padding-bottom: 20px;
+    b {
+      font-size: 1em;
+    }
+  }
+  #myevents-header {
+    width: 360px;
+    justify-content: space-between;
+    h1 {
+      font-size: 14px;
+    }
+    #submit-event {
+      width: 140px;
+      margin-left: unset;
+    }
+  }
+  #myevents-list {
+    width: 360px;
+  }
+  .myevent-details, .manage-event {
+    font-size: 12px;
+  }
+  #delete-event {
+    text-align: right;
+  }
+  .user-event {
+    width: 360px;
+  }
+
+  .create-event {
+    .form-wrap {
+      width: 360px;
+    }
+  }
+  .eventform-subheader {
+    width: 360px;
+  }
+  #img-notice {
+    font-size: 11px;
+  }
+}
+
 // Larger
 
 @media only screen and (min-width: 1300px) {
