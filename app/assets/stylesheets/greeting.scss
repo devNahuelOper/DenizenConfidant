@@ -169,6 +169,24 @@ body {
     background-color: black;
     width: 100%;
   }
+   @media not all and (min-resolution:.001dpcm)
+    { @supports (-webkit-appearance:none) {
+      span {
+       padding: 22px 0;
+       &:hover {
+         width: inherit;
+       }
+      }
+      @media only screen and (max-width: 972px) {
+        span {
+          padding: 26px 0;
+          &:hover {
+            padding-bottom: 30px !important;
+            margin: unset;
+          }
+        }
+      }
+    }}
   white-space: nowrap;
   strong {
     color: #7e7e7e;
@@ -214,15 +232,7 @@ body {
         padding: 19px 17px 19px 3px;
       }
     }
-    //   @media not all and (min-resolution:.001dpcm)
-    // { @supports (-webkit-appearance:none) {
-    //   span {
-    //     margin: 5px 10px 24px 3px;
-    //     &:hover {
-    //       padding: 19px 17px 37px 3px;
-    //     }
-    //   }
-    // }}
+
   }
   .logout-dropdown {
     span {
@@ -322,9 +332,29 @@ body {
     small {
       margin-right: 0;
     }
-    span:hover small {
-      margin-right: 12px;
+     span {
+      margin-top: 26px;
+      margin-bottom: 30px;
+      &:hover {
+        padding-bottom: unset;
+        margin-top: 26px;
+        margin-bottom: 30px;
+        small {
+          margin-right: 12px;
+        }
+      }
     }
+        span:hover {
+           padding-bottom: unset;
+          margin-top: 26px;
+          margin-bottom: 30px;
+          small {
+            margin-right: 12px;
+          }
+        }
+    // span:hover small {
+    //   margin-right: 12px;
+    // }
   }
   .welcome-container {
     width: 360px;
