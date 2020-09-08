@@ -232,13 +232,15 @@
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 499px) {
   #searchbar {
     width: 355px;
     padding-top: unset;
   }
   #search-input {
-    font-size: 24px;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+    font-size: 20px;
     margin-bottom: 5px;
   }
   #search-button-container {
