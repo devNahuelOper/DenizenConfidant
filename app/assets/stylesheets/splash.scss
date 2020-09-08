@@ -1035,7 +1035,7 @@ h3 {
     { @supports (-webkit-appearance:none) {
       audio, #speed { 
         width: 197px !important;
-        -webkit-transform: scale(0.76) translateX(-29px);
+        -webkit-transform: scale(0.76) translateX(-27px) !important;
       }
     }}
   }
