@@ -186,7 +186,24 @@ body {
           }
         }
       }
-    }}
+      @media only screen and (max-width: 499px) {
+        span {
+           margin-top: 26px;
+           margin-bottom: 30px;
+          &:hover {
+            padding-bottom: unset;
+            margin-top: 26px;
+            margin-bottom: 30px;
+            small {
+              margin-right: 12px;
+            }
+          }
+        }
+        #dj-icon {
+          margin-left: -5px;
+        }
+      }
+      }}
   white-space: nowrap;
   strong {
     color: #7e7e7e;
@@ -332,26 +349,25 @@ body {
     small {
       margin-right: 0;
     }
-     span {
-      margin-top: 26px;
-      margin-bottom: 30px;
-      &:hover {
-        padding-bottom: unset;
-        margin-top: 26px;
-        margin-bottom: 30px;
-        small {
-          margin-right: 12px;
-        }
+    span:hover {
+      outline: 9px solid black;
+      small {
+        margin-right: 8px;
       }
     }
-        span:hover {
-           padding-bottom: unset;
-          margin-top: 26px;
-          margin-bottom: 30px;
-          small {
-            margin-right: 12px;
-          }
-        }
+    //  span {
+    //   margin-top: 26px;
+    //   margin-bottom: 30px;
+    //   &:hover {
+    //     padding-bottom: unset;
+    //     margin-top: 26px;
+    //     margin-bottom: 30px;
+    //     small {
+    //       margin-right: 12px;
+    //     }
+    //   }
+    // }
+  
     // span:hover small {
     //   margin-right: 12px;
     // }
@@ -366,7 +382,7 @@ body {
     left: -100px;
   }
   #dj-icon {
-    margin-left: -5px;
+    margin-left: 0px;
   }
 }
 
