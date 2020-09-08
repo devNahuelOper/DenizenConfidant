@@ -1031,6 +1031,13 @@ h3 {
   }
   .song {
     margin-right: 17px !important;
+      @media not all and (min-resolution:.001dpcm)
+    { @supports (-webkit-appearance:none) {
+      audio, #speed { 
+        width: 197px !important;
+        -webkit-transform: scale(0.76) translateX(-29px);
+      }
+    }}
   }
 }
 
