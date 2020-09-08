@@ -690,8 +690,30 @@ i {
       width: 360px;
     }
   }
+  .text-input {
+    width: 350px;
+  }
+  .eventform-header {
+    #prev {
+      width: 16px;
+    }
+  }
+  .prev-hold {
+    font-size: 12px;
+  }
+  #description-msg {
+    white-space: normal;
+  }
   .eventform-subheader {
     width: 360px;
+    height: 80px;
+    .details {
+      li {
+        padding: 12px 0;
+        margin-right: unset;
+        font-size: 16px;
+      }
+    }
   }
   #img-notice {
     font-size: 11px;

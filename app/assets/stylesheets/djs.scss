@@ -1040,6 +1040,9 @@
         li {
           margin-right: 35px;
           font-size: 14px;
+          &:last-of-type {
+            overflow: auto;
+          }
         }
       }
     }
@@ -1074,6 +1077,10 @@
     .form-wrap {
       width: 360px;
     }
+  }
+  .dj-disp {
+    width: 360px;
+    margin-bottom: 50px;
   }
 }
 
