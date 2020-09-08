@@ -300,6 +300,23 @@ body {
       width: 350px;
     }
   }
+  .logout-dropdown {
+    small {
+      margin-right: 0;
+    }
+    span:hover small {
+      margin-right: 12px;
+    }
+  }
+  .welcome-wrap {
+    border-right: unset;
+  }
+  #welcome-msg {
+    left: -95px;
+  }
+  #dj-icon {
+    margin-left: 4px;
+  }
 }
 
 
