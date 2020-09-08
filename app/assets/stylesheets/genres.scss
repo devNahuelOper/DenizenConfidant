@@ -512,7 +512,7 @@
     width: 360px;
   }
   .example-list {
-    columns: 3;
+    column-gap: 80px;
     #dj-link {
       font-size: 12px;
     }
