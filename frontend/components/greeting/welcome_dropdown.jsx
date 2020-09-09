@@ -16,24 +16,6 @@ class WelcomeDropdown extends React.Component {
     this.mobileDrop = this.mobileDrop.bind(this);
   }
 
-  mobileDrop(e) {
-    e.preventDefault();
-    this.setState({ "drop": true });
-    window.onfocus = function (e) {
-      const reveal = $('.reveal');
-      if (reveal.contains(e.target)) {
-        return;
-      }
-      this.leave();
-    }
-    $('.log-link').on('click', () => {
-      $('.logout-dropdown ul').hide();
-      $('.logout-dropdown span').on('click', () => {
-        $('.logout-dropdown ul').show();
-      });
-    })
-  }
-
   clicker(e) {
     e.preventDefault();
     this.setState({ "drop": true });
@@ -41,6 +23,17 @@ class WelcomeDropdown extends React.Component {
 
   leave(e) {
     this.setState({ "drop": false });
+  }
+
+  mobileDrop(e) {
+    e.preventDefault();
+    this.setState({ "drop": true }); status
+    $('body').on('click', e => {
+      const drop = $('.logout-dropdown');
+      if (drop !== e.currentTarget) {
+        this.leave();
+      }
+    })
   }
 
   lastOnline() {
@@ -59,8 +52,8 @@ class WelcomeDropdown extends React.Component {
     return (
       <div className="welcome-wrap">
         {/* <Tappable onTap={this.clicker} onTouchEnd={this.leave}> */}
-        <button onClick={this.mobileDrop} onFocus={this.clicker} onBlur={this.leave}  className="logout-dropdown">
-          <span>
+        <button onFocus={this.clicker} onBlur={this.leave}  className="logout-dropdown">
+          <span onClick={this.mobileDrop}>
             <img src={window.djUrl} id="dj-icon" />    
             <h1 id="welcome-msg">  <strong>Welcome</strong> {currentUser.username}</h1> <small>⬇︎</small> 
          </span>

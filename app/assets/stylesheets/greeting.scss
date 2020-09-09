@@ -51,7 +51,8 @@ body {
   }
   span:hover {
     background-color: black;
-    width: 100%;
+    // width: 100%;
+    width: inherit;
     margin: unset;
     // padding: 14px 20px 13px 20px;
     padding-left: 20px;
