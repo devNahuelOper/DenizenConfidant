@@ -462,10 +462,20 @@
         height: 75px;
       }
       #links  {
-       flex-direction: column;
+        width: 240px;
        li {
          width: 75px;
-       }
+         &:nth-of-type(3) {
+            background-color: unset;
+            border: unset;
+            padding-left: 2px;
+            a {
+              background-color: white;
+              padding: 1px;
+              text-align: center;
+            }
+          }
+        }
       }
     }
     h1 {
@@ -503,6 +513,23 @@
       // top: 30px;
     }
   }
+
+  .genre-subnav-container {
+     .subnav-toggle {
+      width: 360px;
+    }
+    .subnav-drop {
+      width: 360px;
+      span {
+        width: 340px;
+        &:hover {
+          width: 360px;
+        }
+      }
+    }
+  }
+
+
   #genre-bio {
     max-height: 300px;
     overflow: scroll;
