@@ -1045,6 +1045,13 @@
       // height: 208px;
     }
   }
+  #lnytnz-container, #warface-container {
+    background-position-y: 0px !important;
+  }
+  #stonebank-container {
+    background-color: #111921;
+    background-position-y: 13px !important;
+  }
 
   #dj-show {
     .djs-subnav {
