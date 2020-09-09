@@ -533,15 +533,26 @@
       width: 360px;
       margin: unset;
       nav {
-        width: 360px;
-        margin: unset;
+        width: 330px;
         #links {
           // flex-direction: column;
           width: 240px;
+          li {
+            &:nth-of-type(2) {
+              background-color: unset;
+              border: unset;
+              padding-left: 2px;
+              a {
+                background-color: white;
+                padding: 1px;
+                text-align: center;
+              }
+            }
+          }
         }
       }
       h1 {
-        width: 360px;
+        width: 330px;
       }
     }
     #events-subnav {
@@ -573,14 +584,13 @@
     height: 200px;
     .events-nav {
       height: 199px;
-      margin: 0 auto;
       nav {
-        width: 340px;
+        width: 330px;
       }
     }
   }
   .eventshow-header {
-    width: 360px;
+    width: 330px;
     #longH2 {
       font-size: 40px;
       padding-bottom: 2px;
