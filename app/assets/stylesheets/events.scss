@@ -531,10 +531,13 @@
   .events-index {
     .events-nav {
       width: 360px;
+      margin: unset;
       nav {
         width: 360px;
+        margin: unset;
         #links {
-          flex-direction: column;
+          // flex-direction: column;
+          width: 240px;
         }
       }
       h1 {
@@ -567,15 +570,20 @@
     }
   }
   .eventshow-nav-container {
-    height: 240px;
+    height: 200px;
     .events-nav {
-      height: 235px;
+      height: 199px;
+      margin: 0 auto;
+      nav {
+        width: 340px;
+      }
     }
   }
   .eventshow-header {
     width: 360px;
     #longH2 {
       font-size: 40px;
+      padding-bottom: 2px;
     }
   }
   .subheader-container {
