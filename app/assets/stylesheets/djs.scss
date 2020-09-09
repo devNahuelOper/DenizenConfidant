@@ -973,16 +973,21 @@
     width: 360px;
     nav {
       width: 360px;
+      position: relative;
+      top: -15px;
       #links {
         // flex-direction: column;
         width: 240px;
-        top: 18px;
+        // top: 18px;
       }
     }
     h1 {
       width: 360px;
       // font-size: 40px;
     }
+  }
+  #longDj {
+    font-size: 40px;
   }
   .djs-subnav {
     width: 360px;
@@ -1029,6 +1034,15 @@
       }
     }
   }
+  #kayzo-container {
+    background-position-y: 0px !important;
+    height: 230px;
+    // height: 211px;
+    .djs-nav {
+      height: 230px;
+      // height: 208px;
+    }
+  }
 
   #dj-show {
     .djs-subnav {
@@ -1046,6 +1060,7 @@
           font-size: 14px;
           &:last-of-type {
             overflow: auto;
+            line-height: 1.42em;
           }
         }
       }
@@ -1057,6 +1072,7 @@
        #bio {
         max-height: 400px;
         overflow: scroll;
+        text-indent: 1em;
        }
     }
     .playlist {
