@@ -580,6 +580,23 @@
       }
     }
   }
+
+  .subnav-container {
+    .subnav-toggle {
+      width: 360px;
+    }
+    .subnav-drop {
+      width: 360px;
+      span {
+        width: 340px;
+        &:hover {
+          width: 360px;
+        }
+      }
+    }
+  }
+
+
   .eventshow-nav-container {
     height: 200px;
     .events-nav {
