@@ -974,11 +974,14 @@
     nav {
       width: 360px;
       #links {
-        flex-direction: column;
+        // flex-direction: column;
+        width: 240px;
+        top: 18px;
       }
     }
     h1 {
       width: 360px;
+      // font-size: 40px;
     }
   }
   .djs-subnav {
