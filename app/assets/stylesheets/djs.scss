@@ -974,7 +974,7 @@
     overflow: auto;
     margin: unset;
     nav {
-      width: 320px;
+      width: 330px;
       #links {
         // flex-direction: column;
         width: 240px;
@@ -985,12 +985,12 @@
       }
     }
     h1 {
-      width: 320px;
+      width: 330px;
       // font-size: 40px;
     }
   }
   #longDj {
-    font-size: 40px;
+    font-size: 38px;
   }
   .djs-subnav {
     width: 360px;
@@ -1000,14 +1000,14 @@
   }
   .djs-subnav-container {
     .subnav-toggle {
-      width: 340px !important;
+      width: 350px !important;
     }
     .subnav-drop {
-      width: 340px !important;
+      width: 350px !important;
       span {
-        width: 320px !important;
+        width: 330px !important;
         &:hover {
-          width: 340px !important;
+          width: 350px !important;
         }
       }
     }
@@ -1035,11 +1035,11 @@
     .djs-nav {
       nav {
         position: relative;
-        top: -15px
+        top: -10px
       }
       //  height: 380px;
       #djshow-header {
-        width: 320px;
+        width: 330px;
       }
     }
   }
