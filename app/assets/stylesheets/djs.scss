@@ -971,6 +971,7 @@
 @media only screen and (max-width: 499px) {
   .djs-nav {
     width: 360px;
+    overflow: auto;
     nav {
       width: 360px;
       #links {
