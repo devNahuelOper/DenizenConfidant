@@ -1063,11 +1063,16 @@
          overflow: scroll;
          max-height: 300px;
          .dj-song {
-           width: 220px;
+           width: 300px;
          }
       }
       audio {
-        width: 100%;
+        width: 300px;
+        height: 44px;
+      }
+      #song-title {
+        font-weight: bold;
+        font-size: 16px;
       }
     }
   }
