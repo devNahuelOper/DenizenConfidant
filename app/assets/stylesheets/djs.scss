@@ -84,8 +84,9 @@
   
     #links {
       li:first-of-type {
-        background-color: unset;
-        border-color: #ff0;
+        // background-color: unset;
+        // border-color: #ff0;
+        color: black;
         &:hover {
           background-color: #ff0;
         }
@@ -972,20 +973,29 @@
   .djs-nav {
     width: 360px;
     overflow: auto;
-    // margin: unset;
     nav {
-      width: 330px;
+      width: 360px;
       #links {
-        // flex-direction: column;
         width: 240px;
-        // top: 18px;
+        li {
+          &:first-of-type {
+            background-color: unset;
+            border: unset;
+            padding-left: 2px;
+            a {
+              background-color: white;
+              padding: 1px;
+              text-align: center;
+            }
+          }
+        }
       }
       #logo {
         width: 75px;
       }
     }
     h1 {
-      width: 330px;
+      width: 360px;
       // font-size: 40px;
     }
   }
@@ -1039,7 +1049,7 @@
       }
       //  height: 380px;
       #djshow-header {
-        width: 330px;
+        width: 360px;
       }
     }
   }
