@@ -972,16 +972,20 @@
   .djs-nav {
     width: 360px;
     overflow: auto;
+    margin: unset;
     nav {
-      width: 360px;
+      width: 320px;
       #links {
         // flex-direction: column;
         width: 240px;
         // top: 18px;
       }
+      #logo {
+        width: 75px;
+      }
     }
     h1 {
-      width: 360px;
+      width: 320px;
       // font-size: 40px;
     }
   }
@@ -994,15 +998,17 @@
       width: 360px;
     }
   }
-  .subnav-toggle {
-    width: 360px !important;
-  }
-  .subnav-drop {
-    width: 360px !important;
-    span {
+  .djs-subnav-container {
+    .subnav-toggle {
       width: 340px !important;
-      &:hover {
-        width: 360px !important;
+    }
+    .subnav-drop {
+      width: 340px !important;
+      span {
+        width: 320px !important;
+        &:hover {
+          width: 340px !important;
+        }
       }
     }
   }
@@ -1017,10 +1023,10 @@
     min-height: 250px;
   }
   .dj {
-    font-size: 16px;
+    font-size: 18px;
   }
   #black, #dimitri {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .djshow-nav-container {
@@ -1033,12 +1039,15 @@
       }
       //  height: 380px;
       #djshow-header {
-        width: 360px;
+        width: 320px;
       }
     }
   }
   #arminvanbuuren-container {
     background-image: image_url('arminvanbuuren.jpg') !important;
+  }
+  #crystalcastles-container {
+    background-position: 40px 0 !important;
   }
   #hardwell-container {
     background-image: image_url('hardwell.jpg') !important;
@@ -1053,7 +1062,15 @@
   }
   #nero-container {
     background-image: image_url('nero.jpg') !important;
-    background-position-x: 0px !important;
+    // background-position-x: 0px !important;
+    background-position-x: 15px !important;
+    background-repeat: repeat;
+  }
+  #owlvision-container {
+    background-image: image_url('owlvision.jpg') !important;
+  }
+  #quintino-container {
+    background-image: image_url('quintino.jpg') !important;
   }
   #stonebank-container {
     background-color: #111921;
