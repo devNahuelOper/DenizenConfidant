@@ -1017,10 +1017,10 @@
     min-height: 250px;
   }
   .dj {
-    font-size: 15px;
+    font-size: 16px;
   }
   #black, #dimitri {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .djshow-nav-container {
@@ -1037,17 +1037,23 @@
       }
     }
   }
+  #arminvanbuuren-container {
+    background-image: image_url('arminvanbuuren.jpg') !important;
+  }
+  #hardwell-container {
+    background-image: image_url('hardwell.jpg') !important;
+    background-position-y: -30px !important;
+  }
   #kayzo-container {
+    background-image: image_url('kayzo.jpg') !important;
     background-position-y: 0px !important;
-    height: 230px;
-    // height: 211px;
-    .djs-nav {
-      height: 230px;
-      // height: 208px;
-    }
   }
   #lnytnz-container, #warface-container {
     background-position-y: 0px !important;
+  }
+  #nero-container {
+    background-image: image_url('nero.jpg') !important;
+    background-position-x: 0px !important;
   }
   #stonebank-container {
     background-color: #111921;

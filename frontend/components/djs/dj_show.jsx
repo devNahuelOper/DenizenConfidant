@@ -71,7 +71,7 @@ class DjShow extends React.Component {
               </nav>
               <section id="djshow-header" className="eventshow-header">
                 <Link to='/djs'><img id="prev" src={window.prevUrl} alt="Back" /> DJs</Link>
-                  <h1 id={dj.name.length >= 16 ? 'longDj' : 'normalDj'}>{(dj.name === 'Ran D') || (dj.name === 'Noisuf X') ? hyphen : dj.name}</h1>
+                  <h1 id={dj.name.length >= 15 ? 'longDj' : 'normalDj'}>{(dj.name === 'Ran D') || (dj.name === 'Noisuf X') ? hyphen : dj.name}</h1>
               </section>
             </section>
           </div>
