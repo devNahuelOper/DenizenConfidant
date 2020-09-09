@@ -972,7 +972,7 @@
   .djs-nav {
     width: 360px;
     overflow: auto;
-    margin: unset;
+    // margin: unset;
     nav {
       width: 330px;
       #links {
@@ -1000,14 +1000,14 @@
   }
   .djs-subnav-container {
     .subnav-toggle {
-      width: 350px !important;
+      width: 360px;
     }
     .subnav-drop {
-      width: 350px !important;
+      width: 360px;
       span {
-        width: 330px !important;
+        width: 340px;
         &:hover {
-          width: 350px !important;
+          width: 360px;
         }
       }
     }
@@ -1035,7 +1035,7 @@
     .djs-nav {
       nav {
         position: relative;
-        top: -10px
+        top: -5px
       }
       //  height: 380px;
       #djshow-header {

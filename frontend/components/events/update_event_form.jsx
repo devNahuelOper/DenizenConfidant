@@ -257,6 +257,7 @@ class SubnavToggle extends React.Component {
     }
     this.clicker = this.clicker.bind(this);
     this.leave = this.leave.bind(this);
+    this.mobileDrop = this.mobileDrop.bind(this);
   }
 
   clicker(e) {
@@ -267,11 +268,22 @@ class SubnavToggle extends React.Component {
     this.setState({ "drop": false });
   }
 
+  mobileDrop(e) {
+    e.preventDefault();
+    this.setState({ "drop": true }); status
+    $('body').on('click', e => {
+      const drop = $('.subnav-drop');
+      if (drop !== e.currentTarget) {
+        this.leave();
+      }
+    });
+  }
+
   render() {
     const { currentUser } = this.props;
     return (
       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span>Submit Update <small>⬇︎</small></span>
+        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span onClick={this.mobileDrop}>Submit Update <small>⬇︎</small></span>
           <ul className={this.state.drop ? "reveal" : "hide"}>
             <li><Link className="log-link" to={`/users/${currentUser.id}/events`}>My Events</Link></li>
           </ul>
