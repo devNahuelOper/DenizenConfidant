@@ -254,11 +254,10 @@
     background-color: #ffa200;
   }
   #search {
-    padding-left: unset;
+    padding-left: 4px !important;
   }
-  #search:active {
-    padding-bottom: 0;
-    padding-left: 2px;
+  .show-search {
+    padding: 0 4px;
   }
 }
 // Large

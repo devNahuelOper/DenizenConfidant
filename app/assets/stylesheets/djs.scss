@@ -973,8 +973,6 @@
     width: 360px;
     nav {
       width: 360px;
-      position: relative;
-      top: -15px;
       #links {
         // flex-direction: column;
         width: 240px;
@@ -1028,6 +1026,10 @@
     background-position: center !important;
     // height: 400px;
     .djs-nav {
+      nav {
+        position: relative;
+        top: -15px
+      }
       //  height: 380px;
       #djshow-header {
         width: 360px;
