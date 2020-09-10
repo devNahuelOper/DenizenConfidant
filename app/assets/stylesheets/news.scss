@@ -290,6 +290,16 @@
   #New-photo {
     width: 100%;
   }
+  #Berghain-photo {
+    background-image: image_url('berghain.jpg');
+    background-size: cover;
+    color: transparent;
+  }
+  #Coronavirus-photo {
+    background-image: image_url('caprices.jpg');
+    background-size: cover;
+    color: transparent;
+  }
 }
 
 
