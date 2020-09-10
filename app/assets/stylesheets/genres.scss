@@ -145,7 +145,7 @@
     background-color: none;
   }
 }
-
+ 
 
 //Genre Show
 
@@ -517,6 +517,14 @@
       width: 360px;
     }
   }
+  #dance-container {
+    background-image: image_url('dance.jpg') !important;
+  }
+  #dance-avatar {
+    background-image: image_url('dance.jpg') !important;
+    background-size: cover;
+    background-position: center;
+  }
   .genre-subnav {
     width: 360px;
     ul {
@@ -574,7 +582,7 @@
     width: 360px;
   }
   .example-list {
-    column-gap: 80px;
+    column-gap: 50px;
     #dj-link {
       font-size: 12px;
     }
