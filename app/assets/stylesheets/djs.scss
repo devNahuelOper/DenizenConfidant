@@ -709,6 +709,13 @@
   .djs-subnav-container {
     border-top: unset;
    .subnav-drop {
+     width: 675px;
+     span {
+       width: 650px;
+        &:hover small {
+          margin-right: 16px;
+        }
+     }
       .reveal {
       background-color: #fdff00;
      }
@@ -797,6 +804,20 @@
       width: 560px;
     }
   }
+
+  .djs-subnav-container {
+    .subnav-drop {
+      width: 560px;
+      span {
+       width: 535px;
+        &:hover small {
+          margin-right: 17px;
+        }
+      }
+    }
+  }
+
+
   .dj-directory {
     width: 560px;
     flex-flow: wrap;
@@ -899,6 +920,16 @@
       width: 490px;
     }
   }
+  .djs-subnav-container {
+    .subnav-drop {
+      width: 490px;
+      span {
+       width: 465px;
+      }
+    }
+  }
+
+
   .dj-directory {
     width: 490px;
   }

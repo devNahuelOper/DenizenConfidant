@@ -20,6 +20,10 @@
   width: 960px;
   // height: 215px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 210px;
   nav {
    display: flex;
    justify-content: space-between;
@@ -32,7 +36,7 @@
     font-size: 64px;
     letter-spacing: -2px;
     font-weight: 500;
-    line-height: 3em;
+    // line-height: 3em;
     height: 40px;
   }
 }
@@ -549,33 +553,33 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     }
     .log-link {
       white-space: nowrap;
-      padding: 11px 0 14px 20px;
+      padding: 11px 0 14px 16px;
     }
   }
   span {
     width: 600px;
     display: flex;
     justify-content: space-between;
-    padding: 11px 0px 9px 16px;
+    padding: 11px 0px 9px 12px;
     margin: 0 8px 1px 5px;
     background-color: white;
+    &:hover {
+      width: 100%;
+      background-color: black;
+      color: white;
+      margin: 0 8px 1px 0px;
+      box-sizing: border-box;
+      padding-left: 17px;
+      small {
+        margin-right: 22px;
+      }
+    }
   }
   small {
     font-size: 12px;
   }
 }
 
-.subnav-drop span:hover {
-    width: 100%;
-    background-color: black;
-    color: white;
-    margin: 0 8px 1px 0px;
-    box-sizing: border-box;
-    padding-left: 21px;
-    small {
-      margin-right: 22px;
-    }
-}
 
 // .user-profile #expand {
 //   height: 97px;
@@ -595,9 +599,12 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
 
  
   #navbar {
-    width: 632px;
+    // width: 632px;
+    width: 675px;
+    height: 140px;
     nav {
-      width: 632px;
+      width: 675px;
+      // width: 632px;
     }
   }
 
@@ -605,11 +612,14 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     height: 160px;
     #logo {
       filter: invert(1);
-      right: 25px;
+      // right: 25px;
       left: unset;
-      top: 7px;
-      width: 60px;
-      height: 50px;
+      top: 0;
+      // top: 7px;
+      // width: 60px;
+      // height: 50px;
+      width: 75px;
+      height: 70px;
     }
     #links {
       font-size: .75em;
@@ -622,8 +632,8 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     }
     h1 {
       position: relative;
-      width: 674px;
-      right: 20px;
+      width: 675px;
+      // right: 20px;
       font-size: 48px;
     }
   }
