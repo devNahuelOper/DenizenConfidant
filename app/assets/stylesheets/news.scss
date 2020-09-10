@@ -293,11 +293,13 @@
   #Berghain-photo {
     background-image: image_url('berghain.jpg');
     background-size: cover;
+    background-position: center;
     color: transparent;
   }
   #Coronavirus-photo {
     background-image: image_url('caprices.jpg');
     background-size: cover;
+    background-position: center;
     color: transparent;
   }
 }
