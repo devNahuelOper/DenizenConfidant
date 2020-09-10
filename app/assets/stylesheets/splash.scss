@@ -1033,7 +1033,7 @@ h3 {
     background-image: image_url('berghain.jpg');
   }
   #coronavirus-frame {
-    background-image: image_url('coronavirus.jpg');
+    background-image: image_url('caprices.jpg');
   }
 
   .beats-banner {
@@ -1047,6 +1047,15 @@ h3 {
   }
   .song {
     margin-right: 17px !important;
+    audio, #speed { 
+        // width: 197px !important;
+        height: 32px;
+        width: 205px !important;
+        margin-top: 4px;
+        -webkit-transform: scale(0.76) translateX(-27px) !important;
+        border: unset;
+        box-shadow: unset;
+      }
       @media not all and (min-resolution:.001dpcm)
     { @supports (-webkit-appearance:none) {
       audio, #speed { 
