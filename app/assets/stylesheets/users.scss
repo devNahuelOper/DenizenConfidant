@@ -7,8 +7,8 @@
   #nav-container {
     height: 215px;
   }
-  #navbar h1 {
-    line-height: 2em;
+  #navbar {
+    height: 180px;
   }
 }
 
@@ -472,8 +472,8 @@ i {
     #nav-container {
       height: 160px;
     }
-    #navbar h1 {
-      line-height: 3em;
+    #navbar {
+      height: 140px;
     }
   }
  .user-subheader-container {
@@ -507,8 +507,12 @@ i {
   }
 
   .create-event {
+    #nav-container {
+      height: 180px;
+    }
+
     #navbar {
-      height: 152px;
+      height: 180px;
       h1 {
         right: unset;
       }
@@ -516,7 +520,6 @@ i {
   }
   .eventform-header {
     position: relative;
-    right: 20px;
   }
   .eventform-subheader {
     width: 675px;
