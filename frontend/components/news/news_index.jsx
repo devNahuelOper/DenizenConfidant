@@ -39,7 +39,9 @@ class NewsIndex extends React.Component {
               <article className="newspiece">
           <p className="news-date">{formatDateNews(nws.created_at)}</p> 
                 <Link to={`/news/${nws.id}`}>
-                <img src={nws.photoUrl} alt={`${nws.title.split(' ')[0]}-photo`}/> <br/>
+                  <span id={`${nws.title.split(' ')[0].toLowerCase()}-frame`} className="news-img-frame">
+                    <img src={nws.photoUrl} alt={`${nws.title.split(' ')[0]}-photo`}/> <br/>
+                  </span>
                   <h1>{nws.title}</h1>
                 </Link> 
                 <p className="news-blurb">{nws.blurb}</p>

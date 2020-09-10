@@ -1022,6 +1022,20 @@ h3 {
     width: 180px;
     object-fit: unset;
   }
+  .news-img-frame {
+    display: block;
+    width: 180px;
+    height: 100px;
+    background-size: cover;
+    color: transparent;
+  }
+  #berghain-frame {
+    background-image: image_url('berghain.jpg');
+  }
+  #coronavirus-frame {
+    background-image: image_url('caprices.jpg');
+  }
+
   .beats-banner {
     width: 360px;
   }
@@ -1033,11 +1047,25 @@ h3 {
   }
   .song {
     margin-right: 17px !important;
+    audio, #speed { 
+        // width: 197px !important;
+        height: 32px;
+        width: 205px !important;
+        margin-top: 4px;
+        -webkit-transform: scale(0.76) translateX(-27px) !important;
+        border: unset;
+        box-shadow: unset;
+      }
       @media not all and (min-resolution:.001dpcm)
     { @supports (-webkit-appearance:none) {
       audio, #speed { 
-        width: 197px !important;
+        // width: 197px !important;
+        height: 32px;
+        width: 205px !important;
+        margin-top: 4px;
         -webkit-transform: scale(0.76) translateX(-27px) !important;
+        border: unset;
+        box-shadow: unset;
       }
     }}
   }
