@@ -167,8 +167,29 @@
         color: #9c9c9c;
         margin: 4px 0;
       }
+      &:nth-of-type(3) {
+        h2 {
+          position: relative;
+          z-index: 2;
+        }
+        img {
+          position: relative;
+          bottom: 7px;
+          height: 95px;
+          overflow: overlay;
+        }
+        a {
+          position: relative;
+          bottom: 21px;
+        }
+        #venue {
+          position: relative;
+          bottom: 20px;
+        }
+      }
     }
   }
+
 
   .top-events {
     position: relative;
@@ -615,6 +636,10 @@
           width: 82px;
         }
       }
+      #img-0 {
+        background-image: image_url('lostminds.jpg');
+        background-position: center;
+      }
     }
     .top-events {
        section, #content-title, .eventlist, hr {
@@ -673,6 +698,10 @@
       #event-image {
         width: 360px;
         height: 300px;
+        background-image: image_url('lostminds.jpg');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
       }
     }
   }
