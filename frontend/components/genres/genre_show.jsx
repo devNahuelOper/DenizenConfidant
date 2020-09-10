@@ -114,7 +114,7 @@ class GenreShow extends React.Component {
             <hr/>
             <ul className="example-list">
               {genre.artists.slice(0, length).sort().map(artist => 
-              <li id="dj-link" key={artist}><Link to={`/djs/${ids[genre.artists.indexOf(artist)]}`}>{artist}</Link></li>
+              <li className={artist.length >= 20 ? 'long-link' : 'normal-link'} id="dj-link" key={artist}><Link to={`/djs/${ids[genre.artists.indexOf(artist)]}`}>{artist}</Link></li>
                 )}
             </ul>
           </section>
