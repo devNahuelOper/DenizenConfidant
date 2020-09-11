@@ -423,6 +423,10 @@ h3 {
 .nahuel-frame {
   display: flex;
   margin: 0 8px 6px 0;
+  // background-image: cross-fade(
+  //   image_url('nahuel.png'),
+  //   image_url('nahuel.png'), 50%
+  // );
 }
 
 #nahuel {

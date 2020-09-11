@@ -29,38 +29,38 @@ class Footer extends React.Component {
           </span>
         <ul className="footer-links">
           <li>
-            <a href="https://devnahueloper.github.io/" target="_blank">
+            <a href="https://devnahueloper.github.io/" target="_blank" title="Portfolio Site">
                   <img src="https://avatars1.githubusercontent.com/u/16979527?s=400&u=97a69e78167b0215e15d11fd3916af831bc611a0&v=4" alt={window.headshotUrl} id="headshot"/>
               {/* <img src={window.headshotUrl} alt="Personal Site" id="headshot"/> */}
             </a>
-            <small>Portfolio Site</small>
+            {/* <small>Portfolio Site</small> */}
           </li>
           <li>
-            <a href="https://github.com/devNahuelOper/DenizenConfidant-.git" target="_blank">
+            <a href="https://github.com/devNahuelOper/DenizenConfidant-.git" target="_blank" title="Github">
               <img src={window.gitUrl} id="git-logo"/>
             </a>
-            <small>Github</small>
+            {/* <small>Github</small> */}
           </li>
           <br/>
           <li>
-            <a href="https://www.linkedin.com/in/nahuel-gorosito-a2a41524/" target="_blank">
+            <a href="https://www.linkedin.com/in/nahuel-gorosito-a2a41524/" target="_blank" title="Linkedin">
               <img src={window.linkUrl} id="link-logo"/>
             </a>
-              <small>Linkedin</small>
+              {/* <small>Linkedin</small> */}
           </li>
           <br />
             <li>
-                <a href="https://angel.co/u/nahuel-gorosito" target="_blank">
+                <a href="https://angel.co/u/nahuel-gorosito" target="_blank" title="AngelList">
                 <img src={window.angelUrl} id="angel-logo" />
               </a>
-                <small>Angellist</small>
+                {/* <small>Angellist</small> */}
             </li>
               <br />
           <li>
-            <a href="https://www.facebook.com/nahuel.gorosito.5/" target="_blank">
+            <a href="https://www.facebook.com/nahuel.gorosito.5/" target="_blank" title="The Facebook">
               <img src={window.fbUrl} id="fb-logo"/>
             </a>
-                <small>Facebook</small>
+                {/* <small>Facebook</small> */}
           </li>
         </ul>
         
