@@ -567,7 +567,7 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
       width: 100%;
       background-color: black;
       color: white;
-      margin: 0 8px 1px 0px;
+      margin: 0 8px 0px 0px;
       box-sizing: border-box;
       padding-left: 17px;
       small {
@@ -856,6 +856,17 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
   //     }
   //   }
   // }
+
+  .subnav-drop {
+    .reveal {
+      li {
+        height: 38px;
+      }
+      .log-link {
+        padding: 10px 0 14px 16px;
+      }
+    }
+  }
 
 
   .login-form-container {
