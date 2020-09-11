@@ -425,12 +425,20 @@
   padding: 50px 0;
   h1 {
     font-size: 24px;
+     &::selection {
+      background-color: #fdff00;
+      color: #1e1e1e;
+    }
   }
   hr {
     border-color: #fdff00;
   }
   #bio {
     line-height: 1.5;
+    &::selection {
+      background-color: #fdff00;
+      color: #1e1e1e;
+    }
   }
 }
 
@@ -491,6 +499,10 @@
       }
     }
   }
+}
+
+select {
+  background-color: white;
 }
 
 .dj-form-container {
