@@ -2,7 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchCurrentUser, getCurrentUser } from '../../actions/session_actions';
 import { fetchEvents, deleteEvent } from '../../actions/event_actions';
+import { openModal } from '../../actions/modal_actions';
 import { Link } from 'react-router-dom';
+import Modal from '../modal/modal';
 import {
   formatMonthYear,
   formatDateStyle
@@ -78,6 +80,7 @@ class UserEvents extends React.Component {
               </ul>
             </section>
           </div>
+        
           <div className="my-events">
             <span id="myevents-header">
               <h1>Events under your administration.</h1>
@@ -171,6 +174,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => ({
   fetchCurrentUser: (userId) => dispatch(fetchCurrentUser(userId)),
   fetchEvents: () => dispatch(fetchEvents()),
+  openModal: modal => dispatch(openModal(modal)),
   deleteEvent: eventId => dispatch(deleteEvent(eventId))
 })
 
