@@ -10,7 +10,7 @@ export const openModal = modal => {
 
 export const closeModal = modal => {
   return {
-    type: OPEN_MODAL,
+    type: CLOSE_MODAL,
     modal
   };
 };

@@ -21,7 +21,7 @@ import SplashContainer from './splash/splash_container';
 import Search from './search/search';
 import NewsShow from './news/news_show';
 import { TitleComponent } from './title_component.jsx';
-
+import Modal from './modal/modal';
 
 // const App = () => (
 //   <div>
@@ -78,7 +78,7 @@ class App extends React.Component {
         <GreetingContainer />
        
         <Search />
-      
+        {/* <Modal /> */}
         <Switch>
           <AuthRoute path="/login" component={withTitle({component: LoginFormContainer, title: 'Login'})} />
           <AuthRoute path="/signup" component={withTitle({ component: SignupFormContainer, title: 'Register as a DC member today' })} />
