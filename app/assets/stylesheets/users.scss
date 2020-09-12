@@ -463,8 +463,9 @@ i {
   text-align: center;
   width: 100%;
   &:hover {
-     background-color: #080808;
+    background-color: #080808;
     color: #f8a102;
+    transition: .1s ease-in-out;
   }
 }
 
