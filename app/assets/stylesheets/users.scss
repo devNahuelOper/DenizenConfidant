@@ -462,10 +462,10 @@ i {
   background-color: #404040;
   text-align: center;
   width: 100%;
-}
-#delete-event:hover {
-  background-color: #080808;
-  color: #f8a102;
+  &:hover {
+     background-color: #080808;
+    color: #f8a102;
+  }
 }
 
 .modal {
