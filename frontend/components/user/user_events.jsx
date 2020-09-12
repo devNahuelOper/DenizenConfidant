@@ -18,6 +18,7 @@ class UserEvents extends React.Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
+    this.confirm = this.confirm.bind(this);
   }
 
   componentDidMount() {
@@ -30,6 +31,10 @@ class UserEvents extends React.Component {
     window.setTimeout(() => {
       window.location.reload(true);
     }, 1000)
+  }
+
+  confirm(e) {
+    $(e.currentTarget).parent().parent().parent().append('<div id="confirm"></div>');
   }
 
 
@@ -104,6 +109,10 @@ class UserEvents extends React.Component {
                         </div>
                       </span>
                     </article>
+                    <div className="confirm" id={`confirm-${event.id}`}>
+                      <h1>Are you sure you want to cancel this event?</h1>
+
+                    </div>
                 </li>
                   )}
               </ul> : <h1>No events were found.</h1>
