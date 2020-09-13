@@ -33,8 +33,9 @@ class UserEvents extends React.Component {
     }, 1000)
   }
 
-  confirm(e) {
-    $(e.currentTarget).parent().parent().parent().append('<div id="confirm"></div>');
+  confirm(id) {
+    // $(e.currentTarget).parent().parent().parent().append('<div id="confirm">Are you sure?</div>');
+    $(`#confirm-${id}`).toggle();
   }
 
 
@@ -105,8 +106,9 @@ class UserEvents extends React.Component {
                       <span className="manage-event">
                         <Link to={`/events/${event.id}/edit`}>Event Management</Link>
                         <div onClick={this.handleDelete}>
-                        <button id="delete-event" onClick={() => deleteEvent(event.id)}>Cancel Event</button>
+                          <button id="delete-event" onClick={() => deleteEvent(event.id)}>Cancel Event</button>
                         </div>
+                      {/* <h1 onClick={() => this.confirm(event.id)}>Confirm</h1> */}
                       </span>
                     </article>
                     <div className="confirm" id={`confirm-${event.id}`}>
