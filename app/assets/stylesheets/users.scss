@@ -467,13 +467,14 @@ i {
     transition: .1s ease-in-out;
   }
 }
+// .confirm {
+//   display: none;
+//   font-size: 14px;
+//   float: right;
+// }
+
 .confirm {
   display: none;
-  font-size: 14px;
-  float: right;
-}
-
-.modal {
   width: fit-content;
   font-size: 12px;
   padding: 12px;
@@ -481,6 +482,9 @@ i {
   border-radius: 4px;
   border: 1px solid #5e5e5e;
   opacity: 0.9;
+  position: relative;
+  left: 678px;
+  top: 10px;
   h1 {
     // color: #ffa200;
     color: white;
