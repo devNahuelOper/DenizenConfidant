@@ -47,14 +47,27 @@
 .user-main {
   // height: 76px;
   border-bottom: 1px #585858 solid;
-  padding: 40px 0;
+  padding: 30px 0;
   position: relative;
   z-index: 1000;
 }
 
+.year-month {
+  display: flex;
+  margin-bottom: 60px;
+  li {
+    margin-right: 4px;
+  }
+  span {
+    padding: 8px 36px 8px 16px;
+    font-size: 36px;
+    background-color: #ffa200;
+  }
+}
+
 .cal-bg {
    background: #404040;
-   padding: 70px 0;
+  //  padding: 70px 0;
 }
 
 #calendar-toggle {
