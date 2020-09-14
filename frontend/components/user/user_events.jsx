@@ -2,7 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchCurrentUser, getCurrentUser } from '../../actions/session_actions';
 import { fetchEvents, deleteEvent } from '../../actions/event_actions';
+import { openModal } from '../../actions/modal_actions';
 import { Link } from 'react-router-dom';
+import Modal from '../modal/modal';
 import {
   formatMonthYear,
   formatDateStyle
@@ -16,18 +18,25 @@ class UserEvents extends React.Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
+    this.confirm = this.confirm.bind(this);
   }
 
   componentDidMount() {
     toggleSearch();
   }
 
-  handleDelete(e) {
-    e.preventDefault();
-    e.target.parentNode.parentNode.parentNode.parentNode.remove();
+  handleDelete(id) {
+    // e.preventDefault();
+    // e.target.parentNode.parentNode.parentNode.parentNode.remove();
+    $(`#${id}`).remove();
     window.setTimeout(() => {
       window.location.reload(true);
     }, 1000)
+  }
+
+  confirm(id) {
+    // $(e.currentTarget).parent().parent().parent().append('<div id="confirm">Are you sure?</div>');
+    $(`#confirm-${id}`).toggle();
   }
 
 
@@ -78,6 +87,7 @@ class UserEvents extends React.Component {
               </ul>
             </section>
           </div>
+        
           <div className="my-events">
             <span id="myevents-header">
               <h1>Events under your administration.</h1>
@@ -96,11 +106,22 @@ class UserEvents extends React.Component {
                       </span>
                       <span className="manage-event">
                         <Link to={`/events/${event.id}/edit`}>Event Management</Link>
-                        <div onClick={this.handleDelete}>
-                        <button id="delete-event" onClick={() => deleteEvent(event.id)}>Cancel Event</button>
+                        <div>
+                          <button id="delete-event" onClick={() => this.confirm(event.id)}>Cancel Event</button>
                         </div>
+                        {/* <div onClick={this.handleDelete}>
+                          <button id="delete-event" onClick={() => deleteEvent(event.id)}>Cancel Event</button>
+                        </div> */}
+                      {/* <h1 onClick={() => this.confirm(event.id)}>Confirm</h1> */}
                       </span>
                     </article>
+                    <div className="confirm" id={`confirm-${event.id}`}>
+                      <h1>Are you sure you want to cancel this event?</h1>
+                      <span>
+                        <button onClick={() => this.handleDelete(event.id)} onMouseUp={() => deleteEvent(event.id)}>Yes</button>
+                        <button onClick={() => this.confirm(event.id)}>No</button>
+                      </span>
+                    </div>
                 </li>
                   )}
               </ul> : <h1>No events were found.</h1>
@@ -171,6 +192,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => ({
   fetchCurrentUser: (userId) => dispatch(fetchCurrentUser(userId)),
   fetchEvents: () => dispatch(fetchEvents()),
+  openModal: modal => dispatch(openModal(modal)),
   deleteEvent: eventId => dispatch(deleteEvent(eventId))
 })
 
