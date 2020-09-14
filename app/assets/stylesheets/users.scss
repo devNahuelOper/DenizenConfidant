@@ -476,14 +476,14 @@ i {
 .confirm {
   display: none;
   width: fit-content;
-  font-size: 12px;
+  font-size: 14px;
   padding: 12px;
   background-color: #404040;
   border-radius: 4px;
   border: 1px solid #5e5e5e;
   opacity: 0.9;
   position: relative;
-  left: 678px;
+  left: 639px;
   top: 10px;
   h1 {
     // color: #ffa200;
@@ -551,6 +551,7 @@ i {
   }
   .confirm {
     left: 350px;
+    font-size: 12px;
   }
 
   .create-event {
@@ -806,6 +807,10 @@ i {
   }
   .manage-event {
     margin-right: 312px;
+  }
+  .confirm {
+    // left: 735px;
+    left: 708px;
   }
   .eventform-subheader {
     width: 1272px;
