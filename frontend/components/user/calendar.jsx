@@ -81,33 +81,29 @@ class Calendar extends React.Component {
   }
 
   componentDidMount() {
-    const events = this.props.currentUser.events;
-    const filtered = events.filter(event => 
-      formatAbsDate(event.date).year === this.state.year && formatAbsDate(event.date).month === this.state.month
-    );
-    this.setState({monthEvents: filtered});
-    // console.log(this.state);
+    // const events = this.props.events;
+    // const filtered = events.filter(event => 
+    //   formatAbsDate(event.date).year === this.state.year && formatAbsDate(event.date).month === this.state.month
+    // );
+    // this.setState({monthEvents: filtered});
   }
 
   componentDidUpdate() {
-    const monthEvents = this.state.monthEvents;
+    const monthEvents = this.props.events;
     $('.event-space').each(function(idx) {
       monthEvents.forEach(event => {
         if (formatAbsDate(event.date).day === idx + 1) {
-        
-          // let name = $(`<h1>${event.name}</h1>`);
-          // $(this).append(name);
-          let link = $('<a></a>').attr('href', `#/events/${event.id}`);
-          // $(this).text(event.name).wrap(link);
-          $(this).html(event.name).wrap(link);
+          // let link = $('<a></a>').attr('href', `#/events/${event.id}`);
+          // $(this).html(event.name).wrap(link);
+          $(this).children().first().text(event.name).next().text(`at ${event.venue}`);
         }
       });
     });
-    // console.log(this.hasEvent(Number('26')));
+    console.log(monthEvents);
   }
 
   hasEvent(day) {
-    const events = this.state.monthEvents;
+    const events = this.props.events;
     const dayEvents = [];
     events.forEach(event => {
       if (formatAbsDate(event.date).day === day) {
@@ -181,7 +177,8 @@ class Calendar extends React.Component {
                     <b></b>
                     <hr />
                     <div>
-                    {/* {this.hasEvent(day).length} */}
+                      <h1></h1>
+                      <h2></h2>
                     </div>
                   </td>
                 )}
