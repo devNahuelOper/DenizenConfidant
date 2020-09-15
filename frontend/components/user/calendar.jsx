@@ -94,7 +94,7 @@ class Calendar extends React.Component {
     $('.event-space').each(function(idx) {
       monthEvents.forEach(event => {
         if (formatAbsDate(event.date).day === idx + 1) {
-          // let image = $(`<img src=${event.photoUrl}/>`);
+        
           // let name = $(`<h1>${event.name}</h1>`);
           // $(this).append(name);
           let link = $('<a></a>').attr('href', `#/events/${event.id}`);
