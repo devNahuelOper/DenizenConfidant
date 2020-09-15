@@ -64,6 +64,20 @@ export const formatLastOnline = date => {
   return `${day} ${month} ${year}`;
 };
 
+export const formatAbsDate = date => {
+  const obj = new Date(date);
+  obj.setMinutes(obj.getMinutes() + obj.getTimezoneOffset());
+  const month = obj.getMonth();
+  const day = obj.getDate();
+  const year = obj.getFullYear();
+  // return `${day} ${month} ${year}`;
+  return {
+    day: day,
+    month: month,
+    year: year
+  };
+};
+
 export const formatMonthYear = date => {
   const months = {
     0: 'January',
