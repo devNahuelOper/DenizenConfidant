@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import {
   formatMonthYear,
   formatLastOnline,
-  formatTime
+  formatTime,
+  formatAbsDate
 } from '../../util/date_util';
 import {
   toggleSearch
@@ -24,6 +25,10 @@ class UserProfile extends React.Component {
     // console.log(localStorage.getItem('lastOnline'));
   }
 
+  // componentDidUpdate() {
+  //   console.log(this.props.events);
+  // }
+
   toggleCalendar() {
     $('.calendar').toggle();
     $('#calendar-toggle').toggleClass('form');
@@ -40,7 +45,7 @@ class UserProfile extends React.Component {
   }
 
   render() {
-    const { currentUser } = this.props;
+    const { currentUser, events } = this.props;
     const flags = {
       'Argentina': '🇦🇷',
       'Brazil': '🇧🇷',
@@ -107,7 +112,7 @@ class UserProfile extends React.Component {
           </section>
         </div>
         <div className="user-main">
-          <Calendar />
+          <Calendar currentUser={currentUser} events={events}/>
         </div>
       </div>
       </React.Fragment>
@@ -169,12 +174,16 @@ class SubnavToggle extends React.Component {
 // onBlur = { this.leave }
 const mapStateToProps = (state) => {
   return {
-    currentUser: getCurrentUser(state)
+    currentUser: getCurrentUser(state),
+    events: Object.values(state.entities.events).filter(event => event.hasOwnProperty('user_id')).filter(event => 
+      formatAbsDate(event.date).year === new Date().getFullYear() && formatAbsDate(event.date).month === new Date().getMonth()
+    )
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  fetchCurrentUser: (userId) => dispatch(fetchCurrentUser(userId))
+  fetchCurrentUser: (userId) => dispatch(fetchCurrentUser(userId)),
+  fetchEvents: () => dispatch(fetchEvents()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);

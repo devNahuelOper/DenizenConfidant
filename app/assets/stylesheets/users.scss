@@ -113,6 +113,35 @@
     // padding: 4px 0 0 0;
   }
 } 
+.event-space {
+  // position: absolute;
+  display: flex;
+  flex-direction: column;
+  .eventName {
+    display: inline-block;
+  }
+  h1, a {
+    text-indent: 1px;
+  }
+  h2 {
+    text-indent: 2px;
+    color: #9c9c9c;
+    position: relative;
+    // bottom: 6px;
+  }
+  img {
+    display: none;
+    width: 152px;
+    height: 76px;
+  }
+}
+.hasEvent {
+  height: 235px;
+  width: 166px;
+}
+.eventWeek {
+  vertical-align: super;
+}
 
 #sun, #thu, #fri {
   width: 160px;
@@ -549,6 +578,17 @@ i {
   .calendar {
     width: 675px;
   }
+  .hasEvent{
+    // width: 240px;
+    width: 130px;
+    height: 225px;
+    .event-space {
+      font-size: 14px;
+      img {
+        width: 144px;
+      }
+    }
+  }
    #myevents-header {
     width: 675px;
     justify-content: normal;
@@ -615,6 +655,10 @@ i {
   }
   .cal-day b {
     font-size: 2em;
+  }
+  .hasEvent {
+    width: 150px;
+    height: 210px;
   }
 
   #myevents-header {
@@ -685,7 +729,24 @@ i {
   .calendar {
     width: 490px;
   }
-  
+  .hasEvent {
+    width: 150px;
+    height: 190px;
+    .event-space {
+      font-size: 12px;
+      white-space: nowrap;
+      a {
+        line-height: 1.5em;
+      }
+      img {
+        width: 120px;
+      }
+      h2 {
+        bottom: 4px;
+      }
+    }
+  }
+
   #myevents-header {
     width: 490px;
   }
@@ -734,6 +795,17 @@ i {
       font-size: 1em;
     }
   }
+  .hasEvent {
+    width: 110px;
+    height: 160px;
+    .event-space {
+      font-size: 10px;
+      img {
+        width: 100px;
+      }
+    }
+  }
+
   #myevents-header {
     width: 360px;
     justify-content: space-between;
