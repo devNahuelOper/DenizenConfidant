@@ -780,6 +780,17 @@ i {
       font-size: 1em;
     }
   }
+  .hasEvent {
+    width: 610px;
+    height: 160px;
+    .event-space {
+      font-size: 8px;
+      img {
+        width: 80px;
+      }
+    }
+  }
+
   #myevents-header {
     width: 360px;
     justify-content: space-between;
