@@ -114,13 +114,20 @@
   }
 } 
 .event-space {
-  position: absolute;
-  h1 {
-    text-indent: 2px;
+  // position: absolute;
+  display: flex;
+  flex-direction: column;
+  .eventName {
+    display: inline-block;
+  }
+  h1, a {
+    text-indent: 1px;
   }
   h2 {
     text-indent: 2px;
     color: #9c9c9c;
+    position: relative;
+    // bottom: 6px;
   }
   img {
     display: none;
@@ -572,12 +579,13 @@ i {
     width: 675px;
   }
   .hasEvent{
-    width: 240px;
+    // width: 240px;
+    width: 130px;
     height: 225px;
     .event-space {
-      font-size: 12px;
+      font-size: 14px;
       img {
-        width: 111px;
+        width: 144px;
       }
     }
   }
@@ -649,7 +657,7 @@ i {
     font-size: 2em;
   }
   .hasEvent {
-    width: 350px;
+    width: 150px;
     height: 210px;
   }
 
@@ -722,12 +730,19 @@ i {
     width: 490px;
   }
   .hasEvent {
-    width: 550px;
+    width: 150px;
     height: 190px;
     .event-space {
-      font-size: 10px;
+      font-size: 12px;
+      white-space: nowrap;
+      a {
+        line-height: 1.5em;
+      }
       img {
-        width: 98px;
+        width: 120px;
+      }
+      h2 {
+        bottom: 4px;
       }
     }
   }
