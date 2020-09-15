@@ -112,7 +112,6 @@ class UserEvents extends React.Component {
                         {/* <div onClick={this.handleDelete}>
                           <button id="delete-event" onClick={() => deleteEvent(event.id)}>Cancel Event</button>
                         </div> */}
-                      {/* <h1 onClick={() => this.confirm(event.id)}>Confirm</h1> */}
                       </span>
                     </article>
                     <div className="confirm" id={`confirm-${event.id}`}>
