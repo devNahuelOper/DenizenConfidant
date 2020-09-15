@@ -107,7 +107,7 @@ class UserProfile extends React.Component {
           </section>
         </div>
         <div className="user-main">
-          <Calendar />
+          <Calendar currentUser={currentUser}/>
         </div>
       </div>
       </React.Fragment>
