@@ -95,7 +95,12 @@ class Calendar extends React.Component {
         if (formatAbsDate(event.date).day === idx + 1) {
           // let link = $('<a></a>').attr('href', `#/events/${event.id}`);
           // $(this).html(event.name).wrap(link);
-          $(this).children().first().text(event.name).next().text(`at ${event.venue}`);
+          // const image = $('<img/>').attr('src', event.photoUrl);
+          // $(this).prepend(image);
+          // $(this).children().first().text(event.name).next().text(`at ${event.venue}`);
+          $(this).parent().addClass('hasEvent').parent().addClass('eventWeek');
+          $(this).children().first().show().attr('src', event.photoUrl)
+          .next().text(event.name).next().text(`at ${event.venue}`);
         }
       });
     });
@@ -177,6 +182,7 @@ class Calendar extends React.Component {
                     <b></b>
                     <hr />
                     <div>
+                      <img src="" alt=""/>
                       <h1></h1>
                       <h2></h2>
                     </div>
