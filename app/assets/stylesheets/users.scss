@@ -648,6 +648,10 @@ i {
   .cal-day b {
     font-size: 2em;
   }
+  .hasEvent {
+    width: 350px;
+    height: 210px;
+  }
 
   #myevents-header {
     width: 560px;
@@ -717,7 +721,17 @@ i {
   .calendar {
     width: 490px;
   }
-  
+  .hasEvent {
+    width: 550px;
+    height: 190px;
+    .event-space {
+      font-size: 10px;
+      img {
+        width: 98px;
+      }
+    }
+  }
+
   #myevents-header {
     width: 490px;
   }
