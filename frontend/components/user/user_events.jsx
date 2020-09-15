@@ -22,8 +22,11 @@ class UserEvents extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchEvents();
     toggleSearch();
   }
+
+ 
 
   handleDelete(id) {
     $(`#${id}`).remove();
@@ -178,7 +181,7 @@ const mapStateToProps = (state) => {
     // events: Object.values(state.entities.events).filter(
     //   event => {event.user_id === currentUser.id}
     // )
-    events: Object.values(state.entities.events)
+    events: Object.values(state.entities.events).filter(event => event.hasOwnProperty('user_id'))
   }
 }
 
