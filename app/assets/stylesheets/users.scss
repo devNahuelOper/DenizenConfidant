@@ -571,6 +571,16 @@ i {
   .calendar {
     width: 675px;
   }
+  .hasEvent{
+    width: 240px;
+    height: 225px;
+    .event-space {
+      font-size: 12px;
+      img {
+        width: 111px;
+      }
+    }
+  }
    #myevents-header {
     width: 675px;
     justify-content: normal;
