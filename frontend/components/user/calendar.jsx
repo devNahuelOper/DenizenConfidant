@@ -98,9 +98,9 @@ class Calendar extends React.Component {
           // let image = $(`<img src=${event.photoUrl}/>`);
           // let name = $(`<h1>${event.name}</h1>`);
           // $(this).append(name);
-          let link = $('<a></a>').attr('href', `/#/events/${event.id}`);
+          let link = $('<a></a>').attr('href', `#/events/${event.id}`);
           // $(this).text(event.name).wrap(link);
-          $(this).text(event.name);
+          $(this).html(event.name).wrap(link);
         }
       });
     });
