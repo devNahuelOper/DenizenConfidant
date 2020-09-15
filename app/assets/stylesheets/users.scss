@@ -115,9 +115,25 @@
 } 
 .event-space {
   position: absolute;
+  h1 {
+    text-indent: 2px;
+  }
   h2 {
+    text-indent: 2px;
     color: #9c9c9c;
   }
+  img {
+    display: none;
+    width: 152px;
+    height: 76px;
+  }
+}
+.hasEvent {
+  height: 235px;
+  width: 166px;
+}
+.eventWeek {
+  vertical-align: super;
 }
 
 #sun, #thu, #fri {
