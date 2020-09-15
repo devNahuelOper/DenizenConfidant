@@ -26,8 +26,6 @@ class UserEvents extends React.Component {
   }
 
   handleDelete(id) {
-    // e.preventDefault();
-    // e.target.parentNode.parentNode.parentNode.parentNode.remove();
     $(`#${id}`).remove();
     window.setTimeout(() => {
       window.location.reload(true);
@@ -35,7 +33,6 @@ class UserEvents extends React.Component {
   }
 
   confirm(id) {
-    // $(e.currentTarget).parent().parent().parent().append('<div id="confirm">Are you sure?</div>');
     $(`#confirm-${id}`).toggle();
   }
 
@@ -109,9 +106,6 @@ class UserEvents extends React.Component {
                         <div>
                           <button id="delete-event" onClick={() => this.confirm(event.id)}>Cancel Event</button>
                         </div>
-                        {/* <div onClick={this.handleDelete}>
-                          <button id="delete-event" onClick={() => deleteEvent(event.id)}>Cancel Event</button>
-                        </div> */}
                       </span>
                     </article>
                     <div className="confirm" id={`confirm-${event.id}`}>
