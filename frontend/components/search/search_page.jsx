@@ -31,6 +31,17 @@ class SearchPage extends React.Component {
           </header>
           <div className="search-main">
             <Search />
+            <section className="results">
+              <div className="dj-results">
+                <h1>DJs</h1>
+              </div>
+              <div className="event-results">
+                <h1>Events</h1>
+              </div>
+              <div className="genre-results">
+                <h1>Genres</h1>
+              </div>
+            </section>
           </div>
         </div>
       </React.Fragment>
