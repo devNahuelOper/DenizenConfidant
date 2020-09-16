@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import { daysInMonth, firstDay, daysInLastMonth, formatMonthYear, formatAbsDate } from '../../util/date_util';
 
 
@@ -19,7 +18,6 @@ class Calendar extends React.Component {
     $('.event-space').each(function(idx) {
       monthEvents.forEach(event => {
         if (formatAbsDate(event.date).day === idx + 1) {
-          // $(this).children().first().text(event.name).next().text(`at ${event.venue}`);
           $(this).parent().addClass('hasEvent').parent().addClass('eventWeek');
           $(this).children().first().show().attr('src', event.photoUrl)
           .next().attr({class: 'eventName', id: `${event.id}`}).text(event.name).next().text(`at ${event.venue}`);
@@ -81,7 +79,6 @@ class Calendar extends React.Component {
       $(this).parent().css({ color: '#787878', background: '#3c3c3c' });
     });
 
-    const { currentUser } = this.props;
     return (
       <div className="calendar">
         <ul className="year-month">
