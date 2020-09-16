@@ -28,7 +28,7 @@
   font-size: 34px;
   line-height: 75px;
   // border: 0;
-  border: 2px solid blue;
+  border: 2px solid #005fcc;
   border-radius: 4px;
   margin: 0 auto;
   padding: 0;
@@ -189,6 +189,9 @@
   .search-container {
     display: block;
   }
+  #search-input {
+    outline: -webkit-focus-ring-color auto 1px;
+  }
 }
 .results {
   width: 960px;
@@ -203,16 +206,19 @@
   }
 }
 .dj-results {
+  margin-bottom: 20px;
   h1 {
     border-color: #ffff01;
   }
 }
 .event-results {
+  margin-bottom: 20px;
   h1 {
     border-color: #6a96c2;
   }
 }
 .genre-results {
+  margin-bottom: 20px;
   h1 {
     border-color: #b4bd00;
   }
@@ -278,33 +284,69 @@
     // left: 40px;
     width: 400px;
   }
+  .search-page {
+    #nav-container {
+      height: 110px;
+    }
+    #navbar {
+      height: 110px;
+      nav {
+        height: 60px;
+        // width: 589px;
+      }
+      h1 {
+        height: unset;
+        font-size: 38px;
+      }
+    }
+    #logo {
+      right: 4px;
+    }
+    
+  }
   .search-main {
     .search-container {
       background-color: #2e2e2e;
       border-bottom: 1px solid #575757;
-      height: 110px;
+      height: 144px;
     }
     #searchbar {
       display: block;
-      width: 98%;
-      padding: 20px 0;
+      // width: 98%;
+      width: 560px;
+      padding: 16px 0;
     }
     #search-input {
       width: 100%;
+      height: 48px;
       font-size: 1em;
       line-height: 2em;
       padding: 8px 16px;
       box-sizing: border-box;
       border: unset;
       border-radius: unset;
+      margin-bottom: 20px;
+      outline: 0;
+      &:focus {
+        outline: -webkit-focus-ring-color auto 1px;
+      }
     }
     #search-button-container {
       width: 100%;
       font-size: 24px;
+      height: 44px;
+    }
+    #searchlist {
+      top: 184px;
+      width: 560px;
     }
   }
   .results {
     width: 560px;
+    padding: 10px 0;
+    h1 {
+      font-size: 16px;
+    }
   }
 }
 
@@ -321,6 +363,12 @@
   #searchlist {
     // left: 31px;
     width: 345px;
+  }
+
+  .search-main {
+    #searchbar, #searchlist {
+      width: 490px;
+    }
   }
   .results {
     width: 490px;
