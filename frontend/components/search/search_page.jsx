@@ -10,6 +10,13 @@ class SearchPage extends React.Component {
 
   componentDidMount() {
     $(document).trigger('click');
+    console.log(this.props);
+    // $('.search-main #search-input').val('c');
+    // console.log($('#search-input').val());
+  }
+
+  componentDidUpdate() {
+    console.log(this.props);
   }
 
   render() {
