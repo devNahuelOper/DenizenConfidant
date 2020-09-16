@@ -402,6 +402,39 @@
   .show-search {
     padding: 0 4px;
   }
+
+  .search-main {
+    .search-container {
+      height: 102px;
+      padding: 0;
+    }
+    #search-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      // height: 100px;
+    }
+    #searchbar {
+      width: 375px;
+      padding: 1px 0;
+    }
+    #search-input {
+      margin-bottom: 2px;
+    }
+    #search-button-container {
+      height: 48px;
+    }
+    #searchlist {
+      // top: 121px;
+      // max-height: 196px;
+      // overflow: scroll;
+      top: 50px;
+      width: 375px;
+    }
+  }
+  .results {
+    width: 360px;
+  }
 }
 // Large
 
