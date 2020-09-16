@@ -31,7 +31,6 @@ class Calendar extends React.Component {
     $('.eventName').each(function() {
       const id = $(this).attr('id');
       const link = $('<a></a>').attr('href', `#/events/${id}`);
-      // $(this).wrap('<a></a>').attr('href', `#/events/${$(this).attr('id')}`)
       $(this).wrap(link)
       .on('click', () => {
         window.setTimeout(() => {
