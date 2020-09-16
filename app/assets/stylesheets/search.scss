@@ -14,7 +14,8 @@
 .show-search {
   background-color: white !important;
   color: black;
-  border-bottom: 2px solid white;
+  border-bottom: 3px solid white;
+  padding-top: 2px;
 }
 
 #searchbar {
@@ -27,7 +28,7 @@
   font-size: 34px;
   line-height: 75px;
   // border: 0;
-  border: 2px solid blue;
+  border: 2px solid #005fcc;
   border-radius: 4px;
   margin: 0 auto;
   padding: 0;
@@ -54,11 +55,15 @@
   background-color: transparent;
   width: 100%;
   height: 100%;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+  a {
+    display: inline-block;
+  }
 }
-#search-button:hover {
-  background-color: black;
-  color: white;
-}
+
 
 // #query {
 //   display: none;
@@ -172,7 +177,54 @@
   background-color: #d8d8d8;
 }
 
-// Small
+
+// SEARCH PAGE
+
+.search-page {
+  border-bottom: 1px solid #575757;
+}
+
+.search-main {
+  background-color: #2e2e2e;
+  .search-container {
+    display: block;
+  }
+  #search-input {
+    outline: -webkit-focus-ring-color auto 1px;
+  }
+}
+.results {
+  width: 960px;
+  margin: 0 auto;
+  padding: 40px 0;
+  h1 {
+    font-size: 24px;
+    color: #fff;
+    border-bottom: 2px solid;
+    padding-bottom: 2px;
+    margin: 0 0 4px 0;
+  }
+}
+.dj-results {
+  margin-bottom: 20px;
+  h1 {
+    border-color: #ffff01;
+  }
+}
+.event-results {
+  margin-bottom: 20px;
+  h1 {
+    border-color: #6a96c2;
+  }
+}
+.genre-results {
+  margin-bottom: 20px;
+  h1 {
+    border-color: #b4bd00;
+  }
+}
+
+// MEDIA QUERIES
 
 @media only screen and (max-width: 972px) {
   #searchbar {
@@ -190,6 +242,22 @@
     // top: 172px;
     // left: 68px;
     width: 395px;
+  }
+
+  .search-main {
+    #search-input {
+      width: 524px;
+      line-height: 36px;
+      font-size: 30px;
+    }
+    #search-button-container {
+      width: 140px;
+      height: 37px;
+      font-size: 18px;
+    }
+  }
+  .results {
+    width: 675px;
   }
 }
 
@@ -216,6 +284,70 @@
     // left: 40px;
     width: 400px;
   }
+  .search-page {
+    #nav-container {
+      height: 110px;
+    }
+    #navbar {
+      height: 110px;
+      nav {
+        height: 60px;
+        // width: 589px;
+      }
+      h1 {
+        height: unset;
+        font-size: 38px;
+      }
+    }
+    #logo {
+      right: 4px;
+    }
+    
+  }
+  .search-main {
+    .search-container {
+      background-color: #2e2e2e;
+      border-bottom: 1px solid #575757;
+      height: 144px;
+    }
+    #searchbar {
+      display: block;
+      // width: 98%;
+      width: 560px;
+      padding: 16px 0;
+    }
+    #search-input {
+      width: 100%;
+      height: 48px;
+      font-size: 1em;
+      line-height: 2em;
+      padding: 8px 16px;
+      box-sizing: border-box;
+      border: unset;
+      border-radius: unset;
+      margin-bottom: 20px;
+      outline: 0;
+      &:focus {
+        outline: -webkit-focus-ring-color auto 1px;
+      }
+    }
+    #search-button-container {
+      width: 100%;
+      font-size: 24px;
+      height: 44px;
+    }
+    #searchlist {
+      top: 184px;
+      width: 560px;
+    }
+  }
+  .results {
+    width: 560px;
+    padding: 10px 0;
+    h1 {
+      font-size: 16px;
+    }
+  }
 }
 
 @media only screen and (max-width: 560px) {
@@ -225,10 +357,21 @@
   #search-input {
     width: 340px;
     font-size: 28px;
+    border: unset;
+    border-radius: unset;
   }
   #searchlist {
     // left: 31px;
     width: 345px;
+  }
+
+  .search-main {
+    #searchbar, #searchlist {
+      width: 490px;
+    }
+  }
+  .results {
+    width: 490px;
   }
 }
 
@@ -259,6 +402,39 @@
   .show-search {
     padding: 0 4px;
   }
+
+  .search-main {
+    .search-container {
+      height: 102px;
+      padding: 0;
+    }
+    #search-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      // height: 100px;
+    }
+    #searchbar {
+      width: 375px;
+      padding: 1px 0;
+    }
+    #search-input {
+      margin-bottom: 2px;
+    }
+    #search-button-container {
+      height: 48px;
+    }
+    #searchlist {
+      // top: 121px;
+      // max-height: 196px;
+      // overflow: scroll;
+      top: 50px;
+      width: 375px;
+    }
+  }
+  .results {
+    width: 360px;
+  }
 }
 // Large
 
@@ -271,5 +447,8 @@
   }
   #search-button-container {
     margin-right: 162px;
+  }
+  .results {
+    width: 1272px;
   }
 }
