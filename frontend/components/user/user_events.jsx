@@ -178,9 +178,6 @@ class SubnavToggle extends React.Component {
 const mapStateToProps = (state) => {
   return {
     currentUser: getCurrentUser(state),
-    // events: Object.values(state.entities.events).filter(
-    //   event => {event.user_id === currentUser.id}
-    // )
     events: Object.values(state.entities.events).filter(event => event.hasOwnProperty('user_id'))
   }
 }
