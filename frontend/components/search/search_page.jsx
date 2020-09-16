@@ -8,6 +8,10 @@ class SearchPage extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    $(document).trigger('click');
+  }
+
   render() {
     return (
       <React.Fragment>
