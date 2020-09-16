@@ -9,7 +9,6 @@ class Calendar extends React.Component {
     this.state = {
       month: new Date().getMonth(),
       year: new Date().getFullYear(),
-      monthEvents: []
     }
     this.hasEvent = this.hasEvent.bind(this);
   }
@@ -20,7 +19,6 @@ class Calendar extends React.Component {
     $('.event-space').each(function(idx) {
       monthEvents.forEach(event => {
         if (formatAbsDate(event.date).day === idx + 1) {
-          // let link = $('<a></a>').attr('href', `#/events/${event.id}`);
           // $(this).children().first().text(event.name).next().text(`at ${event.venue}`);
           $(this).parent().addClass('hasEvent').parent().addClass('eventWeek');
           $(this).children().first().show().attr('src', event.photoUrl)
