@@ -63,7 +63,9 @@ class Search extends React.Component {
             placeholder="DJs, Genres, Events"
           />
           <div id="search-button-container">
-            <button id="search-button">Submit</button>
+            <button id="search-button">
+              <Link to="/search">Submit</Link>
+            </button>
           </div>
           <div
             style={this.state.searchTerm.length ? { display: 'block' } : { display: 'none' }}
