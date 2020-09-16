@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { TitleComponent } from '../title_component.jsx';
+
 
 class SearchPage extends React.Component {
   constructor(props) {
