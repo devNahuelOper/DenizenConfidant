@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router'; 
 import { fetchDjs } from '../../actions/dj_actions';
 import { fetchGenres } from '../../actions/genre_actions';
 import { fetchEvents } from '../../actions/event_actions';
@@ -23,6 +24,7 @@ class Search extends React.Component {
     this.djSearch = this.djSearch.bind(this);
     this.genreSearch = this.genreSearch.bind(this);
     this.eventSearch = this.eventSearch.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -38,6 +40,12 @@ class Search extends React.Component {
 
   resetSearchTerm() {
     this.setState({searchTerm: ''});
+  }
+
+  handleSubmit() {
+    const { history } = this.props;
+    if (history) history.push('/search');
+    // console.log('submitted');
   }
 
   djSearch() {
@@ -56,14 +64,14 @@ class Search extends React.Component {
     return (
       <div className="search-container">
         <div id="searchbar" >
-        <form id="search-form" onSubmit={this.djSearch}>
+        <form id="search-form" onSubmit={this.handleSubmit}>
           <input type="text" id="search-input" 
             value={this.state.searchTerm}
             onChange={this.editSearchTerm}
             placeholder="DJs, Genres, Events"
           />
           <div id="search-button-container">
-            <button id="search-button">
+            <button id="search-button" type="submit">
               <Link to="/search">Submit</Link>
             </button>
           </div>
@@ -168,4 +176,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
