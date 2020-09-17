@@ -28,10 +28,15 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
+    this._isMounted = true;
     this.props.fetchDjs().then(djs => this.setState({ djs: Object.values(djs.djs) }));
     this.props.fetchGenres().then(genres => this.setState({ genres: Object.values(genres.genres)}));    
     this.props.fetchEvents().then(events => this.setState({ events: Object.values(events.events)}));
     // toggleSearch();    
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   editSearchTerm(e) {
@@ -43,9 +48,8 @@ class Search extends React.Component {
   }
 
   handleSubmit() {
-    const { history } = this.props;
-    if (history) history.push('/search');
-    // console.log('submitted');
+    window.location = '#/search';
+    console.log('submitted');
   }
 
   djSearch() {
@@ -71,8 +75,8 @@ class Search extends React.Component {
             placeholder="DJs, Genres, Events"
           />
           <div id="search-button-container">
-            <button id="search-button" type="submit">
-              <Link to="/search">Submit</Link>
+            <button id="search-button" type="submit">Submit
+              {/* <Link to="/search">Submit</Link> */}
             </button>
           </div>
           <div

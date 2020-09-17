@@ -6,17 +6,21 @@ import Search from './search';
 class SearchPage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      searchTerm: $('#search-input').val()
+    }
   }
 
   componentDidMount() {
     $(document).trigger('click');
-    console.log(this.props);
-    // $('.search-main #search-input').val('c');
-    // console.log($('#search-input').val());
+    // console.log(this.props);
+    $('.search-main #search-input').val(this.state.searchTerm);
+    // console.log($('.search-main #search-input').val());
+    console.log(this.state);
   }
 
   componentDidUpdate() {
-    console.log(this.props);
+    console.log(this.state);
   }
 
   render() {
@@ -41,7 +45,7 @@ class SearchPage extends React.Component {
             </div>
           </header>
           <div className="search-main">
-            <Search />
+            <Search searchTerm={this.state.searchTerm}/>
             <section className="results">
               <div className="dj-results">
                 <h1>DJs</h1>
