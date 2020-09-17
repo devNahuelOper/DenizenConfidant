@@ -6,6 +6,9 @@ import Search from './search';
 import { fetchDjs } from '../../actions/dj_actions';
 import { fetchGenres } from '../../actions/genre_actions';
 import { fetchEvents } from '../../actions/event_actions';
+import {
+  formatDateStyle
+} from '../../util/date_util';
 
 class SearchPage extends React.Component {
   constructor(props) {
@@ -65,6 +68,14 @@ class SearchPage extends React.Component {
               </div>
               <div className="event-results">
                 <h1>Events</h1>
+                <ul>
+                  {events.map((event, i) =>
+                    <li key={i}>
+                      <Link to={`/events/${event.id}`}>{event.name}</Link>
+                      <span> on {formatDateStyle(event.date).split(',')[1]}</span>
+                    </li>
+                  )}
+                </ul>
               </div>
               <div className="genre-results">
                 <h1>Genres</h1>
