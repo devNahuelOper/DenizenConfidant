@@ -68,6 +68,13 @@ class SearchPage extends React.Component {
               </div>
               <div className="genre-results">
                 <h1>Genres</h1>
+                <ul>
+                  {genres.map((genre, i) =>
+                    <li key={i}>
+                      <Link to={`/genres/${genre.id}`}>{genre.name}</Link>
+                    </li>
+                  )}
+                </ul>
               </div>
             </section>
           </div>
