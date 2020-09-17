@@ -7,13 +7,15 @@ class SearchPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: $('#search-input').val()
+      searchTerm: $('#search-input').val(),
+      djs: [],
+      events: [],
+      genres: []
     }
   }
 
   componentDidMount() {
     $(document).trigger('click');
-    // console.log(this.props);
     $('.search-main #search-input').val(this.state.searchTerm);
     // console.log($('.search-main #search-input').val());
     console.log(this.state);
@@ -45,7 +47,7 @@ class SearchPage extends React.Component {
             </div>
           </header>
           <div className="search-main">
-            <Search searchTerm={this.state.searchTerm}/>
+            <Search searchTerm={this.state.searchTerm} />
             <section className="results">
               <div className="dj-results">
                 <h1>DJs</h1>

@@ -5,9 +5,6 @@ import { withRouter } from 'react-router';
 import { fetchDjs } from '../../actions/dj_actions';
 import { fetchGenres } from '../../actions/genre_actions';
 import { fetchEvents } from '../../actions/event_actions';
-import {
-  toggleSearch
-} from '../../util/search_util';
 
 
 class Search extends React.Component {
@@ -31,8 +28,7 @@ class Search extends React.Component {
     this._isMounted = true;
     this.props.fetchDjs().then(djs => this.setState({ djs: Object.values(djs.djs) }));
     this.props.fetchGenres().then(genres => this.setState({ genres: Object.values(genres.genres)}));    
-    this.props.fetchEvents().then(events => this.setState({ events: Object.values(events.events)}));
-    // toggleSearch();    
+    this.props.fetchEvents().then(events => this.setState({ events: Object.values(events.events)})); 
   }
 
   componentWillUnmount() {
