@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { TitleComponent } from '../title_component.jsx';
 import Search from './search';
+import { fetchDjs } from '../../actions/dj_actions';
+import { fetchGenres } from '../../actions/genre_actions';
+import { fetchEvents } from '../../actions/event_actions';
 
 class SearchPage extends React.Component {
   constructor(props) {
@@ -17,12 +21,14 @@ class SearchPage extends React.Component {
   componentDidMount() {
     $(document).trigger('click');
     $('.search-main #search-input').val(this.state.searchTerm);
-    // console.log($('.search-main #search-input').val());
-    console.log(this.state);
+    this.props.fetchDjs();
+    this.props.fetchEvents();
+    this.props.fetchGenres();
+    console.log(this.props);
   }
 
   componentDidUpdate() {
-    console.log(this.state);
+    console.log(this.props);
   }
 
   render() {
@@ -66,4 +72,19 @@ class SearchPage extends React.Component {
   }
 }
 
-export default SearchPage;
+const mapStateToProps = (state) => {
+  let searchTerm = $('#search-input').val();
+  return {
+    djs: Object.values(state.entities.djs).filter(dj => dj.name.toLowerCase().startsWith(searchTerm.toLowerCase())),
+    genres: Object.values(state.entities.genres).filter(genre => genre.name.toLowerCase().startsWith(searchTerm.toLowerCase())),
+    events: Object.values(state.entities.events).filter(event => event.name.toLowerCase().startsWith(searchTerm.toLowerCase()))
+  }
+};
+
+const mapDispatchToProps = dispatch => ({
+  fetchDjs: () => dispatch(fetchDjs()),
+  fetchGenres: () => dispatch(fetchGenres()),
+  fetchEvents: () => dispatch(fetchEvents())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);
