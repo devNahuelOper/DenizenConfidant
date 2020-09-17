@@ -197,6 +197,7 @@
   width: 960px;
   margin: 0 auto;
   padding: 40px 0;
+  color: white;
   h1 {
     font-size: 24px;
     color: #fff;
@@ -210,17 +211,28 @@
   h1 {
     border-color: #ffff01;
   }
+  a:hover {
+    background-color: #ffff01;
+    color: #1e1e1e;
+  }
 }
 .event-results {
   margin-bottom: 20px;
   h1 {
     border-color: #6a96c2;
   }
+  a:hover {
+    background-color: #6a96c2;
+  }
 }
 .genre-results {
   margin-bottom: 20px;
   h1 {
     border-color: #b4bd00;
+  }
+  a:hover {
+    background-color: #b4bd00;
+    color: #1e1e1e;
   }
 }
 
