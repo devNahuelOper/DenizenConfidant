@@ -12,9 +12,6 @@ class SearchPage extends React.Component {
     super(props);
     this.state = {
       searchTerm: $('#search-input').val(),
-      djs: [],
-      events: [],
-      genres: []
     }
   }
 
@@ -27,11 +24,12 @@ class SearchPage extends React.Component {
     console.log(this.props);
   }
 
-  componentDidUpdate() {
-    console.log(this.props);
-  }
+  // componentDidUpdate() {
+  //   console.log(this.props);
+  // }
 
   render() {
+    const { djs, events, genres } = this.props;
     return (
       <React.Fragment>
         <TitleComponent title='DC: Search' />
@@ -57,6 +55,13 @@ class SearchPage extends React.Component {
             <section className="results">
               <div className="dj-results">
                 <h1>DJs</h1>
+                <ul>
+                  {djs.map((dj, i) => 
+                  <li key={i}>
+                    <Link to={`/djs/${dj.id}`}>{dj.name}</Link>
+                  </li>
+                  )}
+                </ul>
               </div>
               <div className="event-results">
                 <h1>Events</h1>
