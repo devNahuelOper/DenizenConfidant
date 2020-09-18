@@ -63,7 +63,7 @@ class SearchPage extends React.Component {
                 </ul>
               </div>
 
-             { events.length &&
+             { events.length > 0 &&
               <div className="event-results">
                 <h1>Events</h1>
                 <ul>
@@ -76,7 +76,7 @@ class SearchPage extends React.Component {
                 </ul>
               </div>
             }
-               { genres.length &&
+               { genres.length > 0 &&
               <div className="genre-results">
                <h1>Genres</h1>
                 <ul>
