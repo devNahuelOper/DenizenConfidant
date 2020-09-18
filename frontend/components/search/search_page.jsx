@@ -24,15 +24,12 @@ class SearchPage extends React.Component {
     this.props.fetchDjs();
     this.props.fetchEvents();
     this.props.fetchGenres();
-    console.log(this.props);
   }
 
-  // componentDidUpdate() {
-  //   console.log(this.props);
-  // }
 
   render() {
     const { djs, events, genres } = this.props;
+    const allResults = djs.length + events.length + genres.length;
     return (
       <React.Fragment>
         <TitleComponent title='DC: Search' />
@@ -56,7 +53,8 @@ class SearchPage extends React.Component {
           <div className="search-main">
             <Search searchTerm={this.state.searchTerm} />
             <section className="results">
-              <div className="dj-results">
+             { djs.length > 0 &&
+             <div className="dj-results">
                 <h1>DJs</h1>
                 <ul>
                   {djs.map((dj, i) => 
@@ -66,6 +64,8 @@ class SearchPage extends React.Component {
                   )}
                 </ul>
               </div>
+            }
+             { events.length > 0 &&
               <div className="event-results">
                 <h1>Events</h1>
                 <ul>
@@ -77,8 +77,10 @@ class SearchPage extends React.Component {
                   )}
                 </ul>
               </div>
+            }
+               { genres.length > 0 &&
               <div className="genre-results">
-                <h1>Genres</h1>
+               <h1>Genres</h1>
                 <ul>
                   {genres.map((genre, i) =>
                     <li key={i}>
@@ -87,6 +89,11 @@ class SearchPage extends React.Component {
                   )}
                 </ul>
               </div>
+                }
+
+                { allResults === 0 &&
+                  <span id="no-results">Your search <b>{this.state.searchTerm}</b> returned 0 results.</span>
+                }
             </section>
           </div>
         </div>
