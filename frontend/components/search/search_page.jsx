@@ -52,7 +52,8 @@ class SearchPage extends React.Component {
           <div className="search-main">
             <Search searchTerm={this.state.searchTerm} />
             <section className="results">
-              <div className="dj-results">
+             { djs.length > 0 &&
+             <div className="dj-results">
                 <h1>DJs</h1>
                 <ul>
                   {djs.map((dj, i) => 
@@ -62,7 +63,7 @@ class SearchPage extends React.Component {
                   )}
                 </ul>
               </div>
-
+            }
              { events.length > 0 &&
               <div className="event-results">
                 <h1>Events</h1>
