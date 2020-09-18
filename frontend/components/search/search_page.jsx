@@ -62,6 +62,8 @@ class SearchPage extends React.Component {
                   )}
                 </ul>
               </div>
+
+             { events.length &&
               <div className="event-results">
                 <h1>Events</h1>
                 <ul>
@@ -73,6 +75,7 @@ class SearchPage extends React.Component {
                   )}
                 </ul>
               </div>
+            }
                { genres.length &&
               <div className="genre-results">
                <h1>Genres</h1>
