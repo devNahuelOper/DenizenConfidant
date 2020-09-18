@@ -24,12 +24,8 @@ class SearchPage extends React.Component {
     this.props.fetchDjs();
     this.props.fetchEvents();
     this.props.fetchGenres();
-    console.log(this.props);
   }
 
-  // componentDidUpdate() {
-  //   console.log(this.props);
-  // }
 
   render() {
     const { djs, events, genres } = this.props;
