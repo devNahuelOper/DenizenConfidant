@@ -73,8 +73,9 @@ class SearchPage extends React.Component {
                   )}
                 </ul>
               </div>
+               { genres.length &&
               <div className="genre-results">
-                <h1>Genres</h1>
+               <h1>Genres</h1>
                 <ul>
                   {genres.map((genre, i) =>
                     <li key={i}>
@@ -83,6 +84,7 @@ class SearchPage extends React.Component {
                   )}
                 </ul>
               </div>
+                }
             </section>
           </div>
         </div>
