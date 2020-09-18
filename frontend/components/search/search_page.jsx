@@ -29,6 +29,7 @@ class SearchPage extends React.Component {
 
   render() {
     const { djs, events, genres } = this.props;
+    const allResults = djs.length + events.length + genres.length;
     return (
       <React.Fragment>
         <TitleComponent title='DC: Search' />
@@ -88,6 +89,10 @@ class SearchPage extends React.Component {
                   )}
                 </ul>
               </div>
+                }
+
+                { allResults === 0 &&
+                  <span id="no-results">Your search <b>{this.state.searchTerm}</b> returned 0 results.</span>
                 }
             </section>
           </div>
