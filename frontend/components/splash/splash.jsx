@@ -136,7 +136,7 @@ class SplashPage extends React.Component {
                     <img src={window.deadmau5Url} id="deadmau5"/>
                    
                     {/* <Link id="deadmau5-link" to={`/djs/${deamauId}`}>Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link> */}
-                    <Link id="deadmau5-link" to="/djs/725">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
+                    <Link id="deadmau5-link" to="/djs/725" title="Deadmau5">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
                     <audio id="speed" src="speed.mp3" controls></audio>
                   </article>
                 </li>
@@ -145,7 +145,7 @@ class SplashPage extends React.Component {
                   <article>
                     <img src={window.noisufUrl} id="noisuf"/>    
                     {/* <Link id="noisuf-link" to={`/djs/${noisufId}`}>Noisuf-X - Count to Seven</Link> */}
-                    <Link id="noisuf-link" to="/djs/768">Noisuf-X - Count to Seven</Link>
+                    <Link id="noisuf-link" to="/djs/768" title="Noisuf-X">Noisuf-X - Count to Seven</Link>
                     <audio id="cseven" src="cseven.mp3" controls></audio>
                   </article>
                 </li>
