@@ -123,7 +123,7 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.gesaffelsteinUrl} id="gesaffelstein"/>
-                    <Link id="gesaffelstein-link" to="/djs/739">Gesaffelstein - Depravity</Link>
+                    <Link id="gesaffelstein-link" to="/djs/739" title="Gesaffelstein">Gesaffelstein - Depravity</Link>
                     {/* <Link id="gesaffelstein-link" to={`/djs/${gesaffId}`}>Gesaffelstein - Depravity</Link> */}
                     {/* <Link to={`/djs/${djs.find(dj => dj.name === 'Gesaffelstein')}`}>Gesaffelstein - Depravity</Link> */}
                     <audio id="depravity" src="depravity.mp3" controls></audio>
