@@ -154,7 +154,7 @@ class SplashPage extends React.Component {
                   <article>
                     <img src={window.nomanaUrl} id="nomana"/>
                     {/* <Link id="nomana-link" to={`/djs/${nomanaId}`}>No Mana - Other Side</Link> */}
-                    <Link id="nomana-link" to="/djs/769">No Mana - Other Side</Link>
+                    <Link id="nomana-link" to="/djs/769" title="No Mana">No Mana - Other Side</Link>
                     <audio id="otherside" src="otherside.mp3" controls></audio>
                   </article>
                 </li>
@@ -163,7 +163,7 @@ class SplashPage extends React.Component {
                   <article>
                     <img src={window.kayzoUrl} id="kayzo"/>
                     {/* <Link id="kayzo-link" to={`/djs/${kayzoId}`}>Kayzo - The Fire</Link> */}
-                    <Link id="kayzo-link" to="/djs/752">Kayzo - The Fire</Link>
+                    <Link id="kayzo-link" to="/djs/752" title="Kayzo">Kayzo - The Fire</Link>
                     <audio id="fire" src="fire.mp3" controls></audio>
                   </article>
                 </li>
@@ -171,7 +171,7 @@ class SplashPage extends React.Component {
                   <article>
                     <img src={window.prydzUrl} id="prydz" />
                     {/* <Link id="prydz-link" to={`/djs/${eprydzId}`}>Eric Prydz - The Matrix</Link> */}
-                    <Link id="prydz-link" to="/djs/730">Eric Prydz - The Matrix</Link>
+                    <Link id="prydz-link" to="/djs/730" title="Eric Prydz">Eric Prydz - The Matrix</Link>
                     <audio id="matrix" src="matrix.mp3" controls></audio>
                   </article>
                 </li>
