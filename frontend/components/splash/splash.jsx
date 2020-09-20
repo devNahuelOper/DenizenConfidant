@@ -97,13 +97,11 @@ class SplashPage extends React.Component {
             </ul>
             </div>
           </nav>
-
           <section className="content">
             <div className="news-banner">
               <h1>Pulse</h1>
               <h2></h2>
             </div>
-          
             <NewsIndex news={news}/>
           </section>
           {/* {console.log(gesaffId, deamauId, noisufId, nomanaId, kayzoId, eprydzId)} */}
