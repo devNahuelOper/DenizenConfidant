@@ -6,7 +6,6 @@ import {
 } from '../../util/search_util';
 import NewsIndex from '../news/news_index';
 
-// let gesaffId, deamauId, noisufId, nomanaId, kayzoId, eprydzId;
 
 class SplashPage extends React.Component {
   constructor(props) {
@@ -22,17 +21,6 @@ class SplashPage extends React.Component {
     // this.props.fetchAllNews();
     toggleSearch();
   }
-
-  // componentDidUpdate() {
-  //   gesaffId = this.props.djs.find(dj => dj.name === 'Gesaffelstein').id;
-  //   deamauId = this.props.djs.find(dj => dj.name === 'Deadmau5').id;
-  //   noisufId = this.props.djs.find(dj => dj.name === 'Noisuf X').id;
-  //   nomanaId = this.props.djs.find(dj => dj.name === 'No Mana').id;
-  //   kayzoId = this.props.djs.find(dj => dj.name === 'Kayzo').id;
-  //   eprydzId = this.props.djs.find(dj => dj.name === 'Eric Prydz').id;
-  // }
-
-
 
   // useQuery() {
   //   return new URLSearchParams(useLocation().search);
