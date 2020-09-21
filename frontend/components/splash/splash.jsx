@@ -21,10 +21,6 @@ class SplashPage extends React.Component {
     toggleSearch();
   }
 
-  // useQuery() {
-  //   return new URLSearchParams(useLocation().search);
-  // }
-
   render() {
     const { djs, news } = this.props;
 
@@ -91,7 +87,6 @@ class SplashPage extends React.Component {
             </div>
             <NewsIndex news={news}/>
           </section>
-          {/* {console.log(gesaffId, deamauId, noisufId, nomanaId, kayzoId, eprydzId)} */}
      
           <section className="beats">
             <nav className="main-banner yellow-banner">
@@ -112,14 +107,11 @@ class SplashPage extends React.Component {
                     {/* <Link id="gesaffelstein-link" to={`/djs/${gesaffId}`}>Gesaffelstein - Depravity</Link> */}
                     {/* <Link to={`/djs/${djs.find(dj => dj.name === 'Gesaffelstein')}`}>Gesaffelstein - Depravity</Link> */}
                     <audio id="depravity" src="depravity.mp3" controls></audio>
-                      
                   </article>
                 </li>
-
                 <li className="song">
                   <article>
-                    <img src={window.deadmau5Url} id="deadmau5"/>
-                   
+                    <img src={window.deadmau5Url} id="deadmau5"/>               
                     {/* <Link id="deadmau5-link" to={`/djs/${deamauId}`}>Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link> */}
                     <Link id="deadmau5-link" to="/djs/725" title="Deadmau5">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
                     <audio id="speed" src="speed.mp3" controls></audio>
