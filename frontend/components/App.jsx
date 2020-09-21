@@ -24,29 +24,7 @@ import NewsShow from './news/news_show';
 import { TitleComponent } from './title_component.jsx';
 import Modal from './modal/modal';
 
-// const App = () => (
-//   <div>
-    
-//     <GreetingContainer />    
-//     <Search />
-//     <Switch>
-//       <AuthRoute path="/login" component={LoginFormContainer} />
-//       <AuthRoute path="/signup" component={SignupFormContainer} />
-//       <Route exact path="/" component={SplashContainer} />
-//       <Route exact path="/events" component={EventIndexContainer}/>
-//       <Route exact path="/events/:eventId" component={EventShowContainer} />
-//       <Route exact path="/djs" component={DjIndexContainer} />
-//       <Route exact path="/djs/:djId" component={DjShowContainer} />
-//       <Route exact path="/genres" component={GenreIndexContainer}/>
-//       <Route exact path="/genres/:genreId" component={GenreShowContainer} />
 
-//     </Switch>
-
-//     <Footer />
-//  </div>
-// ); 
-
-// const searchbar = document.getElementsByClassName('search-container')[0];
 
 const withTitle = ({ component: Component, title }) => {
   return class Title extends React.Component {
@@ -74,10 +52,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-
+      <>
         <GreetingContainer />
-       
         <Search />
         {/* <Modal /> */}
         <Switch>
@@ -98,9 +74,8 @@ class App extends React.Component {
           <Route exact path="/news/:newsId" component={NewsShow}/>
           <Route exact path="/search" component={SearchPage}/>
         </Switch>
-
         <Footer />
-      </div>
+      </>
     )
   }
 }

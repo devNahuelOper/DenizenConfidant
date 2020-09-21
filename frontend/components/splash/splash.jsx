@@ -39,8 +39,8 @@ class SplashPage extends React.Component {
     let weekday = this.state.date.toDateString().split(' ')[0];
     let today = this.state.date.getDate();
     return (
-     <div> 
-       <header>
+     <> 
+      <header>
        <div className="splash-header-container">
         <section id="navbar">
           <nav>
@@ -146,7 +146,7 @@ class SplashPage extends React.Component {
             </div>
           </section>
        </div>
-     </div>
+     </>
     )
   }
 }
