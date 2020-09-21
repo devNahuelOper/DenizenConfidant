@@ -5,6 +5,7 @@ import { fetchEvents, deleteEvent } from '../../actions/event_actions';
 import { openModal } from '../../actions/modal_actions';
 import { Link } from 'react-router-dom';
 import Modal from '../modal/modal';
+import NavBar from '../navbar/navbar';
 import {
   formatMonthYear,
   formatDateStyle
@@ -49,18 +50,7 @@ class UserEvents extends React.Component {
         <div className="user-profile" id="user-events">
           <header>
             <div id="nav-container">
-              <section id="navbar">
-                <nav>
-                  <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
-                  <ul id="links">
-                    <li><Link to="/djs">DJs</Link></li>
-                    <li><Link to="/events">Events</Link></li>
-                    <li><Link to="/genres">Music</Link></li>
-                    <li><button id="search">Search</button></li>
-                  </ul>
-                </nav>
-                <h1>My Events</h1>
-              </section>
+              <NavBar title="My Events"/>
             </div>
           </header>
           <div className="subnav-container">

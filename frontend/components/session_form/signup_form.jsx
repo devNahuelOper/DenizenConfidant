@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import RegionDropdown from './region_dropdown';
 import LanguageDropdown from './language_dropdown';
 import BirthdayDropdown from './birthday_dropdown';
+import NavBar from '../navbar/navbar';
 import {
   toggleSearch
 } from '../../util/search_util';
@@ -11,22 +12,7 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.user;
-    // this.state = {
-    //   username: '',
-    //   password: '',
-    //   fname: '',
-    //   lname: '',
-    //   email: '',
-    //   email_confirmation: '',
-    //   region: null,
-    //   language: null,
-    //   birthday: {
-    //     day: 1,
-    //     month: 'Jan',
-    //     year: '----'
-    //   },
-    //   gender: ''
-    // };
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.checker = this.checker.bind(this);
     this.renderError = this.renderError.bind(this);
@@ -83,18 +69,7 @@ class SignupForm extends React.Component {
       <div>
         <header>
           <div id="nav-container">
-            <section id="navbar">
-              <nav>
-                <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
-                <ul id="links">
-                  <li><Link to="/djs">DJs</Link></li>
-                  <li><Link to="/events">Events</Link></li>
-                  <li><Link to="/genres">Music</Link></li>
-                  <li><button id="search">Search</button></li>
-                </ul>
-              </nav>
-              <h1>Your account</h1>
-            </section>
+            <NavBar title="Your account" />
           </div>
         </header>
         <div className="subnav-container">
@@ -108,10 +83,9 @@ class SignupForm extends React.Component {
           <SubnavToggle />
       </div>
         
-        <div className="signup-form-container">
-
-        <div className="form-wrap">
-       <form>
+      <div className="signup-form-container">
+       <div className="form-wrap">
+        <form>
         <ul className="signup-form">
           <li>  
           <div>Username /
