@@ -280,12 +280,10 @@ class CreateEventForm extends React.Component {
               { this.props.errors.length === 0 &&
               <aside id="success-msg">
               </aside>
-              }
-              
+              }     
             </form>
           </div>
         </div>
-
       </div>
     )
   }
