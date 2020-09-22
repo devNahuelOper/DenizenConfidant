@@ -125,6 +125,8 @@ class CreateEventForm extends React.Component {
     const { name, date, venue, location, description, headliners, cost } = this.state;
     const { currentUser } = this.props;
     const preview = this.state.photoUrl ? <img width="265px" height="150px" src={this.state.photoUrl} /> : null;
+
+    
     return (
       <div className="create-event">
         <header>
@@ -173,7 +175,7 @@ class CreateEventForm extends React.Component {
                 </label>
               </li> 
               <br/>
-              <li>
+              <li className="location-hold">
                 <label>Location / <br />
                 
                 <select name="Location" id="location-select" value={location || 'United States'} onChange={this.update('location')}>

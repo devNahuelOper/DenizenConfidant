@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const NavBar = ({title}) => {
 
   return (
-    <section id="navbar">
+    <section className={`${title.toLowerCase()}-nav`} id="navbar">
       <nav>
         <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
         <ul id="links">
