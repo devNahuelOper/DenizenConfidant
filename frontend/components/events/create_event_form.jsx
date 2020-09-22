@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import NavBar from '../navbar/navbar';
-import {
-  toggleSearch
-} from '../../util/search_util';
+import { toggleSearch } from '../../util/search_util';
+import { expandCountry } from '../../util/location_util';
 import { dataURLtoFile } from '../../util/url_util';
 
 
