@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TitleComponent } from '../title_component.jsx';
+import { expandCountry, getCountry } from '../../util/location_util';
 import {
   formatDateStyle
 } from '../../util/date_util';
-import {
-  toggleSearch
-} from '../../util/search_util';
+import { toggleSearch } from '../../util/search_util';
 
 class UpdateEventForm extends React.Component {
   constructor(props) {
@@ -21,6 +20,7 @@ class UpdateEventForm extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchEvent(this.props.match.params.eventId);
+    console.log(typeof getCountry(this.props.event.location));
   }
 
   componentDidUpdate() {
@@ -106,6 +106,7 @@ class UpdateEventForm extends React.Component {
     if (!event) return null;
     const preview = this.state.photoUrl ? <img width="265px" height="150px" src={this.state.photoUrl} /> : null;
 
+    const country = getCountry(event.location);
     return (
       <React.Fragment>
         <TitleComponent title={`DC: Update ${event.name}`} />
@@ -176,7 +177,7 @@ class UpdateEventForm extends React.Component {
                           />
                         </label>
                         <span>
-                          <strong>{flags[`${event.location}`]}</strong> {event.location}
+                          <strong>{expandCountry[country].flag}</strong> {event.location}
                         </span>
                       </article>
                     </span>
@@ -205,7 +206,7 @@ class UpdateEventForm extends React.Component {
                     </label>
                   </li>
                   <li>
-                    <label htmlFor="cost">Cost / <small>{currencies[`${event.location}`]}</small> <br />
+                    <label htmlFor="cost">Cost / <small>{expandCountry[country].currency}</small> <br />
                       <input type="text"
                         className="update-input"
                         value={this.state.cost}

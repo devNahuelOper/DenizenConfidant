@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import NavBar from '../navbar/navbar';
 import { toggleSearch } from '../../util/search_util';
-import { expandCountry } from '../../util/location_util';
+import { addCities, expandCountry } from '../../util/location_util';
 import { dataURLtoFile } from '../../util/url_util';
 
 
@@ -15,6 +15,7 @@ class CreateEventForm extends React.Component {
       name: '',
       date: '',
       location: '',
+      city: '',
       venue: '',
       description: '',
       headliners: '',
@@ -84,7 +85,7 @@ class CreateEventForm extends React.Component {
     const formData = new FormData();
     formData.append('event[name]', this.state.name);
     formData.append('event[date]', this.state.date);
-    formData.append('event[location]', this.state.location);
+    formData.append('event[location]', `${this.state.city}, ${this.state.location}`);
     formData.append('event[venue]', this.state.venue);
     formData.append('event[description]', this.state.description);
     formData.append('event[headliners]', this.state.headliners);
@@ -122,7 +123,9 @@ class CreateEventForm extends React.Component {
 
   render() {
     // const [error, setError] = useState(false);
-    const { name, date, venue, location, description, headliners, cost } = this.state;
+    const { name, date, venue, location, city, description, headliners, cost } = this.state;
+    
+    const cities = addCities[location];
     const { currentUser } = this.props;
     const preview = this.state.photoUrl ? <img width="265px" height="150px" src={this.state.photoUrl} /> : null;
 
@@ -178,7 +181,7 @@ class CreateEventForm extends React.Component {
               <li className="location-hold">
                 <label>Location / <br />
                 
-                <select name="Location" id="location-select" value={location || 'United States'} onChange={this.update('location')}>
+                  <select name="Location" id="location-select" value={location || '--Select a country--'} onChange={this.update('location')}>
                   <option value="--Select a country--" disabled={true}>--Select a country--</option>
                   <option value="Argentina">Argentina</option>
                   <option value="Brazil">Brazil</option>
@@ -193,7 +196,16 @@ class CreateEventForm extends React.Component {
                   <option value="United Kingdom">United Kingdom</option>
                   <option value="United States">United States</option>
                 </select>
+                {/* cities[cities.indexOf(this.value)] */}
                 </label>
+                  {
+                    this.state.location.length > 0 && 
+                   <select name="" id="location-select" value={ city || ' --Select a city--'} onChange={this.update('city')}>
+                     {cities.map(city => 
+                      <option value={city}>{city}</option>
+                      )}
+                   </select>
+                  }
               </li>
               <br/>
               <li>
