@@ -225,7 +225,6 @@ class CreateEventForm extends React.Component {
                       className="text-input"
                       id="date-input"
                       type="text"
-                      // placeholder="How much?"
                       value={cost}
                       onChange={this.update('cost')} />
                   </label>
