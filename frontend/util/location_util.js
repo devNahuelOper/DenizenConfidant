@@ -1,4 +1,4 @@
-export const expandCountry = {
+export const addCities = {
   'Argentina': ['Buenos Aires', 'Cordoba', 'Mar del Plata', 'Mendoza'],
   'Brazil': ['Porto Alegro', 'Rio de Janeiro', 'Salvador', 'Sao Paulo'],
   'Canada': ['Montreal', 'Toronto', 'Vancouver'],
@@ -15,5 +15,102 @@ export const expandCountry = {
   'Phoenix', 'Pittsburgh', 'San Francisco', 'Seattle', 'Washington DC']
 }
 
-// const countries = ['Argentina', 'Brazil', 'Canada', 'China', 'France', 'Germany',
-//   'Italy', 'Japan', 'Netherlands', 'Spain', 'United Kingdom', 'United States'];
+export const expandCountry = {
+  'Argentina': {
+    cities: ['Buenos Aires', 'Cordoba', 'Mar del Plata', 'Mendoza'],
+    flag: '🇦🇷',
+    currency: 'ARS'
+  },
+  'Brazil': {
+    cities: ['Porto Alegro', 'Rio de Janeiro', 'Salvador', 'Sao Paulo'],
+    flag: '🇧🇷',
+    currency: 'BRL'
+  },
+  'Canada': {
+    cities: ['Montreal', 'Toronto', 'Vancouver'],
+    flag: '🇨🇦',
+    currency: 'CAD'
+  },
+  'China': {
+    cities: ['Beijing', 'Hong Kong', 'Shanghai'],
+    flag: '🇨🇳',
+    currency: 'CNY'
+  },
+  'France': {
+    cities: ['Marseille', 'Lyon', 'Nice', 'Paris'],
+    flag: '🇫🇷',
+    currency: 'EUR'
+  },
+  'Germany': {
+    cities: ['Berlin', 'Frankfurt', 'Hamburg', 'Leipzig', 'Munich'],
+    flag: '🇩🇪',
+    currency: 'EUR'
+  },
+  'Italy': {
+    cities: ['Florence', 'Milan', 'Naples', 'Rome', 'Venice'],
+    flag: '🇮🇹',
+    currency: 'EUR'
+  },
+  'Japan': {
+    cities: ['Kyoto', 'Osaka', 'Tokyo'],
+    flag: '🇯🇵',
+    currency: 'JPY'
+  },
+  'Netherlands': {
+    cities: ['Amsterdam', 'Rotterdam'],
+    flag: '🇳🇱',
+    currency: 'EUR'
+  },
+  'Spain': {
+    cities: ['Barcelona', 'Madrid', 'Seville', 'Valencia'],
+    flag: '🇪🇸',
+    currency: 'EUR'
+  },
+  'United Kingdom': {
+    cities: ['Belfast', 'Edinburgh', 'Liverpool', 'London', 'Glasgow', 'Manchester'],
+    flag: '🇬🇧',
+    currency: 'GBP'
+  },
+  'United States': {
+    cities: ['Atlanta', 'Boston', 'Chicago', 'Dallas', 'Denver', 'Detroit',
+    'Houston', 'Los Angeles', 'Miami', 'New Orleans', 'New York', 'Philadelphia',
+    'Phoenix', 'Pittsburgh', 'San Francisco', 'Seattle', 'Washington DC'],
+    flag: '🇺🇸',
+    currency: 'USD'
+  }
+}
+
+export const getCountry = (location) => {
+  return location.split(', ')[1] || location;
+}
+
+
+
+// const flags = {
+//   'Argentina': '🇦🇷',
+//   'Brazil': '🇧🇷',
+//   'Canada': '🇨🇦',
+//   'China': '🇨🇳',
+//   'France': '🇫🇷',
+//   'Germany': '🇩🇪',
+//   'Italy': '🇮🇹',
+//   'Japan': '🇯🇵',
+//   'Netherlands': '🇳🇱',
+//   'Spain': '🇪🇸',
+//   'United Kingdom': '🇬🇧',
+//   'United States': '🇺🇸'
+// }
+// const currencies = {
+//   'Argentina': 'ARS',
+//   'Brazil': 'BRL',
+//   'Canada': 'CAD',
+//   'China': 'CNY',
+//   'France': 'EUR',
+//   'Germany': 'EUR',
+//   'Italy': 'EUR',
+//   'Japan': 'JPY',
+//   'Netherlands': 'EUR',
+//   'Spain': 'EUR',
+//   'United Kingdom': 'GBP',
+//   'United States': 'USD'
+// }
