@@ -65,6 +65,9 @@ class SignupForm extends React.Component {
       outline: '2px solid #e10',
       border: '1px solid rgb(46, 46, 46)'
     };
+    $('button').on('click', (e) => {
+      e.preventDefault();
+    })
     return (
       <div>
         <header>
