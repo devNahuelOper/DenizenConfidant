@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavBar from '../navbar/navbar';
 import {
   toggleSearch
 } from '../../util/search_util';
@@ -66,18 +67,7 @@ class LoginForm extends React.Component {
       <div>
         <header>
           <div id="nav-container">
-            <section id="navbar">
-              <nav>
-               <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
-                <ul id="links">
-                  <li><Link to="/djs">DJs</Link></li>
-                  <li><Link to="/events">Events</Link></li>
-                  <li><Link to="/genres">Music</Link></li>
-                  <li><button id="search">Search</button></li>
-                </ul>
-                </nav>
-                <h1>Your account</h1>
-            </section> 
+            <NavBar title="Your account"/>
           </div>
         </header>
           <div className="subnav-container">

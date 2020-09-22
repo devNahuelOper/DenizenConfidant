@@ -26,7 +26,6 @@ class SearchPage extends React.Component {
     this.props.fetchGenres();
   }
 
-
   render() {
     const { djs, events, genres } = this.props;
     const allResults = djs.length + events.length + genres.length;
@@ -90,7 +89,6 @@ class SearchPage extends React.Component {
                 </ul>
               </div>
                 }
-
                 { allResults === 0 &&
                   <span id="no-results">Your search <b>{this.state.searchTerm}</b> returned 0 results.</span>
                 }

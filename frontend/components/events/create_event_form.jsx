@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
-import {
-  toggleSearch
-} from '../../util/search_util';
+import NavBar from '../navbar/navbar';
+import { toggleSearch } from '../../util/search_util';
+import { expandCountry } from '../../util/location_util';
 import { dataURLtoFile } from '../../util/url_util';
 
 
@@ -125,6 +125,8 @@ class CreateEventForm extends React.Component {
     const { name, date, venue, location, description, headliners, cost } = this.state;
     const { currentUser } = this.props;
     const preview = this.state.photoUrl ? <img width="265px" height="150px" src={this.state.photoUrl} /> : null;
+
+    
     return (
       <div className="create-event">
         <header>
@@ -140,7 +142,6 @@ class CreateEventForm extends React.Component {
                 </ul>
               </nav>
               <section className="eventform-header">
-                {/* <Link to='/events'><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link> */}
                 <Link to={`/users/${currentUser.id}/events`}><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link>
                 <h1>Submit an event</h1>
               </section>
@@ -174,7 +175,7 @@ class CreateEventForm extends React.Component {
                 </label>
               </li> 
               <br/>
-              <li>
+              <li className="location-hold">
                 <label>Location / <br />
                 
                 <select name="Location" id="location-select" value={location || 'United States'} onChange={this.update('location')}>
@@ -225,7 +226,6 @@ class CreateEventForm extends React.Component {
                       className="text-input"
                       id="date-input"
                       type="text"
-                      // placeholder="How much?"
                       value={cost}
                       onChange={this.update('cost')} />
                   </label>
@@ -281,12 +281,10 @@ class CreateEventForm extends React.Component {
               { this.props.errors.length === 0 &&
               <aside id="success-msg">
               </aside>
-              }
-              
+              }     
             </form>
           </div>
         </div>
-
       </div>
     )
   }

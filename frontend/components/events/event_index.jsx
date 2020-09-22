@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import EventIndexItem from './event_index_item';
+import NavBar from '../navbar/navbar';
 import {
   formatDateStyle
 } from '../../util/date_util';
-import {
-  toggleSearch
-} from '../../util/search_util';
+import { toggleSearch } from '../../util/search_util';
 
 
 class EventIndex extends React.Component {

@@ -6,7 +6,6 @@ import {
 } from '../../util/search_util';
 import NewsIndex from '../news/news_index';
 
-// let gesaffId, deamauId, noisufId, nomanaId, kayzoId, eprydzId;
 
 class SplashPage extends React.Component {
   constructor(props) {
@@ -19,24 +18,8 @@ class SplashPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchDjs().then(djs => this.setState({djs: Object.values(djs.djs)}));
-    // this.props.fetchAllNews();
     toggleSearch();
   }
-
-  // componentDidUpdate() {
-  //   gesaffId = this.props.djs.find(dj => dj.name === 'Gesaffelstein').id;
-  //   deamauId = this.props.djs.find(dj => dj.name === 'Deadmau5').id;
-  //   noisufId = this.props.djs.find(dj => dj.name === 'Noisuf X').id;
-  //   nomanaId = this.props.djs.find(dj => dj.name === 'No Mana').id;
-  //   kayzoId = this.props.djs.find(dj => dj.name === 'Kayzo').id;
-  //   eprydzId = this.props.djs.find(dj => dj.name === 'Eric Prydz').id;
-  // }
-
-
-
-  // useQuery() {
-  //   return new URLSearchParams(useLocation().search);
-  // }
 
   render() {
     const { djs, news } = this.props;
@@ -56,8 +39,8 @@ class SplashPage extends React.Component {
     let weekday = this.state.date.toDateString().split(' ')[0];
     let today = this.state.date.getDate();
     return (
-     <div> 
-       <header>
+     <> 
+      <header>
        <div className="splash-header-container">
         <section id="navbar">
           <nav>
@@ -97,16 +80,13 @@ class SplashPage extends React.Component {
             </ul>
             </div>
           </nav>
-
           <section className="content">
             <div className="news-banner">
               <h1>Pulse</h1>
               <h2></h2>
             </div>
-          
             <NewsIndex news={news}/>
           </section>
-          {/* {console.log(gesaffId, deamauId, noisufId, nomanaId, kayzoId, eprydzId)} */}
      
           <section className="beats">
             <nav className="main-banner yellow-banner">
@@ -123,55 +103,42 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.gesaffelsteinUrl} id="gesaffelstein"/>
-                    <Link id="gesaffelstein-link" to="/djs/739">Gesaffelstein - Depravity</Link>
-                    {/* <Link id="gesaffelstein-link" to={`/djs/${gesaffId}`}>Gesaffelstein - Depravity</Link> */}
-                    {/* <Link to={`/djs/${djs.find(dj => dj.name === 'Gesaffelstein')}`}>Gesaffelstein - Depravity</Link> */}
+                    <Link id="gesaffelstein-link" to="/djs/739" title="Gesaffelstein">Gesaffelstein - Depravity</Link>
                     <audio id="depravity" src="depravity.mp3" controls></audio>
-                      
                   </article>
                 </li>
-
                 <li className="song">
                   <article>
-                    <img src={window.deadmau5Url} id="deadmau5"/>
-                   
-                    {/* <Link id="deadmau5-link" to={`/djs/${deamauId}`}>Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link> */}
-                    <Link id="deadmau5-link" to="/djs/725">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
+                    <img src={window.deadmau5Url} id="deadmau5"/>               
+                    <Link id="deadmau5-link" to="/djs/725" title="Deadmau5">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
                     <audio id="speed" src="speed.mp3" controls></audio>
                   </article>
                 </li>
-
                 <li className="song">
                   <article>
                     <img src={window.noisufUrl} id="noisuf"/>    
-                    {/* <Link id="noisuf-link" to={`/djs/${noisufId}`}>Noisuf-X - Count to Seven</Link> */}
-                    <Link id="noisuf-link" to="/djs/768">Noisuf-X - Count to Seven</Link>
+                    <Link id="noisuf-link" to="/djs/768" title="Noisuf-X">Noisuf-X - Count to Seven</Link>
                     <audio id="cseven" src="cseven.mp3" controls></audio>
                   </article>
                 </li>
-
                 <li className="song">
                   <article>
                     <img src={window.nomanaUrl} id="nomana"/>
-                    {/* <Link id="nomana-link" to={`/djs/${nomanaId}`}>No Mana - Other Side</Link> */}
-                    <Link id="nomana-link" to="/djs/769">No Mana - Other Side</Link>
+                    <Link id="nomana-link" to="/djs/769" title="No Mana">No Mana - Other Side</Link>
                     <audio id="otherside" src="otherside.mp3" controls></audio>
                   </article>
                 </li>
-
                 <li className="song">
                   <article>
-                    <img src={window.kayzoUrl} id="kayzo"/>
-                    {/* <Link id="kayzo-link" to={`/djs/${kayzoId}`}>Kayzo - The Fire</Link> */}
-                    <Link id="kayzo-link" to="/djs/752">Kayzo - The Fire</Link>
+                    <img src={window.kayzoUrl} id="kayzo"/>                  
+                    <Link id="kayzo-link" to="/djs/752" title="Kayzo">Kayzo - The Fire</Link>
                     <audio id="fire" src="fire.mp3" controls></audio>
                   </article>
                 </li>
                 <li className="song">
                   <article>
                     <img src={window.prydzUrl} id="prydz" />
-                    {/* <Link id="prydz-link" to={`/djs/${eprydzId}`}>Eric Prydz - The Matrix</Link> */}
-                    <Link id="prydz-link" to="/djs/730">Eric Prydz - The Matrix</Link>
+                    <Link id="prydz-link" to="/djs/730" title="Eric Prydz">Eric Prydz - The Matrix</Link>
                     <audio id="matrix" src="matrix.mp3" controls></audio>
                   </article>
                 </li>
@@ -179,7 +146,7 @@ class SplashPage extends React.Component {
             </div>
           </section>
        </div>
-     </div>
+     </>
     )
   }
 }
