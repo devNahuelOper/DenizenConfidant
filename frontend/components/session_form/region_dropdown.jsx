@@ -13,13 +13,15 @@ class RegionDropdown extends React.Component {
   }
 
   clicker(e) {
-    e.stopPropagation();
-    // e.preventDefault();
+    // e.stopPropagation();
+    e.preventDefault();
     this.setState({ "drop": true });
+    // console.log(e.target, e.currentTarget);
   }
 
   leave(e) {
-    e.stopPropagation();
+    // e.stopPropagation();
+    e.preventDefault();
     this.setState({ "drop": false });
   }
 
