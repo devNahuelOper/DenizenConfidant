@@ -4,6 +4,7 @@ import RegionDropdown from './region_dropdown';
 import LanguageDropdown from './language_dropdown';
 import BirthdayDropdown from './birthday_dropdown';
 import NavBar from '../navbar/navbar';
+// import SubnavToggle from '../subnav/subnav';
 import { toggleSearch } from '../../util/search_util';
 import { expandCountry } from '../../util/location_util';
 
