@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TitleComponent } from '../title_component.jsx';
+import SubnavToggle from '../subnav/subnav';
 import { expandCountry, getCountry } from '../../util/location_util';
 import {
   formatDateStyle
@@ -20,7 +21,6 @@ class UpdateEventForm extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchEvent(this.props.match.params.eventId);
-    console.log(typeof getCountry(this.props.event.location));
   }
 
   componentDidUpdate() {
@@ -74,35 +74,6 @@ class UpdateEventForm extends React.Component {
   render() {
     const { event, currentUser } = this.props;
 
-    const flags = {
-      'Argentina': '🇦🇷',
-      'Brazil': '🇧🇷',
-      'Canada': '🇨🇦',
-      'China': '🇨🇳',
-      'France': '🇫🇷',
-      'Germany': '🇩🇪',
-      'Italy': '🇮🇹',
-      'Japan': '🇯🇵',
-      'Netherlands': '🇳🇱',
-      'Spain': '🇪🇸',
-      'United Kingdom': '🇬🇧',
-      'United States': '🇺🇸'
-    }
-    const currencies = {
-      'Argentina': 'ARS',
-      'Brazil': 'BRL',
-      'Canada': 'CAD',
-      'China': 'CNY',
-      'France': 'EUR',
-      'Germany': 'EUR',
-      'Italy': 'EUR',
-      'Japan': 'JPY',
-      'Netherlands': 'EUR',
-      'Spain': 'EUR',
-      'United Kingdom': 'GBP',
-      'United States': 'USD'
-    }
-
     if (!event) return null;
     const preview = this.state.photoUrl ? <img width="265px" height="150px" src={this.state.photoUrl} /> : null;
 
@@ -142,7 +113,11 @@ class UpdateEventForm extends React.Component {
                 <li className="form"><Link to={`/events/${event.id}/edit`}>Submit update</Link></li>
               </ul>
             </section>
-            <SubnavToggle currentUser={currentUser} />
+            <SubnavToggle 
+              currentUser={currentUser} 
+              title="Submit Update" 
+              labels={['My Events']}
+              paths={[`/users/${currentUser.id}/events`]}/>
           </div>
           <div className="eventform-subheader-container">
             <section className="eventform-subheader">
@@ -250,48 +225,5 @@ class UpdateEventForm extends React.Component {
   }
 };
 
-class SubnavToggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      drop: false
-    }
-    this.clicker = this.clicker.bind(this);
-    this.leave = this.leave.bind(this);
-    this.mobileDrop = this.mobileDrop.bind(this);
-  }
-
-  clicker(e) {
-    this.setState({ "drop": true });
-  }
-
-  leave(e) {
-    this.setState({ "drop": false });
-  }
-
-  mobileDrop(e) {
-    e.preventDefault();
-    this.setState({ "drop": true }); status
-    $('body').on('click', e => {
-      const drop = $('.subnav-drop');
-      if (drop !== e.currentTarget) {
-        this.leave();
-      }
-    });
-  }
-
-  render() {
-    const { currentUser } = this.props;
-    return (
-      <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span onClick={this.mobileDrop}>Submit Update <small>⬇︎</small></span>
-          <ul className={this.state.drop ? "reveal" : "hide"}>
-            <li><Link className="log-link" to={`/users/${currentUser.id}/events`}>My Events</Link></li>
-          </ul>
-        </button>
-      </div>
-    )
-  }
-}
 
 export default UpdateEventForm;

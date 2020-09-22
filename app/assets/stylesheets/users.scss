@@ -133,11 +133,16 @@
     display: none;
     width: 152px;
     height: 76px;
+    color: transparent;
   }
 }
 .hasEvent {
   height: 235px;
   width: 166px;
+  img {
+    background-image: image_url('rave.jpg');
+    background-size: cover;
+  }
 }
 .eventWeek {
   vertical-align: super;

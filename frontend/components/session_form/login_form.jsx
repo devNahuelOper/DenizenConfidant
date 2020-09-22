@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../navbar/navbar';
+// import SubnavToggle from '../subnav/subnav';
 import {
   toggleSearch
 } from '../../util/search_util';
