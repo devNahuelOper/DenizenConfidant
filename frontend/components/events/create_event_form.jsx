@@ -136,7 +136,7 @@ class CreateEventForm extends React.Component {
           <div id="nav-container">
             <section id="navbar">
               <nav>
-                <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+                <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
                 <ul id="links">
                   <li><Link to="/djs">DJs</Link></li>
                   <li><Link to="/events">Events</Link></li>
@@ -200,9 +200,9 @@ class CreateEventForm extends React.Component {
                 </label>
                   {
                     this.state.location.length > 0 && 
-                   <select name="" id="location-select" value={ city || ' --Select a city--'} onChange={this.update('city')}>
-                     {cities.map(city => 
-                      <option value={city}>{city}</option>
+                   <select name="Location" id="location-select" value={ city || ' --Select a city--'} onChange={this.update('city')}>
+                     {cities.map((city, idx) => 
+                      <option key={idx} value={city}>{city}</option>
                       )}
                    </select>
                   }

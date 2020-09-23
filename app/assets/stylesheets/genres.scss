@@ -5,6 +5,9 @@
   .hide {
     color: #b4be00;
   }
+  #expand {
+    height: 100px;
+  }
 }
 
 .genre-nav-container {
@@ -60,6 +63,7 @@
   background-color: #b4be00;
   border-top: 1px solid rgba(255,255,255,.4);
   border-top-color: rgba(69,69,69,.4);
+ 
 }
 
 .genre-subnav {
@@ -89,6 +93,7 @@
     background-color: black;
     color: white;
   }
+
 }
 
 .genres-container {
@@ -148,6 +153,12 @@
  
 
 //Genre Show
+
+#genre-show {
+  #expand {
+    height: 134px;
+  }
+}
 
 .genreshow-nav-container {
   height: 575px;
