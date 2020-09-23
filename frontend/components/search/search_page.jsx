@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { TitleComponent } from '../title_component.jsx';
 import Search from './search';
+import NavBar from '../navbar/navbar';
 import { fetchDjs } from '../../actions/dj_actions';
 import { fetchGenres } from '../../actions/genre_actions';
 import { fetchEvents } from '../../actions/event_actions';
-import {
-  formatDateStyle
-} from '../../util/date_util';
+import { formatDateStyle } from '../../util/date_util';
 
 class SearchPage extends React.Component {
   constructor(props) {
@@ -35,18 +34,7 @@ class SearchPage extends React.Component {
         <div className="search-page">
           <header>
             <div id="nav-container">
-              <section id="navbar">
-                <nav>
-                  <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
-                  <ul id="links">
-                    <li><Link to="/djs">DJs</Link></li>
-                    <li><Link to="/events">Events</Link></li>
-                    <li><Link to="/genres">Music</Link></li>
-                    <li><button id="search" className="show-search">Search</button></li>
-                  </ul>
-                </nav>
-                <h1>Search</h1>
-              </section>
+              <NavBar title="Search"/>
             </div>
           </header>
           <div className="search-main">

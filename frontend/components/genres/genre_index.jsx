@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GenreIndexItem from './genre_index_item';
-import {
-  toggleSearch
-} from '../../util/search_util';
+import SubnavToggle from '../subnav/subnav';
+import { toggleSearch } from '../../util/search_util';
 
 class GenreIndex extends React.Component {
   constructor(props) {
@@ -24,7 +23,7 @@ class GenreIndex extends React.Component {
           <div className="genre-nav-container">
             <section className="genre-nav">
               <nav>
-                <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+                <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
                 <ul id="links">
                   <li><Link to="/djs">DJs</Link></li>
                   <li><Link to="/events">Events</Link></li>
@@ -40,11 +39,13 @@ class GenreIndex extends React.Component {
           <section className="genre-subnav">
             <ul>
               <li><Link className="form" to="/genres">All</Link></li>
-              {/* <li><Link to="/signup">Register</Link></li> */}
               <li><Link to="/">Take me back home</Link></li>
             </ul>
           </section>
-          <SubnavToggle />
+          <SubnavToggle
+            title="All"
+            labels={["Take me back home"]}
+            paths={["/"]} />
         </div>
         <div className="genres-container">        
           <section className="genres">
@@ -57,49 +58,6 @@ class GenreIndex extends React.Component {
             </ul>
           </section>
         </div>
-      </div>
-    )
-  }
-}
-
-class SubnavToggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      drop: false
-    }
-    this.clicker = this.clicker.bind(this);
-    this.leave = this.leave.bind(this);
-    this.mobileDrop = this.mobileDrop.bind(this);
-  }
-
-  clicker(e) {
-    this.setState({ "drop": true });
-  }
-
-  leave(e) {
-    this.setState({ "drop": false });
-  }
-
-  mobileDrop(e) {
-    e.preventDefault();
-    this.setState({ "drop": true }); status
-    $('body').on('click', e => {
-      const drop = $('.subnav-drop');
-      if (drop !== e.currentTarget) {
-        this.leave();
-      }
-    });
-  }
-
-  render() {
-    return (
-      <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span onClick={this.mobileDrop}>All <small>⬇︎</small></span>
-          <ul className={this.state.drop ? "reveal" : "hide"}>
-            <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-          </ul>
-        </button>
       </div>
     )
   }
