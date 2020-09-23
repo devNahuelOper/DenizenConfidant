@@ -49,20 +49,6 @@ class UserProfile extends React.Component {
 
   render() {
     const { currentUser, events } = this.props;
-    const flags = {
-      'Argentina': '🇦🇷',
-      'Brazil': '🇧🇷',
-      'Canada': '🇨🇦',
-      'China': '🇨🇳',
-      'France': '🇫🇷',
-      'Germany': '🇩🇪',
-      'Italy': '🇮🇹',
-      'Japan': '🇯🇵',
-      'Netherlands': '🇳🇱',
-      'Spain': '🇪🇸',
-      'United Kingdom': '🇬🇧',
-      'United States': '🇺🇸'
-    }
     const lastOnline = localStorage.getItem('lastOnline');
     return(
       <React.Fragment>
@@ -104,7 +90,6 @@ class UserProfile extends React.Component {
               </li>
               <li>
                 <small>Location /</small> <br />
-             {/* <strong>{flags[`${currentUser.region}`]}</strong>{currentUser.region} */}
              <strong>{expandCountry[`${currentUser.region}`].flag}</strong>{currentUser.region}
               </li>
             </ul>

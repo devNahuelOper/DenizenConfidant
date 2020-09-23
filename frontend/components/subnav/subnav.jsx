@@ -34,7 +34,7 @@ class SubnavToggle extends React.Component {
 
   render() {
     const { title, paths, labels, currentUser } = this.props;
-    
+
     return (
       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
         <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span onClick={this.mobileDrop}>{title} <small>⬇︎</small></span>
@@ -46,7 +46,8 @@ class SubnavToggle extends React.Component {
             </li>
               )}
               {
-                window.location.hash === `#/users/${currentUser.id}` &&
+                // window.location.hash === `#/users/${currentUser.id}` &&
+              (window.location.hash.includes('#/users/') && window.location.hash.length <= 12) &&
               <li id="calendar-toggle" onClick={this.props.toggleCalendar}><Link className="log-link" to={`/users/${currentUser.id}`}>Calendar</Link></li>
               }
           </ul>
