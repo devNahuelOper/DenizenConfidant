@@ -200,9 +200,9 @@ class CreateEventForm extends React.Component {
                 </label>
                   {
                     this.state.location.length > 0 && 
-                   <select name="" id="location-select" value={ city || ' --Select a city--'} onChange={this.update('city')}>
-                     {cities.map(city => 
-                      <option value={city}>{city}</option>
+                   <select name="Location" id="location-select" value={ city || ' --Select a city--'} onChange={this.update('city')}>
+                     {cities.map((city, idx) => 
+                      <option key={idx} value={city}>{city}</option>
                       )}
                    </select>
                   }

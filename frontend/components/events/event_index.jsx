@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import EventIndexItem from './event_index_item';
 import NavBar from '../navbar/navbar';
+import SubnavToggle from '../subnav/subnav';
 import {
   formatDateStyle
 } from '../../util/date_util';
@@ -47,7 +48,10 @@ class EventIndex extends React.Component {
               <li><Link to='/events/new'>Submit an event</Link></li>
             </ul>
           </section>
-          <SubnavToggle />
+          <SubnavToggle 
+            title="All"
+            labels={["Take me back home", "Submit an event"]}
+            paths={["/", "/events/new"]}/>
         </div>
         <div className="local-events-wrap">
           <section className="local-events">
@@ -90,52 +94,5 @@ class EventIndex extends React.Component {
     )
   }
 };
-
-
-class SubnavToggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      drop: false
-    }
-    this.clicker = this.clicker.bind(this);
-    this.leave = this.leave.bind(this);
-    this.mobileDrop = this.mobileDrop.bind(this);
-  }
-
-  clicker(e) {
-    this.setState({ "drop": true });
-  }
-
-  leave(e) {
-    this.setState({ "drop": false });
-  }
-
-  
-  mobileDrop(e) {
-    e.preventDefault();
-    this.setState({ "drop": true }); 
-    $('body').on('click', e => {
-      const drop = $('.subnav-drop');
-      if (drop !== e.currentTarget) {
-        this.leave();
-      }
-    });
-  }
-
-  // onBlur = { this.leave }
-  render() {
-    return (
-      <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span onClick={this.mobileDrop}>All <small>⬇︎</small></span>
-          <ul className={this.state.drop ? "reveal" : "hide"}>
-            <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-            <li><Link className="log-link" to='/events/new'>Submit an event</Link></li>
-          </ul>
-        </button>
-      </div>
-    )
-  }
-}
 
 export default EventIndex;

@@ -6,7 +6,7 @@ const NavBar = ({title}) => {
   return (
     <section className={`${title.toLowerCase()}-nav`} id="navbar">
       <nav>
-        <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+        <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
         <ul id="links">
           <li><Link to="/djs">DJs</Link></li>
           <li><Link to="/events">Events</Link></li>

@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TitleComponent } from '../title_component.jsx';
-import {
-  toggleSearch
-} from '../../util/search_util';
+// import SubnavToggle from '../subnav/subnav';
+import { toggleSearch } from '../../util/search_util';
 
 class DjShow extends React.Component {
   constructor(props) {
