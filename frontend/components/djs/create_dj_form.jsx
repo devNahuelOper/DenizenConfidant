@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
+import SubnavToggle from '../subnav/subnav';
 import { toggleSearch } from '../../util/search_util';
 import { dataURLtoFile } from '../../util/url_util';
 
@@ -175,7 +176,7 @@ class CreateDjForm extends React.Component {
         <div className="djs-nav-container">
           <section className="djs-nav">
             <nav>
-              <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+              <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
               <ul id="links">
                 <li><Link to="/djs">DJs</Link></li>
                 <li><Link to="/events">Events</Link></li>
@@ -190,11 +191,15 @@ class CreateDjForm extends React.Component {
           <section className="djs-subnav">
             <ul>
               <li><Link to="/djs">All</Link></li>
+              <li id="pending"><Link className="form" to='#'>Create an artist profile</Link></li>
               <li><Link to="/">Take me back home</Link></li>
-              <li id="pending"><Link className="form" to='/djs'>Create an artist profile</Link></li>
             </ul>
           </section>
-          <SubnavToggle />
+          {/* <SubnavToggle /> */}
+          <SubnavToggle
+            title="Create an artist profile"
+            labels={["All", "Take me back home"]}
+            paths={["/djs", "/"]} />
         </div>
         <div className="dj-requirements">
           <section id="requirements">
@@ -363,50 +368,6 @@ class CreateDjForm extends React.Component {
     )
   }
 };
-
-class SubnavToggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      drop: false
-    }
-    this.clicker = this.clicker.bind(this);
-    this.leave = this.leave.bind(this);
-    this.mobileDrop = this.mobileDrop.bind(this);
-  }
-
-  clicker(e) {
-    this.setState({ "drop": true });
-  }
-
-  leave(e) {
-    this.setState({ "drop": false });
-  }
-
-  mobileDrop(e) {
-    e.preventDefault();
-    this.setState({ "drop": true }); status
-    $('body').on('click', e => {
-      const drop = $('.subnav-drop');
-      if (drop !== e.currentTarget) {
-        this.leave();
-      }
-    });
-  }
-
-  render() {
-    return (
-      <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span onClick={this.mobileDrop}>Create an artist profile <small>⬇︎</small></span>
-          <ul className={this.state.drop ? "reveal" : "hide"}>
-            <li><Link className="log-link" onClick={this.leave} to="/djs">All</Link></li>
-            <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-          </ul>
-        </button>
-      </div>
-    )
-  }
-}
 
 
 export default withRouter(CreateDjForm);

@@ -386,9 +386,10 @@
 
 
 .djsubheader-container {
+  position: relative;
+  z-index: 1000;
   background-color: #3c3c3c;
   .djshow-subheader {
-    
     width: 952px;
     margin: 0 auto;
     .details {
@@ -418,6 +419,8 @@
 }
 
 .dj-main {
+  position: relative;
+  z-index: 1000;
   background-color: #1e1e1e;
   color: white;
   padding-bottom: 70px;

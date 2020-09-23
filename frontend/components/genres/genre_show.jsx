@@ -1,19 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TitleComponent } from '../title_component.jsx';
-import {
-  toggleSearch
-} from '../../util/search_util';
+import SubnavToggle from '../subnav/subnav';
+import { toggleSearch } from '../../util/search_util';
 
 class GenreShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      drop: false
-    }
-    this.clicker = this.clicker.bind(this);
-    this.leave = this.leave.bind(this);
-    this.mobileDrop = this.mobileDrop.bind(this);
   }
 
   componentDidMount() {
@@ -24,25 +17,6 @@ class GenreShow extends React.Component {
 
   componentDidUpdate() {
     toggleSearch();
-  }
-
-  clicker(e) {
-    this.setState({ "drop": true });
-  }
-
-  leave(e) {
-    this.setState({ "drop": false });
-  }
-
-  mobileDrop(e) {
-    e.preventDefault();
-    this.setState({ "drop": true }); status
-    $('body').on('click', e => {
-      const drop = $('.subnav-drop');
-      if (drop !== e.currentTarget) {
-        this.leave();
-      }
-    });
   }
 
   render() {
@@ -64,7 +38,7 @@ class GenreShow extends React.Component {
           >
             <section className="genre-nav">
               <nav>
-                <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+                <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
                 <ul id="links">
                   <li><Link to="/djs">DJs</Link></li>
                   <li><Link to="/events">Events</Link></li>
@@ -87,14 +61,11 @@ class GenreShow extends React.Component {
               <li><Link to="/">Take me back home</Link></li>
             </ul>
           </section>
-            <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-              <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span onClick={this.mobileDrop}>{genre.name} <small>⬇︎</small></span>
-                <ul className={this.state.drop ? "reveal" : "hide"}>
-                  <li><Link className="log-link" to="/genres">All</Link></li>
-                  <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-                </ul>
-              </button>
-            </div>
+            <SubnavToggle
+              title={genre.name}
+              labels={["All", "Take me back home"]}
+              paths={["/genres", "/"]} 
+              />
         </div>
 
         <div className="genre-main">
