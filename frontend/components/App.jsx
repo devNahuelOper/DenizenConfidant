@@ -49,6 +49,14 @@ class App extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this._isMounted = true;
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
 
   render() {
     return (

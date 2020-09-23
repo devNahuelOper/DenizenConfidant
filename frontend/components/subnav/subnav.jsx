@@ -12,6 +12,14 @@ class SubnavToggle extends React.Component {
     this.mobileDrop = this.mobileDrop.bind(this);
   }
 
+  componentDidMount() {
+    this._isMounted = true;
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
   clicker(e) {
     this.setState({ "drop": true });
   }

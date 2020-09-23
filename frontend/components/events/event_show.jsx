@@ -1,12 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TitleComponent } from '../title_component.jsx';
-import {
-  formatDateShowStyle
-} from '../../util/date_util';
-import {
-  toggleSearch
-} from '../../util/search_util';
+import SubnavToggle from '../subnav/subnav';
+import { formatDateShowStyle } from '../../util/date_util';
+import { toggleSearch } from '../../util/search_util';
 
 class EventShow extends React.Component {
   constructor(props) {
@@ -39,7 +36,7 @@ class EventShow extends React.Component {
           <div className="eventshow-nav-container">
             <section className="events-nav">
               <nav>
-              <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+              <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
               <ul id="links">
                 <li><Link to="/djs">DJs</Link></li>
                 <li><Link to="/events">Events</Link></li>
@@ -57,14 +54,17 @@ class EventShow extends React.Component {
           <div className="subnav-container">
             <section id="events-subnav">
               <ul>
-                <li><Link className="form" to="/events">All</Link></li>
-                {/* <li><Link to="/signup">Register</Link></li> */}
-                <li><Link to="/">Take me back home</Link></li>
+                <li><Link to="/events">All</Link></li>
+                <li><Link className="form" to="#">{event.name}</Link></li>
+                {/* <li><Link to="/">Take me back home</Link></li> */}
                 <li><Link to='/events/new'>Submit an event</Link></li>
-                {/* <br /> <small>Coming Soon!</small> */}
               </ul>
             </section>
-            <SubnavToggle />
+            <SubnavToggle
+              title={event.name}
+              labels={["All", "Submit an event"]}
+              paths={["/events","/events/new"]} 
+              />
           </div>
         <br/>
         <div className="subheader-container">
@@ -99,51 +99,5 @@ class EventShow extends React.Component {
     )
   }
 };
-
-class SubnavToggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      drop: false
-    }
-    this.clicker = this.clicker.bind(this);
-    this.leave = this.leave.bind(this);
-    this.mobileDrop = this.mobileDrop.bind(this);
-  }
-
-  clicker(e) {
-    this.setState({ "drop": true });
-  }
-
-  leave(e) {
-    this.setState({ "drop": false });
-  }
-
-  mobileDrop(e) {
-    e.preventDefault();
-    this.setState({ "drop": true }); status
-    $('body').on('click', e => {
-      const drop = $('.subnav-drop');
-      if (drop !== e.currentTarget) {
-        this.leave();
-      }
-    });
-  }
-
-  
-  // onBlur = { this.leave }
-  render() {
-    return (
-      <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span onClick={this.mobileDrop}>All <small>⬇︎</small></span>
-          <ul className={this.state.drop ? "reveal" : "hide"}>
-            <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-            <li><Link className="log-link" to='/events/new'>Submit an event</Link></li>
-          </ul>
-        </button>
-      </div>
-    )
-  }
-}
 
 export default EventShow;
