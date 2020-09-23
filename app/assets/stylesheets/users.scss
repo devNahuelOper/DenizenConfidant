@@ -792,25 +792,59 @@ i {
       }
     }
   }
+
+  table.calendar {
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  $days: (sun, mon, tue, wed, thu, fri, sat);
+  @each $day in $days {
+    ##{$day} {
+      width: 25%;
+    }
+  }
+
+  .hasEvent {
+    height: auto;
+    .event-space {
+      font-size: 8px;
+      white-space: normal;
+      img {
+        width: 100%;
+      }
+      a {
+        line-height: 1.3em;
+        text-indent: unset;
+      }
+      h2 {
+        font-size: 6px;
+        text-indent: unset;
+      }
+    }
+  }
+
   .calendar {
     width: 360px;
   }
+
   .cal-day {
-    padding-bottom: 20px;
+    // padding-bottom: 20px;
+    padding-bottom: 10px;
     b {
       font-size: 1em;
     }
   }
-  .hasEvent {
-    width: 110px;
-    height: 160px;
-    .event-space {
-      font-size: 10px;
-      img {
-        width: 100px;
-      }
-    }
-  }
+  // .hasEvent {
+  //   width: 110px;
+  //   height: 160px;
+  //   .event-space {
+  //     font-size: 10px;
+  //     img {
+  //       width: 100px;
+  //     }
+  //   }
+  // }
 
   #myevents-header {
     width: 360px;
