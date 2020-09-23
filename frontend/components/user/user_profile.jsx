@@ -4,6 +4,7 @@ import { fetchCurrentUser, getCurrentUser } from '../../actions/session_actions'
 import { Link } from 'react-router-dom';
 import NavBar from '../navbar/navbar';
 import SubnavToggle from '../subnav/subnav';
+import { expandCountry, getCountry } from '../../util/location_util';
 import {
   formatMonthYear,
   formatLastOnline,
@@ -103,7 +104,8 @@ class UserProfile extends React.Component {
               </li>
               <li>
                 <small>Location /</small> <br />
-             <strong>{flags[`${currentUser.region}`]}</strong>{currentUser.region}
+             {/* <strong>{flags[`${currentUser.region}`]}</strong>{currentUser.region} */}
+             <strong>{expandCountry[`${currentUser.region}`].flag}</strong>{currentUser.region}
               </li>
             </ul>
           </section>
