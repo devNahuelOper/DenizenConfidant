@@ -55,6 +55,9 @@
     line-height: 3em;
     a {
       color: white;
+      &:hover {
+       filter: grayscale(1) brightness(0.7);
+      }
     }
   }
   h1 {
@@ -95,7 +98,8 @@
     #logo {
       filter: none;
       &:hover {
-        filter: invert(1);
+        // filter: invert(1);
+        filter: grayscale(5) brightness(0.1);
       }
     }
   }
@@ -734,9 +738,9 @@ select {
    }
   }
   #dj-show #expand {
-    height: 177px;
+    height: 134px;
     .reveal li:last-child {
-      border-top: none !important;
+      // border-top: none !important;
     }
   }
   .djs-subnav {
@@ -780,6 +784,11 @@ select {
       width: 675px;
       .details {
         white-space: nowrap;
+        justify-content: space-between;
+        width: 675px;
+        li {
+          margin-right: unset;
+        }
       }
     }
   }
@@ -874,6 +883,7 @@ select {
        width: 560px;
       .details {
         white-space: nowrap;
+        width: 560px;
       }
     }
   }
@@ -979,8 +989,9 @@ select {
        width: 490px;
       .details {
         white-space: nowrap;
+        width: 490px;
         li {
-          margin-right: 80px;
+          // margin-right: 80px;
         }
       }
     }
@@ -1141,12 +1152,14 @@ select {
        width: 360px;
       .details {
         white-space: nowrap;
+        width: 360px;
         li {
-          margin-right: 35px;
+          // margin-right: 35px;
           font-size: 14px;
           &:last-of-type {
             overflow: auto;
-            line-height: 1.42em;
+            line-height: 1.72em;
+            font-size: 12px;
           }
         }
       }
@@ -1158,7 +1171,7 @@ select {
        #bio {
         max-height: 400px;
         overflow: scroll;
-        text-indent: 1em;
+        // text-indent: 1em;
        }
     }
     .playlist {

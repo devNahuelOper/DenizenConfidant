@@ -1,18 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TitleComponent } from '../title_component.jsx';
-// import SubnavToggle from '../subnav/subnav';
+import SubnavToggle from '../subnav/subnav';
 import { toggleSearch } from '../../util/search_util';
 
 class DjShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      drop: false
-    }
-    this.clicker = this.clicker.bind(this);
-    this.leave = this.leave.bind(this);
-    this.mobileDrop = this.mobileDrop.bind(this);
   }
 
 
@@ -25,25 +19,6 @@ class DjShow extends React.Component {
 
   componentDidUpdate() {
     toggleSearch();
-  }
-
-  clicker(e) {
-    this.setState({ "drop": true });
-  }
-
-  leave(e) {
-    this.setState({ "drop": false });
-  }
-
-  mobileDrop(e) {
-    e.preventDefault(); 
-    this.setState({ "drop": true }); 
-    $('body').on('click', e => {
-      const drop = $('.subnav-drop');
-      if (drop !== e.currentTarget) {
-        this.leave();
-      }
-    })
   }
 
   render() {
@@ -72,7 +47,7 @@ class DjShow extends React.Component {
             >
             <section className="djs-nav">
               <nav>
-                <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
+                <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
                 <ul id="links">
                   <li><Link to="/djs">DJs</Link></li>
                   <li><Link to="/events">Events</Link></li>
@@ -92,19 +67,14 @@ class DjShow extends React.Component {
             <ul>
               <li><Link to="/djs">All</Link></li>
               <li><Link className="form" to={`/djs/${dj.id}`}>{dj.name}</Link></li>
-              <li><Link to="/">Take me back home</Link></li>
+              {/* <li><Link to="/">Take me back home</Link></li> */}
               <li id="pending"><Link to='/djs/new'>Create an artist profile</Link></li>
             </ul>
           </section>
-            <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-              <button className="subnav-drop" onFocus={this.clicker}  onBlur={this.leave}> <span onClick={this.mobileDrop}>{dj.name} <small>⬇︎</small></span>
-                <ul className={this.state.drop ? "reveal" : "hide"}>
-                  <li><Link className="log-link" to="/djs">All</Link></li>
-                  <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-                  <li><Link className="log-link" onClick={this.leave} to="/djs/new">Create an artist profile</Link></li>
-                </ul>
-              </button>
-            </div>
+            <SubnavToggle
+              title={dj.name}
+              labels={["All", "Create an artist profile"]}
+              paths={["/djs", "/djs/new"]} />
         </div>
         <div className="djsubheader-container">
           <section className="djshow-subheader">
