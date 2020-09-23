@@ -37,8 +37,8 @@ class DjShow extends React.Component {
   }
 
   mobileDrop(e) {
-    e.preventDefault();
-    this.setState({ "drop": true }); status
+    e.preventDefault(); 
+    this.setState({ "drop": true }); 
     $('body').on('click', e => {
       const drop = $('.subnav-drop');
       if (drop !== e.currentTarget) {

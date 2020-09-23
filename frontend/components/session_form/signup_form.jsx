@@ -4,6 +4,7 @@ import RegionDropdown from './region_dropdown';
 import LanguageDropdown from './language_dropdown';
 import BirthdayDropdown from './birthday_dropdown';
 import NavBar from '../navbar/navbar';
+import SubnavToggle from '../subnav/subnav';
 import { toggleSearch } from '../../util/search_util';
 import { expandCountry } from '../../util/location_util';
 
@@ -64,7 +65,7 @@ class SignupForm extends React.Component {
       outline: '2px solid #e10',
       border: '1px solid rgb(46, 46, 46)'
     };
-    $('button').on('click', (e) => {
+    $('.signup-form button').on('click', (e) => {
       e.preventDefault();
     })
     return (
@@ -82,7 +83,10 @@ class SignupForm extends React.Component {
               <li><Link to="/">Take me back home</Link></li>
             </ul>
           </section>
-          <SubnavToggle />
+          <SubnavToggle
+            title="Register"
+            labels={['Login', 'Take me back home']}
+            paths={['/login', '/']} />
       </div>
         
       <div className="signup-form-container">
@@ -170,8 +174,6 @@ class SignupForm extends React.Component {
                   {/* <p className="errors">{this.props.errors[5]}</p> */}
               </div>
               </li>
-
-           
 
           <li>
             <div>First Name /
@@ -284,49 +286,5 @@ class SignupForm extends React.Component {
   }
 }
 
-class SubnavToggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      drop: false
-    }
-    this.clicker = this.clicker.bind(this);
-    this.leave = this.leave.bind(this);
-    this.mobileDrop = this.mobileDrop.bind(this);
-  }
-
-  clicker(e) {
-    this.setState({ "drop": true });
-  }
-
-  leave(e) {
-    this.setState({ "drop": false });
-  }
-
-  mobileDrop(e) {
-    e.preventDefault();
-    this.setState({ "drop": true }); status
-    $('body').on('click', e => {
-      const drop = $('.subnav-drop');
-      if (drop !== e.currentTarget) {
-        this.leave();
-      }
-    });
-  }
-
-  render() {
-    return (
-      <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-        <button className="subnav-drop" onFocus={this.clicker}  onBlur={this.leave}> <span onClick={this.mobileDrop}>Register <small>⬇︎</small></span>
-          <ul className={this.state.drop ? "reveal" : "hide"}>
-            <li><Link className="log-link" onClick={this.leave} to="/login">Login</Link></li>
-            <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-          </ul>
-        </button>
-      </div>
-    )
-  }
-
-}
 
 export default SignupForm;

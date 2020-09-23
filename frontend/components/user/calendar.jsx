@@ -19,7 +19,7 @@ class Calendar extends React.Component {
       monthEvents.forEach(event => {
         if (formatAbsDate(event.date).day === idx + 1) {
           $(this).parent().addClass('hasEvent').parent().addClass('eventWeek');
-          $(this).children().first().show().attr('src', event.photoUrl)
+          $(this).children().first().show().attr({src: event.photoUrl || window.defaultUrl, alt: event.name})
           .next().attr({class: 'eventName', id: `${event.id}`}).text(event.name).next().text(`at ${event.venue}`);
         }
       });

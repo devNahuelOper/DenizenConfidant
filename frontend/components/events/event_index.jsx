@@ -114,7 +114,7 @@ class SubnavToggle extends React.Component {
   
   mobileDrop(e) {
     e.preventDefault();
-    this.setState({ "drop": true }); status
+    this.setState({ "drop": true }); 
     $('body').on('click', e => {
       const drop = $('.subnav-drop');
       if (drop !== e.currentTarget) {

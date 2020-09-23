@@ -133,11 +133,16 @@
     display: none;
     width: 152px;
     height: 76px;
+    color: transparent;
   }
 }
 .hasEvent {
   height: 235px;
   width: 166px;
+  img {
+    background-image: image_url('rave.jpg');
+    background-size: cover;
+  }
 }
 .eventWeek {
   vertical-align: super;
@@ -238,6 +243,9 @@
   -webkit-appearance: auto;
   font-size: 16px;
   background-color: white;
+  margin-right: 5px;
+  box-sizing: border-box;
+  padding-left: 2px;
 }
 #venue-input {
   border-radius: 0;
@@ -569,8 +577,10 @@ i {
       width: 675px;
       .details {
         white-space: nowrap;
+        justify-content: space-between;
+        width: 630px;
         li {
-          margin-right: 160px;
+          margin-right: unset;
         }
       }
     }
@@ -643,9 +653,7 @@ i {
        width: 560px;
       .details {
         white-space: nowrap;
-        li {
-          margin-right: 115px;
-        }
+        width: 560px;
       }
     }
   }
@@ -720,9 +728,7 @@ i {
        width: 490px;
       .details {
         white-space: nowrap;
-        li {
-          margin-right: 80px;
-        }
+        width: 490px;
       }
     }
   }
@@ -779,8 +785,8 @@ i {
        width: 360px;
       .details {
         white-space: nowrap;
+        width: 360px;
         li {
-          margin-right: 30px;
           font-size: 14px;
         }
       }
