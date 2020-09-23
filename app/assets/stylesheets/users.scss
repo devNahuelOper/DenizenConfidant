@@ -577,8 +577,10 @@ i {
       width: 675px;
       .details {
         white-space: nowrap;
+        justify-content: space-between;
+        width: 630px;
         li {
-          margin-right: 160px;
+          margin-right: unset;
         }
       }
     }
@@ -651,9 +653,7 @@ i {
        width: 560px;
       .details {
         white-space: nowrap;
-        li {
-          margin-right: 115px;
-        }
+        width: 560px;
       }
     }
   }
@@ -728,9 +728,7 @@ i {
        width: 490px;
       .details {
         white-space: nowrap;
-        li {
-          margin-right: 80px;
-        }
+        width: 490px;
       }
     }
   }
