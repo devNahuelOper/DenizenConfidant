@@ -92,12 +92,12 @@ class EventShow extends React.Component {
               {lineUp.map((dj, i) =>
               Object.keys(event.get_djs).includes(dj.toLowerCase()) 
               ?
-                <article>
-                  <Link key={i} to={`/djs/${event.get_djs[dj.toLowerCase()]}`}><strong>{dj}</strong></Link>
+                <article key={i}>
+                  <Link to={`/djs/${event.get_djs[dj.toLowerCase()]}`}><strong>{dj}</strong></Link>
                 </article>
               :
-                <article>
-                  <b key={i}>{dj}</b>
+                <article key={i}>
+                  <b>{dj}</b>
                 </article>
               )}
             </span>
