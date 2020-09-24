@@ -235,7 +235,10 @@
 
         }
         #headliners {
-
+          a:hover {
+            background-color: #6b96c2;
+            color: white;
+          }
         }
         #description {
           font-size: 12px;
@@ -334,6 +337,12 @@
     #headliners {
       color: black;
       font-size: 36px;
+      a:hover {
+        strong {
+          background-color: #6b96c2;
+          color: white;
+        }    
+      }
       b {
         font-weight: normal;
       }
