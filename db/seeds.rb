@@ -22,7 +22,7 @@ require 'open-uri'
 # untold_photo = open('https://denizen-confidant-seeds.s3.amazonaws.com/untold.png')
 # untold.photo.attach(io: untold_photo, filename: 'untold.png')
 
-# tomorrowland = Event.create({name: 'Tomorrowland', venue: 'PRC de Schorre', location: '🇧🇪 Antwerp, Belgium', date: 20210716, headliners: 'Tiesto, Martin Garrix, Dimitri Vegas & Like Mike, Armin van Buuren, Carl Cox, Martin Solveig, Afrojack, DJ Snake', description: 'Taking place in Belgium Tomorrowland is the largest electronic music festival held in the world. Incredible decorations and ten metre tulips tower over the worlds biggest DJs playing to the worlds best crowd.', cost: '€225'})
+# tomorrowland = Event.create({name: 'Tomorrowland', venue: 'PRC de Schorre', location: '🇧🇪 Antwerp, Belgium', date: 20210716, headliners: 'Tiësto, Martin Garrix, Dimitri Vegas & Like Mike, Armin van Buuren, Carl Cox, Martin Solveig, Afrojack, DJ Snake', description: 'Taking place in Belgium Tomorrowland is the largest electronic music festival held in the world. Incredible decorations and ten metre tulips tower over the worlds biggest DJs playing to the worlds best crowd.', cost: '€225'})
 # tomorrowland_photo = open('https://denizen-confidant-seeds.s3.us-east-1.amazonaws.com/tomorrowland.jpeg')
 # tomorrowland.photo.attach(io: tomorrowland_photo, filename: 'tomorrowland.jpeg')
 
@@ -30,7 +30,7 @@ require 'open-uri'
 # sonar_photo = open('https://denizen-confidant-seeds.s3.amazonaws.com/sonar.png')
 # sonar.photo.attach(io: sonar_photo, filename: 'sonar.png')
 
-# ultra = Event.create({name: 'Ultra', venue: 'Bayfront Park', location: '🇺🇸 Miami, FL', date: 20210326, headliners: 'Eric Prydz, Gesaffelstein, Kayzo, Armin Van Buuren, Afrojack, Cirez D Markus Schulz, Nicky Romero, Kaskade', description: 'Ultra Music Festival (UMF) is an annual outdoor electronic music festival that occurs in March in the city of Miami, Florida, United States. It also streams live coverage of the festival via YouTube, thereby providing a FOMO antidote to all those people who perhaps missed being there in person.', cost: '$534'})
+# ultra = Event.create({name: 'Ultra', venue: 'Bayfront Park', location: '🇺🇸 Miami, FL', date: 20210326, headliners: 'Eric Prydz, Gesaffelstein, Kayzo, Armin Van Buuren, Afrojack, Cirez D, Markus Schulz, Nicky Romero, Kaskade', description: 'Ultra Music Festival (UMF) is an annual outdoor electronic music festival that occurs in March in the city of Miami, Florida, United States. It also streams live coverage of the festival via YouTube, thereby providing a FOMO antidote to all those people who perhaps missed being there in person.', cost: '$534'})
 # ultra_photo = open('https://denizen-confidant-seeds.s3.us-east-1.amazonaws.com/ultra.jpeg')
 # ultra.photo.attach(io: ultra_photo, filename: 'ultra.jpeg')
 
