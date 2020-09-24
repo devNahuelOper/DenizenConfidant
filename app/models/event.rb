@@ -16,6 +16,7 @@
 #  user_id     :integer
 #
 class Event < ApplicationRecord
+  attr_accessor :name
   # validates :name, :venue, :location, presence: true
   validates :name, presence: { message: " Please add the Title of this event"}
   validates :location, presence: { message: " Please provide a location"}
@@ -25,6 +26,8 @@ class Event < ApplicationRecord
 
   belongs_to :user, foreign_key: :user_id, class_name: :User
   has_one_attached :photo 
+
+  
 
   def get_djs
     dj_hash = {}

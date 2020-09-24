@@ -67,7 +67,7 @@ class Api::EventsController < ApplicationController
   private
 
   def event_params
-    params.fetch(:event, {}).permit(:name, :venue, :location, :date, :headliners, :description, :cost, :local, :user_id, :photo)
+    params.fetch(:event, {}).permit(:name, :venue, :location, :date, :headliners, :description, :cost, :local, :user_id, :photo, :get_djs)
   end
 
 end
