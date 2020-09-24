@@ -16,10 +16,12 @@ class EventShow extends React.Component {
   componentDidMount() {
     this.props.fetchEvent(this.props.match.params.eventId);
     window.scrollTo(0, 0);
+    
   }
 
   componentDidUpdate() {
     toggleSearch();
+    console.log(this.props.event?.get_djs);
   }
 
   render() {
@@ -27,7 +29,7 @@ class EventShow extends React.Component {
       return null;
     }
     const { event } = this.props;
-
+    const lineUp = event.headliners.split(',').map(dj => dj.trim());
     return (
       <React.Fragment>
         <TitleComponent title={`DC: ${event.name}`} />
@@ -86,7 +88,19 @@ class EventShow extends React.Component {
         </div>
         <div className="main-container">
           <section className="eventshow-main">
-            <span id="headliners"><small>Line-up/</small> <br/> {event.headliners}</span>
+            <span id="headliners"><small>Line-up/</small> <br/> 
+              {lineUp.map((dj, i) =>
+              Object.keys(event.get_djs).includes(dj.toLowerCase()) 
+              ?
+                <article key={i}>
+                  <Link to={`/djs/${event.get_djs[dj.toLowerCase()]}`}><strong>{dj}</strong></Link>
+                </article>
+              :
+                <article key={i}>
+                  <b>{dj}</b>
+                </article>
+              )}
+            </span>
             <br/>
             <p id="description">{event.description}</p>
             <br/>

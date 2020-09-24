@@ -5,10 +5,18 @@ import { fetchGenres } from '../../actions/genre_actions';
 import { fetchEvents } from '../../actions/event_actions';
 import { fetchAllNews } from '../../actions/news_actions';
 
+const splashDjs = ["Gesaffelstein", "Deadmau5", "No Mana", "Noisuf-X", "Kayzo", "Eric Prydz"];
 
 const mapStateToProps = (state) => {
   return {
-    djs: Object.values(state.entities.djs),
+    djs: Object.values(state.entities.djs)
+    .filter(dj => splashDjs.includes(dj.name))
+    .reduce((obj, dj) => {
+      return {
+        ...obj,
+        [dj.name]: dj.id
+      };
+    }, {}),
     genres: Object.values(state.entities.genres),
     events: Object.values(state.entities.events),
     news: Object.values(state.entities.news)
@@ -16,7 +24,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchDjs: () => dispatch(fetchDjs()),
+  fetchDjs: (djs) => dispatch(fetchDjs(djs)),
   fetchGenres: () => dispatch(fetchGenres()),
   fetchEvents: () => dispatch(fetchEvents()),
   fetchAllNews: news => dispatch(fetchAllNews(news))

@@ -12,13 +12,14 @@ class SplashPage extends React.Component {
     super(props);
     this.state = {
       date: new Date(),
-      djs: []
     }
   }
 
   componentDidMount() {
-    this.props.fetchDjs().then(djs => this.setState({djs: Object.values(djs.djs)}));
+    // this.props.fetchDjs().then(djs => this.setState({djs: Object.values(djs.djs)}));
+    this.props.fetchDjs();
     toggleSearch();
+    // console.log(this.props.djs);
   }
 
   render() {
@@ -103,42 +104,48 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.gesaffelsteinUrl} id="gesaffelstein"/>
-                    <Link id="gesaffelstein-link" to="/djs/739" title="Gesaffelstein">Gesaffelstein - Depravity</Link>
+                    {/* <Link id="gesaffelstein-link" to="/djs/739" title="Gesaffelstein">Gesaffelstein - Depravity</Link> */}
+                    <Link id="gesaffelstein-link" to={`/djs/${djs["Gesaffelstein"]}`} title="Gesaffelstein">Gesaffelstein - Depravity</Link>
                     <audio id="depravity" src="depravity.mp3" controls></audio>
                   </article>
                 </li>
                 <li className="song">
                   <article>
                     <img src={window.deadmau5Url} id="deadmau5"/>               
-                    <Link id="deadmau5-link" to="/djs/725" title="Deadmau5">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
+                    {/* <Link id="deadmau5-link" to="/djs/725" title="Deadmau5">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link> */}
+                    <Link id="deadmau5-link" to={`/djs/${djs["Deadmau5"]}`} title="Deadmau5">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
                     <audio id="speed" src="speed.mp3" controls></audio>
                   </article>
                 </li>
                 <li className="song">
                   <article>
                     <img src={window.noisufUrl} id="noisuf"/>    
-                    <Link id="noisuf-link" to="/djs/768" title="Noisuf-X">Noisuf-X - Count to Seven</Link>
+                    {/* <Link id="noisuf-link" to="/djs/768" title="Noisuf-X">Noisuf-X - Count to Seven</Link> */}
+                    <Link id="noisuf-link" to={`/djs/${djs["Noisuf-X"]}`} title="Noisuf-X">Noisuf-X - Count to Seven</Link>
                     <audio id="cseven" src="cseven.mp3" controls></audio>
                   </article>
                 </li>
                 <li className="song">
                   <article>
                     <img src={window.nomanaUrl} id="nomana"/>
-                    <Link id="nomana-link" to="/djs/769" title="No Mana">No Mana - Other Side</Link>
+                    {/* <Link id="nomana-link" to="/djs/769" title="No Mana">No Mana - Other Side</Link> */}
+                    <Link id="nomana-link" to={`/djs/${djs["No Mana"]}`} title="No Mana">No Mana - Other Side</Link>
                     <audio id="otherside" src="otherside.mp3" controls></audio>
                   </article>
                 </li>
                 <li className="song">
                   <article>
                     <img src={window.kayzoUrl} id="kayzo"/>                  
-                    <Link id="kayzo-link" to="/djs/752" title="Kayzo">Kayzo - The Fire</Link>
+                    {/* <Link id="kayzo-link" to="/djs/752" title="Kayzo">Kayzo - The Fire</Link> */}
+                    <Link id="kayzo-link" to={`/djs/${djs["Kayzo"]}`} title="Kayzo">Kayzo - The Fire</Link>
                     <audio id="fire" src="fire.mp3" controls></audio>
                   </article>
                 </li>
                 <li className="song">
                   <article>
                     <img src={window.prydzUrl} id="prydz" />
-                    <Link id="prydz-link" to="/djs/730" title="Eric Prydz">Eric Prydz - The Matrix</Link>
+                    {/* <Link id="prydz-link" to="/djs/730" title="Eric Prydz">Eric Prydz - The Matrix</Link> */}
+                    <Link id="prydz-link" to={`/djs/${djs["Eric Prydz"]}`} title="Eric Prydz">Eric Prydz - The Matrix</Link>
                     <audio id="matrix" src="matrix.mp3" controls></audio>
                   </article>
                 </li>

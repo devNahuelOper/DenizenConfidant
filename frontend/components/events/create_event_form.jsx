@@ -122,7 +122,6 @@ class CreateEventForm extends React.Component {
   }
 
   render() {
-    // const [error, setError] = useState(false);
     const { name, date, venue, location, city, description, headliners, cost } = this.state;
     
     const cities = addCities[location];
