@@ -16,7 +16,7 @@
 #  user_id     :integer
 #
 class Event < ApplicationRecord
-  attr_accessor :name
+  # attr_accessor :name
   # validates :name, :venue, :location, presence: true
   validates :name, presence: { message: " Please add the Title of this event"}
   validates :location, presence: { message: " Please provide a location"}
@@ -37,8 +37,6 @@ class Event < ApplicationRecord
     djs.each do |dj|
       if own_djs.include?(dj.name.downcase) 
         dj_hash[dj.name.downcase] = dj.id
-      # elsif dj.name == 'Tiësto' && own_djs.include?('tiesto')
-      #   dj_hash[dj.name.downcase] = dj.id
       end
     end
     dj_hash
