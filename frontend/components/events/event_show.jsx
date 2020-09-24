@@ -104,7 +104,7 @@ class EventShow extends React.Component {
             <br/>
             <p id="description">{event.description}</p>
             <br/>
-            <img id="event-image" src={event.photoUrl} alt=""/>
+            <img id="event-image" src={event.photoUrl || window.defaultUrl} alt={`${event.name} Photo`}/>
             {/* <img id="event-image" src={`https://denizen-confidant-dev.s3.amazonaws.com/${event.name.toLowerCase().split(' ').join('')}.png`}/> */}
           </section>          
         </div>
