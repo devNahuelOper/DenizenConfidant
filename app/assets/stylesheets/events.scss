@@ -167,26 +167,26 @@
         color: #9c9c9c;
         margin: 4px 0;
       }
-      &:nth-of-type(3) {
-        h2 {
-          position: relative;
-          z-index: 2;
-        }
-        img {
-          position: relative;
-          bottom: 7px;
-          height: 95px;
-          overflow: overlay;
-        }
-        a {
-          position: relative;
-          bottom: 21px;
-        }
-        #venue {
-          position: relative;
-          bottom: 20px;
-        }
-      }
+      // &:nth-of-type(3) {
+      //   h2 {
+      //     position: relative;
+      //     z-index: 2;
+      //   }
+      //   img {
+      //     position: relative;
+      //     bottom: 7px;
+      //     height: 95px;
+      //     overflow: overlay;
+      //   }
+      //   a {
+      //     position: relative;
+      //     bottom: 21px;
+      //   }
+      //   #venue {
+      //     position: relative;
+      //     bottom: 20px;
+      //   }
+      // }
     }
   }
 
@@ -334,6 +334,9 @@
     #headliners {
       color: black;
       font-size: 36px;
+      b {
+        font-weight: normal;
+      }
       small {
         color: #b4b4b4;
         font-size: 12px;
