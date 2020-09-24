@@ -88,13 +88,19 @@ class EventShow extends React.Component {
         </div>
         <div className="main-container">
           <section className="eventshow-main">
-            <span id="headliners"><small>Line-up/</small> <br/> {lineUp.map(dj =>
-            Object.keys(event.get_djs).includes(dj.toLowerCase()) 
-            ?
-                <Link to={`/djs/${event.get_djs[dj.toLowerCase()]}`}><strong>{dj}</strong>, </Link>
-            :
-                <b>{dj}, </b>
-              )}</span>
+            <span id="headliners"><small>Line-up/</small> <br/> 
+              {lineUp.map((dj, i) =>
+              Object.keys(event.get_djs).includes(dj.toLowerCase()) 
+              ?
+                <article>
+                  <Link key={i} to={`/djs/${event.get_djs[dj.toLowerCase()]}`}><strong>{dj}</strong></Link>
+                </article>
+              :
+                <article>
+                  <b key={i}>{dj}</b>
+                </article>
+              )}
+            </span>
             <br/>
             <p id="description">{event.description}</p>
             <br/>

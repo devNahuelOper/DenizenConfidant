@@ -337,14 +337,25 @@
     #headliners {
       color: black;
       font-size: 36px;
-      a:hover {
-        strong {
-          background-color: #6b96c2;
-          color: white;
-        }    
+      a {
+        &:hover {
+          strong {
+            background-color: #6b96c2;
+            color: white;
+          }    
+        }
       }
       b {
         font-weight: normal;
+      }
+      article {
+        display: inline;
+         &::after {
+          content: ", ";
+        }
+        &:last-of-type::after {
+          content: "";
+        }
       }
       small {
         color: #b4b4b4;
