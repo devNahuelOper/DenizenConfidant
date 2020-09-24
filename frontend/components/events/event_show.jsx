@@ -91,7 +91,7 @@ class EventShow extends React.Component {
             <span id="headliners"><small>Line-up/</small> <br/> {lineUp.map(dj =>
             Object.keys(event.get_djs).includes(dj.toLowerCase()) 
             ?
-                <Link to={`/djs/${event.get_djs[dj.toLowerCase()]}`}>{dj}, </Link>
+                <Link to={`/djs/${event.get_djs[dj.toLowerCase()]}`}><strong>{dj}</strong>, </Link>
             :
                 <b>{dj}, </b>
               )}</span>
