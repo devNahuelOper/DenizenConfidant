@@ -9,7 +9,14 @@ const splashDjs = ["Gesaffelstein", "Deadmau5", "No Mana", "Noisuf-X", "Kayzo", 
 
 const mapStateToProps = (state) => {
   return {
-    djs: Object.values(state.entities.djs).filter(dj => splashDjs.includes(dj.name)),
+    djs: Object.values(state.entities.djs)
+    .filter(dj => splashDjs.includes(dj.name))
+    .reduce((obj, dj) => {
+      return {
+        ...obj,
+        [dj.name]: dj.id
+      };
+    }, {}),
     genres: Object.values(state.entities.genres),
     events: Object.values(state.entities.events),
     news: Object.values(state.entities.news)
