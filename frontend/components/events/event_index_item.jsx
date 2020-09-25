@@ -23,9 +23,9 @@ return (
           <article key={i}>
             {
             event.get_djs.hasOwnProperty(dj.toLowerCase()) ?
-            <Link to={`djs/${event.get_djs[dj.toLowerCase()]}`}>{dj}</Link>
+            <Link to={`djs/${event.get_djs[dj.toLowerCase()]}`}> {dj}</Link>
             :
-            <b>{dj}</b>
+            <b> {dj}</b>
             }
           </article>
         )}
