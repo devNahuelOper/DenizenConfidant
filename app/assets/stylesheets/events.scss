@@ -235,9 +235,23 @@
 
         }
         #headliners {
-          a:hover {
-            background-color: #6b96c2;
-            color: white;
+          article {
+            display: inline;
+            &:after {
+              content: ",";
+            }
+            &:last-of-type:after {
+              content: "";
+            }
+          }
+          a {
+            &:hover {
+              background-color: #6b96c2;
+              color: white;
+            }
+          }
+          b {
+            font-weight: normal;
           }
         }
         #description {
