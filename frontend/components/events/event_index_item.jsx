@@ -11,20 +11,20 @@ return (
   <li className="eventlist-item">
    { !event.local &&
    <article className="event">
-    <Link id="event-name" to={`events/${event.id}`}>{event.name === 'Sonar' ? 'Sónar' : event.name}</Link>
+    <Link id="event-name" to={`events/${event.id}`}>{event.name}</Link>
     <br/>
       <span id="event-date">Date: {formatDateStyle(event.date)}</span>
     <br/>
       <span id="venue">Venue: {event.venue} | {event.location}</span>
       <br/>
-      <span id="headliners">Featuring: 
+      <span id="headliners">Featuring:&nbsp;
         {lineUp.map((dj, i) => 
           <article key={i}>
             {
             event.get_djs.hasOwnProperty(dj.toLowerCase()) ?
-            <Link to={`djs/${event.get_djs[dj.toLowerCase()]}`}> {dj}</Link>
+            <Link to={`djs/${event.get_djs[dj.toLowerCase()]}`}>{dj}</Link>
             :
-            <b> {dj}</b>
+            <b>{dj}</b>
             }
           </article>
         )}
