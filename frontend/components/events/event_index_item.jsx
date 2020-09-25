@@ -5,8 +5,9 @@ import {
 } from '../../util/date_util';
 
 
-const EventIndexItem = ({ event, deleteEvent}) => (
- 
+const EventIndexItem = ({ event }) => {
+const lineUp = event.headliners.split(',').map(dj => dj.trim());
+return (
   <li className="eventlist-item">
    { !event.local &&
    <article className="event">
@@ -16,22 +17,26 @@ const EventIndexItem = ({ event, deleteEvent}) => (
     <br/>
       <span id="venue">Venue: {event.venue} | {event.location}</span>
       <br/>
-      <span id="headliners">Featuring: {event.headliners}</span>
-      {/* <span id="headliners">Featuring: {
-      event.headliners.split(', ').map(headliner => {
-      <article headliner={headliner}>{headliner}</article>
-      })
-      }
-      </span> */}
+      <span id="headliners">Featuring: 
+        {lineUp.map((dj, i) => 
+          <article key={i}>
+            {
+            event.get_djs.hasOwnProperty(dj.toLowerCase()) ?
+            <Link to={`djs/${event.get_djs[dj.toLowerCase()]}`}> {dj}</Link>
+            :
+            <b> {dj}</b>
+            }
+          </article>
+        )}
+      </span>
       <br/>
       <p id="description">{event.description}</p>
-      {/* <img id="event-img" src={event.photoUrl}/> */}
-      {/* <button onClick={() => deleteEvent(event.id)}>Cancel Event</button> */}
       </article>
       }
       <br/>
   </li>
-)
+  )
+}
 
 export default EventIndexItem;
 

@@ -60,7 +60,6 @@ class EventIndex extends React.Component {
             <ul className="eventlist">
               {events.slice(8, 13).map((event, i) => 
                 <li className="event" key={event.id}>
-                
                     { event.local &&
                       <article id="local-event">
                       <h2>{formatDateStyle(event.date)}</h2>
@@ -69,10 +68,8 @@ class EventIndex extends React.Component {
                       <span id="venue">{event.venue} - {event.location}</span>
                     </article>
                     }
-                
                   </li>
               )}
-
             </ul>
           </section>
         </div>
@@ -82,12 +79,9 @@ class EventIndex extends React.Component {
             <hr/>
           <ul className="eventlist">
             {events.slice(0, 8).map(event => 
-           
             <EventIndexItem key={event.id} event={event}/>
-            
             )}
           </ul>
-          
          </section>
         </div>
       </div>
