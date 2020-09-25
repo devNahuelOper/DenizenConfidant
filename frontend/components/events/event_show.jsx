@@ -21,7 +21,7 @@ class EventShow extends React.Component {
 
   componentDidUpdate() {
     toggleSearch();
-    console.log(this.props.event?.get_djs);
+    // console.log(this.props.event?.get_djs);
   }
 
   render() {
