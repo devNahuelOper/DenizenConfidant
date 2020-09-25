@@ -35,9 +35,9 @@ class NewsIndex extends React.Component {
             )}
         <ul className="newslist">
           {news.slice(0, 6).map((nws, i) =>
-            <li key={i}>
-              <article className="newspiece">
-          <p className="news-date">{formatDateNews(nws.created_at)}</p> 
+          <li key={i}>
+            <article className="newspiece">
+              <p className="news-date">{formatDateNews(nws.updated_at)}</p> 
                 <Link to={`/news/${nws.id}`}>
                   <span id={`${nws.title.split(' ')[0].toLowerCase()}-frame`} className="news-img-frame">
                     <img src={nws.photoUrl} alt={`${nws.title.split(' ')[0]}-photo`}/> <br/>
@@ -46,7 +46,7 @@ class NewsIndex extends React.Component {
                 </Link> 
                 <p className="news-blurb">{nws.blurb}</p>
               </article>
-            </li>
+          </li>
           )}
         </ul>
       </div>
