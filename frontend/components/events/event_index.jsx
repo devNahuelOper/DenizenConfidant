@@ -79,12 +79,9 @@ class EventIndex extends React.Component {
             <hr/>
           <ul className="eventlist">
             {events.slice(0, 8).map(event => 
-           
             <EventIndexItem key={event.id} event={event}/>
-            
             )}
           </ul>
-          
          </section>
         </div>
       </div>
