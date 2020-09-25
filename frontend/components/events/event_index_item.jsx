@@ -17,7 +17,6 @@ return (
     <br/>
       <span id="venue">Venue: {event.venue} | {event.location}</span>
       <br/>
-      {/* <span id="headliners">Featuring: {event.headliners}</span> */}
       <span id="headliners">Featuring: 
         {lineUp.map((dj, i) => 
           <article key={i}>
