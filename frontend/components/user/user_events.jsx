@@ -51,7 +51,7 @@ class UserEvents extends React.Component {
         <div className="user-profile" id="user-events">
           <header>
             <div id="nav-container">
-              <NavBar title="My Events"/>
+              <NavBar title="My Events" entity="User"/>
             </div>
           </header>
           <div className="subnav-container">

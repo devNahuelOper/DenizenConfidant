@@ -52,12 +52,19 @@
   }
 
   #djshow-header {
+    margin: 0 auto;
+    width: 952px;
     line-height: 3em;
     a {
       color: white;
       &:hover {
-       filter: grayscale(1) brightness(0.7);
+        filter: grayscale(1) brightness(0.7);
       }
+    }
+    #prev {
+      position: relative;
+      top: 2px;
+      width: 16px;
     }
   }
   h1 {

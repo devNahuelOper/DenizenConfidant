@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TitleComponent } from '../title_component.jsx';
 import SubnavToggle from '../subnav/subnav';
+import NavBar from '../navbar/navbar';
 import { toggleSearch } from '../../util/search_util';
 
 class DjShow extends React.Component {
@@ -55,7 +56,7 @@ class DjShow extends React.Component {
                   <li><button id="search">Search</button></li>
                 </ul>
               </nav>
-              <section id="djshow-header" className="eventshow-header">
+              <section id="djshow-header">
                 <Link to='/djs'><img id="prev" src={window.prevUrl} alt="Back" /> DJs</Link>
                   <h1 id={dj.name.length >= 15 ? 'longDj' : 'normalDj'}>{(dj.name === 'Ran D') || (dj.name === 'Noisuf X') ? hyphen : dj.name}</h1>
               </section>

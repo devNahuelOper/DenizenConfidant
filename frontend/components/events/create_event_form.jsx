@@ -133,7 +133,14 @@ class CreateEventForm extends React.Component {
       <div className="create-event">
         <header>
           <div id="nav-container">
-            <section id="navbar">
+            <NavBar 
+            title="Submit an event"
+            entity="Event"
+            hasLinks={true}
+            path={`/users/${currentUser.id}/events`}
+            label="My Events"
+            type="form"/>
+            {/* <section className="navbar">
               <nav>
                 <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
                 <ul id="links">
@@ -147,7 +154,7 @@ class CreateEventForm extends React.Component {
                 <Link to={`/users/${currentUser.id}/events`}><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link>
                 <h1>Submit an event</h1>
               </section>
-            </section>
+            </section> */}
           </div>
         </header>
         <div className="event-form-container">
