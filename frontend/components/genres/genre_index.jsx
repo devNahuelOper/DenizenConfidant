@@ -21,7 +21,7 @@ class GenreIndex extends React.Component {
       <div className="genre-index">
         <header>
           <div className="genre-nav-container">
-            <section className="genre-nav">
+            <section className="genres-nav">
               <nav>
                 <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
                 <ul id="links">
