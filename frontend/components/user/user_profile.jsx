@@ -56,7 +56,7 @@ class UserProfile extends React.Component {
       <div className="user-profile">
         <header>
           <div id="nav-container">
-            <NavBar title={currentUser.username}/>
+            <NavBar title={currentUser.username} entity="User"/>
           </div>
         </header>
         <div className="subnav-container">

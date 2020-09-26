@@ -68,7 +68,7 @@ class LoginForm extends React.Component {
       <div>
         <header>
           <div id="nav-container">
-            <NavBar title="Your account"/>
+            <NavBar title="Your account" entity="User"/>
           </div>
         </header>
           <div className="subnav-container">

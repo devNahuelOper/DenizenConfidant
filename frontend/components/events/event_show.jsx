@@ -40,7 +40,9 @@ class EventShow extends React.Component {
             <NavBar 
               title={event.name}
               hasLinks={true}
-              entity="Event"/>
+              entity="Event"
+              path="/events"
+              label="Events"/>
             {/* <section id="events-nav">
               <nav>
               <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>

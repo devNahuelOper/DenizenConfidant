@@ -502,6 +502,7 @@ i {
   color: #ffa200;
   box-sizing: border-box;
   padding: 4px 14px;
+  white-space: nowrap;
   a:hover {
     color: #404040;
     background-color: #ffa200;
@@ -684,7 +685,7 @@ i {
 
   .create-event {
     #nav-container {
-      height: 141px;
+      height: 148px;
     }
     .navbar {
      height: 140px;
