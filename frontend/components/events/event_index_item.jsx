@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  formatDateStyle
-} from '../../util/date_util';
+import { formatDateStyle } from '../../util/date_util';
 
 
 const EventIndexItem = ({ event }) => {
