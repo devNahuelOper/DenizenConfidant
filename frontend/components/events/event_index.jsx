@@ -26,7 +26,8 @@ class EventIndex extends React.Component {
       <div className="events-index">
         <header>
           <div className="events-nav-container">
-          <section className="events-nav">
+          <NavBar title="Events"/>
+          {/* <section className="events-nav">
             <nav>
               <Link to="/"><img src={window.logoUrl} id="logo" /></Link>
               <ul id="links">
@@ -37,7 +38,7 @@ class EventIndex extends React.Component {
               </ul>
             </nav>
             <h1>Events</h1>
-          </section>
+          </section> */}
           </div>
         </header>
         <div className="subnav-container">
