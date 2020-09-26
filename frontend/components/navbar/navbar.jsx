@@ -18,8 +18,11 @@ const NavBar = ({title, hasLinks = false, entity}) => {
      { hasLinks ?
       <section className={`${entity.toLowerCase()}show-header`}>
         <Link to={`/${entity.toLowerCase()}s`}><img id="prev" src={window.prevUrl} alt="Back" /> {entity}s</Link>
-        {/* <h1>{title}</h1> */}
-        <h2>{title}</h2>
+        { entity === "Event" ?
+          <h2 id={title.length >= 20 ? 'longH2' : 'normalH2'}>{title}</h2>
+          :
+          <h1>{title}</h1>
+          }
       </section>
      :
        <h1>{title}</h1>
