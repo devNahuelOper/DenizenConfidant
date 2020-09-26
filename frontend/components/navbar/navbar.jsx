@@ -22,7 +22,7 @@ const NavBar = ({title, hasLinks = false, entity, path, label, type = "show"}) =
         { entity === "Event" && type === "show" ?
           <h2 id={title.length >= 20 ? 'longH2' : 'normalH2'}>{title}</h2>
           :
-          <h1>{title}</h1>
+          <h1 id={title.length >= 15 ? `long${entity}` : `normal${entity}`}>{title}</h1>
           }
       </section>
      :
