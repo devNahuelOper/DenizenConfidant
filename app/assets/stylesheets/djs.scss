@@ -52,7 +52,7 @@
     }
   }
 
-  #djshow-header {
+  .djshow-header {
     margin: 0 auto;
     width: 952px;
     line-height: 3em;
@@ -73,6 +73,8 @@
     width: 952px;
     margin: 0 auto;
     line-height: 2.2em;
+    letter-spacing: normal;
+    height: unset;
   }
 }
 
@@ -228,7 +230,7 @@
 #aphextwin-container {
   #djs-nav{
     color: black;
-    #djshow-header a, nav #logo {
+    .djshow-header a, nav #logo {
       filter: invert(1);
     }
   }
@@ -269,7 +271,7 @@
 #fearoftigers-container {
   #djs-nav{
     color: black;
-    #djshow-header a, nav #logo {
+    .djshow-header a, nav #logo {
       filter: invert(1);
     }
   }
@@ -322,7 +324,7 @@
   background-position-y: -140px;
   #djs-nav{
     color: #a6a6a6;
-    #djshow-header a, nav #logo {
+    .djshow-header a, nav #logo {
       filter: contrast(0.5);
     }
   }
@@ -367,7 +369,7 @@
   background-position-y: -100px;
   #djs-nav{
     color: black;
-    #djshow-header a, nav #logo {
+    .djshow-header a, nav #logo {
       filter: invert(1);
     }
   }
@@ -403,13 +405,14 @@
     .details {
       display: flex;
       li {
-          text-align: left;
-          font-weight: normal;
-          color: #fdff00;
-          font-size: 16px;
-          padding: 16px 0;
-          margin-right: 180px;
-          white-space: nowrap;
+        line-height: 1em;
+        text-align: left;
+        font-weight: normal;
+        color: #fdff00;
+        font-size: 16px;
+        padding: 16px 0;
+        margin-right: 180px;
+        white-space: nowrap;
         small {
           color: #b4b4b4;
           font-size: 12px;
@@ -784,7 +787,7 @@ select {
     #djs-nav{
       // height: 454px;
       height: 330px;
-      #djshow-header {
+      .djshow-header {
         width: 675px;
         line-height: unset;
       }
@@ -874,7 +877,7 @@ select {
     #djs-nav{
       //  height: 420px;
       height: 250px;
-      #djshow-header {
+      .djshow-header {
          width: 560px;
       }
     }
@@ -984,7 +987,7 @@ select {
     // height: 400px;
     #djs-nav{
       //  height: 380px;
-      #djshow-header {
+      .djshow-header {
         width: 490px;
       }
     }
@@ -1114,7 +1117,7 @@ select {
         top: -5px
       }
       //  height: 380px;
-      #djshow-header {
+      .djshow-header {
         width: 360px;
       }
     }
@@ -1252,7 +1255,7 @@ select {
     margin-right: 22px;
   }
 
-  .eventshow-header, #djshow-header {
+  .eventshow-header, .djshow-header {
     width: 1272px;
   }
   .djsubheader-container {
