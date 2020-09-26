@@ -7,7 +7,7 @@
   #nav-container {
     height: 215px;
   }
-  #navbar {
+  .navbar {
     height: 180px;
   }
 }
@@ -165,7 +165,7 @@
 
 .create-event {
   border-bottom: 1px solid #575757;
-  #navbar {
+  .navbar {
     height: 244px;
     display: flex;
     flex-direction: column;
@@ -566,7 +566,7 @@ i {
     #nav-container {
       height: 160px;
     }
-    #navbar {
+    .navbar {
       height: 140px;
     }
   }
@@ -622,7 +622,7 @@ i {
       height: 180px;
     }
 
-    #navbar {
+    .navbar {
       height: 180px;
       h1 {
         right: unset;
@@ -686,7 +686,7 @@ i {
     #nav-container {
       height: 141px;
     }
-    #navbar {
+    .navbar {
      height: 140px;
      h1 {
        font-size: 36px;

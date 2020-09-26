@@ -43,7 +43,7 @@ class SplashPage extends React.Component {
      <> 
       <header>
        <div className="splash-header-container">
-        <section id="navbar">
+        <section className="navbar" id="navbar">
           <nav>
           <img src={window.logoUrl} id="logo" />
           <ul id="links">

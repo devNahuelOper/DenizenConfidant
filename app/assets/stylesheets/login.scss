@@ -16,7 +16,7 @@
   }
 }
 
-#navbar {
+.navbar {
   width: 960px;
   // height: 215px;
   margin: 0 auto;
@@ -598,7 +598,7 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
 @media only screen and (max-width: 972px) {
 
  
-  #navbar {
+  .navbar {
     // width: 632px;
     width: 675px;
     height: 140px;
@@ -679,7 +679,7 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
       width: 560px;
     }
   }
-  #navbar {
+  .navbar {
     width: 560px;
     nav {
       width: 560px;
@@ -771,7 +771,7 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
 
 @media only screen and (max-width: 560px) {
   #nav-container {
-    #navbar {
+    .navbar {
       width: 490px;
       nav {
         width: 490px;
@@ -822,7 +822,7 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
 
 @media only screen and (max-width: 499px) {
   #nav-container {
-    #navbar {
+    .navbar {
       width: 360px;
       nav {
         width: 360px;
@@ -916,7 +916,7 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     //   top: unset;
     // }
   }
-   #navbar {
+   .navbar {
       width: 1272px;
       nav {
         width: 1272px;
