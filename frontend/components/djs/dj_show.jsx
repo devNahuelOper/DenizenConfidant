@@ -46,7 +46,13 @@ class DjShow extends React.Component {
             className="djshow-nav-container" 
             style={!dj.photoUrl ? noAttach : yesAttach}
             >
-            <section className="djs-nav" id="djs-nav">
+            <NavBar 
+             title={dj.name}
+             entity="Dj"
+             hasLinks={true}
+             path="/djs"
+             label="DJs"/>
+            {/* <section className="djs-nav" id="djs-nav">
               <nav>
                 <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
                 <ul id="links">
@@ -60,7 +66,7 @@ class DjShow extends React.Component {
                 <Link to='/djs'><img id="prev" src={window.prevUrl} alt="Back" /> DJs</Link>
                   <h1 id={dj.name.length >= 15 ? 'longDj' : 'normalDj'}>{dj.name}</h1>
               </section>
-            </section>
+            </section> */}
           </div>
         </header>
         <div className="djs-subnav-container">
