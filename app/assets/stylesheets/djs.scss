@@ -14,11 +14,12 @@
   }
 }
 
-.djs-nav {
+#djs-nav{
     width: 952px;
     height: 215px;
     margin: 0 auto;
     color: black;
+    justify-content: normal;
   nav {
     display: flex;
     justify-content: space-between;
@@ -82,7 +83,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  .djs-nav {
+  #djs-nav{
     height: 554px;
     display: flex;
     flex-direction: column;
@@ -225,7 +226,7 @@
   background-position-y: -45px;
 }
 #aphextwin-container {
-  .djs-nav {
+  #djs-nav{
     color: black;
     #djshow-header a, nav #logo {
       filter: invert(1);
@@ -266,7 +267,7 @@
 }
 
 #fearoftigers-container {
-  .djs-nav {
+  #djs-nav{
     color: black;
     #djshow-header a, nav #logo {
       filter: invert(1);
@@ -278,7 +279,7 @@
 }
 #heyz-container {
   background-position-y: -20px;
-  .djs-nav {
+  #djs-nav{
     #links {
       color: black;
     }
@@ -319,7 +320,7 @@
 }
 #masterbootrecord-container {
   background-position-y: -140px;
-  .djs-nav {
+  #djs-nav{
     color: #a6a6a6;
     #djshow-header a, nav #logo {
       filter: contrast(0.5);
@@ -364,7 +365,7 @@
 }
 #virtualself-container {
   background-position-y: -100px;
-  .djs-nav {
+  #djs-nav{
     color: black;
     #djshow-header a, nav #logo {
       filter: invert(1);
@@ -713,7 +714,7 @@ select {
 // Smaller
 
 @media only screen and (max-width: 972px) {
-  .djs-nav {
+  #djs-nav{
     width: 675px;
     height: 128px;
     nav {
@@ -780,7 +781,7 @@ select {
   .djshow-nav-container {
     // height: 475px;
     height: 340px;
-    .djs-nav {
+    #djs-nav{
       // height: 454px;
       height: 330px;
       #djshow-header {
@@ -821,7 +822,7 @@ select {
 
 
 @media only screen and (max-width: 700px) {
-  .djs-nav {
+  #djs-nav{
     width: 560px;
     nav {
       width: 560px;
@@ -870,7 +871,7 @@ select {
   .djshow-nav-container {
     // height: 435px;
     height: 260px;
-    .djs-nav {
+    #djs-nav{
       //  height: 420px;
       height: 250px;
       #djshow-header {
@@ -938,7 +939,7 @@ select {
 }
 
 @media only screen and (max-width: 560px) {
-  .djs-nav {
+  #djs-nav{
     width: 490px;
     nav {
       width: 490px;
@@ -981,7 +982,7 @@ select {
 
   .djshow-nav-container {
     // height: 400px;
-    .djs-nav {
+    #djs-nav{
       //  height: 380px;
       #djshow-header {
         width: 490px;
@@ -1035,7 +1036,7 @@ select {
 }
 
 @media only screen and (max-width: 499px) {
-  .djs-nav {
+  #djs-nav{
     width: 360px;
     overflow: auto;
     nav {
@@ -1107,7 +1108,7 @@ select {
   .djshow-nav-container {
     background-position: center !important;
     // height: 400px;
-    .djs-nav {
+    #djs-nav{
       nav {
         position: relative;
         top: -5px
@@ -1223,7 +1224,7 @@ select {
 // Larger
 
 @media only screen and (min-width: 1300px){
-  .djs-nav {
+  #djs-nav{
     width: 1272px;
     nav {
       width: 1272px;
