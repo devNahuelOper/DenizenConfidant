@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TitleComponent } from '../title_component.jsx';
 import SubnavToggle from '../subnav/subnav';
+import NavBar from '../navbar/navbar';
 import { formatDateShowStyle } from '../../util/date_util';
 import { toggleSearch } from '../../util/search_util';
 
@@ -36,7 +37,11 @@ class EventShow extends React.Component {
       <div className="events-index">
         <header>
           <div className="eventshow-nav-container">
-            <section className="events-nav">
+            <NavBar 
+              title={event.name}
+              hasLinks={true}
+              entity="Event"/>
+            {/* <section id="events-nav">
               <nav>
               <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
               <ul id="links">
@@ -50,7 +55,7 @@ class EventShow extends React.Component {
                 <Link to='/events'><img id="prev" src={window.prevUrl} alt="Back"/> Events</Link>
                 <h2 id={event.name.length >= 20 ? 'longH2' : 'normalH2'}>{event.name}</h2>
               </section>
-            </section>
+            </section> */}
           </div>
         </header>
           <div className="subnav-container">
