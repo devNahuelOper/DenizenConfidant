@@ -167,7 +167,7 @@
   // background-repeat: no-repeat;
   background-size: cover;
   #genres-nav {
-     height: 554px;
+     height: 575px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -201,8 +201,9 @@
     font-size: 72px;
     width: 952px;
     margin: 0 auto;
-    line-height: 1.3em;
+    line-height: 1.3em !important;
     -webkit-text-stroke: 1px black;
+    height: unset !important;
   }
 }
 

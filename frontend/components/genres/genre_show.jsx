@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TitleComponent } from '../title_component.jsx';
 import SubnavToggle from '../subnav/subnav';
+import NavBar from '../navbar/navbar';
 import { toggleSearch } from '../../util/search_util';
 
 class GenreShow extends React.Component {
@@ -36,7 +37,13 @@ class GenreShow extends React.Component {
             className="genreshow-nav-container" 
             style={{backgroundImage: `url("${genre.photoUrl}")`}}
           >
-            <section className="genres-nav">
+            <NavBar 
+             title={genre.name}
+             entity="Genre"
+             hasLinks={true}
+             path="/genres"
+             label="Genres"/>
+            {/* <section id="genres-nav">
               <nav>
                 <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
                 <ul id="links">
@@ -50,7 +57,7 @@ class GenreShow extends React.Component {
                 <Link to='/genres'><img id="prev" src={window.prevUrl} alt="Back" /> Genres</Link>
                 <h1>{genre.name}</h1>
               </section>
-            </section>
+            </section> */}
           </div>
         </header>
         <div className="genre-subnav-container">
