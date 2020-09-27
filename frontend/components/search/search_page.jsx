@@ -34,7 +34,7 @@ class SearchPage extends React.Component {
         <div className="search-page">
           <header>
             <div id="nav-container">
-              <NavBar title="Search"/>
+              <NavBar title="Search" entity="search"/>
             </div>
           </header>
           <div className="search-main">
