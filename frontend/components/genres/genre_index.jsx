@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import GenreIndexItem from './genre_index_item';
 import SubnavToggle from '../subnav/subnav';
+import NavBar from '../navbar/navbar';
 import { toggleSearch } from '../../util/search_util';
 
 class GenreIndex extends React.Component {
