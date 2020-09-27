@@ -21,11 +21,12 @@
   }
 }
 
-.genres-nav {
+#genres-nav {
   width: 952px;
   height: 215px;
   margin: 0 auto;
   color: white;
+  justify-content: normal;
    nav {
     display: flex;
     justify-content: space-between;
@@ -165,7 +166,7 @@
   background-position: center;
   // background-repeat: no-repeat;
   background-size: cover;
-  .genres-nav {
+  #genres-nav {
      height: 554px;
     display: flex;
     flex-direction: column;
@@ -278,7 +279,7 @@
 // Smaller
 
 @media only screen and (max-width: 972px) {
-  .genres-nav {
+  #genres-nav {
     width: 675px;
     height: 128px;
     nav {
@@ -302,7 +303,7 @@
 
   .genreshow-nav-container {
     height: 340px;
-    .genres-nav {
+    #genres-nav {
       height: 330px;
       display: flex;
       flex-direction: column;
@@ -365,7 +366,7 @@
 }
 
 @media only screen and (max-width: 700px) {
-  .genres-nav {
+  #genres-nav {
     width: 560px;
     nav {
       width: 560px;
@@ -407,7 +408,7 @@
 
   .genreshow-nav-container {
     height: 260px;
-    .genres-nav {
+    #genres-nav {
       height: 250px;
     }
   }
@@ -438,7 +439,7 @@
 }
 
 @media only screen and (max-width: 560px) {
-  .genres-nav {
+  #genres-nav {
     width: 490px;
     nav {
       width: 490px;
@@ -499,7 +500,7 @@
 }
 
 @media only screen and (max-width: 499px) {
-  .genres-nav {
+  #genres-nav {
     width: 360px;
     nav {
       width: 360px;
@@ -607,7 +608,7 @@
 // Larger
 
 @media only screen and (min-width: 1300px){
-  .genres-nav {
+  #genres-nav {
     width: 1272px;
     nav {
       width: 1272px;
