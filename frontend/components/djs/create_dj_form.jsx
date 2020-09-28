@@ -8,7 +8,6 @@ import { dataURLtoFile } from '../../util/url_util';
 
 
 class CreateDjForm extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
