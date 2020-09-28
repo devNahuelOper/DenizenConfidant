@@ -39,7 +39,13 @@ class NewsShow extends React.Component {
       <div className="news-show">
         <header>
           <div className="news-nav-container">
-            <section className="news-nav">
+            <NavBar 
+              title={news.title}
+              entity="new"
+              hasLinks={true}
+              path="/"
+              label="News"/>
+            {/* <section className="news-nav">
               <nav>
                 <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
                 <ul id="links">
@@ -53,7 +59,7 @@ class NewsShow extends React.Component {
                 <Link to='/'><img id="prev" src={window.prevUrl} alt="Back" /> News</Link>
                 <h1>{news.title}</h1>
               </section>
-            </section>
+            </section> */}
           </div>
         </header>
         <div className="news-subheader-container">
