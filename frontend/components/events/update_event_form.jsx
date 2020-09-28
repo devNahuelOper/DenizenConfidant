@@ -2,10 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TitleComponent } from '../title_component.jsx';
 import SubnavToggle from '../subnav/subnav';
+import NavBar from '../navbar/navbar';
 import { expandCountry, getCountry } from '../../util/location_util';
-import {
-  formatDateStyle
-} from '../../util/date_util';
+import { formatDateStyle } from '../../util/date_util';
 import { toggleSearch } from '../../util/search_util';
 
 class UpdateEventForm extends React.Component {
@@ -84,7 +83,7 @@ class UpdateEventForm extends React.Component {
         <div className="create-event" id="update-event">
           <header>
             <div id="nav-container">
-              <section id="navbar">
+              <section className="navbar">
                 <nav>
                   <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
                   <ul id="links">
