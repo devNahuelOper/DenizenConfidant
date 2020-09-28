@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { fetchNews } from '../../actions/news_actions';
 import { formatDateNewsShow } from '../../util/date_util';
 import { toggleSearch } from '../../util/search_util';
+import NavBar from '../navbar/navbar';
 import { TitleComponent } from '../title_component.jsx';
 
 class NewsShow extends React.Component {
