@@ -1,9 +1,8 @@
 import React from 'react';
 import ImageCarousel from './image_carousel';
 import { Link } from 'react-router-dom';
-import {
-  toggleSearch
-} from '../../util/search_util';
+import { toggleSearch } from '../../util/search_util';
+import { fiveDaySpan } from '../../util/date_util';
 import NewsIndex from '../news/news_index';
 
 
@@ -24,21 +23,8 @@ class SplashPage extends React.Component {
 
   render() {
     const { djs, news } = this.props;
+    let dates = fiveDaySpan(this.state.date);
 
-    let yesterday = new Date(this.state.date);
-    yesterday.setDate(yesterday.getDate() - 1);
-
-    let yesterdayMinus = new Date(yesterday);
-    yesterdayMinus.setDate(yesterdayMinus.getDate() - 1);
-
-    let tomorrow = new Date(this.state.date);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-
-    let tomorrowPlus = new Date(tomorrow);
-    tomorrowPlus.setDate(tomorrowPlus.getDate() + 1);
-
-    let weekday = this.state.date.toDateString().split(' ')[0];
-    let today = this.state.date.getDate();
     return (
      <> 
       <header>
@@ -61,23 +47,12 @@ class SplashPage extends React.Component {
           <nav className="main-banner">
             <div className="banner-hold">
             <h1 className="denizen-confidant">Denizen Confidant</h1>
-        
             <ul className="days">
-              <li className="day">{yesterdayMinus.toDateString().split(' ')[0]}
-                <h1>{yesterdayMinus.getDate()}</h1>
-              </li>
-              <li className="day">{yesterday.toDateString().split(' ')[0]}
-                <h1>{yesterday.getDate()}</h1>
-              </li>
-              <li className="day">{weekday}  
-                <h1>{today}</h1>
-              </li>
-              <li className="day">{tomorrow.toDateString().split(' ')[0]}
-                <h1>{tomorrow.getDate()}</h1>
-              </li>
-              <li className="day">{tomorrowPlus.toDateString().split(' ')[0]}
-                <h1>{tomorrowPlus.getDate()}</h1>
-              </li>
+              {dates.map((date, i) => 
+                <li className="day" key={i}>{date[0]}
+                  <h1>{date[1]}</h1>
+                </li>
+              )}
             </ul>
             </div>
           </nav>
@@ -88,7 +63,6 @@ class SplashPage extends React.Component {
             </div>
             <NewsIndex news={news}/>
           </section>
-     
           <section className="beats">
             <nav className="main-banner yellow-banner">
               <div className="banner-hold">
