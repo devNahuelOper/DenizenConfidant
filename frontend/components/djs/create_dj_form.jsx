@@ -33,7 +33,6 @@ class CreateDjForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUrl = this.handleUrl.bind(this);
     this.clearForm = this.clearForm.bind(this);
-    // this.navToshow = this.navToShow.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
   }
 
@@ -59,11 +58,6 @@ class CreateDjForm extends React.Component {
     $('#success-msg').toggleClass('show hidden')
     $('#song-hold').toggleClass('show hidden');
   }
-
-  // navToShow() {
-  //   this.clearForm()
-  //     .then(dj => this.props.history.push(`/djs/${dj.dj.id}`));
-  // }
 
   update(field) {
     return e => {
@@ -174,18 +168,7 @@ class CreateDjForm extends React.Component {
     return (
       <div className="dj-index" id="create-dj">
         <div className="djs-nav-container">
-          <section className="djs-nav">
-            <nav>
-              <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
-              <ul id="links">
-                <li><Link to="/djs">DJs</Link></li>
-                <li><Link to="/events">Events</Link></li>
-                <li><Link to="/genres">Music</Link></li>
-                <li><button id="search">Search</button></li>
-              </ul>
-            </nav>
-            <h1>DJs</h1>
-          </section>
+          <NavBar title="DJs" entity="Dj"/>
         </div>
         <div className="djs-subnav-container">
           <section className="djs-subnav">
@@ -195,7 +178,6 @@ class CreateDjForm extends React.Component {
               <li><Link to="/">Take me back home</Link></li>
             </ul>
           </section>
-          {/* <SubnavToggle /> */}
           <SubnavToggle
             title="Create an artist profile"
             labels={["All", "Take me back home"]}
