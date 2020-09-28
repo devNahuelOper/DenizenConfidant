@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import SubnavToggle from '../subnav/subnav';
+import NavBar from '../navbar/navbar';
 import { toggleSearch } from '../../util/search_util';
 import { dataURLtoFile } from '../../util/url_util';
 
