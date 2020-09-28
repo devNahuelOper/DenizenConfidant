@@ -24,15 +24,8 @@ class NewsShow extends React.Component {
   render() {
     const { news } = this.props;
     if (!news) return null;
-    // const newsTime = () => {
-    //   const split = formatDateNewsShow(news.created_at).split('~');
-    //   split.map((part, i) => {
-    //     return {
-         
-    //     }
-    //   })
-    // }
-    const newsTime = formatDateNewsShow(news.created_at).split('~');
+
+    const newsTime = formatDateNewsShow(news.updated_at).split('~');
     return (
     <React.Fragment>
       <TitleComponent title={`DC News: ${news.title}`} />
@@ -45,21 +38,6 @@ class NewsShow extends React.Component {
               hasLinks={true}
               path="/"
               label="News"/>
-            {/* <section className="news-nav">
-              <nav>
-                <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
-                <ul id="links">
-                  <li><Link to="/djs">DJs</Link></li>
-                  <li><Link to="/events">Events</Link></li>
-                  <li><Link to="/genres">Music</Link></li>
-                  <li><button id="search">Search</button></li>
-                </ul>
-              </nav>
-              <section className="news-header">
-                <Link to='/'><img id="prev" src={window.prevUrl} alt="Back" /> News</Link>
-                <h1>{news.title}</h1>
-              </section>
-            </section> */}
           </div>
         </header>
         <div className="news-subheader-container">
