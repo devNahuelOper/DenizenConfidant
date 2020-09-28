@@ -260,6 +260,17 @@ export const firstDay = () => {
   return new Date(now.getFullYear(), now.getMonth(), 1).getDay();
 }
 
+export const fiveDaySpan = (date) => {
+  const dates = [];
+  for (let i = -2; i <= 2; i++) {
+    let newDate = new Date(date);
+    newDate.setDate(newDate.getDate() + i);
+    dates.push(newDate);
+  }
+
+  return dates.map(date => [date.toDateString().split(' ')[0], date.getDate()]);
+}
+
 // import {
 //   formatDateTime
 // } from '../../util/date_util';
