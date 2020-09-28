@@ -21,11 +21,12 @@
   }
 }
 
-.genre-nav {
+#genres-nav {
   width: 952px;
   height: 215px;
   margin: 0 auto;
   color: white;
+  justify-content: normal;
    nav {
     display: flex;
     justify-content: space-between;
@@ -165,8 +166,8 @@
   background-position: center;
   // background-repeat: no-repeat;
   background-size: cover;
-  .genre-nav {
-     height: 554px;
+  #genres-nav {
+     height: 575px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -200,8 +201,9 @@
     font-size: 72px;
     width: 952px;
     margin: 0 auto;
-    line-height: 1.3em;
+    line-height: 1.3em !important;
     -webkit-text-stroke: 1px black;
+    height: unset !important;
   }
 }
 
@@ -278,7 +280,7 @@
 // Smaller
 
 @media only screen and (max-width: 972px) {
-  .genre-nav {
+  #genres-nav {
     width: 675px;
     height: 128px;
     nav {
@@ -302,7 +304,7 @@
 
   .genreshow-nav-container {
     height: 340px;
-    .genre-nav {
+    #genres-nav {
       height: 330px;
       display: flex;
       flex-direction: column;
@@ -365,7 +367,7 @@
 }
 
 @media only screen and (max-width: 700px) {
-  .genre-nav {
+  #genres-nav {
     width: 560px;
     nav {
       width: 560px;
@@ -407,7 +409,7 @@
 
   .genreshow-nav-container {
     height: 260px;
-    .genre-nav {
+    #genres-nav {
       height: 250px;
     }
   }
@@ -438,7 +440,7 @@
 }
 
 @media only screen and (max-width: 560px) {
-  .genre-nav {
+  #genres-nav {
     width: 490px;
     nav {
       width: 490px;
@@ -499,7 +501,7 @@
 }
 
 @media only screen and (max-width: 499px) {
-  .genre-nav {
+  #genres-nav {
     width: 360px;
     nav {
       width: 360px;
@@ -607,7 +609,7 @@
 // Larger
 
 @media only screen and (min-width: 1300px){
-  .genre-nav {
+  #genres-nav {
     width: 1272px;
     nav {
       width: 1272px;

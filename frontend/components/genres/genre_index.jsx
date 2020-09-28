@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import GenreIndexItem from './genre_index_item';
 import SubnavToggle from '../subnav/subnav';
+import NavBar from '../navbar/navbar';
 import { toggleSearch } from '../../util/search_util';
 
 class GenreIndex extends React.Component {
@@ -21,18 +22,7 @@ class GenreIndex extends React.Component {
       <div className="genre-index">
         <header>
           <div className="genre-nav-container">
-            <section className="genre-nav">
-              <nav>
-                <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
-                <ul id="links">
-                  <li><Link to="/djs">DJs</Link></li>
-                  <li><Link to="/events">Events</Link></li>
-                  <li><Link to="/genres">Music</Link></li>
-                  <li><button id="search">Search</button></li>
-                </ul>
-              </nav>
-              <h1>Genres</h1>
-            </section>
+            <NavBar title="Genres" entity="genre"/>
           </div>
         </header>
         <div className="genre-subnav-container">

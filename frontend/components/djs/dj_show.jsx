@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TitleComponent } from '../title_component.jsx';
 import SubnavToggle from '../subnav/subnav';
+import NavBar from '../navbar/navbar';
 import { toggleSearch } from '../../util/search_util';
 
 class DjShow extends React.Component {
@@ -26,9 +27,9 @@ class DjShow extends React.Component {
       return null;
     }
     const { dj } = this.props;
-    const first = dj.name.split(' ')[0];
-    const second = dj.name.split(' ')[1];
-    const hyphen = `${first}-${second}`;
+    // const first = dj.name.split(' ')[0];
+    // const second = dj.name.split(' ')[1];
+    // const hyphen = `${first}-${second}`;
     const noAttach = {
         backgroundImage: `url("${`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`}")` 
     }
@@ -45,7 +46,13 @@ class DjShow extends React.Component {
             className="djshow-nav-container" 
             style={!dj.photoUrl ? noAttach : yesAttach}
             >
-            <section className="djs-nav">
+            <NavBar 
+             title={dj.name}
+             entity="Dj"
+             hasLinks={true}
+             path="/djs"
+             label="DJs"/>
+            {/* <section className="djs-nav" id="djs-nav">
               <nav>
                 <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
                 <ul id="links">
@@ -55,11 +62,11 @@ class DjShow extends React.Component {
                   <li><button id="search">Search</button></li>
                 </ul>
               </nav>
-              <section id="djshow-header" className="eventshow-header">
+              <section id="djshow-header">
                 <Link to='/djs'><img id="prev" src={window.prevUrl} alt="Back" /> DJs</Link>
-                  <h1 id={dj.name.length >= 15 ? 'longDj' : 'normalDj'}>{(dj.name === 'Ran D') || (dj.name === 'Noisuf X') ? hyphen : dj.name}</h1>
+                  <h1 id={dj.name.length >= 15 ? 'longDj' : 'normalDj'}>{dj.name}</h1>
               </section>
-            </section>
+            </section> */}
           </div>
         </header>
         <div className="djs-subnav-container">

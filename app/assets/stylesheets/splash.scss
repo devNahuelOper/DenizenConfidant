@@ -23,7 +23,7 @@ $event-blue: #6a96c2;
   height: 575px;
   width: 100%;
 
-  #navbar {
+  .navbar {
     width: 966px;
     nav {
       width: 966px;
@@ -587,7 +587,7 @@ h3 {
 @media only screen and (max-width: 972px) {
   .splash-header-container {
     height: 375px;
-      #navbar {
+      .navbar {
         width: 675px;
         nav {
           width: 675px;
@@ -716,7 +716,7 @@ h3 {
 
 @media only screen and (max-width: 700px) {
   .splash-header-container {
-    #navbar {
+    .navbar {
       max-width: 560px;
       nav {
         max-width: 560px;
@@ -843,7 +843,7 @@ h3 {
 
 @media only screen and (max-width: 560px) {
   .splash-header-container {
-    #navbar {
+    .navbar {
       width: 490px;
       nav {
         width: 490px;
@@ -951,7 +951,7 @@ h3 {
 
 @media only screen and (max-width: 499px) {
   .splash-header-container {
-    #navbar {
+    .navbar {
       width: 360px;
       nav {
         width: 360px;
@@ -1096,10 +1096,10 @@ h3 {
 @media only screen and (min-width: 1300px) {
 
   .splash-header-container {
-    #navbar #links {
+    .navbar #links {
       left: unset;
     }
-    #navbar {
+    .navbar {
       width: 1272px;
       nav {
         width: 1272px;

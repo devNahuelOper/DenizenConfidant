@@ -2,9 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../navbar/navbar';
 import SubnavToggle from '../subnav/subnav';
-import {
-  toggleSearch
-} from '../../util/search_util';
+import { toggleSearch } from '../../util/search_util';
 
 
 class LoginForm extends React.Component {
@@ -68,7 +66,7 @@ class LoginForm extends React.Component {
       <div>
         <header>
           <div id="nav-container">
-            <NavBar title="Your account"/>
+            <NavBar title="Your account" entity="User"/>
           </div>
         </header>
           <div className="subnav-container">

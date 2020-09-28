@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NavBar = ({title}) => {
+const NavBar = ({title, hasLinks = false, entity, path, label, type = "show"}) => {
 
   return (
-    <section className={`${title.toLowerCase()}-nav`} id="navbar">
+    <section className="navbar" id={`${entity.toLowerCase()}s-nav`}>
       <nav>
         <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
         <ul id="links">
@@ -14,7 +14,20 @@ const NavBar = ({title}) => {
           <li><button id="search">Search</button></li>
         </ul>
       </nav>
-      <h1>{title}</h1>
+
+     { hasLinks ?
+      <section className={`${entity.toLowerCase()}${type}-header`}>
+        {/* <Link to={`/${entity.toLowerCase()}s`}><img id="prev" src={window.prevUrl} alt="Back" /> {entity}s</Link> */}
+        <Link to={path}><img id="prev" src={window.prevUrl} alt="Back" /> {label}</Link>
+        { entity === "Event" && type === "show" ?
+          <h2 id={title.length >= 20 ? 'longH2' : 'normalH2'}>{title}</h2>
+          :
+          <h1 id={title.length >= 15 ? `long${entity}` : `normal${entity}`}>{title}</h1>
+          }
+      </section>
+     :
+       <h1>{title}</h1>
+      }
     </section>
   )
 }
