@@ -92,6 +92,12 @@ $event-blue: #6a96c2;
   width: 960px;
 }
 
+@function randNum($min, $max) {
+  $rand: random();
+  $randNum: $min + floor($rand * (($max - $min) + 1));
+  @return $randNum;
+}
+
 .denizen-confidant {
   float: left;
   margin: 14px 14px 0 0;
@@ -102,7 +108,12 @@ $event-blue: #6a96c2;
     height: 29px;
     cursor: default;
     @include bg-image("ravve.png", no-repeat, 11%, -0.4px 12px);
+    // @include bg-image("rave#{Math.floor(Math.random()*10)}.png", no-repeat, 11%, -0.4px 12px);
+    // @include bg-image("rave#{randNum(0, 9)}.png", no-repeat, 11%, -0.4px 12px);
   }
+  // &::after {
+  //   content: " #{randNum(0,9)}";
+  // }
 }
 
 .denizen-confidant::first-letter:hover {
