@@ -98,6 +98,9 @@ $event-blue: #6a96c2;
   @return $randNum;
 }
 
+ $nums: (0,1,2,3,4,5,6,7,8,9);
+ 
+
 .denizen-confidant {
   float: left;
   margin: 14px 14px 0 0;
@@ -108,6 +111,9 @@ $event-blue: #6a96c2;
     height: 29px;
     cursor: default;
     @include bg-image("ravve.png", no-repeat, 11%, -0.4px 12px);
+    // @each $num in $nums {
+    //   @include bg-image("rave#{$num}.png", no-repeat, 11%, -0.4px 12px);
+    // }
     // @include bg-image("rave#{randNum(0, 9)}.png", no-repeat, 11%, -0.4px 12px);
   }
   // &::after {
