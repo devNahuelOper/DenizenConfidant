@@ -23,15 +23,12 @@ class SplashPage extends React.Component {
   render() {
     const { djs, news } = this.props;
     let dates = fiveDaySpan(this.state.date);
-    // @include bg - image("ravve.png", no - repeat, 11 %, -0.4px 12px);
-    // let randNum = Math.floor(Math.random() * 10);
+
     $('.denizen-confidant').on('mouseover', () => {
-      // let imageUrl = `assets/images/rave${randNum}.png`;
       $('.denizen-confidant').attr('id', `bg${Math.floor(Math.random() * 10)}`);
     }).on('mouseout', () => {
       $('.denizen-confidant').attr('id', 'bgnone');
     });
-
     return (
      <> 
       <header>
