@@ -105,25 +105,42 @@ $event-blue: #6a96c2;
     }
   }
 
+  #bg2 {
+    background-size: 9%;
+    background-position: 0.5px 7px;
+  }
+
+  #bg3 {
+    background-size: 9%;
+    background-position: 0.5px 7px;
+  }
+
+  #bg9 {
+    background-size: 8%;
+    background-position: 0.6px 9px;
+  }
+
   #bgnone {
     background-image: none;
   }
 
 .denizen-confidant {
+  @include bg-image("rave2.png", no-repeat, 8%, 0.6px 9px);
   float: left;
   margin: 14px 14px 0 0;
   text-align: center;
   font-size: 36px;
   letter-spacing: -1px;
+  max-height: 27px;
   &:hover {
-    height: 29px;
+    // height: 29px;
     cursor: default;
     // @include bg-image("ravve.png", no-repeat, 11%, -0.4px 12px);
     // @include bg-image("rave#{randNum(0, 9)}.png", no-repeat, 11%, -0.4px 12px);
   }
 }
 
-.denizen-confidant::first-letter:hover {
+.denizen-confidant::first-letter {
   overflow: hidden;
 }
 
