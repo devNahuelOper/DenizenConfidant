@@ -92,29 +92,47 @@ $event-blue: #6a96c2;
   width: 960px;
 }
 
-@function randNum($min, $max) {
-  $rand: random();
-  $randNum: $min + floor($rand * (($max - $min) + 1));
-  @return $randNum;
-}
+// @function randNum($min, $max) {
+//   $rand: random();
+//   $randNum: $min + floor($rand * (($max - $min) + 1));
+//   @return $randNum;
+// }
 
  $nums: (0,1,2,3,4,5,6,7,8,9);
   @each $num in $nums {
     #bg#{$num} {
-       @include bg-image("rave#{$num}.png", no-repeat, 11%, -0.4px 12px);
+       @include bg-image("rave#{$num}.png", no-repeat, 11%, -0.4px 9px);
     }
   }
 
+  #bg0, #bg8 {
+    background-size: 8%;
+    background-position: 0.6px 9px;
+  }
+  #bg1 {
+    background-size: 7%;
+    background-position: 1.5px 9px;
+  }
   #bg2 {
     background-size: 9%;
     background-position: 0.5px 7px;
   }
-
   #bg3 {
     background-size: 9%;
     background-position: 0.5px 7px;
   }
-
+  #bg4 {
+    background-size: 8%;
+    background-position: 1.5px 8.4px;
+  }
+  #bg5 {
+    background-size: 8%;
+    background-position: 1.4px 8px;
+  }
+  #bg6 {
+    background-size: 7%;
+    background-position: 2px 9.4px;
+  }
   #bg9 {
     background-size: 8%;
     background-position: 0.6px 9px;
@@ -125,13 +143,13 @@ $event-blue: #6a96c2;
   }
 
 .denizen-confidant {
-  @include bg-image("rave2.png", no-repeat, 8%, 0.6px 9px);
+  // @include bg-image("rave4.png", no-repeat, 8%, 0.6px 9px);
   float: left;
   margin: 14px 14px 0 0;
   text-align: center;
   font-size: 36px;
   letter-spacing: -1px;
-  max-height: 27px;
+  max-height: 26px;
   &:hover {
     // height: 29px;
     cursor: default;
@@ -142,6 +160,9 @@ $event-blue: #6a96c2;
 
 .denizen-confidant::first-letter {
   overflow: hidden;
+  &:hover {
+    overflow: hidden;
+  }
 }
 
 .days {
