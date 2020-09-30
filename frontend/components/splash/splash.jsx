@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { toggleSearch } from '../../util/search_util';
 import { fiveDaySpan } from '../../util/date_util';
 import NewsIndex from '../news/news_index';
+import NavBar from '../navbar/navbar';
 
 
 class SplashPage extends React.Component {
@@ -32,9 +33,10 @@ class SplashPage extends React.Component {
      <> 
       <header>
        <div className="splash-header-container">
-        <section className="navbar" id="navbar">
+         <NavBar title="" entity="splash"/>
+        {/* <section className="navbar" id="navbar">
           <nav>
-          <img src={window.logoUrl} id="logo" />
+          <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
           <ul id="links">
             <li><Link to="/djs">DJs</Link></li>
             <li><Link to="/events">Events</Link></li>
@@ -42,7 +44,7 @@ class SplashPage extends React.Component {
             <li><button id="search">Search</button></li>
           </ul>
           </nav>
-        </section>
+        </section> */}
           <ImageCarousel /> 
        </div>
       </header>
