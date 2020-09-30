@@ -17,7 +17,6 @@ class SplashPage extends React.Component {
   componentDidMount() {
     this.props.fetchDjs();
     toggleSearch();
-    // console.log(this.props.djs);
   }
 
   render() {
