@@ -51,6 +51,7 @@ $event-blue: #6a96c2;
 }
 
 #logo {
+  position: relative;
   cursor: pointer;
   top: -3px;
   height: 100px;
@@ -646,6 +647,9 @@ h3 {
       .navbar {
         width: 675px;
         nav {
+          width: 675px;
+        }
+        h1 {
           width: 675px;
         }
       }
