@@ -117,7 +117,6 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.prydzUrl} id="prydz" />
-                    {/* <Link id="prydz-link" to="/djs/730" title="Eric Prydz">Eric Prydz - The Matrix</Link> */}
                     <Link id="prydz-link" to={`/djs/${djs["Eric Prydz"]}`} title="Eric Prydz">Eric Prydz - The Matrix</Link>
                     <audio id="matrix" src="matrix.mp3" controls></audio>
                   </article>
