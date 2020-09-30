@@ -89,7 +89,6 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.deadmau5Url} id="deadmau5"/>               
-                    {/* <Link id="deadmau5-link" to="/djs/725" title="Deadmau5">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link> */}
                     <Link id="deadmau5-link" to={`/djs/${djs["Deadmau5"]}`} title="Deadmau5">Deadmau5 - S<small>peed</small>V<small>iolence</small>M<small>omentum</small></Link>
                     <audio id="speed" src="speed.mp3" controls></audio>
                   </article>
