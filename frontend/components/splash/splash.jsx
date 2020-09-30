@@ -96,7 +96,6 @@ class SplashPage extends React.Component {
                 <li className="song">
                   <article>
                     <img src={window.noisufUrl} id="noisuf"/>    
-                    {/* <Link id="noisuf-link" to="/djs/768" title="Noisuf-X">Noisuf-X - Count to Seven</Link> */}
                     <Link id="noisuf-link" to={`/djs/${djs["Noisuf-X"]}`} title="Noisuf-X">Noisuf-X - Count to Seven</Link>
                     <audio id="cseven" src="cseven.mp3" controls></audio>
                   </article>
