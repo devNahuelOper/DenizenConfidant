@@ -101,7 +101,12 @@ class Calendar extends React.Component {
             )}
           </tbody>
         </table>
-
+        <div className="monthToggle-wrap">
+          <nav className="monthToggle">
+            <button id="prevMonth">Previous</button>
+            <button id="nextMonth">Next</button>
+          </nav>
+        </div>
       </div>
     );
   }
