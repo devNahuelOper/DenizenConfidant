@@ -88,7 +88,7 @@ class Calendar extends React.Component {
             <span>{dispYear}</span>
           </li>
           <li>
-            <span>{dispMonth}</span>
+            <span>{dispMonth} {numDays}</span>
           </li>
         </ul>
         <table className="calendar">

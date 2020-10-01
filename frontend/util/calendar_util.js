@@ -1,4 +1,34 @@
-function fillMonth(year, month) {
+
+// const getCalendar = (year, month) => { 
+//   let calendar = Array.from(Array(35));
+//   let date = new Date(year, month);
+//   let start = date.getDay();
+//   let lastDay = new Date(year, month + 1, 0).getDate();
+
+//   for (let i = 0; i <= lastDay - 1; i++) {
+//     calendar[start + i] = i + 1;
+//   }
+
+//   let prevMonthEnd = new Date(year, month, 0).getDate();
+
+//   for (let j = 0; j < start; j++) {
+//     calendar[start - (1 + j)] = prevMonthEnd - j;
+//   }
+
+//   let lastIndex = calendar.lastIndexOf(lastDay);
+//   let daysAfter = calendar.length - lastIndex - 1;
+//   for (let k = 1; k <= daysAfter; k++) {
+//     calendar[lastIndex + k] = k;
+//   }
+
+//   console.log(`called with: (${year}, ${month})`);
+//   return calendar;
+// }
+
+// getCalendar = cachingDecorator(getCalendar, hash);
+
+
+export function fillMonth(year, month) {
   let calendar = Array.from(Array(35));
   let date = new Date(year, month);
   let start = date.getDay();
@@ -16,7 +46,6 @@ function fillMonth(year, month) {
 
   let lastIndex = calendar.lastIndexOf(lastDay);
   let daysAfter = calendar.length - lastIndex - 1;
-  // console.log(daysAfter);
   for (let k = 1; k <= daysAfter; k++) {
     calendar[lastIndex + k] = k;
   }
@@ -43,3 +72,4 @@ function hash(args) {
 }
 
 fillMonth = cachingDecorator(fillMonth, hash);
+
