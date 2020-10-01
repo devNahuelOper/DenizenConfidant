@@ -654,6 +654,12 @@ i {
       }
     }
   }
+
+  .monthToggle-wrap {
+    width: 675px;
+  }
+
+
    #myevents-header {
     width: 675px;
     justify-content: normal;
@@ -722,6 +728,18 @@ i {
   .hasEvent {
     width: 150px;
     height: 210px;
+  }
+  .monthToggle-wrap {
+    width: 560px;
+  }
+  .monthToggle {
+    width: 220px;
+  }
+  #prevMonth, #nextMonth {
+    width: 109px;
+  }
+  #prevMonth {
+    padding-left: 0;
   }
 
   #myevents-header {
@@ -807,6 +825,9 @@ i {
       }
     }
   }
+  .monthToggle-wrap {
+    width: 490px;
+  }
 
   #myevents-header {
     width: 490px;
@@ -890,6 +911,22 @@ i {
     b {
       font-size: 1em;
     }
+  }
+  .monthToggle-wrap {
+    width: 360px;
+  }
+  .monthToggle {
+    width: 200px;
+  }
+  #prevMonth {
+    width: 99px;
+    &:before {
+      margin: 8px;
+    }
+  }
+  #nextMonth {
+    width: 99px;
+    padding-left: 30px;
   }
   // .hasEvent {
   //   width: 110px;
@@ -991,6 +1028,16 @@ i {
       }
     }
   }
+  .monthToggle-wrap {
+    width: 1272px;
+  }
+  .monthToggle {
+    width: 419px;
+  }
+  #prevMonth, #nextMonth {
+    width: 208px;
+  }
+
   #myevents-header {
     width: 1272px;
   }
