@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchCurrentUser, getCurrentUser } from '../../actions/session_actions';
+import { fetchEvents } from '../../actions/event_actions';
 import { Link } from 'react-router-dom';
 import NavBar from '../navbar/navbar';
 import SubnavToggle from '../subnav/subnav';
@@ -25,11 +26,13 @@ class UserProfile extends React.Component {
 
   componentDidMount() {
     toggleSearch();
+    this.props.fetchEvents();
+    console.log(this.props.events);
     // console.log(localStorage.getItem('lastOnline'));
   }
 
   // componentDidUpdate() {
-  //   console.log(this.props.events);
+  //   // this.props.fetchEvents();
   // }
 
   toggleCalendar() {
@@ -96,7 +99,7 @@ class UserProfile extends React.Component {
           </section>
         </div>
         <div className="user-main">
-          <Calendar currentUser={currentUser} events={events}/>
+          <Calendar currentUser={currentUser} events={currentUser.events} />
         </div>
       </div>
       </React.Fragment>
