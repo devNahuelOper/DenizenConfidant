@@ -226,8 +226,6 @@ export const formatDateNewsShow = date => {
   return `${dayOfWeek}/ ${day}~${month} ${year}~/ ${formatTime(date)}`;
 }
 
-
-
 export const formatTime = date => {
   const obj = new Date(date);
   // obj.setMinutes(obj.getMinutes() + obj.getTimezoneOffset());

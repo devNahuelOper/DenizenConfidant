@@ -1,6 +1,6 @@
 import React from 'react';
 import { daysInMonth, firstDay, daysInLastMonth, formatMonthYear, formatAbsDate } from '../../util/date_util';
-
+import { fillMonth } from '../../util/calendar_util';
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -59,6 +59,7 @@ class Calendar extends React.Component {
     let numDays = daysInMonth();
     let dayOne = firstDay();
     let lastMonth = daysInLastMonth();
+
     $('td b').slice(dayOne, numDays + 2).each(function (idx) {
       $(this).text(`${idx + 1}/`)
       .next().next()
@@ -72,6 +73,7 @@ class Calendar extends React.Component {
       $(this).css({ color: '#787878' });
       $(this).parent().css({ color: '#787878', background: '#3c3c3c' });
     });
+
     let daysLeft = $('td').slice(0, dayOne).length - 1;
     $('td b').slice(0, dayOne).each(function (idx) {
       $(this).text(`${(lastMonth - daysLeft) + idx}/`);
