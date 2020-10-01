@@ -226,8 +226,6 @@ export const formatDateNewsShow = date => {
   return `${dayOfWeek}/ ${day}~${month} ${year}~/ ${formatTime(date)}`;
 }
 
-
-
 export const formatTime = date => {
   const obj = new Date(date);
   // obj.setMinutes(obj.getMinutes() + obj.getTimezoneOffset());
@@ -258,6 +256,17 @@ export const daysInLastMonth = () => {
 export const firstDay = () => {
   let now = new Date();
   return new Date(now.getFullYear(), now.getMonth(), 1).getDay();
+}
+
+export const fiveDaySpan = (date) => {
+  const dates = [];
+  for (let i = -2; i <= 2; i++) {
+    let newDate = new Date(date);
+    newDate.setDate(newDate.getDate() + i);
+    dates.push(newDate);
+  }
+
+  return dates.map(date => [date.toDateString().split(' ')[0], date.getDate()]);
 }
 
 // import {
