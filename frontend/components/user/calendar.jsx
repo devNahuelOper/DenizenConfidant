@@ -1,5 +1,5 @@
 import React from 'react';
-import { daysInMonth, firstDay, daysInLastMonth, formatMonthYear, formatAbsDate } from '../../util/date_util';
+import { formatAbsDate } from '../../util/date_util';
 import { getCalendar, formatMonth } from '../../util/calendar_util';
 
 class Calendar extends React.Component {
@@ -88,7 +88,7 @@ class Calendar extends React.Component {
                   <td className="cal-day" 
                     id={((i === 0 && day > 7) || (i === 4 && day <= 7)) ? "offDay" : "onDay"}
                     key={day}>
-                    <b>{day}</b>
+                    <b>{day}/</b>
                     <hr />
                     <div>
                       <img src="" alt="" />
