@@ -1,6 +1,6 @@
 import React from 'react';
 import { daysInMonth, firstDay, daysInLastMonth, formatMonthYear, formatAbsDate } from '../../util/date_util';
-import { fillMonth } from '../../util/calendar_util';
+import { getCalendar, formatMonth } from '../../util/calendar_util';
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -49,48 +49,28 @@ class Calendar extends React.Component {
   }
   
   render() {
-    let now = new Date();
-    let dispYear = formatMonthYear(now).split(' ')[1];
-    let dispMonth = formatMonthYear(now).split(' ')[0];
-
-    const week = Array.from(Array(8).keys()).slice(1);
-    const month = Array.from(Array(6)).slice(1).fill(week);
-
-    let numDays = daysInMonth();
-    let dayOne = firstDay();
-    let lastMonth = daysInLastMonth();
-
-    $('td b').slice(dayOne, numDays + 2).each(function (idx) {
-      $(this).text(`${idx + 1}/`)
-      .next().next()
+    const { year, month } = this.state;
+    let fillMonth = getCalendar(year, month);
+  
+    $('#onDay b').each(function(idx) {
+      $(this).next().next()
       .attr({
         class: 'event-space',
         id: `${idx + 1}`
       });
     });
-    $('td b').slice(numDays + 2).each(function (idx) {
-      $(this).text(`${idx + 1}/`);
-      $(this).css({ color: '#787878' });
-      $(this).parent().css({ color: '#787878', background: '#3c3c3c' });
-    });
-
-    let daysLeft = $('td').slice(0, dayOne).length - 1;
-    $('td b').slice(0, dayOne).each(function (idx) {
-      $(this).text(`${(lastMonth - daysLeft) + idx}/`);
-      $(this).css({ color: '#787878' });
-      $(this).parent().css({ color: '#787878', background: '#3c3c3c' });
-    });
-
+  
     return (
       <div className="calendar">
         <ul className="year-month">
           <li>
-            <span>{dispYear}</span>
+            <span>{year}</span>
           </li>
           <li>
-            <span>{dispMonth} {numDays}</span>
+            <span>{formatMonth(month)}</span>
           </li>
         </ul>
+
         <table className="calendar">
           <tbody>
             <tr className="weekdays">
@@ -102,14 +82,16 @@ class Calendar extends React.Component {
               <th id="fri">Fri</th>
               <th id="sat">Sat</th>
             </tr>
-            {month.map((week, i) =>
+            {fillMonth.map((week, i) =>
               <tr className="week" key={`week-${i}`}>
                 {week.map(day =>
-                  <td className="cal-day" key={day}>
-                    <b></b>
+                  <td className="cal-day" 
+                    id={((i === 0 && day > 7) || (i === 4 && day <= 7)) ? "offDay" : "onDay"}
+                    key={day}>
+                    <b>{day}</b>
                     <hr />
                     <div>
-                      <img src="" alt=""/>
+                      <img src="" alt="" />
                       <h1></h1>
                       <h2></h2>
                     </div>
@@ -119,6 +101,7 @@ class Calendar extends React.Component {
             )}
           </tbody>
         </table>
+
       </div>
     );
   }
