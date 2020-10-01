@@ -1,4 +1,4 @@
-
+import _ from 'lodash';
 // const getCalendar = (year, month) => { 
 //   let calendar = Array.from(Array(35));
 //   let date = new Date(year, month);
@@ -51,7 +51,7 @@ export function fillMonth(year, month) {
   }
 
   console.log(`called with: (${year}, ${month})`);
-  return calendar;
+  return _.chunk(calendar, 7);
 }
 
 function cachingDecorator(func, hash) {
