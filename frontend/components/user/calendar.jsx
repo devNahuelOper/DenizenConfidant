@@ -9,7 +9,9 @@ class Calendar extends React.Component {
     this.state = {
       month: new Date().getMonth(),
       year: new Date().getFullYear(),
-      events: this.props.events
+      events: this.props.events.filter(event => {
+        event.user_id === currentUser.id
+      })
     }
     this.nextMonth = this.nextMonth.bind(this);
     this.prevMonth = this.prevMonth.bind(this);
