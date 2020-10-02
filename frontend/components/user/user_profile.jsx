@@ -21,22 +21,25 @@ import Calendar from './calendar';
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      events: this.props.events
+    }
     this.toggleCalendar = this.toggleCalendar.bind(this);
   }
 
   componentDidMount() {
-    toggleSearch();
     this.props.fetchEvents();
-    // console.log(localStorage.getItem('lastOnline'));
-    console.log('user events: ',this.props.events);
+    toggleSearch();
+    // localStorage.setItem('id', this.props.currentUser.id);
+    // console.log('user events: ',this.props.events);
   }
 
-  componentDidUpdate() {
-    console.log('user events: ', this.props.events);  
-  }
+  // componentDidUpdate() {
+  //   console.log('user events: ', this.props.events);  
+  // }
 
   toggleCalendar() {
-    // console.log(this.props.events);
+    // console.log(this.state);
     $('.calendar').toggle();
     $('#calendar-toggle').toggleClass('form');
     $('#overview').toggleClass('form');
@@ -72,7 +75,6 @@ class UserProfile extends React.Component {
               {/* <li><Link to="/">Take me back home</Link></li> */}
             </ul>
           </section>
-          {/* <SubnavToggle currentUser={currentUser} toggleCalendar={this.toggleCalendar}/> */}
             <SubnavToggle
               currentUser={currentUser}
               toggleCalendar={this.toggleCalendar}
@@ -85,7 +87,6 @@ class UserProfile extends React.Component {
             <ul className="details">
               <li>
                 <small>DC since /</small><br />
-                {/* {formatDate(currentUser.created_at).split(' ').slice(0, 3).join(' ')} */}
                   {formatMonthYear(currentUser.created_at)}
               </li>
               <li>
@@ -100,7 +101,7 @@ class UserProfile extends React.Component {
           </section>
         </div>
         <div className="user-main">
-          <Calendar currentUser={currentUser} events={events.filter(event => event.user_id === currentUser.id)} />
+            <Calendar currentUser={currentUser} events={events.filter(event => event.user_id === currentUser.id)} />
         </div>
       </div>
       </React.Fragment>
@@ -109,13 +110,13 @@ class UserProfile extends React.Component {
 }
 
 
+
 const mapStateToProps = (state) => {
   return {
     currentUser: getCurrentUser(state),
-    events: Object.values(state.entities.events).filter(event => event.hasOwnProperty('user_id'))
-    // .filter(event => 
-    //   formatAbsDate(event.date).year === new Date().getFullYear() && formatAbsDate(event.date).month === new Date().getMonth()
-    // )
+    // events: Object.values(state.entities.events).filter(event => event.user_id === parseInt(localStorage.getItem('id')))
+    events: Object.values(state.entities.events)
+    .filter(event => event.hasOwnProperty('user_id'))
   }
 };
 

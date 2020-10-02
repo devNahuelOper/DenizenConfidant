@@ -5,11 +5,9 @@ import SubnavToggle from '../subnav/subnav';
 import { toggleSearch } from '../../util/search_util';
 import fontawesome from '@fortawesome/fontawesome';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle as farCircle } from '@fortawesome/fontawesome-free-regular';
 import { faEye as farEye } from '@fortawesome/fontawesome-free-regular';
 import { faEyeSlash as farEyeSlash } from '@fortawesome/fontawesome-free-regular';
-// import { faHome } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -42,6 +40,9 @@ class LoginForm extends React.Component {
     this.props.clearErrors();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+    // .then(user => 
+    //   localStorage.setItem('id', user.user.id)
+    // );
   }
 
   showPassword() {
