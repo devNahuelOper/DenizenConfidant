@@ -217,6 +217,16 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
   border-radius: 1px;
 }
 
+.password-hold {
+  display: flex;
+}
+#togglePassword {
+  color: #404040;
+  position: relative;
+  top: 7px;
+  right: 21px;
+  width: 0.925em;
+}
 
 // Signup Form
 
