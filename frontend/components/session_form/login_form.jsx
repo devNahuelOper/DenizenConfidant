@@ -7,7 +7,7 @@ import fontawesome from '@fortawesome/fontawesome';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle as farCircle } from '@fortawesome/fontawesome-free-regular';
 import { faEye as farEye } from '@fortawesome/fontawesome-free-regular';
-// import { faEyeSlash as farEyeSlash } from '@fortawesome/fontawesome-free-regular';
+import { faEyeSlash as farEyeSlash } from '@fortawesome/fontawesome-free-regular';
 // import { faHome } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -19,6 +19,8 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.renderError = this.renderError.bind(this);
+    this.showPassword = this.showPassword.bind(this);
+    this.hidePassword = this.hidePassword.bind(this);
   }
 
   componentDidMount() {
@@ -40,6 +42,14 @@ class LoginForm extends React.Component {
     this.props.clearErrors();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+  }
+
+  showPassword() {
+    this.setState({ pwShown: true });
+  }
+
+  hidePassword() {
+    this.setState({ pwShown: false });
   }
 
 
@@ -64,6 +74,7 @@ class LoginForm extends React.Component {
   render() {
     let length = this.state.username.length;
     const { errors } = this.props;
+    const { pwShown } = this.state;
     const errorStyle = {
       outline: '2px solid #e10',
       border: '1px solid rgb(46, 46, 46)'
@@ -121,12 +132,16 @@ class LoginForm extends React.Component {
             <li className="password-hold">
               <input
                 style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
-                type="password"
+                type={pwShown ? 'text' : 'password'}
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
               />
-              <FontAwesomeIcon icon={farEye} id="togglePassword"/>
+              <FontAwesomeIcon 
+                icon={pwShown ? farEyeSlash : farEye}
+                onClick={pwShown ? this.hidePassword : this.showPassword} 
+                className="togglePassword"
+                id={pwShown ? "hidePw" : "showPw"}/>
               </li>
               <div className="error-container">
               <p className="errors">{errors[0]}</p>
