@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom';
 import NavBar from '../navbar/navbar';
 import SubnavToggle from '../subnav/subnav';
 import { toggleSearch } from '../../util/search_util';
-
+import fontawesome from '@fortawesome/fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle as farCircle } from '@fortawesome/fontawesome-free-regular';
+import { faEye as farEye } from '@fortawesome/fontawesome-free-regular';
+// import { faEyeSlash as farEyeSlash } from '@fortawesome/fontawesome-free-regular';
+// import { faHome } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -112,14 +118,16 @@ class LoginForm extends React.Component {
              
             {/* <br/> */}
               <li>Password /</li>
-            <li>
+            <li className="password-hold">
               <input
                 style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
                 type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
-              /></li>
+              />
+              <FontAwesomeIcon icon={farEye} id="togglePassword"/>
+              </li>
               <div className="error-container">
               <p className="errors">{errors[0]}</p>
               </div>
