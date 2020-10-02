@@ -10,9 +10,6 @@ class Calendar extends React.Component {
       month: new Date().getMonth(),
       year: new Date().getFullYear(),
       events: this.props.events
-      // .filter(event => {
-      //   event.user_id === currentUser.id
-      // })
     }
     this.nextMonth = this.nextMonth.bind(this);
     this.prevMonth = this.prevMonth.bind(this);
@@ -21,8 +18,8 @@ class Calendar extends React.Component {
 
   componentDidMount() {
     this.getEvents();
-    console.log('calendar props: ',this.props);
-    console.log('calendar state: ', this.state);
+    // console.log('calendar props: ',this.props);
+    // console.log('calendar state: ', this.state);
   }
 
 
@@ -47,7 +44,7 @@ class Calendar extends React.Component {
       this.setState({year: this.state.year + 1});
     }
     this.getEvents();
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   prevMonth() {
@@ -56,7 +53,7 @@ class Calendar extends React.Component {
       this.setState({month: 11, year: this.state.year - 1});
     }
     this.getEvents();
-    console.log(this.state);
+    // console.log(this.state);
   }
   
   render() {
