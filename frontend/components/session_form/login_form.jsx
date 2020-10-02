@@ -141,49 +141,4 @@ class LoginForm extends React.Component {
   }
 }
 
-// class SubnavToggle extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       drop: false
-//     }
-//     this.clicker = this.clicker.bind(this);
-//     this.leave = this.leave.bind(this);
-//     this.mobileDrop = this.mobileDrop.bind(this);
-//   }
-
-//   clicker(e) {
-//     this.setState({ "drop": true });
-//   }
-
-//   leave(e) {
-//     this.setState({ "drop": false });
-//   }
-
-//   mobileDrop(e) {
-//     e.preventDefault();
-//     this.setState({ "drop": true }); status
-//     $('body').on('click', e => {
-//       const drop = $('.subnav-drop');
-//       if (drop !== e.currentTarget) {
-//         this.leave();
-//       }
-//     });
-//   }
-
-//   render() {
-//     return(
-//       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-//         <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span onClick={this.mobileDrop}>Login <small>⬇︎</small></span> 
-//           <ul className={this.state.drop ? "reveal" : "hide"}>
-//             <li><Link className="log-link" onClick={this.leave} to="/signup">Register</Link></li>
-//             <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-//           </ul>
-//         </button>
-//       </div>
-//     )
-//   }
-
-// }
-// onBlur = { this.leave }
 export default LoginForm;
