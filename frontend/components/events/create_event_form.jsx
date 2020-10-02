@@ -93,6 +93,7 @@ class CreateEventForm extends React.Component {
     formData.append('event[user_id]', this.state.user_id);
     if (this.state.photoFile) {
       formData.append('event[photo]', this.state.photoFile);
+      formData.append('event[photoUrl]', this.state.photoUrl);
     }
     this.props.createEvent(formData)
       .then(event => this.props.history.push(`/events/${event.event.id}`))
@@ -128,7 +129,6 @@ class CreateEventForm extends React.Component {
     const { currentUser } = this.props;
     const preview = this.state.photoUrl ? <img width="265px" height="150px" src={this.state.photoUrl} /> : null;
 
-    
     return (
       <div className="create-event">
         <header>

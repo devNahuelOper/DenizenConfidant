@@ -27,7 +27,6 @@ class UserProfile extends React.Component {
   componentDidMount() {
     toggleSearch();
     this.props.fetchEvents();
-    console.log(this.props.events);
     // console.log(localStorage.getItem('lastOnline'));
   }
 
@@ -36,6 +35,7 @@ class UserProfile extends React.Component {
   // }
 
   toggleCalendar() {
+    // console.log(this.props.events);
     $('.calendar').toggle();
     $('#calendar-toggle').toggleClass('form');
     $('#overview').toggleClass('form');
@@ -99,7 +99,7 @@ class UserProfile extends React.Component {
           </section>
         </div>
         <div className="user-main">
-          <Calendar currentUser={currentUser} events={currentUser.events} />
+          <Calendar currentUser={currentUser} events={events} />
         </div>
       </div>
       </React.Fragment>
@@ -111,9 +111,10 @@ class UserProfile extends React.Component {
 const mapStateToProps = (state) => {
   return {
     currentUser: getCurrentUser(state),
-    events: Object.values(state.entities.events).filter(event => event.hasOwnProperty('user_id')).filter(event => 
-      formatAbsDate(event.date).year === new Date().getFullYear() && formatAbsDate(event.date).month === new Date().getMonth()
-    )
+    events: Object.values(state.entities.events).filter(event => event.hasOwnProperty('user_id'))
+    // .filter(event => 
+    //   formatAbsDate(event.date).year === new Date().getFullYear() && formatAbsDate(event.date).month === new Date().getMonth()
+    // )
   }
 }
 
