@@ -1,6 +1,7 @@
 import React from 'react';
 import { formatAbsDate } from '../../util/date_util';
 import { getCalendar, formatMonth } from '../../util/calendar_util';
+import { Link } from 'react-router-dom';
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -8,57 +9,56 @@ class Calendar extends React.Component {
     this.state = {
       month: new Date().getMonth(),
       year: new Date().getFullYear(),
+      events: this.props.events
     }
-    this.hasEvent = this.hasEvent.bind(this);
+    this.nextMonth = this.nextMonth.bind(this);
+    this.prevMonth = this.prevMonth.bind(this);
+    this.getEvents = this.getEvents.bind(this);
+  }
+
+  componentDidMount() {
+    this.getEvents();
+    // console.log('calendar props: ',this.props);
+    // console.log('calendar state: ', this.state);
   }
 
 
-  componentDidUpdate() {
-    const monthEvents = this.props.events;
-    $('.event-space').each(function(idx) {
-      monthEvents.forEach(event => {
-        if (formatAbsDate(event.date).day === idx + 1) {
-          $(this).parent().addClass('hasEvent').parent().addClass('eventWeek');
-          $(this).children().first().show().attr({src: event.photoUrl || window.defaultUrl, alt: event.name})
-          .next().attr({class: 'eventName', id: `${event.id}`}).text(event.name).next().text(`at ${event.venue}`);
-        }
-      });
+  // componentDidUpdate() {
+  //   console.log(this.props.events.filter(event =>
+  //     formatAbsDate(event.date).year === this.state.year && formatAbsDate(event.date).month === this.state.month
+  //   ));
+  // }
+
+  getEvents() {
+    this.setState({
+      events: this.props.events.filter(event =>
+        formatAbsDate(event.date).year === this.state.year && formatAbsDate(event.date).month === this.state.month
+      )
     });
-    $('.eventName').each(function() {
-      const id = $(this).attr('id');
-      const link = $('<a></a>').attr('href', `#/events/${id}`);
-      $(this).wrap(link)
-      .on('click', () => {
-        window.setTimeout(() => {
-          window.location.reload(true);
-        }, 500);
-      })
-    })
-    // console.log(monthEvents);
   }
 
-  hasEvent(day) {
-    const events = this.props.events;
-    const dayEvents = [];
-    events.forEach(event => {
-      if (formatAbsDate(event.date).day === day) {
-        dayEvents.push(event);
-      }
-    });
-    return dayEvents;
+
+  nextMonth() {
+    this.setState({month: (this.state.month += 1) % 12});
+    if (this.state.month > 11) {
+      this.setState({year: this.state.year + 1});
+    }
+    this.getEvents();
+    // console.log(this.state);
+  }
+
+  prevMonth() {
+    this.setState({month: this.state.month -= 1});
+    if (this.state.month < 0) {
+      this.setState({month: 11, year: this.state.year - 1});
+    }
+    this.getEvents();
+    // console.log(this.state);
   }
   
   render() {
-    const { year, month } = this.state;
+    const { year, month, events } = this.state;
     let fillMonth = getCalendar(year, month);
-  
-    $('#onDay b').each(function(idx) {
-      $(this).next().next()
-      .attr({
-        class: 'event-space',
-        id: `${idx + 1}`
-      });
-    });
   
     return (
       <div className="calendar">
@@ -90,18 +90,33 @@ class Calendar extends React.Component {
                     key={day}>
                     <b>{day}/</b>
                     <hr />
-                    <div>
-                      <img src="" alt="" />
-                      <h1></h1>
-                      <h2></h2>
+                    { events.length > 0 ?
+                    <div className="event-space">
+                      {events.map((event, i) => 
+                        <article key={i}>
+                          { (formatAbsDate(event.date).month === month && formatAbsDate(event.date).day === day) &&
+                          <div>
+                            <img src={event.photoUrl || window.defaultUrl} alt={event.name} />
+                            <Link to={`/events/${event.id}`}><h1>{event.name}</h1></Link>
+                            <h2>at {event.venue}</h2>
+                          </div>
+                          }
+                        </article>
+                        )}
                     </div>
+                  : null} 
                   </td>
                 )}
               </tr>
             )}
           </tbody>
         </table>
-
+        <div className="monthToggle-wrap">
+          <nav className="monthToggle">
+            <button id="prevMonth" onClick={this.prevMonth}>Previous</button>
+            <button id="nextMonth" onClick={this.nextMonth}>Next</button>
+          </nav>
+        </div>
       </div>
     );
   }

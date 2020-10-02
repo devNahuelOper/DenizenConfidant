@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import NavBar from '../navbar/navbar';
 import SubnavToggle from '../subnav/subnav';
 import { toggleSearch } from '../../util/search_util';
+import fontawesome from '@fortawesome/fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye as farEye } from '@fortawesome/fontawesome-free-regular';
+import { faEyeSlash as farEyeSlash } from '@fortawesome/fontawesome-free-regular';
 
 
 class LoginForm extends React.Component {
@@ -13,6 +17,8 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.renderError = this.renderError.bind(this);
+    this.showPassword = this.showPassword.bind(this);
+    this.hidePassword = this.hidePassword.bind(this);
   }
 
   componentDidMount() {
@@ -34,6 +40,17 @@ class LoginForm extends React.Component {
     this.props.clearErrors();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
+    // .then(user => 
+    //   localStorage.setItem('id', user.user.id)
+    // );
+  }
+
+  showPassword() {
+    this.setState({ pwShown: true });
+  }
+
+  hidePassword() {
+    this.setState({ pwShown: false });
   }
 
 
@@ -58,6 +75,7 @@ class LoginForm extends React.Component {
   render() {
     let length = this.state.username.length;
     const { errors } = this.props;
+    const { pwShown } = this.state;
     const errorStyle = {
       outline: '2px solid #e10',
       border: '1px solid rgb(46, 46, 46)'
@@ -90,15 +108,17 @@ class LoginForm extends React.Component {
 
             <br/>
             <ul>
-              <li>Username or email /</li>
+              <li>Username /</li>
               <li>
                 <input
                   style={this.renderError("username") ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
                   type="text"
+                  name="username"
                   value={this.state.username}
                   onChange={this.update('username')}
                   // onKeyPress={() => this.props.receiveErrors([])}
-                  className="login-input"/>
+                  className="login-input"
+                  />
                 {this.renderError("username") && length <= 0 ? (
                   <div id="username-error" className="errors">
                      Username field is required
@@ -110,14 +130,20 @@ class LoginForm extends React.Component {
              
             {/* <br/> */}
               <li>Password /</li>
-            <li>
+            <li className="password-hold">
               <input
                 style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
-                type="password"
+                type={pwShown ? 'text' : 'password'}
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
-              /></li>
+              />
+              <FontAwesomeIcon 
+                icon={pwShown ? farEyeSlash : farEye}
+                onClick={pwShown ? this.hidePassword : this.showPassword} 
+                className="togglePassword"
+                id={pwShown ? "hidePw" : "showPw"}/>
+              </li>
               <div className="error-container">
               <p className="errors">{errors[0]}</p>
               </div>
@@ -139,49 +165,4 @@ class LoginForm extends React.Component {
   }
 }
 
-// class SubnavToggle extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       drop: false
-//     }
-//     this.clicker = this.clicker.bind(this);
-//     this.leave = this.leave.bind(this);
-//     this.mobileDrop = this.mobileDrop.bind(this);
-//   }
-
-//   clicker(e) {
-//     this.setState({ "drop": true });
-//   }
-
-//   leave(e) {
-//     this.setState({ "drop": false });
-//   }
-
-//   mobileDrop(e) {
-//     e.preventDefault();
-//     this.setState({ "drop": true }); status
-//     $('body').on('click', e => {
-//       const drop = $('.subnav-drop');
-//       if (drop !== e.currentTarget) {
-//         this.leave();
-//       }
-//     });
-//   }
-
-//   render() {
-//     return(
-//       <div className="subnav-toggle" id={this.state.drop ? "expand" : "normal"}>
-//         <button className="subnav-drop" onFocus={this.clicker} onBlur={this.leave}> <span onClick={this.mobileDrop}>Login <small>⬇︎</small></span> 
-//           <ul className={this.state.drop ? "reveal" : "hide"}>
-//             <li><Link className="log-link" onClick={this.leave} to="/signup">Register</Link></li>
-//             <li><Link className="log-link" onClick={this.leave} to="/">Take me back home</Link></li>
-//           </ul>
-//         </button>
-//       </div>
-//     )
-//   }
-
-// }
-// onBlur = { this.leave }
 export default LoginForm;

@@ -217,6 +217,28 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
   border-radius: 1px;
 }
 
+.password-hold {
+  display: flex;
+}
+.togglePassword {
+  cursor: pointer;
+  position: relative;
+  top: 7px;
+  right: 21px;
+  width: 0.925em !important;
+}
+#showPw {
+  color: #404040;
+  &:hover {
+    color: #8d8a8a;
+  }
+}
+#hidePw {
+  color: #8d8a8a;
+  &:hover {
+    color: #404040;
+  }
+}
 
 // Signup Form
 

@@ -16,6 +16,7 @@ class EventIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchEvents();
+    console.log(this.props);
     toggleSearch();
   }
 
