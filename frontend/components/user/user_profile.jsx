@@ -28,11 +28,12 @@ class UserProfile extends React.Component {
     toggleSearch();
     this.props.fetchEvents();
     // console.log(localStorage.getItem('lastOnline'));
+    console.log('user events: ',this.props.events);
   }
 
-  // componentDidUpdate() {
-  //   // this.props.fetchEvents();
-  // }
+  componentDidUpdate() {
+    console.log('user events: ', this.props.events);  
+  }
 
   toggleCalendar() {
     // console.log(this.props.events);
@@ -116,11 +117,11 @@ const mapStateToProps = (state) => {
     //   formatAbsDate(event.date).year === new Date().getFullYear() && formatAbsDate(event.date).month === new Date().getMonth()
     // )
   }
-}
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchCurrentUser: (userId) => dispatch(fetchCurrentUser(userId)),
-  fetchEvents: () => dispatch(fetchEvents()),
-})
+  fetchEvents: (events) => dispatch(fetchEvents(events)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);

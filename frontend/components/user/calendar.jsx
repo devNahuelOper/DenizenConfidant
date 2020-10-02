@@ -9,9 +9,10 @@ class Calendar extends React.Component {
     this.state = {
       month: new Date().getMonth(),
       year: new Date().getFullYear(),
-      events: this.props.events.filter(event => {
-        event.user_id === currentUser.id
-      })
+      events: this.props.events
+      // .filter(event => {
+      //   event.user_id === currentUser.id
+      // })
     }
     this.nextMonth = this.nextMonth.bind(this);
     this.prevMonth = this.prevMonth.bind(this);
@@ -19,8 +20,9 @@ class Calendar extends React.Component {
   }
 
   componentDidMount() {
-    // this.getEvents();
-    console.log(this.state);
+    this.getEvents();
+    console.log('calendar props: ',this.props);
+    console.log('calendar state: ', this.state);
   }
 
 
@@ -95,7 +97,7 @@ class Calendar extends React.Component {
                     <div className="event-space">
                       {events.map((event, i) => 
                         <article key={i}>
-                          { (formatAbsDate(event.date).month === this.state.month && formatAbsDate(event.date).day === day) &&
+                          { (formatAbsDate(event.date).month === month && formatAbsDate(event.date).day === day) &&
                           <div>
                             <img src={event.photoUrl || window.defaultUrl} alt={event.name} />
                             <Link to={`/events/${event.id}`}><h1>{event.name}</h1></Link>
