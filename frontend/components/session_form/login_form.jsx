@@ -90,15 +90,17 @@ class LoginForm extends React.Component {
 
             <br/>
             <ul>
-              <li>Username or email /</li>
+              <li>Username /</li>
               <li>
                 <input
                   style={this.renderError("username") ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
                   type="text"
+                  name="username"
                   value={this.state.username}
                   onChange={this.update('username')}
                   // onKeyPress={() => this.props.receiveErrors([])}
-                  className="login-input"/>
+                  className="login-input"
+                  />
                 {this.renderError("username") && length <= 0 ? (
                   <div id="username-error" className="errors">
                      Username field is required

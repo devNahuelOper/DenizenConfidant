@@ -95,9 +95,9 @@ class Calendar extends React.Component {
                         <article key={i}>
                           { (formatAbsDate(event.date).month === this.state.month && formatAbsDate(event.date).day === day) &&
                           <div>
-                          <img src={event.photoUrl || window.defaultUrl} alt={event.name} />
-                          <Link to={`/events/${event.id}`}><h1>{event.name}</h1></Link>
-                          <h2>at {event.venue}</h2>
+                            <img src={event.photoUrl || window.defaultUrl} alt={event.name} />
+                            <Link to={`/events/${event.id}`}><h1>{event.name}</h1></Link>
+                            <h2>at {event.venue}</h2>
                           </div>
                           }
                         </article>
