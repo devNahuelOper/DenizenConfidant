@@ -99,7 +99,7 @@ class UserProfile extends React.Component {
           </section>
         </div>
         <div className="user-main">
-          <Calendar currentUser={currentUser} events={events} />
+          <Calendar currentUser={currentUser} events={events.filter(event => event.user_id === currentUser.id)} />
         </div>
       </div>
       </React.Fragment>
