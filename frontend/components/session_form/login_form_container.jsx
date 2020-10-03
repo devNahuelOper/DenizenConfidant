@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import { receiveErrors, clearErrors, login } from '../../actions/session_actions';
 import LoginForm from './login_form';
 
+let [username, password] = [localStorage.username, localStorage.password];
+
 const mapStateToProps = ( state ) => ({
-  user: { username: '', password: '', pwShown: false, rememberMe: JSON.parse(localStorage.getItem('rememberMe')) || false },
+  user: { username: username || '', password: password || '', pwShown: false, rememberMe: JSON.parse(localStorage.getItem('rememberMe')) || false },
   errors: state.errors.session,
   formType: 'Login',
   navLink: <Link to="/signup">Register</Link>,
