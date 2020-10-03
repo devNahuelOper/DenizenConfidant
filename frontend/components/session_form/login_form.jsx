@@ -19,12 +19,14 @@ class LoginForm extends React.Component {
     this.renderError = this.renderError.bind(this);
     this.showPassword = this.showPassword.bind(this);
     this.hidePassword = this.hidePassword.bind(this);
+    this.rememberMe = this.rememberMe.bind(this);
   }
 
   componentDidMount() {
     this.props.receiveErrors([]);
     window.scrollTo(0, 0);
     toggleSearch();
+    console.log(this.state);
   }
 
   update(field) {
@@ -51,6 +53,21 @@ class LoginForm extends React.Component {
 
   hidePassword() {
     this.setState({ pwShown: false });
+  }
+
+  rememberMe() {
+    if (this.state.rememberMe == false) {
+      this.setState({rememberMe: true});
+      localStorage.setItem('username', this.state.username);
+      localStorage.setItem('password', this.state.password);
+      localStorage.setItem('rememberMe', true);
+    } else {
+      this.setState({rememberMe: false});
+      localStorage.setItem('rememberMe', false);
+      localStorage.removeItem('username');
+      localStorage.removeItem('password');
+    }
+    console.log(this.state);
   }
 
 
@@ -114,7 +131,7 @@ class LoginForm extends React.Component {
                   style={this.renderError("username") ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
                   type="text"
                   name="username"
-                  value={this.state.username}
+                  value={localStorage.getItem("username") || this.state.username}
                   onChange={this.update('username')}
                   // onKeyPress={() => this.props.receiveErrors([])}
                   className="login-input"
@@ -134,7 +151,7 @@ class LoginForm extends React.Component {
               <input
                 style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
                 type={pwShown ? 'text' : 'password'}
-                value={this.state.password}
+                value={ localStorage.getItem('password') || this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
               />
@@ -148,7 +165,7 @@ class LoginForm extends React.Component {
               <p className="errors">{errors[0]}</p>
               </div>
      
-            <li><input id="check-box" type="checkbox"/>'member?
+            <li><input id="check-box" type="checkbox" checked={this.state.rememberMe} onChange={this.rememberMe}/>'member?
               <img src={window.memberUrl} id="member"/>
             </li>
             <li><input className="login-button" type="submit" value={this.props.formType} /></li>
