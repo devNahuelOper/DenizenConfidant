@@ -26,8 +26,7 @@ class LoginForm extends React.Component {
     this.props.receiveErrors([]);
     window.scrollTo(0, 0);
     toggleSearch();
-    console.log(this.state);
-    console.log(localStorage.username);
+    // console.log(this.state);
   }
 
   update(field) {
