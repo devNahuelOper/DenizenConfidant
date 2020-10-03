@@ -68,24 +68,10 @@ class LoginForm extends React.Component {
     // console.log(this.state);
   }
 
-
-  // renderErrors() {
-  //   return (
-  //     <ul className="errors">
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`} className="error">
-  //          <p>{error}</p>
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
-
   renderError(field) {
     const errors = this.props.errors;
     return errors.some(error => error.includes(field))
   }
-
 
   render() {
     let length = this.state.username.length;
@@ -128,7 +114,7 @@ class LoginForm extends React.Component {
                   style={this.renderError("username") ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
                   type="text"
                   name="username"
-                  value={localStorage.getItem("username") || this.state.username}
+                  value={this.state.username}
                   onChange={this.update('username')}
                   // onKeyPress={() => this.props.receiveErrors([])}
                   className="login-input"
@@ -142,13 +128,12 @@ class LoginForm extends React.Component {
                   )}
                 </li>
              
-            {/* <br/> */}
-              <li>Password /</li>
+            <li>Password /</li>
             <li className="password-hold">
               <input
                 style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
                 type={pwShown ? 'text' : 'password'}
-                value={ localStorage.getItem('password') || this.state.password}
+                value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
               />
