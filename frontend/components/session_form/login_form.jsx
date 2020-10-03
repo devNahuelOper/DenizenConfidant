@@ -19,12 +19,14 @@ class LoginForm extends React.Component {
     this.renderError = this.renderError.bind(this);
     this.showPassword = this.showPassword.bind(this);
     this.hidePassword = this.hidePassword.bind(this);
+    this.rememberMe = this.rememberMe.bind(this);
   }
 
   componentDidMount() {
     this.props.receiveErrors([]);
     window.scrollTo(0, 0);
     toggleSearch();
+    // console.log(this.state);
   }
 
   update(field) {
@@ -40,9 +42,6 @@ class LoginForm extends React.Component {
     this.props.clearErrors();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-    // .then(user => 
-    //   localStorage.setItem('id', user.user.id)
-    // );
   }
 
   showPassword() {
@@ -53,24 +52,25 @@ class LoginForm extends React.Component {
     this.setState({ pwShown: false });
   }
 
-
-  // renderErrors() {
-  //   return (
-  //     <ul className="errors">
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`} className="error">
-  //          <p>{error}</p>
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  rememberMe() {
+    if (this.state.rememberMe == false) {
+      this.setState({rememberMe: true});
+      localStorage.setItem('username', this.state.username);
+      localStorage.setItem('password', this.state.password);
+      localStorage.setItem('rememberMe', true);
+    } else {
+      this.setState({rememberMe: false});
+      localStorage.setItem('rememberMe', false);
+      localStorage.removeItem('username');
+      localStorage.removeItem('password');
+    }
+    // console.log(this.state);
+  }
 
   renderError(field) {
     const errors = this.props.errors;
     return errors.some(error => error.includes(field))
   }
-
 
   render() {
     let length = this.state.username.length;
@@ -95,7 +95,6 @@ class LoginForm extends React.Component {
                 <li><Link to="/">Take me back home</Link></li>
               </ul>
             </section>
-            {/* <SubnavToggle /> */}
           <SubnavToggle
             title="Login"
             labels={['Register', 'Take me back home']}
@@ -128,8 +127,7 @@ class LoginForm extends React.Component {
                   )}
                 </li>
              
-            {/* <br/> */}
-              <li>Password /</li>
+            <li>Password /</li>
             <li className="password-hold">
               <input
                 style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)' }} 
@@ -148,7 +146,7 @@ class LoginForm extends React.Component {
               <p className="errors">{errors[0]}</p>
               </div>
      
-            <li><input id="check-box" type="checkbox"/>'member?
+            <li><input id="check-box" type="checkbox" checked={this.state.rememberMe} onChange={this.rememberMe}/>'member?
               <img src={window.memberUrl} id="member"/>
             </li>
             <li><input className="login-button" type="submit" value={this.props.formType} /></li>
