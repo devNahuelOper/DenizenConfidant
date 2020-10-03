@@ -43,9 +43,6 @@ class LoginForm extends React.Component {
     this.props.clearErrors();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
-    // .then(user => 
-    //   localStorage.setItem('id', user.user.id)
-    // );
   }
 
   showPassword() {
@@ -113,7 +110,6 @@ class LoginForm extends React.Component {
                 <li><Link to="/">Take me back home</Link></li>
               </ul>
             </section>
-            {/* <SubnavToggle /> */}
           <SubnavToggle
             title="Login"
             labels={['Register', 'Take me back home']}
