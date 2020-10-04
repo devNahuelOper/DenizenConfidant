@@ -99,6 +99,7 @@ class SignupForm extends React.Component {
             <input
                 style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)'}}
                 type="text"
+                maxLength="18"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="signup-input" />
