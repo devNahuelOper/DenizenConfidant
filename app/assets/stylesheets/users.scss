@@ -209,7 +209,9 @@
   padding-left: 35px;
   padding-right: 12px;
   &:after {
-    content: "➡︎";
+    // content: "➡︎";
+    content: "⬅︎";
+    transform: rotate(180deg);
     position: relative;
     bottom: 1px;
     float: right;
@@ -923,16 +925,16 @@ i {
   #prevMonth {
     width: 99px;
     &:before {
-      margin: 8px;
+      margin: 0 8px;
     }
   }
   #nextMonth {
     width: 99px;
     padding-left: 30px;
     &:after {
-      content: "⬅︎";
-      transform: rotate(180deg);
-      bottom: 0;
+      // content: "⬅︎";
+      // transform: rotate(180deg);
+      top: 1px;
     }
   }
   // .hasEvent {
