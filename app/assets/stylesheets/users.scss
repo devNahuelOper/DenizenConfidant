@@ -885,13 +885,12 @@ i {
   }
  
 
-  .hasEvent {
-    height: auto;
-    .event-space {
+  .event-space {
       font-size: 8px;
       white-space: normal;
       img {
         width: 100%;
+        height: auto;
       }
       a {
         line-height: 1.3em;
@@ -901,7 +900,6 @@ i {
         font-size: 6px;
         text-indent: unset;
       }
-    }
   }
 
   .calendar {
