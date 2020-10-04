@@ -886,6 +886,7 @@ i {
  
 
   .event-space {
+    overflow: scroll;
     font-size: 8px;
     white-space: normal;
     img {
@@ -928,6 +929,11 @@ i {
   #nextMonth {
     width: 99px;
     padding-left: 30px;
+    &:after {
+      content: "⬅︎";
+      transform: rotate(180deg);
+      bottom: 0;
+    }
   }
   // .hasEvent {
   //   width: 110px;
