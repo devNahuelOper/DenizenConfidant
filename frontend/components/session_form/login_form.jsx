@@ -34,7 +34,6 @@ class LoginForm extends React.Component {
       this.setState({ [field]: e.currentTarget.value })
       this.props.receiveErrors([]);
     }
-    // this.props.clearErrors(); 
   }
 
   handleSubmit(e) {
