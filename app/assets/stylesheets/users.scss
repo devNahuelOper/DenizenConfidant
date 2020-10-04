@@ -885,22 +885,20 @@ i {
   }
  
 
-  .hasEvent {
-    height: auto;
-    .event-space {
-      font-size: 8px;
-      white-space: normal;
-      img {
-        width: 100%;
-      }
-      a {
-        line-height: 1.3em;
-        text-indent: unset;
-      }
-      h2 {
-        font-size: 6px;
-        text-indent: unset;
-      }
+  .event-space {
+    font-size: 8px;
+    white-space: normal;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    a {
+      line-height: 1.3em;
+      text-indent: unset;
+    }
+    h2 {
+      font-size: 6px;
+      text-indent: unset;
     }
   }
 

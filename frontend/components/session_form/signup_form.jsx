@@ -47,17 +47,6 @@ class SignupForm extends React.Component {
     const errors = this.props.errors;
     return errors.some(error => error.includes(field))
   }
-  // renderErrors() {
-  //   return (
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`} className="error">
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
 
   render() {
     const { errors } = this.props;
@@ -99,6 +88,7 @@ class SignupForm extends React.Component {
             <input
                 style={errors.length ? errorStyle : { border: '1px solid rgb(46, 46, 46)'}}
                 type="text"
+                maxLength="18"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="signup-input" />
