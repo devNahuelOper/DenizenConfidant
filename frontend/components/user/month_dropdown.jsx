@@ -22,9 +22,10 @@ class MonthDropdown extends React.Component {
   }
 
   render() {
+ 
     return (
       <>
-       <button onFocus={this.clicker} onBlur={this.leave} className="month-dropdown">
+        <button onClick={() => { this.setState({ drop: !this.state.drop }) }}  onBlur={this.leave} className="month-dropdown">
           <span>{formatMonth(this.props.month)}</span>
           <ul className={this.state.drop ? "month-reveal" : "month-hide"}>
             {monthDrop.map(month => 
