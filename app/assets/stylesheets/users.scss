@@ -63,6 +63,43 @@
     font-size: 36px;
     background-color: #ffa200;
   }
+  .month-dropdown {
+    padding-left: unset;
+    span {
+      padding-right: 16px;
+      &:after {
+        content: "⬇︎";
+        font-size: 16px;
+        vertical-align: middle;
+        margin-left: 16px;
+      }
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+    .month-reveal {
+      // position: relative;
+      // top: 8px;
+      position: absolute;
+      top: 89px;
+      left: auto;
+      right: auto;
+      li {
+        font-size: 18px;
+        width: 275%;
+        padding: 6px 10px;
+        height: 36px;
+        &:first-of-type {
+          background-color: white;
+        }
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+  }
 }
 
 .cal-bg {
@@ -171,6 +208,11 @@
   width: 152px;
 }
 
+// @function property-value($property, $selector: null) {
+//   // $value = $selector.attr($property);
+//   @return $value;
+// }
+
 .monthToggle-wrap {
   width: 960px;
   margin: 0 auto;
@@ -194,6 +236,7 @@
 }
 #prevMonth {
   width: 154px;
+  // width: property-value(width, '.cal-day:nth-of-type(33)');
   margin-right: 2px;
   padding-left: 6px;
   &:before {

@@ -2,6 +2,7 @@ import React from 'react';
 import { formatAbsDate } from '../../util/date_util';
 import { getCalendar, formatMonth } from '../../util/calendar_util';
 import { Link } from 'react-router-dom';
+import MonthDropdown from './month_dropdown';
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -59,7 +60,8 @@ class Calendar extends React.Component {
   render() {
     const { year, month, events } = this.state;
     let fillMonth = getCalendar(year, month);
-  
+
+
     return (
       <div className="calendar">
         <ul className="year-month">
@@ -67,10 +69,12 @@ class Calendar extends React.Component {
             <span>{year}</span>
           </li>
           <li>
-            <span>{formatMonth(month)}</span>
+            {/* <span>{formatMonth(month)}</span> */}
+            <MonthDropdown 
+              month={this.state.month}
+              onChange={(month) => this.setState({month: month.value})}/>
           </li>
         </ul>
-
         <table className="calendar">
           <tbody>
             <tr className="weekdays">

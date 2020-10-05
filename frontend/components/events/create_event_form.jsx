@@ -93,7 +93,7 @@ class CreateEventForm extends React.Component {
     formData.append('event[user_id]', this.state.user_id);
     if (this.state.photoFile) {
       formData.append('event[photo]', this.state.photoFile);
-      formData.append('event[photoUrl]', this.state.photoUrl);
+      // formData.append('event[photoUrl]', this.state.photoUrl);
     }
     this.props.createEvent(formData)
       .then(event => this.props.history.push(`/events/${event.event.id}`))
@@ -140,21 +140,6 @@ class CreateEventForm extends React.Component {
             path={`/users/${currentUser.id}/events`}
             label="My Events"
             type="form"/>
-            {/* <section className="navbar">
-              <nav>
-                <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
-                <ul id="links">
-                  <li><Link to="/djs">DJs</Link></li>
-                  <li><Link to="/events">Events</Link></li>
-                  <li><Link to="/genres">Music</Link></li>
-                  <li><button id="search">Search</button></li>
-                </ul>
-              </nav>
-              <section className="eventform-header">
-                <Link to={`/users/${currentUser.id}/events`}><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link>
-                <h1>Submit an event</h1>
-              </section>
-            </section> */}
           </div>
         </header>
         <div className="event-form-container">
