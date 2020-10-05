@@ -60,15 +60,6 @@ class Calendar extends React.Component {
     const { year, month, events } = this.state;
     let fillMonth = getCalendar(year, month);
 
-    // let $penday = $('.cal-day')[33];
-    // let $penWidth = parseInt($($penday).css('width'));
-    // let $lastday = $('.cal-day')[34];
-    // let $lastWidth = parseInt($($lastday).css('width'));
-    // let $fullWidth = $penWidth + $lastWidth + 2;
-    // $('#prevMonth').css('width', $penWidth);
-    // $('#nextMonth').css('width', $lastWidth);
-    // $('.monthToggle').css('width', $penWidth + $lastWidth + 2);
-  
     return (
       <div className="calendar">
         <ul className="year-month">
