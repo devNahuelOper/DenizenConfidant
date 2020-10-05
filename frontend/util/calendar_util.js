@@ -88,7 +88,7 @@ const options = [
 
 {/* <Select options={options} defaultValue={this.state.month} /> */}
 
-const monthDrop = [
+export const monthDrop = [
   { value: 11, label: 'December' },
   { value: 10, label: 'November' },
   { value: 9, label: 'October' },

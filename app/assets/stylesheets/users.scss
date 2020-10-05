@@ -63,6 +63,41 @@
     font-size: 36px;
     background-color: #ffa200;
   }
+  .month-dropdown {
+    padding-left: unset;
+    span {
+      padding-right: 16px;
+      &:after {
+        content: "⬇︎";
+        font-size: 16px;
+        vertical-align: middle;
+        margin-left: 16px;
+      }
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+    .month-reveal {
+      // position: relative;
+      // top: 8px;
+      position: absolute;
+      top: 89px;
+      left: 230px;
+      li {
+        width: 270%;
+        padding: 6px 10px;
+        height: 36px;
+        &:first-of-type {
+          background-color: white;
+        }
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+  }
 }
 
 .cal-bg {
