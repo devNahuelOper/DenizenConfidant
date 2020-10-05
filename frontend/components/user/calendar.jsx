@@ -64,8 +64,17 @@ class Calendar extends React.Component {
     const options = [
       {value: 11, label: 'December'},
       {value: 10, label: 'November'},
-      {value: 9, label: 'October'}
-    ]
+      {value: 9, label: 'October'},
+      {value: 8, label: 'September'},
+      {value: 7, label: 'August'},
+      {value: 6, label: 'July'},
+      {value: 5, label: 'June'},
+      {value: 4, label: 'May'},
+      {value: 3, label: 'April'},
+      {value: 2, label: 'March'},
+      {value: 1, label: 'February'},
+      {value: 0, label: 'January'}
+    ];
 
     return (
       <div className="calendar">
