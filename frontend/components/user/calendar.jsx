@@ -2,6 +2,7 @@ import React from 'react';
 import { formatAbsDate } from '../../util/date_util';
 import { getCalendar, formatMonth } from '../../util/calendar_util';
 import { Link } from 'react-router-dom';
+import Select from 'react-select';
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -59,6 +60,12 @@ class Calendar extends React.Component {
   render() {
     const { year, month, events } = this.state;
     let fillMonth = getCalendar(year, month);
+
+    const options = [
+      {value: 11, label: 'December'},
+      {value: 10, label: 'November'},
+      {value: 9, label: 'October'}
+    ]
 
     return (
       <div className="calendar">
