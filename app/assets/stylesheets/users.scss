@@ -171,6 +171,11 @@
   width: 152px;
 }
 
+// @function property-value($property, $selector: null) {
+//   // $value = $selector.attr($property);
+//   @return $value;
+// }
+
 .monthToggle-wrap {
   width: 960px;
   margin: 0 auto;
@@ -194,6 +199,7 @@
 }
 #prevMonth {
   width: 154px;
+  // width: property-value(width, '.cal-day:nth-of-type(33)');
   margin-right: 2px;
   padding-left: 6px;
   &:before {
