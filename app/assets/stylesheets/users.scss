@@ -83,9 +83,11 @@
       // top: 8px;
       position: absolute;
       top: 89px;
-      left: 230px;
+      left: auto;
+      right: auto;
       li {
-        width: 270%;
+        font-size: 18px;
+        width: 275%;
         padding: 6px 10px;
         height: 36px;
         &:first-of-type {
