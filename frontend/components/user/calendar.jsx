@@ -69,7 +69,6 @@ class Calendar extends React.Component {
             <span>{year}</span>
           </li>
           <li>
-            {/* <span>{formatMonth(month)}</span> */}
             <MonthDropdown 
               month={this.state.month}
               onChange={(month) => this.setState({month: month.value})}/>
