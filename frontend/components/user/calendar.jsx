@@ -20,7 +20,6 @@ class Calendar extends React.Component {
   componentDidMount() {
     this.getEvents();
     // console.log('calendar props: ',this.props);
-    // console.log('calendar state: ', this.state);
   }
 
 
