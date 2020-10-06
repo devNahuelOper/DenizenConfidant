@@ -64,6 +64,7 @@
     background-color: #ffa200;
   }
   .month-dropdown {
+    display: contents;
     padding-left: unset;
     span {
       padding-right: 16px;
@@ -258,6 +259,7 @@
     position: relative;
     bottom: 1px;
     float: right;
+    // height: 20px;
     // margin: 6px;
     font-size: 12px;
   }
