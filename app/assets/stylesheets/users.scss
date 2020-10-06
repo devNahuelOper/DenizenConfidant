@@ -64,6 +64,7 @@
     background-color: #ffa200;
   }
   .month-dropdown {
+    display: contents;
     padding-left: unset;
     span {
       padding-right: 16px;
@@ -244,7 +245,7 @@
     position: relative;
     bottom: 1px;
     margin: 12px;
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 #nextMonth {
@@ -256,10 +257,11 @@
     content: "⬅︎";
     transform: rotate(180deg);
     position: relative;
-    bottom: 1px;
+    bottom: 2px;
     float: right;
+    // height: 20px;
     // margin: 6px;
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
