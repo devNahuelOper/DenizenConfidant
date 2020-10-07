@@ -39,7 +39,6 @@ class UserProfile extends React.Component {
   // }
 
   toggleCalendar() {
-    // console.log(this.state);
     $('.calendar').toggle();
     $('#calendar-toggle').toggleClass('form');
     $('#overview').toggleClass('form');
