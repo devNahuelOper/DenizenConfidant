@@ -23,7 +23,6 @@ function fillMonth(year, month) {
     calendar[lastIndex + k] = k;
   }
 
-  // console.log(`called with: (${year}, ${month})`);
   return _.chunk(calendar, 7);
 }
 
