@@ -1,6 +1,6 @@
 import React from 'react';
 import { formatAbsDate } from '../../util/date_util';
-import { getCalendar, formatMonth } from '../../util/calendar_util';
+import { getCalendar } from '../../util/calendar_util';
 import { Link } from 'react-router-dom';
 import MonthDropdown from './month_dropdown';
 
