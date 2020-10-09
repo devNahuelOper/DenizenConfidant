@@ -53,7 +53,6 @@ class Calendar extends React.Component {
       this.setState({month: 11, year: this.state.year - 1});
     }
     this.getEvents();
-    // console.log(this.state);
   }
   
   render() {
