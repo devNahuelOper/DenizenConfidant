@@ -269,7 +269,4 @@ export const fiveDaySpan = (date) => {
   return dates.map(date => [date.toDateString().split(' ')[0], date.getDate()]);
 }
 
-// import {
-//   formatDateTime
-// } from '../../util/date_util';
 
