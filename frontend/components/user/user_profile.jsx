@@ -34,9 +34,6 @@ class UserProfile extends React.Component {
     // console.log('user events: ',this.props.events);
   }
 
-  // componentDidUpdate() {
-  //   console.log('user events: ', this.props.events);  
-  // }
 
   toggleCalendar() {
     $('.calendar').toggle();
