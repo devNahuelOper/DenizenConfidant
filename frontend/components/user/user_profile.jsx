@@ -30,7 +30,6 @@ class UserProfile extends React.Component {
   componentDidMount() {
     this.props.fetchEvents();
     toggleSearch();
-    // localStorage.setItem('id', this.props.currentUser.id);
     // console.log('user events: ',this.props.events);
   }
 
