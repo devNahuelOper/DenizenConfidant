@@ -75,7 +75,6 @@ class CreateDjForm extends React.Component {
         [target.name]: target.value
       }
     });
-    // console.log(this.state);
   }
 
   handleFile(e) {
