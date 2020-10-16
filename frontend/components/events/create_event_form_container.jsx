@@ -19,7 +19,6 @@ const mapStateToProps = state => ({
   errors: state.errors.events,
   currentUser: getCurrentUser(state),
   formType: 'Submit Event',
-  // events: Object.values(state.entities.events)
 });
 
 const mapDispatchToProps = dispatch => ({
