@@ -51,9 +51,6 @@ class CreateDjForm extends React.Component {
       bio: '',
       photoFile: null,
       photoUrl: null,
-      // songFile: null,
-      // songUrl: null,
-      // songFiles: []
     });
     $('#success-msg').toggleClass('show hidden')
     $('#song-hold').toggleClass('show hidden');
