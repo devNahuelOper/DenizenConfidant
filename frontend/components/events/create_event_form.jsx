@@ -186,7 +186,6 @@ class CreateEventForm extends React.Component {
                   <option value="United Kingdom">United Kingdom</option>
                   <option value="United States">United States</option>
                 </select>
-                {/* cities[cities.indexOf(this.value)] */}
                 </label>
                   {
                     this.state.location.length > 0 && 
