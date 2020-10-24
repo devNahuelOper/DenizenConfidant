@@ -98,8 +98,6 @@ class CreateEventForm extends React.Component {
     this.props.createEvent(formData)
       .then(event => this.props.history.push(`/events/${event.event.id}`))
       .then(() => window.location.reload(true))
-
-    // e.target.reset();
   }
 
   update(field) {
