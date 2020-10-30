@@ -94,11 +94,10 @@ class UpdateEventForm extends React.Component {
                   </ul>
                 </nav>
                 <section className="eventform-header">
-                  {/* <Link to='/events'><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link> */}
                   <span className="prev-hold">
                     <Link to={`/users/${currentUser.id}/events`}><img id="prev" src={window.prevUrl} alt="Back" /> My Events</Link>
                         &nbsp; / &nbsp;
-                  <Link to={`/events/${event.id}/edit`}><img id="prev" src={window.prevUrl} alt="Back" /> {event.name}</Link>
+                    <Link to={`/events/${event.id}/edit`}><img id="prev" src={window.prevUrl} alt="Back" /> {event.name}</Link>
                   </span>
                   <h1>Event management</h1>
                 </section>
