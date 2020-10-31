@@ -46,7 +46,6 @@ class EventShow extends React.Component {
               <ul>
                 <li><Link to="/events">All</Link></li>
                 <li><Link className="form" to="#">{event.name}</Link></li>
-                {/* <li><Link to="/">Take me back home</Link></li> */}
                 <li><Link to='/events/new'>Submit an event</Link></li>
               </ul>
             </section>
