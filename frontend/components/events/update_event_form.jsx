@@ -43,7 +43,6 @@ class UpdateEventForm extends React.Component {
     };
     if (file) {
       fileReader.readAsDataURL(file);
-      // const formData = new FormData();
       // formData.append('event[photo]', file);
       // this.props.updateEventPhoto(formData, this.props.event.id)
       //   .then(event => this.props.history.push(`/events/${event.event.id}`))
