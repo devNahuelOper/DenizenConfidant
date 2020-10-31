@@ -39,21 +39,6 @@ class EventShow extends React.Component {
               entity="Event"
               path="/events"
               label="Events"/>
-            {/* <section id="events-nav">
-              <nav>
-              <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
-              <ul id="links">
-                <li><Link to="/djs">DJs</Link></li>
-                <li><Link to="/events">Events</Link></li>
-                <li><Link to="/genres">Music</Link></li>
-                <li><button id="search">Search</button></li>
-              </ul>
-              </nav>
-              <section className="eventshow-header">
-                <Link to='/events'><img id="prev" src={window.prevUrl} alt="Back"/> Events</Link>
-                <h2 id={event.name.length >= 20 ? 'longH2' : 'normalH2'}>{event.name}</h2>
-              </section>
-            </section> */}
           </div>
         </header>
           <div className="subnav-container">
