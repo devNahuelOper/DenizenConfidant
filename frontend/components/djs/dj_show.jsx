@@ -52,21 +52,6 @@ class DjShow extends React.Component {
              hasLinks={true}
              path="/djs"
              label="DJs"/>
-            {/* <section className="djs-nav" id="djs-nav">
-              <nav>
-                <Link to="/" title="Home"><img src={window.logoUrl} id="logo" /></Link>
-                <ul id="links">
-                  <li><Link to="/djs">DJs</Link></li>
-                  <li><Link to="/events">Events</Link></li>
-                  <li><Link to="/genres">Music</Link></li>
-                  <li><button id="search">Search</button></li>
-                </ul>
-              </nav>
-              <section id="djshow-header">
-                <Link to='/djs'><img id="prev" src={window.prevUrl} alt="Back" /> DJs</Link>
-                  <h1 id={dj.name.length >= 15 ? 'longDj' : 'normalDj'}>{dj.name}</h1>
-              </section>
-            </section> */}
           </div>
         </header>
         <div className="djs-subnav-container">
