@@ -9,9 +9,6 @@ import { toggleSearch } from '../../util/search_util';
 class EventShow extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-
-    // }
   }
 
   componentDidMount() {
