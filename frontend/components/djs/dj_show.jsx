@@ -27,9 +27,6 @@ class DjShow extends React.Component {
       return null;
     }
     const { dj } = this.props;
-    // const first = dj.name.split(' ')[0];
-    // const second = dj.name.split(' ')[1];
-    // const hyphen = `${first}-${second}`;
     const noAttach = {
         backgroundImage: `url("${`https://denizen-confidant-seeds.s3.amazonaws.com/${dj.name.toLowerCase().split(' ').join('')}.png`}")` 
     }
