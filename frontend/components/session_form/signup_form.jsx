@@ -49,10 +49,16 @@ class SignupForm extends React.Component {
 
   render() {
     const { errors } = this.props;
+
     const errorStyle = {
       outline: "2px solid #e10",
       border: "1px solid rgb(46, 46, 46)",
     };
+
+    const okStyle = {
+      border: "1px solid rgb(46, 46, 46)",
+    };
+
     $(".signup-form button").on("click", (e) => {
       e.preventDefault();
     });
@@ -96,7 +102,7 @@ class SignupForm extends React.Component {
                       style={
                         errors.length
                           ? errorStyle
-                          : { border: "1px solid rgb(46, 46, 46)" }
+                          : okStyle
                       }
                       type="text"
                       maxLength="18"
@@ -112,7 +118,6 @@ class SignupForm extends React.Component {
                     ) : (
                       ""
                     )}
-                    {/* <p className="errors">{this.props.errors['0']}</p> */}
                   </div>
                   <br />
 
@@ -123,7 +128,7 @@ class SignupForm extends React.Component {
                       style={
                         errors.length
                           ? errorStyle
-                          : { border: "1px solid rgb(46, 46, 46)" }
+                          : okStyle
                       }
                       type="password"
                       value={this.state.password}
@@ -137,7 +142,6 @@ class SignupForm extends React.Component {
                     ) : (
                       ""
                     )}
-                    {/* <p className="errors">{this.props.errors[1]}</p> */}
                   </div>
                 </li>
                 <span id="no-space">No spaces, 18 char max.</span>
@@ -150,7 +154,7 @@ class SignupForm extends React.Component {
                       style={
                         errors.length
                           ? errorStyle
-                          : { border: "1px solid rgb(46, 46, 46)" }
+                          : okStyle
                       }
                       type="text"
                       value={this.state.email}
@@ -162,7 +166,6 @@ class SignupForm extends React.Component {
                     ) : (
                       ""
                     )}
-                    {/* <p className="errors">{this.props.errors[4]}</p> */}
                   </div>
 
                   <br />
@@ -174,7 +177,7 @@ class SignupForm extends React.Component {
                       style={
                         errors.length
                           ? errorStyle
-                          : { border: "1px solid rgb(46, 46, 46)" }
+                          : okStyle
                       }
                       type="text"
                       value={this.state.email_confirmation}
@@ -188,7 +191,6 @@ class SignupForm extends React.Component {
                     ) : (
                       ""
                     )}
-                    {/* <p className="errors">{this.props.errors[5]}</p> */}
                   </div>
                 </li>
 
@@ -200,7 +202,7 @@ class SignupForm extends React.Component {
                       style={
                         errors.length
                           ? errorStyle
-                          : { border: "1px solid rgb(46, 46, 46)" }
+                          : okStyle
                       }
                       type="text"
                       value={this.state.fname}
@@ -214,7 +216,6 @@ class SignupForm extends React.Component {
                     ) : (
                       ""
                     )}
-                    {/* <p className="errors">{this.props.errors[2]}</p> */}
                   </div>
                   <br />
                   <div>
@@ -224,7 +225,7 @@ class SignupForm extends React.Component {
                       style={
                         errors.length
                           ? errorStyle
-                          : { border: "1px solid rgb(46, 46, 46)" }
+                          : okStyle
                       }
                       type="text"
                       value={this.state.lname}
@@ -238,7 +239,6 @@ class SignupForm extends React.Component {
                     ) : (
                       ""
                     )}
-                    {/* <p className="errors">{this.props.errors[3]}</p> */}
                   </div>
                 </li>
 
@@ -272,7 +272,6 @@ class SignupForm extends React.Component {
                   />
                 </li>
 
-                {/* <p className="errors">{this.props.errors[6]}</p> */}
                 {this.renderError("Gender") ? (
                   <div className="errors">The Gender field is required.</div>
                 ) : (
@@ -286,7 +285,7 @@ class SignupForm extends React.Component {
                       style={
                         errors.length
                           ? errorStyle
-                          : { border: "1px solid rgb(46, 46, 46)" }
+                          : okStyle
                       }
                       type="radio"
                       id="Male"
@@ -300,7 +299,7 @@ class SignupForm extends React.Component {
                       style={
                         errors.length
                           ? errorStyle
-                          : { border: "1px solid rgb(46, 46, 46)" }
+                          : okStyle
                       }
                       type="radio"
                       id="Female"
@@ -314,7 +313,7 @@ class SignupForm extends React.Component {
                       style={
                         errors.length
                           ? errorStyle
-                          : { border: "1px solid rgb(46, 46, 46)" }
+                          : okStyle
                       }
                       type="radio"
                       id="Other"
@@ -345,7 +344,6 @@ class SignupForm extends React.Component {
                     Submit
                   </button>
                 </li>
-                {/* <li><input className="signup-button" type="submit" value='Submit' /></li> */}
               </ul>
             </form>
 
