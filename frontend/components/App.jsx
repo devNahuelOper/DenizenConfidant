@@ -6,7 +6,6 @@ import SignupFormContainer from './session_form/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import UserProfile from './user/user_profile';
 import UserEvents from './user/user_events';
-import SplashPage from './splash/splash';
 import Footer from './footer/footer';
 import EventIndexContainer from './events/event_index_container';
 import EventShowContainer from './events/event_show_container';
@@ -22,8 +21,6 @@ import Search from './search/search';
 import SearchPage from './search/search_page';
 import NewsShow from './news/news_show';
 import { TitleComponent } from './title_component.jsx';
-import Modal from './modal/modal';
-
 
 
 const withTitle = ({ component: Component, title }) => {
