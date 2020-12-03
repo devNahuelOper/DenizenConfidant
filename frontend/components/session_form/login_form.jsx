@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import NavBar from "../navbar/navbar";
 import SubnavToggle from "../subnav/subnav";
 import { toggleSearch } from "../../util/search_util";
-import fontawesome from "@fortawesome/fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye as farEye } from "@fortawesome/fontawesome-free-regular";
 import { faEyeSlash as farEyeSlash } from "@fortawesome/fontawesome-free-regular";
@@ -74,10 +73,17 @@ class LoginForm extends React.Component {
     let length = this.state.username.length;
     const { errors } = this.props;
     const { pwShown } = this.state;
+
     const errorStyle = {
       outline: "2px solid #e10",
       border: "1px solid rgb(46, 46, 46)",
     };
+    const okStyle = {
+      border: "1px solid rgb(46, 46, 46)",
+    };
+
+    const style = errors.length ? errorStyle : okStyle;
+
     return (
       <div>
         <header>
@@ -114,11 +120,7 @@ class LoginForm extends React.Component {
                 <li>Username /</li>
                 <li>
                   <input
-                    style={
-                      this.renderError("username")
-                        ? errorStyle
-                        : { border: "1px solid rgb(46, 46, 46)" }
-                    }
+                    style={style}
                     type="text"
                     name="username"
                     value={this.state.username}
@@ -138,11 +140,7 @@ class LoginForm extends React.Component {
                 <li>Password /</li>
                 <li className="password-hold">
                   <input
-                    style={
-                      errors.length
-                        ? errorStyle
-                        : { border: "1px solid rgb(46, 46, 46)" }
-                    }
+                    style={style}
                     type={pwShown ? "text" : "password"}
                     value={this.state.password}
                     onChange={this.update("password")}
