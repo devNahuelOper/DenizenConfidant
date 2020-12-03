@@ -5,6 +5,7 @@ import { toggleSearch } from "../../util/search_util";
 import { fiveDaySpan } from "../../util/date_util";
 import NewsIndex from "../news/news_index";
 import NavBar from "../navbar/navbar";
+import { secretHover } from "../../util/splash_util";
 
 class SplashPage extends React.Component {
   constructor(props) {
@@ -23,16 +24,8 @@ class SplashPage extends React.Component {
     const { djs, news } = this.props;
     let dates = fiveDaySpan(this.state.date);
 
-    $(".denizen-confidant")
-      .on("mouseover", () => {
-        $(".denizen-confidant").attr(
-          "id",
-          `bg${Math.floor(Math.random() * 10)}`
-        );
-      })
-      .on("mouseout", () => {
-        $(".denizen-confidant").attr("id", "bgnone");
-      });
+    secretHover();
+
     return (
       <>
         <header>
