@@ -43,11 +43,13 @@ class RegionDropdown extends React.Component {
         Default region /
         <br />
         <button
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             this.setState({ drop: !this.state.drop });
           }}
           onBlur={this.leave}
           className="region-dropdown"
+          type="button"
         >
           {this.props.region || "Select a country:"}
           <ul className={this.state.drop ? "region-reveal" : "region-hide"}>

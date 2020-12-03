@@ -59,9 +59,8 @@ class SignupForm extends React.Component {
       border: "1px solid rgb(46, 46, 46)",
     };
 
-    $(".signup-form button").on("click", (e) => {
-      e.preventDefault();
-    });
+    const style = errors.length ? errorStyle : okStyle;
+
     return (
       <div>
         <header>

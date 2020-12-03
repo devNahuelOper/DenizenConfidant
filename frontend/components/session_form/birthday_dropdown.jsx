@@ -29,7 +29,7 @@ class BirthdayDropdown extends React.Component {
     return (
       <div>Birthday /
         <br />
-        <button onClick={() => { this.setState({ day: !this.state.day }) }} onBlur={this.leave('day')} className="day-dropdown birthday-dropdown">
+        <button onClick={() => { this.setState({ day: !this.state.day }) }} onBlur={this.leave('day')} className="day-dropdown birthday-dropdown" type="button">
           {this.props.birthday.day}
           <ul className={this.state.day ? "day-reveal" : "day-hide"}>
            
