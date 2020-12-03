@@ -15,7 +15,7 @@ class SignupForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.checker = this.checker.bind(this);
-    this.renderError = this.renderError.bind(this);
+    this.hasError = this.hasError.bind(this);
   }
 
   componentDidMount() {
@@ -42,7 +42,7 @@ class SignupForm extends React.Component {
     this.props.processForm(user);
   }
 
-  renderError(field) {
+  hasError(field) {
     const errors = this.props.errors;
     return errors.some((error) => error.includes(field));
   }
@@ -105,13 +105,11 @@ class SignupForm extends React.Component {
                       onChange={this.update("username")}
                       className="signup-input"
                     />
-                    {this.renderError("Username") ? (
+                    {this.hasError("Username") && (
                       <div id="un-signup-error" className="errors">
                         Your Username should only contain letters and numbers. A
                         full stop or hyphen is ok.
                       </div>
-                    ) : (
-                      ""
                     )}
                   </div>
                   <br />
@@ -126,12 +124,10 @@ class SignupForm extends React.Component {
                       onChange={this.update("password")}
                       className="signup-input"
                     />
-                    {this.renderError("Password") ? (
+                    {this.hasError("Password") && (
                       <div className="errors">
                         The Password field is required.
                       </div>
-                    ) : (
-                      ""
                     )}
                   </div>
                 </li>
@@ -148,10 +144,8 @@ class SignupForm extends React.Component {
                       onChange={this.update("email")}
                       className="email-input"
                     />
-                    {this.renderError("Email") ? (
+                    {this.hasError("Email") && (
                       <div className="errors">The Email field is required.</div>
-                    ) : (
-                      ""
                     )}
                   </div>
 
@@ -167,12 +161,10 @@ class SignupForm extends React.Component {
                       onChange={this.update("email_confirmation")}
                       className="email-input"
                     />
-                    {this.renderError("Email") ? (
+                    {this.hasError("Email") && (
                       <div className="errors">
                         The Email Confirmation field is required.
                       </div>
-                    ) : (
-                      ""
                     )}
                   </div>
                 </li>
@@ -188,12 +180,10 @@ class SignupForm extends React.Component {
                       onChange={this.update("fname")}
                       className="signup-input"
                     />
-                    {this.renderError("Fname") ? (
+                    {this.hasError("Fname") && (
                       <div className="errors">
                         The First Name field is required.
                       </div>
-                    ) : (
-                      ""
                     )}
                   </div>
                   <br />
@@ -207,23 +197,19 @@ class SignupForm extends React.Component {
                       onChange={this.update("lname")}
                       className="signup-input"
                     />
-                    {this.renderError("Lname") ? (
+                    {this.hasError("Lname") && (
                       <div className="errors">
                         The Surname field is required.
                       </div>
-                    ) : (
-                      ""
                     )}
                   </div>
                 </li>
-
                 <li>
                   <RegionDropdown
                     region={this.state.region}
                     onChange={(region) => this.setState({ region: region })}
                   />
                 </li>
-
                 <span id="default-region-msg">
                   This selection is your default for viewing events, clubs and
                   other local content.
@@ -247,10 +233,8 @@ class SignupForm extends React.Component {
                   />
                 </li>
 
-                {this.renderError("Gender") ? (
+                {this.hasError("Gender") && (
                   <div className="errors">The Gender field is required.</div>
-                ) : (
-                  ""
                 )}
                 <li>
                   <div id="gender">
