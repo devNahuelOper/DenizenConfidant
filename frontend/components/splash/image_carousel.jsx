@@ -44,8 +44,6 @@ const ImageCarousel = () => {
           <div className="each-fade">
             <div className="image-container" id="ethereal">
               <img src={fadeImages[1]} />
-              {/* <section id="splash-caption">
-              </section> */}
             </div>
             <h2></h2>
           </div>

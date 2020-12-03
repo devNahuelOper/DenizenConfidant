@@ -23,7 +23,6 @@ function fillMonth(year, month) {
     calendar[lastIndex + k] = k;
   }
 
-  // console.log(`called with: (${year}, ${month})`);
   return _.chunk(calendar, 7);
 }
 
@@ -86,7 +85,6 @@ const options = [
   { value: 0, label: 'January' }
 ];
 
-{/* <Select options={options} defaultValue={this.state.month} /> */}
 
 export const monthDrop = [
   { value: 11, label: 'December' },

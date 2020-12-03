@@ -3,7 +3,7 @@ A one-stop shop for all things electronic music!
 
 [Denizen Confidant](https://denizen-confidant.herokuapp.com/?#/)
 
-![image](https://user-images.githubusercontent.com/16979527/89132069-768d7900-d4df-11ea-85df-8d0b2d89b8bb.png)
+![image](https://user-images.githubusercontent.com/16979527/98123736-3fcd5300-1e80-11eb-9919-2ed60086e079.png)
 
 # Features
 

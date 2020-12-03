@@ -78,7 +78,7 @@ $event-blue: #6a96c2;
 .main-banner {
   display: flex;
   justify-content: center;
-  position: relative;
+  position: sticky;
   top: -4px;
   width: 100%;
   background-color: #b3be1b;
@@ -521,6 +521,8 @@ h3 {
 .yellow-banner {
   background-color: $dj-yellow;
   margin-bottom: 32px;
+  position: relative;
+  z-index: 7;
 }
 
 #splash-djs {

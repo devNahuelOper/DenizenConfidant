@@ -1,8 +1,8 @@
-import React from 'react';
-import { formatAbsDate } from '../../util/date_util';
-import { getCalendar, formatMonth } from '../../util/calendar_util';
-import { Link } from 'react-router-dom';
-import MonthDropdown from './month_dropdown';
+import React from "react";
+import { formatAbsDate } from "../../util/date_util";
+import { getCalendar } from "../../util/calendar_util";
+import { Link } from "react-router-dom";
+import MonthDropdown from "./month_dropdown";
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -10,8 +10,8 @@ class Calendar extends React.Component {
     this.state = {
       month: new Date().getMonth(),
       year: new Date().getFullYear(),
-      events: this.props.events
-    }
+      events: this.props.events,
+    };
     this.nextMonth = this.nextMonth.bind(this);
     this.prevMonth = this.prevMonth.bind(this);
     this.getEvents = this.getEvents.bind(this);
@@ -20,9 +20,7 @@ class Calendar extends React.Component {
   componentDidMount() {
     this.getEvents();
     // console.log('calendar props: ',this.props);
-    // console.log('calendar state: ', this.state);
   }
-
 
   // componentDidUpdate() {
   //   console.log(this.props.events.filter(event =>
@@ -32,35 +30,34 @@ class Calendar extends React.Component {
 
   getEvents() {
     this.setState({
-      events: this.props.events.filter(event =>
-        formatAbsDate(event.date).year === this.state.year && formatAbsDate(event.date).month === this.state.month
-      )
+      events: this.props.events.filter(
+        (event) =>
+          formatAbsDate(event.date).year === this.state.year &&
+          formatAbsDate(event.date).month === this.state.month
+      ),
     });
   }
 
-
   nextMonth() {
-    this.setState({month: (this.state.month += 1) % 12});
+    this.setState({ month: (this.state.month += 1) % 12 });
     if (this.state.month > 11) {
-      this.setState({year: this.state.year + 1});
+      this.setState({ year: this.state.year + 1 });
     }
     this.getEvents();
     // console.log(this.state);
   }
 
   prevMonth() {
-    this.setState({month: this.state.month -= 1});
+    this.setState({ month: (this.state.month -= 1) });
     if (this.state.month < 0) {
-      this.setState({month: 11, year: this.state.year - 1});
+      this.setState({ month: 11, year: this.state.year - 1 });
     }
     this.getEvents();
-    // console.log(this.state);
   }
-  
+
   render() {
     const { year, month, events } = this.state;
     let fillMonth = getCalendar(year, month);
-
 
     return (
       <div className="calendar">
@@ -69,10 +66,10 @@ class Calendar extends React.Component {
             <span>{year}</span>
           </li>
           <li>
-            {/* <span>{formatMonth(month)}</span> */}
-            <MonthDropdown 
+            <MonthDropdown
               month={this.state.month}
-              onChange={(month) => this.setState({month: month.value})}/>
+              onChange={(month) => this.setState({ month: month.value })}
+            />
           </li>
         </ul>
         <table className="calendar">
@@ -86,39 +83,55 @@ class Calendar extends React.Component {
               <th id="fri">Fri</th>
               <th id="sat">Sat</th>
             </tr>
-            {fillMonth.map((week, i) =>
+            {fillMonth.map((week, i) => (
               <tr className="week" key={`week-${i}`}>
-                {week.map(day =>
-                  <td className="cal-day" 
-                    id={((i === 0 && day > 7) || (i === 4 && day <= 7)) ? "offDay" : "onDay"}
-                    key={day}>
+                {week.map((day) => (
+                  <td
+                    className="cal-day"
+                    id={
+                      (i === 0 && day > 7) || (i === 4 && day <= 7)
+                        ? "offDay"
+                        : "onDay"
+                    }
+                    key={day}
+                  >
                     <b>{day}/</b>
                     <hr />
-                    { events.length > 0 ?
-                    <div className="event-space">
-                      {events.map((event, i) => 
-                        <article key={i}>
-                          { (formatAbsDate(event.date).month === month && formatAbsDate(event.date).day === day) &&
-                          <div>
-                            <img src={event.photoUrl || window.defaultUrl} alt={event.name} />
-                            <Link to={`/events/${event.id}`}><h1>{event.name}</h1></Link>
-                            <h2>at {event.venue}</h2>
-                          </div>
-                          }
-                        </article>
-                        )}
-                    </div>
-                  : null} 
+                    {events.length > 0 ? (
+                      <div className="event-space">
+                        {events.map((event, i) => (
+                          <article key={i}>
+                            {formatAbsDate(event.date).month === month &&
+                              formatAbsDate(event.date).day === day && (
+                                <div>
+                                  <img
+                                    src={event.photoUrl || window.defaultUrl}
+                                    alt={event.name}
+                                  />
+                                  <Link to={`/events/${event.id}`}>
+                                    <h1>{event.name}</h1>
+                                  </Link>
+                                  <h2>at {event.venue}</h2>
+                                </div>
+                              )}
+                          </article>
+                        ))}
+                      </div>
+                    ) : null}
                   </td>
-                )}
+                ))}
               </tr>
-            )}
+            ))}
           </tbody>
         </table>
         <div className="monthToggle-wrap">
           <nav className="monthToggle">
-            <button id="prevMonth" onClick={this.prevMonth}>Previous</button>
-            <button id="nextMonth" onClick={this.nextMonth}>Next</button>
+            <button id="prevMonth" onClick={this.prevMonth}>
+              Previous
+            </button>
+            <button id="nextMonth" onClick={this.nextMonth}>
+              Next
+            </button>
           </nav>
         </div>
       </div>

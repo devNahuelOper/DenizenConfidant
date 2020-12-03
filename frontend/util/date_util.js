@@ -228,7 +228,6 @@ export const formatDateNewsShow = date => {
 
 export const formatTime = date => {
   const obj = new Date(date);
-  // obj.setMinutes(obj.getMinutes() + obj.getTimezoneOffset());
   const fullHours = obj.getHours();
   let hours = fullHours % 12;
   if (hours === 0) hours = 12;
@@ -269,6 +268,4 @@ export const fiveDaySpan = (date) => {
   return dates.map(date => [date.toDateString().split(' ')[0], date.getDate()]);
 }
 
-// import {
-//   formatDateTime
-// } from '../../util/date_util';
+
