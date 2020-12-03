@@ -98,11 +98,7 @@ class SignupForm extends React.Component {
                     Username /
                     <br />
                     <input
-                      style={
-                        errors.length
-                          ? errorStyle
-                          : okStyle
-                      }
+                      style={style}
                       type="text"
                       maxLength="18"
                       value={this.state.username}
@@ -124,11 +120,7 @@ class SignupForm extends React.Component {
                     Password /
                     <br />
                     <input
-                      style={
-                        errors.length
-                          ? errorStyle
-                          : okStyle
-                      }
+                      style={style}
                       type="password"
                       value={this.state.password}
                       onChange={this.update("password")}
@@ -150,11 +142,7 @@ class SignupForm extends React.Component {
                     Email address /
                     <br />
                     <input
-                      style={
-                        errors.length
-                          ? errorStyle
-                          : okStyle
-                      }
+                      style={style}
                       type="text"
                       value={this.state.email}
                       onChange={this.update("email")}
@@ -173,11 +161,7 @@ class SignupForm extends React.Component {
                     Confirm email /
                     <br />
                     <input
-                      style={
-                        errors.length
-                          ? errorStyle
-                          : okStyle
-                      }
+                      style={style}
                       type="text"
                       value={this.state.email_confirmation}
                       onChange={this.update("email_confirmation")}
@@ -198,11 +182,7 @@ class SignupForm extends React.Component {
                     First Name /
                     <br />
                     <input
-                      style={
-                        errors.length
-                          ? errorStyle
-                          : okStyle
-                      }
+                      style={style}
                       type="text"
                       value={this.state.fname}
                       onChange={this.update("fname")}
@@ -221,11 +201,7 @@ class SignupForm extends React.Component {
                     Surname /
                     <br />
                     <input
-                      style={
-                        errors.length
-                          ? errorStyle
-                          : okStyle
-                      }
+                      style={style}
                       type="text"
                       value={this.state.lname}
                       onChange={this.update("lname")}
@@ -281,11 +257,7 @@ class SignupForm extends React.Component {
                     Gender /
                     <br />
                     <input
-                      style={
-                        errors.length
-                          ? errorStyle
-                          : okStyle
-                      }
+                      style={style}
                       type="radio"
                       id="Male"
                       value={"Male"}
@@ -295,11 +267,7 @@ class SignupForm extends React.Component {
                     Male
                     <br />
                     <input
-                      style={
-                        errors.length
-                          ? errorStyle
-                          : okStyle
-                      }
+                      style={style}
                       type="radio"
                       id="Female"
                       value={"Female"}
@@ -309,11 +277,7 @@ class SignupForm extends React.Component {
                     Female
                     <br />
                     <input
-                      style={
-                        errors.length
-                          ? errorStyle
-                          : okStyle
-                      }
+                      style={style}
                       type="radio"
                       id="Other"
                       value={"Other"}
