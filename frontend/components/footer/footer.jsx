@@ -5,7 +5,6 @@ class Footer extends React.Component {
   render() {
     return (
       <footer>
-        {/* <img src={window.splashUrl} alt="" style={{display: 'none'}}/> */}
         <div className="footer">
           <section className="upper-foot">
             <span className="disclaimer-wrap">
@@ -50,7 +49,6 @@ class Footer extends React.Component {
                   />
                   {/* <img src={window.headshotUrl} alt="Personal Site" id="headshot"/> */}
                 </a>
-                {/* <small>Portfolio Site</small> */}
               </li>
               <li>
                 <a
@@ -60,7 +58,6 @@ class Footer extends React.Component {
                 >
                   <img src={window.gitUrl} id="git-logo" />
                 </a>
-                {/* <small>Github</small> */}
               </li>
               <br />
               <li>
@@ -71,7 +68,6 @@ class Footer extends React.Component {
                 >
                   <img src={window.linkUrl} id="link-logo" />
                 </a>
-                {/* <small>Linkedin</small> */}
               </li>
               <br />
               <li>
@@ -82,7 +78,6 @@ class Footer extends React.Component {
                 >
                   <img src={window.angelUrl} id="angel-logo" />
                 </a>
-                {/* <small>Angellist</small> */}
               </li>
               <br />
               <li>
