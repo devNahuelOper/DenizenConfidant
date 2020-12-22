@@ -33,8 +33,7 @@ class Dropdown extends React.Component {
   leave(e) {
     this.setState({ "drop": false });
   }
-  // onBlur = { this.leave }
-  // onTouchEnter = { this.clicker } onTouchLeave = { this.leave }
+
   render() {
     return (
      <div className="login-wrap">
