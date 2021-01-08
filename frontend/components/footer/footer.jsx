@@ -66,7 +66,7 @@ class Footer extends React.Component {
                   target="_blank"
                   title="Linkedin"
                 >
-                  <img src={window.linkUrl} id="link-logo" />
+                  <img src={window.linkUrl} id="linkedin-logo" />
                 </a>
               </li>
               <br />
