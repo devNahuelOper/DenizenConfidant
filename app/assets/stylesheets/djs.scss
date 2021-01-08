@@ -472,7 +472,7 @@
   hr {
     border-color: #fdff00;
   }
-  #song-title {
+  .song-title {
     color: #fdff00;
     font-size: 15px;
     font-weight: 100;
@@ -908,7 +908,7 @@ select {
     }
     .playlist {
       width: 560px;
-      #song-title {
+      .song-title {
         font-size: 13px;
       }
       .songs {
@@ -1203,7 +1203,7 @@ select {
         width: 300px;
         height: 44px;
       }
-      #song-title {
+      .song-title {
         font-weight: bold;
         font-size: 16px;
       }
