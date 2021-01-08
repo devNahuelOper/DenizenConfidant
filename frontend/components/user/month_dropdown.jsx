@@ -1,46 +1,59 @@
-import React from 'react';
-import { formatMonth, monthDrop } from '../../util/calendar_util';
+import React from "react";
+import { formatMonth, monthDrop } from "../../util/calendar_util";
 
 class MonthDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      drop: false
-    }
+      drop: false,
+    };
     this.clicker = this.clicker.bind(this);
     this.leave = this.leave.bind(this);
   }
 
   clicker(e) {
     e.preventDefault();
-    this.setState({ "drop": true });
+    this.setState({ drop: true });
   }
 
   leave(e) {
     e.preventDefault();
-    this.setState({ "drop": false });
+    this.setState({ drop: false });
   }
 
   render() {
- 
+    
+    document.addEventListener("click", (e) => {
+      let months = document.getElementsByClassName("month-dropdown")[0];
+      if (months.contains(e.target)) return;
+      this.setState({ drop: false });
+    });
+
     return (
       <>
-        <button onClick={() => { this.setState({ drop: !this.state.drop }) }}  onBlur={this.leave} className="month-dropdown">
+        <button
+          onClick={() => {
+            this.setState({ drop: !this.state.drop });
+          }}
+          onBlur={this.leave}
+          className="month-dropdown"
+        >
           <span>{formatMonth(this.props.month)}</span>
           <ul className={this.state.drop ? "month-reveal" : "month-hide"}>
-            {monthDrop.map(month => 
-            <li key={month.value}
-              onClick={() => {
-                this.props.onChange(month);
-              }}
+            {monthDrop.map((month) => (
+              <li
+                key={month.value}
+                onClick={() => {
+                  this.props.onChange(month);
+                }}
               >
-              {month.label}
-            </li>
-              )}
+                {month.label}
+              </li>
+            ))}
           </ul>
-       </button>
+        </button>
       </>
-    )
+    );
   }
 }
 
