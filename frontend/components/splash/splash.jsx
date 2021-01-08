@@ -5,6 +5,7 @@ import { toggleSearch } from "../../util/search_util";
 import { fiveDaySpan } from "../../util/date_util";
 import NewsIndex from "../news/news_index";
 import NavBar from "../navbar/navbar";
+import { secretHover } from "../../util/splash_util";
 
 class SplashPage extends React.Component {
   constructor(props) {
@@ -23,16 +24,8 @@ class SplashPage extends React.Component {
     const { djs, news } = this.props;
     let dates = fiveDaySpan(this.state.date);
 
-    $(".denizen-confidant")
-      .on("mouseover", () => {
-        $(".denizen-confidant").attr(
-          "id",
-          `bg${Math.floor(Math.random() * 10)}`
-        );
-      })
-      .on("mouseout", () => {
-        $(".denizen-confidant").attr("id", "bgnone");
-      });
+    secretHover();
+
     return (
       <>
         <header>
@@ -76,7 +69,7 @@ class SplashPage extends React.Component {
               <ul className="beatlist">
                 <li className="song">
                   <article>
-                    <img src={window.gesaffelsteinUrl} id="gesaffelstein" />
+                    <img src={window.gesaffelsteinUrl} id="gesaffelstein" alt="Gesaffelstein"/>
                     <Link
                       id="gesaffelstein-link"
                       to={`/djs/${djs["Gesaffelstein"]}`}
@@ -89,7 +82,7 @@ class SplashPage extends React.Component {
                 </li>
                 <li className="song">
                   <article>
-                    <img src={window.deadmau5Url} id="deadmau5" />
+                    <img src={window.deadmau5Url} id="deadmau5" alt="Deadmau5"/>
                     <Link
                       id="deadmau5-link"
                       to={`/djs/${djs["Deadmau5"]}`}
@@ -103,7 +96,7 @@ class SplashPage extends React.Component {
                 </li>
                 <li className="song">
                   <article>
-                    <img src={window.noisufUrl} id="noisuf" />
+                    <img src={window.noisufUrl} id="noisuf" alt="Noisuf-X"/>
                     <Link
                       id="noisuf-link"
                       to={`/djs/${djs["Noisuf-X"]}`}
@@ -116,7 +109,7 @@ class SplashPage extends React.Component {
                 </li>
                 <li className="song">
                   <article>
-                    <img src={window.nomanaUrl} id="nomana" />
+                    <img src={window.nomanaUrl} id="nomana" alt="No Mana"/>
                     <Link
                       id="nomana-link"
                       to={`/djs/${djs["No Mana"]}`}
@@ -129,7 +122,7 @@ class SplashPage extends React.Component {
                 </li>
                 <li className="song">
                   <article>
-                    <img src={window.kayzoUrl} id="kayzo" />
+                    <img src={window.kayzoUrl} id="kayzo" alt="Kayzo"/>
                     <Link
                       id="kayzo-link"
                       to={`/djs/${djs["Kayzo"]}`}
@@ -142,7 +135,7 @@ class SplashPage extends React.Component {
                 </li>
                 <li className="song">
                   <article>
-                    <img src={window.prydzUrl} id="prydz" />
+                    <img src={window.prydzUrl} id="prydz" alt="Eric Prydz"/>
                     <Link
                       id="prydz-link"
                       to={`/djs/${djs["Eric Prydz"]}`}

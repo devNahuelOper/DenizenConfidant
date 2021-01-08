@@ -8,13 +8,13 @@ import { fetchEvents } from "../../actions/event_actions";
 import { Link } from "react-router-dom";
 import NavBar from "../navbar/navbar";
 import SubnavToggle from "../subnav/subnav";
-import { expandCountry, getCountry } from "../../util/location_util";
+import { expandCountry } from "../../util/location_util";
 import {
   formatMonthYear,
   formatLastOnline,
   formatTime,
-  formatAbsDate,
 } from "../../util/date_util";
+import { activateCalendar } from "../../util/calendar_util";
 import { toggleSearch } from "../../util/search_util";
 import { TitleComponent } from "../title_component.jsx";
 import Calendar from "./calendar";
@@ -35,23 +35,12 @@ class UserProfile extends React.Component {
   }
 
   toggleCalendar() {
-    $(".calendar").toggle();
-    $("#calendar-toggle").toggleClass("form");
-    $("#overview").toggleClass("form");
-    $(".user-main").toggleClass("cal-bg");
-    $(".user-subheader-container").toggle();
-    $("#overview").on("click", () => {
-      $(".calendar").hide();
-      $("#overview").addClass("form");
-      $("#calendar-toggle").removeClass("form");
-      $(".user-main").removeClass("cal-bg");
-      $(".user-subheader-container").show();
-    });
+    activateCalendar();
   }
 
   render() {
     const { currentUser, events } = this.props;
-    const lastOnline = localStorage.getItem("lastOnline");
+    const lastOnline = localStorage.getItem("lastOnline") || new Date();
     return (
       <React.Fragment>
         <TitleComponent title={`DC: ${currentUser.username}`} />
@@ -73,7 +62,6 @@ class UserProfile extends React.Component {
                 <li>
                   <Link to={`/users/${currentUser.id}/events`}>My Events</Link>
                 </li>
-                {/* <li><Link to="/">Take me back home</Link></li> */}
               </ul>
             </section>
             <SubnavToggle

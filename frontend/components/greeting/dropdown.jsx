@@ -33,12 +33,10 @@ class Dropdown extends React.Component {
   leave(e) {
     this.setState({ "drop": false });
   }
-  // onBlur = { this.leave }
-  // onTouchEnter = { this.clicker } onTouchLeave = { this.leave }
+
   render() {
     return (
      <div className="login-wrap">
-        {/* <Tappable onTap={this.clicker}> */}
         <button onFocus={this.clicker} onBlur={this.leave}  className="login-signup"> 
           <span onClick={this.mobileDrop}>Login / Register <small>⬇︎</small></span> 
          <ul className={this.state.drop ? "reveal" : "hide"}>
@@ -46,7 +44,6 @@ class Dropdown extends React.Component {
             <li><Link onClick={this.leave} className="log-link" to="/signup">Register</Link></li>
          </ul>
        </button>
-       {/* </Tappable> */}
      </div>
     ) 
   }

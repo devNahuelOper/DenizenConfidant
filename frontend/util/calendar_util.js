@@ -1,5 +1,4 @@
-import _ from 'lodash';
-
+import _ from "lodash";
 
 function fillMonth(year, month) {
   let calendar = Array.from(Array(35));
@@ -36,7 +35,7 @@ function cachingDecorator(func, hash) {
     let result = func.apply(this, arguments);
     cache.set(key, result);
     return result;
-  }
+  };
 }
 
 function hash(args) {
@@ -46,57 +45,70 @@ function hash(args) {
 export const getCalendar = (year, month) => {
   fillMonth = cachingDecorator(fillMonth, hash);
   return fillMonth(year, month);
-}
-
-export const formatMonth = month => {
-  const months = {
-    0: 'January',
-    1: 'February',
-    2: 'March',
-    3: 'April',
-    4: 'May',
-    5: 'June',
-    6: 'July',
-    7: 'August',
-    8: 'September',
-    9: 'October',
-    10: 'November',
-    11: 'December',
-  };
-  
-  return `${months[month]}`;
 };
 
+export const formatMonth = (month) => {
+  const months = {
+    0: "January",
+    1: "February",
+    2: "March",
+    3: "April",
+    4: "May",
+    5: "June",
+    6: "July",
+    7: "August",
+    8: "September",
+    9: "October",
+    10: "November",
+    11: "December",
+  };
+
+  return `${months[month]}`;
+};
 
 // fillMonth = cachingDecorator(fillMonth, hash);
 
 const options = [
-  { value: 11, label: 'December' },
-  { value: 10, label: 'November' },
-  { value: 9, label: 'October' },
-  { value: 8, label: 'September' },
-  { value: 7, label: 'August' },
-  { value: 6, label: 'July' },
-  { value: 5, label: 'June' },
-  { value: 4, label: 'May' },
-  { value: 3, label: 'April' },
-  { value: 2, label: 'March' },
-  { value: 1, label: 'February' },
-  { value: 0, label: 'January' }
+  { value: 11, label: "December" },
+  { value: 10, label: "November" },
+  { value: 9, label: "October" },
+  { value: 8, label: "September" },
+  { value: 7, label: "August" },
+  { value: 6, label: "July" },
+  { value: 5, label: "June" },
+  { value: 4, label: "May" },
+  { value: 3, label: "April" },
+  { value: 2, label: "March" },
+  { value: 1, label: "February" },
+  { value: 0, label: "January" },
 ];
-
 
 export const monthDrop = [
-  { value: 11, label: 'December' },
-  { value: 10, label: 'November' },
-  { value: 9, label: 'October' },
-  { value: 8, label: 'September' },
-  { value: 7, label: 'August' },
-  { value: 6, label: 'July' },
-  { value: 5, label: 'June' },
-  { value: 4, label: 'May' },
-  { value: 3, label: 'April' },
-  { value: 2, label: 'March' },
-  { value: 1, label: 'February' },
-  { value: 0, label: 'January' }
+  { value: 11, label: "December" },
+  { value: 10, label: "November" },
+  { value: 9, label: "October" },
+  { value: 8, label: "September" },
+  { value: 7, label: "August" },
+  { value: 6, label: "July" },
+  { value: 5, label: "June" },
+  { value: 4, label: "May" },
+  { value: 3, label: "April" },
+  { value: 2, label: "March" },
+  { value: 1, label: "February" },
+  { value: 0, label: "January" },
 ];
+
+export const activateCalendar = () => {
+  $(".calendar").toggle();
+  $("#calendar-toggle").toggleClass("form");
+  $("#overview").toggleClass("form");
+  $(".user-main").toggleClass("cal-bg");
+  $(".user-subheader-container").toggle();
+  $("#overview").on("click", () => {
+    $(".calendar").hide();
+    $("#overview").addClass("form");
+    $("#calendar-toggle").removeClass("form");
+    $(".user-main").removeClass("cal-bg");
+    $(".user-subheader-container").show();
+  });
+};
