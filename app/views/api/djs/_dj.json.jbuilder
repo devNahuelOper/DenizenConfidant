@@ -1,4 +1,4 @@
-json.extract! dj, :id, :name, :genre, :nationality, :bio
+json.extract! dj, :id, :name, :genre, :nationality, :bio, :get_genres
 json.photoUrl polymorphic_url(dj.photo) if dj.photo.attached?
 json.trackUrl polymorphic_url(dj.track) if dj.track.attached?
 
