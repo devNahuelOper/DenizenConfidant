@@ -4,6 +4,7 @@ import { TitleComponent } from "../title_component.jsx";
 import SubnavToggle from "../subnav/subnav";
 import NavBar from "../navbar/navbar";
 import { toggleSearch } from "../../util/search_util";
+import _ from "lodash";
 
 class GenreShow extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class GenreShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchGenre(this.props.match.params.genreId);
-    this.props.fetchDjs();
+    // this.props.fetchDjs();
     window.scrollTo(0, 0);
   }
 
@@ -25,8 +26,16 @@ class GenreShow extends React.Component {
       return null;
     }
     const { genre } = this.props;
-    const ids = genre.artist_ids;
-    const length = genre.artists.length / 2;
+
+    // const ids = genre.artist_ids;
+    // const length = genre.artists.length / 2;
+
+    const artists = Array.from(new Set(genre.artists));
+    const artist_ids = Array.from(
+      new Set(genre.artist_ids.map((id) => id.toString()))
+    );
+
+    const exampleDjs = _.zip(artists, artist_ids).sort();
     return (
       <React.Fragment>
         <TitleComponent title={`DC: ${genre.name}`} />
@@ -88,7 +97,7 @@ class GenreShow extends React.Component {
               <h1>{genre.name} DJs</h1>
               <hr />
               <ul className="example-list">
-                {genre.artists
+                {/* {genre.artists
                   .slice(0, length)
                   .sort()
                   .map((artist) => (
@@ -103,7 +112,16 @@ class GenreShow extends React.Component {
                         {artist}
                       </Link>
                     </li>
-                  ))}
+                  ))} */}
+                {exampleDjs.map((ex) => (
+                  <li
+                    className={ex[0].length >= 20 ? "long-link" : "normal-link"}
+                    id="dj-link"
+                    key={ex[1]}
+                  >
+                    <Link to={`/djs/${ex[1]}`}>{ex[0]}</Link>
+                  </li>
+                ))}
               </ul>
             </section>
           </div>
