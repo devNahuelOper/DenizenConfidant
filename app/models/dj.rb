@@ -19,15 +19,16 @@ class Dj < ApplicationRecord
   has_many_attached :songs
   has_one_attached :track
 
-  # after_initialize :add_genres
-
-  def add_genres
+  def get_genres
+    genre_hash = {}
     genres = Genre.all
-    own_genre = self.genre.split
+    own_genres = self.genre.split.map {|gen| gen.strip}
+
     genres.each do |genre|
-      if own_genre.include?(genre)
-        self.genre_ids.push(genre.id)
+      if own_genres.include?(genre.name)
+        genre_hash[genre.name] = genre.id
       end
     end
+    genre_hash
   end
 end
