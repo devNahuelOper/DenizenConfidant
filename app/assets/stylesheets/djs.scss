@@ -1,5 +1,6 @@
 .djs-index {
-  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  font-family: Helvetica, Arial, Verdana, "Hiragino Kaku Gothic Pro",
+    "Hiragino Kaku Gothic Pro W3";
   background-color: #1e1e1e;
   border-bottom: 1px solid #575757;
   // .hide {
@@ -14,12 +15,12 @@
   }
 }
 
-#djs-nav{
-    width: 952px;
-    height: 215px;
-    margin: 0 auto;
-    color: black;
-    justify-content: normal;
+#djs-nav {
+  width: 952px;
+  height: 215px;
+  margin: 0 auto;
+  color: black;
+  justify-content: normal;
   nav {
     display: flex;
     justify-content: space-between;
@@ -31,7 +32,7 @@
       left: unset;
       li:first-of-type {
         background-color: white;
-        border-color:  white;
+        border-color: white;
       }
       li:nth-of-type(3) {
         border-color: #b4bd02;
@@ -85,7 +86,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  #djs-nav{
+  #djs-nav {
     height: 554px;
     display: flex;
     flex-direction: column;
@@ -94,7 +95,7 @@
     h1 {
       line-height: unset;
     }
-  
+
     #links {
       li:first-of-type {
         // background-color: unset;
@@ -115,17 +116,15 @@
   }
 }
 
-#black, #dimitri  {
+#black,
+#dimitri {
   font-size: 15px;
 }
 
-
-
-
 .djs-subnav-container {
   background-color: #ff0;
-  border-top: 1px solid rgba(255,255,255,.4);
-  border-top-color: rgba(69,69,69,.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-top-color: rgba(69, 69, 69, 0.4);
 }
 
 .djs-subnav {
@@ -141,18 +140,19 @@
   li {
     height: 40px;
     float: left;
-    border-left: 1px solid rgba(69,69,69,.4);
+    border-left: 1px solid rgba(69, 69, 69, 0.4);
     a {
-     display: block;
-     padding: 10px 14px;
-     line-height: 19px;
+      display: block;
+      padding: 10px 14px;
+      line-height: 19px;
     }
     &:last-child {
-      border-right: 1px solid rgba(69,69,69,.4);
+      border-right: 1px solid rgba(69, 69, 69, 0.4);
     }
   }
 
-  li:hover, .form:hover {
+  li:hover,
+  .form:hover {
     background-color: black;
     color: white;
   }
@@ -179,7 +179,6 @@
     color: transparent;
   }
 }
-
 
 .djs-container {
   position: relative;
@@ -215,9 +214,6 @@
   }
 }
 
-
-
-
 // DJ Show Pages
 
 #aboveandbeyond-container {
@@ -228,9 +224,10 @@
   background-position-y: -45px;
 }
 #aphextwin-container {
-  #djs-nav{
+  #djs-nav {
     color: black;
-    .djshow-header a, nav #logo {
+    .djshow-header a,
+    nav #logo {
       filter: invert(1);
     }
   }
@@ -269,9 +266,10 @@
 }
 
 #fearoftigers-container {
-  #djs-nav{
+  #djs-nav {
     color: black;
-    .djshow-header a, nav #logo {
+    .djshow-header a,
+    nav #logo {
       filter: invert(1);
     }
   }
@@ -281,7 +279,7 @@
 }
 #heyz-container {
   background-position-y: -20px;
-  #djs-nav{
+  #djs-nav {
     #links {
       color: black;
     }
@@ -322,9 +320,10 @@
 }
 #masterbootrecord-container {
   background-position-y: -140px;
-  #djs-nav{
+  #djs-nav {
     color: #a6a6a6;
-    .djshow-header a, nav #logo {
+    .djshow-header a,
+    nav #logo {
       filter: contrast(0.5);
     }
   }
@@ -367,9 +366,10 @@
 }
 #virtualself-container {
   background-position-y: -100px;
-  #djs-nav{
+  #djs-nav {
     color: black;
-    .djshow-header a, nav #logo {
+    .djshow-header a,
+    nav #logo {
       filter: invert(1);
     }
   }
@@ -392,8 +392,6 @@
 #zomboy-container {
   // background-position-y: -60px;
 }
-
-
 
 .djsubheader-container {
   position: relative;
@@ -426,7 +424,7 @@
   margin-right: 10px;
   &:hover {
     color: black;
-    background-color:  #fdff00;
+    background-color: #fdff00;
   }
 }
 
@@ -444,7 +442,7 @@
   padding: 50px 0;
   h1 {
     font-size: 24px;
-     &::selection {
+    &::selection {
       background-color: #fdff00;
       color: #1e1e1e;
     }
@@ -461,8 +459,6 @@
   }
 }
 
-
-
 .playlist {
   width: 952px;
   margin: 0 auto;
@@ -478,7 +474,7 @@
     font-weight: 100;
   }
   .songs {
-    width:960px;
+    width: 960px;
     display: flex;
     flex-direction: column;
     flex-flow: wrap;
@@ -533,10 +529,9 @@ select {
   }
   h1 {
     font-size: 24px;
-
   }
   hr {
-     border-color: #fdff00;
+    border-color: #fdff00;
   }
   p {
     color: #9c9c9c;
@@ -568,14 +563,13 @@ select {
       font-style: normal;
     }
   }
- .hidden {
+  .hidden {
     display: none;
   }
- .show {
-   display: block;
- }
+  .show {
+    display: block;
+  }
 }
-
 
 .new-dj-formlist {
   li {
@@ -583,7 +577,8 @@ select {
   }
 }
 
-#genre-select, #nationality-select {
+#genre-select,
+#nationality-select {
   width: 165px;
   height: 30px;
   -webkit-appearance: auto;
@@ -699,7 +694,6 @@ select {
   }
 }
 
-
 #success-link {
   color: #ffff01;
   &:hover {
@@ -708,16 +702,14 @@ select {
   }
 }
 
-
 .dj-errors {
   white-space: nowrap;
 }
 
-
 // Smaller
 
 @media only screen and (max-width: 972px) {
-  #djs-nav{
+  #djs-nav {
     width: 675px;
     height: 128px;
     nav {
@@ -739,18 +731,18 @@ select {
   }
   .djs-subnav-container {
     border-top: unset;
-   .subnav-drop {
-     width: 675px;
-     span {
-       width: 650px;
+    .subnav-drop {
+      width: 675px;
+      span {
+        width: 650px;
         &:hover small {
           margin-right: 16px;
         }
-     }
+      }
       .reveal {
-      background-color: #fdff00;
-     }
-   }
+        background-color: #fdff00;
+      }
+    }
   }
   #dj-show #expand {
     height: 134px;
@@ -777,14 +769,15 @@ select {
   #dj-name {
     width: fit-content;
   }
-  #black, #dimitri {
+  #black,
+  #dimitri {
     font-size: 14px;
   }
 
   .djshow-nav-container {
     // height: 475px;
     height: 340px;
-    #djs-nav{
+    #djs-nav {
       // height: 454px;
       height: 330px;
       .djshow-header {
@@ -823,9 +816,8 @@ select {
   }
 }
 
-
 @media only screen and (max-width: 700px) {
-  #djs-nav{
+  #djs-nav {
     width: 560px;
     nav {
       width: 560px;
@@ -845,14 +837,13 @@ select {
     .subnav-drop {
       width: 560px;
       span {
-       width: 535px;
+        width: 535px;
         &:hover small {
           margin-right: 17px;
         }
       }
     }
   }
-
 
   .dj-directory {
     width: 560px;
@@ -867,21 +858,21 @@ select {
   .dj {
     font-size: 13px;
   }
-  #black, #dimitri {
+  #black,
+  #dimitri {
     font-size: 12px;
   }
 
   .djshow-nav-container {
     // height: 435px;
     height: 260px;
-    #djs-nav{
+    #djs-nav {
       //  height: 420px;
       height: 250px;
       .djshow-header {
-         width: 560px;
+        width: 560px;
       }
     }
-   
   }
 
   // #dj-show .djs-subnav #pending small {
@@ -895,7 +886,7 @@ select {
 
   .djsubheader-container {
     .djshow-subheader {
-       width: 560px;
+      width: 560px;
       .details {
         white-space: nowrap;
         width: 560px;
@@ -904,7 +895,7 @@ select {
   }
   .dj-main {
     .bio-container {
-       width: 560px;
+      width: 560px;
     }
     .playlist {
       width: 560px;
@@ -912,10 +903,10 @@ select {
         font-size: 13px;
       }
       .songs {
-         width: 560px;
-         .dj-song {
-           width: 245px;
-         }
+        width: 560px;
+        .dj-song {
+          width: 245px;
+        }
       }
       audio {
         width: 235px;
@@ -942,7 +933,7 @@ select {
 }
 
 @media only screen and (max-width: 560px) {
-  #djs-nav{
+  #djs-nav {
     width: 490px;
     nav {
       width: 490px;
@@ -961,11 +952,10 @@ select {
     .subnav-drop {
       width: 490px;
       span {
-       width: 465px;
+        width: 465px;
       }
     }
   }
-
 
   .dj-directory {
     width: 490px;
@@ -979,13 +969,14 @@ select {
   .dj {
     font-size: 15px;
   }
-  #black, #dimitri {
+  #black,
+  #dimitri {
     font-size: 13px;
   }
 
   .djshow-nav-container {
     // height: 400px;
-    #djs-nav{
+    #djs-nav {
       //  height: 380px;
       .djshow-header {
         width: 490px;
@@ -1001,7 +992,7 @@ select {
 
   .djsubheader-container {
     .djshow-subheader {
-       width: 490px;
+      width: 490px;
       .details {
         white-space: nowrap;
         width: 490px;
@@ -1013,15 +1004,15 @@ select {
   }
   .dj-main {
     .bio-container {
-       width: 490px;
+      width: 490px;
     }
     .playlist {
       width: 490px;
       .songs {
-         width: 490px;
-         .dj-song {
-           width: 220px;
-         }
+        width: 490px;
+        .dj-song {
+          width: 220px;
+        }
       }
       audio {
         width: 220px;
@@ -1039,7 +1030,7 @@ select {
 }
 
 @media only screen and (max-width: 499px) {
-  #djs-nav{
+  #djs-nav {
     width: 360px;
     overflow: auto;
     nav {
@@ -1104,17 +1095,18 @@ select {
   .dj {
     font-size: 18px;
   }
-  #black, #dimitri {
+  #black,
+  #dimitri {
     font-size: 16px;
   }
 
   .djshow-nav-container {
     background-position: center !important;
     // height: 400px;
-    #djs-nav{
+    #djs-nav {
       nav {
         position: relative;
-        top: -5px
+        top: -5px;
       }
       //  height: 380px;
       .djshow-header {
@@ -1123,33 +1115,34 @@ select {
     }
   }
   #arminvanbuuren-container {
-    background-image: image_url('arminvanbuuren.jpg') !important;
+    background-image: image_url("arminvanbuuren.jpg") !important;
   }
   #crystalcastles-container {
     background-position: 40px 0 !important;
   }
   #hardwell-container {
-    background-image: image_url('hardwell.jpg') !important;
+    background-image: image_url("hardwell.jpg") !important;
     background-position-y: -30px !important;
   }
   #kayzo-container {
-    background-image: image_url('kayzo.jpg') !important;
+    background-image: image_url("kayzo.jpg") !important;
     background-position-y: 0px !important;
   }
-  #lnytnz-container, #warface-container {
+  #lnytnz-container,
+  #warface-container {
     background-position-y: 0px !important;
   }
   #nero-container {
-    background-image: image_url('nero.jpg') !important;
+    background-image: image_url("nero.jpg") !important;
     // background-position-x: 0px !important;
     background-position-x: 15px !important;
     background-repeat: repeat;
   }
   #owlvision-container {
-    background-image: image_url('owlvision.jpg') !important;
+    background-image: image_url("owlvision.jpg") !important;
   }
   #quintino-container {
-    background-image: image_url('quintino.jpg') !important;
+    background-image: image_url("quintino.jpg") !important;
   }
   #stonebank-container {
     background-color: #111921;
@@ -1164,7 +1157,7 @@ select {
 
   .djsubheader-container {
     .djshow-subheader {
-       width: 360px;
+      width: 360px;
       .details {
         white-space: nowrap;
         width: 360px;
@@ -1182,22 +1175,22 @@ select {
   }
   .dj-main {
     .bio-container {
-       width: 360px;
-       #bio {
+      width: 360px;
+      #bio {
         max-height: 400px;
         overflow: scroll;
         // text-indent: 1em;
-       }
+      }
     }
     .playlist {
       width: 360px;
       .songs {
-         width: 360px;
-         overflow: scroll;
-         max-height: 300px;
-         .dj-song {
-           width: 300px;
-         }
+        width: 360px;
+        overflow: scroll;
+        max-height: 300px;
+        .dj-song {
+          width: 300px;
+        }
       }
       audio {
         width: 300px;
@@ -1223,17 +1216,19 @@ select {
   }
 }
 
-
 // Larger
 
-@media only screen and (min-width: 1300px){
-  #djs-nav{
+@media only screen and (min-width: 1300px) {
+  #djs-nav {
     width: 1272px;
     nav {
       width: 1272px;
       #links {
         left: -147px;
       }
+    }
+    .djshow-header {
+      width: 1272px;
     }
     h1 {
       width: 1272px;
@@ -1255,7 +1250,8 @@ select {
     margin-right: 22px;
   }
 
-  .eventshow-header, .djshow-header {
+  .eventshow-header,
+  .djshow-header {
     width: 1272px;
   }
   .djsubheader-container {
@@ -1264,7 +1260,8 @@ select {
     }
   }
   .dj-main {
-    .bio-container, .playlist {
+    .bio-container,
+    .playlist {
       width: 1272px !important;
       .songs {
         width: 1272px;
