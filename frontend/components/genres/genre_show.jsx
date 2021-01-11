@@ -13,7 +13,6 @@ class GenreShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchGenre(this.props.match.params.genreId);
-    // this.props.fetchDjs();
     window.scrollTo(0, 0);
   }
 
@@ -26,9 +25,6 @@ class GenreShow extends React.Component {
       return null;
     }
     const { genre } = this.props;
-
-    // const ids = genre.artist_ids;
-    // const length = genre.artists.length / 2;
 
     const artists = Array.from(new Set(genre.artists));
     const artist_ids = Array.from(
@@ -97,22 +93,6 @@ class GenreShow extends React.Component {
               <h1>{genre.name} DJs</h1>
               <hr />
               <ul className="example-list">
-                {/* {genre.artists
-                  .slice(0, length)
-                  .sort()
-                  .map((artist) => (
-                    <li
-                      className={
-                        artist.length >= 20 ? "long-link" : "normal-link"
-                      }
-                      id="dj-link"
-                      key={artist}
-                    >
-                      <Link to={`/djs/${ids[genre.artists.indexOf(artist)]}`}>
-                        {artist}
-                      </Link>
-                    </li>
-                  ))} */}
                 {exampleDjs.map((ex) => (
                   <li
                     className={ex[0].length >= 20 ? "long-link" : "normal-link"}
