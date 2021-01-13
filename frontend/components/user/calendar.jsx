@@ -22,12 +22,6 @@ class Calendar extends React.Component {
     // console.log('calendar props: ',this.props);
   }
 
-  // componentDidUpdate() {
-  //   console.log(this.props.events.filter(event =>
-  //     formatAbsDate(event.date).year === this.state.year && formatAbsDate(event.date).month === this.state.month
-  //   ));
-  // }
-
   getEvents() {
     this.setState({
       events: this.props.events.filter(
@@ -44,7 +38,6 @@ class Calendar extends React.Component {
       this.setState({ year: this.state.year + 1 });
     }
     this.getEvents();
-    // console.log(this.state);
   }
 
   prevMonth() {
