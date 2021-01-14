@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { fetchNews } from '../../actions/news_actions';
 import { formatDateNewsShow, timeSinceBeganCoding } from '../../util/date_util';
 import { toggleSearch } from '../../util/search_util';
