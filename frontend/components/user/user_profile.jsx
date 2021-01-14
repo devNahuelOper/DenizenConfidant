@@ -4,7 +4,6 @@ import {
   fetchCurrentUser,
   getCurrentUser,
 } from "../../actions/session_actions";
-import { fetchEvents } from "../../actions/event_actions";
 import { Link } from "react-router-dom";
 import NavBar from "../navbar/navbar";
 import SubnavToggle from "../subnav/subnav";
@@ -22,16 +21,11 @@ import Calendar from "./calendar";
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   events: this.props.events,
-    // };
     this.toggleCalendar = this.toggleCalendar.bind(this);
   }
 
   componentDidMount() {
-    // this.props.fetchEvents();
     toggleSearch();
-    // console.log(this.props.currentUser.events);
   }
 
   toggleCalendar() {
@@ -95,13 +89,7 @@ class UserProfile extends React.Component {
             </section>
           </div>
           <div className="user-main">
-            <Calendar
-              currentUser={currentUser}
-              events={currentUser.events}
-              // events={events.filter(
-              //   (event) => event.user_id === currentUser.id
-              // )}
-            />
+            <Calendar currentUser={currentUser} events={currentUser.events} />
           </div>
         </div>
       </React.Fragment>
@@ -112,15 +100,11 @@ class UserProfile extends React.Component {
 const mapStateToProps = (state) => {
   return {
     currentUser: getCurrentUser(state),
-    // events: Object.values(state.entities.events).filter((event) =>
-    //   event.hasOwnProperty("user_id")
-    // ),
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
   fetchCurrentUser: (userId) => dispatch(fetchCurrentUser(userId)),
-  // fetchEvents: (events) => dispatch(fetchEvents(events)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);

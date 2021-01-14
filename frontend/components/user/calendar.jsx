@@ -15,11 +15,12 @@ class Calendar extends React.Component {
     this.nextMonth = this.nextMonth.bind(this);
     this.prevMonth = this.prevMonth.bind(this);
     this.getEvents = this.getEvents.bind(this);
+    this.handleMonthDrop = this.handleMonthDrop.bind(this);
   }
 
   componentDidMount() {
     this.getEvents();
-    console.log('calendar props: ',this.props);
+    // console.log('calendar props: ',this.props);
   }
 
   getEvents() {
@@ -48,6 +49,11 @@ class Calendar extends React.Component {
     this.getEvents();
   }
 
+  handleMonthDrop(newMonth) {
+    this.setState({ month: (this.state.month -= this.state.month - newMonth) });
+    this.getEvents();
+  }
+
   render() {
     const { year, month, events } = this.state;
     let fillMonth = getCalendar(year, month);
@@ -61,7 +67,7 @@ class Calendar extends React.Component {
           <li>
             <MonthDropdown
               month={this.state.month}
-              onChange={(month) => this.setState({ month: month.value })}
+              onChange={this.handleMonthDrop}
             />
           </li>
         </ul>

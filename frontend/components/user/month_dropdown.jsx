@@ -8,13 +8,7 @@ class MonthDropdown extends React.Component {
     this.state = {
       drop: false,
     };
-    this.clicker = this.clicker.bind(this);
     this.leave = this.leave.bind(this);
-  }
-
-  clicker(e) {
-    e.preventDefault();
-    this.setState({ drop: true });
   }
 
   leave(e) {
@@ -31,7 +25,6 @@ class MonthDropdown extends React.Component {
             onClick={() => {
               this.setState({ drop: !this.state.drop });
             }}
-            onBlur={this.leave}
             className="month-dropdown"
           >
             <span>{formatMonth(this.props.month)}</span>
@@ -39,9 +32,8 @@ class MonthDropdown extends React.Component {
               {monthDrop.map((month) => (
                 <li
                   key={month.value}
-                  onClick={() => {
-                    this.props.onChange(month);
-                  }}
+                  id={month.value}
+                  onClick={() => this.props.onChange(month.value)}
                 >
                   {month.label}
                 </li>
