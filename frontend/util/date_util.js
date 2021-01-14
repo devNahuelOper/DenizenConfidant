@@ -268,4 +268,23 @@ export const fiveDaySpan = (date) => {
   return dates.map(date => [date.toDateString().split(' ')[0], date.getDate()]);
 }
 
+const wordNums = {
+  13: "Thirteen",
+  14: "Fourteen",
+  15: "Fifteen",
+  16: "Sixteen",
+  17: "Seventeen",
+  18: "Eighteen",
+  19: "Nineteen",
+  20: "Twenty"
+}
+
+export const timeSinceBeganCoding = () => {
+  const start = new Date(2019, 11, 21);
+  let diff = Date.now() - start;
+  let seconds = diff / 1000;
+  let hours = seconds / 60 / 60;
+  let months = Math.round(hours / 24 / 30);
+  return months <= 20 ? wordNums[months] : months;
+}
 
