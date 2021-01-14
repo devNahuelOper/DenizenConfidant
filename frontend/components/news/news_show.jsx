@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { fetchNews } from '../../actions/news_actions';
-import { formatDateNewsShow } from '../../util/date_util';
+import { formatDateNewsShow, timeSinceBeganCoding } from '../../util/date_util';
 import { toggleSearch } from '../../util/search_util';
 import NavBar from '../navbar/navbar';
 import { TitleComponent } from '../title_component.jsx';
@@ -26,6 +25,9 @@ class NewsShow extends React.Component {
     if (!news) return null;
 
     const newsTime = formatDateNewsShow(news.updated_at).split('~');
+
+    const monthsSince = timeSinceBeganCoding();
+    const specialBlurb = news.blurb.replace("Eight", monthsSince);
     return (
     <React.Fragment>
       <TitleComponent title={`DC News: ${news.title}`} />
@@ -65,7 +67,7 @@ class NewsShow extends React.Component {
         <div className="news-main">
           <section className="blurb-wrap">
             <p className="blurb">
-              {news.blurb}
+              {news.author === "Nahuel Gorosito" ? specialBlurb : news.blurb}
             </p>
           </section>
           <section className="body-wrap">
