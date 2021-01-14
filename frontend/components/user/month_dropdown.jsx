@@ -1,5 +1,6 @@
 import React from "react";
 import { formatMonth, monthDrop } from "../../util/calendar_util";
+import { ClickAwayListener } from "@material-ui/core";
 
 class MonthDropdown extends React.Component {
   constructor(props) {
@@ -22,36 +23,32 @@ class MonthDropdown extends React.Component {
   }
 
   render() {
-    
-    document.addEventListener("click", (e) => {
-      let months = document.getElementsByClassName("month-dropdown")[0];
-      if (months.contains(e.target)) return;
-      this.setState({ drop: false });
-    });
 
     return (
       <>
-        <button
-          onClick={() => {
-            this.setState({ drop: !this.state.drop });
-          }}
-          onBlur={this.leave}
-          className="month-dropdown"
-        >
-          <span>{formatMonth(this.props.month)}</span>
-          <ul className={this.state.drop ? "month-reveal" : "month-hide"}>
-            {monthDrop.map((month) => (
-              <li
-                key={month.value}
-                onClick={() => {
-                  this.props.onChange(month);
-                }}
-              >
-                {month.label}
-              </li>
-            ))}
-          </ul>
-        </button>
+        <ClickAwayListener onClickAway={this.leave}>
+          <button
+            onClick={() => {
+              this.setState({ drop: !this.state.drop });
+            }}
+            onBlur={this.leave}
+            className="month-dropdown"
+          >
+            <span>{formatMonth(this.props.month)}</span>
+            <ul className={this.state.drop ? "month-reveal" : "month-hide"}>
+              {monthDrop.map((month) => (
+                <li
+                  key={month.value}
+                  onClick={() => {
+                    this.props.onChange(month);
+                  }}
+                >
+                  {month.label}
+                </li>
+              ))}
+            </ul>
+          </button>
+        </ClickAwayListener>
       </>
     );
   }

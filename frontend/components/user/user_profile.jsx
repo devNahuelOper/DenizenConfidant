@@ -22,16 +22,16 @@ import Calendar from "./calendar";
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      events: this.props.events,
-    };
+    // this.state = {
+    //   events: this.props.events,
+    // };
     this.toggleCalendar = this.toggleCalendar.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchEvents();
+    // this.props.fetchEvents();
     toggleSearch();
-    // console.log('user events: ',this.props.events);
+    // console.log(this.props.currentUser.events);
   }
 
   toggleCalendar() {
@@ -39,7 +39,7 @@ class UserProfile extends React.Component {
   }
 
   render() {
-    const { currentUser, events } = this.props;
+    const { currentUser } = this.props;
     const lastOnline = localStorage.getItem("lastOnline") || new Date();
     return (
       <React.Fragment>
@@ -97,9 +97,10 @@ class UserProfile extends React.Component {
           <div className="user-main">
             <Calendar
               currentUser={currentUser}
-              events={events.filter(
-                (event) => event.user_id === currentUser.id
-              )}
+              events={currentUser.events}
+              // events={events.filter(
+              //   (event) => event.user_id === currentUser.id
+              // )}
             />
           </div>
         </div>
@@ -111,15 +112,15 @@ class UserProfile extends React.Component {
 const mapStateToProps = (state) => {
   return {
     currentUser: getCurrentUser(state),
-    events: Object.values(state.entities.events).filter((event) =>
-      event.hasOwnProperty("user_id")
-    ),
+    // events: Object.values(state.entities.events).filter((event) =>
+    //   event.hasOwnProperty("user_id")
+    // ),
   };
 };
 
 const mapDispatchToProps = (dispatch) => ({
   fetchCurrentUser: (userId) => dispatch(fetchCurrentUser(userId)),
-  fetchEvents: (events) => dispatch(fetchEvents(events)),
+  // fetchEvents: (events) => dispatch(fetchEvents(events)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);
