@@ -43,8 +43,9 @@ class Footer extends React.Component {
                   title="Portfolio Site"
                 >
                   <img
-                    src="https://avatars1.githubusercontent.com/u/16979527?s=400&u=97a69e78167b0215e15d11fd3916af831bc611a0&v=4"
-                    alt={window.headshotUrl}
+                    // src="https://avatars1.githubusercontent.com/u/16979527?s=400&u=97a69e78167b0215e15d11fd3916af831bc611a0&v=4"
+                    src={window.portfolioUrl}
+                    alt="Portfolio Site"
                     id="headshot"
                   />
                   {/* <img src={window.headshotUrl} alt="Personal Site" id="headshot"/> */}
