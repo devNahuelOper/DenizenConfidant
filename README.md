@@ -129,8 +129,9 @@ class DjQuery extends React.Component {
 
 ## Frontend
 * React.js
-* Redux.js
-* Javascript
+* Redux
+* JavaScript
+* jQuery
 * CSS/SCSS
 
 ## Backend
@@ -143,6 +144,4 @@ class DjQuery extends React.Component {
 * AWS (Amazon Web Services)
 
 
-# Features to be implemented
-* Artists can create a profile and upload their music
 
