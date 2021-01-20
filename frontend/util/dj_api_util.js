@@ -30,4 +30,11 @@ export const updateDj = (djData, id) => (
     contentType: false,
     processData: false
   })
-)
+);
+
+export const deleteDj = djId => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/djs/${djId}`
+  })
+);
