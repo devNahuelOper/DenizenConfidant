@@ -489,16 +489,24 @@ body {
     }
   }
 
-  #fb-logo {
-    filter: none;
-    // margin-top: 11px;
-
-    background-color: #ffa200;
+  #headshot {
+    filter: hue-rotate(190deg) contrast(1.2);
+    box-shadow: 0px 0px 0px 2px #55aaff;
   }
 
-  // #git-logo {
-  //   border-radius: 17px;
-  // }
+  #git-logo {
+    box-shadow: 0px 0px 0px 2px #1484f5;
+    filter: hue-rotate(20deg) invert(1) contrast(1.5);
+  }
+
+  #linkedin-logo {
+    filter: hue-rotate(20deg) invert(1) saturate(1.5);
+    box-shadow: 0 0 0 2px;
+    object-fit: cover;
+    height: 32px;
+    // box-shadow: 0px -2px 0px 1px, 0px 2px 0px 1px, -1px 0px 0px 1px, 0px 0px 0px 1px;
+    // border: 1px solid #ededed;
+  }
 
   #angel-logo {
     border: 2px solid #89a5ff;
@@ -506,14 +514,12 @@ body {
     height: 32px;
   }
 
-  #headshot {
+  #fb-logo {
     filter: none;
-    border: 1px solid black;
-  }
-
-  #linkedin-logo {
-    filter: hue-rotate(15deg) invert(1) saturate(1.5);
-    // border: 1px solid #ededed;
+    background-color: #ffa200;
+    height: 32px;
+    padding: 2px;
+    box-shadow: 0 0 0 2px black;
   }
 
   #footer-msg {

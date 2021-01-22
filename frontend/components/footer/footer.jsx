@@ -48,14 +48,13 @@ class Footer extends React.Component {
                     alt="Portfolio Site"
                     id="headshot"
                   />
-                  {/* <img src={window.headshotUrl} alt="Personal Site" id="headshot"/> */}
                 </a>
               </li>
               <li>
                 <a
                   href="https://github.com/devNahuelOper/DenizenConfidant-.git"
                   target="_blank"
-                  title="Github"
+                  title="GitHub"
                 >
                   <img src={window.gitUrl} id="git-logo" />
                 </a>
@@ -85,11 +84,10 @@ class Footer extends React.Component {
                 <a
                   href="https://www.facebook.com/nahuel.gorosito.5/"
                   target="_blank"
-                  title="The Facebook"
+                  title="Facebook"
                 >
                   <img src={window.fbUrl} id="fb-logo" />
                 </a>
-                {/* <small>Facebook</small> */}
               </li>
             </ul>
           </section>
