@@ -463,18 +463,8 @@ body {
       display: flex;
       flex-direction: column;
       width: 35px;
-      small {
-        font-size: 8px;
-        color: #2f2f2f;
-        text-align: center;
-      }
     }
-    // li:last-child {
-    //     margin-top: 4px;
-    // }
     img {
-      // width: 45px;
-      // height: 40px;
       width: 35px;
       height: 30px;
       border-radius: 50%;
@@ -483,9 +473,6 @@ body {
     }
     img:hover {
       transform: scale(0.9);
-    }
-    a:hover + small {
-      color: #afacac;
     }
   }
 
