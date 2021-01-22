@@ -501,7 +501,9 @@ body {
   // }
 
   #angel-logo {
-    border: 1px solid #89a5ff;
+    border: 2px solid #89a5ff;
+    filter: hue-rotate(165deg) contrast(1.2);
+    height: 32px;
   }
 
   #headshot {
