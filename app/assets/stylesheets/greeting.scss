@@ -51,7 +51,6 @@ body {
   }
   span:hover {
     background-color: black;
-    // width: 100%;
     width: inherit;
     margin: unset;
     // padding: 14px 20px 13px 20px;
@@ -72,10 +71,8 @@ body {
 }
 
 .reveal {
-  // background-color: inherit;
   background-color: #2e2e2e;
   width: inherit;
-  // height: 200%;
   z-index: 2000;
   li {
     box-sizing: border-box;
@@ -109,10 +106,6 @@ body {
   height: 0;
 }
 
-// .login-signup {
-//   background-color: black;
-//   color: white;
-// }
 
 .welcome-container {
   width: 960px;
@@ -214,9 +207,6 @@ body {
     margin-right: 17px;
   }
 }
-// .logout-dropdown:hover {
-//   background-color: black;
-// }
 
 .Tappable-inactive,
 .Tappable-active {
@@ -237,9 +227,6 @@ body {
   .login-wrap,
   .welcome-wrap {
     width: 580px;
-    .reveal {
-      // height: 56px;
-    }
   }
   .login-signup {
     border-left: none;
@@ -281,9 +268,6 @@ body {
     width: 51px;
     height: 48px;
   }
-  .log-link {
-    // padding-right: 520px;
-  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -320,9 +304,6 @@ body {
     left: -155px;
     font-size: 12px;
   }
-  .log-link {
-    // padding-right: 435px !important;
-  }
   .login-container,
   .welcome-container {
     width: 490px;
@@ -355,22 +336,6 @@ body {
         margin-right: 8px;
       }
     }
-    //  span {
-    //   margin-top: 26px;
-    //   margin-bottom: 30px;
-    //   &:hover {
-    //     padding-bottom: unset;
-    //     margin-top: 26px;
-    //     margin-bottom: 30px;
-    //     small {
-    //       margin-right: 12px;
-    //     }
-    //   }
-    // }
-
-    // span:hover small {
-    //   margin-right: 12px;
-    // }
   }
   .welcome-container {
     width: 360px;
