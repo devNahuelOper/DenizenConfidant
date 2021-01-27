@@ -9,6 +9,8 @@
 #  bio         :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  genre_ids   :text             default([]), is an Array
+#  user_id     :bigint
 #
 require 'test_helper'
 

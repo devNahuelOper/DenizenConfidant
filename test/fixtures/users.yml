@@ -15,6 +15,7 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  email           :string
+#  events          :text             default([]), is an Array
 #
 
 one:
