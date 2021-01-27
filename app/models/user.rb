@@ -29,6 +29,7 @@ class User < ApplicationRecord
   validates :gender, presence: true
 
   has_many :events, foreign_key: :user_id, class_name: :Event, dependent: :destroy
+  has_many :djs, dependent: :destroy
 
   after_initialize :ensure_session_token
 

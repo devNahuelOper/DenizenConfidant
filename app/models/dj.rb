@@ -15,9 +15,11 @@ class Dj < ApplicationRecord
   validates :name, presence: { message: " Name must be entered"}
   validates :genre, presence: { message: " Enter at least 1 genre"}
   validates :nationality, presence: { message: " Please enter where you're from"}
+  
   has_one_attached :photo
   has_many_attached :songs
   has_one_attached :track
+  belongs_to :user
 
   def get_genres
     genre_hash = {}
