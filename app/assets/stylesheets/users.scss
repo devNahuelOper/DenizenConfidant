@@ -685,10 +685,22 @@ i {
   }
 }
 
+.user-dj-img {
+  width: 286px;
+  height: 182px;
+  border: 1px solid #6b6a6a;
+  border-radius: 2px;
+  margin-right: 12px;
+  img {
+    width: inherit;
+    height: inherit;
+  }
+}
+
 .user-dj-info {
   h2 {
     color: white;
-    font-size: 24px;
+    font-size: 28px;
     margin-bottom: 16px;
   }
   a {
@@ -696,15 +708,11 @@ i {
     font-size: 18px;
     white-space: nowrap;
     padding: 6px;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
   }
-}
-
-.user-dj-img {
-  width: 286px;
-  height: 182px;
-  border: 1px solid #6b6a6a;
-  border-radius: 2px;
-  margin-right: 12px;
 }
 
 @media only screen and (max-width: 972px) {
@@ -731,7 +739,10 @@ i {
       }
     }
   }
-  .calendar {
+  .calendar,
+  .monthToggle-wrap,
+  #myevents-list,
+  .user-djs-list {
     width: 675px;
   }
   .hasEvent {
@@ -746,10 +757,6 @@ i {
     }
   }
 
-  .monthToggle-wrap {
-    width: 675px;
-  }
-
   #myevents-header {
     width: 675px;
     justify-content: normal;
@@ -757,9 +764,7 @@ i {
       margin-left: 88px;
     }
   }
-  #myevents-list {
-    width: 675px;
-  }
+
   .user-event {
     width: 632px;
   }
@@ -808,9 +813,16 @@ i {
     }
   }
 
-  .calendar {
+  .calendar,
+  .monthToggle-wrap,
+  #myevents-header,
+  #myevents-list,
+  .user-event,
+  .eventform-subheader,
+  .user-djs-list {
     width: 560px;
   }
+
   .cal-day b {
     font-size: 2em;
   }
@@ -818,9 +830,7 @@ i {
     width: 150px;
     height: 210px;
   }
-  .monthToggle-wrap {
-    width: 560px;
-  }
+
   .monthToggle {
     width: 220px;
   }
@@ -832,15 +842,6 @@ i {
     padding-left: 0;
   }
 
-  #myevents-header {
-    width: 560px;
-  }
-  #myevents-list {
-    width: 560px;
-  }
-  .user-event {
-    width: 560px;
-  }
   .confirm {
     left: 278px;
   }
@@ -862,14 +863,16 @@ i {
   .eventform-header {
     right: unset;
   }
-  .eventform-subheader {
-    width: 560px;
-  }
+
   .update-event-form {
     width: 590px;
   }
   .event-input-hold {
     flex-direction: column;
+  }
+
+  .user-dj-img {
+    width: 236px;
   }
 }
 
@@ -895,9 +898,20 @@ i {
       }
     }
   }
-  .calendar {
+
+  .calendar,
+  .monthToggle-wrap,
+  #myevents-header,
+  #myevents-list,
+  .user-event,
+  .eventform-subheader,
+  .user-djs-list {
     width: 490px;
   }
+  .user-djs-list {
+    padding-left: 5px;
+  }
+
   .hasEvent {
     width: 150px;
     height: 190px;
@@ -915,30 +929,14 @@ i {
       }
     }
   }
-  .monthToggle-wrap {
-    width: 490px;
-  }
 
-  #myevents-header {
-    width: 490px;
-  }
-  #myevents-list {
-    width: 490px;
-  }
-  .user-event {
-    width: 490px;
-  }
   .confirm {
     left: 208px;
   }
-
   .create-event {
     .form-wrap {
       width: 490px;
     }
-  }
-  .eventform-subheader {
-    width: 490px;
   }
   #img-notice {
     font-size: 11px;
@@ -1110,9 +1108,16 @@ i {
       width: 1272px;
     }
   }
-  .calendar {
+
+  .calendar,
+  .monthToggle-wrap,
+  #myevents-header,
+  #myevents-list,
+  .eventform-subheader,
+  .user-djs-list {
     width: 1272px;
   }
+
   .hasEvent {
     .event-space {
       font-size: 20px;
@@ -1122,9 +1127,6 @@ i {
       }
     }
   }
-  .monthToggle-wrap {
-    width: 1272px;
-  }
   .monthToggle {
     width: 419px;
   }
@@ -1133,20 +1135,11 @@ i {
     width: 208px;
   }
 
-  #myevents-header {
-    width: 1272px;
-  }
-  #myevents-list {
-    width: 1272px;
-  }
   .manage-event {
     margin-right: 312px;
   }
   .confirm {
     // left: 735px;
     left: 708px;
-  }
-  .eventform-subheader {
-    width: 1272px;
   }
 }
