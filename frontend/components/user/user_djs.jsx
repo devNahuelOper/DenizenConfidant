@@ -18,6 +18,8 @@ class UserDjs extends React.Component {
   // }
 
   render() {
+    const { currentUser } = this.props;
+
     return (
       <React.Fragment>
         <TitleComponent title="DC: My DJs" />
@@ -27,6 +29,25 @@ class UserDjs extends React.Component {
               <NavBar title="My DJs" entity="User" />
             </div>
           </header>
+          <div className="my-djs">
+            {currentUser.djs.length ? (
+              <ul className="user-djs-list">
+                {currentUser.djs.map((dj, i) => 
+                <li key={i}>
+                  <article>
+                    <img src={dj.photoUrl} alt={dj.name} className="user-dj-img"/>
+                    <div className="user-dj-info">
+                      <h2>{dj.name}</h2>
+                      <Link to="/">Manage DJ Profile</Link>
+                    </div>
+                  </article>
+                </li>
+                )}
+              </ul>
+            ) : (
+              <h1>No DJ profiles under your administration.</h1>
+            )}
+          </div>
         </div>
       </React.Fragment>
     );
