@@ -18,6 +18,7 @@ class CreateDjForm extends React.Component {
       },
       nationality: "",
       bio: "",
+      user_id: this.props.currentUser.id,
       photoFile: null,
       photoUrl: null,
       songFile: null,
@@ -59,7 +60,7 @@ class CreateDjForm extends React.Component {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value });
       this.props.receiveDjErrors([]);
-      // console.log(this.state);
+      console.log(this.state);
     };
   }
 
@@ -128,6 +129,7 @@ class CreateDjForm extends React.Component {
     formData.append("dj[nationality]", this.state.nationality);
     formData.append("dj[genre]", Object.values(this.state.genre).join(" "));
     formData.append("dj[bio]", this.state.bio);
+    formData.append("dj[user_id]", this.state.user_id);
     if (this.state.photoFile) {
       formData.append("dj[photo]", this.state.photoFile);
     }

@@ -11,12 +11,6 @@ class Api::EventsController < ApplicationController
     end
   end
 
-  # def create
-  #   @event = Event.create!(event_params)
-  #   render :show
-  # end
-
-
   def index
     @events = Event.all
     render :index
