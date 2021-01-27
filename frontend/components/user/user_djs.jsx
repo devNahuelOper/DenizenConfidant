@@ -32,17 +32,19 @@ class UserDjs extends React.Component {
           <div className="my-djs">
             {currentUser.djs.length ? (
               <ul className="user-djs-list">
-                {currentUser.djs.map((dj, i) => 
-                <li key={i}>
-                  <article>
-                    <img src={dj.photoUrl} alt={dj.name} className="user-dj-img"/>
-                    <div className="user-dj-info">
-                      <h2>{dj.name}</h2>
-                      <Link to="/">Manage DJ Profile</Link>
-                    </div>
-                  </article>
-                </li>
-                )}
+                {currentUser.djs.map((dj, i) => (
+                  <li key={i}>
+                    <article>
+                      <figure className="user-dj-img">
+                        <img src={dj.photoUrl} alt={dj.name} />
+                      </figure>
+                      <div className="user-dj-info">
+                        <h2>{dj.name}</h2>
+                        <Link to="/">Manage DJ Profile</Link>
+                      </div>
+                    </article>
+                  </li>
+                ))}
               </ul>
             ) : (
               <h1>No DJ profiles under your administration.</h1>

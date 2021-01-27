@@ -420,7 +420,7 @@ body {
       margin-top: 11px;
       margin-right: 11px;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       width: 35px;
     }
     img {
@@ -534,13 +534,20 @@ body {
       }
       img {
         width: 25px;
-        height: 20px;
+        height: 25px;
       }
     }
     #headshot {
       border-radius: 50%;
       // border: 1px solid #2e2e2e;
       border: unset;
+    }
+    #linkedin-logo, #fb-logo {
+      height: 27px;
+    }
+    #angel-logo {
+      width: 28px;
+      height: 28px;
     }
   }
 }
@@ -557,21 +564,7 @@ body {
       width: 440px;
     }
   }
-  .footer .footer-links {
-    li {
-      width: 15px;
-    }
-    img {
-      width: 20px;
-      height: 19px;
-    }
-    #headshot {
-      margin-top: 1px;
-    }
-    #git-logo {
-      border: 1px solid;
-    }
-  }
+ 
 }
 
 @media only screen and (max-width: 499px) {
