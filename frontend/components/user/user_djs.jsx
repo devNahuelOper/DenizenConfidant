@@ -13,6 +13,10 @@ class UserDjs extends React.Component {
     super(props);
   }
 
+  // componentDidMount() {
+  //   console.log(this.props);
+  // }
+
   render() {
     return (
       <React.Fragment>
