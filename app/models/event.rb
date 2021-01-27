@@ -16,8 +16,6 @@
 #  user_id     :integer
 #
 class Event < ApplicationRecord
-  # attr_accessor :name
-  # validates :name, :venue, :location, presence: true
   validates :name, presence: { message: " Please add the Title of this event"}
   validates :location, presence: { message: " Please provide a location"}
   validates :venue, presence: { message: " Please select a venue"}
