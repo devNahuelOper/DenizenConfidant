@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .user-profile {
   #nav-container {
     height: 215px;
@@ -20,13 +19,13 @@
     .details {
       display: flex;
       li {
-          text-align: left;
-          font-weight: normal;
-          // color: #ffa100;
-          color: white;
-          font-size: 16px;
-          padding: 16px 0;
-          margin-right: 180px;
+        text-align: left;
+        font-weight: normal;
+        // color: #ffa100;
+        color: white;
+        font-size: 16px;
+        padding: 16px 0;
+        margin-right: 180px;
         small {
           color: #b4b4b4;
           font-size: 12px;
@@ -104,7 +103,7 @@
 }
 
 .cal-bg {
-   background: #404040;
+  background: #404040;
   //  padding: 70px 0;
 }
 
@@ -150,7 +149,7 @@
     border: 1px solid;
     // padding: 4px 0 0 0;
   }
-} 
+}
 #offDay {
   color: #787878;
   background: #3c3c3c;
@@ -168,7 +167,8 @@
   .eventName {
     display: inline-block;
   }
-  h1, a {
+  h1,
+  a {
     text-indent: 1px;
   }
   h2 {
@@ -188,18 +188,22 @@
   height: 235px;
   width: 166px;
   img {
-    background-image: image_url('rave.jpg');
+    background-image: image_url("rave.jpg");
     background-size: cover;
   }
 }
-.week, .eventWeek {
+.week,
+.eventWeek {
   vertical-align: super;
 }
 
-#sun, #thu, #fri {
+#sun,
+#thu,
+#fri {
   width: 160px;
 }
-#mon, #tue {
+#mon,
+#tue {
   width: 107px;
 }
 #wed {
@@ -295,7 +299,6 @@
   }
 }
 
-
 .event-form-container {
   background-color: #404040;
   label {
@@ -324,7 +327,6 @@
 .new-event-formlist {
   margin: 24px 0;
   li {
-    
   }
 }
 
@@ -396,7 +398,8 @@
   }
 }
 
-.event-errors, #success-msg {
+.event-errors,
+#success-msg {
   color: white;
   margin-top: 91px;
   white-space: nowrap;
@@ -404,7 +407,6 @@
 #success-msg {
   margin-left: 36px;
 }
-
 
 // Update Event Form
 
@@ -463,7 +465,8 @@ i {
   hr {
     border-color: grey;
   }
-  input, textarea {
+  input,
+  textarea {
     box-sizing: border-box;
     padding: 4px;
     color: black;
@@ -515,7 +518,7 @@ i {
 
 #update-headliners {
   height: 152px;
-  width:100%;
+  width: 100%;
 }
 
 #update-description {
@@ -557,7 +560,7 @@ i {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  
+
   #submit-event {
     display: flex;
     justify-content: center;
@@ -568,7 +571,7 @@ i {
   width: 960px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding-top:20px;
+  padding-top: 20px;
 }
 
 .user-event {
@@ -619,7 +622,7 @@ i {
   &:hover {
     background-color: #080808;
     color: #f8a102;
-    transition: .1s ease-in-out;
+    transition: 0.1s ease-in-out;
   }
 }
 // .confirm {
@@ -656,14 +659,52 @@ i {
       background-color: transparent;
       &:hover {
         color: #ffa200;
-        transition: color .3s ease-in-out;
+        transition: color 0.3s ease-in-out;
       }
       &:active {
         font-size: 14px;
-        transition: .3s ease-in-out;
+        transition: 0.3s ease-in-out;
       }
     }
   }
+}
+
+// User DJs
+
+.my-djs {
+  border-bottom: 0.1px solid #585858;
+  min-height: 224px;
+}
+
+.user-djs-list {
+  width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  article {
+    display: flex;
+  }
+}
+
+.user-dj-info {
+  h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  a {
+    background-color: #ffa200;
+    font-size: 18px;
+    white-space: nowrap;
+    padding: 6px;
+  }
+}
+
+.user-dj-img {
+  width: 286px;
+  height: 182px;
+  border: 1px solid #6b6a6a;
+  border-radius: 2px;
+  margin-right: 12px;
 }
 
 @media only screen and (max-width: 972px) {
@@ -675,7 +716,7 @@ i {
       height: 140px;
     }
   }
- .user-subheader-container {
+  .user-subheader-container {
     position: relative;
     z-index: 100;
     .user-subheader {
@@ -693,7 +734,7 @@ i {
   .calendar {
     width: 675px;
   }
-  .hasEvent{
+  .hasEvent {
     // width: 240px;
     width: 130px;
     height: 225px;
@@ -709,8 +750,7 @@ i {
     width: 675px;
   }
 
-
-   #myevents-header {
+  #myevents-header {
     width: 675px;
     justify-content: normal;
     #submit-event {
@@ -758,10 +798,9 @@ i {
 }
 
 @media only screen and (max-width: 700px) {
-
   .user-subheader-container {
     .user-subheader {
-       width: 560px;
+      width: 560px;
       .details {
         white-space: nowrap;
         width: 560px;
@@ -785,7 +824,8 @@ i {
   .monthToggle {
     width: 220px;
   }
-  #prevMonth, #nextMonth {
+  #prevMonth,
+  #nextMonth {
     width: 109px;
   }
   #prevMonth {
@@ -810,10 +850,10 @@ i {
       height: 148px;
     }
     .navbar {
-     height: 140px;
-     h1 {
-       font-size: 36px;
-     }
+      height: 140px;
+      h1 {
+        font-size: 36px;
+      }
     }
     .form-wrap {
       width: 560px;
@@ -848,7 +888,7 @@ i {
 @media only screen and (max-width: 560px) {
   .user-subheader-container {
     .user-subheader {
-       width: 490px;
+      width: 490px;
       .details {
         white-space: nowrap;
         width: 490px;
@@ -908,7 +948,7 @@ i {
 @media only screen and (max-width: 499px) {
   .user-subheader-container {
     .user-subheader {
-       width: 360px;
+      width: 360px;
       .details {
         white-space: nowrap;
         width: 360px;
@@ -930,7 +970,6 @@ i {
       width: 25%;
     }
   }
- 
 
   .event-space {
     overflow: scroll;
@@ -1007,7 +1046,8 @@ i {
   #myevents-list {
     width: 360px;
   }
-  .myevent-details, .manage-event {
+  .myevent-details,
+  .manage-event {
     font-size: 12px;
   }
   #delete-event {
@@ -1067,7 +1107,7 @@ i {
 @media only screen and (min-width: 1300px) {
   .user-subheader-container {
     .user-subheader {
-        width: 1272px;
+      width: 1272px;
     }
   }
   .calendar {
@@ -1088,7 +1128,8 @@ i {
   .monthToggle {
     width: 419px;
   }
-  #prevMonth, #nextMonth {
+  #prevMonth,
+  #nextMonth {
     width: 208px;
   }
 
