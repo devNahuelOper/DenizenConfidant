@@ -6,6 +6,7 @@ import SignupFormContainer from './session_form/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import UserProfile from './user/user_profile';
 import UserEvents from './user/user_events';
+import UserDjs from './user/user_djs';
 import Footer from './footer/footer';
 import EventIndexContainer from './events/event_index_container';
 import EventShowContainer from './events/event_show_container';
@@ -66,6 +67,7 @@ class App extends React.Component {
           <AuthRoute path="/signup" component={withTitle({ component: SignupFormContainer, title: 'Register as a DC member today' })} />
           <ProtectedRoute exact path="/users/:userId" component={UserProfile}/>
           <ProtectedRoute exact path="/users/:userId/events" component={UserEvents} />
+          <ProtectedRoute exact path="/users/:userId/djs" component={UserDjs} />
           <Route exact path="/" component={withTitle({ component: SplashContainer, title: 'DC: Denizen Confidant - electronic music online'})} />
           <ProtectedRoute path="/events/new" component={withTitle({ component: CreateEventFormContainer, title: 'DC: Submit an event'})} />
           <ProtectedRoute path="/events/:eventId/edit" component={UpdateEventFormContainer} />
