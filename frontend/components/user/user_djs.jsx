@@ -35,7 +35,7 @@ class UserDjs extends React.Component {
                 {currentUser.djs.map((dj, i) => (
                   <li key={i}>
                     <article>
-                      <figure className="user-dj-img">
+                      <figure className={dj.photoUrl ? 'user-dj-img' : 'user-dj-noimg'}>
                         <img src={dj.photoUrl} alt={dj.name} />
                       </figure>
                       <div className="user-dj-info">
