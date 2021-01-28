@@ -36,11 +36,11 @@ class UserDjs extends React.Component {
                   <li key={i}>
                     <article>
                       <figure className={dj.photoUrl ? 'user-dj-img' : 'user-dj-noimg'}>
-                        <img src={dj.photoUrl} alt={dj.name} />
+                        { dj.photoUrl && <img src={dj.photoUrl} alt={dj.name} />}
                       </figure>
                       <div className="user-dj-info">
                         <h2>{dj.name}</h2>
-                        <Link to="/">Manage DJ Profile</Link>
+                        <Link to={`/djs/${dj.id}/edit`}>Manage DJ Profile</Link>
                       </div>
                     </article>
                   </li>
