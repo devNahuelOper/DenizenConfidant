@@ -287,7 +287,8 @@
   }
 }
 
-.eventform-header {
+.eventform-header,
+.djform-header {
   #prev {
     width: 20px;
     filter: invert(1);
@@ -737,6 +738,24 @@ i {
   }
 }
 
+// Update DJ
+
+#update-dj {
+  #nav-container {
+    height: 250px;
+  }
+  #djs-nav {
+    height: 244px;
+    justify-content: space-between;
+    h1 {
+      line-height: unset;
+      height: unset;
+      width: unset;
+      margin: unset;
+    }
+  }
+}
+
 @media only screen and (max-width: 972px) {
   .user-profile {
     #nav-container {
@@ -807,7 +826,8 @@ i {
       }
     }
   }
-  .eventform-header {
+  .eventform-header,
+  .djform-header {
     position: relative;
   }
   .eventform-subheader {
@@ -882,7 +902,8 @@ i {
       width: 560px;
     }
   }
-  .eventform-header {
+  .eventform-header,
+  .djform-header {
     right: unset;
   }
 
@@ -1095,7 +1116,8 @@ i {
   .text-input {
     width: 350px;
   }
-  .eventform-header {
+  .eventform-header,
+  .djform-header {
     #prev {
       width: 16px;
     }

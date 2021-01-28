@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { TitleComponent } from "../../title_component.jsx";
 import SubnavToggle from "../../subnav/subnav";
-
+import NavBar from "../../navbar/navbar";
 
 class UpdateDjForm extends React.Component {
   constructor(props) {
@@ -22,6 +22,20 @@ class UpdateDjForm extends React.Component {
     return (
       <React.Fragment>
         <TitleComponent title={`DC: Update ${dj.name}`} />
+        <div className="user-profile" id="update-dj">
+          <header>
+            <div id="nav-container">
+            <NavBar
+              title="DJ Management"
+              entity="Dj"
+              hasLinks={true}
+              path={`/users/${currentUser.id}/djs`}
+              label="My DJs"
+              type="form"
+            />
+            </div>
+          </header>
+        </div>
       </React.Fragment>
     );
   }
