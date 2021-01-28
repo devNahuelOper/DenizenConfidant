@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { TitleComponent } from "../title_component.jsx";
-import SubnavToggle from "../subnav/subnav";
+import { TitleComponent } from "../../title_component.jsx";
+import SubnavToggle from "../../subnav/subnav";
 
 
 class UpdateDjForm extends React.Component {
@@ -26,3 +26,5 @@ class UpdateDjForm extends React.Component {
     );
   }
 }
+
+export default UpdateDjForm;
