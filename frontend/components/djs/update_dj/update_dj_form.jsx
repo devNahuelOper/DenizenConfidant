@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { TitleComponent } from "../../title_component.jsx";
 import SubnavToggle from "../../subnav/subnav";
 import NavBar from "../../navbar/navbar";
+import { addCities, expandCountry } from "../../../util/location_util";
 
 class UpdateDjForm extends React.Component {
   constructor(props) {
@@ -20,12 +21,23 @@ class UpdateDjForm extends React.Component {
     // console.log('Mounted', this.props);
   }
 
+  update(field) {
+    return (e) => {
+      this.setState({ [field]: e.currentTarget.value });
+      console.log(this.state);
+    };
+  }
 
   render() {
     const { dj, currentUser } = this.props;
     if (!dj) return null;
 
     const { name, nationality, genre, bio } = this.state;
+
+    // const countries = Object.keys(expandCountry);
+    const countries = Object.entries(expandCountry).map(
+      (k) => `${k[0]}  ${k[1].flag}`
+    );
 
     return (
       <React.Fragment>
@@ -66,7 +78,30 @@ class UpdateDjForm extends React.Component {
               <form className="update-dj-form">
                 <label htmlFor="name">
                   DJ Name / <br />
-                  <input type="text" className="update-input" name="name" value={name}/>
+                  <input
+                    type="text"
+                    className="update-input"
+                    name="name"
+                    value={name}
+                    onChange={this.update("name")}
+                  />
+                </label>
+                <br/>
+                <label htmlFor="nationality">
+                  Country & area / <small>your home country</small> <br />
+                  <article className="location-hold">
+                    <select
+                      name="nationality"
+                      id="nationality"
+                      className="nationality-select"
+                      value={nationality}
+                      onChange={this.update("nationality")}
+                    >
+                      {countries.map(country => 
+                      <option key={country} value={country}>{country}</option>
+                        )}
+                    </select>
+                  </article>
                 </label>
               </form>
             </div>
