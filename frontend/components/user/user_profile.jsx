@@ -48,7 +48,7 @@ class UserProfile extends React.Component {
             <section id="subnav">
               <ul>
                 <li className="form" id="overview">
-                  <Link to={`/users/${currentUser.id}`}>Overview</Link>
+                  <Link to="#">Overview</Link>
                 </li>
                 <li id="calendar-toggle" onClick={this.toggleCalendar}>
                   <Link to="#">Calendar</Link>
