@@ -30,13 +30,13 @@ const NavBar = ({title, hasLinks = false, entity, path, label, type = "show"}) =
           {Array.isArray(path) ? (
             <span className="prev-hold">
               {path.map((pth, i) => (
-                <>
-                <Link key={i} to={pth}>
-                  <img id="prev" src={window.prevUrl} alt="Back" />
-                  {` ${label[i]}`}
-                </Link>
-                { (i < path.length - 1) && <> &nbsp; / &nbsp; </>}
-                </>
+                <React.Fragment key={i}>
+                  <Link to={pth}>
+                    <img id="prev" src={window.prevUrl} alt="Back" />
+                    {` ${label[i]}`}
+                  </Link>
+                  {i < path.length - 1 && <> &nbsp; / &nbsp; </>}
+                </React.Fragment>
               ))}
             </span>
           ) : (

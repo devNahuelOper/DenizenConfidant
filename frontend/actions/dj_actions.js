@@ -49,7 +49,7 @@ export const createDj = dj => dispatch => (
 export const updateDj = (dj, id) => dispatch => (
   DjApiUtil.updateDj(dj, id)
     .then(dj => dispatch(receiveDj(dj)))
-    .catch(errors => dispatch(receiveDjErrors(errors.responseJSON)))
+    .fail(errors => dispatch(receiveDjErrors(errors.responseJSON)))
 );
 
 export const deleteDj = djId => dispatch => (

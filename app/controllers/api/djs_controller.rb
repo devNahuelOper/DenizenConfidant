@@ -20,18 +20,24 @@ class Api::DjsController < ApplicationController
       render :show
    end
 
-   def edit
-      @dj = Dj.find(params[:id])
-      render json: "api/djs/:id"
-   end
+  #  def edit
+  #     @dj = Dj.find(params[:id])
+  #     render json: "api/djs/:id"
+  #  end
 
-   def update
-    @dj = Dj.find(params[:id])
-    if !@dj.update(dj_params)
-      render json: @dj.errors.full_messages
+  #  def update
+  #   @dj = Dj.find(params[:id])
+  #   if !@dj.update(dj_params)
+  #     render json: @dj.errors.full_messages
+  #   end
+  #     render json: "api/djs/:id"
+  #  end
+
+    def update 
+      @dj = Dj.find(params[:id])
+      @dj.update!(dj_params)
+      render :show
     end
-      render json: "api/djs/:id"
-   end
 
    private
 

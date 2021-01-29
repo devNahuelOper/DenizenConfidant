@@ -10,14 +10,22 @@ class UpdateDjForm extends React.Component {
     this.state = this.props.dj;
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState(nextProps.dj);
+  }
+
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchDj(this.props.match.params.djId);
+    // console.log('Mounted', this.props);
   }
+
 
   render() {
     const { dj, currentUser } = this.props;
     if (!dj) return null;
+
+    const { name, nationality, genre, bio } = this.state;
 
     return (
       <React.Fragment>
@@ -52,6 +60,16 @@ class UpdateDjForm extends React.Component {
               labels={["My DJs"]}
               paths={[`/users/${currentUser.id}/djs`]}
             />
+          </div>
+          <div className="dj-form-container">
+            <div className="form-wrap">
+              <form className="update-dj-form">
+                <label htmlFor="name">
+                  DJ Name / <br />
+                  <input type="text" className="update-input" name="name" value={name}/>
+                </label>
+              </form>
+            </div>
           </div>
         </div>
       </React.Fragment>

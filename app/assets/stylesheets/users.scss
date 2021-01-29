@@ -304,7 +304,7 @@
   }
 }
 
-.event-form-container {
+.event-form-container, .dj-form-container {
   background-color: #404040;
   label {
     color: white;
@@ -1206,9 +1206,9 @@ i {
     width: 208px;
   }
 
-  .manage-event {
-    margin-right: 312px;
-  }
+  // .manage-event {
+  //   margin-right: 312px;
+  // }
   .confirm {
     // left: 735px;
     left: 708px;
