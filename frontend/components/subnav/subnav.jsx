@@ -56,7 +56,7 @@ class SubnavToggle extends React.Component {
               {
                 // window.location.hash === `#/users/${currentUser.id}` &&
               (window.location.hash.includes('#/users/') && window.location.hash.length <= 12) &&
-              <li id="calendar-toggle" onClick={this.props.toggleCalendar}><Link className="log-link" to={`/users/${currentUser.id}`}>Calendar</Link></li>
+              <li id="calendar-toggle" onClick={this.props.toggleCalendar}><Link className="log-link" to="#">Calendar</Link></li>
               }
           </ul>
         </button>

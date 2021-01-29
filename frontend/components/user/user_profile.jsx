@@ -51,7 +51,7 @@ class UserProfile extends React.Component {
                   <Link to={`/users/${currentUser.id}`}>Overview</Link>
                 </li>
                 <li id="calendar-toggle" onClick={this.toggleCalendar}>
-                  <Link to={`/users/${currentUser.id}`}>Calendar</Link>
+                  <Link to="#">Calendar</Link>
                 </li>
                 <li>
                   <Link to={`/users/${currentUser.id}/events`}>My Events</Link>
@@ -65,8 +65,8 @@ class UserProfile extends React.Component {
               currentUser={currentUser}
               toggleCalendar={this.toggleCalendar}
               title="Overview"
-              labels={["My Events"]}
-              paths={[`/users/${currentUser.id}/events`]}
+              labels={["My Events", "My DJ Profiles"]}
+              paths={[`/users/${currentUser.id}/events`, `/users/${currentUser.id}/djs`]}
             />
           </div>
           <div className="user-subheader-container">
