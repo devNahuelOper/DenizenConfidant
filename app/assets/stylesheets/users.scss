@@ -671,6 +671,24 @@ i {
 }
 
 // User DJs
+#user-djs {
+  #nav-container {
+    height: 225px;
+  }
+  #djs-nav {
+    .djshow-header {
+      a {
+        filter: invert(1);
+        &:hover {
+          filter: none;
+        }
+      }
+    }
+    h1 {
+      line-height: unset;
+    }
+  }
+}
 
 .my-djs {
   border-bottom: 0.1px solid #585858;

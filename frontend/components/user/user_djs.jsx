@@ -26,7 +26,13 @@ class UserDjs extends React.Component {
         <div className="user-profile" id="user-djs">
           <header>
             <div id="nav-container">
-              <NavBar title="My DJs" entity="User" />
+              <NavBar
+                title="My DJs"
+                entity="Dj"
+                hasLinks
+                path={`/users/${currentUser.id}`}
+                label="My Profile"
+              />
             </div>
           </header>
           <div className="my-djs">
@@ -35,8 +41,12 @@ class UserDjs extends React.Component {
                 {currentUser.djs.map((dj, i) => (
                   <li key={i}>
                     <article>
-                      <figure className={dj.photoUrl ? 'user-dj-img' : 'user-dj-noimg'}>
-                        { dj.photoUrl && <img src={dj.photoUrl} alt={dj.name} />}
+                      <figure
+                        className={
+                          dj.photoUrl ? "user-dj-img" : "user-dj-noimg"
+                        }
+                      >
+                        {dj.photoUrl && <img src={dj.photoUrl} alt={dj.name} />}
                       </figure>
                       <div className="user-dj-info">
                         <h2>{dj.name}</h2>

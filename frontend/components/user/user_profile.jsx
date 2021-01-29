@@ -56,6 +56,9 @@ class UserProfile extends React.Component {
                 <li>
                   <Link to={`/users/${currentUser.id}/events`}>My Events</Link>
                 </li>
+                <li>
+                  <Link to={`/users/${currentUser.id}/djs`}>My DJ Profiles</Link>
+                </li>
               </ul>
             </section>
             <SubnavToggle
