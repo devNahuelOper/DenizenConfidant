@@ -82,41 +82,14 @@ class UpdateEventForm extends React.Component {
         <div className="create-event" id="update-event">
           <header>
             <div id="nav-container">
-              <section className="navbar">
-                <nav>
-                  <Link to="/" title="Home">
-                    <img src={window.logoUrl} id="logo" />
-                  </Link>
-                  <ul id="links">
-                    <li>
-                      <Link to="/djs">DJs</Link>
-                    </li>
-                    <li>
-                      <Link to="/events">Events</Link>
-                    </li>
-                    <li>
-                      <Link to="/genres">Music</Link>
-                    </li>
-                    <li>
-                      <button id="search">Search</button>
-                    </li>
-                  </ul>
-                </nav>
-                <section className="eventform-header">
-                  <span className="prev-hold">
-                    <Link to={`/users/${currentUser.id}/events`}>
-                      <img id="prev" src={window.prevUrl} alt="Back" /> My
-                      Events
-                    </Link>
-                    &nbsp; / &nbsp;
-                    <Link to={`/events/${event.id}/edit`}>
-                      <img id="prev" src={window.prevUrl} alt="Back" />{" "}
-                      {event.name}
-                    </Link>
-                  </span>
-                  <h1>Event management</h1>
-                </section>
-              </section>
+              <NavBar
+                title="Event Management"
+                entity="Event"
+                hasLinks={true}
+                path={[`/users/${currentUser.id}/events`, "#"]}
+                label={["My Events", `${event.name}`]}
+                type="form"
+              />
             </div>
           </header>
           <div className="subnav-container">

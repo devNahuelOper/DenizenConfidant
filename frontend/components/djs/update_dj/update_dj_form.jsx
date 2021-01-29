@@ -29,8 +29,8 @@ class UpdateDjForm extends React.Component {
                 title="DJ Management"
                 entity="Dj"
                 hasLinks={true}
-                path={`/users/${currentUser.id}/djs`}
-                label="My DJs"
+                path={[`/users/${currentUser.id}/djs`, "#"]}
+                label={["My DJs", `${dj.name}`]}
                 type="form"
               />
             </div>
