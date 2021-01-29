@@ -34,10 +34,10 @@ class UpdateDjForm extends React.Component {
 
     const { name, nationality, genre, bio } = this.state;
 
-    // const countries = Object.keys(expandCountry);
     const countries = Object.entries(expandCountry).map(
       (k) => `${k[0]}  ${k[1].flag}`
     );
+    const currentCities = expandCountry[nationality.replace(/\W/g, "")].cities;
 
     return (
       <React.Fragment>
@@ -86,7 +86,7 @@ class UpdateDjForm extends React.Component {
                     onChange={this.update("name")}
                   />
                 </label>
-                <br/>
+                <br />
                 <label htmlFor="nationality">
                   Country & area / <small>your home country</small> <br />
                   <article className="location-hold">
@@ -97,9 +97,25 @@ class UpdateDjForm extends React.Component {
                       value={nationality}
                       onChange={this.update("nationality")}
                     >
-                      {countries.map(country => 
-                      <option key={country} value={country}>{country}</option>
-                        )}
+                      {countries.map((country) => (
+                        <option key={country} value={country}>
+                          {country}
+                        </option>
+                      ))}
+                    </select>
+                    <br/>
+                    <select
+                      name="cities"
+                      id="cities"
+                      className="nationality-select"
+                      value={this.state.city || " --Select a city-- "}
+                      onChange={this.update("city")}
+                    >
+                      {currentCities.map((city) => (
+                        <option key={city} value={city}>
+                          {city}
+                        </option>
+                      ))}
                     </select>
                   </article>
                 </label>
