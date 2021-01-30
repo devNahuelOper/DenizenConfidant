@@ -29,8 +29,10 @@ class UpdateDjForm extends React.Component {
   }
 
   render() {
-    const { dj, currentUser } = this.props;
+    const { dj, currentUser, genres } = this.props;
     if (!dj) return null;
+
+    const genreSets = [[...genres], [...genres], [...genres]];
 
     const { name, nationality, genre, bio } = this.state;
 
@@ -103,7 +105,7 @@ class UpdateDjForm extends React.Component {
                         </option>
                       ))}
                     </select>
-                    <br/>
+                    <br />
                     <select
                       name="cities"
                       id="cities"
@@ -117,6 +119,26 @@ class UpdateDjForm extends React.Component {
                         </option>
                       ))}
                     </select>
+                  </article>
+                </label>
+                <br />
+                <label htmlFor="genre">
+                  Musical Style(s) / <br />
+                  <article className="genre-hold">
+                    {genreSets.map((genSet, i) => (
+                      <select
+                        key={`genre-set${i}`}
+                        name="genre"
+                        id="genre-select"
+                        value={genre.split(' ')[i] || "--Select a Style--"}
+                      >
+                        {genSet.map((gen) => (
+                          <option key={gen} value={gen}>
+                            {gen}
+                          </option>
+                        ))}
+                      </select>
+                    ))}
                   </article>
                 </label>
               </form>
