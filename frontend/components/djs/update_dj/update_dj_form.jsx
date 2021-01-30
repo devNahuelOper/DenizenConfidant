@@ -9,6 +9,7 @@ class UpdateDjForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.dj;
+    this.updateGenre = this.updateGenre.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -26,6 +27,16 @@ class UpdateDjForm extends React.Component {
       this.setState({ [field]: e.currentTarget.value });
       console.log(this.state);
     };
+  }
+
+  updateGenre(key) {
+    let genreState = { ...this.state.genre.split(' ')};
+    return (e) => {
+      let newGenreState = { ...genreState, [key]: e.currentTarget.value };
+      newGenreState = Object.values(newGenreState).join(' ');
+      this.setState({ genre: newGenreState });
+      // console.log(this.state);
+    }
   }
 
   render() {
@@ -94,7 +105,7 @@ class UpdateDjForm extends React.Component {
                   <article className="location-hold">
                     <select
                       name="nationality"
-                      id="nationality"
+                      id="countries"
                       className="nationality-select"
                       value={nationality}
                       onChange={this.update("nationality")}
@@ -107,7 +118,7 @@ class UpdateDjForm extends React.Component {
                     </select>
                     <br />
                     <select
-                      name="cities"
+                      name="nationality"
                       id="cities"
                       className="nationality-select"
                       value={this.state.city || " --Select a city-- "}
@@ -131,6 +142,7 @@ class UpdateDjForm extends React.Component {
                         name="genre"
                         id="genre-select"
                         value={genre.split(' ')[i] || "--Select a Style--"}
+                        onChange={this.updateGenre(i)}
                       >
                         {genSet.map((gen) => (
                           <option key={gen} value={gen}>
