@@ -783,17 +783,32 @@ i {
   input {
     margin-bottom: 16px;
   }
+  select {
+    cursor: pointer;
+    &:hover {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2U9IiNiYmIiPjxwYXRoIGQ9Ik02IDlsNiA2IDYtNiIvPjwvc3ZnPg==) !important;
+      background-repeat: no-repeat !important;
+      background-position-x: 100% !important;
+      background-position-y: 50% !important;
+      appearance: none !important;
+      filter: invert(1);
+    }
+  }
   #nationality {
     margin-bottom: 4px;
   }
 }
 
 .nationality-select {
-  cursor: pointer;
   width: 165px;
   height: 30px;
   -webkit-appearance: auto;
   font-size: 16px;
+}
+.genre-hold {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 @media only screen and (max-width: 972px) {
