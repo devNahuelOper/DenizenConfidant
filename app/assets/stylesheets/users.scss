@@ -791,10 +791,11 @@ i {
       background-position-x: 100% !important;
       background-position-y: 50% !important;
       appearance: none !important;
+      text-indent: 4px;
       filter: invert(1);
     }
   }
-  #nationality {
+  #countries {
     margin-bottom: 4px;
   }
 }
