@@ -66,7 +66,7 @@ export const expandCountry = {
     flag: '🇪🇸',
     currency: 'EUR'
   },
-  'United Kingdom': {
+  'UK': {
     cities: ['Belfast', 'Edinburgh', 'Liverpool', 'London', 'Glasgow', 'Manchester'],
     flag: '🇬🇧',
     currency: 'GBP'

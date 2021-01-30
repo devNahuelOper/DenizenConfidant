@@ -58,15 +58,20 @@ class UserEvents extends React.Component {
                   <Link to={`/users/${currentUser.id}/events`}>My Events</Link>
                 </li>
                 <li>
-                  <Link to="/">Take me back home</Link>
+                  <Link to={`/users/${currentUser.id}/djs`}>
+                    My DJ Profiles
+                  </Link>
                 </li>
               </ul>
             </section>
             <SubnavToggle
               currentUser={currentUser}
               title="My Events"
-              labels={["Overview", "Take me back home"]}
-              paths={[`/users/${currentUser.id}`, "/"]}
+              labels={["Overview", "My DJ Profiles"]}
+              paths={[
+                `/users/${currentUser.id}`,
+                `/users/${currentUser.id}/djs`,
+              ]}
             />
           </div>
           <div className="user-subheader-container">

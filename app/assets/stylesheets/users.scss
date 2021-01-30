@@ -304,7 +304,8 @@
   }
 }
 
-.event-form-container {
+.event-form-container,
+.dj-form-container {
   background-color: #404040;
   label {
     color: white;
@@ -778,6 +779,23 @@ i {
   }
 }
 
+.update-dj-form {
+  input {
+    margin-bottom: 16px;
+  }
+  #nationality {
+    margin-bottom: 4px;
+  }
+}
+
+.nationality-select {
+  cursor: pointer;
+  width: 165px;
+  height: 30px;
+  -webkit-appearance: auto;
+  font-size: 16px;
+}
+
 @media only screen and (max-width: 972px) {
   #user-djs {
     #djs-nav h1 {
@@ -1206,9 +1224,9 @@ i {
     width: 208px;
   }
 
-  .manage-event {
-    margin-right: 312px;
-  }
+  // .manage-event {
+  //   margin-right: 312px;
+  // }
   .confirm {
     // left: 735px;
     left: 708px;
