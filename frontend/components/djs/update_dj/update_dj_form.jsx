@@ -45,7 +45,7 @@ class UpdateDjForm extends React.Component {
 
     const genreSets = [[...genres], [...genres], [...genres]];
 
-    const { name, nationality, genre, bio } = this.state;
+    const { name, nationality, genre, bio, photoUrl } = this.state;
 
     const countries = Object.entries(expandCountry).map(
       (k) => `${k[0]}  ${k[1].flag}`
@@ -164,6 +164,16 @@ class UpdateDjForm extends React.Component {
                     value={bio}
                     onChange={this.update("bio")}
                   ></textarea>
+                </label>
+                <br />
+                <label htmlFor="photoUrl">
+                  Primary DJ Photo / <br />
+                  <input
+                    type="file"
+                    name="photoUrl"
+                    className="file-input"
+                    accept=".jpg,.jpeg,.png,.gif"
+                  />
                 </label>
               </form>
             </div>
