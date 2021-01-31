@@ -777,6 +777,9 @@ i {
       margin: unset;
     }
   }
+  .reveal li:first-child {
+    border-bottom: 1px solid #454545;
+  }
 }
 
 .update-dj-form {
@@ -800,6 +803,7 @@ i {
   }
   #bio-input {
     height: 112px;
+    margin-bottom: 16px;
   }
 }
 
