@@ -829,10 +829,15 @@ i {
   // background-color: #262626;
   backdrop-filter: blur(3px);
 }
+
 .img-wrap {
   width: inherit;
   height: inherit;
   background-size: contain;
+  border-bottom: 32px solid #ffff01;
+  img {
+    border-bottom: unset;
+  }
 }
 
 @media only screen and (max-width: 972px) {

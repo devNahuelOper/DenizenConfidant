@@ -61,7 +61,7 @@ class CreateDjForm extends React.Component {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value });
       this.props.receiveDjErrors([]);
-      // console.log(this.state);
+      console.log(this.state);
     };
   }
 
@@ -78,8 +78,22 @@ class CreateDjForm extends React.Component {
   handleFile(e) {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
+
     fileReader.onloadend = () => {
+      let image = new Image();
+      image.src = fileReader.result;
+
       this.setState({ photoFile: file, photoUrl: fileReader.result });
+
+      image.onload = () => {
+        [file.width, file.height] = [image.width, image.height];
+        if (image.height > image.width) {
+          $("#dj-image").addClass("dj-image-tall");
+          let fig = $("<figure class='img-wrap'></figure>");
+          $(fig).css("backgroundImage", `url(${image.src})`);
+          $("#dj-image").wrap(fig);
+        }
+      };
     };
     if (file) {
       fileReader.readAsDataURL(file);
@@ -112,11 +126,11 @@ class CreateDjForm extends React.Component {
       let songTitle = document.createElement("h2");
       songTitle.id = "prev-songTitle";
       songTitle.innerHTML = file.name.split(".")[0];
-      let audio = new Audio();
-      audio.src = file.name;
+
+      let audio = new Audio(file.name);
       audio.controls = true;
-      frame.appendChild(songTitle);
-      frame.appendChild(audio);
+      frame.append(songTitle, audio);
+
       if (file) {
         fileReader.readAsDataURL(file);
       }
@@ -164,7 +178,7 @@ class CreateDjForm extends React.Component {
     const selectedGenre = Object.values(this.state.genre).join(" ");
 
     const preview = photoUrl ? (
-       <DjImagePreview
+      <DjImagePreview
         name={name}
         nationality={nationality}
         photoUrl={photoUrl}
