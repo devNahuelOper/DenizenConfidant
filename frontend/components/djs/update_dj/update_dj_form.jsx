@@ -30,13 +30,13 @@ class UpdateDjForm extends React.Component {
   }
 
   updateGenre(key) {
-    let genreState = { ...this.state.genre.split(' ')};
+    let genreState = { ...this.state.genre.split(" ") };
     return (e) => {
       let newGenreState = { ...genreState, [key]: e.currentTarget.value };
-      newGenreState = Object.values(newGenreState).join(' ');
+      newGenreState = Object.values(newGenreState).join(" ");
       this.setState({ genre: newGenreState });
       // console.log(this.state);
-    }
+    };
   }
 
   render() {
@@ -141,7 +141,7 @@ class UpdateDjForm extends React.Component {
                         key={`genre-set${i}`}
                         name="genre"
                         id="genre-select"
-                        value={genre.split(' ')[i] || "--Select a Style--"}
+                        value={genre.split(" ")[i] || "--Select a Style--"}
                         onChange={this.updateGenre(i)}
                       >
                         {genSet.map((gen) => (
@@ -152,6 +152,17 @@ class UpdateDjForm extends React.Component {
                       </select>
                     ))}
                   </article>
+                </label>
+                <br />
+                <label htmlFor="bio">
+                  Biography /{" "}
+                  <small>nothing is too big or too small to share</small> <br />
+                  <textarea
+                    name="bio"
+                    id="bio-input"
+                    value={bio}
+                    onChange={this.update("bio")}
+                  ></textarea>
                 </label>
               </form>
             </div>
