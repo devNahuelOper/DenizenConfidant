@@ -50,3 +50,6 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+input[type="file" i]::-webkit-file-upload-button {
+  cursor: pointer;
+}

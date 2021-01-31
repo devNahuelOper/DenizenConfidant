@@ -10,6 +10,7 @@ class UpdateDjForm extends React.Component {
     super(props);
     this.state = this.props.dj;
     this.updateGenre = this.updateGenre.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -37,6 +38,19 @@ class UpdateDjForm extends React.Component {
       this.setState({ genre: newGenreState });
       // console.log(this.state);
     };
+  }
+
+  handleFile(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+
+    fileReader.onloadend = () => {
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
+    }
+    if (file) {
+      fileReader.readAsDataURL(file);
+      e.currentTarget.classList.add("file-added");
+    }
   }
 
   render() {
@@ -173,8 +187,13 @@ class UpdateDjForm extends React.Component {
                     name="photoUrl"
                     className="file-input"
                     accept=".jpg,.jpeg,.png,.gif"
+                    onChange={this.handleFile}
                   />
                 </label>
+                <br/>
+                <figure className={photoUrl ? "user-dj-img" : "user-dj-noimg"}>
+                  {photoUrl && <img src={photoUrl} alt={`${name} Photo`}/>}
+                </figure>
               </form>
             </div>
           </div>
