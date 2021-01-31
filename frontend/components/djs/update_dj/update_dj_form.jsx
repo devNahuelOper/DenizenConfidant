@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { TitleComponent } from "../../title_component.jsx";
 import SubnavToggle from "../../subnav/subnav";
 import NavBar from "../../navbar/navbar";
-import { addCities, expandCountry } from "../../../util/location_util";
+import { expandCountry } from "../../../util/location_util";
+import DjImagePreview from "../dj_image_preview";
 
 class UpdateDjForm extends React.Component {
   constructor(props) {
@@ -65,6 +66,10 @@ class UpdateDjForm extends React.Component {
       (k) => `${k[0]}  ${k[1].flag}`
     );
     const currentCities = expandCountry[nationality.replace(/\W/g, "")].cities;
+
+    const preview = photoUrl ? (
+      <DjImagePreview name={name} nationality={nationality} photoUrl={photoUrl} genre={genre}/>
+    ) : null;
 
     return (
       <React.Fragment>
@@ -191,9 +196,10 @@ class UpdateDjForm extends React.Component {
                   />
                 </label>
                 <br/>
-                <figure className={photoUrl ? "user-dj-img" : "user-dj-noimg"}>
+                {preview}
+                {/* <figure className={photoUrl ? "user-dj-img" : "user-dj-noimg"}>
                   {photoUrl && <img src={photoUrl} alt={`${name} Photo`}/>}
-                </figure>
+                </figure> */}
               </form>
             </div>
           </div>
