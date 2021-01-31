@@ -46,10 +46,13 @@ class UpdateDjForm extends React.Component {
     const fileReader = new FileReader();
 
     fileReader.onloadend = () => {
-      this.setState({ photoFile: file, photoUrl: fileReader.result });
       let image = new Image();
       image.src = fileReader.result;
+      
+      this.setState({ photoFile: file, photoUrl: fileReader.result });
+
       image.onload = () => {
+        [file.width, file.height] = [image.width, image.height];
         if (image.height > image.width) {
           $("#dj-image").addClass("dj-image-tall");
           let fig = $("<figure class='img-wrap'></figure>");
@@ -212,9 +215,6 @@ class UpdateDjForm extends React.Component {
                 </label>
                 <br />
                 {preview}
-                {/* <figure className={photoUrl ? "user-dj-img" : "user-dj-noimg"}>
-                  {photoUrl && <img src={photoUrl} alt={`${name} Photo`}/>}
-                </figure> */}
               </form>
             </div>
           </div>

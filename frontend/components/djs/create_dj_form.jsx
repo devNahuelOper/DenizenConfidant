@@ -5,6 +5,7 @@ import SubnavToggle from "../subnav/subnav";
 import NavBar from "../navbar/navbar";
 import { toggleSearch } from "../../util/search_util";
 import { dataURLtoFile } from "../../util/url_util";
+import DjImagePreview from "./dj_image_preview";
 
 class CreateDjForm extends React.Component {
   constructor(props) {
@@ -157,29 +158,20 @@ class CreateDjForm extends React.Component {
   }
 
   render() {
-    const { name, genre, nationality, bio } = this.state;
+    const { name, genre, nationality, bio, photoUrl } = this.state;
     const { genres } = this.props;
 
     const selectedGenre = Object.values(this.state.genre).join(" ");
 
-    const preview = this.state.photoUrl ? (
-      <article className="dj-disp">
-        <img src={this.state.photoUrl} />
-        <h1 id="disp-name">{name}</h1>
-        <span id="disp-banner">
-          <h2 id="disp-country">
-            <small>Country / </small>
-            <br />
-            {nationality.split("  ").reverse().join(" ")}
-          </h2>{" "}
-          <h2 id="disp-genre">
-            <small>Genre(s) / </small>
-            <br />
-            {selectedGenre}
-          </h2>
-        </span>
-      </article>
+    const preview = photoUrl ? (
+       <DjImagePreview
+        name={name}
+        nationality={nationality}
+        photoUrl={photoUrl}
+        genre={selectedGenre}
+      />
     ) : null;
+
     // const songPreview = this.state.songsUrl ? <audio src={this.state.songFile.name} controls></audio> : null;
     return (
       <div className="dj-index" id="create-dj">
