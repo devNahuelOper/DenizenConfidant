@@ -58,9 +58,12 @@ class UpdateDjForm extends React.Component {
           let fig = $("<figure class='img-wrap'></figure>");
           $(fig).css("backgroundImage", `url(${image.src})`);
           $("#dj-image").wrap(fig);
+        } else {
+          $("#dj-image").removeClass("dj-image-tall");
         }
       };
     };
+
     if (file) {
       fileReader.readAsDataURL(file);
       e.currentTarget.classList.add("file-added");
