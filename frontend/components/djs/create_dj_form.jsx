@@ -92,6 +92,8 @@ class CreateDjForm extends React.Component {
           let fig = $("<figure class='img-wrap'></figure>");
           $(fig).css("backgroundImage", `url(${image.src})`);
           $("#dj-image").wrap(fig);
+        } else {
+          $("#dj-image").removeClass("dj-image-tall");
         }
       };
     };
