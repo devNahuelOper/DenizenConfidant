@@ -160,6 +160,7 @@ class UpdateDjForm extends React.Component {
                   <textarea
                     name="bio"
                     id="bio-input"
+                    spellCheck={false}
                     value={bio}
                     onChange={this.update("bio")}
                   ></textarea>
