@@ -47,7 +47,17 @@ class UpdateDjForm extends React.Component {
 
     fileReader.onloadend = () => {
       this.setState({ photoFile: file, photoUrl: fileReader.result });
-    }
+      let image = new Image();
+      image.src = fileReader.result;
+      image.onload = () => {
+        if (image.height > image.width) {
+          $("#dj-image").addClass("dj-image-tall");
+          let fig = $("<figure class='img-wrap'></figure>");
+          $(fig).css("backgroundImage", `url(${image.src})`);
+          $("#dj-image").wrap(fig);
+        }
+      };
+    };
     if (file) {
       fileReader.readAsDataURL(file);
       e.currentTarget.classList.add("file-added");
@@ -68,7 +78,12 @@ class UpdateDjForm extends React.Component {
     const currentCities = expandCountry[nationality.replace(/\W/g, "")].cities;
 
     const preview = photoUrl ? (
-      <DjImagePreview name={name} nationality={nationality} photoUrl={photoUrl} genre={genre}/>
+      <DjImagePreview
+        name={name}
+        nationality={nationality}
+        photoUrl={photoUrl}
+        genre={genre}
+      />
     ) : null;
 
     return (
@@ -195,7 +210,7 @@ class UpdateDjForm extends React.Component {
                     onChange={this.handleFile}
                   />
                 </label>
-                <br/>
+                <br />
                 {preview}
                 {/* <figure className={photoUrl ? "user-dj-img" : "user-dj-noimg"}>
                   {photoUrl && <img src={photoUrl} alt={`${name} Photo`}/>}

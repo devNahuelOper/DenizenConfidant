@@ -2,7 +2,7 @@ import React from "react";
 
 const DjImagePreview = ({ photoUrl, name, nationality, genre }) => (
   <article className="dj-disp">
-    <img src={photoUrl} alt={name} />
+    <img src={photoUrl} alt={name} id="dj-image"/>
     <h1 id="disp-name">{name}</h1>
     <span id="disp-banner">
       <h2 id="disp-country">
