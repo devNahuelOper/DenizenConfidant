@@ -71,6 +71,9 @@ class UpdateDjForm extends React.Component {
     if (this.state.photoFile) {
       formData.append("dj[photo]", this.state.photoFile);
     }
+
+    const { dj, updateDj, history } = this.props;
+    updateDj(formData, dj.id).then(dj => history.push(`/djs/${dj.dj.id}`));
   }
 
   render() {
@@ -131,7 +134,7 @@ class UpdateDjForm extends React.Component {
           </div>
           <div className="dj-form-container">
             <div className="form-wrap">
-              <form className="update-dj-form">
+              <form className="update-dj-form" onSubmit={this.handleSubmit}>
                 <label htmlFor="name">
                   DJ Name / <br />
                   <input

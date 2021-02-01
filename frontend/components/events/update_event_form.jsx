@@ -232,7 +232,7 @@ class UpdateEventForm extends React.Component {
                     </div>
                   </li>
                   <li>
-                    <input id="submit-event" type="submit" value="Submit" />
+                    <input className="submit-btn" id="submit-event" type="submit" value="Submit" />
                   </li>
                 </ul>
               </form>

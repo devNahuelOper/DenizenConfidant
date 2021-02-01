@@ -378,15 +378,15 @@
   padding-left: 4px;
 }
 
-#submit-event {
+.submit-btn {
   background-color: #ffa100;
   width: 304px;
   height: 30px;
   text-align: center;
-}
-#submit-event:hover {
-  background-color: black;
-  color: white;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
 }
 
 .event-form {
@@ -487,7 +487,7 @@ i {
   // ::placeholder {
   //   color: black;
   // }
-  #submit-event {
+  .submit-btn {
     height: 34px;
     margin-bottom: 36px;
   }
@@ -574,7 +574,7 @@ i {
   display: flex;
   justify-content: space-between;
 
-  #submit-event {
+  .submit-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -897,7 +897,7 @@ i {
   #myevents-header {
     width: 675px;
     justify-content: normal;
-    #submit-event {
+    .submit-btn {
       margin-left: 88px;
     }
   }
@@ -1175,7 +1175,7 @@ i {
     h1 {
       font-size: 14px;
     }
-    #submit-event {
+    .submit-btn {
       width: 140px;
       margin-left: unset;
     }

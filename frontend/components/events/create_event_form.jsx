@@ -321,7 +321,7 @@ class CreateEventForm extends React.Component {
                 </li>
                 <br />
                 <li>
-                  <input id="submit-event" type="submit" value="Submit" />
+                  <input className="submit-btn" id="submit-event" type="submit" value="Submit" />
                 </li>
               </ul>
               {this.props.errors.length > 0 && (
