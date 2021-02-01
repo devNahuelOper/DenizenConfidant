@@ -496,6 +496,24 @@
 
 // Create DJ Form
 
+.loader {
+  border: 16px solid #2e2e2e;
+  border-top: 16px solid #f8a102;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  position: fixed;
+  bottom: 50%;
+  left: 50%;
+}
+.loader-show {
+  display: block;
+}
+.loader-hide {
+  display: none;
+}
+
 .dj-requirements {
   background-color: #1e1e1e;
   color: white;
