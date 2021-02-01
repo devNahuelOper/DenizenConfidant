@@ -41,6 +41,7 @@ class DjShow extends React.Component {
       return song.replace(/\W\d*/g, " ");
     };
 
+    dj.nationality = dj.nationality.replace(/[\w\s]+, /, "");
     return (
       <React.Fragment>
         <TitleComponent title={`DC: ${dj.name}`} />
