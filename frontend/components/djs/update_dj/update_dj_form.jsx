@@ -13,6 +13,7 @@ class UpdateDjForm extends React.Component {
     this.state = this.props.dj;
     this.updateGenre = this.updateGenre.bind(this);
     this.handleFile = this.handleFile.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -63,6 +64,13 @@ class UpdateDjForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
+    formData.append("dj[name]", this.state.name);
+    formData.append("dj[nationality]", this.state.nationality);
+    formData.append("dj[genre]", this.state.genre);
+    formData.append("dj[bio]", this.state.bio);
+    if (this.state.photoFile) {
+      formData.append("dj[photo]", this.state.photoFile);
+    }
   }
 
   render() {
