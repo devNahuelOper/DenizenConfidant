@@ -46,10 +46,12 @@ button {
 }
 
 button,
-input[type="submit"] {
+select,
+input[type="submit"],
+input[type="file" i]::-webkit-file-upload-button {
   cursor: pointer;
 }
 
-input[type="file" i]::-webkit-file-upload-button {
-  cursor: pointer;
+select:hover {
+  filter: invert(1);
 }
