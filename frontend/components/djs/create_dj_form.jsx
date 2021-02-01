@@ -270,10 +270,10 @@ class CreateDjForm extends React.Component {
                     <select
                       name="Nationality"
                       id="nationality-select"
-                      value={nationality || "--Select a country--"}
+                      value={nationality || "--Select a Country--"}
                       onChange={this.update("nationality")}
                     >
-                      <option value="--Select a country--" disabled={true}>
+                      <option value="--Select a Country--" disabled={true}>
                         --Select a country--
                       </option>
                       <option value="Argentina  🇦🇷">Argentina 🇦🇷</option>
@@ -298,10 +298,10 @@ class CreateDjForm extends React.Component {
                     <select
                       name="gen1"
                       id="genre-select"
-                      value={genre.gen1 || "--Select a style--"}
+                      value={genre.gen1 || "--Select a Style--"}
                       onChange={this.handleGenre}
                     >
-                      <option value="--Select a style--" disabled={true}>
+                      <option value="--Select a Style--" disabled={true}>
                         --Select a style--
                       </option>
                       {genres.map((genre) => (
@@ -312,10 +312,10 @@ class CreateDjForm extends React.Component {
                     <select
                       name="gen2"
                       id="genre-select"
-                      value={genre.gen2 || "--Select a style--"}
+                      value={genre.gen2 || "--Select a Style--"}
                       onChange={this.handleGenre}
                     >
-                      <option value="--Select a style--" disabled={true}>
+                      <option value="--Select a Style--" disabled={true}>
                         --Select a style--
                       </option>
                       {genres.map((genre) => (
@@ -326,10 +326,10 @@ class CreateDjForm extends React.Component {
                     <select
                       name="gen3"
                       id="genre-select"
-                      value={genre.gen3 || "--Select a style--"}
+                      value={genre.gen3 || "--Select a Style--"}
                       onChange={this.handleGenre}
                     >
-                      <option value="--Select a style--" disabled={true}>
+                      <option value="--Select a Style--" disabled={true}>
                         --Select a style--
                       </option>
                       {genres.map((genre) => (
