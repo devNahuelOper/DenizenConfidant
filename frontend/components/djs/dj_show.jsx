@@ -22,7 +22,7 @@ class DjShow extends React.Component {
   render() {
     const { dj } = this.props;
     if (!dj) return null;
-
+    
     const genres = dj.get_genres ? Object.entries(dj.get_genres) : null;
 
     const noAttach = {

@@ -5,6 +5,7 @@ import SubnavToggle from "../subnav/subnav";
 import NavBar from "../navbar/navbar";
 import { toggleSearch } from "../../util/search_util";
 import { dataURLtoFile } from "../../util/url_util";
+import { handleImageSize } from "../../util/form_util";
 import DjImagePreview from "./dj_image_preview";
 
 class CreateDjForm extends React.Component {
@@ -78,25 +79,17 @@ class CreateDjForm extends React.Component {
   handleFile(e) {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
+    const url = URL.createObjectURL(file);
 
     fileReader.onloadend = () => {
       let image = new Image();
-      image.src = fileReader.result;
-
-      this.setState({ photoFile: file, photoUrl: fileReader.result });
-
-      image.onload = () => {
-        [file.width, file.height] = [image.width, image.height];
-        if (image.height > image.width) {
-          $("#dj-image").addClass("dj-image-tall");
-          let fig = $("<figure class='img-wrap'></figure>");
-          $(fig).css("backgroundImage", `url(${image.src})`);
-          $("#dj-image").wrap(fig);
-        } else {
-          $("#dj-image").removeClass("dj-image-tall");
-        }
-      };
+      // image.src = fileReader.result;
+      image.src = url;
+      image.onload = () => handleImageSize(image, file);
+      // this.setState({ photoFile: file, photoUrl: fileReader.result });
+      this.setState({ photoFile: file, photoUrl: url });
     };
+
     if (file) {
       fileReader.readAsDataURL(file);
     }
