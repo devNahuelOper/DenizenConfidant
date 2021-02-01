@@ -149,6 +149,9 @@ class CreateDjForm extends React.Component {
         // console.log(formData.getAll('dj[songs][]'));
       }
     }
+
+    $('.loader').show();
+
     this.props
       .createDj(formData)
       .then((dj) => this.props.history.push(`/djs/${dj.dj.id}`));
@@ -433,6 +436,7 @@ class CreateDjForm extends React.Component {
 
             {/* <span onClick={this.clearForm}>Reset</span> */}
           </div>
+         {!this.props.errors.length && <div className="loader loader-hide"></div>}
         </div>
       </div>
     );
