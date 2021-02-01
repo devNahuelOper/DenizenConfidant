@@ -224,6 +224,8 @@ class UpdateDjForm extends React.Component {
                 </label>
                 <br />
                 {preview}
+                <br/>
+                <input className="submit-btn" type="submit" value="Submit"/>
               </form>
             </div>
           </div>
