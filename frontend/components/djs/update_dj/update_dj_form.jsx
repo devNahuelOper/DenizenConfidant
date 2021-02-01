@@ -29,7 +29,7 @@ class UpdateDjForm extends React.Component {
   update(field) {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value });
-      console.log(this.state);
+      // console.log(this.state);
     };
   }
 
@@ -66,6 +66,7 @@ class UpdateDjForm extends React.Component {
     const formData = new FormData();
     formData.append("dj[name]", this.state.name);
     formData.append("dj[nationality]", this.state.nationality);
+    formData.append("dj[city]", this.state.city);
     formData.append("dj[genre]", this.state.genre);
     formData.append("dj[bio]", this.state.bio);
     if (this.state.photoFile) {
@@ -87,7 +88,10 @@ class UpdateDjForm extends React.Component {
     const countries = Object.entries(expandCountry).map(
       (k) => `${k[0]}  ${k[1].flag}`
     );
-    const currentCities = expandCountry[nationality.replace(/\W/g, "")].cities;
+    // const currentCities = expandCountry[nationality.replace(/\W/g, "")].cities;
+    const currentCities =
+      expandCountry[nationality.replace(/[\w\s]+, /, "").replace(/\W/g, "")]
+        .cities;
 
     const preview = photoUrl ? (
       <DjImagePreview
