@@ -12,6 +12,13 @@
   #expand {
     height: 177px;
   }
+  #djs-nav nav #links li:first-of-type {
+    background-color: transparent;
+    border-color: #ff0;
+    &:hover {
+      background-color: #ff0;
+    }
+  }
 }
 
 .user-subheader-container {
