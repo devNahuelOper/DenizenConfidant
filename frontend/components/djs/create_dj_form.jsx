@@ -111,6 +111,8 @@ class CreateDjForm extends React.Component {
 
     for (let file of files) {
       const fileReader = new FileReader();
+      const url = URL.createObjectURL(file);
+
       fileReader.onloadend = () => {
         this.setState({
           songFile: file,
@@ -122,7 +124,7 @@ class CreateDjForm extends React.Component {
       songTitle.id = "prev-songTitle";
       songTitle.innerHTML = file.name.split(".")[0];
 
-      let audio = new Audio(file.name);
+      let audio = new Audio(url);
       audio.controls = true;
       frame.append(songTitle, audio);
 
