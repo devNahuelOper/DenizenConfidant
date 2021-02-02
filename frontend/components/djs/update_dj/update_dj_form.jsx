@@ -5,6 +5,7 @@ import SubnavToggle from "../../subnav/subnav";
 import NavBar from "../../navbar/navbar";
 import { expandCountry } from "../../../util/location_util";
 import { handleImageSize } from "../../../util/form_util";
+import { extractSongTitle } from "../../../util/url_util";
 import DjImagePreview from "../dj_image_preview";
 
 class UpdateDjForm extends React.Component {
@@ -29,7 +30,7 @@ class UpdateDjForm extends React.Component {
   update(field) {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value });
-      // console.log(this.state);
+      console.log(this.state);
     };
   }
 
@@ -101,6 +102,9 @@ class UpdateDjForm extends React.Component {
         genre={genre}
       />
     ) : null;
+    
+    const songs = this.state.songsUrl.map(extractSongTitle) || [];
+    console.log(songs);
 
     return (
       <React.Fragment>
@@ -229,6 +233,14 @@ class UpdateDjForm extends React.Component {
                 <br />
                 {preview}
                 <br/>
+                <label htmlFor="songs">
+                  Selected Discography / <br/>
+                  <ul className="dj-update-songs">
+                    {songs.map((song, i) =>
+                    <li key={i}>{song}</li>
+                      )}
+                  </ul>
+                </label>
                 <input className="submit-btn" type="submit" value="Submit"/>
               </form>
             </div>

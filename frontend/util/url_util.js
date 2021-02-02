@@ -1,7 +1,7 @@
 export const base64Mime = (encoded) => {
   let result = null;
 
-  if (typeof encoded !== 'string') {
+  if (typeof encoded !== "string") {
     return result;
   }
 
@@ -12,11 +12,10 @@ export const base64Mime = (encoded) => {
   }
 
   return result;
-}
+};
 
 export const dataURLtoFile = (dataurl, filename) => {
-
-  let arr = dataurl.split(','),
+  let arr = dataurl.split(","),
     mime = arr[0].match(/:(.*?);/)[1],
     bstr = atob(arr[1]),
     n = bstr.length,
@@ -27,4 +26,11 @@ export const dataURLtoFile = (dataurl, filename) => {
   }
 
   return new File([u8arr], filename, { type: mime });
-}
+};
+
+export const extractSongTitle = (url) => {
+  let song = url
+    .slice(url.lastIndexOf("/") + 1, url.lastIndexOf("."))
+    .replace("+", " ");
+  return song.replace(/\W\d*/g, " ");
+};
