@@ -71,7 +71,7 @@ export const expandCountry = {
     flag: '🇬🇧',
     currency: 'GBP'
   },
-  'United States': {
+  'USA': {
     cities: ['Atlanta', 'Boston', 'Chicago', 'Dallas', 'Denver', 'Detroit',
     'Houston', 'Los Angeles', 'Miami', 'New Orleans', 'New York', 'Philadelphia',
     'Phoenix', 'Pittsburgh', 'San Francisco', 'Seattle', 'Washington DC'],
