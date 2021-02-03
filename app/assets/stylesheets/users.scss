@@ -858,15 +858,51 @@ i {
     background-color: #2e2e2e;
     border-bottom: 1px solid #404040;
     padding: 8px;
+    audio {
+      background: inherit;
+      outline: 0;
+      &::-webkit-media-controls-enclosure {
+        background: inherit;
+      }
+      &::-webkit-media-controls-panel {
+        background: inherit;
+      }
+      &::-webkit-media-controls-play-button {
+        filter: invert(0.6);
+        background-size: 30px;
+      }
+      &::-webkit-media-controls-mute-button {
+        filter: invert(0.6);
+        background-size: 25px;
+      }
+      &::-webkit-media-controls-current-time-display,
+      &::-webkit-media-controls-time-remaining-display {
+        text-shadow: unset;
+        color: #999999;
+      }
+      &::-webkit-media-controls-timeline {
+        padding: 12px;
+        margin: -2px;
+        margin-right: -28px;
+        outline: 1px solid #999;
+        outline-offset: -14px;
+      }
+      &::-webkit-media-controls-volume-slider {
+        padding: 14px 12px;
+        outline: 2px solid #999;
+        outline-offset: -16px;
+      }
+    }
   }
 }
+
 .songTitle {
-  color:  #fdff00;
+  color: #fdff00;
 }
 
 #drop_zone {
   border: 5px solid blue;
-  width:  200px;
+  width: 200px;
   height: 100px;
 }
 
@@ -1308,6 +1344,10 @@ i {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
