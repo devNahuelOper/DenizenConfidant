@@ -103,8 +103,8 @@ class UpdateDjForm extends React.Component {
       />
     ) : null;
     
-    const songs = this.state.songsUrl.map(extractSongTitle) || [];
-    console.log(songs);
+    const songs = (this.state.songsUrl && this.state.songsUrl) ?? [];
+    // console.log(songs);
 
     return (
       <React.Fragment>
@@ -236,8 +236,11 @@ class UpdateDjForm extends React.Component {
                 <label htmlFor="songs">
                   Selected Discography / <br/>
                   <ul className="dj-update-songs">
-                    {songs.map((song, i) =>
-                    <li key={i}>{song}</li>
+                    {Boolean(songs.length) && songs.map((song, i) =>
+                    <li key={i}>
+                      <span className="songTitle">{extractSongTitle(song)}</span>
+                      <audio src={song} controls></audio>
+                    </li>
                       )}
                   </ul>
                 </label>

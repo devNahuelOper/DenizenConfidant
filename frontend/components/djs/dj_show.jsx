@@ -4,6 +4,7 @@ import { TitleComponent } from "../title_component.jsx";
 import SubnavToggle from "../subnav/subnav";
 import NavBar from "../navbar/navbar";
 import { toggleSearch } from "../../util/search_util";
+import { extractSongTitle } from "../../util/url_util";
 
 class DjShow extends React.Component {
   constructor(props) {
@@ -34,14 +35,8 @@ class DjShow extends React.Component {
       backgroundImage: `url("${dj.photoUrl}")`,
     };
 
-    const extractSongTitle = (url) => {
-      let song = url
-        .slice(url.lastIndexOf("/") + 1, url.lastIndexOf("."))
-        .replace("+", " ");
-      return song.replace(/\W\d*/g, " ");
-    };
-
     dj.nationality = dj.nationality.replace(/[\w\s]+, /, "");
+    
     return (
       <React.Fragment>
         <TitleComponent title={`DC: ${dj.name}`} />

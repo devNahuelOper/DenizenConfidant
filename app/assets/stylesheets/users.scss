@@ -850,6 +850,24 @@ i {
 .dj-update-songs {
   margin-top: 16px;
   margin-bottom: 32px;
+  max-width: 612px;
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2e2e2e;
+    border-bottom: 1px solid #404040;
+    padding: 8px;
+  }
+}
+.songTitle {
+  color:  #fdff00;
+}
+
+#drop_zone {
+  border: 5px solid blue;
+  width:  200px;
+  height: 100px;
 }
 
 @media only screen and (max-width: 972px) {
