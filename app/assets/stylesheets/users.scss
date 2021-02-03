@@ -851,6 +851,27 @@ i {
   margin-top: 16px;
   margin-bottom: 32px;
   max-width: 612px;
+  max-height: 213px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 8px;
+    cursor: pointer;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track-piece {
+    background: linear-gradient(to bottom, #2e2e2e, #2e2e2e, #4f514f, #2e2e2e);
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    border-radius: 10px;
+    background: #5d5d5dc4;
+    border-width: 2px;
+    border-color: #2e2e2e;
+    border-style: solid;
+  }
   li {
     display: flex;
     align-items: center;
@@ -863,9 +884,12 @@ i {
       outline: 0;
       &::-webkit-media-controls-enclosure {
         background: inherit;
+        transform: translateX(-15px);
       }
       &::-webkit-media-controls-panel {
         background: inherit;
+        transform: translateX(30px);
+        overflow: hidden;
       }
       &::-webkit-media-controls-play-button {
         filter: invert(0.6);
@@ -892,12 +916,25 @@ i {
         outline: 2px solid #999;
         outline-offset: -16px;
       }
+      &::-webkit-media-controls-fullscreen-button {
+        margin-right: -42px;
+        background: #2e2e2e;
+        z-index: 10;
+        user-select: none;
+        pointer-events: none;
+        display: block !important;
+      }
+      &::-internal-media-controls-overflow-button {
+        appearance: none;
+        filter: invert(1);
+      }
     }
   }
 }
 
 .songTitle {
   color: #fdff00;
+  margin-left: 12px;
 }
 
 #drop_zone {
