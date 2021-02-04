@@ -93,7 +93,7 @@ class UserEvents extends React.Component {
           <div className="my-events">
             <span id="myevents-header">
               <h1>Events under your administration.</h1>
-              <Link id="submit-event" to="/events/new">
+              <Link className="submit-btn" to="/events/new">
                 Submit an event
               </Link>
             </span>
