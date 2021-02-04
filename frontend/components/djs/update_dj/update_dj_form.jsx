@@ -13,7 +13,8 @@ class UpdateDjForm extends React.Component {
     super(props);
     this.state = this.props.dj;
     this.updateGenre = this.updateGenre.bind(this);
-    this.handleFile = this.handleFile.bind(this);
+    this.handlePhoto = this.handlePhoto.bind(this);
+    this.addSongs = this.addSongs.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -44,7 +45,7 @@ class UpdateDjForm extends React.Component {
     };
   }
 
-  handleFile(e) {
+  handlePhoto(e) {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     const url = URL.createObjectURL(file);
@@ -62,20 +63,46 @@ class UpdateDjForm extends React.Component {
     }
   }
 
+  addSongs(e) {
+    const files = Array.from(e.currentTarget.files);
+    const songs = this.state.songsUrl || [];
+
+    for (let file of files) {
+      const fileReader = new FileReader();
+      const url = URL.createObjectURL(file);
+      
+      fileReader.onloadend = () => {
+        // console.log(fileReader.result);
+        const songState = [...this.state.songsUrl, url];
+        // const songFileState = [...this.state.songFiles, ...files];
+        this.setState({
+          songsUrl: songState,
+          songFiles: files
+        });
+      };
+
+      if (file) fileReader.readAsDataURL(file);
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
     formData.append("dj[name]", this.state.name);
-    formData.append("dj[nationality]", this.state.nationality);
-    formData.append("dj[city]", this.state.city);
+    formData.append("dj[nationality]", `${this.state.city}, ${this.state.nationality}`);
+    // formData.append("dj[city]", this.state.city);
     formData.append("dj[genre]", this.state.genre);
     formData.append("dj[bio]", this.state.bio);
     if (this.state.photoFile) {
       formData.append("dj[photo]", this.state.photoFile);
     }
-
+    if (this.state.songFiles) {
+      for (let i = 0; i < this.state.songFiles.length; i++) {
+        formData.append("dj[songs][]", this.state.songFiles[i]);
+      }
+    }
     const { dj, updateDj, history } = this.props;
-    updateDj(formData, dj.id).then(dj => history.push(`/djs/${dj.dj.id}`));
+    updateDj(formData, dj.id).then((dj) => history.push(`/djs/${dj.dj.id}`));
   }
 
   render() {
@@ -102,9 +129,9 @@ class UpdateDjForm extends React.Component {
         genre={genre}
       />
     ) : null;
-    
-    const songs = (this.state.songsUrl && this.state.songsUrl) ?? [];
-    // console.log(songs);
+
+    // const songs = (this.state.songsUrl && this.state.songsUrl) ?? [];
+    const songs = this.state.songsUrl ? this.state.songsUrl : [];
 
     return (
       <React.Fragment>
@@ -175,9 +202,12 @@ class UpdateDjForm extends React.Component {
                       name="nationality"
                       id="cities"
                       className="nationality-select"
-                      value={this.state.city || " --Select a city-- "}
+                      value={this.state.city || "--Select a City--"}
                       onChange={this.update("city")}
                     >
+                      <option value="--Select a City--" disabled={true}>
+                        --Select a City--
+                      </option>
                       {currentCities.map((city) => (
                         <option key={city} value={city}>
                           {city}
@@ -227,24 +257,35 @@ class UpdateDjForm extends React.Component {
                     name="photoUrl"
                     className="file-input"
                     accept=".jpg,.jpeg,.png,.gif"
-                    onChange={this.handleFile}
+                    onChange={this.handlePhoto}
                   />
                 </label>
                 <br />
                 {preview}
-                <br/>
+                <br />
                 <label htmlFor="songs">
-                  Selected Discography / <br/>
+                  Selected Discography / <br />
+                  <input
+                    type="file"
+                    name="songs"
+                    className="file-input"
+                    accept=".mp3,.mpeg,.mpeg3,.audio/*"
+                    multiple
+                    onChange={this.addSongs}
+                  />
                   <ul className="dj-update-songs">
-                    {Boolean(songs.length) && songs.map((song, i) =>
-                    <li key={i}>
-                      <span className="songTitle">{extractSongTitle(song)}</span>
-                      <audio src={song} controls></audio>
-                    </li>
-                      )}
+                    {Boolean(songs.length) &&
+                      songs.map((song, i) => (
+                        <li key={i}>
+                          <span className="songTitle">
+                            {extractSongTitle(song)}
+                          </span>
+                          <audio src={song} controls></audio>
+                        </li>
+                      ))}
                   </ul>
                 </label>
-                <input className="submit-btn" type="submit" value="Submit"/>
+                <input className="submit-btn" type="submit" value="Submit" />
               </form>
             </div>
           </div>

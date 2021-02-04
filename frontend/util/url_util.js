@@ -29,8 +29,12 @@ export const dataURLtoFile = (dataurl, filename) => {
 };
 
 export const extractSongTitle = (url) => {
-  let song = url
-    .slice(url.lastIndexOf("/") + 1, url.lastIndexOf("."))
-    .replace("+", " ");
-  return song.replace(/\W\d*/g, " ");
+  try {
+    let song = url
+      .slice(url.lastIndexOf("/") + 1, url.lastIndexOf("."))
+      .replace("+", " ");
+    return song.replace(/\W\d*/g, " ");
+  } catch(err) {
+    console.log(err);
+  }
 };
