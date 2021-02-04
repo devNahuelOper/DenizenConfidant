@@ -11,7 +11,10 @@ import DjImagePreview from "../dj_image_preview";
 class UpdateDjForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.dj;
+    this.state = {
+      ...this.props.dj,
+      songFiles: [],
+    };
     this.updateGenre = this.updateGenre.bind(this);
     this.handlePhoto = this.handlePhoto.bind(this);
     this.addSongs = this.addSongs.bind(this);
@@ -69,16 +72,20 @@ class UpdateDjForm extends React.Component {
 
     for (let file of files) {
       const fileReader = new FileReader();
-      const url = URL.createObjectURL(file);
-      
+      const urls = files.map((file) => URL.createObjectURL(file));
+
       fileReader.onloadend = () => {
-        // console.log(fileReader.result);
-        const songState = [...this.state.songsUrl, url];
-        // const songFileState = [...this.state.songFiles, ...files];
+        const songState = [...songs, ...urls];
+        const songFileState = [...this.state.songFiles, file];
+
         this.setState({
           songsUrl: songState,
-          songFiles: files
+          songFiles: songFileState,
         });
+
+        $(".songTitle").each((idx, song) =>
+          $(song).text(songFileState[idx].name.replace(".mp3", ""))
+        );
       };
 
       if (file) fileReader.readAsDataURL(file);
@@ -89,7 +96,10 @@ class UpdateDjForm extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append("dj[name]", this.state.name);
-    formData.append("dj[nationality]", `${this.state.city}, ${this.state.nationality}`);
+    formData.append(
+      "dj[nationality]",
+      `${this.state.city}, ${this.state.nationality}`
+    );
     // formData.append("dj[city]", this.state.city);
     formData.append("dj[genre]", this.state.genre);
     formData.append("dj[bio]", this.state.bio);
@@ -130,7 +140,6 @@ class UpdateDjForm extends React.Component {
       />
     ) : null;
 
-    // const songs = (this.state.songsUrl && this.state.songsUrl) ?? [];
     const songs = this.state.songsUrl ? this.state.songsUrl : [];
 
     return (
