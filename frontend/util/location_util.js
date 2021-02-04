@@ -71,7 +71,19 @@ export const expandCountry = {
     flag: '🇬🇧',
     currency: 'GBP'
   },
+  'United Kingdom': {
+    cities: ['Belfast', 'Edinburgh', 'Liverpool', 'London', 'Glasgow', 'Manchester'],
+    flag: '🇬🇧',
+    currency: 'GBP'
+  },
   'USA': {
+    cities: ['Atlanta', 'Boston', 'Chicago', 'Dallas', 'Denver', 'Detroit',
+    'Houston', 'Los Angeles', 'Miami', 'New Orleans', 'New York', 'Philadelphia',
+    'Phoenix', 'Pittsburgh', 'San Francisco', 'Seattle', 'Washington DC'],
+    flag: '🇺🇸',
+    currency: 'USD'
+  },
+  'United States': {
     cities: ['Atlanta', 'Boston', 'Chicago', 'Dallas', 'Denver', 'Detroit',
     'Houston', 'Los Angeles', 'Miami', 'New Orleans', 'New York', 'Philadelphia',
     'Phoenix', 'Pittsburgh', 'San Francisco', 'Seattle', 'Washington DC'],

@@ -935,13 +935,9 @@ i {
 .songTitle {
   color: #fdff00;
   margin-left: 12px;
+  white-space: nowrap;
 }
 
-#drop_zone {
-  border: 5px solid blue;
-  width: 200px;
-  height: 100px;
-}
 
 @media only screen and (max-width: 972px) {
   #user-djs {
@@ -1108,6 +1104,10 @@ i {
 
   .user-dj-img {
     width: 236px;
+  }
+
+  .songTitle {
+    font-size: 14px;
   }
 }
 
