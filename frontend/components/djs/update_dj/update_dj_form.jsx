@@ -71,7 +71,8 @@ class UpdateDjForm extends React.Component {
   addSongs(e) {
     const files = Array.from(e.currentTarget.files);
     const songs = this.state.songsUrl || [];
-
+    let initLength = this.state.songsUrl.length;
+    
     for (let file of files) {
       const fileReader = new FileReader();
       const urls = files.map((file) => URL.createObjectURL(file));
@@ -79,13 +80,12 @@ class UpdateDjForm extends React.Component {
       fileReader.onloadend = () => {
         const songState = [...songs, ...urls];
         const songFileState = [...this.state.songFiles, file];
-
         this.setState({
           songsUrl: songState,
           songFiles: songFileState,
         });
 
-        $(".songTitle").each((idx, song) =>
+        $(".songTitle").slice(initLength).each((idx, song) =>
           $(song).text(songFileState[idx].name.replace(".mp3", ""))
         );
       };
@@ -105,7 +105,6 @@ class UpdateDjForm extends React.Component {
         ""
       )}`
     );
-    // formData.append("dj[city]", this.state.city);
     formData.append("dj[genre]", this.state.genre);
     formData.append("dj[bio]", this.state.bio);
     if (this.state.photoFile) {
@@ -117,7 +116,7 @@ class UpdateDjForm extends React.Component {
       }
     }
     $(".loader").show();
-    
+
     const { dj, updateDj, history } = this.props;
     updateDj(formData, dj.id).then((dj) => history.push(`/djs/${dj.dj.id}`));
   }
