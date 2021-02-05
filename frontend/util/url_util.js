@@ -34,7 +34,21 @@ export const extractSongTitle = (url) => {
       .slice(url.lastIndexOf("/") + 1, url.lastIndexOf("."))
       .replace("+", " ");
     return song.replace(/\W\d*/g, " ");
-  } catch(err) {
+  } catch (err) {
     console.log(err);
   }
+};
+
+export const formatNewSongs = (songFiles, initLength) => {
+  $(".songTitle")
+    .slice(initLength)
+    .each((idx, song) => {
+      $(".update-song")[idx + initLength].classList.add("new-song");
+    });
+
+  $(".new-song .songTitle").each((idx, song) => {
+    $(song).text(songFiles[idx].name.replace(".mp3", ""));
+  });
+
+  $(".dj-update-songs").scrollTop(213);
 };
