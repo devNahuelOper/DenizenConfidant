@@ -68,7 +68,10 @@ class UpdateDjForm extends React.Component {
   }
 
   addSongs(e) {
-    const files = Array.from(e.currentTarget.files).filter(file => !(this.state.songFiles.some(songFile => songFile.name == file.name)));
+    const files = Array.from(e.currentTarget.files).filter(
+      (file) =>
+        !this.state.songFiles.some((songFile) => songFile.name == file.name) && !(this.state.songNames.includes(file.name))
+    );
     const songs = this.state.songsUrl || [];
     let initLength = this.state.songsUrl.length;
 
@@ -141,7 +144,7 @@ class UpdateDjForm extends React.Component {
     const countries = Object.entries(expandCountry).map(
       (k) => `${k[0]}  ${k[1].flag}`
     );
-    // const currentCities = expandCountry[nationality.replace(/\W/g, "")].cities;
+
     const currentCities =
       expandCountry[nationality.replace(/([\w\s]+,)* /, "").replace(/\W/g, "")]
         .cities;
