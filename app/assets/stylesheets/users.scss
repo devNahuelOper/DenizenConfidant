@@ -879,19 +879,25 @@ i {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #2e2e2e;
-    border-bottom: 1px solid #404040;
     padding: 8px;
+    &.update-song {
+      background-color: #2e2e2e;
+      border-bottom: 1px solid #404040;
+    }
+    &.new-song {
+      background-color: #494848;
+      border-bottom: 1px solid #2e2e2e;
+    }
     audio {
       background: inherit;
       outline: 0;
       &::-webkit-media-controls-enclosure {
         background: inherit;
-        transform: translateX(-15px);
+        transform: translateX(-20px);
       }
       &::-webkit-media-controls-panel {
         background: inherit;
-        transform: translateX(30px);
+        transform: translateX(32px);
         overflow: hidden;
       }
       &::-webkit-media-controls-play-button {
