@@ -5,7 +5,7 @@ import SubnavToggle from "../../subnav/subnav";
 import NavBar from "../../navbar/navbar";
 import { expandCountry } from "../../../util/location_util";
 import { handleImageSize } from "../../../util/form_util";
-import { extractSongTitle } from "../../../util/url_util";
+import { extractSongTitle, formatNewSongs } from "../../../util/url_util";
 import DjImagePreview from "../dj_image_preview";
 
 class UpdateDjForm extends React.Component {
@@ -68,9 +68,11 @@ class UpdateDjForm extends React.Component {
   }
 
   addSongs(e) {
+    e.preventDefault();
     const files = Array.from(e.currentTarget.files).filter(
       (file) =>
-        !this.state.songFiles.some((songFile) => songFile.name == file.name) && !(this.state.songNames.includes(file.name))
+        !this.state.songFiles.some((songFile) => songFile.name == file.name) &&
+        !this.state.songNames.includes(file.name)
     );
     const songs = this.state.songsUrl || [];
     let initLength = this.state.songsUrl.length;
@@ -87,24 +89,16 @@ class UpdateDjForm extends React.Component {
           songFiles: _.uniqBy(songFileState, (file) => file.name),
         });
 
-        $(".songTitle")
-          .slice(initLength)
-          .each((idx, song) => {
-            $(".update-song")[idx + initLength].classList.add("new-song");
-          });
-
-        $(".new-song .songTitle").each((idx, song) => {
-          $(song).text(this.state.songFiles[idx].name.replace(".mp3", ""));
-        });
-
-        $(".dj-update-songs").scrollTop(213);
+        formatNewSongs(this.state.songFiles, initLength);
       };
 
       if (file) fileReader.readAsDataURL(file);
     }
   }
 
-  removeSong() {}
+  removeSong(e) {
+    e.preventDefault();
+  }
 
   handleSubmit(e) {
     e.preventDefault();
