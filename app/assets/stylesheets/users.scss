@@ -856,6 +856,7 @@ i {
   max-width: 612px;
   max-height: 213px;
   overflow-y: scroll;
+  position: relative;
   &::-webkit-scrollbar {
     width: 8px;
     cursor: pointer;
@@ -880,6 +881,7 @@ i {
     align-items: center;
     justify-content: space-between;
     padding: 8px;
+    position: relative;
     &.update-song {
       background-color: #2e2e2e;
       border-bottom: 1px solid #404040;
@@ -887,6 +889,13 @@ i {
     &.new-song {
       background-color: #494848;
       border-bottom: 1px solid #2e2e2e;
+      .remove-song {
+        filter: brightness(0.6);
+        &:hover {
+          filter: brightness(0.6) invert(0.6);
+          transition: 1s;
+        }
+      }
     }
     audio {
       background: inherit;
@@ -948,6 +957,17 @@ i {
   text-transform: capitalize;
 }
 
+.remove-song {
+  cursor: pointer;
+  position: absolute;
+  right: 6px;
+  top: 8px;
+  font-size: 12px;
+  &:hover {
+    filter: invert(0.6);
+    transition: 1s;
+  }
+}
 
 @media only screen and (max-width: 972px) {
   #user-djs {

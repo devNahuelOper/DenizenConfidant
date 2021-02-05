@@ -50,5 +50,5 @@ export const formatNewSongs = (songFiles, initLength) => {
     $(song).text(songFiles[idx].name.replace(".mp3", ""));
   });
 
-  $(".dj-update-songs").scrollTop(213);
+  $(".dj-update-songs").scrollTop($(".dj-update-songs")[0].scrollHeight);
 };
