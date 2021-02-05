@@ -14,7 +14,7 @@ class UpdateDjForm extends React.Component {
     this.state = {
       ...this.props.dj,
       songFiles: [],
-      errors: this.props.errors
+      errors: this.props.errors,
     };
     this.updateGenre = this.updateGenre.bind(this);
     this.handlePhoto = this.handlePhoto.bind(this);
@@ -31,7 +31,6 @@ class UpdateDjForm extends React.Component {
     this.props.fetchDj(this.props.match.params.djId);
     // console.log('Mounted', this.props);
   }
-
 
   update(field) {
     return (e) => {
@@ -72,7 +71,7 @@ class UpdateDjForm extends React.Component {
     const files = Array.from(e.currentTarget.files);
     const songs = this.state.songsUrl || [];
     let initLength = this.state.songsUrl.length;
-    
+
     for (let file of files) {
       const fileReader = new FileReader();
       const urls = files.map((file) => URL.createObjectURL(file));
@@ -82,17 +81,28 @@ class UpdateDjForm extends React.Component {
         const songFileState = [...this.state.songFiles, file];
         this.setState({
           songsUrl: songState,
-          songFiles: songFileState,
+          songFiles: _.uniqBy(songFileState, (file) => file.name),
         });
 
-        $(".songTitle").slice(initLength).each((idx, song) =>
-          $(song).text(songFileState[idx].name.replace(".mp3", ""))
-        );
+        $(".songTitle")
+          .slice(initLength)
+          .each((idx, song) => {
+            // $(song).text(songFileState[idx].name.replace(".mp3", ""));
+            $(".update-song")[idx + initLength].classList.add("new-song");
+          });
+
+        $(".new-song .songTitle").each((idx, song) => {
+          $(song).text(this.state.songFiles[idx].name);
+        });
+
+        $(".dj-update-songs").scrollTop(213);
       };
 
       if (file) fileReader.readAsDataURL(file);
     }
   }
+
+  removeSong() {}
 
   handleSubmit(e) {
     e.preventDefault();
@@ -295,7 +305,7 @@ class UpdateDjForm extends React.Component {
                   <ul className="dj-update-songs">
                     {Boolean(songs.length) &&
                       songs.map((song, i) => (
-                        <li key={i}>
+                        <li key={i} className="update-song">
                           <span className="songTitle">
                             {extractSongTitle(song)}
                           </span>
