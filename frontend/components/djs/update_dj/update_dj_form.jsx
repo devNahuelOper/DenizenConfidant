@@ -14,6 +14,7 @@ class UpdateDjForm extends React.Component {
     this.state = {
       ...this.props.dj,
       songFiles: [],
+      errors: this.props.errors
     };
     this.updateGenre = this.updateGenre.bind(this);
     this.handlePhoto = this.handlePhoto.bind(this);
@@ -30,6 +31,7 @@ class UpdateDjForm extends React.Component {
     this.props.fetchDj(this.props.match.params.djId);
     // console.log('Mounted', this.props);
   }
+
 
   update(field) {
     return (e) => {
@@ -98,7 +100,10 @@ class UpdateDjForm extends React.Component {
     formData.append("dj[name]", this.state.name);
     formData.append(
       "dj[nationality]",
-      `${this.state.city}, ${this.state.nationality}`
+      `${this.state.city}, ${this.state.nationality.replace(
+        /([\w\s]+,)* /,
+        ""
+      )}`
     );
     // formData.append("dj[city]", this.state.city);
     formData.append("dj[genre]", this.state.genre);
@@ -111,6 +116,8 @@ class UpdateDjForm extends React.Component {
         formData.append("dj[songs][]", this.state.songFiles[i]);
       }
     }
+    $(".loader").show();
+    
     const { dj, updateDj, history } = this.props;
     updateDj(formData, dj.id).then((dj) => history.push(`/djs/${dj.dj.id}`));
   }
@@ -128,7 +135,7 @@ class UpdateDjForm extends React.Component {
     );
     // const currentCities = expandCountry[nationality.replace(/\W/g, "")].cities;
     const currentCities =
-      expandCountry[nationality.replace(/[\w\s]+, /, "").replace(/\W/g, "")]
+      expandCountry[nationality.replace(/([\w\s]+,)* /, "").replace(/\W/g, "")]
         .cities;
 
     const preview = photoUrl ? (
@@ -197,7 +204,7 @@ class UpdateDjForm extends React.Component {
                       name="nationality"
                       id="countries"
                       className="nationality-select"
-                      value={nationality}
+                      value={countries.find((c) => nationality.includes(c))}
                       onChange={this.update("nationality")}
                     >
                       {countries.map((country) => (
@@ -211,7 +218,11 @@ class UpdateDjForm extends React.Component {
                       name="nationality"
                       id="cities"
                       className="nationality-select"
-                      value={this.state.city || "--Select a City--"}
+                      value={
+                        this.state.city ||
+                        currentCities.find((c) => nationality.includes(c)) ||
+                        "--Select a City--"
+                      }
                       onChange={this.update("city")}
                     >
                       <option value="--Select a City--" disabled={true}>
@@ -297,6 +308,9 @@ class UpdateDjForm extends React.Component {
                 <input className="submit-btn" type="submit" value="Submit" />
               </form>
             </div>
+            {!this.props.errors.length && (
+              <div className="loader loader-hide"></div>
+            )}
           </div>
         </div>
       </React.Fragment>

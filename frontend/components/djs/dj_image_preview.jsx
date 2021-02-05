@@ -27,7 +27,7 @@ const DjImagePreview = ({ photoUrl, name, nationality, genre }) => {
         <h2 id="disp-country">
           <small>Country /</small>
           <br />
-          {nationality.split("  ").reverse().join(" ")}
+          {nationality.split("  ").reverse().join(" ").replace('undefined,', '')}
         </h2>
         <h2 id="disp-genre">
           <small>Genre(s) /</small>
