@@ -19,6 +19,7 @@ class UpdateDjForm extends React.Component {
     this.updateGenre = this.updateGenre.bind(this);
     this.handlePhoto = this.handlePhoto.bind(this);
     this.addSongs = this.addSongs.bind(this);
+    this.removeSong = this.removeSong.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -96,8 +97,16 @@ class UpdateDjForm extends React.Component {
     }
   }
 
-  removeSong(e) {
-    e.preventDefault();
+  removeSong(song) {
+    const { songsUrl, songFiles } = this.state;
+    const newSongsUrl = songsUrl.filter((url) => url != song);
+    const newSongFiles = songFiles.filter(
+      (file) => file.name != extractSongTitle(song)
+    );
+    this.setState({
+      songsUrl: newSongsUrl,
+      songFiles: newSongFiles,
+    });
   }
 
   handleSubmit(e) {
@@ -306,6 +315,13 @@ class UpdateDjForm extends React.Component {
                             {extractSongTitle(song)}
                           </span>
                           <audio src={song} controls></audio>
+                          <span
+                            className="remove-song"
+                            title="Remove Song"
+                            onClick={() => this.removeSong(song)}
+                          >
+                            ✖️
+                          </span>
                         </li>
                       ))}
                   </ul>
