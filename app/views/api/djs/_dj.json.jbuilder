@@ -8,8 +8,8 @@ song_files = []
 if dj.songs.attached?
   dj.songs.each do |song|
     song_arr.push(json.songUrl polymorphic_url(song)) 
-    # song_files.push(json.songFile song.blob)
+    song_files.push(song.blob.filename)
   end
   json.songsUrl song_arr
-  # json.songFiles song_files
+  json.songNames song_files
 end
