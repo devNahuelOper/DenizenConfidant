@@ -68,7 +68,7 @@ class UpdateDjForm extends React.Component {
   }
 
   addSongs(e) {
-    const files = Array.from(e.currentTarget.files);
+    const files = Array.from(e.currentTarget.files).filter(file => !(this.state.songFiles.some(songFile => songFile.name == file.name)));
     const songs = this.state.songsUrl || [];
     let initLength = this.state.songsUrl.length;
 
@@ -87,12 +87,11 @@ class UpdateDjForm extends React.Component {
         $(".songTitle")
           .slice(initLength)
           .each((idx, song) => {
-            // $(song).text(songFileState[idx].name.replace(".mp3", ""));
             $(".update-song")[idx + initLength].classList.add("new-song");
           });
 
         $(".new-song .songTitle").each((idx, song) => {
-          $(song).text(this.state.songFiles[idx].name);
+          $(song).text(this.state.songFiles[idx].name.replace(".mp3", ""));
         });
 
         $(".dj-update-songs").scrollTop(213);
