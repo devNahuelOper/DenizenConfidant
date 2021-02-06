@@ -65,8 +65,12 @@ class LoginForm extends React.Component {
   }
 
   renderError(field) {
-    const errors = this.props.errors;
-    return errors.some((error) => error.includes(field));
+    try {
+      const errors = this.props.errors;
+      return errors.some((error) => error.includes(field));
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   render() {
