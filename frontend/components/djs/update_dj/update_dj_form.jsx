@@ -30,13 +30,12 @@ class UpdateDjForm extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchDj(this.props.match.params.djId);
-    // console.log('Mounted', this.props);
   }
 
   update(field) {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value });
-      console.log(this.state);
+      // console.log(this.state);
     };
   }
 
@@ -100,9 +99,6 @@ class UpdateDjForm extends React.Component {
   removeSong(song, idx) {
     const { songsUrl, songFiles } = this.state;
     const newSongsUrl = songsUrl.filter((url) => url != song);
-    // const newSongFiles = songFiles.filter(
-    //   (file) => file.name != extractSongTitle(song)
-    // );
     const newSongFiles = songFiles.filter((file) => file != songFiles[idx]);
     this.setState({
       songsUrl: newSongsUrl,
@@ -110,14 +106,15 @@ class UpdateDjForm extends React.Component {
     });
   }
 
+
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
     formData.append("dj[name]", this.state.name);
     formData.append(
       "dj[nationality]",
-      `${this.state.city}, ${this.state.nationality.replace(
-        /([\w\s]+,)* /,
+      `${this.state.city || this.state.nationality.split(',')[0]}, ${this.state.nationality.replace(
+        /([\w\s]*,)* /,
         ""
       )}`
     );

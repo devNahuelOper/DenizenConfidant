@@ -885,11 +885,15 @@ i {
     &.update-song {
       background-color: #2e2e2e;
       border-bottom: 1px solid #404040;
+      .remove-song {
+        display: none;
+      }
     }
     &.new-song {
       background-color: #494848;
       border-bottom: 1px solid #2e2e2e;
       .remove-song {
+        display: inline;
         filter: brightness(0.6);
         &:hover {
           filter: brightness(0.6) invert(0.6);

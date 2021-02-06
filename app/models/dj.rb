@@ -35,4 +35,5 @@ class Dj < ApplicationRecord
     end
     genre_hash
   end
+
 end

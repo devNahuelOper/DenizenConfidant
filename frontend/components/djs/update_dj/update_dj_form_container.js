@@ -2,9 +2,8 @@ import { connect } from "react-redux";
 import {
   fetchDj,
   updateDj,
-  receiveDjErrors
+  receiveDjErrors,
 } from "../../../actions/dj_actions";
-// import { fetchGenres } from "../../../actions/genre_actions";
 import {
   fetchCurrentUser,
   getCurrentUser,
