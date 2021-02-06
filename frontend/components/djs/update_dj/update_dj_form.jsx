@@ -97,12 +97,13 @@ class UpdateDjForm extends React.Component {
     }
   }
 
-  removeSong(song) {
+  removeSong(song, idx) {
     const { songsUrl, songFiles } = this.state;
     const newSongsUrl = songsUrl.filter((url) => url != song);
-    const newSongFiles = songFiles.filter(
-      (file) => file.name != extractSongTitle(song)
-    );
+    // const newSongFiles = songFiles.filter(
+    //   (file) => file.name != extractSongTitle(song)
+    // );
+    const newSongFiles = songFiles.filter((file) => file != songFiles[idx]);
     this.setState({
       songsUrl: newSongsUrl,
       songFiles: newSongFiles,
@@ -142,7 +143,7 @@ class UpdateDjForm extends React.Component {
 
     const genreSets = [[...genres], [...genres], [...genres]];
 
-    const { name, nationality, genre, bio, photoUrl } = this.state;
+    const { name, nationality, genre, bio, photoUrl, songNames } = this.state;
 
     const countries = Object.entries(expandCountry).map(
       (k) => `${k[0]}  ${k[1].flag}`
@@ -318,7 +319,7 @@ class UpdateDjForm extends React.Component {
                           <span
                             className="remove-song"
                             title="Remove Song"
-                            onClick={() => this.removeSong(song)}
+                            onClick={() => this.removeSong(song, i - songNames.length)}
                           >
                             ✖️
                           </span>
