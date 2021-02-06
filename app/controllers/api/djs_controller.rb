@@ -20,17 +20,13 @@ class Api::DjsController < ApplicationController
       render :show
    end
 
-  #  def edit
-  #     @dj = Dj.find(params[:id])
-  #     render json: "api/djs/:id"
-  #  end
 
   #  def update
   #   @dj = Dj.find(params[:id])
   #   if !@dj.update(dj_params)
-  #     render json: @dj.errors.full_messages
+  #     render json: @dj.errors.full_messages, status: 422
   #   end
-  #     render json: "api/djs/:id"
+  #     render :show
   #  end
 
     def update 
@@ -42,6 +38,7 @@ class Api::DjsController < ApplicationController
    private
 
    def dj_params
-     params.require(:dj).permit(:name, :genre, :nationality, :city, :bio, :user_id, :photo, :track, songs: [])
+    #  params.require(:dj).permit(:name, :genre, :nationality, :city, :bio, :user_id, :photo, :track, songs: [])
+     params.fetch(:dj, {}).permit(:name, :genre, :nationality, :city, :bio, :user_id, :photo, :track, songs: [])
    end
 end

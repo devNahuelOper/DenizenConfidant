@@ -1,7 +1,4 @@
-import {
-  RECEIVE_DJS,
-  RECEIVE_DJ
-} from '../actions/dj_actions';
+import { RECEIVE_DJS, RECEIVE_DJ } from "../actions/dj_actions";
 
 const djsReducer = (state = {}, action) => {
   Object.freeze(state);
