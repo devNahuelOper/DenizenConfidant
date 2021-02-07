@@ -65,12 +65,8 @@ class LoginForm extends React.Component {
   }
 
   renderError(field) {
-    try {
-      const errors = this.props.errors;
-      return errors.some((error) => error.includes(field));
-    } catch (e) {
-      console.log(e);
-    }
+    const errors = this.props.errors;
+    return errors.some((error) => error.includes(field));
   }
 
   render() {
@@ -129,7 +125,6 @@ class LoginForm extends React.Component {
                     name="username"
                     value={this.state.username}
                     onChange={this.update("username")}
-                    // onKeyPress={() => this.props.receiveErrors([])}
                     className="login-input"
                   />
                   {this.renderError("username") && length <= 0 ? (
