@@ -106,7 +106,6 @@ body {
   height: 0;
 }
 
-
 .welcome-container {
   width: 960px;
   height: inherit;
@@ -395,10 +394,11 @@ body {
     font-size: 10px;
     a {
       color: #ffa200;
-    }
-    a:hover {
-      background-color: #ffa200;
-      color: #2e2e2e;
+      &:hover {
+        background-color: #ffa200;
+        color: #2e2e2e;
+        padding: 0px 2px;
+      }
     }
   }
   .submit-wrap {
@@ -542,7 +542,8 @@ body {
       // border: 1px solid #2e2e2e;
       border: unset;
     }
-    #linkedin-logo, #fb-logo {
+    #linkedin-logo,
+    #fb-logo {
       height: 27px;
     }
     #angel-logo {
@@ -564,7 +565,6 @@ body {
       width: 440px;
     }
   }
- 
 }
 
 @media only screen and (max-width: 499px) {

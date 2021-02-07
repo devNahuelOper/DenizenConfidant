@@ -705,12 +705,16 @@ i {
 .my-djs {
   border-bottom: 0.1px solid #585858;
   min-height: 224px;
-}
-
-.user-djs-list {
   width: 960px;
   margin: 0 auto;
   padding: 20px;
+  h1 {
+    font-size: 28px;
+    color: white;
+  }
+}
+
+.user-djs-list {
   article {
     display: flex;
   }
@@ -1005,7 +1009,7 @@ i {
   .calendar,
   .monthToggle-wrap,
   #myevents-list,
-  .user-djs-list {
+  .my-djs {
     width: 675px;
   }
   .hasEvent {
@@ -1083,7 +1087,7 @@ i {
   #myevents-list,
   .user-event,
   .eventform-subheader,
-  .user-djs-list {
+  .my-djs {
     width: 560px;
   }
 
@@ -1174,11 +1178,14 @@ i {
   #myevents-list,
   .user-event,
   .eventform-subheader,
-  .user-djs-list {
+  .my-djs{
     width: 490px;
   }
-  .user-djs-list {
+  .my-djs {
     padding-left: 5px;
+    h1 {
+      font-size: 24px;
+    }
   }
 
   .hasEvent {
@@ -1384,7 +1391,7 @@ i {
   #myevents-header,
   #myevents-list,
   .eventform-subheader,
-  .user-djs-list {
+  .my-djs {
     width: 1272px;
   }
 
