@@ -14,7 +14,6 @@ import {
   formatTime,
 } from "../../util/date_util";
 import { activateCalendar } from "../../util/calendar_util";
-import { toggleSearch } from "../../util/search_util";
 import { TitleComponent } from "../title_component.jsx";
 import Calendar from "./calendar";
 
@@ -22,10 +21,6 @@ class UserProfile extends React.Component {
   constructor(props) {
     super(props);
     this.toggleCalendar = this.toggleCalendar.bind(this);
-  }
-
-  componentDidMount() {
-    toggleSearch();
   }
 
   toggleCalendar() {

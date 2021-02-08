@@ -52,6 +52,7 @@ class Search extends React.Component {
 
   resetSearchTerm() {
     this.setState({ searchTerm: "" });
+    this.props.hideSearch();
   }
 
   handleSubmit() {

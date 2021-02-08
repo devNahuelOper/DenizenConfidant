@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { TitleComponent } from "../title_component.jsx";
 import SubnavToggle from "../subnav/subnav";
 import NavBar from "../navbar/navbar";
-import { toggleSearch } from "../../util/search_util";
 import { extractSongTitle } from "../../util/url_util";
 
 class DjShow extends React.Component {
@@ -14,10 +13,6 @@ class DjShow extends React.Component {
   componentDidMount() {
     this.props.fetchDj(this.props.match.params.djId);
     window.scrollTo(0, 0);
-  }
-
-  componentDidUpdate() {
-    toggleSearch();
   }
 
   render() {

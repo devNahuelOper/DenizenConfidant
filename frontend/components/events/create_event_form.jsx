@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import NavBar from "../navbar/navbar";
-import { toggleSearch } from "../../util/search_util";
 import { addCities, expandCountry } from "../../util/location_util";
 import { dataURLtoFile } from "../../util/url_util";
 
@@ -36,7 +35,6 @@ class CreateEventForm extends React.Component {
   componentDidMount() {
     this.props.receiveEventErrors([]);
     window.scrollTo(0, 0);
-    toggleSearch();
   }
 
   resetForm(e) {

@@ -5,7 +5,6 @@ import LanguageDropdown from "./language_dropdown";
 import BirthdayDropdown from "./birthday_dropdown";
 import NavBar from "../navbar/navbar";
 import SubnavToggle from "../subnav/subnav";
-import { toggleSearch } from "../../util/search_util";
 import { expandCountry } from "../../util/location_util";
 
 class SignupForm extends React.Component {
@@ -21,7 +20,6 @@ class SignupForm extends React.Component {
   componentDidMount() {
     this.props.receiveErrors([]);
     window.scrollTo(0, 0);
-    toggleSearch();
   }
 
   checker(e) {

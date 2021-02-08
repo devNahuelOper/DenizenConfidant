@@ -4,7 +4,6 @@ import { TitleComponent } from "../title_component.jsx";
 import SubnavToggle from "../subnav/subnav";
 import NavBar from "../navbar/navbar";
 import { formatDateShowStyle } from "../../util/date_util";
-import { toggleSearch } from "../../util/search_util";
 
 class EventShow extends React.Component {
   constructor(props) {
@@ -14,10 +13,6 @@ class EventShow extends React.Component {
   componentDidMount() {
     this.props.fetchEvent(this.props.match.params.eventId);
     window.scrollTo(0, 0);
-  }
-
-  componentDidUpdate() {
-    toggleSearch();
   }
 
   render() {

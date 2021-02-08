@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 import NavBar from "../navbar/navbar";
 import SubnavToggle from "../subnav/subnav";
 import { formatMonthYear, formatDateStyle } from "../../util/date_util";
-import { toggleSearch } from "../../util/search_util";
 import { TitleComponent } from "../title_component.jsx";
 
 class UserEvents extends React.Component {
@@ -22,7 +21,6 @@ class UserEvents extends React.Component {
 
   componentDidMount() {
     this.props.fetchEvents();
-    toggleSearch();
   }
 
   handleDelete(id) {

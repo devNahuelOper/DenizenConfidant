@@ -4,7 +4,6 @@ import { HashLink } from "react-router-hash-link";
 import DjIndexItem from "./dj_index_item";
 import SubnavToggle from "../subnav/subnav";
 import NavBar from "../navbar/navbar";
-import { toggleSearch } from "../../util/search_util";
 
 class DjIndex extends React.Component {
   constructor(props) {
@@ -14,7 +13,6 @@ class DjIndex extends React.Component {
   componentDidMount() {
     this.props.fetchDjs();
     this.props.fetchGenres();
-    toggleSearch();
     window.scrollTo(0, 0);
   }
 

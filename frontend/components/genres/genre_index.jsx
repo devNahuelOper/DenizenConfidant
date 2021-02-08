@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import GenreIndexItem from "./genre_index_item";
 import SubnavToggle from "../subnav/subnav";
 import NavBar from "../navbar/navbar";
-import { toggleSearch } from "../../util/search_util";
 
 class GenreIndex extends React.Component {
   constructor(props) {
@@ -12,7 +11,6 @@ class GenreIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchGenres();
-    toggleSearch();
   }
 
   render() {

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../navbar/navbar";
 import SubnavToggle from "../subnav/subnav";
-import { toggleSearch } from "../../util/search_util";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye as farEye } from "@fortawesome/fontawesome-free-regular";
 import { faEyeSlash as farEyeSlash } from "@fortawesome/fontawesome-free-regular";
@@ -23,8 +22,6 @@ class LoginForm extends React.Component {
   componentDidMount() {
     this.props.receiveErrors([]);
     window.scrollTo(0, 0);
-    toggleSearch();
-    // console.log(this.state);
   }
 
   update(field) {

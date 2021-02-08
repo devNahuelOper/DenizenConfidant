@@ -1,7 +1,6 @@
 import React from "react";
 import ImageCarousel from "./image_carousel";
 import { Link } from "react-router-dom";
-import { toggleSearch } from "../../util/search_util";
 import { fiveDaySpan } from "../../util/date_util";
 import NewsIndex from "../news/news_index";
 import NavBar from "../navbar/navbar";
@@ -17,7 +16,6 @@ class SplashPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchDjs();
-    toggleSearch();
   }
 
   render() {
