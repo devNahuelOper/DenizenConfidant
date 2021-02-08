@@ -1,7 +1,6 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { closeModal } from '../../actions/modal_actions';
-
+import React from "react";
+import { connect } from "react-redux";
+import { closeModal, openModal } from "../../actions/modal_actions";
 
 class Modal extends React.Component {
   constructor(props) {
@@ -12,6 +11,18 @@ class Modal extends React.Component {
     if (!this.props.modal) {
       return null;
     }
+
+    // const { closeModal, openModal, modal } = this.props;
+    // document.addEventListener("keydown", (e) => {
+    //   if (e.code == "KeyS") {
+    //     openModal(modal);
+    //     console.log("Show");
+    //   }
+    //   if (e.code == "KeyH") {
+    //     closeModal();
+    //     console.log("Hide");
+    //   }
+    // });
 
     return (
       <div className="modal-container">
@@ -26,21 +37,21 @@ class Modal extends React.Component {
         {/* <button onClick={this.props.openModal}>Open</button>
         <Modal /> */}
       </div>
-    )
+    );
   }
 }
 
-
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    modal: state.ui.modal
-  }
-}
+    modal: state.ui.modal,
+  };
+};
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    closeModal: () => dispatch(closeModal())
-  }
-}
+    closeModal: () => dispatch(closeModal()),
+    openModal: (modal) => dispatch(openModal(modal)),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);
