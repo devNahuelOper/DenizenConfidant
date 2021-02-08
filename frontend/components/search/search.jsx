@@ -2,9 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
+import { ClickAwayListener } from "@material-ui/core";
 import { fetchDjs } from "../../actions/dj_actions";
 import { fetchGenres } from "../../actions/genre_actions";
 import { fetchEvents } from "../../actions/event_actions";
+import { showSearch, hideSearch } from "../../actions/search_actions";
 
 class Search extends React.Component {
   constructor(props) {
@@ -75,46 +77,52 @@ class Search extends React.Component {
   }
 
   render() {
+    if (!this.props.searchBar) return null;
+  
     return (
-      <div className="search-container">
-        <div id="searchbar">
-          <form id="search-form" onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              id="search-input"
-              value={this.state.searchTerm}
-              onChange={this.editSearchTerm}
-              placeholder="DJs, Genres, Events"
-            />
-            <div id="search-button-container">
-              <button id="search-button" type="submit">
-                Submit
-              </button>
+      <>
+        <ClickAwayListener onClickAway={this.props.hideSearch}>
+          <div className="search-container">
+            <div id="searchbar">
+              <form id="search-form" onSubmit={this.handleSubmit}>
+                <input
+                  type="text"
+                  id="search-input"
+                  value={this.state.searchTerm}
+                  onChange={this.editSearchTerm}
+                  placeholder="DJs, Genres, Events"
+                />
+                <div id="search-button-container">
+                  <button id="search-button" type="submit">
+                    Submit
+                  </button>
+                </div>
+                <div
+                  style={
+                    this.state.searchTerm.length
+                      ? { display: "block" }
+                      : { display: "none" }
+                  }
+                >
+                  {this.state.searchTerm.length && (
+                    <ul id="searchlist" onClick={this.resetSearchTerm}>
+                      <li>
+                        <DjQueryContainer djs={this.djSearch()} />
+                      </li>
+                      <li>
+                        <GenreQueryContainer genres={this.genreSearch()} />
+                      </li>
+                      <li>
+                        <EventQueryContainer events={this.eventSearch()} />
+                      </li>
+                    </ul>
+                  )}
+                </div>
+              </form>
             </div>
-            <div
-              style={
-                this.state.searchTerm.length
-                  ? { display: "block" }
-                  : { display: "none" }
-              }
-            >
-              {this.state.searchTerm.length && (
-                <ul id="searchlist" onClick={this.resetSearchTerm}>
-                  <li>
-                    <DjQueryContainer djs={this.djSearch()} />
-                  </li>
-                  <li>
-                    <GenreQueryContainer genres={this.genreSearch()} />
-                  </li>
-                  <li>
-                    <EventQueryContainer events={this.eventSearch()} />
-                  </li>
-                </ul>
-              )}
-            </div>
-          </form>
-        </div>
-      </div>
+          </div>
+        </ClickAwayListener>
+      </>
     );
   }
 }
@@ -196,6 +204,7 @@ const mapStateToProps = (state) => {
     djs: Object.values(state.entities.djs),
     genres: Object.values(state.entities.genres),
     events: Object.values(state.entities.events),
+    searchBar: state.ui.searchBar
   };
 };
 
@@ -203,6 +212,8 @@ const mapDispatchToProps = (dispatch) => ({
   fetchDjs: () => dispatch(fetchDjs()),
   fetchGenres: () => dispatch(fetchGenres()),
   fetchEvents: () => dispatch(fetchEvents()),
+  hideSearch: () => dispatch(hideSearch()),
+  showSearch: (searchBar) => dispatch(showSearch(searchBar))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
