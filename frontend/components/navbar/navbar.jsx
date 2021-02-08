@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { showSearch } from '../../actions/search_actions';
 
-const NavBar = ({title, hasLinks = false, entity, path, label, type = "show"}) => {
+const NavBar = ({title, hasLinks = false, entity, path, label, type = "show", ...props}) => {
+  const dispatch = useDispatch();
+  const searchBar = useSelector(state => state.ui.searchBar);
+  const displaySearch = () => dispatch(showSearch(searchBar));
 
   return (
     <section className="navbar" id={`${entity.toLowerCase()}s-nav`}>
@@ -20,7 +25,7 @@ const NavBar = ({title, hasLinks = false, entity, path, label, type = "show"}) =
             <Link to="/genres">Music</Link>
           </li>
           <li>
-            <button id="search">Search</button>
+            <button id="search" onClick={displaySearch}>Search</button>
           </li>
         </ul>
       </nav>
@@ -56,6 +61,7 @@ const NavBar = ({title, hasLinks = false, entity, path, label, type = "show"}) =
       ) : (
         <h1>{title}</h1>
       )}
+      {props.children}
     </section>
   );
 }
