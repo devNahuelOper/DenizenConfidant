@@ -25,7 +25,7 @@ import NewsShow from "./news/news_show";
 import { TitleComponent } from "./title_component.jsx";
 import Modal from "./modal/modal";
 // import { openModal, closeModal } from "../actions/modal_actions";
-import { showSearch, hideSearch } from "../actions/search_actions";
+// import { showSearch, hideSearch } from "../actions/search_actions";
 
 const withTitle = ({ component: Component, title }) => {
   return class Title extends React.Component {
@@ -58,25 +58,12 @@ const GenresIndexContainer = withTitle({
 const App = (props) => {
   const { state, dispatch } = props;
 
-  document.addEventListener("keydown", (e) => {
-    if (e.code == "KeyS") {
-      dispatch(showSearch(state.ui.searchBar));
-      // dispatch(openModal(state.ui.modal));
-      console.log("Show");
-    }
-    if (e.code == "KeyH") {
-      dispatch(hideSearch());
-      // dispatch(closeModal());
-      console.log("Hide");
-    }
-  });
-
   return (
     <>
       <GreetingContainer />
       <Search />
       <Modal />
-      <Switch>
+      <Switch state={state}>
         <AuthRoute
           path="/login"
           component={withTitle({
