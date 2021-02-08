@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { TitleComponent } from "../title_component.jsx";
 import SubnavToggle from "../subnav/subnav";
 import NavBar from "../navbar/navbar";
-import { toggleSearch } from "../../util/search_util";
 import _ from "lodash";
 
 class GenreShow extends React.Component {
@@ -16,21 +15,16 @@ class GenreShow extends React.Component {
     window.scrollTo(0, 0);
   }
 
-  componentDidUpdate() {
-    toggleSearch();
-  }
-
   render() {
     if (!this.props.genre) {
       return null;
     }
     const { genre } = this.props;
 
-    const artists = Array.from(new Set(genre.artists));
+    const artists = _.uniqBy(genre.artists, name => name.replace(/\W/));
     const artist_ids = Array.from(
       new Set(genre.artist_ids.map((id) => id.toString()))
     );
-
     const exampleDjs = _.zip(artists, artist_ids).sort();
     return (
       <React.Fragment>

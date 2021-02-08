@@ -5,7 +5,6 @@ import SubnavToggle from "../subnav/subnav";
 import NavBar from "../navbar/navbar";
 import { expandCountry, getCountry } from "../../util/location_util";
 import { formatDateStyle } from "../../util/date_util";
-import { toggleSearch } from "../../util/search_util";
 
 class UpdateEventForm extends React.Component {
   constructor(props) {
@@ -20,11 +19,6 @@ class UpdateEventForm extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchEvent(this.props.match.params.eventId);
-  }
-
-  componentDidUpdate() {
-    // console.log(this.state);
-    toggleSearch();
   }
 
   update(field) {

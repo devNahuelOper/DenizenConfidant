@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchNews } from '../../actions/news_actions';
 import { formatDateNewsShow, timeSinceBeganCoding } from '../../util/date_util';
-import { toggleSearch } from '../../util/search_util';
 import NavBar from '../navbar/navbar';
 import { TitleComponent } from '../title_component.jsx';
 
@@ -14,10 +13,6 @@ class NewsShow extends React.Component {
   componentDidMount() {
     this.props.fetchNews(this.props.match.params.newsId);
     window.scrollTo(0, 0);
-  }
-
-  componentDidUpdate() {
-    toggleSearch();
   }
 
   render() {

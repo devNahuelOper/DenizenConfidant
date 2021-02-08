@@ -13,13 +13,9 @@ class UserDjs extends React.Component {
     super(props);
   }
 
-  // componentDidMount() {
-  //   console.log(this.props);
-  // }
 
   render() {
     const { currentUser } = this.props;
-
     return (
       <React.Fragment>
         <TitleComponent title="DC: My DJs" />

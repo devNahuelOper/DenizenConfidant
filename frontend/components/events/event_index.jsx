@@ -4,7 +4,6 @@ import EventIndexItem from "./event_index_item";
 import NavBar from "../navbar/navbar";
 import SubnavToggle from "../subnav/subnav";
 import { formatDateStyle } from "../../util/date_util";
-import { toggleSearch } from "../../util/search_util";
 
 class EventIndex extends React.Component {
   constructor(props) {
@@ -14,7 +13,6 @@ class EventIndex extends React.Component {
   componentDidMount() {
     this.props.fetchEvents();
     // console.log(this.props);
-    toggleSearch();
   }
 
   render() {
