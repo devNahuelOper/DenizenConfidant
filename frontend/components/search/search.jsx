@@ -6,7 +6,7 @@ import { ClickAwayListener } from "@material-ui/core";
 import { fetchDjs } from "../../actions/dj_actions";
 import { fetchGenres } from "../../actions/genre_actions";
 import { fetchEvents } from "../../actions/event_actions";
-import { showSearch, hideSearch } from "../../actions/search_actions";
+import { showSearch, hideSearch, setSearchTerm, clearSearchTerm } from "../../actions/search_actions";
 
 class Search extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class Search extends React.Component {
       djs: [],
       genres: [],
       events: [],
-      searchTerm: "",
+      searchTerm: this.props.searchTerm
     };
     this.editSearchTerm = this.editSearchTerm.bind(this);
     this.resetSearchTerm = this.resetSearchTerm.bind(this);
@@ -48,10 +48,12 @@ class Search extends React.Component {
 
   editSearchTerm(e) {
     this.setState({ searchTerm: e.target.value });
+    this.props.setSearchTerm(e.target.value);
   }
 
   resetSearchTerm() {
     this.setState({ searchTerm: "" });
+    this.props.clearSearchTerm();
     this.props.hideSearch();
   }
 
@@ -205,7 +207,8 @@ const mapStateToProps = (state) => {
     djs: Object.values(state.entities.djs),
     genres: Object.values(state.entities.genres),
     events: Object.values(state.entities.events),
-    searchBar: state.ui.searchBar
+    searchBar: state.ui.searchBar,
+    searchTerm: state.ui.searchBar?.searchTerm || ''
   };
 };
 
@@ -214,7 +217,9 @@ const mapDispatchToProps = (dispatch) => ({
   fetchGenres: () => dispatch(fetchGenres()),
   fetchEvents: () => dispatch(fetchEvents()),
   hideSearch: () => dispatch(hideSearch()),
-  showSearch: (searchBar) => dispatch(showSearch(searchBar))
+  showSearch: (searchBar) => dispatch(showSearch(searchBar)),
+  setSearchTerm: (searchTerm) => dispatch(setSearchTerm(searchTerm)),
+  clearSearchTerm: () => dispatch(clearSearchTerm())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
