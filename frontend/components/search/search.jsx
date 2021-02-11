@@ -93,6 +93,7 @@ class Search extends React.Component {
                   value={this.state.searchTerm}
                   onChange={this.editSearchTerm}
                   placeholder="DJs, Genres, Events"
+                  autocomplete="off"
                 />
                 <div id="search-button-container">
                   <button id="search-button" type="submit">
@@ -203,11 +204,12 @@ class EventQuery extends React.Component {
 
 const mapStateToProps = (state) => {
   let searchTerm = state.ui.searchBar?.searchTerm || '';
+  let regex = new RegExp(`^${searchTerm}`, 'i');
   return {
     djs: Object.values(state.entities.djs).filter(
       (dj) =>
         Boolean(searchTerm) &&
-        dj.name.toLowerCase().startsWith(searchTerm.toLowerCase())
+        dj.name.match(regex)
     ),
     genres: Object.values(state.entities.genres),
     events: Object.values(state.entities.events),
