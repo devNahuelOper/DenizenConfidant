@@ -6,13 +6,18 @@ import { ClickAwayListener } from "@material-ui/core";
 import { fetchDjs } from "../../actions/dj_actions";
 import { fetchGenres } from "../../actions/genre_actions";
 import { fetchEvents } from "../../actions/event_actions";
-import { showSearch, hideSearch, setSearchTerm, clearSearchTerm } from "../../actions/search_actions";
+import {
+  showSearch,
+  hideSearch,
+  setSearchTerm,
+  clearSearchTerm,
+} from "../../actions/search_actions";
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      genres: [],
+      // genres: [],
       events: [],
       searchTerm: this.props.searchTerm,
     };
@@ -24,21 +29,16 @@ class Search extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-
   componentDidMount() {
     this._isMounted = true;
     this.props.fetchDjs();
-    this.props
-      .fetchGenres()
-      .then((genres) =>
-        this.setState({ genres: Object.values(genres.genres) })
-      );
+    this.props.fetchGenres();
     this.props
       .fetchEvents()
       .then((events) =>
         this.setState({ events: Object.values(events.events) })
       );
-     console.log(this.props);
+    console.log(this.props);
   }
 
   componentWillUnmount() {
@@ -80,7 +80,7 @@ class Search extends React.Component {
 
   render() {
     if (!this.props.searchBar) return null;
-    const { djs } = this.props;
+    const { djs, genres } = this.props;
     return (
       <>
         <ClickAwayListener onClickAway={this.props.hideSearch}>
@@ -93,7 +93,7 @@ class Search extends React.Component {
                   value={this.state.searchTerm}
                   onChange={this.editSearchTerm}
                   placeholder="DJs, Genres, Events"
-                  autocomplete="off"
+                  autoComplete="off"
                 />
                 <div id="search-button-container">
                   <button id="search-button" type="submit">
@@ -113,7 +113,7 @@ class Search extends React.Component {
                         <DjQueryContainer djs={djs} />
                       </li>
                       <li>
-                        <GenreQueryContainer genres={this.genreSearch()} />
+                        <GenreQueryContainer genres={genres} />
                       </li>
                       <li>
                         <EventQueryContainer events={this.eventSearch()} />
@@ -203,16 +203,15 @@ class EventQuery extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  let searchTerm = state.ui.searchBar?.searchTerm || '';
-  let regex = new RegExp(`^${searchTerm}`, 'i');
+  let searchTerm = state.ui.searchBar?.searchTerm || "";
+  let regex = new RegExp(`^${searchTerm}`, "i");
+  const { djs, events, genres } = state.entities;
   return {
-    djs: Object.values(state.entities.djs).filter(
-      (dj) =>
-        Boolean(searchTerm) &&
-        dj.name.match(regex)
+    djs: Object.values(djs).filter(
+      (dj) => Boolean(searchTerm) && dj.name.match(regex)
     ),
-    genres: Object.values(state.entities.genres),
-    events: Object.values(state.entities.events),
+    genres: Object.values(genres).filter(genre => Boolean(searchTerm) && genre.name.match(regex)),
+    events: Object.values(events).filter(event => Boolean(searchTerm) && event.name.match(regex)),
     searchBar: state.ui.searchBar,
     searchTerm: searchTerm,
   };
