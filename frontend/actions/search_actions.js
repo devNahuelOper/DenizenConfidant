@@ -54,3 +54,9 @@ export const searchGenres = (genres) => {
     genres,
   };
 };
+
+
+
+
+
+

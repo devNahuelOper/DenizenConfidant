@@ -6,17 +6,15 @@ import { ClickAwayListener } from "@material-ui/core";
 import { fetchDjs } from "../../actions/dj_actions";
 import { fetchGenres } from "../../actions/genre_actions";
 import { fetchEvents } from "../../actions/event_actions";
-import { showSearch, hideSearch, setSearchTerm, clearSearchTerm, searchDjs } from "../../actions/search_actions";
+import { showSearch, hideSearch, setSearchTerm, clearSearchTerm } from "../../actions/search_actions";
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      djs: [],
       genres: [],
       events: [],
       searchTerm: this.props.searchTerm,
-      filteredDjs: this.props.filteredDjs
     };
     this.editSearchTerm = this.editSearchTerm.bind(this);
     this.resetSearchTerm = this.resetSearchTerm.bind(this);
@@ -26,11 +24,10 @@ class Search extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+
   componentDidMount() {
     this._isMounted = true;
-    this.props
-      .fetchDjs()
-      .then((djs) => this.setState({ djs: Object.values(djs.djs) }));
+    this.props.fetchDjs();
     this.props
       .fetchGenres()
       .then((genres) =>
@@ -41,7 +38,7 @@ class Search extends React.Component {
       .then((events) =>
         this.setState({ events: Object.values(events.events) })
       );
-    //  console.log(this.props);
+     console.log(this.props);
   }
 
   componentWillUnmount() {
@@ -51,7 +48,6 @@ class Search extends React.Component {
   editSearchTerm(e) {
     this.setState({ searchTerm: e.target.value });
     this.props.setSearchTerm(e.target.value);
-    console.log(this.props.filteredDjs);
   }
 
   resetSearchTerm() {
@@ -84,7 +80,7 @@ class Search extends React.Component {
 
   render() {
     if (!this.props.searchBar) return null;
-    const { filteredDjs } = this.props;
+    const { djs } = this.props;
     return (
       <>
         <ClickAwayListener onClickAway={this.props.hideSearch}>
@@ -113,7 +109,7 @@ class Search extends React.Component {
                   {this.state.searchTerm.length && (
                     <ul id="searchlist" onClick={this.resetSearchTerm}>
                       <li>
-                        <DjQueryContainer djs={filteredDjs} />
+                        <DjQueryContainer djs={djs} />
                       </li>
                       <li>
                         <GenreQueryContainer genres={this.genreSearch()} />
@@ -208,12 +204,15 @@ class EventQuery extends React.Component {
 const mapStateToProps = (state) => {
   let searchTerm = state.ui.searchBar?.searchTerm || '';
   return {
-    djs: Object.values(state.entities.djs),
+    djs: Object.values(state.entities.djs).filter(
+      (dj) =>
+        Boolean(searchTerm) &&
+        dj.name.toLowerCase().startsWith(searchTerm.toLowerCase())
+    ),
     genres: Object.values(state.entities.genres),
     events: Object.values(state.entities.events),
     searchBar: state.ui.searchBar,
     searchTerm: searchTerm,
-    filteredDjs: Object.values(state.entities.djs).filter(dj => Boolean(searchTerm) && dj.name.toLowerCase().startsWith(searchTerm.toLowerCase()))
   };
 };
 
@@ -225,7 +224,6 @@ const mapDispatchToProps = (dispatch) => ({
   showSearch: (searchBar) => dispatch(showSearch(searchBar)),
   setSearchTerm: (searchTerm) => dispatch(setSearchTerm(searchTerm)),
   clearSearchTerm: () => dispatch(clearSearchTerm()),
-  searchDjs: (djs) => dispatch(searchDjs(djs))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
