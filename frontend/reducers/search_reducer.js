@@ -18,12 +18,12 @@ const searchReducer = (state = null, action) => {
       return { ...state, searchTerm: action.searchTerm };
     case CLEAR_SEARCH_TERM:
       return "";
-    case SEARCH_DJS:
-      return state.djs.filter(dj => state.searchTerm && dj.startsWith(state.searchTerm));
-    case SEARCH_EVENTS:
-      return state.events.filter(event => state.searchTerm && event.startsWith(state.searchTerm));
-    case SEARCH_GENRES:
-      return state.genres.filter(genre => state.searchTerm && genre.startsWith(state.searchTerm));
+    // case SEARCH_DJS:
+    //   return { ...state, djs: action.djs};
+    // case SEARCH_EVENTS:
+    //   return state.events.filter(event => state.searchTerm && event.startsWith(state.searchTerm));
+    // case SEARCH_GENRES:
+    //   return state.genres.filter(genre => state.searchTerm && genre.startsWith(state.searchTerm));
     default:
       return state;
   }
