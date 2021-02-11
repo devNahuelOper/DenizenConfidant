@@ -17,15 +17,10 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // genres: [],
-      events: [],
       searchTerm: this.props.searchTerm,
     };
     this.editSearchTerm = this.editSearchTerm.bind(this);
     this.resetSearchTerm = this.resetSearchTerm.bind(this);
-    this.djSearch = this.djSearch.bind(this);
-    this.genreSearch = this.genreSearch.bind(this);
-    this.eventSearch = this.eventSearch.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -33,12 +28,7 @@ class Search extends React.Component {
     this._isMounted = true;
     this.props.fetchDjs();
     this.props.fetchGenres();
-    this.props
-      .fetchEvents()
-      .then((events) =>
-        this.setState({ events: Object.values(events.events) })
-      );
-    console.log(this.props);
+    this.props.fetchEvents();
   }
 
   componentWillUnmount() {
@@ -60,27 +50,9 @@ class Search extends React.Component {
     window.location = "#/search";
   }
 
-  djSearch() {
-    return this.state.djs.filter((dj) =>
-      dj.name.toLowerCase().startsWith(this.state.searchTerm.toLowerCase())
-    );
-  }
-
-  genreSearch() {
-    return this.state.genres.filter((genre) =>
-      genre.name.toLowerCase().startsWith(this.state.searchTerm.toLowerCase())
-    );
-  }
-
-  eventSearch() {
-    return this.state.events.filter((event) =>
-      event.name.toLowerCase().startsWith(this.state.searchTerm.toLowerCase())
-    );
-  }
-
   render() {
     if (!this.props.searchBar) return null;
-    const { djs, genres } = this.props;
+    const { djs, genres, events, searchTerm } = this.props;
     return (
       <>
         <ClickAwayListener onClickAway={this.props.hideSearch}>
@@ -90,7 +62,7 @@ class Search extends React.Component {
                 <input
                   type="text"
                   id="search-input"
-                  value={this.state.searchTerm}
+                  value={searchTerm}
                   onChange={this.editSearchTerm}
                   placeholder="DJs, Genres, Events"
                   autoComplete="off"
@@ -107,7 +79,7 @@ class Search extends React.Component {
                       : { display: "none" }
                   }
                 >
-                  {this.state.searchTerm.length && (
+                  {Boolean(searchTerm) && (
                     <ul id="searchlist" onClick={this.resetSearchTerm}>
                       <li>
                         <DjQueryContainer djs={djs} />
@@ -116,7 +88,7 @@ class Search extends React.Component {
                         <GenreQueryContainer genres={genres} />
                       </li>
                       <li>
-                        <EventQueryContainer events={this.eventSearch()} />
+                        <EventQueryContainer events={events} />
                       </li>
                     </ul>
                   )}
