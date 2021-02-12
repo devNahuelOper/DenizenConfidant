@@ -13,13 +13,14 @@ class SearchPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: $('#search-input').val(),
+      // searchTerm: $('#search-input').val(),
+      searchTerm: this.props.searchTerm,
     }
   }
 
   componentDidMount() {
-    $(document).trigger('click');
-    $('.search-main #search-input').val(this.state.searchTerm);
+    // $(document).trigger('click');
+    // $('.search-main #search-input').val(this.state.searchTerm);
     this.props.fetchDjs();
     this.props.fetchEvents();
     this.props.fetchGenres();
@@ -38,7 +39,7 @@ class SearchPage extends React.Component {
             </div>
           </header>
           <div className="search-main">
-            <Search searchTerm={this.state.searchTerm} />
+            {/* <Search searchTerm={this.state.searchTerm} /> */}
             <section className="results">
              { djs.length > 0 &&
              <div className="dj-results">
@@ -89,12 +90,22 @@ class SearchPage extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  let searchTerm = $('#search-input').val();
+  // let searchTerm = $('#search-input').val();
+    let searchTerm = state.ui.searchBar?.searchTerm || "";
+    let regex = new RegExp(`^${searchTerm}`, "i");
+    const { djs, events, genres } = state.entities;
   return {
-    djs: Object.values(state.entities.djs).filter(dj => dj.name.toLowerCase().startsWith(searchTerm.toLowerCase())),
-    genres: Object.values(state.entities.genres).filter(genre => genre.name.toLowerCase().startsWith(searchTerm.toLowerCase())),
-    events: Object.values(state.entities.events).filter(event => event.name.toLowerCase().startsWith(searchTerm.toLowerCase()))
-  }
+    djs: Object.values(djs).filter(
+      (dj) => Boolean(searchTerm) && dj.name.match(regex)
+    ),
+    genres: Object.values(genres).filter(
+      (genre) => Boolean(searchTerm) && genre.name.match(regex)
+    ),
+    events: Object.values(events).filter(
+      (event) => Boolean(searchTerm) && event.name.match(regex)
+    ),
+    searchTerm
+  };
 };
 
 const mapDispatchToProps = dispatch => ({
