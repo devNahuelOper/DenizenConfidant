@@ -48,6 +48,7 @@ class Search extends React.Component {
 
   handleSubmit() {
     window.location = "#/search";
+    // console.log('Submit');
   }
 
   render() {
@@ -55,7 +56,11 @@ class Search extends React.Component {
     const { djs, genres, events, searchTerm } = this.props;
     return (
       <>
-        <ClickAwayListener onClickAway={this.props.hideSearch}>
+        <ClickAwayListener
+          onClickAway={
+            window.location.hash != "#/search" ? this.props.hideSearch : false
+          }
+        >
           <div className="search-container">
             <div id="searchbar">
               <form id="search-form" onSubmit={this.handleSubmit}>
@@ -79,19 +84,21 @@ class Search extends React.Component {
                       : { display: "none" }
                   }
                 >
-                  {Boolean(searchTerm) && (
-                    <ul id="searchlist" onClick={this.resetSearchTerm}>
-                      <li>
-                        <DjQueryContainer djs={djs} />
-                      </li>
-                      <li>
-                        <GenreQueryContainer genres={genres} />
-                      </li>
-                      <li>
-                        <EventQueryContainer events={events} />
-                      </li>
-                    </ul>
-                  )}
+                  {Boolean(searchTerm) &&
+                    window.location.hash !=
+                      "#/search" && (
+                        <ul id="searchlist" onClick={this.resetSearchTerm}>
+                          <li>
+                            <DjQueryContainer djs={djs} />
+                          </li>
+                          <li>
+                            <GenreQueryContainer genres={genres} />
+                          </li>
+                          <li>
+                            <EventQueryContainer events={events} />
+                          </li>
+                        </ul>
+                      )}
                 </div>
               </form>
             </div>
@@ -179,9 +186,7 @@ const mapStateToProps = (state) => {
   let regex = new RegExp(`^${searchTerm}`, "i");
   const { djs, events, genres } = state.entities;
   return {
-    djs: Object.values(djs).filter(
-      (dj) => Boolean(searchTerm) && dj.name.match(regex)
-    ),
+    djs: Object.values(djs).filter((dj) => Boolean(searchTerm) && dj.name.match(regex)),
     genres: Object.values(genres).filter(genre => Boolean(searchTerm) && genre.name.match(regex)),
     events: Object.values(events).filter(event => Boolean(searchTerm) && event.name.match(regex)),
     searchBar: state.ui.searchBar,
