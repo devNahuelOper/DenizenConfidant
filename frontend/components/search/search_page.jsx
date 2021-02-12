@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { TitleComponent } from '../title_component.jsx';
-import Search from './search';
 import NavBar from '../navbar/navbar';
 import { fetchDjs } from '../../actions/dj_actions';
 import { fetchGenres } from '../../actions/genre_actions';
@@ -13,14 +12,11 @@ class SearchPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // searchTerm: $('#search-input').val(),
       searchTerm: this.props.searchTerm,
     }
   }
 
   componentDidMount() {
-    // $(document).trigger('click');
-    // $('.search-main #search-input').val(this.state.searchTerm);
     this.props.fetchDjs();
     this.props.fetchEvents();
     this.props.fetchGenres();
@@ -38,8 +34,7 @@ class SearchPage extends React.Component {
               <NavBar title="Search" entity="search"/>
             </div>
           </header>
-          <div className="search-main">
-            {/* <Search searchTerm={this.state.searchTerm} /> */}
+          <div className="search-main"> 
             <section className="results">
              { djs.length > 0 &&
              <div className="dj-results">
