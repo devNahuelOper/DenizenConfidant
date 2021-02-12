@@ -18,7 +18,7 @@ class DjIndex extends React.Component {
 
   render() {
     const { djs } = this.props;
-    const alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+    const alpha = _.range(65, 91).map(n => String.fromCharCode(n));
     return (
       <div className="djs-index">
         <header>
