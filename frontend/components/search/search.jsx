@@ -77,16 +77,10 @@ class Search extends React.Component {
                     Submit
                   </button>
                 </div>
-                <div
-                  style={
-                    this.state.searchTerm.length
-                      ? { display: "block" }
-                      : { display: "none" }
-                  }
-                >
                   {Boolean(searchTerm) &&
                     window.location.hash !=
                       "#/search" && (
+                      <div>
                         <ul id="searchlist" onClick={this.resetSearchTerm}>
                           <li>
                             <DjQueryContainer djs={djs} />
@@ -98,8 +92,8 @@ class Search extends React.Component {
                             <EventQueryContainer events={events} />
                           </li>
                         </ul>
+                      </div>
                       )}
-                </div>
               </form>
             </div>
           </div>
