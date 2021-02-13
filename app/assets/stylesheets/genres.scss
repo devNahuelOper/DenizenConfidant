@@ -112,6 +112,7 @@
     border-color: #b4be00;
     // width: 780px;
     margin: unset;
+    width: 100%;
   }
 }
 
@@ -186,7 +187,6 @@
     top: 12px;
     &:hover {
       filter: invert(1);
-      -webkit-text-stroke: 1px black;
     }
   }
   
@@ -254,15 +254,12 @@
 }
 
 #acidhouse-container {
-  #logo {
-    background-color: #0000001a;
-  }
-  #logo:hover {
-    background-color: unset;
-  }
   .genreshow-header a {
     // background-color: black;
     text-shadow: 0px 0px 4px black;
+    #prev {
+      box-shadow: inset 0px 0px 1px 3px white;
+    }
   }
 }
 
@@ -614,9 +611,6 @@
     width: 1272px;
     nav {
       width: 1272px;
-      #links {
-        left: -147px;
-      }
     }
     h1 {
       width: 1272px;
@@ -630,9 +624,9 @@
   }
   .genres {
     width: 1272px;
-    hr {
-      width: 1120px;
-    }
+    // hr {
+    //   width: 1120px;
+    // }
   }
   .genreshow-nav-container {
     // height: 300px;
