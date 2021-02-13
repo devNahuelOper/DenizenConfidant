@@ -53,12 +53,13 @@ class Search extends React.Component {
 
   render() {
     if (!this.props.searchBar) return null;
-    const { djs, genres, events, searchTerm } = this.props;
+    const { djs, genres, events, searchTerm, hideSearch } = this.props;
+    const ignoreClick = () => false;
     return (
       <>
         <ClickAwayListener
           onClickAway={
-            window.location.hash != "#/search" ? this.props.hideSearch : false
+            window.location.hash != "#/search" ? hideSearch : ignoreClick
           }
         >
           <div className="search-container">
