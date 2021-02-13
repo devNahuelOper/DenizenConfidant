@@ -1,9 +1,9 @@
-
 #nav-container {
   position: relative;
   display: block;
   background-color: #ffa200;
-  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  font-family: Helvetica, Arial, Verdana, "Hiragino Kaku Gothic Pro",
+    "Hiragino Kaku Gothic Pro W3";
   height: 250px;
 
   #logo {
@@ -25,10 +25,10 @@
   justify-content: space-between;
   height: 210px;
   nav {
-   display: flex;
-   justify-content: space-between;
-   width: 960px;
-   margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 960px;
+    margin: 0 auto;
   }
   h1 {
     margin: 0 auto;
@@ -40,7 +40,6 @@
     height: 40px;
   }
 }
-
 
 #links {
   position: relative;
@@ -81,42 +80,39 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
   }
 }
 
-
-
 .subnav-container {
   border-top: 1px solid rgba(97, 71, 71, 0.4);
   background-color: #ffa200;
 }
-
 
 #subnav {
   width: 960px;
   height: 40px;
   margin: 0 auto;
   ul {
-   width: 960px;
-   margin: 0 auto
+    width: 960px;
+    margin: 0 auto;
   }
   li {
-  //  cursor: pointer;
-   height: 40px;
-   float: left;
-   border-left: 1px solid rgba(69,69,69,.4);
+    //  cursor: pointer;
+    height: 40px;
+    float: left;
+    border-left: 1px solid rgba(69, 69, 69, 0.4);
     a {
-     display: block;
-     padding: 10px 14px;
-     line-height: 19px;
+      display: block;
+      padding: 10px 14px;
+      line-height: 19px;
     }
   }
   li:last-child {
-    border-right: 1px solid rgba(69,69,69,.4);
+    border-right: 1px solid rgba(69, 69, 69, 0.4);
   }
-  li:hover, .form:hover {
+  li:hover,
+  .form:hover {
     background-color: black;
     color: white;
   }
 }
-
 
 // #subnav ul {
 //   position: absolute;
@@ -139,8 +135,6 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
 //   padding-right: 5px;
 // }
 
-
-
 // #subnav a {
 //   display: block;
 //   color: black;
@@ -156,9 +150,9 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
 //   font-size: 16px;
 // }
 
-
 .login-form-container {
-  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  font-family: Helvetica, Arial, Verdana, "Hiragino Kaku Gothic Pro",
+    "Hiragino Kaku Gothic Pro W3";
   position: relative;
   height: 453px;
   border-bottom: 1px #585858 solid;
@@ -183,22 +177,22 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
 .login-form {
   //  width: 960px;
   //  margin: 0 auto;
-   display: flex;
-   flex-direction: column;
-   color: white;
-   margin-right: 65px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-right: 65px;
   #check-box {
     margin-right: 4px;
     margin-bottom: 12px;
   }
   .error-container {
-      width: 230px;
-      margin-bottom: 5px;
+    width: 230px;
+    margin-bottom: 5px;
   }
-  .errors {  
-      white-space: normal !important;
-      color: #e10;
-      font-weight: bold;
+  .errors {
+    white-space: normal !important;
+    color: #e10;
+    font-weight: bold;
   }
   #username-error {
     line-height: 9px;
@@ -242,20 +236,20 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
 
 // Signup Form
 
-
 .signup-form-container {
-  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  font-family: Helvetica, Arial, Verdana, "Hiragino Kaku Gothic Pro",
+    "Hiragino Kaku Gothic Pro W3";
   max-height: 1100px;
   padding: 20px 0;
   background-color: #2e2e2e;
   border-bottom: 1px #585858 solid;
 }
 
- .form-wrap {
-    width: 960px;
-    margin: 0 auto;
-    display:flex;
-  }
+.form-wrap {
+  width: 960px;
+  margin: 0 auto;
+  display: flex;
+}
 
 .signup-input {
   height: 30px;
@@ -269,7 +263,8 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
   width: 312px;
 }
 
-.login-button, .signup-button {
+.login-button,
+.signup-button {
   color: black;
   background-color: #ffa200;
   height: 40px;
@@ -330,7 +325,6 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
   margin-bottom: 10px;
 }
 
-
 // DROPDOWNS
 %dropdown {
   position: relative;
@@ -349,7 +343,7 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     background-color: black;
     color: white;
     background-image: image_url("arrowhite.png");
-     li {
+    li {
       color: black;
       background-color: #ffa200;
     }
@@ -376,7 +370,7 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     height: 30px;
     border-top: 1px solid black;
     background-color: #ffa200;
-     &:hover {
+    &:hover {
       background-color: black;
       color: white;
     }
@@ -410,7 +404,7 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
 .day-dropdown {
   padding-left: 17px;
   width: 70px;
-  background-position-x: 68px;;
+  background-position-x: 68px;
 }
 .month-dropdown {
   width: 106px;
@@ -424,8 +418,8 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
   padding-left: 22px;
 }
 
-
-.region-reveal, .language-reveal {
+.region-reveal,
+.language-reveal {
   @extend %dropdown-reveal;
   li {
     width: 315px;
@@ -445,24 +439,30 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
   width: 154px;
 }
 
-.day-reveal, .month-reveal, .year-reveal {
+.day-reveal,
+.month-reveal,
+.year-reveal {
   @extend %dropdown-reveal;
   li {
     width: 70%;
   }
 }
 
-.year-reveal, .day-reveal {
+.year-reveal,
+.day-reveal {
   max-height: 180px;
   overflow-y: scroll;
 }
 
-.region-hide, .language-hide, .day-hide, .month-hide, .year-hide {
+.region-hide,
+.language-hide,
+.day-hide,
+.month-hide,
+.year-hide {
   display: none;
 }
 
-// 
-
+//
 
 #gender {
   margin-bottom: 16px;
@@ -571,7 +571,6 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     li:hover {
       background-color: black;
       color: white;
-     
     }
     .log-link {
       white-space: nowrap;
@@ -602,7 +601,6 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
   }
 }
 
-
 // .user-profile #expand {
 //   height: 97px;
 // }
@@ -614,12 +612,9 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
   }
 }
 
-
 // MEDIA QUERIES
 
 @media only screen and (max-width: 972px) {
-
- 
   .navbar {
     // width: 632px;
     width: 675px;
@@ -630,7 +625,7 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     }
   }
 
-  #nav-container { 
+  #nav-container {
     height: 160px;
     #logo {
       filter: invert(1);
@@ -644,7 +639,7 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
       height: 70px;
     }
     #links {
-      font-size: .75em;
+      font-size: 0.75em;
       left: unset;
       right: 90px;
       height: 18px;
@@ -684,14 +679,15 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     flex-direction: column;
   }
   .signup-form {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 }
 
-
 @media only screen and (max-width: 700px) {
   #nav-container {
-    #logo, #links, h1 {
+    #logo,
+    #links,
+    h1 {
       right: unset;
     }
     #links {
@@ -743,7 +739,6 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     }
   }
   .signup-form {
-
   }
   .signup-input {
     width: 151px;
@@ -780,7 +775,9 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
       width: 120px;
     }
   }
-  .day-dropdown, .month-dropdown, .year-dropdown {
+  .day-dropdown,
+  .month-dropdown,
+  .year-dropdown {
     font-size: 24px;
     width: 70px;
     background-position-x: 68px;
@@ -804,7 +801,7 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     }
   }
 
-   .subnav-toggle {
+  .subnav-toggle {
     width: 490px;
   }
 
@@ -820,19 +817,18 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     }
   }
 
-
   .login-form-container {
     .form-wrap {
       width: 490px;
-        .login-form {
-          width: 490px;
-            ul {
-              width: 490px;
-            }
-        }
-        .demo-login {
+      .login-form {
+        width: 490px;
+        ul {
           width: 490px;
         }
+      }
+      .demo-login {
+        width: 490px;
+      }
     }
   }
   .signup-form-container {
@@ -890,19 +886,18 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     }
   }
 
-
   .login-form-container {
     .form-wrap {
       width: 360px;
-        .login-form {
-          width: 360px;
-            ul {
-              width: 360px;
-            }
-        }
-        .demo-login {
+      .login-form {
+        width: 360px;
+        ul {
           width: 360px;
         }
+      }
+      .demo-login {
+        width: 360px;
+      }
     }
   }
   .signup-form-container {
@@ -929,55 +924,38 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
       margin: unset;
     }
   }
-  #nav-container {
-    // h1, #subnav ul {
-    //   width: 952px;
-    //   margin: 0 auto;
-    //   position: relative;
-    //   right: unset;
-    //   top: unset;
+  .navbar {
+    width: 1272px;
+    nav,
+    h1 {
+      width: 1272px;
+    }
+    // #links {
+    //   left: -153px;
     // }
   }
-   .navbar {
+  #subnav {
+    width: 1272px;
+    ul {
       width: 1272px;
-      nav {
-        width: 1272px;
-      }
-      #links {
-        left: -153px;
-      }
-      h1 {
-        width: 1272px;
-      }
-   }
-   #subnav {
-      width: 1272px;
-      ul {
-         width: 1272px;
-      }
-   }
-
-   .login-form {
-    //  width: 1272px;
-   }
-
-   .form-wrap {
-     width: 1272px;
-     justify-content: space-between;
-   }
-   .demo-login {
-     position: relative;
-     left: -145px;
-   }
-   .login-form-container {
-     .form-wrap {
-       justify-content: normal;
-     }
-     .demo-login {
-       left: unset;
-     }
-   }
+    }
+  }
+  .form-wrap {
+    width: 1272px;
+    justify-content: space-between;
+  }
+  .demo-login {
+    position: relative;
+    left: -145px;
+  }
+  .login-form-container {
+    .form-wrap {
+      justify-content: normal;
+    }
+    .demo-login {
+      left: unset;
+    }
+  }
 }
 
 // Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-

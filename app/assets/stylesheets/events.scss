@@ -1,6 +1,6 @@
-
 .events-index {
-  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  font-family: Helvetica, Arial, Verdana, "Hiragino Kaku Gothic Pro",
+    "Hiragino Kaku Gothic Pro W3";
   font-size: 16px;
   background-color: #fff;
   border-bottom: 1px solid #575757;
@@ -11,7 +11,7 @@
     background-color: #6b96c2;
   }
 
-  #events-nav{
+  #events-nav {
     color: white;
     position: relative;
     background-color: #6b96c2;
@@ -32,7 +32,7 @@
       filter: unset;
     }
     #logo:hover {
-        filter: invert(1);
+      filter: invert(1);
     }
 
     #links {
@@ -40,7 +40,7 @@
       position: relative;
       left: unset;
       :hover {
-       color: #2e2e2e;
+        color: #2e2e2e;
       }
       li:nth-of-type(2) {
         color: #2e2e2e;
@@ -57,7 +57,7 @@
       width: 960px;
       font-weight: normal;
       height: unset;
-    } 
+    }
   }
 
   .subnav-container {
@@ -90,13 +90,13 @@
 
     li {
       float: left;
-      border-left: 1px solid rgba(255,255,255,.4);
+      border-left: 1px solid rgba(255, 255, 255, 0.4);
     }
 
     li:last-child {
       height: 40px;
-      border-right: 1px solid rgba(255,255,255,.4);
-       small {
+      border-right: 1px solid rgba(255, 255, 255, 0.4);
+      small {
         color: #6a96c2;
         font-size: 8px;
         position: relative;
@@ -118,9 +118,10 @@
 
     .form {
       color: black;
-      background-color:  #fff;
+      background-color: #fff;
     }
-    li:hover, .form:hover {
+    li:hover,
+    .form:hover {
       background-color: black;
       color: white;
     }
@@ -130,149 +131,144 @@
 #content-title {
   font-size: 24px;
 }
-  .local-events-wrap {
-    background-color: #f0f0f0;
-  }
+.local-events-wrap {
+  background-color: #f0f0f0;
+}
 
-  .local-events {
+.local-events {
+  width: 952px;
+  margin: 0 auto;
+  padding: 20px 0;
+  hr {
+    border-color: #6b96c2;
+    width: 100%;
+  }
+  .eventlist {
+    display: flex;
+    justify-content: space-between;
+  }
+  .event {
+    // border: 1px solid;
+    font-size: 12px;
+    width: 160px;
+    height: 130px;
+    img {
+      width: 150px;
+      height: 75px;
+    }
+    #img-2 {
+      // border: 1px solid #add1f5;
+    }
+    a {
+      color: #6b96c2;
+    }
+    a:hover {
+      color: white;
+      background-color: #6b96c2;
+    }
+    #venue {
+      color: #9c9c9c;
+      margin: 4px 0;
+    }
+    // &:nth-of-type(3) {
+    //   h2 {
+    //     position: relative;
+    //     z-index: 2;
+    //   }
+    //   img {
+    //     position: relative;
+    //     bottom: 7px;
+    //     height: 95px;
+    //     overflow: overlay;
+    //   }
+    //   a {
+    //     position: relative;
+    //     bottom: 21px;
+    //   }
+    //   #venue {
+    //     position: relative;
+    //     bottom: 20px;
+    //   }
+    // }
+  }
+}
+
+.top-events {
+  position: relative;
+  padding: 20px 0;
+  // background-color: #f0f0f0;
+  section {
     width: 952px;
     margin: 0 auto;
-    padding: 20px 0;
-    hr {
-      border-color:  #6b96c2;
-    }
-    .eventlist {
-      display: flex;
-      justify-content: space-between;
-    }
+  }
+  hr {
+    border-color: #6b96c2;
+    margin-bottom: 20px;
+    // width: 952px;
+    width: 100%;
+  }
+  #content-title {
+    position: relative;
+    width: 952px;
+    margin: 0 auto;
+    padding-bottom: 2px;
+    // margin-bottom: 20px;
+    // border-bottom: 2px solid  #6b96c2;
+  }
+
+  .eventlist {
+    position: relative;
+    width: 952px;
+    margin: 0 auto;
+    white-space: nowrap;
+
     .event {
-      // border: 1px solid;
-      font-size: 12px;
-      width: 160px;
-      height: 130px;
-      img {
-        width: 150px;
-        height: 75px;
+      white-space: normal;
+      max-width: 1057px;
+      font-size: 14px;
+
+      #event-name {
+        text-decoration: underline;
+        font-size: 18px;
       }
-      #img-2 {
-        // border: 1px solid #add1f5;
-      }
-      a {
-        color: #6b96c2;
-      }
-      a:hover {
-        color: white;
-        background-color: #6b96c2;
+      #event-date {
       }
       #venue {
-        color: #9c9c9c;
-        margin: 4px 0;
       }
-      // &:nth-of-type(3) {
-      //   h2 {
-      //     position: relative;
-      //     z-index: 2;
-      //   }
-      //   img {
-      //     position: relative;
-      //     bottom: 7px;
-      //     height: 95px;
-      //     overflow: overlay;
-      //   }
-      //   a {
-      //     position: relative;
-      //     bottom: 21px;
-      //   }
-      //   #venue {
-      //     position: relative;
-      //     bottom: 20px;
-      //   }
-      // }
-    }
-  }
-
-
-  .top-events {
-    position: relative;
-    padding: 20px 0;
-    // background-color: #f0f0f0;
-    section {
-      width: 952px;
-      margin: 0 auto;
-    }
-    hr {
-      border-color:  #6b96c2;
-      margin-bottom: 20px;
-      width: 952px;
-    }
-    #content-title {
-      position: relative;
-      width: 952px;
-      margin: 0 auto;
-      padding-bottom: 2px;
-      // margin-bottom: 20px;
-      // border-bottom: 2px solid  #6b96c2;
-    }
-
-    .eventlist {
-      position: relative;
-      width: 952px;
-      margin: 0 auto;
-      white-space: nowrap;
-      
-      .event {
-        white-space: normal;
-        max-width: 1057px;
-        font-size: 14px;
-       
-        #event-name {
-          text-decoration: underline;
-          font-size: 18px;
-        }
-        #event-date {
-
-        }
-        #venue {
-
-        }
-        #headliners {
-          article {
-            display: inline;
-            &:after {
-              content: ", ";
-            }
-            &:last-of-type:after {
-              content: "";
-            }
+      #headliners {
+        article {
+          display: inline;
+          &:after {
+            content: ", ";
           }
-          a {
-            &:hover {
-              background-color: #6b96c2;
-              color: white;
-            }
-          }
-          b {
-            font-weight: normal;
+          &:last-of-type:after {
+            content: "";
           }
         }
-        #description {
-          font-size: 12px;
+        a {
+          &:hover {
+            background-color: #6b96c2;
+            color: white;
+          }
         }
-        #event-img {
-          width: 50px;
+        b {
+          font-weight: normal;
         }
       }
-
+      #description {
+        font-size: 12px;
+      }
+      #event-img {
+        width: 50px;
+      }
     }
-
   }
-
-
+}
 
 .eventshow-nav-container {
   background-color: #6b96c2;
   height: 375px;
-  #events-nav{
+  #events-nav {
     height: 360px;
     display: flex;
     flex-direction: column;
@@ -297,7 +293,6 @@
     line-height: 0.9em;
   }
 }
-
 
 .subheader-container {
   width: 100%;
@@ -357,7 +352,7 @@
           strong {
             background-color: #6b96c2;
             color: white;
-          }    
+          }
         }
       }
       b {
@@ -365,7 +360,7 @@
       }
       article {
         display: inline;
-         &::after {
+        &::after {
           content: ", ";
         }
         &:last-of-type::after {
@@ -386,12 +381,10 @@
   }
 }
 
-
-
 // Smaller
 
 @media only screen and (max-width: 972px) {
- .events-index #events-nav{
+  .events-index #events-nav {
     width: 675px;
     height: 128px;
     nav {
@@ -422,29 +415,29 @@
     }
   }
 
- .events-index {
-   .subnav-container {
-     border-top: unset;
-   }
-  .subnav-drop {
-    width: 675px;
-     span {
-       width: 650px;
+  .events-index {
+    .subnav-container {
+      border-top: unset;
+    }
+    .subnav-drop {
+      width: 675px;
+      span {
+        width: 650px;
         &:hover small {
           margin-right: 17px;
         }
-     }
-    .reveal {
-      background-color: #6a96c2;
-      .log-link {
-        color: white;
-        // padding: 11px 0 14px 16px;
+      }
+      .reveal {
+        background-color: #6a96c2;
+        .log-link {
+          color: white;
+          // padding: 11px 0 14px 16px;
+        }
       }
     }
   }
- }
- 
- .events-index #events-subnav {
+
+  .events-index #events-subnav {
     display: none;
     width: 675px;
     ul {
@@ -453,7 +446,10 @@
   }
   .events-index {
     .top-events {
-      section, #content-title, .eventlist, hr {
+      section,
+      #content-title,
+      .eventlist,
+      hr {
         width: 675px;
       }
     }
@@ -461,7 +457,7 @@
 
   .eventshow-nav-container {
     height: 260px;
-    #events-nav{
+    #events-nav {
       height: 250px;
     }
   }
@@ -487,13 +483,11 @@
       }
     }
   }
-
 }
-
 
 @media only screen and (max-width: 700px) {
   .events-index {
-    #events-nav{
+    #events-nav {
       width: 560px;
       nav {
         width: 560px;
@@ -513,7 +507,6 @@
       }
     }
 
-   
     #events-subnav {
       width: 560px;
       ul {
@@ -521,18 +514,21 @@
       }
     }
 
-  .subnav-drop {
-    width: 560px;
-     span {
-       width: 535px;
+    .subnav-drop {
+      width: 560px;
+      span {
+        width: 535px;
         &:hover small {
           margin-right: 17px;
         }
-     }
-  }
+      }
+    }
 
     .top-events {
-       section, #content-title, .eventlist, hr {
+      section,
+      #content-title,
+      .eventlist,
+      hr {
         width: 560px;
       }
     }
@@ -565,7 +561,7 @@
 
 @media only screen and (max-width: 560px) {
   .events-index {
-    #events-nav{
+    #events-nav {
       width: 490px;
       nav {
         width: 490px;
@@ -581,13 +577,12 @@
       }
     }
 
-  .subnav-drop {
-    width: 490px;
-     span {
-       width: 465px;
-     }
-   }
-
+    .subnav-drop {
+      width: 490px;
+      span {
+        width: 465px;
+      }
+    }
 
     .local-events {
       width: 490px;
@@ -600,7 +595,10 @@
       }
     }
     .top-events {
-       section, #content-title, .eventlist, hr {
+      section,
+      #content-title,
+      .eventlist,
+      hr {
         width: 490px;
       }
     }
@@ -630,7 +628,7 @@
 
 @media only screen and (max-width: 499px) {
   .events-index {
-    #events-nav{
+    #events-nav {
       width: 360px;
       // margin: unset;
       nav {
@@ -675,12 +673,15 @@
         }
       }
       #img-0 {
-        background-image: image_url('lostminds.jpg');
+        background-image: image_url("lostminds.jpg");
         background-position: center;
       }
     }
     .top-events {
-       section, #content-title, .eventlist, hr {
+      section,
+      #content-title,
+      .eventlist,
+      hr {
         width: 360px;
       }
     }
@@ -701,10 +702,9 @@
     }
   }
 
-
   .eventshow-nav-container {
     height: 200px;
-    #events-nav{
+    #events-nav {
       height: 199px;
       nav {
         width: 360px;
@@ -736,7 +736,7 @@
       #event-image {
         width: 360px;
         height: 300px;
-        background-image: image_url('lostminds.jpg');
+        background-image: image_url("lostminds.jpg");
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -745,20 +745,17 @@
   }
 }
 
-
-
-
 // Larger
 
-@media only screen and (min-width: 1300px){
+@media only screen and (min-width: 1300px) {
   .events-index {
-    #events-nav{
+    #events-nav {
       width: 1272px;
       nav {
         width: 1272px;
-        #links {
-          left: -147px;
-        }
+        // #links {
+        //   left: -147px;
+        // }
       }
       h1 {
         width: 1272px;
@@ -771,12 +768,14 @@
       }
     }
     .top-events {
-     section, #content-title, .eventlist {
+      section,
+      #content-title,
+      .eventlist {
         width: 1272px;
       }
       hr {
         margin: 0 0 20px 0;
-        width: 1120px;
+        // width: 1120px;
       }
     }
   }
@@ -784,7 +783,7 @@
   .local-events {
     width: 1272px;
     hr {
-      width: 1122px;
+      // width: 1122px;
       margin: 10px 0;
     }
     .eventlist {
@@ -793,14 +792,14 @@
   }
 
   .eventshow-header {
-     width: 1272px;
+    width: 1272px;
   }
   .subheader-container {
     .eventshow-subheader {
-        width: 1272px;
+      width: 1272px;
     }
   }
   .main-container .eventshow-main {
-      width: 1272px;
+    width: 1272px;
   }
 }
