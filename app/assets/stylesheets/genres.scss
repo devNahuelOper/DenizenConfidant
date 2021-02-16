@@ -1,5 +1,6 @@
 .genre-index {
-  font-family: Helvetica,Arial,Verdana,"Hiragino Kaku Gothic Pro","Hiragino Kaku Gothic Pro W3";
+  font-family: Helvetica, Arial, Verdana, "Hiragino Kaku Gothic Pro",
+    "Hiragino Kaku Gothic Pro W3";
   background-color: #595959;
   border-bottom: 1px solid #575757;
   .hide {
@@ -27,7 +28,7 @@
   margin: 0 auto;
   color: white;
   justify-content: normal;
-   nav {
+  nav {
     display: flex;
     justify-content: space-between;
     width: 960px;
@@ -38,7 +39,7 @@
       left: unset;
       li:nth-of-type(3) {
         background-color: white;
-        border-color:  white;
+        border-color: white;
         color: black;
       }
     }
@@ -57,14 +58,13 @@
     margin: 0 auto;
     width: 960px;
     font-weight: normal;
-  } 
+  }
 }
 
 .genre-subnav-container {
   background-color: #b4be00;
-  border-top: 1px solid rgba(255,255,255,.4);
-  border-top-color: rgba(69,69,69,.4);
- 
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-top-color: rgba(69, 69, 69, 0.4);
 }
 
 .genre-subnav {
@@ -80,21 +80,21 @@
   li {
     height: 40px;
     float: left;
-    border-left: 1px solid rgba(69,69,69,.4);
+    border-left: 1px solid rgba(69, 69, 69, 0.4);
     a {
-     display: block;
-     padding: 10px 14px;
-     line-height: 19px;
+      display: block;
+      padding: 10px 14px;
+      line-height: 19px;
     }
   }
   li:last-child {
-    border-right: 1px solid rgba(69,69,69,.4);
+    border-right: 1px solid rgba(69, 69, 69, 0.4);
   }
-   li:hover, .form:hover {
+  li:hover,
+  .form:hover {
     background-color: black;
     color: white;
   }
-
 }
 
 .genres-container {
@@ -143,7 +143,6 @@
   background-color: #b4be00;
 }
 
-
 .genre-avatar {
   width: 25px;
   height: 25px;
@@ -152,7 +151,6 @@
     background-color: none;
   }
 }
- 
 
 //Genre Show
 
@@ -168,7 +166,7 @@
   // background-repeat: no-repeat;
   background-size: cover;
   #genres-nav {
-     height: 575px;
+    height: 575px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -176,11 +174,9 @@
   }
 }
 
-
-
 .genreshow-header {
-   margin: 0 auto;
-   width: 952px;
+  margin: 0 auto;
+  width: 952px;
   a {
     color: white;
     position: relative;
@@ -189,7 +185,7 @@
       filter: invert(1);
     }
   }
-  
+
   #prev {
     position: relative;
     top: 2px;
@@ -208,7 +204,7 @@
 }
 
 .genre-main {
-   h1 {
+  h1 {
     font-size: 24px;
     font-weight: bold;
     color: white;
@@ -218,7 +214,8 @@
   }
 }
 
-.description-container, .examples {
+.description-container,
+.examples {
   width: 960px;
   margin: 0 auto;
   padding: 40px;
@@ -235,27 +232,20 @@
 
 .example-list {
   columns: 4;
-  // color: #b4be00;
   #dj-link {
     margin-bottom: 5px;
     white-space: nowrap;
-    // font-weight: bold;
-    // color: #1d1d1d;
     color: #fdff00;
     font-size: 18px;
     a:hover {
       color: #1e1e1e;
       background-color: #fdff00;
-      // color: black;
-      // -webkit-text-stroke: unset;
-      // background-color: #b4be00;
     }
   }
 }
 
 #acidhouse-container {
   .genreshow-header a {
-    // background-color: black;
     text-shadow: 0px 0px 4px black;
     #prev {
       box-shadow: inset 0px 0px 1px 3px white;
@@ -293,12 +283,10 @@
     }
     h1 {
       width: 675px;
-      // line-height: 3em;
       line-height: 0.7em;
       font-size: 48px;
     }
   }
-
 
   .genreshow-nav-container {
     height: 340px;
@@ -325,7 +313,6 @@
       border-bottom: none;
     }
   }
-
 
   .genre-subnav {
     display: none;
@@ -356,7 +343,8 @@
       }
     }
   }
-  .description-container, .examples {
+  .description-container,
+  .examples {
     width: 675px;
   }
   .example-list {
@@ -392,14 +380,13 @@
     .subnav-drop {
       width: 560px;
       span {
-       width: 535px;
+        width: 535px;
         &:hover small {
           margin-right: 17px;
         }
       }
     }
   }
-
 
   .genres {
     width: 560px;
@@ -412,23 +399,14 @@
     }
   }
 
-
   .genreshow-header {
     width: 560px;
-    h1 {
-      // line-height: 2em;
-    }
-    a {
-      // top: 30px;
-    }
   }
   .genre-main h1 {
     padding-top: 40px;
   }
-  // .description-container {
-  //   padding: unset;
-  // }
-  .description-container, .examples {
+  .description-container,
+  .examples {
     width: 560px;
     padding: 0 0 40px 0;
   }
@@ -460,11 +438,11 @@
       width: 490px;
     }
   }
-   .genre-subnav-container {
+  .genre-subnav-container {
     .subnav-drop {
       width: 490px;
       span {
-       width: 465px;
+        width: 465px;
         &:hover small {
           margin-right: 17px;
         }
@@ -472,25 +450,19 @@
     }
   }
 
-
-
   .genres {
     width: 490px;
   }
 
-  
   .genreshow-header {
     width: 490px;
     h1 {
-      // line-height: 3em;
       font-size: 52px;
     }
-    a {
-      // top: 30px;
-    }
   }
- 
-  .description-container, .examples {
+
+  .description-container,
+  .examples {
     width: 490px;
   }
   .example-list {
@@ -507,11 +479,11 @@
         width: 80px;
         height: 75px;
       }
-      #links  {
+      #links {
         width: 240px;
-       li {
-         width: 75px;
-         &:nth-of-type(3) {
+        li {
+          width: 75px;
+          &:nth-of-type(3) {
             background-color: unset;
             border: unset;
             padding-left: 2px;
@@ -529,10 +501,10 @@
     }
   }
   #dance-container {
-    background-image: image_url('dance.jpg') !important;
+    background-image: image_url("dance.jpg") !important;
   }
   #dance-avatar {
-    background-image: image_url('dance.jpg') !important;
+    background-image: image_url("dance.jpg") !important;
     background-size: cover;
     background-position: center;
   }
@@ -556,20 +528,16 @@
     width: 20px;
     height: 20px;
   }
-  
+
   .genreshow-header {
     width: 360px;
     h1 {
-      // line-height: 3em;
       font-size: 52px;
-    }
-    a {
-      // top: 30px;
     }
   }
 
   .genre-subnav-container {
-     .subnav-toggle {
+    .subnav-toggle {
       width: 360px;
     }
     .subnav-drop {
@@ -583,13 +551,13 @@
     }
   }
 
-
   #genre-bio {
     max-height: 300px;
     overflow: scroll;
   }
- 
-  .description-container, .examples {
+
+  .description-container,
+  .examples {
     width: 360px;
   }
   .example-list {
@@ -599,14 +567,13 @@
     }
     .long-link {
       font-size: 10px !important;
-      // white-space: normal !important;
     }
   }
 }
 
 // Larger
 
-@media only screen and (min-width: 1300px){
+@media only screen and (min-width: 1300px) {
   #genres-nav {
     width: 1272px;
     nav {
@@ -624,12 +591,6 @@
   }
   .genres {
     width: 1272px;
-    // hr {
-    //   width: 1120px;
-    // }
-  }
-  .genreshow-nav-container {
-    // height: 300px;
   }
   .genreshow-header {
     width: 1272px;
@@ -641,7 +602,8 @@
       width: 1272px;
     }
   }
-  .description-container, .examples {
+  .description-container,
+  .examples {
     width: 1272px;
   }
 }
