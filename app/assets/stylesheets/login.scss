@@ -114,42 +114,6 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
   }
 }
 
-// #subnav ul {
-//   position: absolute;
-//   right: 37%;
-//   margin-right: 310px;
-// }
-
-// #subnav li {
-//   float: left;
-//   border-left: 1px solid rgba(97, 71, 71, 0.4);
-// }
-
-// #subnav li:hover {
-//   color: white;
-//   background-color: white;
-// }
-
-// #subnav li:last-child {
-//   border-right: 1px solid rgba(97, 71, 71, 0.4);
-//   padding-right: 5px;
-// }
-
-// #subnav a {
-//   display: block;
-//   color: black;
-//   padding: 10px 14px;
-//   line-height: 19px
-// }
-
-// #subnav-toggle {
-//   width: 500px;
-//   margin-top: 10px;
-//   margin-left: 53px;
-//   height: 40px;
-//   font-size: 16px;
-// }
-
 .login-form-container {
   font-family: Helvetica, Arial, Verdana, "Hiragino Kaku Gothic Pro",
     "Hiragino Kaku Gothic Pro W3";
@@ -531,10 +495,6 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
 }
 
 .errors {
-  // position: absolute;
-  // top: 232px;
-  // left: 165px;
-  // display: block;
   white-space: nowrap !important;
   color: #e10;
   font-weight: bold;
@@ -713,12 +673,6 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
       width: 530px;
     }
   }
-  // #subnav {
-  //   width: 560px;
-  //   ul {
-  //     width: 560px;
-  //   }
-  // }
   .login-form-container .form-wrap {
     width: 560px;
     .login-form {
@@ -932,5 +886,3 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     }
   }
 }
-
-// Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
