@@ -3,9 +3,6 @@
     "Hiragino Kaku Gothic Pro W3";
   background-color: #1e1e1e;
   border-bottom: 1px solid #575757;
-  // .hide {
-  //   color: #ff0;
-  // }
 }
 
 .djs-nav-container {
@@ -768,9 +765,6 @@ select {
   }
   #dj-show #expand {
     height: 134px;
-    .reveal li:last-child {
-      // border-top: none !important;
-    }
   }
   .djs-subnav {
     display: none;
@@ -886,10 +880,8 @@ select {
   }
 
   .djshow-nav-container {
-    // height: 435px;
     height: 260px;
     #djs-nav {
-      //  height: 420px;
       height: 250px;
       .djshow-header {
         width: 560px;
@@ -897,9 +889,6 @@ select {
     }
   }
 
-  // #dj-show .djs-subnav #pending small {
-  //   left: 65px;
-  // }
   #dj-show {
     .form {
       font-size: 11px;
@@ -997,9 +986,7 @@ select {
   }
 
   .djshow-nav-container {
-    // height: 400px;
     #djs-nav {
-      //  height: 380px;
       .djshow-header {
         width: 490px;
       }
@@ -1245,9 +1232,6 @@ select {
     width: 1272px;
     nav {
       width: 1272px;
-      // #links {
-      //   left: -147px;
-      // }
     }
     .djshow-header {
       width: 1272px;
