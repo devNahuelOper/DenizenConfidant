@@ -63,8 +63,6 @@ $event-blue: #6a96c2;
   }
 }
 
-
-
 #splash-navbar {
   @include bg-image("logo.png", no-repeat, 100px, 168px center);
 }
@@ -99,49 +97,50 @@ $event-blue: #6a96c2;
 //   @return $randNum;
 // }
 
- $nums: (0,1,2,3,4,5,6,7,8,9);
-  @each $num in $nums {
-    #bg#{$num} {
-       @include bg-image("rave#{$num}.png", no-repeat, 11%, -0.4px 9px);
-    }
+$nums: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+@each $num in $nums {
+  #bg#{$num} {
+    @include bg-image("rave#{$num}.png", no-repeat, 11%, -0.4px 9px);
   }
+}
 
-  #bg0, #bg8 {
-    background-size: 8%;
-    background-position: 0.6px 9px;
-  }
-  #bg1 {
-    background-size: 7%;
-    background-position: 1.5px 9px;
-  }
-  #bg2 {
-    background-size: 9%;
-    background-position: 0.5px 7px;
-  }
-  #bg3 {
-    background-size: 9%;
-    background-position: 0.5px 7px;
-  }
-  #bg4 {
-    background-size: 8%;
-    background-position: 1.5px 8.4px;
-  }
-  #bg5 {
-    background-size: 8%;
-    background-position: 1.4px 8px;
-  }
-  #bg6 {
-    background-size: 7%;
-    background-position: 2px 9.4px;
-  }
-  #bg9 {
-    background-size: 8%;
-    background-position: 0.6px 9px;
-  }
+#bg0,
+#bg8 {
+  background-size: 8%;
+  background-position: 0.6px 9px;
+}
+#bg1 {
+  background-size: 7%;
+  background-position: 1.5px 9px;
+}
+#bg2 {
+  background-size: 9%;
+  background-position: 0.5px 7px;
+}
+#bg3 {
+  background-size: 9%;
+  background-position: 0.5px 7px;
+}
+#bg4 {
+  background-size: 8%;
+  background-position: 1.5px 8.4px;
+}
+#bg5 {
+  background-size: 8%;
+  background-position: 1.4px 8px;
+}
+#bg6 {
+  background-size: 7%;
+  background-position: 2px 9.4px;
+}
+#bg9 {
+  background-size: 8%;
+  background-position: 0.6px 9px;
+}
 
-  #bgnone {
-    background-image: none;
-  }
+#bgnone {
+  background-image: none;
+}
 
 .denizen-confidant {
   // @include bg-image("rave4.png", no-repeat, 8%, 0.6px 9px);
@@ -171,35 +170,34 @@ $event-blue: #6a96c2;
   float: right;
   border-right: 1px solid white;
 
-    .day {
-      line-height: 31px;
-      font-size: 12px;
-      box-sizing: border-box;
-      padding-left: 11px;
-      border-left: 1px solid white;
-      width: 80px;
-      height: 70px;
-    }
+  .day {
+    line-height: 31px;
+    font-size: 12px;
+    box-sizing: border-box;
+    padding-left: 11px;
+    border-left: 1px solid white;
+    width: 80px;
+    height: 70px;
+  }
 
-    :nth-of-type(3) {
-      background-color: white;
-      color: black;
-    }
+  :nth-of-type(3) {
+    background-color: white;
+    color: black;
+  }
 
-    h1 {
-      font-size: 36px;
-      padding-left: 19px;
-      line-height: 13px;
-    }
+  h1 {
+    font-size: 36px;
+    padding-left: 19px;
+    line-height: 13px;
+  }
 
-    :hover {
-      background-color: black;
-      color: white;
-    }
-} 
+  :hover {
+    background-color: black;
+    color: white;
+  }
+}
 
-
-// Image Carousel 
+// Image Carousel
 
 #splash-caption {
   width: 960px;
@@ -215,7 +213,6 @@ $event-blue: #6a96c2;
   }
 }
 
-
 .react-slideshow-fade-wrapper {
   width: 100%;
   overflow: hidden;
@@ -223,16 +220,16 @@ $event-blue: #6a96c2;
 
 .slide-container {
   width: 100%;
-  margin: auto; 
+  margin: auto;
   // display: none;
   position: absolute;
   top: 0px;
 }
- 
+
 h3 {
-  text-align: center; 
+  text-align: center;
 }
- 
+
 .each-slide > div {
   display: flex;
   align-items: center;
@@ -240,13 +237,13 @@ h3 {
   background-size: cover;
   height: 300px;
 }
- 
+
 .each-slide span {
   padding: 20px;
   font-size: 20px;
   text-align: center;
 }
- 
+
 .each-fade {
   //  width: 1420px;
   height: 575px;
@@ -272,24 +269,24 @@ h3 {
 }
 
 #redrave {
-  @include bg-image('red-rave.png', repeat, cover, center);
+  @include bg-image("red-rave.png", repeat, cover, center);
 }
 #ethereal {
-  @include bg-image('ethereal-rave.png', repeat, cover, center);
+  @include bg-image("ethereal-rave.png", repeat, cover, center);
 }
 #ravenite {
-  @include bg-image('rave-nite.png', repeat, cover, center);
+  @include bg-image("rave-nite.png", repeat, cover, center);
 }
 #tbilisi {
-  @include bg-image('tbilisi-rave.png', repeat, cover, center);
+  @include bg-image("tbilisi-rave.png", repeat, cover, center);
 }
 #neon {
-  @include bg-image('rave.jpg', repeat, cover, center);
+  @include bg-image("rave.jpg", repeat, cover, center);
 }
 #berghain {
-  @include bg-image('berghain.png', repeat, cover, center);
+  @include bg-image("berghain.png", repeat, cover, center);
 }
- 
+
 .each-fade h2 {
   bottom: 84px;
   color: yellow;
@@ -300,7 +297,6 @@ h3 {
   align-items: center;
   // background: #adceed;
 }
-
 
 .react-slideshow-container {
   display: flex;
@@ -354,17 +350,18 @@ h3 {
   z-index: 1000;
 }
 
-#left-arrow, #right-arrow {
-    background: rgba(255, 255, 255, 0.6);
-    // background: #ffffff99;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    opacity: 0.5;
-    cursor: pointer;
-    &:hover {
-      opacity: 0.8;
-    }
+#left-arrow,
+#right-arrow {
+  background: rgba(255, 255, 255, 0.6);
+  // background: #ffffff99;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 // Mid Section
@@ -391,26 +388,26 @@ h3 {
   padding-top: 10px;
   color: #fff;
   font-size: 16px;
-    h1 {
-      border-bottom: 2px solid #b4bd00;
-      padding-bottom: 2px;
-      margin: 0 0 4px 0;
-    }
-    h2 {
-      position: relative;
-      text-align: center;
-      display: block;
-      color: #b4bd00;
-      background-color: #b4bd00;
-      float: right;
-      width: 152px;
-      margin-top: -30px;
-      height: 24px;
-      font-size: 12px;
-      z-index: 2;
-    }
+  h1 {
+    border-bottom: 2px solid #b4bd00;
+    padding-bottom: 2px;
+    margin: 0 0 4px 0;
+  }
+  h2 {
+    position: relative;
+    text-align: center;
+    display: block;
+    color: #b4bd00;
+    background-color: #b4bd00;
+    float: right;
+    width: 152px;
+    margin-top: -30px;
+    height: 24px;
+    font-size: 12px;
+    z-index: 2;
+  }
 }
-      
+
 .newsbar {
   overflow: hidden;
   white-space: nowrap;
@@ -480,10 +477,6 @@ h3 {
 .nahuel-frame {
   display: flex;
   margin: 0 8px 6px 0;
-  // background-image: cross-fade(
-  //   image_url('nahuel.png'),
-  //   image_url('nahuel.png'), 50%
-  // );
 }
 
 #nahuel {
@@ -497,9 +490,6 @@ h3 {
   width: 144px;
   height: 206px;
 }
-
-
-
 
 .beats {
   display: flex;
@@ -515,7 +505,7 @@ h3 {
   border-bottom: 1px solid #3e3e3e;
   // padding-bottom: 40px;
   background-color: $djbg-grey;
-//  border-bottom: 1px #4b4b4b solid;
+  //  border-bottom: 1px #4b4b4b solid;
 }
 
 .yellow-banner {
@@ -547,9 +537,7 @@ h3 {
     position: relative;
     text-align: center;
     display: block;
-    // color: #b4bd00;
     color: $dj-yellow;
-    // background-color: #b4bd00;
     background-color: $dj-yellow;
     float: right;
     width: 152px;
@@ -559,7 +547,7 @@ h3 {
     z-index: 2;
   }
 }
-      
+
 .beatwrap {
   overflow: hidden;
   white-space: nowrap;
@@ -571,7 +559,7 @@ h3 {
   margin: 0;
   font-size: 12px;
 }
-          
+
 .song {
   width: 152px;
   min-height: 320px;
@@ -580,43 +568,45 @@ h3 {
   white-space: normal;
   vertical-align: top;
   padding-right: 9px;
-    a {
-      white-space: nowrap;
-      // color: #b4bd00;
-      color: $dj-yellow;
-      background-color: #000008;
-      // border: 1px groove #b4bd00;
-      border: 1px groove $dj-yellow;
-      padding: 1px 1px 2px 2px;
-      small {
-        font-size: 5px;
-        font-weight: bold;
-      }
-      &:hover {
-        @include text-hover(#000008, $dj-yellow);
-        border-color: #000008;
-      }
+  a {
+    white-space: nowrap;
+    // color: #b4bd00;
+    color: $dj-yellow;
+    background-color: #000008;
+    // border: 1px groove #b4bd00;
+    border: 1px groove $dj-yellow;
+    padding: 1px 1px 2px 2px;
+    small {
+      font-size: 5px;
+      font-weight: bold;
     }
-    img {
-      vertical-align: middle;
-      width: 100%;
-      height: 100px;
-      margin-bottom: 6px;
+    &:hover {
+      @include text-hover(#000008, $dj-yellow);
+      border-color: #000008;
     }
-    audio {
-      height: 18px;
-      width: 99%;
-      position: relative;
-      box-shadow: 0px 0px 0px 5px #f1f3f4 inset;
-      border: 1px groove #b4bd00;      
-    }
-    @media not all and (min-resolution:.001dpcm)
-    { @supports (-webkit-appearance:none) {
-      audio, #speed { 
+  }
+  img {
+    vertical-align: middle;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 6px;
+  }
+  audio {
+    height: 18px;
+    width: 99%;
+    position: relative;
+    box-shadow: 0px 0px 0px 5px #f1f3f4 inset;
+    border: 1px groove #b4bd00;
+  }
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+      audio,
+      #speed {
         width: 197px !important;
         -webkit-transform: scale(0.76) translateX(-31px);
       }
-    }}
+    }
+  }
 }
 
 .song:first-of-type a {
@@ -627,46 +617,45 @@ h3 {
 }
 .song:nth-of-type(4) a {
   padding-right: 31px;
-} 
+}
 .song:nth-of-type(5) a {
   padding-right: 60px;
 }
 .song:nth-of-type(6) a {
   padding-right: 25px;
-}  
-         
+}
+
 .controls-bar {
   width: 160px;
   left: -8px;
 }
 
-
 // MEDIA QUERIES -- Smaller
-      
+
 @media only screen and (max-width: 972px) {
   .splash-header-container {
     height: 375px;
-      .navbar {
+    .navbar {
+      width: 675px;
+      nav {
         width: 675px;
-        nav {
-          width: 675px;
-        }
-        h1 {
-          width: 675px;
-        }
       }
-      #links {
-        font-size: 1em;
-        left: unset;
-        li {
-          width: 75px;
-        }
+      h1 {
+        width: 675px;
       }
-      #logo {
-        top: 0;
-        width: 80px;
-        height: 75px;
+    }
+    #links {
+      font-size: 1em;
+      left: unset;
+      li {
+        width: 75px;
       }
+    }
+    #logo {
+      top: 0;
+      width: 80px;
+      height: 75px;
+    }
 
     .slide-container {
       height: 375px;
@@ -679,7 +668,7 @@ h3 {
         }
       }
       .react-slideshow-container {
-          // height: 375px;
+        // height: 375px;
         + div.indicators {
           margin: 0 0 3px 540px !important;
           top: -210px;
@@ -695,8 +684,6 @@ h3 {
   .arrow-hold {
     width: 675px;
   }
-
-  
 
   .main-banner {
     .banner-hold {
@@ -728,24 +715,24 @@ h3 {
 
   .main-news {
     h1 {
-        white-space: normal;
-        font-size: 36px;
+      white-space: normal;
+      font-size: 36px;
     }
   }
   .newsbar {
     width: 675px;
-  } 
+  }
   .newslist li {
     width: 162px;
-  } 
+  }
 
   .beats-banner {
     margin: 0 auto;
     width: 675px;
-  }      
+  }
   .beatwrap {
     width: 675px;
-  }  
+  }
   .song {
     width: 129px;
     a {
@@ -773,7 +760,6 @@ h3 {
   #kayzo-link {
     padding-right: 45px;
   }
-  
 }
 
 @media only screen and (max-width: 700px) {
@@ -787,11 +773,11 @@ h3 {
         width: 560px;
       }
     }
-  
+
     .slide-container {
       .react-slideshow-container + div.indicators {
-          right: 5px;
-          margin: 0 0 3px 430px !important;
+        right: 5px;
+        margin: 0 0 3px 430px !important;
       }
       .react-slideshow-container + div.indicators > .each-slideshow-indicator {
         margin: -21px 3px 10px !important;
@@ -846,7 +832,7 @@ h3 {
   }
   .newslist li {
     max-width: 180px;
-  } 
+  }
 
   .beats-banner {
     width: 560px;
@@ -855,11 +841,11 @@ h3 {
     max-width: 560px;
     white-space: normal;
     padding-bottom: 40px;
-  }  
+  }
   .beatlist {
     margin: 0 auto;
     max-width: 560px;
-  } 
+  }
   .song {
     min-height: 170px;
     width: 161px;
@@ -873,35 +859,35 @@ h3 {
     }
     a {
       padding: 1px 73px 2px 25px;
-      // padding-right: 73px !important;
     }
   }
 
-    #gesaffelstein-link {
-      padding-left: 29px;
-      padding-right: 30px;
-    }
-    #deadmau5-link {
-      // padding-left: 21px;
-      padding-right: 16px;
-    }
-    #noisuf-link {
-      padding-left: 26px;
-      padding-right: 26px;
-    }
-    #nomana-link {
-      padding-left: 35px;
-      padding-right: 36px;
-    }
-    #kayzo-link {
-      padding-left: 48px;
-    }
-    #prydz-link {
-      padding-left: 35px;
-      padding-right: 31px;
-    }
-  
-  .song:nth-of-type(3), .song:last-of-type {
+  #gesaffelstein-link {
+    padding-left: 29px;
+    padding-right: 30px;
+  }
+  #deadmau5-link {
+    // padding-left: 21px;
+    padding-right: 16px;
+  }
+  #noisuf-link {
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+  #nomana-link {
+    padding-left: 35px;
+    padding-right: 36px;
+  }
+  #kayzo-link {
+    padding-left: 48px;
+  }
+  #prydz-link {
+    padding-left: 35px;
+    padding-right: 31px;
+  }
+
+  .song:nth-of-type(3),
+  .song:last-of-type {
     margin-right: 0;
   }
 }
@@ -925,8 +911,8 @@ h3 {
         }
       }
       .react-slideshow-container + div.indicators {
-          right: 5px;
-          margin: 0 0 3px 365px !important;
+        right: 5px;
+        margin: 0 0 3px 365px !important;
       }
     }
   }
@@ -969,21 +955,20 @@ h3 {
   }
   .newslist li {
     width: 158px;
-  } 
+  }
   .newspiece a {
     font-size: 14px;
   }
-
 
   .beats-banner {
     width: 490px;
   }
   .beatwrap {
     width: 490px;
-  } 
+  }
   .beatlist {
     width: 490px;
-  } 
+  }
   .song {
     margin-right: unset;
     width: 154px;
@@ -1014,7 +999,7 @@ h3 {
   #prydz-link {
     padding-left: 30px;
     padding-right: 25px;
-  }    
+  }
 }
 
 @media only screen and (max-width: 499px) {
@@ -1046,7 +1031,7 @@ h3 {
     // .show-search {
     //   padding-right: 2px;
     // }
-     .slide-container {
+    .slide-container {
       #splash-caption {
         width: 360px;
         h1 {
@@ -1055,15 +1040,15 @@ h3 {
         }
       }
       .react-slideshow-container + div.indicators {
-          right: 5px;
-          margin: 0 0 3px 240px !important;
+        right: 5px;
+        margin: 0 0 3px 240px !important;
       }
     }
   }
   .arrow-hold {
     width: 360px;
   }
-  
+
   .main-banner .banner-hold {
     width: 360px;
     .days {
@@ -1105,10 +1090,10 @@ h3 {
     color: transparent;
   }
   #berghain-frame {
-    background-image: image_url('berghain.jpg');
+    background-image: image_url("berghain.jpg");
   }
   #coronavirus-frame {
-    background-image: image_url('caprices.jpg');
+    background-image: image_url("caprices.jpg");
   }
 
   .beats-banner {
@@ -1122,31 +1107,32 @@ h3 {
   }
   .song {
     margin-right: 17px !important;
-    audio, #speed { 
-        // width: 197px !important;
-        height: 32px;
-        width: 205px !important;
-        margin-top: 4px;
-        -webkit-transform: scale(0.76) translateX(-27px) !important;
-        border: unset;
-        box-shadow: unset;
+    audio,
+    #speed {
+      // width: 197px !important;
+      height: 32px;
+      width: 205px !important;
+      margin-top: 4px;
+      -webkit-transform: scale(0.76) translateX(-27px) !important;
+      border: unset;
+      box-shadow: unset;
+    }
+    @media not all and (min-resolution: 0.001dpcm) {
+      @supports (-webkit-appearance: none) {
+        audio,
+        #speed {
+          // width: 197px !important;
+          height: 32px;
+          width: 205px !important;
+          margin-top: 4px;
+          -webkit-transform: scale(0.76) translateX(-27px) !important;
+          border: unset;
+          box-shadow: unset;
+        }
       }
-      @media not all and (min-resolution:.001dpcm)
-    { @supports (-webkit-appearance:none) {
-      audio, #speed { 
-        // width: 197px !important;
-        height: 32px;
-        width: 205px !important;
-        margin-top: 4px;
-        -webkit-transform: scale(0.76) translateX(-27px) !important;
-        border: unset;
-        box-shadow: unset;
-      }
-    }}
+    }
   }
 }
-
-
 
 // MEDIA QUERIES -- Enlarge
 @media only screen and (min-width: 1240px) {
@@ -1165,7 +1151,6 @@ h3 {
 }
 
 @media only screen and (min-width: 1300px) {
-
   .splash-header-container {
     .navbar #links {
       left: unset;
@@ -1194,8 +1179,9 @@ h3 {
     width: 1272px;
   }
   .content {
-    .news-banner, .articles {
-        width: 1272px;
+    .news-banner,
+    .articles {
+      width: 1272px;
     }
   }
   .newsbar {
@@ -1212,7 +1198,8 @@ h3 {
     font-size: 40px;
   }
   .beats {
-    .beats-banner, .beatwrap {
+    .beats-banner,
+    .beatwrap {
       width: 1272px;
     }
     .beatwrap .beatlist {
@@ -1248,4 +1235,3 @@ h3 {
     padding-right: 39px;
   }
 }
-
