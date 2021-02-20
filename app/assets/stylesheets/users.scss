@@ -89,8 +89,6 @@
       }
     }
     .month-reveal {
-      // position: relative;
-      // top: 8px;
       position: absolute;
       top: 89px;
       left: auto;
@@ -638,11 +636,6 @@ i {
     transition: 0.1s ease-in-out;
   }
 }
-// .confirm {
-//   display: none;
-//   font-size: 14px;
-//   float: right;
-// }
 
 .confirm {
   display: none;
@@ -1295,16 +1288,6 @@ i {
       top: 1px;
     }
   }
-  // .hasEvent {
-  //   width: 110px;
-  //   height: 160px;
-  //   .event-space {
-  //     font-size: 10px;
-  //     img {
-  //       width: 100px;
-  //     }
-  //   }
-  // }
 
   #myevents-header {
     width: 360px;
@@ -1412,9 +1395,6 @@ i {
     width: 208px;
   }
 
-  // .manage-event {
-  //   margin-right: 312px;
-  // }
   .confirm {
     // left: 735px;
     left: 708px;
