@@ -56,7 +56,7 @@ const GenresIndexContainer = withTitle({
 
 
 const App = (props) => {
-  const { state, dispatch } = props;
+  const { state } = props;
 
   return (
     <>
