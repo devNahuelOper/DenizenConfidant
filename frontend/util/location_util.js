@@ -96,33 +96,3 @@ export const getCountry = (location) => {
   return location.split(', ')[1] || location;
 }
 
-
-
-// const flags = {
-//   'Argentina': '🇦🇷',
-//   'Brazil': '🇧🇷',
-//   'Canada': '🇨🇦',
-//   'China': '🇨🇳',
-//   'France': '🇫🇷',
-//   'Germany': '🇩🇪',
-//   'Italy': '🇮🇹',
-//   'Japan': '🇯🇵',
-//   'Netherlands': '🇳🇱',
-//   'Spain': '🇪🇸',
-//   'United Kingdom': '🇬🇧',
-//   'United States': '🇺🇸'
-// }
-// const currencies = {
-//   'Argentina': 'ARS',
-//   'Brazil': 'BRL',
-//   'Canada': 'CAD',
-//   'China': 'CNY',
-//   'France': 'EUR',
-//   'Germany': 'EUR',
-//   'Italy': 'EUR',
-//   'Japan': 'JPY',
-//   'Netherlands': 'EUR',
-//   'Spain': 'EUR',
-//   'United Kingdom': 'GBP',
-//   'United States': 'USD'
-// }
