@@ -59,40 +59,9 @@
     background-color: black;
     color: white;
   }
-  a {
-    // display: inline-block;
-  }
 }
 
 
-// #query {
-//   display: none;
-//   position: absolute;
-//   top: 161px;
-//   left: 80px;
-//   color: #fff;
-//   background-color: #2e2e2e;
-//   border-style: solid;
-//   border-width: 0 0 1px 0;
-//   border-color: #454545;
-//   padding: 10px 0 10px 10px;
-//   overflow: hidden;
-//   line-height: 24px;
-//   z-index: 1001;
-//   font-size: 16px;
-//   width: 472px;
-// }
-
-
-// #query:hover {
-//   background-color: black;
-// }
-
-// #search-link {
-//   padding: 13px 435px 13px 0;
-//   white-space: nowrap;
-//   text-transform: capitalize;
-// }
 
 #searchlist {
   position: absolute;
@@ -449,9 +418,6 @@
       height: 48px;
     }
     #searchlist {
-      // top: 121px;
-      // max-height: 196px;
-      // overflow: scroll;
       top: 50px;
       width: 375px;
     }
@@ -471,9 +437,6 @@
   }
   #search-input {
     width: 792px;
-  }
-  #search-button-container {
-    // margin-right: 162px;
   }
   .results {
     width: 1272px;
