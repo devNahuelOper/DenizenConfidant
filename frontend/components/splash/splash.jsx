@@ -14,16 +14,11 @@ class SplashPage extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.props.fetchDjs();
-  }
-
   render() {
     const { djs, news } = this.props;
     let dates = fiveDaySpan(this.state.date);
 
     secretHover();
-    // console.log(this.props);
     return (
       <>
         <header>
