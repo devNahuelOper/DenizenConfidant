@@ -23,7 +23,7 @@ class SplashPage extends React.Component {
     let dates = fiveDaySpan(this.state.date);
 
     secretHover();
-
+    // console.log(this.props);
     return (
       <>
         <header>
