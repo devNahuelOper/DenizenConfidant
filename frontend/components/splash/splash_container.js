@@ -15,6 +15,7 @@ const mapStateToProps = (state) => {
         [dj.name]: dj.id
       };
     }, {}),
+    randDjs: _.sampleSize(state.entities.djs, 6),
     news: Object.values(state.entities.news)
   }
 };
