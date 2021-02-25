@@ -52,3 +52,23 @@ export const formatNewSongs = (songFiles, initLength) => {
 
   $(".dj-update-songs").scrollTop($(".dj-update-songs")[0].scrollHeight);
 };
+
+
+// export const getPhoto = (dj) => {
+//   const path = `https://denizen-confidant-seeds.s3.amazonaws.com/`;
+//   let formatName;
+//   try {
+//     formatName = dj.name.toLowerCase().replace(/\s/g, "");
+//   } catch (e) {
+//     console.log(e);
+//   } finally {
+//     return `${path}${formatName}.png`;
+//   }
+// }
+
+export const getPhoto = (dj) => {
+  if (!dj) return null;
+  const path = `https://denizen-confidant-seeds.s3.amazonaws.com/`;
+  let formatName = dj.name?.toLowerCase().replace(/\s/g, "");
+  return `${path}${formatName}.png`;
+};

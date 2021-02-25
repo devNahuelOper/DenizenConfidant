@@ -5,6 +5,7 @@ import { fiveDaySpan } from "../../util/date_util";
 import NewsIndex from "../news/news_index";
 import NavBar from "../navbar/navbar";
 import { secretHover } from "../../util/splash_util";
+import Playlist from "./playlist";
 
 class SplashPage extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class SplashPage extends React.Component {
   }
 
   render() {
-    const { djs, news } = this.props;
+    const { djs, news, randDjs } = this.props;
     let dates = fiveDaySpan(this.state.date);
 
     secretHover();
@@ -141,6 +142,7 @@ class SplashPage extends React.Component {
                 </li>
               </ul>
             </div>
+            <Playlist djs={randDjs}/>
           </section>
         </div>
       </>

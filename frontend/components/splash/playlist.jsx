@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { extractSongTitle } from "../../util/url_util";
+import { extractSongTitle, getPhoto } from "../../util/url_util";
 
 const Playlist = ({ djs }) => {
   if (!djs) return null;
 
-  djs = _.mapValues(djs, (dj) => {
+  djs = _.map(djs, (dj) => {
     return {
       ...dj,
-      song: _.sample(dj.songsUrl)
-    }
+      song: _.sample(dj.songsUrl),
+      photo: getPhoto(dj),
+    };
   });
 
   return (
@@ -18,7 +19,7 @@ const Playlist = ({ djs }) => {
         {djs.map(dj => 
         <li key={dj.id} className="song">
           <article>
-            <img src={dj.photoUrl} alt={dj.name}/>
+            <img src={dj.photo} alt={dj.name}/>
             <Link
               id={`${dj.name.toLowerCase()}-link`}
               to={`/djs/${dj.id}`}
@@ -34,3 +35,5 @@ const Playlist = ({ djs }) => {
     </div>
   )
 }
+
+export default Playlist;
