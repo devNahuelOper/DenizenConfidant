@@ -568,6 +568,9 @@ h3 {
   white-space: normal;
   vertical-align: top;
   padding-right: 9px;
+  article {
+    width: inherit;
+  }
   a {
     white-space: nowrap;
     // color: #b4bd00;
@@ -575,7 +578,12 @@ h3 {
     background-color: #000008;
     // border: 1px groove #b4bd00;
     border: 1px groove $dj-yellow;
-    padding: 1px 1px 2px 2px;
+    // padding: 1px 1px 2px 2px;
+    width: calc(100% - 2px);
+    display: inline-block;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: scroll;
     small {
       font-size: 5px;
       font-weight: bold;
@@ -597,6 +605,7 @@ h3 {
     position: relative;
     box-shadow: 0px 0px 0px 5px #f1f3f4 inset;
     border: 1px groove #b4bd00;
+    outline: none;
   }
   @media not all and (min-resolution: 0.001dpcm) {
     @supports (-webkit-appearance: none) {
@@ -609,21 +618,6 @@ h3 {
   }
 }
 
-.song:first-of-type a {
-  padding-right: 17px;
-}
-.song:nth-of-type(3) a {
-  padding-right: 9px;
-}
-.song:nth-of-type(4) a {
-  padding-right: 31px;
-}
-.song:nth-of-type(5) a {
-  padding-right: 60px;
-}
-.song:nth-of-type(6) a {
-  padding-right: 25px;
-}
 
 .controls-bar {
   width: 160px;
@@ -742,24 +736,7 @@ h3 {
       }
     }
   }
-  #gesaffelstein-link {
-    padding-right: 16px;
-  }
-  #deadmau5-link {
-    padding-right: 0;
-  }
-  #speed {
-    width: 100%;
-  }
-  #noisuf-link {
-    padding-right: 9px;
-  }
-  #nomana-link {
-    padding-right: 28px;
-  }
-  #kayzo-link {
-    padding-right: 45px;
-  }
+
 }
 
 @media only screen and (max-width: 700px) {
@@ -857,34 +834,9 @@ h3 {
     img {
       margin-bottom: 2px;
     }
-    a {
-      padding: 1px 73px 2px 25px;
-    }
+  
   }
 
-  #gesaffelstein-link {
-    padding-left: 29px;
-    padding-right: 30px;
-  }
-  #deadmau5-link {
-    // padding-left: 21px;
-    padding-right: 16px;
-  }
-  #noisuf-link {
-    padding-left: 26px;
-    padding-right: 26px;
-  }
-  #nomana-link {
-    padding-left: 35px;
-    padding-right: 36px;
-  }
-  #kayzo-link {
-    padding-left: 48px;
-  }
-  #prydz-link {
-    padding-left: 35px;
-    padding-right: 31px;
-  }
 
   .song:nth-of-type(3),
   .song:last-of-type {
@@ -975,30 +927,6 @@ h3 {
     article {
       width: 160px;
     }
-  }
-
-  #gesaffelstein-link {
-    padding-right: 20px;
-  }
-  #deadmau5-link {
-    padding-right: 11px;
-    padding-left: 20px;
-  }
-  #noisuf-link {
-    padding-left: 23px;
-    padding-right: 18px;
-  }
-  #nomana-link {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  #kayzo-link {
-    padding-left: 44px;
-    padding-right: 40px;
-  }
-  #prydz-link {
-    padding-left: 30px;
-    padding-right: 25px;
   }
 }
 
@@ -1204,29 +1132,11 @@ h3 {
     .song {
       width: 166px;
       padding-right: unset;
-      // margin-right: 16px;
-      a {
-        padding: 1px 15px 2px 2px;
-      }
       img {
         height: 105px;
         margin-bottom: 3px;
       }
     }
   }
-  #gesaffelstein-link {
-    padding-right: 30px;
-  }
-  #noisuf-link {
-    padding-right: 22px;
-  }
-  #nomana-link {
-    padding-right: 45px;
-  }
-  #kayzo-link {
-    padding-right: 73px;
-  }
-  #prydz-link {
-    padding-right: 39px;
-  }
+
 }

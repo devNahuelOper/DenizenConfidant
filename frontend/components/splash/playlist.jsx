@@ -6,16 +6,17 @@ const Playlist = ({ djs }) => {
   if (!djs) return null;
 
   djs = _.map(djs, (dj) => {
+    let photo = dj.photoUrl ? dj.photoUrl : getPhoto(dj);
     return {
       ...dj,
       song: _.sample(dj.songsUrl),
-      photo: getPhoto(dj),
+      photo,
     };
   });
 
   return (
     <div className="beatwrap playlist-wrap">
-      <ul className="beatlist playlist">
+      <ul className="beatlist randlist">
         {djs.map(dj => 
         <li key={dj.id} className="song">
           <article>
