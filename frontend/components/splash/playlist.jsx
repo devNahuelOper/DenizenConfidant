@@ -1,8 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { extractSongTitle } from "../../util/url_util";
 
 const Playlist = ({ djs }) => {
   if (!djs) return null;
+
+  djs = _.mapValues(djs, (dj) => {
+    return {
+      ...dj,
+      song: _.sample(dj.songsUrl)
+    }
+  });
 
   return (
     <div className="beatwrap playlist-wrap">
@@ -16,7 +24,9 @@ const Playlist = ({ djs }) => {
               to={`/djs/${dj.id}`}
               title={dj.name}
               >
+                {`${dj.name} - ${extractSongTitle(dj.song)}`}
             </Link>
+            <audio src={dj.song} controls></audio>
           </article>
         </li>
           )}
