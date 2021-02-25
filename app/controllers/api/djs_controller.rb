@@ -11,7 +11,8 @@ class Api::DjsController < ApplicationController
    end
 
    def index 
-     @djs = Dj.all
+    #  @djs = Dj.all
+     @djs = Dj.includes(songs_attachments: :blob, track_attachment: :blob, photo_attachment: :blob)
      render :index
    end
 

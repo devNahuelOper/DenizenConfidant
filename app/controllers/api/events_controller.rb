@@ -12,7 +12,8 @@ class Api::EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    # @events = Event.all
+    @events = Event.includes(photo_attachment: :blob)
     render :index
   end
 
