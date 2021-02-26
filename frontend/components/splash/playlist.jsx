@@ -11,30 +11,36 @@ const Playlist = ({ djs }) => {
       ...dj,
       song: _.sample(dj.songsUrl),
       photo,
+      get label() {
+        return `${this.name} - ${extractSongTitle(this.song)}`;
+      }
     };
   });
+
+  const labelLength = (text) => text.length >= 26 ? "longPlaylistLabel" : "playlistLabel";
 
   return (
     <div className="beatwrap playlist-wrap">
       <ul className="beatlist randlist">
-        {djs.map(dj => 
-        <li key={dj.id} className="song">
-          <article>
-            <img src={dj.photo} alt={dj.name}/>
-            <Link
-              id={`${dj.name.toLowerCase()}-link`}
-              to={`/djs/${dj.id}`}
-              title={dj.name}
+        {djs.map((dj) => (
+          <li key={dj.id} className="song">
+            <article>
+              <img src={dj.photo} alt={dj.name} />
+              <Link
+                id={`${dj.name.toLowerCase()}-link`}
+                className={labelLength(dj.label)}
+                to={`/djs/${dj.id}`}
+                title={dj.name}
               >
-                {`${dj.name} - ${extractSongTitle(dj.song)}`}
-            </Link>
-            <audio src={dj.song} controls></audio>
-          </article>
-        </li>
-          )}
+                <span>{dj.label}</span>
+              </Link>
+              <audio src={dj.song} controls></audio>
+            </article>
+          </li>
+        ))}
       </ul>
     </div>
-  )
+  );
 }
 
 export default Playlist;
