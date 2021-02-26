@@ -6,6 +6,7 @@ import { fetchAllNews } from '../../actions/news_actions';
 const splashDjs = ["Gesaffelstein", "Deadmau5", "No Mana", "Noisuf-X", "Kayzo", "Eric Prydz"];
 
 const mapStateToProps = (state) => {
+  const hasSongs = _.pickBy(state.entities.djs, (dj) => Boolean(dj.songsUrl));
   return {
     djs: Object.values(state.entities.djs)
     .filter(dj => splashDjs.includes(dj.name))
@@ -15,7 +16,7 @@ const mapStateToProps = (state) => {
         [dj.name]: dj.id
       };
     }, {}),
-    randDjs: _.sampleSize(state.entities.djs, 6),
+    randDjs: _.sampleSize(hasSongs, 6),
     news: Object.values(state.entities.news)
   }
 };
