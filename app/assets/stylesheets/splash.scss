@@ -579,7 +579,6 @@ h3 {
     background-color: #000008;
     // border: 1px groove #b4bd00;
     border: 1px groove $dj-yellow;
-    // padding: 1px 1px 2px 2px;
     width: calc(100% - 2px);
     display: inline-block;
     text-align: center;
@@ -588,9 +587,7 @@ h3 {
     height: 14px;
     padding: 2px 0;
     span {
-      // position: absolute;
       white-space: nowrap;
-      // transform: translateX(0);
     }
     small {
       font-size: 5px;
