@@ -1,7 +1,7 @@
 class Api::NewsController < ApplicationController
 
   def index
-    @newss = News.all
+    @newss = News.includes(:photo_attachment)
     render :index
   end
 
