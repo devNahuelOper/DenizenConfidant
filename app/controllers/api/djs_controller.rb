@@ -22,15 +22,6 @@ class Api::DjsController < ApplicationController
       render :show
    end
 
-
-  #  def update
-  #   @dj = Dj.find(params[:id])
-  #   if !@dj.update(dj_params)
-  #     render json: @dj.errors.full_messages, status: 422
-  #   end
-  #     render :show
-  #  end
-
     def update 
       @dj = Dj.find(params[:id])
       @dj.update!(dj_params)
