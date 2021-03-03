@@ -139,8 +139,6 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
 }
 
 .login-form {
-  //  width: 960px;
-  //  margin: 0 auto;
   display: flex;
   flex-direction: column;
   color: white;
@@ -560,10 +558,6 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
     font-size: 12px;
   }
 }
-
-// .user-profile #expand {
-//   height: 97px;
-// }
 
 .reveal #user-reveal {
   border-bottom: 1px solid black;
