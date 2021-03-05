@@ -496,7 +496,6 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
   white-space: nowrap !important;
   color: #e10;
   font-weight: bold;
-  // line-height: 20px;
 }
 
 .subnav-toggle {
@@ -514,7 +513,6 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
   width: 630px;
   height: 40px;
   box-sizing: border-box;
-  // padding-left: 12px;
   border: 1px solid #6147479e;
   margin-top: 8px;
   background-color: white;
@@ -569,7 +567,6 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
 
 @media only screen and (max-width: 972px) {
   .navbar {
-    // width: 632px;
     width: 675px;
     height: 140px;
     nav {
