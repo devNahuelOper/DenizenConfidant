@@ -294,17 +294,15 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  // background: #adceed;
 }
 
 .react-slideshow-container {
   display: flex;
   align-items: center;
   background-color: black;
-}
-
-.react-slideshow-container .nav {
-  display: none !important;
+  .nav {
+    display: none !important;
+  }
 }
 
 .react-slideshow-container + div.indicators {
