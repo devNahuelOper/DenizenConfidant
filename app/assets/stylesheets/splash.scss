@@ -303,16 +303,14 @@ h3 {
   .nav {
     display: none !important;
   }
-}
-
-.react-slideshow-container + div.indicators {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: -15px !important;
-  margin-left: 787px !important;
-  position: relative;
-  // top: -290px;
+  + div.indicators {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -15px !important;
+    margin-left: 787px !important;
+    position: relative;
+  }
 }
 
 .react-slideshow-container + div.indicators > .each-slideshow-indicator {
@@ -609,70 +607,70 @@ h3 {
   //   outline: none;
   // }
   audio {
-  height: 18px;
-  width: 99%;
-  position: relative;
-  border: 1px solid #4c4c4c;
-  outline: 1px solid #4c4c4c;
-  background: #fdff00;
-  &::-webkit-media-controls {
-    transform: translateX(-15px);
-    input[pseudo="-webkit-media-controls-timeline" i]::-webkit-slider-thumb {
-      background: #3c3c3c;
-      transform: translateX(-8px);
-    }
-  }
-  &::-webkit-media-controls-enclosure {
+    height: 18px;
+    width: 99%;
+    position: relative;
+    border: 1px solid #4c4c4c;
+    outline: 1px solid #4c4c4c;
     background: #fdff00;
-  }
-  &::-webkit-media-controls-panel {
-    transform: translateX(32px);
-    overflow: visible;
-  }
-  &::-webkit-media-controls-play-button {
-    filter: invert(0.3);
-    background-size: 26px;
-    transform: translateX(-28px);
-  }
+    &::-webkit-media-controls {
+      transform: translateX(-15px);
+      input[pseudo="-webkit-media-controls-timeline" i]::-webkit-slider-thumb {
+        background: #3c3c3c;
+        transform: translateX(-8px);
+      }
+    }
+    &::-webkit-media-controls-enclosure {
+      background: #fdff00;
+    }
+    &::-webkit-media-controls-panel {
+      transform: translateX(32px);
+      overflow: visible;
+    }
+    &::-webkit-media-controls-play-button {
+      filter: invert(0.3);
+      background-size: 26px;
+      transform: translateX(-28px);
+    }
 
-  &::-webkit-media-controls-current-time-display {
-    color: #1e1e1e;
-    transform: translateX(-22px);
-  }
-  &::-webkit-media-controls-timeline {
-    &::-internal-media-controls-segmented-track {
+    &::-webkit-media-controls-current-time-display {
+      color: #1e1e1e;
+      transform: translateX(-22px);
+    }
+    &::-webkit-media-controls-timeline {
+      &::-internal-media-controls-segmented-track {
+        transform: translateX(-15px);
+        background: #4c4c4c;
+      }
+      &::-internal-track-segment-background {
+        width: 140%;
+        background: #444242;
+        border-radius: 4px;
+        box-shadow: -8px 0px 0px 0px #444242, 8px 0px 0px 0px #444242;
+      }
+    }
+    input[pseudo="-webkit-media-controls-timeline" i]::-internal-media-controls-segmented-track {
       transform: translateX(-15px);
       background: #4c4c4c;
     }
-    &::-internal-track-segment-background {
+    input[pseudo="-webkit-media-controls-timeline" i]::-internal-track-segment-background {
       width: 140%;
       background: #444242;
       border-radius: 4px;
       box-shadow: -8px 0px 0px 0px #444242, 8px 0px 0px 0px #444242;
     }
+    &::-webkit-media-controls-volume-control-container {
+      transform: translateX(2px);
+    }
+    &::-webkit-media-controls-volume-slider {
+      transform: translateX(-10px);
+    }
+    &::-webkit-media-controls-mute-button {
+      filter: invert(0.3);
+      background-size: 22px;
+      // transform: translateX(2px);
+    }
   }
-  input[pseudo="-webkit-media-controls-timeline" i]::-internal-media-controls-segmented-track {
-    transform: translateX(-15px);
-    background: #4c4c4c;
-  }
-  input[pseudo="-webkit-media-controls-timeline" i]::-internal-track-segment-background {
-    width: 140%;
-    background: #444242;
-    border-radius: 4px;
-    box-shadow: -8px 0px 0px 0px #444242, 8px 0px 0px 0px #444242;
-  }
-  &::-webkit-media-controls-volume-control-container {
-    transform: translateX(2px);
-  }
-  &::-webkit-media-controls-volume-slider {
-    transform: translateX(-10px);
-  }
-  &::-webkit-media-controls-mute-button {
-    filter: invert(0.3);
-    background-size: 22px;
-    // transform: translateX(2px);
-  }
-}
   @media not all and (min-resolution: 0.001dpcm) {
     @supports (-webkit-appearance: none) {
       audio,
