@@ -310,18 +310,17 @@ h3 {
     margin-top: -15px !important;
     margin-left: 787px !important;
     position: relative;
+    > .each-slideshow-indicator {
+      opacity: 50% !important;
+      width: 15px !important;
+      height: 15px !important;
+      margin: -21px 5px 10px !important;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      z-index: 1000 !important;
+    }
   }
-}
-
-.react-slideshow-container + div.indicators > .each-slideshow-indicator {
-  opacity: 50% !important;
-  width: 15px !important;
-  height: 15px !important;
-  margin: -21px 5px 10px !important;
-  border-radius: 50%;
-  background: #ccc;
-  cursor: pointer;
-  z-index: 1000 !important;
 }
 
 .react-slideshow-container + div.indicators > .each-slideshow-indicator:hover {
