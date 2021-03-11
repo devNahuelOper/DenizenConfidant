@@ -54,7 +54,6 @@
     "npm": "6.9.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack",
     "start": "webpack --watch --mode=development",
     "postinstall": "webpack"
@@ -64,7 +63,7 @@
     "url": "git+https://github.com/devNahuelOper/DenizenConfidant-.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nahuel Gorosito",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/devNahuelOper/DenizenConfidant-/issues"
