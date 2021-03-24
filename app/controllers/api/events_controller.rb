@@ -23,21 +23,6 @@ class Api::EventsController < ApplicationController
     # render json: "api/events/:id"
   end
 
-  # def edit
-  #   @event = Event.find(params[:id])
-  #   render json: "api/events/:id"
-  # end
-
-  # def update
-  #   @event = Event.find(params[:id])
-  #   if @event.update(event_params)
-  #     render :show
-  #     # render json: "api/events/:id"
-  #   else
-  #     render json: @event.errors.full_messages, status: 422
-  #   end
-  # end
-
   def update 
     @event = Event.find(params[:id])
     @event.update!(event_params)

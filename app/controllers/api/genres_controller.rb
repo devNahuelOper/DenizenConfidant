@@ -1,7 +1,6 @@
 class Api::GenresController < ApplicationController
 
   def index
-    # @genres = Genre.all
     @genres = Genre.includes(:photos_attachments)
     render :index
   end
