@@ -1,5 +1,4 @@
 json.extract! genre, :id,:name, :origin, :artists, :artist_ids, :description
-# json.avatarUrl polymorphic_url(genre.avatar) if genre.avatar.attached?
 
 photo_arr = []
 
