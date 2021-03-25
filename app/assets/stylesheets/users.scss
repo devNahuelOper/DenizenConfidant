@@ -156,7 +156,6 @@
   }
   hr {
     border: 1px solid;
-    // padding: 4px 0 0 0;
   }
 }
 #offDay {
@@ -170,7 +169,6 @@
   }
 }
 .event-space {
-  // position: absolute;
   display: flex;
   flex-direction: column;
   .eventName {
@@ -184,10 +182,8 @@
     text-indent: 2px;
     color: #9c9c9c;
     position: relative;
-    // bottom: 6px;
   }
   img {
-    // display: none;
     width: 152px;
     height: 76px;
     color: transparent;
