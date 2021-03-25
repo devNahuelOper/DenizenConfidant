@@ -31,7 +31,6 @@
       li {
         text-align: left;
         font-weight: normal;
-        // color: #ffa100;
         color: white;
         font-size: 16px;
         padding: 16px 0;
@@ -46,7 +45,6 @@
         }
       }
       li:last-of-type {
-        // color: white;
         color: #ffa100;
       }
     }
@@ -54,7 +52,6 @@
 }
 
 .user-main {
-  // height: 76px;
   border-bottom: 1px #585858 solid;
   padding: 40px 0;
   position: relative;
@@ -112,7 +109,6 @@
 
 .cal-bg {
   background: #404040;
-  //  padding: 70px 0;
 }
 
 #calendar-toggle {
