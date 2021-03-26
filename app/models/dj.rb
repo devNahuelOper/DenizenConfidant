@@ -23,17 +23,21 @@ class Dj < ApplicationRecord
   has_one_attached :track
   belongs_to :user
 
+  # belongs_to_and_has_many :genres
+
+ 
+
   def get_genres
     genre_hash = {}
-    genres = Genre.all
-    own_genres = self.genre.split.map {|gen| gen.strip}
+    own_genres = self.genre.split.map { |gen| gen.strip }
 
-    genres.each do |genre|
-      if own_genres.include?(genre.name)
-        genre_hash[genre.name] = genre.id
-      end
+    own_genres.each do |genre|
+      matched_genre = Genre.where(name: genre)
+      genre_hash[genre] = matched_genre.ids[0]
     end
+
     genre_hash
   end
 
+  
 end
