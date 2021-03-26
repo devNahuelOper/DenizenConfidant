@@ -604,6 +604,7 @@ h3 {
     border: 1px solid #4c4c4c;
     outline: 1px solid #4c4c4c;
     background: #fdff00;
+
     &::-webkit-media-controls {
       transform: translateX(-15px);
       input[pseudo="-webkit-media-controls-timeline" i]::-webkit-slider-thumb {
@@ -661,7 +662,25 @@ h3 {
       background-size: 22px;
       // transform: translateX(2px);
     }
+
+    // Firefox Support
+    .controlBar {
+      background: #fdff00;
+      > .button {
+        cursor: pointer;
+        -moz-context-properties: fill;
+        fill: #484848;
+        &:hover {
+          fill: #737373;
+        }
+      }
+      .positionDurationBox {
+        color: #484848;
+      }
+    }
   }
+  // -------------------
+  
   @media not all and (min-resolution: 0.001dpcm) {
     @supports (-webkit-appearance: none) {
       audio,
