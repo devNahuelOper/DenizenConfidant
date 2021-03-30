@@ -3,7 +3,6 @@ class Api::DjsController < ApplicationController
    def create
       @dj = Dj.new(dj_params)
       if @dj.save
-        # render json: "api/djs"
         render :show
       else
         render json: @dj.errors.full_messages, status: 422
@@ -16,7 +15,6 @@ class Api::DjsController < ApplicationController
    end
 
    def show
-      # @dj = Dj.find(params[:id])
       @dj = Dj.includes(photo_attachment: :blob, songs_attachments: :blob, track_attachment: :blob).find(params[:id])
       render :show
    end
