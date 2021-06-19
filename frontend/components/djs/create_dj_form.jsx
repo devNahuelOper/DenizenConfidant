@@ -60,7 +60,6 @@ class CreateDjForm extends React.Component {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value });
       this.props.receiveDjErrors([]);
-      // console.log(this.state);
     };
   }
 
