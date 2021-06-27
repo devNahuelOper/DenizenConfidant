@@ -145,7 +145,6 @@ class CreateDjForm extends React.Component {
     if (this.state.songFiles) {
       for (let i = 0; i < this.state.songFiles.length; i++) {
         formData.append("dj[songs][]", this.state.songFiles[i]);
-        // console.log(formData.getAll('dj[songs][]'));
       }
     }
 
