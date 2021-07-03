@@ -80,7 +80,6 @@ class CreateDjForm extends React.Component {
 
     fileReader.onloadend = () => {
       let image = new Image();
-      // image.src = fileReader.result;
       image.src = url;
       image.onload = () => handleImageSize(image, file);
       // this.setState({ photoFile: file, photoUrl: fileReader.result });
