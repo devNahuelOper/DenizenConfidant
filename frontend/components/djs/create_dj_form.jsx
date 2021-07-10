@@ -97,7 +97,6 @@ class CreateDjForm extends React.Component {
     // let filename = url.split('/').reverse()[0];
     let filename = this.state.name || "image";
     const file = dataURLtoFile(url, `${filename}.${type}`);
-    // const file = new File([""], url);
     this.setState({ photoFile: file, photoUrl: url });
   }
 
