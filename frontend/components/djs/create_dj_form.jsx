@@ -414,7 +414,6 @@ class CreateDjForm extends React.Component {
                 <li>
                   <input id="submit-dj" type="submit" value="Create" />
                   <br />
-                  {/* <p><i>Under Construction</i></p> */}
                 </li>
               </ul>
             </form>
