@@ -787,7 +787,9 @@ i {
       background-position-y: 50% !important;
       appearance: none !important;
       text-indent: 4px;
-      filter: invert(1);
+      filter: invert(0);
+      color: white;
+      background: black;
     }
   }
   #countries {
@@ -1156,7 +1158,7 @@ i {
   #myevents-list,
   .user-event,
   .eventform-subheader,
-  .my-djs{
+  .my-djs {
     width: 490px;
   }
   .my-djs {
