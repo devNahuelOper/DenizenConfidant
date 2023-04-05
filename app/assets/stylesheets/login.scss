@@ -448,10 +448,10 @@ $colors: (#ff0, #6b96c2, #b4bd02, white);
 
 #gender {
   margin-bottom: 16px;
-}
-
-#gender input {
-  margin-right: 4px;
+  input {
+    cursor: pointer;
+    margin-right: 4px;
+  }
 }
 
 #newsletter {
