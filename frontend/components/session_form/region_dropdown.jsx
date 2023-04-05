@@ -21,6 +21,7 @@ class RegionDropdown extends React.Component {
   }
 
   render() {
+    const { region, onChange } = this.props ?? {};
     const countries = [
       "Argentina",
       "Brazil",
@@ -48,15 +49,18 @@ class RegionDropdown extends React.Component {
           className="region-dropdown"
           type="button"
         >
-          {this.props.region || "Select a country:"}
+          <span className="dropdown-label region-label">
+            {region || "Select a country:"}
+          </span>
           <ul className={this.state.drop ? "region-reveal" : "region-hide"}>
             <li>Select a country:</li>
             {countries.map((country) => (
               <li
                 key={country}
                 onClick={() => {
-                  this.props.onChange(country);
+                  onChange(country);
                 }}
+                className={region === country ? "selected" : ""}
               >
                 {country}
               </li>

@@ -46,6 +46,7 @@ class SignupForm extends React.Component {
 
   render() {
     const { errors } = this.props;
+    const { birthday, language, region } = this.state ?? {};
 
     const errorStyle = {
       outline: "2px solid #e10",
@@ -128,7 +129,9 @@ class SignupForm extends React.Component {
                     )}
                   </div>
                 </li>
-                <span id="no-space">No spaces, 18 char max.</span>
+                <span id="no-space" className="side-text">
+                  No spaces, 18 char max.
+                </span>
 
                 <li id="email-rows">
                   <div>
@@ -203,18 +206,18 @@ class SignupForm extends React.Component {
                 </li>
                 <li>
                   <RegionDropdown
-                    region={this.state.region}
+                    region={region}
                     onChange={(region) => this.setState({ region: region })}
                   />
                 </li>
-                <span id="default-region-msg">
+                <span id="default-region-msg" className="side-text">
                   This selection is your default for viewing events, clubs and
                   other local content.
                 </span>
 
                 <li id="lang-bday">
                   <LanguageDropdown
-                    language={this.state.language}
+                    language={language}
                     onChange={(language) =>
                       this.setState({ language: language })
                     }
@@ -273,7 +276,7 @@ class SignupForm extends React.Component {
                   <div id="newsletter">
                     DC Newsletter /
                     <br />
-                    <span>
+                    <span className="side-text">
                       <input id="check-box" type="checkbox" />
                       Subscribe to the weekly DC Newsletter which doesn't exist,
                       and is only here to fill space for styling.
