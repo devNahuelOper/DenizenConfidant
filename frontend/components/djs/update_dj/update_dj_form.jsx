@@ -147,8 +147,7 @@ class UpdateDjForm extends React.Component {
     );
 
     const currentCities =
-      expandCountry[nationality.replace(/([\w\s]+,)* /, "").replace(/\W/g, "")]
-        .cities;
+      expandCountry[nationality.replace(/([\w\s]+,)* /, "").replace(/\W/g, "")]?.cities || [];
 
     const preview = photoUrl ? (
       <DjImagePreview
@@ -159,7 +158,7 @@ class UpdateDjForm extends React.Component {
       />
     ) : null;
 
-    const songs = this.state.songsUrl ? this.state.songsUrl : [];
+    const songs = this.state.songsUrl || [];
 
     return (
       <React.Fragment>
@@ -216,7 +215,7 @@ class UpdateDjForm extends React.Component {
                       name="nationality"
                       id="countries"
                       className="nationality-select"
-                      value={countries.find((c) => nationality.includes(c))}
+                      value={countries.find((c) => nationality.split("/")[0].includes(c.split(" ")[0]))}
                       onChange={this.update("nationality")}
                     >
                       {countries.map((country) => (

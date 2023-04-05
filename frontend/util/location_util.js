@@ -21,6 +21,21 @@ export const expandCountry = {
     flag: '🇦🇷',
     currency: 'ARS'
   },
+  'Australia': {
+    cities: ['Melbourne', 'Sydney'],
+    flag: '🇦🇺',
+    currency: 'AUD'
+  },
+  'Belarus': {
+    cities: ['Minsk'],
+    flag: '🇧🇾',
+    currency: 'RBL'
+  },
+  'Belgium': {
+    cities: ['Antwerp', 'Bruges', 'Brussels'],
+    flag: '🇧🇪',
+    currency: 'EUR'
+  },
   'Brazil': {
     cities: ['Porto Alegro', 'Rio de Janeiro', 'Salvador', 'Sao Paulo'],
     flag: '🇧🇷',
@@ -46,6 +61,16 @@ export const expandCountry = {
     flag: '🇩🇪',
     currency: 'EUR'
   },
+  'Ireland': {
+    cities: ['Dublin'],
+    flag: '🇮🇪',
+    currency: 'EUR'
+  },
+  'Israel': {
+    cities: ['Jerusalem', 'Tel Aviv'],
+    flag: '🇮🇱',
+    currency: 'ILS'
+  },
   'Italy': {
     cities: ['Florence', 'Milan', 'Naples', 'Rome', 'Venice'],
     flag: '🇮🇹',
@@ -61,21 +86,46 @@ export const expandCountry = {
     flag: '🇳🇱',
     currency: 'EUR'
   },
+  'Norway': {
+    cities: ['Bergen', 'Oslo'],
+    flag: '🇳🇴',
+    currency: 'NOK'
+  },
+  'Russia': {
+    cities: ['Moscow', 'St. Petersburg'],
+    flag: '🇷🇺',
+    currency: 'RUB'
+  },
+  'Scotland': {
+    cities: ['Edinburgh', 'Glasgow'],
+    flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
+    currency: 'GBP'
+  },
   'Spain': {
     cities: ['Barcelona', 'Madrid', 'Seville', 'Valencia'],
     flag: '🇪🇸',
     currency: 'EUR'
+  },
+  'Sweden': {
+    cities: ['Gothenburg', 'Stockholm'],
+    flag: '🇸🇪',
+    currency: 'SEK'
   },
   'UK': {
     cities: ['Belfast', 'Edinburgh', 'Liverpool', 'London', 'Glasgow', 'Manchester'],
     flag: '🇬🇧',
     currency: 'GBP'
   },
-  'United Kingdom': {
-    cities: ['Belfast', 'Edinburgh', 'Liverpool', 'London', 'Glasgow', 'Manchester'],
-    flag: '🇬🇧',
-    currency: 'GBP'
+  'Ukraine': {
+    cities: ['Kyiv'],
+    flag: '🇺🇦',
+    currency: 'UAH'
   },
+  // 'United Kingdom': {
+  //   cities: ['Belfast', 'Edinburgh', 'Liverpool', 'London', 'Glasgow', 'Manchester'],
+  //   flag: '🇬🇧',
+  //   currency: 'GBP'
+  // },
   'USA': {
     cities: ['Atlanta', 'Boston', 'Chicago', 'Dallas', 'Denver', 'Detroit',
     'Houston', 'Los Angeles', 'Miami', 'New Orleans', 'New York', 'Philadelphia',
@@ -83,13 +133,13 @@ export const expandCountry = {
     flag: '🇺🇸',
     currency: 'USD'
   },
-  'United States': {
-    cities: ['Atlanta', 'Boston', 'Chicago', 'Dallas', 'Denver', 'Detroit',
-    'Houston', 'Los Angeles', 'Miami', 'New Orleans', 'New York', 'Philadelphia',
-    'Phoenix', 'Pittsburgh', 'San Francisco', 'Seattle', 'Washington DC'],
-    flag: '🇺🇸',
-    currency: 'USD'
-  }
+  // 'United States': {
+  //   cities: ['Atlanta', 'Boston', 'Chicago', 'Dallas', 'Denver', 'Detroit',
+  //   'Houston', 'Los Angeles', 'Miami', 'New Orleans', 'New York', 'Philadelphia',
+  //   'Phoenix', 'Pittsburgh', 'San Francisco', 'Seattle', 'Washington DC'],
+  //   flag: '🇺🇸',
+  //   currency: 'USD'
+  // }
 }
 
 export const getCountry = (location) => {
