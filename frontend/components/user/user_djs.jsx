@@ -13,7 +13,6 @@ class UserDjs extends React.Component {
     super(props);
   }
 
-
   render() {
     const { currentUser } = this.props;
     return (
@@ -34,23 +33,29 @@ class UserDjs extends React.Component {
           <div className="my-djs">
             {currentUser.djs.length ? (
               <ul className="user-djs-list">
-                {currentUser.djs.map((dj, i) => (
-                  <li key={i}>
-                    <article>
-                      <figure
-                        className={
-                          dj.photoUrl ? "user-dj-img" : "user-dj-noimg"
-                        }
-                      >
-                        {dj.photoUrl && <img src={dj.photoUrl} alt={dj.name} />}
-                      </figure>
-                      <div className="user-dj-info">
-                        <h2>{dj.name}</h2>
-                        <Link to={`/djs/${dj.id}/edit`}>Manage DJ Profile</Link>
-                      </div>
-                    </article>
-                  </li>
-                ))}
+                {currentUser.djs
+                  .sort((a, b) => a.name.localeCompare(b.name))
+                  .map((dj, i) => (
+                    <li key={i}>
+                      <article>
+                        <figure
+                          className={
+                            dj.photoUrl ? "user-dj-img" : "user-dj-noimg"
+                          }
+                        >
+                          {dj.photoUrl && (
+                            <img src={dj.photoUrl} alt={dj.name} />
+                          )}
+                        </figure>
+                        <div className="user-dj-info">
+                          <h2>{dj.name}</h2>
+                          <Link to={`/djs/${dj.id}/edit`}>
+                            Manage DJ Profile
+                          </Link>
+                        </div>
+                      </article>
+                    </li>
+                  ))}
               </ul>
             ) : (
               <h1>No DJ profiles under your administration.</h1>
@@ -62,12 +67,11 @@ class UserDjs extends React.Component {
   }
 }
 
-
-const mapStateToProps = state => ({
-  currentUser: getCurrentUser(state)
+const mapStateToProps = (state) => ({
+  currentUser: getCurrentUser(state),
 });
-const mapDispatchToProps = dispatch => ({
-  fetchCurrentUser: userId => dispatch(fetchCurrentUser(userId))
+const mapDispatchToProps = (dispatch) => ({
+  fetchCurrentUser: (userId) => dispatch(fetchCurrentUser(userId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserDjs);
