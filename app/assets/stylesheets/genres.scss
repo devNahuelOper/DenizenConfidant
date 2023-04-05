@@ -127,19 +127,19 @@
 
   .genre {
     width: fit-content;
-    &:hover {
-      transform: scale(1.1);
-    }
+    // &:hover {
+    //   transform: scale(1.1);
+    // }
   }
 }
 
 .genrelist-item {
   margin-bottom: 10px;
-}
-
-.genrelist-item strong:hover {
-  color: black;
-  background-color: #b4be00;
+  strong:hover {
+    color: black;
+    background-color: #b4be00;
+    padding: 3px 6px;
+  }
 }
 
 .genre-avatar {
