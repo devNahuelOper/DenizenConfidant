@@ -208,7 +208,7 @@ require 'open-uri'
 # digitalism.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/Circles.mp3'), filename: 'Circles.mp3')
 # digitalism.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/Power+Station.mp3'), filename: 'Power+Station.mp3')
 
-# dimitrivegas = Dj.create({name: 'Dimitri Vegas & Like Mike', genre: 'Big-Room Dance Electro-House', nationality: 'Belgium/Greece 🇧🇪🇬🇷 ', bio: 'Dimitri Vegas & Like Mike are Belgian DJs and are record production duos, composed of brothers Dimitri Thivaios and Michael Thivaios. They were ranked No. 1 in 2015 and 2019, and were ranked No. 2 in 2014, 2016, 2017 and 2018 on DJ Mags Top 100 DJs list.', user_id: 1 })
+# dimitrivegas = Dj.create({name: 'Dimitri Vegas & Like Mike', genre: 'Big-Room Dance Electro-House', nationality: 'Belgium/Greece 🇧🇪🇬🇷', bio: 'Dimitri Vegas & Like Mike are Belgian DJs and are record production duos, composed of brothers Dimitri Thivaios and Michael Thivaios. They were ranked No. 1 in 2015 and 2019, and were ranked No. 2 in 2014, 2016, 2017 and 2018 on DJ Mags Top 100 DJs list.', user_id: 1 })
 # dimitrivegas.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/Happy+Together.mp3'), filename: 'Happy+Together.mp3')
 # dimitrivegas.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/Turn+Up.mp3'), filename: 'Turn+Up.mp3')
 # dimitrivegas.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/Unity.mp3'), filename: 'Unity.mp3')
@@ -453,7 +453,7 @@ require 'open-uri'
 # nomana.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/Slow+Motion.mp3'), filename: 'Slow+Motion.mp3')
 # nomana.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/VVR.mp3'), filename: 'VVR.mp3')
 
-# noraenpure = Dj.create({name: 'Nora En Pure', genre: 'Deep-House Tech-House', nationality: 'Africa South 🇿🇦', bio: 'Daniela Niederer (born July 20, 1990), better known by her stage name Nora En Pure, is a South African-Swiss DJ and deep house producer. She first received recognition for her 2013 single "Come With Me". Further popular releases are "Morning Dew", "Lake Arrowhead", and "Tears In Your Eyes." In July 2016, she was invited to put together a two-hour long mix for Pete Tongs radio show: "BBCs Essential Mix".', user_id: 1 })
+# noraenpure = Dj.create({name: 'Nora En Pure', genre: 'Deep-House Tech-House', nationality: 'South Africe 🇿🇦', bio: 'Daniela Niederer (born July 20, 1990), better known by her stage name Nora En Pure, is a South African-Swiss DJ and deep house producer. She first received recognition for her 2013 single "Come With Me". Further popular releases are "Morning Dew", "Lake Arrowhead", and "Tears In Your Eyes." In July 2016, she was invited to put together a two-hour long mix for Pete Tongs radio show: "BBCs Essential Mix".', user_id: 1 })
 # noraenpure.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/Fibonacci.mp3'), filename: 'Fibonacci.mp3')
 # noraenpure.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/In+The+Air+Tonight.mp3'), filename: 'In+The+Air+Tonight.mp3')
 # noraenpure.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/Polynesia.mp3'), filename: 'Polynesia.mp3')
@@ -478,7 +478,7 @@ require 'open-uri'
 # paulvandyk.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/First+Contact.mp3'), filename: 'First+Contact.mp3')
 # paulvandyk.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/You+Are.mp3'), filename: 'You+Are.mp3')
 
-# peggygou = Dj.create({name: 'Peggy Gou', genre: 'Deep-House Neotrance', nationality: 'Korea South 🇰🇷', bio: 'Peggy Gou is a Berlin-based South Korean DJ, record producer, and fashion designer. She has released seven EPs on record labels including Ninja Tune and Phonica. In 2019, she launched her own independent record label, Gudu Records, and released a DJ-Kicks compilation, DJ-Kicks.', user_id: 1 })
+# peggygou = Dj.create({name: 'Peggy Gou', genre: 'Deep-House Neotrance', nationality: 'South Korea 🇰🇷', bio: 'Peggy Gou is a Berlin-based South Korean DJ, record producer, and fashion designer. She has released seven EPs on record labels including Ninja Tune and Phonica. In 2019, she launched her own independent record label, Gudu Records, and released a DJ-Kicks compilation, DJ-Kicks.', user_id: 1 })
 # peggygou.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/Han+Pan.mp3'), filename: 'Han+Pan.mp3')
 # peggygou.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/It+Makes+You+Forget.mp3'), filename: 'It+Makes+You+Forget.mp3')
 # peggygou.songs.attach(io: open('https://denizen-confidant-seeds.s3.amazonaws.com/songs/Travelling+Without+Arriving.mp3'), filename: 'Travelling+Without+Arriving.mp3')
