@@ -21,6 +21,7 @@ class UpdateDjForm extends React.Component {
     this.addSongs = this.addSongs.bind(this);
     this.removeSong = this.removeSong.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.formatNationality = this.formatNationality.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -34,7 +35,11 @@ class UpdateDjForm extends React.Component {
 
   update(field) {
     return (e) => {
-      this.setState({ [field]: e.currentTarget.value });
+      this.setState({ [field]: e.currentTarget.value }, () => {
+        if (field === "nationality" && this.state.city) {
+          this.setState({ city: "" });
+        }
+      });
       // console.log(this.state);
     };
   }
@@ -106,26 +111,33 @@ class UpdateDjForm extends React.Component {
     });
   }
 
+  formatNationality() {
+    const { city, nationality } = this.state ?? {};
+    let natStr = nationality;
+    if (city || /,/.test(nationality)) {
+      natStr = `${city || nationality.split(",")[0]}, ${nationality.replace(
+        /([\w\s]*,)+ /,
+        ""
+      )}`;
+    }
+    return natStr;
+  }
 
   handleSubmit(e) {
+    const { name, genre, bio, nationality, city, photoFile, songFiles } =
+      this.state ?? {};
     e.preventDefault();
     const formData = new FormData();
-    formData.append("dj[name]", this.state.name);
-    formData.append(
-      "dj[nationality]",
-      `${this.state.city || this.state.nationality.split(',')[0]}, ${this.state.nationality.replace(
-        /([\w\s]*,)* /,
-        ""
-      )}`
-    );
-    formData.append("dj[genre]", this.state.genre);
-    formData.append("dj[bio]", this.state.bio);
-    if (this.state.photoFile) {
-      formData.append("dj[photo]", this.state.photoFile);
+    formData.append("dj[name]", name);
+    formData.append("dj[nationality]", this.formatNationality());
+    formData.append("dj[genre]", genre);
+    formData.append("dj[bio]", bio);
+    if (photoFile) {
+      formData.append("dj[photo]", photoFile);
     }
-    if (this.state.songFiles) {
-      for (let i = 0; i < this.state.songFiles.length; i++) {
-        formData.append("dj[songs][]", this.state.songFiles[i]);
+    if (songFiles) {
+      for (let i = 0; i < songFiles.length; i++) {
+        formData.append("dj[songs][]", songFiles[i]);
       }
     }
     $(".loader").show();
@@ -142,12 +154,20 @@ class UpdateDjForm extends React.Component {
 
     const { name, nationality, genre, bio, photoUrl, songNames } = this.state;
 
+    const emojiRegex = /\p{RI}\p{RI}|\p{Emoji}/gu;
+
     const countries = Object.entries(expandCountry).map(
       (k) => `${k[0]}  ${k[1].flag}`
     );
 
-    const currentCities =
-      expandCountry[nationality.replace(/([\w\s]+,)* /, "").replace(/\W/g, "")]?.cities || [];
+    const matchedCountry =
+      expandCountry[
+        nationality.replace(/([\w\s]+,)* /, "").replace(/\W/g, "")
+      ] ||
+      expandCountry[nationality.split("/")[0]] ||
+      expandCountry[nationality.replace(emojiRegex, "").trim()];
+
+    const { cities: currentCities = [] } = matchedCountry || {};
 
     const preview = photoUrl ? (
       <DjImagePreview
@@ -215,7 +235,11 @@ class UpdateDjForm extends React.Component {
                       name="nationality"
                       id="countries"
                       className="nationality-select"
-                      value={countries.find((c) => nationality.split("/")[0].includes(c.split(" ")[0]))}
+                      defaultValue={countries.find((c) =>
+                        nationality
+                          .split("/")[0]
+                          .includes(c.replace(emojiRegex, "").trim())
+                      )}
                       onChange={this.update("nationality")}
                     >
                       {countries.map((country) => (
@@ -315,7 +339,9 @@ class UpdateDjForm extends React.Component {
                           <span
                             className="remove-song"
                             title="Remove Song"
-                            onClick={() => this.removeSong(song, i - songNames.length)}
+                            onClick={() =>
+                              this.removeSong(song, i - songNames.length)
+                            }
                           >
                             ✖️
                           </span>
