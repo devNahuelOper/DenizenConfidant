@@ -18,7 +18,7 @@ class DjShow extends React.Component {
   render() {
     const { dj } = this.props;
     if (!dj) return null;
-    
+
     const genres = dj.get_genres ? Object.entries(dj.get_genres) : null;
 
     const noAttach = {
@@ -31,7 +31,13 @@ class DjShow extends React.Component {
     };
 
     dj.nationality = dj.nationality.replace(/[\w\s]+, /, "");
-    
+
+    const emojiRegex = /\p{RI}\p{RI}|\p{Emoji}/gu;
+
+    const natDisplay = `${dj.nationality.slice(
+      dj.nationality.search(emojiRegex)
+    )} ${dj.nationality.slice(0, dj.nationality.search(emojiRegex))}`;
+
     return (
       <React.Fragment>
         <TitleComponent title={`DC: ${dj.name}`} />
@@ -79,7 +85,7 @@ class DjShow extends React.Component {
                 <li>
                   <small>Country /</small>
                   <br />
-                  {dj.nationality.split(" ").reverse().join(" ")}
+                  <span>{natDisplay}</span>
                 </li>
                 <li>
                   <small>Genre(s) /</small> <br />
