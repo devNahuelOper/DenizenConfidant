@@ -172,6 +172,18 @@ export const fiveDaySpan = (date) => {
 };
 
 const wordNums = {
+  1: "One",
+  2: "Two",
+  3: "Three",
+  4: "Four",
+  5: "Five",
+  6: "Six",
+  7: "Seven",
+  8: "Eight",
+  9: "Nine",
+  10: "Ten",
+  11: "Eleven",
+  12: "Twelve",
   13: "Thirteen",
   14: "Fourteen",
   15: "Fifteen",
@@ -182,11 +194,30 @@ const wordNums = {
   20: "Twenty",
 };
 
+function convertMonths(num) {
+  const months = num % 12;
+  const years = (num - months) / 12;
+  let yearStr = "";
+  let monthStr = "";
+
+  if (years > 0) {
+    const unit = years > 1 ? "years" : "year";
+    yearStr = `${years} ${unit}`;
+    if (months > 0) yearStr += " and ";
+  }
+  if (months > 0) {
+    const unit = months > 1 ? "months" : "month";
+    monthStr = `${months} ${unit}`;
+  }
+
+  return `${yearStr}${monthStr}` || "now";
+}
+
 export const timeSinceBeganCoding = () => {
   const start = new Date(2019, 11, 21);
   let diff = Date.now() - start;
   let seconds = diff / 1000;
   let hours = seconds / 60 / 60;
   let months = Math.round(hours / 24 / 30);
-  return months <= 20 ? wordNums[months] : months;
+  return months <= 20 ? wordNums[months] : convertMonths(months);
 };

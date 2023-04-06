@@ -22,7 +22,7 @@ class NewsShow extends React.Component {
     const newsTime = formatDateNewsShow(news.updated_at).split('~');
 
     const monthsSince = timeSinceBeganCoding();
-    const specialBlurb = news.blurb.replace("Eight", monthsSince);
+    const specialBlurb = news.blurb.replace("Eight months", monthsSince);
     return (
     <React.Fragment>
       <TitleComponent title={`DC News: ${news.title}`} />
@@ -62,7 +62,7 @@ class NewsShow extends React.Component {
         <div className="news-main">
           <section className="blurb-wrap">
             <p className="blurb">
-              {news.author === "Nahuel Gorosito" ? specialBlurb : news.blurb}
+              {news.author === "Nahuel Gorosito" ? `${specialBlurb}..` : news.blurb}
             </p>
           </section>
           <section className="body-wrap">
