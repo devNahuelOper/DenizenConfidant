@@ -6,16 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# require 'open-uri-s3'
-require 'open-uri'
+require 'open-uri-s3'
+# require 'open-uri'
 
 # User.destroy_all
-# Event.destroy_all
+Event.destroy_all
 # Dj.destroy_all
 # Genre.destroy_all
 
 # Users
-deadmau5 = User.create({username: 'deadmau5', password: 'stereo', fname: 'Joel', lname: 'Zimmerman', email: 'mau5trap@deadmau5.com', region: 'Canada', language: 'English', birthday: 19810105, gender: 'Male'})
+# deadmau5 = User.create({username: 'deadmau5', password: 'stereo', fname: 'Joel', lname: 'Zimmerman', email: 'mau5trap@deadmau5.com', region: 'Canada', language: 'English', birthday: 19810105, gender: 'Male'})
 
 # Events
 untold = Event.create({name: 'Untold', venue: 'Cluj-Arena', location: '🇷🇴 Cluj-Napoca, Romania', date: 20210804, headliners: 'Alan Walker, Boney M, Charli XCX, Culture Beat Don Diablo, Dillon Francis, Dimitri Vegas & Like Mike, Duke Dumont, Fatman Scoop, Fedde Le Grand, John Digweed, John Newman, Lost Frequencies, Patrice, Sasha, Sunnery James & Ryan Marciano, Tinie Tempah, Tom Odell, Tujamo', description: 'Untold Festival is the largest electronic music festival held in Romania, taking place in Cluj-Napoca at the Cluj Arena. It is held annually and has been designated Best Major Festival within European Festival Awards 2015. Guests include a vast range of European countries, as well as Asia and North America.', cost: '€75', user_id: 1 })
