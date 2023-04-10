@@ -13,6 +13,7 @@ require 'open-uri'
 Event.destroy_all
 # Dj.destroy_all
 # Genre.destroy_all
+News.destroy_all
 
 # Users
 # deadmau5 = User.create({username: 'deadmau5', password: 'stereo', fname: 'Joel', lname: 'Zimmerman', email: 'mau5trap@deadmau5.com', region: 'Canada', language: 'English', birthday: 19810105, gender: 'Male'})
@@ -917,8 +918,6 @@ autograf.photo.attach(io: URI.open('https://denizen-confidant-seeds.s3.amazonaws
 
 
 # News
-
-# News.destroy_all
 
 berghain = News.create({title: 'Berghain to become temporary art gallery in September', blurb: 'Berlin art collectors Christian and Karen Boros will help transform the venue, which remains shut to clubbers due to the pandemic.', category: 'Music News', author: 'Carlos Hawthorn', body: 'Berghain is going to be transformed into a temporary art gallery from September 9th, Der Tagesspiegel reports. ~ The Berlin club, which has been shut since early March due to the pandemic, will be handed over to famed local art collectors Christian and Karen Boros, who together with Juliet Kothe, the director of the Boros Foundation, will present an exhibition called Studio Berlin. ~ The exhibition will feature the work of 85 artists who live and work in the German capital, including Tacita Dean, Wolfgang Tillmans and Carsten Nicolai (AKA Alva Noto). Multiple disciplines will be on show, from painting and sculpture to video and sound installations. As usual, visitors will be banned from filming or taking photos. ~ Last month, Berghain opened one of its lesser-used spaces, Halle am Berghain, for a performance of eleven songs by Berlin-based duo tamtam. The club\'s outdoor Garden area has also hosted several daytime parties with small capacities and specific regulations. ~ Christian Boros is one of Berlin\'s best-known art collectors. Since 2008, he has exhibited his collection in a former nightclub and WW2-era bunker in Mitte.'})
 berghain.photo.attach(io: URI.open('https://denizen-confidant-seeds.s3.amazonaws.com/news/berghain.png'), filename: 'berghain.png')
