@@ -5,9 +5,11 @@ import { fetchGenres } from '../../actions/genre_actions';
 
 const mapStateToProps = (state) => {
   return {
-    djs: Object.values(state.entities.djs),
-    genres: Object.values(state.entities.genres)
-  }
+    djs: Object.values(state.entities.djs).sort((a, b) =>
+      a.name.localeCompare(b.name)
+    ),
+    genres: Object.values(state.entities.genres),
+  };
 };
 
 const mapDispatchToProps = dispatch => ({
