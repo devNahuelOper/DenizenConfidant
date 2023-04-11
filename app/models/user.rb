@@ -73,4 +73,8 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  def to_partial_path
+    'api/users/user'
+  end
+
 end
