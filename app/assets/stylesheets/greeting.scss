@@ -418,6 +418,10 @@ body {
       display: flex;
       justify-content: center;
       width: 35px;
+      a {
+        height: fit-content;
+        // outline: unset;
+      }
     }
     img {
       width: 35px;
