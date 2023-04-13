@@ -19,7 +19,12 @@ class BirthdayDropdown extends React.Component {
   }
 
   render() {
-    const days = Array.from(Array(32).keys()).slice(1).reverse();
+    const { day, month, year, daysInMonth = 31 } = this.props.birthday ?? {};
+
+    const days = Array.from(Array(daysInMonth + 1).keys())
+      .slice(1)
+      .reverse();
+
     const months = [
       "Jan",
       "Feb",
@@ -34,7 +39,10 @@ class BirthdayDropdown extends React.Component {
       "Nov",
       "Dec",
     ].reverse();
-    const years = Array.from(Array(2021).keys()).slice(1910).reverse();
+
+    const years = Array.from(Array(new Date().getFullYear() + 1).keys())
+      .slice(1910)
+      .reverse();
     return (
       <div>
         Birthday /
@@ -47,7 +55,9 @@ class BirthdayDropdown extends React.Component {
           className="day-dropdown birthday-dropdown"
           type="button"
         >
-          <span className="dropdown-label day-label">{this.props.birthday.day}</span>
+          <span className="dropdown-label day-label">
+            {day}
+          </span>
           <ul className={this.state.day ? "day-reveal" : "day-hide"}>
             {days.map((day) => (
               <li
@@ -69,7 +79,9 @@ class BirthdayDropdown extends React.Component {
           className="month-dropdown birthday-dropdown"
           type="button"
         >
-          <span className="dropdown-label month-label">{this.props.birthday.month}</span>
+          <span className="dropdown-label month-label">
+            {month}
+          </span>
           <ul className={this.state.month ? "month-reveal" : "month-hide"}>
             {months.map((month) => (
               <li
@@ -91,7 +103,9 @@ class BirthdayDropdown extends React.Component {
           className="year-dropdown birthday-dropdown"
           type="button"
         >
-          <span className="dropdown-label year-label">{this.props.birthday.year}</span>
+          <span className="dropdown-label year-label">
+            {year}
+          </span>
           <ul className={this.state.year ? "year-reveal" : "year-hide"}>
             {years.map((year) => (
               <li

@@ -5,6 +5,7 @@ import LanguageDropdown from "./language_dropdown";
 import BirthdayDropdown from "./birthday_dropdown";
 import NavBar from "../navbar/navbar";
 import SubnavToggle from "../subnav/subnav";
+import { daysInShortMonth } from "../../util/date_util";
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -228,6 +229,10 @@ class SignupForm extends React.Component {
                     handleChange={(field, input) => {
                       const newBirthday = this.state.birthday;
                       newBirthday[field] = input;
+                      const { month, year } = newBirthday;
+                      if (field === "month" || (field === "year" && month === "Feb")) {
+                        newBirthday.daysInMonth = daysInShortMonth(month, year);
+                      }
                       this.setState({ birthday: newBirthday });
                     }}
                   />

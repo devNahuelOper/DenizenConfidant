@@ -147,6 +147,15 @@ export const daysInMonth = () => {
   return new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
 };
 
+export const daysInShortMonth = (month = "Jan", year = new Date().getFullYear()) => {
+  const monthObj = Object.fromEntries(
+    Object.entries(shortMonths).map((entry) => entry.reverse())
+  );
+  if (monthObj[month] == null) return 31;
+  const monthNum = +monthObj[month] + 1;
+  return new Date(+year || new Date().getFullYear(), monthNum, 0).getDate();
+}
+
 export const daysInLastMonth = () => {
   let now = new Date();
   return new Date(now.getFullYear(), now.getMonth(), 0).getDate();
